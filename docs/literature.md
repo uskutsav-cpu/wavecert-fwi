@@ -27,6 +27,15 @@ https://github.com/neuraloperator/neuraloperator
 
 Why it matters: maintained PyTorch implementation of FNO/TFNO and related operator-learning infrastructure. WaveCert intentionally wraps arbitrary differentiable PyTorch surrogates instead of reimplementing FNO.
 
+
+### O'Leary-Roseberry et al. (2024) — DINO
+*Derivative-Informed Neural Operator: An efficient framework for high-dimensional parametric derivative learning.* Journal of Computational Physics 496, 112555.
+https://doi.org/10.1016/j.jcp.2023.112555
+
+Why it matters: directly demonstrates that neural operators trained without derivative information can produce inaccurate parametric derivatives even when the forward map is useful. It establishes the general derivative-accuracy problem that WaveCert studies in the seismic/FWI setting.
+
+**Difference from WaveCert:** DINO adds compressed Jacobian information during training. WaveCert focuses on post-training, deployment-time detection/certification and exact-physics fallback.
+
 ### Park et al. (2026)
 *Neural Operators with Accurate Jacobian for High-Fidelity Image-Domain Seismic Inversion.*
 https://slim.gatech.edu/Publications/Public/Submitted/2026/park2026IMAGEnoa/abstract.html
