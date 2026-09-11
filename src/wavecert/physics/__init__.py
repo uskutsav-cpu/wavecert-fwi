@@ -1,7 +1,12 @@
-from .helmholtz import Helmholtz2D, SurveyBlock, SurveyGeometry
-
-__all__ = ["Helmholtz2D", "SurveyBlock", "SurveyGeometry"]
-
+from wavecert.physics.devito_backend import DevitoAcousticConfig, DevitoAcousticFWI
+from wavecert.physics.helmholtz import Helmholtz2D, SurveyBlock, SurveyGeometry
 from wavecert.physics.verification import verify_reference_problem
 
-from wavecert.physics.devito_backend import DevitoAcousticConfig, DevitoAcousticFWI
+__all__ = [
+    "DevitoAcousticConfig",
+    "DevitoAcousticFWI",
+    "Helmholtz2D",
+    "SurveyBlock",
+    "SurveyGeometry",
+    "verify_reference_problem",
+]

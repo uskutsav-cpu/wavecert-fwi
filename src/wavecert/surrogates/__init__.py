@@ -1,9 +1,11 @@
-from .base import WavefieldSurrogate
-from .low_fidelity import SmoothedHelmholtzSurrogate
+from wavecert.surrogates.base import WavefieldSurrogate
+from wavecert.surrogates.fno import FNO2dWavefield, FNOConfig, TrainedFNOWavefieldSurrogate
+from wavecert.surrogates.low_fidelity import SmoothedHelmholtzSurrogate
 
-__all__ = ["WavefieldSurrogate", "SmoothedHelmholtzSurrogate"]
-
-try:
-    from wavecert.surrogates.fno import FNO2dWavefield, FNOConfig, TrainedFNOWavefieldSurrogate
-except ImportError:
-    pass
+__all__ = [
+    "FNO2dWavefield",
+    "FNOConfig",
+    "SmoothedHelmholtzSurrogate",
+    "TrainedFNOWavefieldSurrogate",
+    "WavefieldSurrogate",
+]

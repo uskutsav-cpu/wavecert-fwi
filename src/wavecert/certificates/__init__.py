@@ -1,3 +1,3 @@
-from .directional import DirectionalCertificate, certify_direction
+from .directional import DirectionalCertificate, StabilityMode, certify_direction
 
-__all__ = ["DirectionalCertificate", "certify_direction"]
+__all__ = ["DirectionalCertificate", "StabilityMode", "certify_direction"]

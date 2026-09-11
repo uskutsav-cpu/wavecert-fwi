@@ -39,7 +39,7 @@ class WavefieldNormalization:
     output_std_imag: float
 
     @classmethod
-    def from_arrays(cls, models: Array, frequencies: Array, wavefields: Array) -> "WavefieldNormalization":
+    def from_arrays(cls, models: Array, frequencies: Array, wavefields: Array) -> WavefieldNormalization:
         return cls(
             model_mean=float(np.mean(models)),
             model_std=max(float(np.std(models)), 1e-8),
@@ -105,8 +105,10 @@ if torch is not None:
         normalized real and imaginary wavefield components.
         """
 
-        def __init__(self, config: FNOConfig = FNOConfig()):
+        def __init__(self, config: FNOConfig | None = None):
             super().__init__()
+            if config is None:
+                config = FNOConfig()
             self.config = config
             self.lift = nn.Conv2d(5, config.width, 1)
             self.spectral = nn.ModuleList(
@@ -267,7 +269,7 @@ class TrainedFNOWavefieldSurrogate:
         )
 
     @classmethod
-    def load(cls, path: str | Path, *, device: str = "cpu") -> "TrainedFNOWavefieldSurrogate":
+    def load(cls, path: str | Path, *, device: str = "cpu") -> TrainedFNOWavefieldSurrogate:
         if torch is None:  # pragma: no cover
             raise ImportError("PyTorch is required")
         payload: dict[str, Any] = torch.load(path, map_location=device, weights_only=False)

@@ -8,6 +8,16 @@ WaveCert-FWI is a research codebase for a specific failure mode in scientific ma
 
 The project asks whether a cheap, post-training certificate can decide—*at each inversion step, shot, or frequency block*—whether a neural gradient is safe to trust, and invoke exact wave physics only where needed.
 
+## Phase 0–6 milestone: derivative failure, certification, calibration, and adaptive fallback
+
+Phases 4–6 now extend the learned-surrogate milestone into an actual trust-and-fallback pipeline:
+
+- **Phase 4:** a receiver/direction-aware deterministic residual certificate was evaluated on the same 80 held-out states. It achieved **100% coverage with zero violations and zero false descent certifications**, but was very conservative (median effectivity **8292.19**) and certified no neural directions outright.
+- **Phase 5:** the rigorous bound is preserved unchanged, while a separate split-conformal deployment gate is calibrated on 50 cases and evaluated on 30 disjoint cases. The 90% gate achieved **90.0% evaluation coverage**, **2.34 median effectivity**, **13.3% immediate neural-direction acceptance**, and **0 observed false descent certifications**.
+- **Phase 6:** on 30 new held-out states, neural-only directions were true descent **76.7%** of the time. Conformal selective repair reached **100% observed true-descent rate** while using **2.90/4 exact source-frequency gradient blocks on average**, a **27.5% reduction** versus exact direction construction.
+
+See [`docs/phase4_6_report.md`](docs/phase4_6_report.md) and `results/phase4`, `results/phase5`, and `results/phase6`.
+
 ## Phase 0–3 milestone: completed proof-of-concept
 
 The repository now includes an end-to-end learned-surrogate validation milestone, not only the original hand-designed low-fidelity demo:
@@ -160,7 +170,7 @@ this yields the computable directional certificate
 
 for the point-receiver restriction used here.
 
-This is the mathematical object exercised by the tests and demo. See [`docs/theory.md`](docs/theory.md) for the derivation, assumptions, and limitations.
+This is the baseline certificate exercised by the original demo. Phase 4 additionally implements a sharper receiver/direction-aware discrete reference bound based on `||P A^-1||` and `||P A^-1 diag(v) A^-1||`; see [`docs/theory.md`](docs/theory.md) and [`docs/phase4_6_report.md`](docs/phase4_6_report.md).
 
 ---
 
@@ -182,6 +192,9 @@ pip install -e '.[dev,torch]'
 wavecert train-fno --epochs 25 --train 256 --val 48 --test 80 --shape 16
 PYTHONPATH=src python scripts/run_phase2_validate.py
 wavecert failure-study --cases 80
+wavecert certificate-study --cases 80
+wavecert calibrate-certificate --alpha 0.10
+wavecert adaptive-study --cases 30
 ```
 
 Or without installation:

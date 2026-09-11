@@ -118,8 +118,11 @@ def run_training(
     batch_size: int = 16,
     seed: int = 20260910,
     device: str = "cpu",
-    config: FNOConfig = FNOConfig(),
+    config: FNOConfig | None = None,
 ) -> dict:
+    if config is None:
+        config = FNOConfig()
+
     torch.manual_seed(seed)
     np.random.seed(seed)
     if device == "cpu":
