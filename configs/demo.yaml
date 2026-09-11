@@ -1,0 +1,21 @@
+experiment:
+  name: synthetic-helmholtz-certificate
+  seed: 7
+physics:
+  backend: helmholtz2d
+  shape: [14, 14]
+  spacing: 0.05
+  frequencies_hz: [3.0, 4.0]
+survey:
+  n_sources: 2
+  n_receivers: 10
+surrogate:
+  type: smoothed_helmholtz
+  smoothing_sigma: 0.3
+  model_scale: 1.002
+certificate:
+  type: directional_residual
+  stability_constant: exact_svd
+  validate_against_exact: true
+repair:
+  policy: largest_uncertainty_first

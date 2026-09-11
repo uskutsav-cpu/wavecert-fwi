@@ -1,0 +1,16 @@
+name: Bug report
+description: Report a reproducible failure
+title: "[bug] "
+labels: [bug]
+body:
+  - type: textarea
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Minimal reproduction
+      description: Include config, command, traceback, Python version, and platform.
+    validations:
+      required: true

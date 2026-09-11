@@ -1,0 +1,27 @@
+# Field-scale OOD experiment blueprint. Dataset paths/checkpoints are intentionally external.
+experiment:
+  name: subsurfacegen-ood-wavecert
+  splits: [in_distribution, held_out_geology]
+physics:
+  backend: devito_or_dataset_reference
+surrogate:
+  backend: neuralop_fno
+  checkpoint: null
+certificate:
+  mode: directional
+  decompose_by: [shot, frequency]
+stress_tests:
+  - acquisition_geometry_shift
+  - source_frequency_shift
+  - held_out_geology
+  - salt_or_high_contrast_structure
+  - sparse_receiver_geometry
+metrics:
+  - forward_relative_l2
+  - gradient_relative_l2
+  - gradient_cosine
+  - true_objective_change
+  - certificate_coverage
+  - effectivity
+  - fallback_rate
+  - wall_clock

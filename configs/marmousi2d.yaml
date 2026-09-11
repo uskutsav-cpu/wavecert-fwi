@@ -1,0 +1,27 @@
+# Production experiment blueprint. Requires a Devito/JUDI adapter and a local Marmousi model.
+experiment:
+  name: marmousi2d-wavecert
+physics:
+  backend: devito_acoustic_time
+  parameterization: squared_slowness
+  space_order: 8
+  boundary: absorbing
+survey:
+  source_wavelet: ricker
+  frequencies_hz: [2.5, 3.5, 5.0, 7.0]
+  shots: 24
+  receivers: 192
+surrogate:
+  backend: neuralop_fno
+  checkpoint: null
+certificate:
+  mode: directional
+  decompose_by: [shot, frequency]
+metrics:
+  - forward_relative_l2
+  - gradient_relative_l2
+  - gradient_cosine
+  - true_objective_change
+  - certificate_coverage
+  - effectivity
+  - exact_pde_solves
