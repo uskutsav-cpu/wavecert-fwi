@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "wavecert-fwi"
-version = "0.3.0"
+version = "0.4.0"
 description = "A posteriori certification and selective exact-physics fallback for neural-surrogate full-waveform inversion"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -36,6 +36,7 @@ dev = [
 torch = ["torch>=2.3"]
 neuralop = ["torch>=2.3", "neuraloperator>=1.0"]
 devito = ["devito>=4.8"]
+data = ["h5py>=3.10", "pandas>=2.2", "pyarrow>=15"]
 
 [project.scripts]
 wavecert = "wavecert.cli:main"

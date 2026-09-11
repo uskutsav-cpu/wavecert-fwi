@@ -49,6 +49,19 @@ def build_parser() -> argparse.ArgumentParser:
     adaptive = sub.add_parser("adaptive-study", help="run Phase-6 adaptive fallback study")
     adaptive.add_argument("--cases", type=int, default=30)
     adaptive.add_argument("--seed", type=int, default=20261010)
+
+    end_to_end = sub.add_parser("end-to-end-study", help="run Phase-7 complete inversion trajectories")
+    end_to_end.add_argument("--cases", type=int, default=4)
+    end_to_end.add_argument("--iterations", type=int, default=8)
+    end_to_end.add_argument("--seed", type=int, default=20261101)
+
+    production = sub.add_parser("production-study", help="run Phase-8 production/Marmousi readiness study")
+    production.add_argument("--iterations", type=int, default=6)
+    production.add_argument("--marmousi", default=None, help="optional public Marmousi binary path")
+
+    ood = sub.add_parser("ood-study", help="run Phase-9 geology/OOD stress study")
+    ood.add_argument("--cases-per-setting", type=int, default=5)
+    ood.add_argument("--seed", type=int, default=20261120)
     return p
 
 
@@ -121,6 +134,24 @@ def main(argv: list[str] | None = None) -> int:
         from wavecert.experiments.adaptive_study import run_adaptive_study
 
         summary = run_adaptive_study(n_cases=args.cases, seed=args.seed)
+        print(json.dumps(summary, indent=2))
+        return 0
+    if args.command == "end-to-end-study":
+        from wavecert.experiments.end_to_end import run_end_to_end_study
+
+        summary = run_end_to_end_study(n_cases=args.cases, iterations=args.iterations, seed=args.seed)
+        print(json.dumps(summary, indent=2))
+        return 0
+    if args.command == "production-study":
+        from wavecert.experiments.production_study import run_production_study
+
+        summary = run_production_study(iterations=args.iterations, marmousi_path=args.marmousi)
+        print(json.dumps(summary, indent=2))
+        return 0
+    if args.command == "ood-study":
+        from wavecert.experiments.ood_study import run_ood_study
+
+        summary = run_ood_study(cases_per_setting=args.cases_per_setting, seed=args.seed)
         print(json.dumps(summary, indent=2))
         return 0
     raise AssertionError("unreachable")

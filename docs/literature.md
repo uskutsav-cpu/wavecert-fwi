@@ -102,3 +102,11 @@ post-training residual certificate for neural seismic derivative reliability
 - **Gray et al. (UAI 2025), _Guaranteed Prediction Sets for Functional Surrogate Models_.** Develops conformal prediction sets for function-valued surrogates, including neural operators.
 - **Stent & Boullé (2026), _Conformal Uncertainty Quantification Guarantees for Neural Operators_.** Recent split-conformal treatment for neural operators; reinforces the use of a held-out calibration set and explicit finite-sample coverage semantics.
 - **Qiu, Dahmen & Chen (2026), _Variationally correct operator learning: Reduced basis neural operator with a posteriori error estimation_.** Important cautionary result: residual magnitudes are only trustworthy error estimators when tied to a variationally stable norm. WaveCert's deterministic Phase-4 reference therefore uses explicit discrete operator norms rather than treating a raw residual as a certificate.
+
+## Phase 7–9 benchmark references
+
+- **Devito FWI / Dask tutorial** — production reference for saved forward wavefields, analytical adjoint gradients, squared-slowness parameterization, box constraints, and SciPy L-BFGS-B integration: https://www.devitoproject.org/examples/seismic/tutorials/04_dask.html
+- **OpenFWI (NeurIPS 2022 Datasets & Benchmarks)** — 12 public FWI datasets (~2.1 TB) spanning velocity, fault, style/interface and CO2 settings: https://proceedings.neurips.cc/paper_files/paper/2022/hash/27d3ef263c7cb8d542c4f9815a49b69b-Abstract-Datasets_and_Benchmarks.html
+- **OpenFWI official code** — canonical `.npy` batch shapes and train/test file splits: https://github.com/lanl/OpenFWI
+- **SubsurfaceGen (2026)** — 42 field-scale 3-D models, 4,276 2-D slices, wavefields and shot gathers across Penobscot, F3, Gulf of Mexico, Fault, Salt Canopy and SEAM settings, with explicit ID/OOD evaluation: https://arxiv.org/abs/2605.30541
+- **SubsurfaceGen field-scale dataset** — HDF5 key/shape and split conventions: https://huggingface.co/datasets/subsurfacegen/field-scale-dataset

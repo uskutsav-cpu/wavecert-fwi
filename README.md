@@ -356,3 +356,28 @@ The major open problems are:
 ## License
 
 MIT. See [`LICENSE`](LICENSE).
+
+## Phase 7–9 milestone
+
+WaveCert now includes full inversion trajectories and external-benchmark adapters.
+
+- **Phase 7:** exact, neural-only, global-fallback, and selective WaveCert are run for complete multi-iteration FWI trajectories. In the checked-in four-case/eight-iteration study, selective WaveCert used 35.9% fewer exact gradient blocks than exact FWI while reducing mean model error by 15.4% from the starting models.
+- **Phase 8:** the Devito production adapter, public compact Marmousi loader, download script, and production-readiness study are implemented. The current repository result is deliberately marked as a Marmousi-inspired proxy because Devito and the public binary were unavailable in the offline execution environment.
+- **Phase 9:** official-format adapters are provided for OpenFWI NumPy batches and SubsurfaceGen HDF5 velocity/wavefield/gather files. Six named procedural geology proxies provide an offline distribution-shift stress test. Under severe shift, the 90% in-distribution conformal gate achieved only 80% observed descent safety, while the deterministic bound reverted to full exact fallback and maintained 100% observed safety.
+
+See [`docs/phase7_9_report.md`](docs/phase7_9_report.md) for the exact claims and limitations.
+
+### New commands
+
+```bash
+wavecert end-to-end-study --cases 4 --iterations 8
+wavecert production-study --iterations 6
+wavecert production-study --marmousi data/external/marmousi/mar_big_117_567.bin
+wavecert ood-study --cases-per-setting 5
+```
+
+To fetch the compact public Marmousi model on a networked machine:
+
+```bash
+bash scripts/download_marmousi_public.sh
+```

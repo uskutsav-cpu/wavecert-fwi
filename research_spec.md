@@ -242,3 +242,17 @@ Primary metrics:
 - fraction of blocks repaired.
 
 Phase 6 is directional certification only. Finite-step line search and end-to-end inversion are deferred to Phase 7.
+
+## Phase 7–9 extension
+
+### Phase 7: end-to-end inversion criterion
+
+The single-direction studies are extended to complete trajectories. Every policy must report the true reference objective, model error, accepted step sizes, exact-gradient block count, and wall-clock. True reference objectives used only for manuscript evaluation are excluded from the online policy budget and recorded separately.
+
+### Phase 8: production-physics criterion
+
+The codebase must expose a Devito-compatible time-domain path and a provenance-preserving Marmousi loader. If Devito or public data are unavailable in the execution environment, the repository must mark the external run as pending and must not rename a synthetic proxy as Marmousi.
+
+### Phase 9: distribution-shift criterion
+
+External benchmark adapters must match the released OpenFWI and SubsurfaceGen formats. Offline proxy stress tests may be used for CI, but must be labelled as proxies. Split-conformal guarantees are interpreted only under exchangeability; under severe OOD shift, deterministic fallback is the safety reference.

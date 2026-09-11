@@ -1,0 +1,52 @@
+{
+  "benchmark_source": "marmousi-inspired-proxy",
+  "public_marmousi_executed": false,
+  "velocity_range": [
+    1.6,
+    2.679986100056609
+  ],
+  "devito_environment": {
+    "devito_installed": false,
+    "devito_seismic_examples_available": false,
+    "python": "3.13.5",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "reference_config": {
+      "spacing": [
+        10.0,
+        10.0
+      ],
+      "origin": [
+        0.0,
+        0.0
+      ],
+      "nbl": 40,
+      "t0": 0.0,
+      "tn": 1000.0,
+      "f0": 0.01,
+      "space_order": 4
+    },
+    "executable": false
+  },
+  "production_backend_status": "adapter-ready-runtime-unavailable",
+  "reference_backend_benchmark": {
+    "iterations": 6,
+    "exact_final_model_relative_l2": 0.05415094514667065,
+    "selective_final_model_relative_l2": 0.061755030562855355,
+    "exact_gradient_blocks": 24,
+    "selective_exact_gradient_blocks": 21,
+    "selective_block_saving_fraction": 0.125
+  },
+  "external_requirements": {
+    "devito_command": "python -m pip install -e '.[devito]'",
+    "marmousi_download_script": "scripts/download_marmousi_public.sh",
+    "note": "Devito and the public binary cannot be fetched in the current offline container; the code path is prepared but those external runs are not fabricated."
+  },
+  "exit_criteria": {
+    "marmousi_loader_implemented": true,
+    "production_devito_adapter_implemented": true,
+    "offline_benchmark_path_executed": true,
+    "external_runtime_limitation_reported": true
+  },
+  "passed_code_readiness": true,
+  "passed_full_external_validation": false
+}
