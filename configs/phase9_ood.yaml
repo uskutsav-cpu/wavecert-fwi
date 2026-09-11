@@ -1,0 +1,16 @@
+phase: 9
+cases_per_setting: 5
+seed: 20261120
+settings:
+  - penobscot
+  - f3
+  - gom
+  - fault
+  - salt_canopy
+  - seam
+policies:
+  - conformal-selective
+  - deterministic-selective
+note: >
+  Checked-in results use procedural proxies for offline stress testing. They are
+  not SubsurfaceGen samples; real public dataset runs remain external.

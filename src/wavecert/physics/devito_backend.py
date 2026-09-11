@@ -122,3 +122,52 @@ class DevitoAcousticFWI:
         else:
             cropped = np.array(grad.data[:], dtype=np.float64, copy=True)
         return fval, cropped
+
+    def squared_slowness_loss(self, x: np.ndarray, observed: Any) -> tuple[float, np.ndarray]:
+        """SciPy-compatible loss in squared-slowness parameterization.
+
+        This mirrors the public Devito/Dask FWI tutorial: ``x`` is flattened
+        squared slowness, it is converted to velocity, the analytical FWI
+        gradient is evaluated, and a float64 flattened gradient is returned.
+        """
+
+        x = np.asarray(x, dtype=np.float64).reshape(self.model.shape)
+        if np.any(x <= 0.0):
+            raise ValueError("squared slowness must be strictly positive")
+        velocity = 1.0 / np.sqrt(x)
+        self.update_velocity(velocity)
+        value, gradient = self.objective_and_gradient(observed)
+        return float(value), np.asarray(gradient, dtype=np.float64).reshape(-1)
+
+    def run_lbfgsb(
+        self,
+        observed: Any,
+        *,
+        maxiter: int = 5,
+        vmin: float = 1.4,
+        vmax: float = 4.0,
+        ftol: float = 0.1,
+    ) -> Any:
+        """Run a small L-BFGS-B FWI solve using the analytical gradient.
+
+        The wrapper is intentionally thin and follows Devito's public tutorial
+        rather than embedding a second optimizer implementation in WaveCert.
+        """
+
+        from scipy import optimize
+
+        vp = np.asarray(self.model.vp.data, dtype=np.float64)
+        nbl = int(self.model.nbl)
+        if nbl > 0:
+            vp = vp[nbl:-nbl, nbl:-nbl]
+        x0 = 1.0 / np.maximum(vp.reshape(-1), 1e-12) ** 2
+        bounds = [(1.0 / vmax**2, 1.0 / vmin**2) for _ in range(x0.size)]
+        return optimize.minimize(
+            self.squared_slowness_loss,
+            x0,
+            args=(observed,),
+            method="L-BFGS-B",
+            jac=True,
+            bounds=bounds,
+            options={"ftol": ftol, "maxiter": maxiter},
+        )

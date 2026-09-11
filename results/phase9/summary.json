@@ -1,0 +1,97 @@
+{
+  "seed": 20261120,
+  "cases_per_setting": 5,
+  "settings": [
+    "penobscot",
+    "f3",
+    "gom",
+    "fault",
+    "salt_canopy",
+    "seam"
+  ],
+  "benchmark_semantics": "offline procedural proxies named after SubsurfaceGen geological settings; not field-scale SubsurfaceGen samples",
+  "real_dataset_adapters": {
+    "openfwi": "supports official NumPy velocity batches (N,1,70,70) and seismic arrays",
+    "subsurfacegen": "supports HDF5 velocity/wavefield/shot_gather_cube keys matching the 2026 release"
+  },
+  "per_setting": {
+    "penobscot": {
+      "n_cases": 5,
+      "receiver_relative_l2_mean": 0.5071617365081689,
+      "gradient_relative_l2_mean": 3.9727891201766257,
+      "gradient_cosine_mean": -0.12818546373331263,
+      "mean_exact_blocks": 2.4,
+      "conformal_true_descent_rate": 0.8,
+      "rigorous_mean_exact_blocks": 4.0,
+      "rigorous_true_descent_rate": 1.0
+    },
+    "f3": {
+      "n_cases": 5,
+      "receiver_relative_l2_mean": 0.5723872109618531,
+      "gradient_relative_l2_mean": 6.026149904937322,
+      "gradient_cosine_mean": -0.05746547522770349,
+      "mean_exact_blocks": 1.6,
+      "conformal_true_descent_rate": 0.6,
+      "rigorous_mean_exact_blocks": 4.0,
+      "rigorous_true_descent_rate": 1.0
+    },
+    "gom": {
+      "n_cases": 5,
+      "receiver_relative_l2_mean": 0.4674570728916014,
+      "gradient_relative_l2_mean": 2.2336872515371646,
+      "gradient_cosine_mean": -0.09819862032880725,
+      "mean_exact_blocks": 2.4,
+      "conformal_true_descent_rate": 0.8,
+      "rigorous_mean_exact_blocks": 4.0,
+      "rigorous_true_descent_rate": 1.0
+    },
+    "fault": {
+      "n_cases": 5,
+      "receiver_relative_l2_mean": 0.3115564396622733,
+      "gradient_relative_l2_mean": 1.8395507117686307,
+      "gradient_cosine_mean": 0.12475701659843921,
+      "mean_exact_blocks": 2.0,
+      "conformal_true_descent_rate": 0.8,
+      "rigorous_mean_exact_blocks": 4.0,
+      "rigorous_true_descent_rate": 1.0
+    },
+    "salt_canopy": {
+      "n_cases": 5,
+      "receiver_relative_l2_mean": 0.5064101883601619,
+      "gradient_relative_l2_mean": 3.978224841139466,
+      "gradient_cosine_mean": 0.10108509495053002,
+      "mean_exact_blocks": 1.8,
+      "conformal_true_descent_rate": 0.8,
+      "rigorous_mean_exact_blocks": 4.0,
+      "rigorous_true_descent_rate": 1.0
+    },
+    "seam": {
+      "n_cases": 5,
+      "receiver_relative_l2_mean": 0.5595947728149443,
+      "gradient_relative_l2_mean": 1.9696347367797962,
+      "gradient_cosine_mean": -0.06035236624387663,
+      "mean_exact_blocks": 2.4,
+      "conformal_true_descent_rate": 1.0,
+      "rigorous_mean_exact_blocks": 4.0,
+      "rigorous_true_descent_rate": 1.0
+    }
+  },
+  "overall": {
+    "mean_receiver_relative_l2": 0.4874279035331672,
+    "mean_gradient_relative_l2": 3.336672761056501,
+    "mean_gradient_cosine": -0.019726635664121795,
+    "mean_exact_blocks": 2.1,
+    "conformal_true_descent_rate": 0.8,
+    "rigorous_mean_exact_blocks": 4.0,
+    "rigorous_true_descent_rate": 1.0
+  },
+  "exit_criteria": {
+    "all_six_setting_proxies_executed": true,
+    "openfwi_adapter_implemented": true,
+    "subsurfacegen_adapter_implemented": true,
+    "certificate_demand_reported_by_setting": true,
+    "rigorous_fallback_safety_reported_under_shift": true,
+    "real_external_dataset_run_pending": true
+  },
+  "passed_offline_stress_test": true
+}

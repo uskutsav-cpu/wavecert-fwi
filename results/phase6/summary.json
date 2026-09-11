@@ -1,0 +1,74 @@
+{
+  "seed": 20261010,
+  "n_cases": 30,
+  "blocks_per_case": 4,
+  "statistical_certificate": {
+    "case_scale": 0.0002601748027067577,
+    "block_scales_by_label": {
+      "s36_f3": 0.000847009658645884,
+      "s36_f4": 0.00043838399502387436,
+      "s43_f3": 0.0006037517140410885,
+      "s43_f4": 0.0004320849707792352
+    },
+    "coverage_semantics": "split-conformal marginal coverage under exchangeability; not deterministic PDE certification"
+  },
+  "policies": {
+    "neural-only": {
+      "true_descent_rate": 0.7666666666666667,
+      "certified_rate": 0.0,
+      "mean_exact_blocks": 0.0,
+      "median_exact_blocks": 0.0,
+      "mean_exact_block_fraction": 0.0,
+      "mean_cosine_to_exact_direction": 0.3091859458770295,
+      "mode_counts": {
+        "unverified": 30
+      }
+    },
+    "conformal-global": {
+      "true_descent_rate": 0.9666666666666667,
+      "certified_rate": 1.0,
+      "mean_exact_blocks": 3.066666666666667,
+      "median_exact_blocks": 4.0,
+      "mean_exact_block_fraction": 0.7666666666666667,
+      "mean_cosine_to_exact_direction": 0.8670323500079717,
+      "mode_counts": {
+        "exact-fallback": 23,
+        "neural": 7
+      }
+    },
+    "conformal-selective": {
+      "true_descent_rate": 1.0,
+      "certified_rate": 1.0,
+      "mean_exact_blocks": 2.9,
+      "median_exact_blocks": 3.0,
+      "mean_exact_block_fraction": 0.725,
+      "mean_cosine_to_exact_direction": 0.8813655676344447,
+      "mode_counts": {
+        "exact-fallback": 3,
+        "selective-repair": 27
+      }
+    },
+    "exact": {
+      "true_descent_rate": 1.0,
+      "certified_rate": 1.0,
+      "mean_exact_blocks": 4.0,
+      "median_exact_blocks": 4.0,
+      "mean_exact_block_fraction": 1.0,
+      "mean_cosine_to_exact_direction": 1.0,
+      "mode_counts": {
+        "exact": 30
+      }
+    }
+  },
+  "savings": {
+    "selective_exact_block_reduction_vs_exact": 0.275,
+    "selective_exact_block_reduction_vs_global_fallback": 0.05434782608695665
+  },
+  "exit_criteria": {
+    "conformal_selective_empirical_safety_at_least_90pct": true,
+    "conformal_global_empirical_safety_at_least_90pct": true,
+    "exact_baseline_safe": true,
+    "policy_costs_reported": true
+  },
+  "passed": true
+}

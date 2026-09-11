@@ -1,0 +1,57 @@
+{
+  "seed": 20261101,
+  "n_cases": 4,
+  "iterations": 8,
+  "blocks_per_iteration": 4,
+  "validation_cost_semantics": "true objectives are computed offline for every recorded iterate and are excluded from policy exact-gradient-block budgets",
+  "step_policy": "normalised descent direction with backtracking on each policy's own merit objective; true PDE objective is not used to choose neural/WaveCert steps",
+  "policies": {
+    "neural-only": {
+      "initial_model_relative_l2_mean": 0.050904572988568604,
+      "final_model_relative_l2_mean": 0.04988747909490223,
+      "model_error_reduction_fraction_mean": 0.009665094073140645,
+      "true_objective_reduction_fraction_mean": 0.7567190572927927,
+      "mean_exact_gradient_blocks": 0.0,
+      "mean_algorithm_seconds": 0.40250960599928476,
+      "accepted_step_fraction_mean": 1.0
+    },
+    "conformal-global": {
+      "initial_model_relative_l2_mean": 0.050904572988568604,
+      "final_model_relative_l2_mean": 0.04327666432102657,
+      "model_error_reduction_fraction_mean": 0.150168908568522,
+      "true_objective_reduction_fraction_mean": 0.7189188404576545,
+      "mean_exact_gradient_blocks": 24.0,
+      "mean_algorithm_seconds": 2.0852472527496957,
+      "accepted_step_fraction_mean": 0.59375
+    },
+    "conformal-selective": {
+      "initial_model_relative_l2_mean": 0.050904572988568604,
+      "final_model_relative_l2_mean": 0.043156781691040265,
+      "model_error_reduction_fraction_mean": 0.15391337752516396,
+      "true_objective_reduction_fraction_mean": 0.8741357805521774,
+      "mean_exact_gradient_blocks": 20.5,
+      "mean_algorithm_seconds": 2.540163961749613,
+      "accepted_step_fraction_mean": 0.6875
+    },
+    "exact": {
+      "initial_model_relative_l2_mean": 0.050904572988568604,
+      "final_model_relative_l2_mean": 0.04043342230085972,
+      "model_error_reduction_fraction_mean": 0.2075047603253724,
+      "true_objective_reduction_fraction_mean": 0.9423661836981921,
+      "mean_exact_gradient_blocks": 32.0,
+      "mean_algorithm_seconds": 0.05743231974952323,
+      "accepted_step_fraction_mean": 1.0
+    }
+  },
+  "savings": {
+    "selective_exact_gradient_block_reduction_vs_exact": 0.359375
+  },
+  "exit_criteria": {
+    "all_four_policies_completed": true,
+    "full_trajectories_saved": true,
+    "exact_objective_reported_each_iteration": true,
+    "policy_costs_reported": true,
+    "selective_uses_fewer_exact_blocks_than_exact": true
+  },
+  "passed": true
+}

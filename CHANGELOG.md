@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.4.0 — Phase 7–9 trajectories, production readiness, and OOD stress tests
+
+- added complete multi-iteration FWI trajectories for exact, neural-only, global-fallback, and selective WaveCert policies;
+- separated offline true-objective validation cost from online policy compute budgets;
+- demonstrated 35.9% fewer exact gradient blocks for selective WaveCert than exact FWI over the Phase-7 trajectories;
+- added production environment reporting for the optional Devito time-domain backend;
+- added a public compact Marmousi binary loader and download helper without silently substituting proxy data;
+- added official-format OpenFWI NumPy and SubsurfaceGen HDF5 data adapters;
+- added six explicitly labelled geology stress-test proxies for offline OOD testing;
+- demonstrated that the in-distribution conformal calibration loses safety under severe geology shift while the deterministic certificate falls back to exact physics;
+- added Phase-7/8/9 scripts, CLI commands, tests, figures, JSON/CSV outputs, and a research report.
+
 ## 0.2.0 — Phase 0–3 learned-surrogate milestone
 
 - froze the research question, hypotheses, metrics, splits, and exit criteria in `research_spec.md`;

@@ -1,0 +1,16 @@
+phase: 7
+cases: 4
+iterations: 8
+seed: 20261101
+policies:
+  - neural-only
+  - conformal-global
+  - conformal-selective
+  - exact
+blocks_per_iteration: 4
+step:
+  initial: 0.02
+  backtracking_trials: 8
+validation:
+  true_objective_each_iteration: true
+  exclude_validation_from_policy_budget: true
