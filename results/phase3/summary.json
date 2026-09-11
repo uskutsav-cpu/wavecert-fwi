@@ -1,0 +1,48 @@
+{
+  "seed": 20260930,
+  "n_cases": 80,
+  "blocks_per_case": 4,
+  "sources": [
+    36,
+    43
+  ],
+  "frequencies_hz": [
+    3.0,
+    4.0
+  ],
+  "preregistered_failure_rule": {
+    "receiver_relative_l2_le": 0.15,
+    "gradient_relative_l2_ge": 0.5,
+    "or_gradient_cosine_le": 0.9
+  },
+  "forward": {
+    "receiver_relative_l2_median": 0.16508346137020913,
+    "receiver_relative_l2_p90": 0.2648642835482453,
+    "wavefield_relative_l2_median": 0.19497336417140507
+  },
+  "gradient": {
+    "relative_l2_median": 1.7072104724570394,
+    "relative_l2_p90": 3.8460839410242924,
+    "cosine_median": 0.34361616212227597,
+    "cosine_p10": -0.2590425696991522
+  },
+  "correlations": {
+    "receiver_error_vs_gradient_error_pearson_r": 0.5031374684857408,
+    "receiver_error_vs_gradient_error_pearson_p": 1.968765589734744e-06,
+    "receiver_error_vs_gradient_error_spearman_rho": 0.4525082044069387,
+    "receiver_error_vs_gradient_error_spearman_p": 2.507231601456685e-05,
+    "receiver_error_vs_gradient_cosine_pearson_r": -0.328018863547868,
+    "receiver_error_vs_gradient_cosine_pearson_p": 0.0029744551854035198,
+    "receiver_error_vs_gradient_cosine_spearman_rho": -0.3238396624472574,
+    "receiver_error_vs_gradient_cosine_spearman_p": 0.0033860592689216274
+  },
+  "failure_cases": 31,
+  "failure_fraction": 0.3875,
+  "exit_criteria": {
+    "at_least_50_cases": true,
+    "scatter_data_saved": true,
+    "preregistered_failure_found_or_null_reported": true,
+    "correlations_reported": true
+  },
+  "passed": true
+}

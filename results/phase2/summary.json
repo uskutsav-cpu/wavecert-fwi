@@ -1,0 +1,64 @@
+{
+  "seed": 20260910,
+  "shape": [
+    16,
+    16
+  ],
+  "data": {
+    "n_train": 256,
+    "n_val": 48,
+    "n_test": 80
+  },
+  "model_config": {
+    "modes_z": 5,
+    "modes_x": 5,
+    "width": 20,
+    "depth": 3,
+    "padding": 2
+  },
+  "normalization": {
+    "model_mean": 0.2244136482477188,
+    "model_std": 0.02578401193022728,
+    "frequency_mean": 3.25390625,
+    "frequency_std": 0.5779005885124207,
+    "output_mean_real": -0.017963994294404984,
+    "output_std_real": 0.19134491682052612,
+    "output_mean_imag": -0.014280974864959717,
+    "output_std_imag": 0.15591557323932648
+  },
+  "best_epoch": 24,
+  "best_validation_normalized_mse": 0.06934093683958054,
+  "test": {
+    "wavefield_relative_l2_median": 0.2160947620868683,
+    "wavefield_relative_l2_mean": 0.23018403351306915,
+    "wavefield_relative_l2_p90": 0.3370794355869293,
+    "receiver_relative_l2_median": 0.13692530989646912,
+    "receiver_relative_l2_mean": 0.1567991077899933,
+    "receiver_relative_l2_p90": 0.2873055338859558,
+    "mse": 0.001961084781214595
+  },
+  "timing": {
+    "batch_size": 64,
+    "neural_batch_seconds": 0.015237175600000796,
+    "exact_batch_seconds": 0.037443112000005385,
+    "neural_seconds_per_sample": 0.00023808086875001244,
+    "exact_seconds_per_sample": 0.0005850486250000841,
+    "throughput_speedup_exact_over_neural": 2.457352529297059
+  },
+  "exit_criteria": {
+    "real_trainable_neural_operator": true,
+    "validation_selected_checkpoint": true,
+    "median_receiver_relative_l2_le_0_20": true,
+    "finite_autodiff_gradient": true
+  },
+  "autodiff_validation": {
+    "objective": 0.5108766555786133,
+    "gradient_norm": 2.125206545257319,
+    "gradient_all_finite": true,
+    "autodiff_directional": -0.0296802076659314,
+    "finite_difference_directional": -0.02968311309814453,
+    "surrogate_gradient_fd_relative_error": 9.788165424308033e-05,
+    "passed": true
+  },
+  "passed": true
+}

@@ -8,6 +8,17 @@ WaveCert-FWI is a research codebase for a specific failure mode in scientific ma
 
 The project asks whether a cheap, post-training certificate can decide—*at each inversion step, shot, or frequency block*—whether a neural gradient is safe to trust, and invoke exact wave physics only where needed.
 
+## Phase 0–3 milestone: completed proof-of-concept
+
+The repository now includes an end-to-end learned-surrogate validation milestone, not only the original hand-designed low-fidelity demo:
+
+- **Phase 0:** frozen research specification in [`research_spec.md`](research_spec.md); external mentor sign-off remains pending and is not claimed.
+- **Phase 1:** exact Helmholtz JVP/VJP duality error **3.94e-15**, finite-difference gradient error **3.63e-08**, minimum Taylor slope **1.99946**.
+- **Phase 2:** a real forward-only FNO trained on exact wavefields reaches **13.69% median receiver error**, **21.61% median full-wavefield error**, and **2.46x batched CPU throughput** relative to repeated sparse solves on the tiny reference grid. Its own autodiff gradient passes a finite-difference check at **9.79e-05** relative error.
+- **Phase 3:** across **80 held-out inversion states**, the exact-vs-FNO gradient has median relative L2 error **1.707** and median cosine **0.344**. **31/80 (38.75%)** satisfy the pre-registered failure condition: receiver forward error <=15% but gradient relative error >=50% or gradient cosine <=0.90.
+
+The result supports the specific motivation for WaveCert: **low forward error does not guarantee a trustworthy FWI gradient.** See [`docs/phase0_3_report.md`](docs/phase0_3_report.md) and the machine-readable outputs under `results/phase1`, `results/phase2`, and `results/phase3`.
+
 ---
 
 ## Research question
@@ -165,6 +176,12 @@ pip install -e '.[dev]'
 
 pytest
 wavecert demo --output results/demo
+
+# Learned-surrogate Phase 2/3 workflow
+pip install -e '.[dev,torch]'
+wavecert train-fno --epochs 25 --train 256 --val 48 --test 80 --shape 16
+PYTHONPATH=src python scripts/run_phase2_validate.py
+wavecert failure-study --cases 80
 ```
 
 Or without installation:
@@ -236,9 +253,10 @@ The architecture is designed around two replaceable interfaces:
    - planned: Devito acoustic time-domain FWI / JUDI-scale workflows.
 
 2. **Wavefield surrogate**
-   - current: controlled smoothed-physics surrogate for mathematical validation;
-   - included adapter: arbitrary differentiable PyTorch model via `torch.func.jvp`;
-   - planned: FNO/TFNO models from the official `neuraloperator` package.
+   - current validation baseline: controlled smoothed-physics surrogate;
+   - current learned baseline: an in-repo differentiable forward-only FNO with saved Phase-2 checkpoint;
+   - included generic adapter: arbitrary differentiable PyTorch model via `torch.func.jvp`;
+   - later production comparison: maintained FNO/TFNO implementations from the official `neuraloperator` ecosystem.
 
 No certificate code needs to know the internal surrogate architecture.
 

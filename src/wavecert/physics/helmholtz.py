@@ -134,7 +134,10 @@ class Helmholtz2D:
     def inject_receivers(self, r: Array, receiver_indices: Iterable[int]) -> Array:
         idx = np.asarray(tuple(receiver_indices), dtype=int)
         rhs = np.zeros(self.n, dtype=np.complex128)
-        rhs[idx] = np.asarray(r, dtype=np.complex128)
+        # ``restrict`` may contain repeated receiver indices on very small
+        # validation grids.  The true adjoint of repeated sampling must
+        # accumulate those contributions rather than overwrite them.
+        np.add.at(rhs, idx, np.asarray(r, dtype=np.complex128))
         return rhs
 
     def objective_and_gradient(
@@ -170,6 +173,48 @@ class Helmholtz2D:
         du = self.solve_tangent(m, u, direction, frequency_hz)
         r = self.restrict(u, receiver_indices) - np.asarray(observed)
         return float(np.real(np.vdot(r, self.restrict(du, receiver_indices))))
+
+    def data_jvp(
+        self,
+        m: Array,
+        q: Array,
+        receiver_indices: Iterable[int],
+        frequency_hz: float,
+        direction: Array,
+    ) -> Array:
+        """Apply the parameter-to-data Jacobian to a real model direction."""
+
+        u = self.solve_state(m, q, frequency_hz)
+        du = self.solve_tangent(m, u, direction, frequency_hz)
+        return self.restrict(du, receiver_indices)
+
+    def data_vjp(
+        self,
+        m: Array,
+        q: Array,
+        receiver_indices: Iterable[int],
+        frequency_hz: float,
+        data_dual: Array,
+    ) -> Array:
+        """Apply the real adjoint of the parameter-to-data Jacobian.
+
+        For complex receiver data ``y``, this returns the real model-space
+        gradient ``g`` satisfying
+
+            dot(g, v) = Re <y, J v>
+
+        for every real model direction ``v``.
+        """
+
+        m = self.validate_model(m)
+        u = self.solve_state(m, q, frequency_hz)
+        rhs_adj = self.inject_receivers(data_dual, receiver_indices)
+        a = self.operator(m, frequency_hz)
+        lam = np.asarray(
+            spla.spsolve(a.conjugate().transpose(), rhs_adj), dtype=np.complex128
+        )
+        omega = 2.0 * np.pi * float(frequency_hz)
+        return (omega**2) * np.real(np.conjugate(lam) * u)
 
     def smallest_singular_value(self, m: Array, frequency_hz: float) -> float:
         """Return the numerical 2-norm stability constant β = σ_min(A).
