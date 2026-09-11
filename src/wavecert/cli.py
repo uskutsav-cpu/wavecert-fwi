@@ -38,6 +38,17 @@ def build_parser() -> argparse.ArgumentParser:
     failure = sub.add_parser("failure-study", help="run held-out forward-vs-gradient study")
     failure.add_argument("--cases", type=int, default=80)
     failure.add_argument("--seed", type=int, default=20260930)
+
+    cert = sub.add_parser("certificate-study", help="run the Phase-4 deterministic certificate study")
+    cert.add_argument("--cases", type=int, default=80)
+    cert.add_argument("--seed", type=int, default=20260930)
+
+    cal = sub.add_parser("calibrate-certificate", help="run Phase-5 split-conformal calibration")
+    cal.add_argument("--alpha", type=float, default=0.10)
+
+    adaptive = sub.add_parser("adaptive-study", help="run Phase-6 adaptive fallback study")
+    adaptive.add_argument("--cases", type=int, default=30)
+    adaptive.add_argument("--seed", type=int, default=20261010)
     return p
 
 
@@ -92,6 +103,24 @@ def main(argv: list[str] | None = None) -> int:
         from wavecert.experiments.failure_study import run_failure_study
 
         summary = run_failure_study(n_cases=args.cases, seed=args.seed)
+        print(json.dumps(summary, indent=2))
+        return 0
+    if args.command == "certificate-study":
+        from wavecert.experiments.certificate_study import run_certificate_study
+
+        summary = run_certificate_study(n_cases=args.cases, seed=args.seed)
+        print(json.dumps(summary, indent=2))
+        return 0
+    if args.command == "calibrate-certificate":
+        from wavecert.experiments.certificate_calibration import run_certificate_calibration
+
+        summary = run_certificate_calibration(alpha=args.alpha)
+        print(json.dumps(summary, indent=2))
+        return 0
+    if args.command == "adaptive-study":
+        from wavecert.experiments.adaptive_study import run_adaptive_study
+
+        summary = run_adaptive_study(n_cases=args.cases, seed=args.seed)
         print(json.dumps(summary, indent=2))
         return 0
     raise AssertionError("unreachable")

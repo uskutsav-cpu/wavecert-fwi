@@ -94,3 +94,11 @@ WaveCert-FWI:
 post-training residual certificate for neural seismic derivative reliability
 + shot/frequency selective exact-physics verification
 ```
+
+## Calibration and uncertainty quantification added for Phase 5
+
+- **Ma, Azizzadenesheli & Anandkumar (2024), _Calibrated Uncertainty Quantification for Operator Learning via Conformal Prediction_.** Establishes finite-sample conformal calibration ideas specifically for operator-learning outputs.
+- **Gopakumar et al. (ICML 2025), _Calibrated Physics-Informed Uncertainty Quantification_.** Uses physics residual information inside a conformal UQ framework and is particularly relevant to WaveCert's decision to distinguish residual-based physics information from statistical calibration.
+- **Gray et al. (UAI 2025), _Guaranteed Prediction Sets for Functional Surrogate Models_.** Develops conformal prediction sets for function-valued surrogates, including neural operators.
+- **Stent & Boullé (2026), _Conformal Uncertainty Quantification Guarantees for Neural Operators_.** Recent split-conformal treatment for neural operators; reinforces the use of a held-out calibration set and explicit finite-sample coverage semantics.
+- **Qiu, Dahmen & Chen (2026), _Variationally correct operator learning: Reduced basis neural operator with a posteriori error estimation_.** Important cautionary result: residual magnitudes are only trustworthy error estimators when tied to a variationally stable norm. WaveCert's deterministic Phase-4 reference therefore uses explicit discrete operator norms rather than treating a raw residual as a certificate.

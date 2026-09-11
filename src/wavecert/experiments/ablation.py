@@ -83,7 +83,7 @@ def run_surrogate_quality_ablation(output_dir: str | Path = "results/ablation") 
             )
             certs.append(cert)
 
-            def exact_eval(block=block, q=q):
+            def exact_eval(block=block, q=q, direction=direction):
                 return physics.directional_derivative(
                     problem.m0,
                     q,

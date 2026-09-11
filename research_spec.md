@@ -190,3 +190,55 @@ These are later phases, not prerequisites for establishing the learned-derivativ
 - **Research specification / implementation review:** completed in-repo on 2026-09-10.
 - **User/lead researcher:** Utsav Sunil Kumar — pending explicit acknowledgement in project history.
 - **External seismic mentor:** pending review; no mentor approval is claimed in this repository.
+
+---
+
+## 13. Phase 4–6 extension — Frozen v0.3
+
+This extension does not alter the Phase-0–3 thresholds above.
+
+### Phase 4 — deterministic reference certificate
+
+Primary object: a directional-derivative upper bound based on primal/tangent residuals and receiver-aware discrete stability constants.
+
+Exit criteria:
+
+- evaluate at least 50 held-out Phase-3-distribution states;
+- realized directional error is below the deterministic direction-aware bound on every reference-grid case up to numerical tolerance;
+- zero false descent certifications;
+- save case-level and block-level machine-readable tables;
+- report effectivity even if the result is too conservative to be useful.
+
+### Phase 5 — calibration
+
+The deterministic bound may not be shrunk and still called rigorous. Practical calibration is therefore a separate statistical layer.
+
+Locked split-conformal policy:
+
+- use a disjoint calibration/evaluation split by case ID;
+- use the deterministic directional bound as the positive base score;
+- report a 90% marginal operating point and a 95% sensitivity operating point;
+- label all conformal claims as exchangeability-dependent statistical coverage, not deterministic PDE certification;
+- calibrate source/frequency labels separately for selective repair.
+
+### Phase 6 — adaptive fallback
+
+Evaluate on a new random seed not used in Phase 4/5.
+
+Policies:
+
+1. neural-only direction;
+2. case-level conformal global fallback;
+3. blockwise conformal selective repair;
+4. exact-gradient direction.
+
+For selective repair, changing any exact/neural block contribution changes the hybrid gradient direction. All remaining directional certificates must therefore be recomputed after every repair.
+
+Primary metrics:
+
+- true-descent rate under offline exact validation;
+- exact source/frequency block-gradient evaluations;
+- cosine to the exact-gradient descent direction;
+- fraction of blocks repaired.
+
+Phase 6 is directional certification only. Finite-step line search and end-to-end inversion are deferred to Phase 7.

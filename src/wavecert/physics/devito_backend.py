@@ -41,8 +41,11 @@ class DevitoAcousticFWI:
         *,
         source_coordinates: np.ndarray,
         receiver_coordinates: np.ndarray,
-        config: DevitoAcousticConfig = DevitoAcousticConfig(),
+        config: DevitoAcousticConfig | None = None,
     ) -> None:
+        if config is None:
+            config = DevitoAcousticConfig()
+
         try:
             from examples.seismic import AcquisitionGeometry, Model
             from examples.seismic.acoustic import AcousticWaveSolver

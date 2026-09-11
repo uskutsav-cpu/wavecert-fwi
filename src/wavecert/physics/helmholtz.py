@@ -1,8 +1,8 @@
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass
 from functools import cached_property
-from typing import Iterable
 
 import numpy as np
 import scipy.sparse as sp
@@ -28,7 +28,7 @@ class SurveyGeometry:
         source_depth: int = 2,
         receiver_depth: int = 2,
         margin: int = 2,
-    ) -> "SurveyGeometry":
+    ) -> SurveyGeometry:
         nz, nx = shape
         xs_src = np.linspace(margin, nx - margin - 1, n_sources).round().astype(int)
         xs_rec = np.linspace(margin, nx - margin - 1, n_receivers).round().astype(int)
@@ -215,6 +215,119 @@ class Helmholtz2D:
         )
         omega = 2.0 * np.pi * float(frequency_hz)
         return (omega**2) * np.real(np.conjugate(lam) * u)
+
+
+    def inverse_operator_dense(self, m: Array, frequency_hz: float) -> Array:
+        """Dense inverse of the discrete Helmholtz operator for reference certificates.
+
+        This is intentionally a *small-problem validation* utility. Production
+        WaveCert runs must replace it with scalable certified stability bounds.
+        """
+
+        a = self.operator(m, frequency_hz).toarray()
+        return np.linalg.inv(a)
+
+    @staticmethod
+    def receiver_sampling_norm(receiver_indices: Iterable[int]) -> float:
+        """Exact 2-norm of point sampling, including repeated receiver indices."""
+
+        idx = np.asarray(tuple(receiver_indices), dtype=int)
+        if idx.size == 0:
+            return 0.0
+        _, counts = np.unique(idx, return_counts=True)
+        return float(np.sqrt(np.max(counts)))
+
+    def receiver_resolvent_matrix(
+        self,
+        m: Array,
+        frequency_hz: float,
+        receiver_indices: Iterable[int],
+        *,
+        inverse_operator: Array | None = None,
+    ) -> Array:
+        r"""Return the dense *receiver* resolvent ``P A^{-1}``.
+
+        When a full inverse is not supplied, this is formed efficiently from a
+        sparse factorization of ``A^H`` with one right-hand side per receiver.
+        It therefore avoids constructing the full dense inverse.
+        """
+
+        idx = np.asarray(tuple(receiver_indices), dtype=int)
+        if inverse_operator is not None:
+            return np.asarray(inverse_operator)[idx, :]
+        if idx.size == 0:
+            return np.zeros((0, self.n), dtype=np.complex128)
+        a_h = self.operator(m, frequency_hz).conjugate().transpose().tocsc()
+        lu_h = spla.splu(a_h)
+        rhs = np.zeros((self.n, idx.size), dtype=np.complex128)
+        for j, i in enumerate(idx):
+            rhs[i, j] += 1.0
+        x = lu_h.solve(rhs)
+        return np.asarray(x.conjugate().transpose(), dtype=np.complex128)
+
+    def receiver_resolvent_norm(
+        self,
+        m: Array,
+        frequency_hz: float,
+        receiver_indices: Iterable[int],
+        *,
+        inverse_operator: Array | None = None,
+        receiver_resolvent_matrix: Array | None = None,
+    ) -> float:
+        r"""Return ``||P A^{-1}||_2`` for the discrete receiver map."""
+
+        rows = (
+            np.asarray(receiver_resolvent_matrix)
+            if receiver_resolvent_matrix is not None
+            else self.receiver_resolvent_matrix(
+                m,
+                frequency_hz,
+                receiver_indices,
+                inverse_operator=inverse_operator,
+            )
+        )
+        return float(np.linalg.svd(rows, compute_uv=False)[0]) if rows.size else 0.0
+
+    def directional_receiver_tangent_resolvent_norm(
+        self,
+        m: Array,
+        frequency_hz: float,
+        receiver_indices: Iterable[int],
+        direction: Array,
+        *,
+        inverse_operator: Array | None = None,
+        receiver_resolvent_matrix: Array | None = None,
+    ) -> float:
+        r"""Return ``||P A^{-1} diag(v) A^{-1}||_2`` efficiently.
+
+        Only a receiver-sized dense map is formed.  The second ``A^{-1}`` is
+        applied by solving the adjoint system with one RHS per receiver.
+        """
+
+        v = np.asarray(direction, dtype=float).reshape(-1)
+        if v.size != self.n:
+            raise ValueError("direction has wrong size")
+        if inverse_operator is not None:
+            inv_a = np.asarray(inverse_operator)
+            idx = np.asarray(tuple(receiver_indices), dtype=int)
+            op = inv_a[idx, :] @ (v[:, None] * inv_a)
+            return float(np.linalg.svd(op, compute_uv=False)[0]) if op.size else 0.0
+
+        b = (
+            np.asarray(receiver_resolvent_matrix)
+            if receiver_resolvent_matrix is not None
+            else self.receiver_resolvent_matrix(m, frequency_hz, receiver_indices)
+        )
+        if b.size == 0:
+            return 0.0
+        # C = P A^{-1} diag(v) A^{-1}.  Compute C^H by solving
+        # A^H X = (P A^{-1} diag(v))^H.
+        m_left = b * v[None, :]
+        a_h = self.operator(m, frequency_hz).conjugate().transpose().tocsc()
+        lu_h = spla.splu(a_h)
+        x = lu_h.solve(m_left.conjugate().transpose())
+        op = x.conjugate().transpose()
+        return float(np.linalg.svd(op, compute_uv=False)[0])
 
     def smallest_singular_value(self, m: Array, frequency_hz: float) -> float:
         """Return the numerical 2-norm stability constant β = σ_min(A).

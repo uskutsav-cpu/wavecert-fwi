@@ -37,7 +37,7 @@ class WavefieldDatasetArrays:
         )
 
     @classmethod
-    def load(cls, path: str | Path) -> "WavefieldDatasetArrays":
+    def load(cls, path: str | Path) -> WavefieldDatasetArrays:
         z = np.load(path)
         shape = tuple(int(v) for v in z["shape"])
         return cls(

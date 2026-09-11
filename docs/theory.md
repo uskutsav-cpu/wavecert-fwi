@@ -211,3 +211,73 @@ A full bound
 \]
 
 is stronger but may be substantially more expensive. Optimization only needs enough information to justify an update. Certifying the scalar directional derivative along the proposed step is therefore a natural first target and aligns with goal-oriented error estimation.
+
+---
+
+## Phase 4 extension: receiver- and direction-aware residual bound
+
+The original `1/beta` certificate is mathematically valid but can be highly conservative because it controls full-state errors in the global Euclidean norm. The Phase-4 implementation instead bounds only the quantities seen by the FWI receiver functional.
+
+With primal residual `r_p = A u_hat - q` and tangent residual
+
+`r_t = A du_hat - omega^2 diag(v) u_hat`,
+
+the exact errors satisfy
+
+`e_u = -A^{-1} r_p`
+
+and
+
+`e_t = -A^{-1} r_t - omega^2 A^{-1} diag(v) A^{-1} r_p`.
+
+For receiver restriction `P`, define
+
+`alpha = ||P A^{-1}||_2`
+
+and
+
+`kappa(v) = ||P A^{-1} diag(v) A^{-1}||_2`.
+
+Then
+
+`||P e_u|| <= alpha ||r_p||`
+
+and
+
+`||P e_t|| <= alpha ||r_t|| + omega^2 kappa(v) ||r_p||`.
+
+Writing `r_hat = P u_hat - d`, the directional-derivative error obeys
+
+`|D Phi - D Phi_hat| <= eta_Pu (||P du_hat|| + eta_Pt) + ||r_hat|| eta_Pt`.
+
+The code forms `P A^{-1}` using sparse adjoint solves with one right-hand side per receiver, rather than constructing the complete dense inverse. This remains a reference-grid method because obtaining these exact stability maps is still too expensive for field-scale FWI.
+
+## Phase 5 extension: split-conformal scale calibration
+
+Because the deterministic bound is valid but loose for the Phase-2 FNO, WaveCert keeps it unchanged and adds a separate statistical deployment layer.
+
+On a calibration set, define
+
+`s_i = realized_error_i / deterministic_bound_i`.
+
+The split-conformal scale is the finite-sample upper quantile `q_(1-alpha)` of `s_i`, and the practical bound on an exchangeable new case is
+
+`eta_conf = q_(1-alpha) eta_det`.
+
+This statement is distribution-free in the standard split-conformal sense under exchangeability. It is **not** a deterministic PDE theorem, and the repository deliberately uses different terminology for the two guarantees.
+
+For blockwise repair, each source/frequency label is calibrated independently at a Bonferroni allocation `alpha / n_blocks`.
+
+## Phase 6 extension: changing the hybrid direction requires recertification
+
+Suppose selected source/frequency blocks are replaced by exact gradients. The total hybrid gradient changes, hence the descent direction changes. Any certificate computed for the old direction is therefore irrelevant to the new one.
+
+The adaptive algorithm consequently follows this loop:
+
+1. form the current exact/neural hybrid gradient;
+2. normalize its negative to obtain `v`;
+3. recompute all unrepaired block certificates along `v`;
+4. accept if the summed upper directional derivative is negative;
+5. otherwise replace the largest-uncertainty block by its exact gradient and repeat.
+
+This is the central correctness invariant of the Phase-6 implementation.

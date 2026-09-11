@@ -21,3 +21,18 @@
 - directional residual certificate;
 - selective exact-physics verification;
 - surrogate-quality ablation and initial documentation.
+
+## 0.3.0 — Phase 4–6 certification and adaptive fallback milestone
+
+- derived a receiver/direction-aware deterministic residual certificate using `||P A^-1||` and `||P A^-1 diag(v) A^-1||`;
+- replaced dense inverse construction in the main certificate study with sparse multi-RHS receiver-resolvent solves;
+- validated deterministic coverage on all 80 Phase-3 held-out cases with zero violations;
+- documented the deterministic certificate's conservatism rather than hiding it;
+- added split-conformal calibration as a separately labeled statistical deployment gate;
+- added 90% and 95% case-level operating points and per-block Bonferroni calibration;
+- implemented global exact fallback and dynamically recomputed blockwise selective repair;
+- evaluated Phase 6 on 30 new held-out cases;
+- achieved 100% observed descent safety for selective repair while reducing exact block gradients by 27.5% versus exact direction construction;
+- added Phase-4/5/6 CLI commands, scripts, tests, plots, CSV/JSON outputs, and documentation.
+- resolved the Phase-4/5/6 Ruff quality gate without suppressing rules, including closure capture, callable defaults, import/export hygiene, and modern typing cleanup;
+- added a CLI parser regression test covering all three Phase-4/5/6 commands.
