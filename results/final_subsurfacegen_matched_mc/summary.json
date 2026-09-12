@@ -1,0 +1,59 @@
+{
+  "dataset": "data/external/subsurfacegen-wavecert-final",
+  "checkpoint": "checkpoints/fno_subsurfacegen_v2.pt",
+  "policy_cases": "results/final_subsurfacegen/policy_cases.csv",
+  "base_seed": 20260911,
+  "rng": "SeedSequence([seed, split_code, case_index, k, repeat])",
+  "repeats_per_case": 100,
+  "comparison": "Matched-random repairs exactly the same number of blocks as WaveCert-selective on each individual case.",
+  "id": {
+    "n_cases": 45,
+    "repeats_per_case": 100,
+    "mean_wavecert_exact_blocks": 15.311111111111112,
+    "wavecert_true_descent_rate": 1.0,
+    "mean_wavecert_cosine_to_exact": 0.9439916401809848,
+    "matched_random_true_descent_probability": 1.0,
+    "mean_matched_random_cosine_to_exact": 0.8502676223812048,
+    "mean_case_random_cosine_median": 0.8603785243554877,
+    "mean_wavecert_minus_random_median_cosine": 0.08361311582549741,
+    "median_wavecert_minus_random_median_cosine": 0.0506208216314028,
+    "fraction_cases_wavecert_beats_random_median": 0.8888888888888888,
+    "fraction_cases_wavecert_beats_random_p90": 0.6222222222222222,
+    "sign_test_wavecert_greater": {
+      "wins": 40,
+      "n_cases": 45,
+      "pvalue_one_sided": 3.9391920836351346e-08
+    },
+    "wilcoxon_wavecert_vs_random_median": {
+      "statistic": 981.0,
+      "pvalue_one_sided": 1.44990508488263e-09
+    }
+  },
+  "ood": {
+    "n_cases": 55,
+    "repeats_per_case": 100,
+    "mean_wavecert_exact_blocks": 21.163636363636364,
+    "wavecert_true_descent_rate": 1.0,
+    "mean_wavecert_cosine_to_exact": 0.9651255131245369,
+    "matched_random_true_descent_probability": 1.0,
+    "mean_matched_random_cosine_to_exact": 0.7791425141171275,
+    "mean_case_random_cosine_median": 0.7757859440701583,
+    "mean_wavecert_minus_random_median_cosine": 0.18933956905437876,
+    "median_wavecert_minus_random_median_cosine": 0.1685356748971577,
+    "fraction_cases_wavecert_beats_random_median": 1.0,
+    "fraction_cases_wavecert_beats_random_p90": 0.36363636363636365,
+    "sign_test_wavecert_greater": {
+      "wins": 55,
+      "n_cases": 55,
+      "pvalue_one_sided": 2.7755575615628914e-17
+    },
+    "wilcoxon_wavecert_vs_random_median": {
+      "statistic": 1540.0,
+      "pvalue_one_sided": 5.5380757730678676e-11
+    }
+  },
+  "semantics": {
+    "random_policy": "Random baselines are uncertified.",
+    "evaluation_scope": "Frozen final SubsurfaceGen evaluation: 45 untouched ID cases and 55 untouched OOD stress cases."
+  }
+}

@@ -1,0 +1,359 @@
+{
+  "dataset": "data/external/subsurfacegen-wavecert-final",
+  "checkpoint": "checkpoints/fno_subsurfacegen_v2.pt",
+  "alpha": 0.1,
+  "target_id_pathwise_coverage": 0.9,
+  "calibration_cases": 30,
+  "pathwise_uniform_scale": 0.004188965544350984,
+  "calibration_score_min": 0.00045837567380719723,
+  "calibration_score_median": 0.0016817025172037208,
+  "calibration_score_max": 0.006525443251727736,
+  "blocks_per_case": 24,
+  "id": {
+    "exact": {
+      "n_cases": 45,
+      "true_descent_rate": 1.0,
+      "certified_rate": 1.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 24.0,
+      "median_exact_blocks": 24.0,
+      "p90_exact_blocks": 24.0,
+      "mean_exact_fraction": 1.0,
+      "mean_cosine_to_exact": 1.0,
+      "mode_counts": {
+        "exact": 45
+      }
+    },
+    "global-fallback": {
+      "n_cases": 45,
+      "true_descent_rate": 1.0,
+      "certified_rate": 1.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 24.0,
+      "median_exact_blocks": 24.0,
+      "p90_exact_blocks": 24.0,
+      "mean_exact_fraction": 1.0,
+      "mean_cosine_to_exact": 1.0,
+      "mode_counts": {
+        "exact-fallback": 45
+      }
+    },
+    "neural-only": {
+      "n_cases": 45,
+      "true_descent_rate": 0.7333333333333333,
+      "certified_rate": 0.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 0.0,
+      "median_exact_blocks": 0.0,
+      "p90_exact_blocks": 0.0,
+      "mean_exact_fraction": 0.0,
+      "mean_cosine_to_exact": 0.21942613343984124,
+      "mode_counts": {
+        "unverified": 45
+      }
+    },
+    "random-1": {
+      "n_cases": 45,
+      "true_descent_rate": 0.7555555555555555,
+      "certified_rate": 0.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 1.0,
+      "median_exact_blocks": 1.0,
+      "p90_exact_blocks": 1.0,
+      "mean_exact_fraction": 0.041666666666666664,
+      "mean_cosine_to_exact": 0.25637393189484065,
+      "mode_counts": {
+        "random-repair": 45
+      }
+    },
+    "random-12": {
+      "n_cases": 45,
+      "true_descent_rate": 1.0,
+      "certified_rate": 0.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 12.0,
+      "median_exact_blocks": 12.0,
+      "p90_exact_blocks": 12.0,
+      "mean_exact_fraction": 0.5,
+      "mean_cosine_to_exact": 0.7227077214475511,
+      "mode_counts": {
+        "random-repair": 45
+      }
+    },
+    "random-15": {
+      "n_cases": 45,
+      "true_descent_rate": 1.0,
+      "certified_rate": 0.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 15.0,
+      "median_exact_blocks": 15.0,
+      "p90_exact_blocks": 15.0,
+      "mean_exact_fraction": 0.625,
+      "mean_cosine_to_exact": 0.8109389015455369,
+      "mode_counts": {
+        "random-repair": 45
+      }
+    },
+    "random-16": {
+      "n_cases": 45,
+      "true_descent_rate": 1.0,
+      "certified_rate": 0.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 16.0,
+      "median_exact_blocks": 16.0,
+      "p90_exact_blocks": 16.0,
+      "mean_exact_fraction": 0.6666666666666666,
+      "mean_cosine_to_exact": 0.8300385919252059,
+      "mode_counts": {
+        "random-repair": 45
+      }
+    },
+    "random-2": {
+      "n_cases": 45,
+      "true_descent_rate": 0.8,
+      "certified_rate": 0.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 2.0,
+      "median_exact_blocks": 2.0,
+      "p90_exact_blocks": 2.0,
+      "mean_exact_fraction": 0.08333333333333333,
+      "mean_cosine_to_exact": 0.30304543319414085,
+      "mode_counts": {
+        "random-repair": 45
+      }
+    },
+    "random-20": {
+      "n_cases": 45,
+      "true_descent_rate": 1.0,
+      "certified_rate": 0.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 20.0,
+      "median_exact_blocks": 20.0,
+      "p90_exact_blocks": 20.0,
+      "mean_exact_fraction": 0.8333333333333334,
+      "mean_cosine_to_exact": 0.9476750110576811,
+      "mode_counts": {
+        "random-repair": 45
+      }
+    },
+    "random-4": {
+      "n_cases": 45,
+      "true_descent_rate": 0.8888888888888888,
+      "certified_rate": 0.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 4.0,
+      "median_exact_blocks": 4.0,
+      "p90_exact_blocks": 4.0,
+      "mean_exact_fraction": 0.16666666666666666,
+      "mean_cosine_to_exact": 0.3883746430371575,
+      "mode_counts": {
+        "random-repair": 45
+      }
+    },
+    "random-8": {
+      "n_cases": 45,
+      "true_descent_rate": 0.9777777777777777,
+      "certified_rate": 0.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 8.0,
+      "median_exact_blocks": 8.0,
+      "p90_exact_blocks": 8.0,
+      "mean_exact_fraction": 0.3333333333333333,
+      "mean_cosine_to_exact": 0.5389074100460751,
+      "mode_counts": {
+        "random-repair": 45
+      }
+    },
+    "wavecert-selective": {
+      "n_cases": 45,
+      "true_descent_rate": 1.0,
+      "certified_rate": 1.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 15.311111111111112,
+      "median_exact_blocks": 16.0,
+      "p90_exact_blocks": 20.0,
+      "mean_exact_fraction": 0.637962962962963,
+      "mean_cosine_to_exact": 0.9439916401809851,
+      "mode_counts": {
+        "selective-repair": 45
+      }
+    },
+    "wavecert_selective_saving_vs_exact": 0.36203703703703705
+  },
+  "ood": {
+    "exact": {
+      "n_cases": 55,
+      "true_descent_rate": 1.0,
+      "certified_rate": 1.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 24.0,
+      "median_exact_blocks": 24.0,
+      "p90_exact_blocks": 24.0,
+      "mean_exact_fraction": 1.0,
+      "mean_cosine_to_exact": 1.0,
+      "mode_counts": {
+        "exact": 55
+      }
+    },
+    "global-fallback": {
+      "n_cases": 55,
+      "true_descent_rate": 1.0,
+      "certified_rate": 1.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 24.0,
+      "median_exact_blocks": 24.0,
+      "p90_exact_blocks": 24.0,
+      "mean_exact_fraction": 1.0,
+      "mean_cosine_to_exact": 1.0,
+      "mode_counts": {
+        "exact-fallback": 55
+      }
+    },
+    "neural-only": {
+      "n_cases": 55,
+      "true_descent_rate": 0.0,
+      "certified_rate": 0.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 0.0,
+      "median_exact_blocks": 0.0,
+      "p90_exact_blocks": 0.0,
+      "mean_exact_fraction": 0.0,
+      "mean_cosine_to_exact": -0.05065291330579779,
+      "mode_counts": {
+        "unverified": 55
+      }
+    },
+    "random-1": {
+      "n_cases": 55,
+      "true_descent_rate": 0.23636363636363636,
+      "certified_rate": 0.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 1.0,
+      "median_exact_blocks": 1.0,
+      "p90_exact_blocks": 1.0,
+      "mean_exact_fraction": 0.041666666666666664,
+      "mean_cosine_to_exact": -0.03655823673205157,
+      "mode_counts": {
+        "random-repair": 55
+      }
+    },
+    "random-12": {
+      "n_cases": 55,
+      "true_descent_rate": 1.0,
+      "certified_rate": 0.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 12.0,
+      "median_exact_blocks": 12.0,
+      "p90_exact_blocks": 12.0,
+      "mean_exact_fraction": 0.5,
+      "mean_cosine_to_exact": 0.24996533757921482,
+      "mode_counts": {
+        "random-repair": 55
+      }
+    },
+    "random-15": {
+      "n_cases": 55,
+      "true_descent_rate": 1.0,
+      "certified_rate": 0.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 15.0,
+      "median_exact_blocks": 15.0,
+      "p90_exact_blocks": 15.0,
+      "mean_exact_fraction": 0.625,
+      "mean_cosine_to_exact": 0.35381465461825756,
+      "mode_counts": {
+        "random-repair": 55
+      }
+    },
+    "random-16": {
+      "n_cases": 55,
+      "true_descent_rate": 0.9818181818181818,
+      "certified_rate": 0.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 16.0,
+      "median_exact_blocks": 16.0,
+      "p90_exact_blocks": 16.0,
+      "mean_exact_fraction": 0.6666666666666666,
+      "mean_cosine_to_exact": 0.4012104814428658,
+      "mode_counts": {
+        "random-repair": 55
+      }
+    },
+    "random-2": {
+      "n_cases": 55,
+      "true_descent_rate": 0.36363636363636365,
+      "certified_rate": 0.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 2.0,
+      "median_exact_blocks": 2.0,
+      "p90_exact_blocks": 2.0,
+      "mean_exact_fraction": 0.08333333333333333,
+      "mean_cosine_to_exact": -0.02531599819692066,
+      "mode_counts": {
+        "random-repair": 55
+      }
+    },
+    "random-20": {
+      "n_cases": 55,
+      "true_descent_rate": 1.0,
+      "certified_rate": 0.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 20.0,
+      "median_exact_blocks": 20.0,
+      "p90_exact_blocks": 20.0,
+      "mean_exact_fraction": 0.8333333333333334,
+      "mean_cosine_to_exact": 0.7038732606472781,
+      "mode_counts": {
+        "random-repair": 55
+      }
+    },
+    "random-4": {
+      "n_cases": 55,
+      "true_descent_rate": 0.4727272727272727,
+      "certified_rate": 0.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 4.0,
+      "median_exact_blocks": 4.0,
+      "p90_exact_blocks": 4.0,
+      "mean_exact_fraction": 0.16666666666666666,
+      "mean_cosine_to_exact": 0.00395441054248884,
+      "mode_counts": {
+        "random-repair": 55
+      }
+    },
+    "random-8": {
+      "n_cases": 55,
+      "true_descent_rate": 0.8545454545454545,
+      "certified_rate": 0.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 8.0,
+      "median_exact_blocks": 8.0,
+      "p90_exact_blocks": 8.0,
+      "mean_exact_fraction": 0.3333333333333333,
+      "mean_cosine_to_exact": 0.11254640171959768,
+      "mode_counts": {
+        "random-repair": 55
+      }
+    },
+    "wavecert-selective": {
+      "n_cases": 55,
+      "true_descent_rate": 1.0,
+      "certified_rate": 1.0,
+      "false_certifications": 0,
+      "mean_exact_blocks": 21.163636363636364,
+      "median_exact_blocks": 21.0,
+      "p90_exact_blocks": 22.0,
+      "mean_exact_fraction": 0.8818181818181818,
+      "mean_cosine_to_exact": 0.9651255131245369,
+      "mode_counts": {
+        "selective-repair": 55
+      }
+    },
+    "wavecert_selective_saving_vs_exact": 0.11818181818181817
+  },
+  "semantics": {
+    "id": "case-level pathwise split-conformal calibration; interpretation requires exchangeability between validation and ID cases",
+    "ood": "held-out-geology stress test only; nominal conformal coverage is not claimed under distribution shift",
+    "offline_exact_validation": "exact full gradients used to measure true descent/cosine are excluded from policy exact-block counts"
+  }
+}
