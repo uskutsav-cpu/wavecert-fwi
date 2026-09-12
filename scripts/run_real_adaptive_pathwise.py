@@ -393,7 +393,7 @@ def _evaluate_cases(
         )
 
         # Matched random-repair cost baselines.
-        for k in (1, 2, 4, 8):
+        for k in (1, 2, 4, 8, 12, 15, 16, 20):
             chosen = set(
                 int(i)
                 for i in rng.choice(
