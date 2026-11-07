@@ -14,6 +14,7 @@ import json
 import math
 import os
 import subprocess
+import sys
 import zlib
 from collections import defaultdict
 from datetime import datetime, timezone
@@ -75,6 +76,43 @@ def _json_bytes(value):
 
 def _utc():
     return datetime.now(timezone.utc).isoformat()
+
+
+def _runtime_contract(provenance):
+    """Bind only numerical runtime versions and the planned CPU device."""
+    return {"device": "cpu", "python": provenance["python"],
+            "packages": {name: provenance["packages"][name] for name in ("numpy", "scipy", "torch")}}
+
+
+def verify_prior_stage_binding(previous_provenance, expected_runtime, repository_root):
+    """Reject edited recorded sources/runtime; report unused new source files.
+
+    Source files added after a freeze may be unrelated analysis tools. They
+    cannot replace any recorded file or be imported into this pipeline without
+    a new immutable freeze attempt. This is a reproducibility guard, not proof
+    that arbitrary dynamic code elsewhere never influenced a process.
+    """
+    root = Path(repository_root).resolve()
+    manifest = previous_provenance["source_files"]
+    _require(bool(manifest), "previous stage source manifest is empty; create a new immutable freeze")
+    digest = hashlib.sha256()
+    for name, checksum in sorted(manifest.items()):
+        digest.update(name.encode() + b"\0" + checksum.encode() + b"\0")
+        _require(sha256_file(_inside(root, name)) == checksum,
+                 f"previously frozen source changed: {name}; create a new immutable freeze attempt")
+    _require(digest.hexdigest() == previous_provenance["source_sha256"],
+             "previous stage source manifest/hash mismatch")
+    current = environment_record(root)
+    _require(expected_runtime == _runtime_contract(previous_provenance) == _runtime_contract(current),
+             "Python/numpy/scipy/torch runtime or CPU device contract changed; create a new immutable freeze attempt")
+    new_files = sorted(set(current["source_files"]) - set(manifest))
+    imported = {Path(module.__file__).resolve() for module in tuple(sys.modules.values())
+                if getattr(module, "__file__", None)}
+    _require(not any(_inside(root, name) in imported for name in new_files),
+             "a newly added source file is imported into the pipeline; create a new immutable freeze attempt")
+    return {"all_recorded_source_files_unchanged": True, "numerical_runtime_versions_unchanged": True,
+            "runtime_contract": expected_runtime, "new_unimported_source_files": new_files,
+            "scope": "New files are permitted only as unused/unrelated additions; no recorded source/config file can change. Rest of the environment is recorded without exact optional-package equality."}
 
 
 def confirmation_indices(excluded, *, seed, family_code):
@@ -261,6 +299,7 @@ def freeze_selected_checkpoint(*, plan_path, repository_root, training_dir, trai
     models.append({"label": "development_winner", "checkpoint_path": "checkpoints/development_winner.pt",
                    "checkpoint_sha256": winner["sha256"], "candidate_name": selection["winner"]})
     files = {p.relative_to(output).as_posix(): sha256_file(p) for p in sorted(output.rglob("*")) if p.is_file()}
+    stage_environment = environment_record(root)
     frozen = {"schema_version": 1, "stage": "B-selection-frozen-before-new-calibration",
         "created_utc": _utc(), "plan_sha256": sha256_file(plan_path), "files": files, "models": models,
         "selected_candidate": selection["winner"], "selection_json_sha256": sha256_file(Path(training_dir) / "selection.json"),
@@ -270,7 +309,7 @@ def freeze_selected_checkpoint(*, plan_path, repository_root, training_dir, trai
         "training_source_and_inputs_unchanged": True,
         "new_selected_checkpoint_calibration_or_test_performed_by_this_stage": False,
         "scope": "Immutable assistant-development selection/weight receipt; not student preregistration or unseen-data proof.",
-        "provenance": environment_record(root)}
+        "runtime_contract": _runtime_contract(stage_environment), "provenance": stage_environment}
     _write_once(output, "freeze.json", _json_bytes(frozen))
     return frozen
 
@@ -302,9 +341,10 @@ def validate_selection_freeze(freeze_dir):
 
 def _run_selected_calibration(*, freeze_dir, repository_root, dataset_dir, output_dir):
     """Stage C: new selected-model calibration plus explicitly reused ID/OOD."""
+    frozen = validate_selection_freeze(freeze_dir)
+    prior_binding = verify_prior_stage_binding(frozen["provenance"], frozen["runtime_contract"], repository_root)
     from wavecert.experiments.real_wavecert import run_real_wavecert_study
 
-    frozen = validate_selection_freeze(freeze_dir)
     plan = _json(Path(freeze_dir) / "plan.json")
     config = plan["selected_calibration"]
     _require(sha256_file(Path(dataset_dir) / "dataset_manifest.json") == config["dataset_manifest_sha256"] and
@@ -324,6 +364,7 @@ def _run_selected_calibration(*, freeze_dir, repository_root, dataset_dir, outpu
              np.isfinite(report["conformal_scale"]) and report["conformal_scale"] > 0,
              "selected calibration must retain all 12 dedicated source parents and a positive finite frozen scale")
     validate_selection_freeze(freeze_dir)
+    verify_prior_stage_binding(frozen["provenance"], frozen["runtime_contract"], repository_root)
     models = []
     for model in frozen["models"]:
         relative = f"calibration/{model['label']}.json"
@@ -336,6 +377,7 @@ def _run_selected_calibration(*, freeze_dir, repository_root, dataset_dir, outpu
         "selection_freeze_sha256": sha256_file(Path(freeze_dir) / "freeze.json"),
         "plan_sha256": frozen["plan_sha256"], "models": models,
         "source_unchanged_during_run": True, "provenance": source,
+        "runtime_contract": _runtime_contract(source), "prior_stage_source_runtime_validation": prior_binding,
         "scope": "New selected-checkpoint calibration on the existing 12 calibration parents; historical 8 ID/1 OOD parents are reused development evidence, not pristine confirmation."}
     _write_once(output, "calibration_freeze.json", _json_bytes(result))
     return result
@@ -532,6 +574,10 @@ def run_gradient_confirmation(*, plan_path, repository_root, selection_dir, cali
     root = Path(repository_root)
     plan = validate_confirmation_plan(plan_path, root)
     frozen, calibration = validate_calibration_freeze(selection_dir, calibration_dir)
+    prior_bindings = {
+        "selection_freeze": verify_prior_stage_binding(frozen["provenance"], frozen["runtime_contract"], root),
+        "calibration_freeze": verify_prior_stage_binding(calibration["provenance"], calibration["runtime_contract"], root),
+    }
     _require(frozen["plan_sha256"] == sha256_file(plan_path), "evaluation plan differs from both frozen stages")
     published = _json(_inside(root, plan["old_external"]["published_preparation_manifest_path"]))
     families, data_hashes, audits = validate_confirmation_payloads(plan, data_dir, published_receipt=published)
@@ -560,7 +606,7 @@ def run_gradient_confirmation(*, plan_path, repository_root, selection_dir, cali
     blocks, models, exact_vectors, neural_vectors = [], [], [], []
     current = None
     try:
-        surrogates = {label: TrainedFNOWavefieldSurrogate.load(path) for label, path in paths.items()}
+        surrogates = {label: TrainedFNOWavefieldSurrogate.load(path, device="cpu") for label, path in paths.items()}
         _require(all(s.shape == (24, 24) for s in surrogates.values()), "frozen models must share the planned 24x24 grid")
         geometry = SurveyGeometry.from_grid((24, 24), n_sources=6, n_receivers=20, source_depth=2, receiver_depth=2, margin=2)
         sources = (geometry.source_indices[1], geometry.source_indices[-2])
@@ -639,6 +685,8 @@ def run_gradient_confirmation(*, plan_path, repository_root, selection_dir, cali
                 status.update(completed_blocks=len(blocks), last_completed_model=current)
                 status_path.write_bytes(_json_bytes(status))
         grouped = summarize_confirmation(blocks, models, plan, audits)
+        verify_prior_stage_binding(frozen["provenance"], frozen["runtime_contract"], root)
+        verify_prior_stage_binding(calibration["provenance"], calibration["runtime_contract"], root)
         source_same = source_digest(root) == provenance["source_sha256"]
         inputs_same = all(sha256_file(path) == checksum for path, checksum in bindings.items())
         _require(source_same and inputs_same, "source or frozen input changed during confirmation")
@@ -652,6 +700,7 @@ def run_gradient_confirmation(*, plan_path, repository_root, selection_dir, cali
             "families": grouped, "raw_sampling_audits": audits, "provenance": provenance,
             "source_unchanged_during_run": True, "input_files_unchanged_during_run": True,
             "input_sha256": bindings, "aggregate_vectors_sha256": sha256_file(output / "aggregate_gradients.npz"),
+            "prior_stage_source_runtime_validation": prior_bindings, "runtime_contract": _runtime_contract(provenance),
             "offline_physics_costs": {"truth": truth.cost_snapshot(), "reference_and_certificates": physics.cost_snapshot()},
             "scope": "Prospectively chosen fresh original-index outcomes from two known generated batches, with N400 complement bounds. All three fixed models reported; no held-out model selection, real-site/field-data, trajectory, or acceleration claim.",
             "source_calibrated_gate_scope": "Descriptive external/OOD transfer of frozen source-domain scales; no nominal conformal coverage guarantee.",

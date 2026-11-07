@@ -3,6 +3,8 @@ import csv
 import hashlib
 import json
 import subprocess
+import sys
+import types
 import zlib
 from pathlib import Path
 
@@ -10,7 +12,7 @@ import numpy as np
 import pytest
 
 from wavecert.experiments import gradient_confirmation as confirmation
-from wavecert.provenance import sha256_file
+from wavecert.provenance import environment_record, sha256_file
 
 ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / "configs/gradient_confirmation_plan.json"
@@ -274,3 +276,53 @@ def test_confirmation_summary_uses_N400_and_requires_every_fixed_model_label():
             assert bound["population_size"] == 400 and bound["sample_size"] == 100
     with pytest.raises(ValueError, match="exactly"):
         confirmation.summarize_confirmation(blocks[:-1], models, plan, audits)
+
+
+def _prior_stage(tmp_path):
+    source = tmp_path / "src/wavecert/physics/operator.py"
+    source.parent.mkdir(parents=True)
+    source.write_text("REFERENCE_OPERATOR = 1\n")
+    previous = environment_record(tmp_path)
+    return source, previous, confirmation._runtime_contract(previous)
+
+
+def test_stage_binding_rejects_modified_recorded_source_and_allows_new_unused_tool(tmp_path):
+    source, previous, runtime = _prior_stage(tmp_path)
+    extra = tmp_path / "scripts/unrelated_report.py"
+    extra.parent.mkdir()
+    extra.write_text("REPORT_ONLY = True\n")
+    audit = confirmation.verify_prior_stage_binding(previous, runtime, tmp_path)
+    assert audit["new_unimported_source_files"] == ["scripts/unrelated_report.py"]
+    source.write_text("REFERENCE_OPERATOR = 2\n")
+    with pytest.raises(ValueError, match="source changed.*new immutable freeze"):
+        confirmation.verify_prior_stage_binding(previous, runtime, tmp_path)
+
+
+def test_newly_added_imported_code_is_not_treated_as_an_unrelated_file(tmp_path, monkeypatch):
+    _, previous, runtime = _prior_stage(tmp_path)
+    extra = tmp_path / "src/wavecert/physics/new_operator.py"
+    extra.write_text("NEW_OPERATOR = True\n")
+    imported = types.ModuleType("confirmation_future_plugin")
+    imported.__file__ = str(extra)
+    monkeypatch.setitem(sys.modules, imported.__name__, imported)
+    with pytest.raises(ValueError, match="newly added source file is imported"):
+        confirmation.verify_prior_stage_binding(previous, runtime, tmp_path)
+
+
+@pytest.mark.parametrize("component", ["python", "numpy", "scipy", "torch", "device"])
+def test_stage_binding_rejects_numerical_runtime_or_cpu_contract_changes(tmp_path, component):
+    _, previous, runtime = _prior_stage(tmp_path)
+    if component == "python":
+        previous["python"] = runtime["python"] = "different-python-version"
+    elif component == "device":
+        runtime["device"] = "cuda"
+    else:
+        previous["packages"][component] = runtime["packages"][component] = "different-package-version"
+    with pytest.raises(ValueError, match="runtime or CPU device contract changed"):
+        confirmation.verify_prior_stage_binding(previous, runtime, tmp_path)
+
+
+def test_unrelated_optional_package_versions_are_recorded_without_exact_binding(tmp_path):
+    _, previous, runtime = _prior_stage(tmp_path)
+    previous["packages"]["devito"] = "different-optional-version"
+    assert confirmation.verify_prior_stage_binding(previous, runtime, tmp_path)["numerical_runtime_versions_unchanged"]

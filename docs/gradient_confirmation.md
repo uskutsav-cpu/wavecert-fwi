@@ -59,6 +59,21 @@ candidate checkpoint identities. Original training results and selection files
 are never rewritten. An incomplete or changed training run cannot authorize a
 new held-out prediction through this workflow.
 
+Each freeze records the complete source file manifest and numerical runtime.
+Before Stage C, every source/config path recorded by B must still have the same
+checksum. Before Stage D, the manifests from both B and C are checked again.
+The Python, NumPy, SciPy and PyTorch versions and planned CPU device must agree
+across stages. Other environment information is recorded without requiring
+unrelated optional packages to match exactly.
+
+New unused analysis files may be added, with their paths disclosed in the
+next stage's audit. A new source file imported into the pipeline is not treated
+as an unrelated addition. Editing recorded pipeline, physics, model, statistical
+or configuration files, or changing a bound runtime version, requires a **new
+immutable freeze attempt before new outcomes**, not rewriting the old receipt.
+These guards support reproducibility; they are not a security proof against
+arbitrary dynamic code outside the recorded workflow.
+
 ## Stage C: selected-checkpoint calibration
 
 Only after Stage B exists does the wrapper call the existing
