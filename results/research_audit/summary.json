@@ -1,12 +1,12 @@
 {
   "audit_kind": "archived-results provenance and statistical-unit audit",
-  "source_commit": "7ee700f08609e13c1224a18b75db85fac7b01e82",
+  "source_commit": "dad24d37b3fa51c16f46534c955161b744e5e009",
   "seed": 20260912,
   "environment_versions": {
-    "numpy": "2.4.3",
+    "numpy": "2.5.4",
     "scipy": "1.18.1",
-    "pandas": "3.0.5",
-    "torch": "2.14.0"
+    "pandas": "3.1.1",
+    "torch": "2.15.0+cpu"
   },
   "manifest_sha256_matches_recorded_protocol": true,
   "split_audit": {
@@ -211,6 +211,8 @@
     "conflicting_slice_parent_ids": [],
     "slice_isolation_passed": true,
     "parent_isolation_passed": false,
+    "exchangeability_established": false,
+    "statistical_scope": "Parent isolation is necessary but not sufficient for pooled conformal coverage; fixed geology quotas and unequal within-parent sampling require separate justification.",
     "scope": "Manifest isolation only; does not prove independent sampling, unseen data, or checkpoint provenance."
   },
   "archived_policy_parent_summaries": {
@@ -272,7 +274,7 @@
           "failures": 9,
           "observed_failure_rate": 0.2903225806451613,
           "confidence": 0.95,
-          "one_sided_failure_probability_upper": 0.4519044172193685,
+          "one_sided_failure_probability_upper": 0.4519044172193684,
           "method": "exact one-sided Clopper-Pearson",
           "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
         },
