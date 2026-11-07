@@ -1,82 +1,51 @@
 # Research roadmap
 
-## Milestone 0 — completed in this repository
+This roadmap distinguishes implemented tools from achieved scientific outcomes.
+The current evidence ledger is in [strengthening_status.md](strengthening_status.md).
+Historical phase reports describe older implementations and experimental designs.
 
-- [x] finite-dimensional 2-D wave inverse problem;
-- [x] exact state, tangent, and adjoint gradient;
-- [x] surrogate state/JVP/gradient interface;
-- [x] primal/tangent residuals;
-- [x] directional derivative certificate;
-- [x] proof-to-code correspondence;
-- [x] finite-difference gradient tests;
-- [x] empirical bound-coverage tests;
-- [x] shot/frequency block abstraction;
-- [x] selective exact-verification prototype;
-- [x] reproducible demo artifacts and CI.
+## Verified development foundations
 
-## Milestone 1 — Devito acoustic backend
+- [x] Transparent discrete 2-D Helmholtz states, tangents and adjoint gradients.
+- [x] Directional residual bounds and recertification after hybrid repairs.
+- [x] Correct finite-sample quantiles, whole-parent splitting and fixed-state
+  repair-path calibration with explicit limits on interpretation.
+- [x] Bounded LU reuse, complete online case-level cost counters and isolated
+  offline validation.
+- [x] Paid true-objective decrease and projected Armijo options.
+- [x] Independent spectral/manufactured-solution reference verification.
+- [x] Learned FNO state/JVP/VJP interfaces and forward/derivative training controls.
+- [x] Parent-isolated attributed geological fixture, saved checkpoints and
+  retained negative generalization results.
+- [x] Corrected Devito exact baseline, fixed time sampling, boundary pullback and
+  finite-difference checks on a downsampled Marmousi example.
+- [x] Seeded heuristic controls, acquisition shifts, provenance and CI.
 
-- [ ] adapter for Devito forward wavefields;
-- [ ] exact Devito adjoint-state gradient;
-- [ ] Born/tangent operator adapter;
-- [ ] receiver/source geometry abstraction compatible with Devito;
-- [ ] reference Marmousi experiment;
-- [ ] discretization-consistency tests against the compact backend.
+## Scientific outcomes still open
 
-## Milestone 2 — neural operator
+- [ ] A cheap, useful certificate for the intended realistic wave operator.
+  Dense receiver maps are reference tools; the analytical sufficient bound
+  can be unavailable. Compare with equally optimized exact methods.
+- [ ] Strong learned forward and derivative generalization across independently
+  held-out geological parents, including smoothed inversion states.
+- [ ] Reconstruction or time-to-target improvement at matched **total** cost.
+  Fewer repaired gradient blocks alone does not meet this requirement.
+- [ ] A separately justified confirmation dataset after development choices are
+  frozen. Additional correlated slices cannot substitute for new parents.
+- [ ] Broader independent OOD geology; the bundled OOD stress set has one parent.
+- [ ] A backend-specific derivation and experiments before claiming time-domain,
+  elastic, continuous-PDE or field-scale certification.
+- [ ] Student-owned scientific interpretation, substantive human criticism,
+  independent reproduction and a student-authored submission with assistance
+  disclosed under the current competition rules.
 
-- [ ] decide full-wavefield encoding (real/imag in frequency domain or space-time in time domain);
-- [ ] FNO baseline using official `neuraloperator` package;
-- [ ] checkpoint loading and inference API;
-- [ ] `torch.func.jvp` tangent evaluation;
-- [ ] forward-only training baseline;
-- [ ] optional derivative-informed/Jacobian-informed training baseline.
+## Next controlled development experiment
 
-## Milestone 3 — practical certificate
+Diagnose the observed prediction and Jacobian failures before increasing model
+size. A possible development comparison is train-only smoothing/perturbation
+augmentation with stronger, appropriately normalized derivative supervision.
+Choose any settings exclusively on development validation, preserve all explored
+models, and freeze the eventual confirmation protocol before accessing new
+confirmation data. This is a proposed experiment, not a demonstrated improvement.
 
-The current dense SVD stability constant is validation-only. Replace it with one of:
-
-- [ ] analytically justified energy-norm stability estimate;
-- [ ] certified reduced-order lower bound;
-- [ ] inf-sup lower-bound method;
-- [ ] problem-specific coercivity/stability surrogate with rigorous safety factor.
-
-Then test:
-
-- [ ] primal-only estimator;
-- [ ] tangent-only estimator;
-- [ ] combined estimator;
-- [ ] adjoint-residual estimator;
-- [ ] goal-oriented / dual-weighted directional estimator;
-- [ ] randomized directional probes for approximate full-gradient control.
-
-## Milestone 4 — blockwise adaptive inversion
-
-- [ ] per-shot bound;
-- [ ] per-frequency-band bound;
-- [ ] priority queue for uncertain blocks;
-- [ ] exact verification until descent is certified;
-- [ ] optional exact-gradient replacement for failed blocks;
-- [ ] trust-region or line-search wrapper with inexact-gradient conditions.
-
-## Milestone 5 — realistic OOD study
-
-- [ ] Marmousi proof-of-concept;
-- [ ] SubsurfaceGen in-distribution split;
-- [ ] held-out geology;
-- [ ] acquisition shifts;
-- [ ] frequency shifts;
-- [ ] high-contrast structures;
-- [ ] noise robustness;
-- [ ] compute/accuracy Pareto frontier.
-
-## Milestone 6 — paper-grade artifact
-
-- [ ] frozen environment/lock file;
-- [ ] public benchmark configs;
-- [ ] pretrained checkpoints or download script;
-- [ ] one-command figure reproduction;
-- [ ] table-generation script;
-- [ ] ablation suite;
-- [ ] artifact-evaluation instructions;
-- [ ] paper/preprint citation.
+The competition outcome is not a software milestone and is not promised here.

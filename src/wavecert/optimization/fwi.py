@@ -29,6 +29,9 @@ class IterationRecord:
     algorithm_seconds: float
     validation_seconds: float
     step_acceptance: str = "surrogate"
+    # Requested acceptance stays above; exact recovery can override legacy
+    # surrogate merit. Record its actual paid criterion separately.
+    effective_step_acceptance: str | None = None
     direction_certified: bool = False
     guarantee_scope: str = "unverified-direction"
     line_search_trials: int = 0
@@ -320,6 +323,14 @@ def run_inversion(
     true gradient and tests sufficient decrease along the *projected*
     displacement. Its full verification gradient cost is online and counted.
 
+    Exact-policy, acquisition-mismatch, unavailable-analytical-stability and
+    zero/invalid-hybrid-gradient recovery use exact merit even when legacy
+    ``surrogate`` acceptance was requested. In particular a dead neural merit
+    cannot block recovery by a valid exact gradient. Records retain the
+    requested ``step_acceptance`` and state the actual paid criterion in
+    ``effective_step_acceptance``. Ordinary legacy repair keeps its original
+    surrogate merit.
+
     Deterministic and conformal direction certificates are distinct; neither
     certifies an arbitrary finite projected step. Uncertified adaptive outputs
     are rejected. ``repair_schedule`` is an externally specified per-iteration
@@ -403,6 +414,7 @@ def run_inversion(
                 step_size=0.0, accepted=False, mode="final-evaluation", certificate_rounds=0,
                 algorithm_seconds=0.0, validation_seconds=validation_seconds,
                 step_acceptance=step_acceptance, validation_exact_cost=validation_cost,
+                effective_step_acceptance=step_acceptance,
             ))
             break
 
@@ -414,6 +426,7 @@ def run_inversion(
         mode = policy
         direction_certified = False
         guarantee_scope = "unverified-direction"
+        effective_acceptance = step_acceptance
         true_gradient: Array | None = None
         online_true_value: float | None = None
         adaptive_ok = True
@@ -425,6 +438,8 @@ def run_inversion(
             direction_certified = bool(np.linalg.norm(grad) > 1e-14)
             guarantee_scope = "exact-gradient-direction"
             merit = exact_merit if policy == "exact" or domain_mismatch else surrogate_merit
+            if step_acceptance == "surrogate" and (policy == "exact" or domain_mismatch):
+                effective_acceptance = "exact-decrease"
             if domain_mismatch:
                 mode = "domain-mismatch-exact-fallback"
             if policy == "periodic-exact":
@@ -476,11 +491,19 @@ def run_inversion(
                     if not np.isfinite(paid_objective):
                         raise ValueError("full exact fallback returned a nonfinite objective")
                     online_true_value = float(paid_objective)
-            guarantee_scope = "discrete-deterministic-direction" if deterministic else "calibrated-direction"
+            exact_recovery = result.mode in {
+                "zero-hybrid-gradient-exact-fallback", "invalid-hybrid-gradient-exact-fallback",
+            }
+            guarantee_scope = (
+                "exact-gradient-direction" if exact_recovery else
+                "discrete-deterministic-direction" if deterministic else "calibrated-direction"
+            )
             if not adaptive_ok:
                 mode = f"rejected-{mode}"
-            if not getattr(result, "surrogate_gradient_evaluated", True):
+            if exact_recovery or not getattr(result, "surrogate_gradient_evaluated", True):
                 merit = exact_merit
+                if step_acceptance == "surrogate":
+                    effective_acceptance = "exact-decrease"
                 if adaptive_ok:
                     if online_true_value is None:
                         online_true_value = exact_merit(m)
@@ -523,6 +546,7 @@ def run_inversion(
             step_size=step, accepted=accepted, mode=mode, certificate_rounds=rounds,
             algorithm_seconds=algorithm_seconds, validation_seconds=validation_seconds,
             step_acceptance=step_acceptance, direction_certified=direction_certified,
+            effective_step_acceptance=effective_acceptance,
             guarantee_scope=guarantee_scope, line_search_trials=trials[0],
             verification_gradient_blocks=verification_used, online_exact_cost=online_cost,
             validation_exact_cost=validation_cost,

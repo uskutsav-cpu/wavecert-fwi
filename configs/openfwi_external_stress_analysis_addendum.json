@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-07T20:06:21Z",
+  "protocol_path": "configs/openfwi_external_stress.json",
+  "protocol_sha256": "6578df1b931b9fe472192fd69c9f5050531f7214c0d1777e832296b55a3ecc77",
+  "scope": "Assistant-development analysis addendum recorded before any neural/certificate external-stress outcomes; not student preregistration",
+  "change": "Add explicitly limited fixed-batch uncertainty alongside the already frozen conditional generated-draw summaries. Preserve all selected models, checkpoints, preprocessing, acquisition, and source-domain scales.",
+  "confidence": 0.95,
+  "outcomes": [
+    "model_any_source_calibrated_false_acceptance",
+    "model_source_calibrated_coverage_failure",
+    "model_any_deterministic_false_acceptance",
+    "model_deterministic_coverage_failure"
+  ],
+  "unit": "One original generated velocity model, retaining all four source/frequency blocks; each family/checkpoint reported separately",
+  "finite_batch_method": "Conservative exact hypergeometric CDF inversion: largest feasible K with Pr(X <= observed_failures | N=500, K, n=100) >= 0.05",
+  "finite_batch_assumptions": "Uniform sampling of 100 original indices without replacement from the named fixed 500-model batch; evaluation choices and every model outcome fixed. No IID geological or real-site assumption is used for this fixed-batch result.",
+  "finite_batch_scope": "Only the named batch's failure fraction. No generalization to another batch, family, environment, real site, field data, or the official OpenFWI seismic benchmark.",
+  "duplicate_handling": "Conservatively withhold all intervals if within-batch or cross-family raw duplicate clusters are found; keep every selected model and block without resampling/discarding. Do not collapse duplicates and then claim a simple uniform 100-of-500 cluster sample.",
+  "conditional_generated_draw_summaries": "Existing binomial and whole-model bootstrap summaries additionally assume independent generated-model draws. This is not verified real-site independence and is not a conformal OOD coverage guarantee.",
+  "multiplicity": "Individual one-sided bounds and descriptive bootstrap intervals; no simultaneous guarantee across groups or outcomes",
+  "calibration": "No fitting or recalibration. Existing source-domain calibrated gate outcomes remain descriptive OOD stress results with no nominal conformal coverage claim."
+}

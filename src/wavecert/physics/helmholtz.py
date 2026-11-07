@@ -408,14 +408,39 @@ class Helmholtz2D:
         applied by solving the adjoint system with one RHS per receiver.
         """
 
+        return self._spectral_norm(self.directional_receiver_tangent_resolvent_matrix(
+            m, frequency_hz, receiver_indices, direction,
+            inverse_operator=inverse_operator,
+            receiver_resolvent_matrix=receiver_resolvent_matrix,
+        ))
+
+    def directional_receiver_tangent_resolvent_matrix(
+        self,
+        m: Array,
+        frequency_hz: float,
+        receiver_indices: Iterable[int],
+        direction: Array,
+        *,
+        inverse_operator: Array | None = None,
+        receiver_resolvent_matrix: Array | None = None,
+    ) -> Array:
+        r"""Return ``P A^{-1} diag(v) A^{-1}`` before taking its norm.
+
+        The same receiver-sized map used by the reference certificate also
+        determines exact discrete receiver tangents for arbitrary sources.
+        Exposing it avoids repeating its solves when comparing that control.
+        Ordinary floating-point sparse solves do not establish a formal
+        roundoff-enclosed certificate.
+        """
         v = np.asarray(direction, dtype=float).reshape(-1)
         if v.size != self.n:
             raise ValueError("direction has wrong size")
+        if not np.all(np.isfinite(v)):
+            raise ValueError("direction must be finite")
         if inverse_operator is not None:
             inv_a = np.asarray(inverse_operator)
             idx = np.asarray(tuple(receiver_indices), dtype=int)
-            op = inv_a[idx, :] @ (v[:, None] * inv_a)
-            return self._spectral_norm(op)
+            return inv_a[idx, :] @ (v[:, None] * inv_a)
 
         b = (
             np.asarray(receiver_resolvent_matrix)
@@ -423,7 +448,7 @@ class Helmholtz2D:
             else self.receiver_resolvent_matrix(m, frequency_hz, receiver_indices)
         )
         if b.size == 0:
-            return 0.0
+            return np.zeros((0, self.n), dtype=np.complex128)
         # C = P A^{-1} diag(v) A^{-1}.  Compute C^H by solving
         # A^H X = (P A^{-1} diag(v))^H.
         m_left = b * v[None, :]
@@ -431,8 +456,7 @@ class Helmholtz2D:
             m, m_left.conjugate().transpose(), frequency_hz,
             category="stability_rhs", adjoint=True,
         )
-        op = x.conjugate().transpose()
-        return self._spectral_norm(op)
+        return x.conjugate().transpose()
 
     def _spectral_norm(self, values: Array) -> float:
         if not values.size:

@@ -250,8 +250,10 @@ def test_legacy_surrogate_decrease_can_increase_true_objective_but_verification_
     legacy = run_inversion(physics=replace(problem.physics), step_acceptance="surrogate", **options)
     verified = run_inversion(physics=replace(problem.physics), step_acceptance="exact-decrease", **options)
     assert legacy.records[0].accepted
+    assert legacy.records[0].effective_step_acceptance == "surrogate"
     assert legacy.records[-1].true_objective > legacy.records[0].true_objective
     assert not verified.records[0].accepted
+    assert verified.records[0].effective_step_acceptance == "exact-decrease"
     np.testing.assert_array_equal(verified.final_model, problem.m0)
     assert verified.records[-1].true_objective == verified.records[0].true_objective
 
@@ -407,3 +409,59 @@ def test_full_fallback_reuses_paid_current_objective_without_extra_forward(monke
     # One current forward per already-paid exact gradient block, then only
     # candidate forward solves for the recorded line-search trials.
     assert record.online_exact_cost["forward_rhs"] == len(problem.blocks) * (1 + record.line_search_trials)
+
+
+@pytest.mark.parametrize("invalid", [False, True])
+@pytest.mark.parametrize("policy", [
+    "deterministic-selective", "deterministic-global", "conformal-selective",
+])
+def test_unusable_neural_gradient_recovers_with_paid_exact_merit_under_legacy_request(
+    monkeypatch, policy, invalid,
+):
+    problem = _problem()
+    exact_calls = []
+    exact_gradient = problem.physics.objective_and_gradient
+
+    def counted_gradient(*args, **kwargs):
+        exact_calls.append(1)
+        return exact_gradient(*args, **kwargs)
+
+    monkeypatch.setattr(problem.physics, "objective_and_gradient", counted_gradient)
+
+    class DeadNetwork:
+        def objective_and_gradient(self, m, q, observed, receivers, frequency_hz):
+            gradient = np.zeros_like(m)
+            if invalid:
+                gradient[0] = np.nan
+            return (
+                0.5 * float(np.vdot(observed, observed).real), gradient,
+                np.zeros_like(q, dtype=complex), -observed,
+            )
+
+        def objective(self, *args):
+            pytest.fail("exact recovery consulted the unusable neural merit")
+
+    run = run_inversion(
+        policy=policy, physics=problem.physics, surrogate=DeadNetwork(),
+        m0=problem.m0, m_true=problem.m_true, blocks=problem.blocks,
+        receiver_indices=problem.geometry.receiver_indices, iterations=1,
+        step_acceptance="surrogate",
+    )
+    record = run.records[0]
+    assert record.accepted and record.line_search_trials > 0
+    assert not np.array_equal(run.final_model, problem.m0)
+    assert run.records[-1].true_objective < record.true_objective
+    assert run.step_acceptance == record.step_acceptance == "surrogate"
+    assert record.effective_step_acceptance == "exact-decrease"
+    assert record.guarantee_scope == "exact-gradient-direction"
+    assert run.records[-1].effective_step_acceptance == "surrogate"
+    assert record.exact_gradient_blocks == len(problem.blocks)
+    assert record.verification_gradient_blocks == 0
+    assert len(exact_calls) == len(problem.blocks)
+    assert record.online_exact_cost["adjoint_rhs"] == len(problem.blocks)
+    # The exact current objective is already paid by fallback gradients.
+    assert record.online_exact_cost["forward_rhs"] == len(problem.blocks) * (
+        1 + record.line_search_trials
+    )
+    assert np.isfinite(record.method_objective)
+    assert all(isinstance(value, int) and value >= 0 for value in run.total_online_exact_cost.values())

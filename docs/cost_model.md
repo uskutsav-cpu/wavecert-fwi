@@ -94,6 +94,14 @@ Artifacts are saved in `results/cost_break_even/`:
 
 ## Research implications
 
+The [exact receiver controls](receiver_controls.md) sharpen this comparison:
+the same two maps contain the exact discrete directional derivative without
+neural residual bounds or SVDs. Transpose reciprocity can also reduce the
+complete exact-gradient cost to `min(2s, r+s-c)` RHS per frequency, where `c`
+sources coincide with unique receiver positions. The recorded `2sf` audit
+continues to describe its stated ordinary implementation; it is not an optimal
+exact-solver lower bound.
+
 A practical next experiment should first establish an acquisition and
 certificate construction where the full online budget can plausibly beat an
 optimized exact baseline. A deterministic cascade can try an available cheap

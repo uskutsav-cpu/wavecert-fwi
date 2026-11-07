@@ -58,6 +58,11 @@ running, failed, and complete runs; source changes during execution mark a run s
   parents. The historical final split remains archived with an overlap audit.
 - The fresh parent-held-out FNO still has substantial error. Negative results
   are retained rather than described as successful production validation.
+- Training/validation diagnostics separate receiver-residual error from neural
+  Jacobian error. Both remain substantial at smoothed inversion states.
+- Exact receiver-map and reciprocity controls use information already present
+  in the reference solves. They provide stronger comparisons than counting
+  repaired blocks alone; see [`docs/receiver_controls.md`](docs/receiver_controls.md).
 
 The evidence ledger and remaining research gaps are in
 [`docs/strengthening_status.md`](docs/strengthening_status.md). Historical phase
@@ -114,6 +119,12 @@ The guarded policy requires a calibration-domain contract containing
 mismatches trigger exact fallback. A matching contract cannot establish geological
 exchangeability. Legacy Phase-5 block scales were calibrated on the original
 neural direction; they do not establish adaptive-path coverage.
+
+A zero or invalid neural/hybrid gradient is not evidence of true stationarity.
+With a full exact budget, repair recovers through exact gradients and paid
+exact merit; otherwise it explicitly abstains. Iteration records distinguish
+the requested `step_acceptance` from `effective_step_acceptance`, including
+these recovery overrides.
 
 ## Reproduce parent-held-out geology evaluation
 

@@ -36,10 +36,13 @@ student interpretation, mentor endorsement, or claim of a 10/10 project.
 | `results/reference_cache_benchmark` | Same gradients with fewer repeated factorizations | WaveCert speedup over an equally optimized exact baseline |
 | `results/stability_benchmark` | Valid small-grid comparisons and analytical-bound availability | A universally useful field-scale stability bound |
 | `results/cost_break_even` | The current receiver-map setup costs `2rf` RHS versus `2sf` for an exact gradient | A universal impossibility result or a measured runtime lower bound |
+| `results/receiver_oracle_controls` | Direct exact directional information in the maps and a cheaper reciprocity gradient control | A neural inversion speedup or new certification theorem |
 | `results/research_audit` | Historical split overlap and parent-aware descriptive reanalysis | Repair of the archived experiment's design |
 | `results/evidence_study` | Complete synthetic trajectories, controls, uncertainty and full cost accounting | Field-scale advantage, universal OOD safety, or student-approved confirmation |
+| `results/evidence_audit` | Raw Cartesian completeness, trajectory joins, aggregate arithmetic, and declared source/checkpoint bytes | Independent reconstruction of every executed RHS or proof of scientific validity |
 | `results/grouped_geology` | Fresh forward-only training on the new parent-isolated fixture | A sufficiently accurate production wave surrogate |
 | `results/grouped_wavecert` | Parent-aware derivative/certificate evaluation on that fixture | An entire-trajectory guarantee or broad OOD geological validation |
+| `results/development_generalization` | Train/validation prediction, fresh-direction and residual/Jacobian decomposition diagnostics | Untouched confirmation, a full Jacobian norm estimate or successful generalization |
 | `results/devito_verified` | Independently checked exact time-domain baseline on downsampled Marmousi | Neural WaveCert time-domain certification |
 
 The fresh forward-only FNO's held-out receiver prediction error remains high
@@ -48,7 +51,46 @@ the calibrated gate produces observed false acceptances. These results are
 retained. Do not describe the new hard geological evaluation as perfect safety
 or successful acceleration.
 
-The initial 12-model synthetic pilot showed near-exact reconstruction with
+Development-only decomposition checks confirm that both receiver-residual
+prediction and neural Jacobian accuracy need improvement. On the existing
+model-selection parents, the two checkpoints' median smoothed-state gradient
+cosines are about `0.016` and `0.015`. Holding the true residual fixed still
+leaves low alignment. These diagnostics use training/validation arrays only;
+they do not create a new untouched test set or justify tuning on the final
+test results. More slices from existing parents cannot increase independent
+geological replication.
+
+The completed frozen-source study uses 60 independent generated models in each
+of four scenarios, nine policies and 12 iterations: 2,160 case rows and 28,080
+trajectory rows. The separate raw-table audit passed, including historical
+source/checkpoint verification against `dad24d3`. These are development results.
+
+On clean cases, calibrated selective repair uses 40.98 versus 48 exact gradient
+blocks, but 1,301.90 versus 179.67 total online RHS. Its mean paired runtime
+ratio to exact FWI is **46.74** (model-bootstrap 95% interval 44.18–49.28).
+The paired final model-error difference is `+0.000404` (0.000197–0.000616),
+slightly worse. It improves model error over the two-block random control by
+about 0.00559 while taking 6.00 times as long; this is not matched-cost
+superiority. Deterministic repair reproduces exact trajectories after paying
+substantial extra certification work.
+
+The frozen calibration realization covers only 45 of 60 clean initial repair
+paths (75%). Its one-sided 95% failure-probability upper limit is 35.85%.
+This is weaker than the target observed coverage and must be retained. A
+marginal split-conformal theorem does not promise the target conditional
+coverage for every particular calibration sample. No whole-trajectory coverage
+is established.
+
+Under frequency shift, unguarded calibrated repair has mean objective ratio
+0.749 versus 0.0286 for exact FWI. The acquisition guard routes all shifted
+frequency and sparse-receiver iterations to exact fallback and exactly matches
+their reference objective trajectories. Its frequency-shift paired runtime
+ratio is 1.011 (1.001–1.023). This establishes useful fail-closed routing,
+not improved reconstruction or a general OOD detector. Zero objective increases
+across the experiment follow paid exact-decrease acceptance, not calibration
+alone.
+
+The earlier 12-model synthetic pilot showed near-exact reconstruction with
 calibrated selective repair on clean cases, but more elapsed time than exact FWI.
 It also exposed severe frequency-shift stalling. The guarded policy was added
 after that development observation and is evaluated as a new exploratory policy,

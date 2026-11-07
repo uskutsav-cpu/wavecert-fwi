@@ -26,6 +26,9 @@ class AdaptiveDirectionResult:
     final_hybrid_gradient_norm: float
     certificate_rounds: int
     surrogate_gradient_evaluated: bool = True
+    # False when inference was skipped or produced an unusable gradient. Its
+    # reported norm then uses a finite zero sentinel, not a stationarity claim.
+    surrogate_gradient_valid: bool = True
     # Available only after all blocks were evaluated online by exact physics.
     # Reusing it avoids a duplicate current-objective forward pass.
     exact_objective: float | None = None
@@ -97,30 +100,47 @@ def _exact_fallback(
     *, physics: Helmholtz2D, surrogate_gradient: Array | None, m: Array,
     blocks: tuple[SurveyBlock, ...], receiver_indices: tuple[int, ...], mode: str,
     initial_upper: float = float("inf"), certificate_rounds: int = 0,
+    states: list[_BlockState] | None = None,
 ) -> AdaptiveDirectionResult:
     gradients = []
     objective = 0.0
-    for block in blocks:
-        value, gradient, _, _ = physics.objective_and_gradient(
-            m, physics.source(block.source_index), block.observed, receiver_indices,
-            block.frequency_hz,
-        )
+    for index, block in enumerate(blocks):
+        state = None if states is None else states[index]
+        if state is not None and state.exact_gradient is not None:
+            value, gradient = state.exact_objective, state.exact_gradient
+        else:
+            value, gradient, _, _ = physics.objective_and_gradient(
+                m, physics.source(block.source_index), block.observed, receiver_indices,
+                block.frequency_hz,
+            )
+        if value is None or not np.isfinite(value) or not np.all(np.isfinite(gradient)):
+            raise ValueError("exact fallback returned a nonfinite objective or gradient")
         objective += float(value)
         gradients.append(gradient)
     total = np.sum(gradients, axis=0)
     norm = float(np.linalg.norm(total))
+    if not np.isfinite(norm):
+        raise ValueError("exact fallback gradient norm must be finite")
+    direction = _normalised_negative(total)
+    has_direction = norm > 1e-14
+    surrogate_norm = (
+        None if surrogate_gradient is None else float(np.linalg.norm(surrogate_gradient))
+    )
+    surrogate_valid = surrogate_norm is not None and np.isfinite(surrogate_norm)
     return AdaptiveDirectionResult(
-        mode=mode, certified_descent=norm > 0, direction=_normalised_negative(total),
+        mode=mode, certified_descent=has_direction, direction=direction,
         repaired_blocks=tuple(block.label for block in blocks),
         exact_block_evaluations=len(blocks), total_blocks=len(blocks),
-        initial_upper_derivative=initial_upper, final_upper_derivative=-norm,
-        # A preflight rejection deliberately skips the neural gradient. The
-        # zero sentinel is disambiguated by surrogate_gradient_evaluated.
+        initial_upper_derivative=initial_upper,
+        final_upper_derivative=-norm if has_direction else 0.0,
+        # A preflight can skip the neural gradient; failed inference can make
+        # it invalid. Separate flags disambiguate their finite zero sentinel.
         surrogate_gradient_norm=(
-            0.0 if surrogate_gradient is None else float(np.linalg.norm(surrogate_gradient))
+            surrogate_norm if surrogate_valid else 0.0
         ),
         final_hybrid_gradient_norm=norm, certificate_rounds=certificate_rounds,
         surrogate_gradient_evaluated=surrogate_gradient is not None,
+        surrogate_gradient_valid=bool(surrogate_valid),
         exact_objective=float(objective),
     )
 
@@ -156,6 +176,11 @@ def adaptive_hybrid_direction(
     exact budget is insufficient. Its unevaluated neural norm is recorded as
     zero with ``surrogate_gradient_evaluated=False``; no neural zero-gradient
     or stationarity claim is implied.
+
+    A zero or nonfinite neural/partial hybrid gradient also causes full exact
+    recovery when the total budget permits it, reusing previously paid blocks.
+    Otherwise the method abstains without claiming true stationarity. This
+    recovery accepts no newly constructed, partially calibrated repair path.
     """
 
     m = physics.validate_model(m)
@@ -185,6 +210,7 @@ def adaptive_hybrid_direction(
                 initial_upper_derivative=float("inf"), final_upper_derivative=float("inf"),
                 surrogate_gradient_norm=0.0, final_hybrid_gradient_norm=0.0,
                 certificate_rounds=0, surrogate_gradient_evaluated=False,
+                surrogate_gradient_valid=False,
             )
         return _exact_fallback(
             physics=physics, surrogate_gradient=None, m=m, blocks=blocks,
@@ -201,37 +227,56 @@ def adaptive_hybrid_direction(
 
     surrogate_gradient = np.sum([s.neural_gradient for s in states], axis=0)
     surrogate_norm = float(np.linalg.norm(surrogate_gradient))
+    surrogate_valid = bool(np.isfinite(surrogate_norm))
 
     repaired: list[str] = []
     rounds = 0
-    initial_upper = float("nan")
+    initial_upper = float("inf")
 
     while True:
         hybrid_gradient = np.sum(
             [s.exact_gradient if s.exact_gradient is not None else s.neural_gradient for s in states],
             axis=0,
         )
-        direction = _normalised_negative(hybrid_gradient)
         hybrid_norm = float(np.linalg.norm(hybrid_gradient))
         exact_objective = (
             float(sum(state.exact_objective for state in states))
             if all(state.exact_objective is not None for state in states) else None
         )
-        if np.linalg.norm(direction) <= 1e-14:
+        if not np.isfinite(hybrid_norm) or hybrid_norm <= 1e-14:
+            # A zero/invalid neural or partial hybrid gradient says nothing
+            # about stationarity of the true objective. Full exact recovery is
+            # independent of calibrated bounds; do not start a different
+            # partially repaired path under the old pathwise scale.
+            if len(repaired) < len(states) and max_exact >= len(states):
+                reason = "invalid-hybrid-gradient" if not np.isfinite(hybrid_norm) else "zero-hybrid-gradient"
+                return _exact_fallback(
+                    physics=physics, surrogate_gradient=surrogate_gradient, m=m,
+                    blocks=blocks, receiver_indices=receiver_indices,
+                    mode=f"{reason}-exact-fallback", initial_upper=initial_upper,
+                    certificate_rounds=rounds, states=states,
+                )
+            all_exact = len(repaired) == len(states)
+            if all_exact and not np.isfinite(hybrid_norm):
+                raise ValueError("exact hybrid gradient norm must be finite")
+            reason = "invalid-hybrid-gradient" if not np.isfinite(hybrid_norm) else "zero-hybrid-gradient"
             return AdaptiveDirectionResult(
-                mode="stationary",
+                mode="stationary" if all_exact else f"{reason}-budget-exhausted",
                 certified_descent=False,
-                direction=direction,
+                direction=np.zeros_like(m),
                 repaired_blocks=tuple(repaired),
                 exact_block_evaluations=len(repaired),
                 total_blocks=len(states),
-                initial_upper_derivative=float("nan"),
-                final_upper_derivative=0.0,
-                surrogate_gradient_norm=surrogate_norm,
-                final_hybrid_gradient_norm=hybrid_norm,
+                initial_upper_derivative=initial_upper,
+                final_upper_derivative=0.0 if all_exact else float("inf"),
+                surrogate_gradient_norm=surrogate_norm if surrogate_valid else 0.0,
+                final_hybrid_gradient_norm=hybrid_norm if np.isfinite(hybrid_norm) else 0.0,
                 certificate_rounds=rounds,
+                surrogate_gradient_valid=surrogate_valid,
                 exact_objective=exact_objective,
             )
+
+        direction = _normalised_negative(hybrid_gradient)
 
         rounds += 1
         contributions: list[tuple[_BlockState, float, float]] = []
@@ -375,6 +420,13 @@ def global_fallback_direction(
         )
         neural_grads.append(np.asarray(ng, dtype=float))
     neural_gradient = np.sum(neural_grads, axis=0)
+    neural_norm = float(np.linalg.norm(neural_gradient))
+    if not np.isfinite(neural_norm) or neural_norm <= 1e-14:
+        reason = "invalid-hybrid-gradient" if not np.isfinite(neural_norm) else "zero-hybrid-gradient"
+        return _exact_fallback(
+            physics=physics, surrogate_gradient=neural_gradient, m=m, blocks=blocks,
+            receiver_indices=receiver_indices, mode=f"{reason}-exact-fallback",
+        )
     direction = _normalised_negative(neural_gradient)
 
     total_upper = 0.0
@@ -423,29 +475,8 @@ def global_fallback_direction(
             certificate_rounds=1,
         )
 
-    exact_grads: list[Array] = []
-    exact_value = 0.0
-    for block in blocks:
-        q = physics.source(block.source_index)
-        value, eg, _, _ = physics.objective_and_gradient(
-            m, q, block.observed, receiver_indices, block.frequency_hz
-        )
-        exact_value += float(value)
-        exact_grads.append(np.asarray(eg, dtype=float))
-    exact_gradient = np.sum(exact_grads, axis=0)
-    exact_direction = _normalised_negative(exact_gradient)
-    exact_dd = -float(np.linalg.norm(exact_gradient))
-    return AdaptiveDirectionResult(
-        mode="exact-fallback",
-        certified_descent=exact_dd < 0.0,
-        direction=exact_direction,
-        repaired_blocks=tuple(b.label for b in blocks),
-        exact_block_evaluations=len(blocks),
-        total_blocks=len(blocks),
-        initial_upper_derivative=float(total_upper),
-        final_upper_derivative=exact_dd,
-        surrogate_gradient_norm=float(np.linalg.norm(neural_gradient)),
-        final_hybrid_gradient_norm=float(np.linalg.norm(exact_gradient)),
-        certificate_rounds=1,
-        exact_objective=float(exact_value),
+    return _exact_fallback(
+        physics=physics, surrogate_gradient=neural_gradient, m=m, blocks=blocks,
+        receiver_indices=receiver_indices, mode="exact-fallback",
+        initial_upper=float(total_upper), certificate_rounds=1,
     )
