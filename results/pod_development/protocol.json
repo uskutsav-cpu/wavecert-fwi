@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-07T21:18:05.985166+00:00",
+  "scope": "Assistant-development classical reduced-order surrogate control, frozen before any POD validation outcome; established real-POD Galerkin method, not novel theory or student preregistration",
+  "teacher_study": "results/gradient_development",
+  "teacher_inputs": {
+    "protocol_sha256": "9262ab19fc87c3d04f4bad1bcc2da5b6978babc10c55ee2e461c981c8fdefe82",
+    "teacher_labels_sha256": "2140b9790845caae527ce6a0437a5d8563b377fda455a8d41f44ff0f1546657f",
+    "input_audit_sha256": "5bbd02bde77422dfa189ecdb434e043e005ea90a51ce7e7ad7fc0c7e886feb8a",
+    "archives": {
+      "train": {"path": "labels/train.npz", "sha256": "e0711c00a0b576c5ac7940e8a247d333031ca3d9091aada56e15bd0b8298a7d8"},
+      "validation": {"path": "labels/validation.npz", "sha256": "3d969f7c71145faed10266ab99af30266aaa99994b5aa3814440b2a2979fc2c0"},
+      "validation_inverse_cases": {"path": "labels/validation_inverse_cases.npz", "sha256": "be429def325b741d415546167b8e13b5d52a3304d79f36efd3945a58363177db"}
+    },
+    "train_parents": 17,
+    "validation_parents": 4,
+    "parent_and_slice_isolation": "Require the pinned input audit and exact disjoint parent/slice identities in the loaded training and validation labels",
+    "roles_opened": ["train", "validation", "validation_inverse_cases"],
+    "calibration_or_test_arrays_loaded": false,
+    "external_test_arrays_loaded": false
+  },
+  "basis_families": [
+    {"name": "state", "artifact_label": "state", "include_training_tangents": false},
+    {"name": "state+tangent", "artifact_label": "state_tangent", "include_training_tangents": true}
+  ],
+  "ranks": [8, 16, 32, 64],
+  "basis_construction": {
+    "inputs": "All raw and velocity-smoothed TRAIN teacher fields only; the second family additionally uses TRAIN teacher tangent fields",
+    "centering": false,
+    "real_basis": true,
+    "snapshot_normalization": "For each complex snapshot divide both real and imaginary parts by sqrt(max(sum(real^2+imag^2),1e-20)); never normalize the two parts separately",
+    "squared_norm_floor": 1e-20,
+    "column_order": "All state real columns, all state imaginary columns, then (second family only) all tangent real columns and all tangent imaginary columns",
+    "state_tangent_weighting": "Each complex snapshot is normalized independently using the same physical floor; equal numbers of state and tangent snapshots give equal aggregate snapshot weight",
+    "factorization": "One float64 real SVD per basis family; ranks use prefixes of the same left singular vectors without refitting",
+    "maximum_saved_rank": 64,
+    "basis_orthonormality_tolerance": 1e-10
+  },
+  "galerkin_model": {
+    "fixed_basis": "Real orthonormal B, independent of model parameters and evaluation data",
+    "offline_operators": "K_r=B.T K B and D_r=B.T diag(damping) B",
+    "model_operator": "M_r(m)=B.T diag(m) B; A_r=K_r-omega^2 M_r+i omega D_r",
+    "state": "u_hat=B solve(A_r,B.T q)",
+    "jvp": "du_hat=B solve(A_r,omega^2 B.T(diag(direction) u_hat))",
+    "adjoint": "lambda_r=solve(A_r.H,B.T P.T residual); gradient=omega^2 Re(conj(B lambda_r)*u_hat)",
+    "claim": "Analytically differentiated reduced-model objective; no fine-PDE derivative accuracy or certificate is asserted",
+    "factorization_cache_size": 8,
+    "mass_cache_size": 8,
+    "cache_identity": "Canonical float64 model content bytes; factor keys also contain frequency. Fixed copied basis/physical operator coefficients do not change after construction",
+    "cost_scope": "Reduced r-by-r dense factorizations/RHS solves and full-grid-to-reduced assemblies/projections are recorded separately; reduced RHS are not fine-grid RHS equivalents"
+  },
+  "validation": {
+    "criterion_reference": "Exact same physical three-component, equal-parent development criterion as the pinned gradient-training protocol",
+    "score": "Equal-parent mean receiver relative squared L2 + equal-parent mean full-field JVP relative squared L2 + (1 - equal-parent mean aggregate inverse-gradient cosine)",
+    "states": "All pinned raw and smoothed validation states with unchanged teacher directions",
+    "inverse_cases": "All eight pinned original validation slices; all original source/frequency blocks and raw teacher observations, with unchanged precomputed exact aggregate gradients",
+    "gradient_zero_threshold": 1e-14,
+    "ties": "First basis family in frozen order, then lower frozen rank",
+    "numerical_scope": "NumPy complex128 reduced solves versus float32 saved teacher channels; mathematical criterion is identical to FNO, with ordinary floating-point rounding differences",
+    "all_candidates_reported": true,
+    "selection_effect_on_fno_grid": "None: the four-FNO selection remains unchanged",
+    "heldout_evaluation": "None until a separate explicit prospective comparator freeze before held-out outcomes"
+  },
+  "accounting": {
+    "shared_offline_teacher_labels": "Carry forward full train, validation and inverse-gradient teacher-generation counters from the pinned study; reuse does not make those costs free",
+    "basis_svd": "Exactly one per family; state+tangent includes existing training tangent generation cost",
+    "neural_sgd": "None; no equal-update or equal-training-time claim",
+    "timing_claims": false,
+    "hardware_load": "Main neural training may run concurrently; no acceleration or inference timing benchmark is performed"
+  },
+  "reference": {
+    "citation": "Benner, Gugercin and Willcox (2015), A Survey of Projection-Based Model Reduction Methods for Parametric Dynamical Systems, SIAM Review 57(4), 483-531",
+    "doi": "10.1137/130932715",
+    "primary_url": "https://epubs.siam.org/doi/abs/10.1137/130932715"
+  }
+}
