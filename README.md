@@ -158,6 +158,27 @@ rather than selecting the best test result. To regenerate raw-derived data, use
 Raw downloads require `--download`. New compressed-byte hashes require new
 provenance and retraining, not bypassing the integrity check.
 
+## External generated-velocity stress test
+
+```bash
+# First preparation: fetch only two bounded velocity members from the author archive.
+python scripts/prepare_openfwi_stress.py
+python scripts/evaluate_openfwi_stress.py
+```
+
+The frozen development protocol selects 100 original models from each of two
+500-model author-published OpenFWI batches. It evaluates both existing geological
+checkpoints with regenerated 24-by-24 reference Helmholtz fields. These are not
+the original OpenFWI seismic records or an official benchmark evaluation.
+Selections, checkpoint/calibration hashes, layout correction, attribution and
+input provenance are recorded. Preparation preserves existing caches and refuses
+unbounded archive downloads. Input license provenance is separate from MIT code.
+
+The completed stress results retain high forward/gradient errors and false
+source-calibrated acceptances. Deterministic coverage with no accepted neural
+directions is abstention, not a useful accelerated inversion. See
+[`results/openfwi_external_stress`](results/openfwi_external_stress).
+
 ## Independent Devito baseline
 
 ```bash

@@ -43,6 +43,7 @@ student interpretation, mentor endorsement, or claim of a 10/10 project.
 | `results/grouped_geology` | Fresh forward-only training on the new parent-isolated fixture | A sufficiently accurate production wave surrogate |
 | `results/grouped_wavecert` | Parent-aware derivative/certificate evaluation on that fixture | An entire-trajectory guarantee or broad OOD geological validation |
 | `results/development_generalization` | Train/validation prediction, fresh-direction and residual/Jacobian decomposition diagnostics | Untouched confirmation, a full Jacobian norm estimate or successful generalization |
+| `results/openfwi_external_stress` | Frozen-checkpoint derivative/certificate stress results on 200 selected generated models from two author-published batches | Original OpenFWI seismic benchmark performance, field data, or broad independent geological validation |
 | `results/devito_verified` | Independently checked exact time-domain baseline on downsampled Marmousi | Neural WaveCert time-domain certification |
 
 The fresh forward-only FNO's held-out receiver prediction error remains high
@@ -59,6 +60,24 @@ leaves low alignment. These diagnostics use training/validation arrays only;
 they do not create a new untouched test set or justify tuning on the final
 test results. More slices from existing parents cannot increase independent
 geological replication.
+
+The external generated-velocity stress study completed on source `3554dc5`
+with unchanged source and input hashes: 200 selected original models, two
+unchanged checkpoints and four blocks each (1,600 block measurements). The
+receiver forward-error medians range from about 1.03 to 1.09 and gradient
+cosine medians from 0.014 to 0.049. Deterministic bounds cover every measured
+directional error but accept no neural directions. The source-calibrated
+gate's accepted/false-accepted block counts are 13/7 and 11/5 on FlatVel-A
+(forward/JVP checkpoints), and 1/1 and 0/0 on CurveFault-A. Zero acceptances
+are abstention, not demonstrated useful safe neural updates. Nominal
+source-domain conformal coverage is not asserted for these OOD outcomes.
+
+Every original model retains its four correlated blocks. Fixed-batch
+hypergeometric intervals cover only the named 500-entry batch under the
+declared uniform 100-entry sample; additional binomial/bootstrap summaries
+require an unverified independent-generated-draw assumption. The two families
+are not pooled into independent environments. Both primary batches contain
+distinct raw arrays, but this does not establish independent real sites.
 
 The completed frozen-source study uses 60 independent generated models in each
 of four scenarios, nine policies and 12 iterations: 2,160 case rows and 28,080

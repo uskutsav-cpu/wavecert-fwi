@@ -1,0 +1,470 @@
+{
+  "audit_passed": true,
+  "models": 60,
+  "case_rows": 2160,
+  "trajectory_rows": 28080,
+  "iterations": 12,
+  "calibration_cases": 30,
+  "objective_increases": 0,
+  "declared_source_commit": "dad24d37b3fa51c16f46534c955161b744e5e009",
+  "source_manifest_checked_against_git_commit": true,
+  "checkpoint_checked_against_git_commit": true,
+  "source_sha256": "f0be5827c921387eab904dd36de3756a7c764c613c8b61f929e8a9f831edb7ec",
+  "time_to_objective_ratio": {
+    "clean": {
+      "analytic-selective": {
+        "0.1": {
+          "reached_models": 57,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.018472993000159477
+        },
+        "0.05": {
+          "reached_models": 50,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.025316179499895952
+        }
+      },
+      "conformal-selective": {
+        "0.1": {
+          "reached_models": 58,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.8111627080000403
+        },
+        "0.05": {
+          "reached_models": 50,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 1.0182136694998576
+        }
+      },
+      "conformal-selective-guarded": {
+        "0.1": {
+          "reached_models": 58,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.8187098845000946
+        },
+        "0.05": {
+          "reached_models": 50,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 1.0101085645000012
+        }
+      },
+      "deterministic-selective": {
+        "0.1": {
+          "reached_models": 57,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.733651448999808
+        },
+        "0.05": {
+          "reached_models": 50,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.9978247245002194
+        }
+      },
+      "exact": {
+        "0.1": {
+          "reached_models": 57,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.011617444000194155
+        },
+        "0.05": {
+          "reached_models": 50,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.014991679500099053
+        }
+      },
+      "neural-only": {
+        "0.1": {
+          "reached_models": 17,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.13170062299991514
+        },
+        "0.05": {
+          "reached_models": 4,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.13878687600004014
+        }
+      },
+      "periodic-exact": {
+        "0.1": {
+          "reached_models": 57,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.09710871400011456
+        },
+        "0.05": {
+          "reached_models": 53,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.15706409500012342
+        }
+      },
+      "random-repair": {
+        "0.1": {
+          "reached_models": 43,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.13732976799974494
+        },
+        "0.05": {
+          "reached_models": 34,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.1984075035000501
+        }
+      },
+      "residual-repair": {
+        "0.1": {
+          "reached_models": 37,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.13703869699997995
+        },
+        "0.05": {
+          "reached_models": 26,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.14581696800019017
+        }
+      }
+    },
+    "frequency-shift": {
+      "analytic-selective": {
+        "0.1": {
+          "reached_models": 58,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.01752803200008657
+        },
+        "0.05": {
+          "reached_models": 52,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.02300149250021377
+        }
+      },
+      "conformal-selective": {
+        "0.1": {
+          "reached_models": 2,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 1.1372243524997998
+        },
+        "0.05": {
+          "reached_models": 0,
+          "total_models": 60,
+          "median_seconds_among_reached_only": null
+        }
+      },
+      "conformal-selective-guarded": {
+        "0.1": {
+          "reached_models": 58,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.013437053000018295
+        },
+        "0.05": {
+          "reached_models": 52,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.018062056000076154
+        }
+      },
+      "deterministic-selective": {
+        "0.1": {
+          "reached_models": 58,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.7544055514997581
+        },
+        "0.05": {
+          "reached_models": 52,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 1.0771884075001026
+        }
+      },
+      "exact": {
+        "0.1": {
+          "reached_models": 58,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.01320769150007095
+        },
+        "0.05": {
+          "reached_models": 52,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.017096101499760152
+        }
+      },
+      "neural-only": {
+        "0.1": {
+          "reached_models": 0,
+          "total_models": 60,
+          "median_seconds_among_reached_only": null
+        },
+        "0.05": {
+          "reached_models": 0,
+          "total_models": 60,
+          "median_seconds_among_reached_only": null
+        }
+      },
+      "periodic-exact": {
+        "0.1": {
+          "reached_models": 58,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.1640035959999011
+        },
+        "0.05": {
+          "reached_models": 50,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.2096831474999874
+        }
+      },
+      "random-repair": {
+        "0.1": {
+          "reached_models": 6,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.19683122649996676
+        },
+        "0.05": {
+          "reached_models": 3,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.19689991500013093
+        }
+      },
+      "residual-repair": {
+        "0.1": {
+          "reached_models": 2,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.27474704649995374
+        },
+        "0.05": {
+          "reached_models": 1,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.2727253400000791
+        }
+      }
+    },
+    "noise-5pct": {
+      "analytic-selective": {
+        "0.1": {
+          "reached_models": 38,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.020218405999912648
+        },
+        "0.05": {
+          "reached_models": 19,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.03540014299960603
+        }
+      },
+      "conformal-selective": {
+        "0.1": {
+          "reached_models": 39,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.9195733849999215
+        },
+        "0.05": {
+          "reached_models": 23,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 1.6055018979998295
+        }
+      },
+      "conformal-selective-guarded": {
+        "0.1": {
+          "reached_models": 39,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.8703892769998447
+        },
+        "0.05": {
+          "reached_models": 23,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 1.5944382929999392
+        }
+      },
+      "deterministic-selective": {
+        "0.1": {
+          "reached_models": 38,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.8858372240002268
+        },
+        "0.05": {
+          "reached_models": 19,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 1.4612656489999836
+        }
+      },
+      "exact": {
+        "0.1": {
+          "reached_models": 38,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.013727734499639155
+        },
+        "0.05": {
+          "reached_models": 19,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.02288753799996357
+        }
+      },
+      "neural-only": {
+        "0.1": {
+          "reached_models": 6,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.1316030034998903
+        },
+        "0.05": {
+          "reached_models": 0,
+          "total_models": 60,
+          "median_seconds_among_reached_only": null
+        }
+      },
+      "periodic-exact": {
+        "0.1": {
+          "reached_models": 36,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.1231463744999246
+        },
+        "0.05": {
+          "reached_models": 17,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.17146374599997216
+        }
+      },
+      "random-repair": {
+        "0.1": {
+          "reached_models": 32,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.1604968165001992
+        },
+        "0.05": {
+          "reached_models": 8,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.3332866170003399
+        }
+      },
+      "residual-repair": {
+        "0.1": {
+          "reached_models": 26,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.14448428299999705
+        },
+        "0.05": {
+          "reached_models": 10,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.22618413700007522
+        }
+      }
+    },
+    "sparse-receivers": {
+      "analytic-selective": {
+        "0.1": {
+          "reached_models": 57,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.018212949999906414
+        },
+        "0.05": {
+          "reached_models": 49,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.02513082900009067
+        }
+      },
+      "conformal-selective": {
+        "0.1": {
+          "reached_models": 56,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.7597301924997168
+        },
+        "0.05": {
+          "reached_models": 51,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 1.0328773620001357
+        }
+      },
+      "conformal-selective-guarded": {
+        "0.1": {
+          "reached_models": 57,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.01154726200013556
+        },
+        "0.05": {
+          "reached_models": 49,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.014143996000029802
+        }
+      },
+      "deterministic-selective": {
+        "0.1": {
+          "reached_models": 57,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.71848265299991
+        },
+        "0.05": {
+          "reached_models": 49,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.9341060729998389
+        }
+      },
+      "exact": {
+        "0.1": {
+          "reached_models": 57,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.0115306039999723
+        },
+        "0.05": {
+          "reached_models": 49,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.014559755999925983
+        }
+      },
+      "neural-only": {
+        "0.1": {
+          "reached_models": 11,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.13072969499989995
+        },
+        "0.05": {
+          "reached_models": 2,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.17113001550001172
+        }
+      },
+      "periodic-exact": {
+        "0.1": {
+          "reached_models": 58,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.11245724350021646
+        },
+        "0.05": {
+          "reached_models": 52,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.15122790950010767
+        }
+      },
+      "random-repair": {
+        "0.1": {
+          "reached_models": 42,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.13515100600022834
+        },
+        "0.05": {
+          "reached_models": 33,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.1883172420007213
+        }
+      },
+      "residual-repair": {
+        "0.1": {
+          "reached_models": 37,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.13881763500057787
+        },
+        "0.05": {
+          "reached_models": 25,
+          "total_models": 60,
+          "median_seconds_among_reached_only": 0.15911983400002327
+        }
+      }
+    }
+  },
+  "time_to_target_scope": "online seconds accumulated before each recorded state; unreached cases remain censored, and the reached-only median is not an overall speedup estimate",
+  "limitations": [
+    "This audit checks internal completion/accounting and declared source bytes; it does not prove scientific validity, exchangeability or field-scale performance.",
+    "The frozen study saves RHS totals per case, not per iteration. This checks their summary means and nonnegative-integral form, not an independent reconstruction of every executed solve.",
+    "Recomputing the declared bootstrap checks reported arithmetic; it does not validate the assumed independent sampling units."
+  ],
+  "artifact_sha256": {
+    "config.json": "c1075fa9f8f6ae6c6f3b4ec9cad774b2d9e17bc63ff6870956f5945d03e2487d",
+    "summary.json": "d9b500e3ffa065fee549e08e5617de559bbf83dbb8e40558165b6b48b370b357",
+    "status.json": "913e2e9df6686cb4208cd894afa42c7c0c784e099f1b561efd4f08db71b46809",
+    "cases.csv": "58fb4b766d672823d501e8485e1682db0b94254a260a4fd2e976c68372284bac",
+    "trajectories.csv": "5680d5790a7eb041afcdfce42241cab9ffb7dd0610ca857ac0e4a8b6b45929f1",
+    "calibration.csv": "d8abf8dfc86e862a22e0e42bb50e8840f793d56ce382b8aa5ae267b8211737b9",
+    "held_out_initial_path_coverage.csv": "fab2780d83220d657d62cd74a47b8f6002a459596a22ca97815ab59d5e9734dc"
+  }
+}
