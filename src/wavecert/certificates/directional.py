@@ -9,7 +9,7 @@ from wavecert.physics.helmholtz import Helmholtz2D
 from wavecert.surrogates.base import WavefieldSurrogate
 
 Array = np.ndarray
-StabilityMode = Literal["beta", "receiver", "directional"]
+StabilityMode = Literal["beta", "receiver", "directional", "analytic"]
 
 
 @dataclass(frozen=True)
@@ -20,6 +20,9 @@ class DirectionalCertificate:
 
     ``beta``
         Uses only the global stability constant ``beta = sigma_min(A)``.
+    ``analytic``
+        Uses an analytical lower bound for beta without a solve or SVD.
+        Unavailable sufficient stability conditions cause an explicit error.
     ``receiver``
         Replaces the outer ``1/beta`` receiver estimate by the sharper
         ``alpha = ||P A^{-1}||``.
@@ -28,7 +31,7 @@ class DirectionalCertificate:
         the receiver-space tangent error directly.
 
     The latter two are reference-grid tools in the current repository because
-    their exact computation forms a dense inverse. They are useful for testing
+    their exact computation uses dense receiver maps and spectral norms. They are useful for testing
     the *mathematical certificate* before a scalable stability estimator is
     introduced.
     """
@@ -107,16 +110,32 @@ def certify_direction(
     ``D Phi(m)[v] = Re <P u-d, P du>``.
     """
 
-    if stability_mode not in {"beta", "receiver", "directional"}:
+    if stability_mode not in {"beta", "receiver", "directional", "analytic"}:
         raise ValueError(f"unknown stability_mode={stability_mode!r}")
 
     m = physics.validate_model(m)
     direction = np.asarray(direction, dtype=float).reshape(-1)
     if direction.size != physics.n:
         raise ValueError("direction has wrong size")
+    if not np.all(np.isfinite(direction)):
+        raise ValueError("direction must be finite")
+    if stability_mode == "analytic" and beta is None:
+        beta = physics.analytical_stability_bound(m, frequency_hz).beta_lower_bound
+        if beta <= 0:
+            raise ValueError("analytical stability bound unavailable; exact fallback is required")
 
-    u_hat = surrogate.state(m, q, frequency_hz)
-    du_hat = surrogate.jvp(m, direction, q, frequency_hz)
+    state_and_jvp = getattr(surrogate, "state_and_jvp", None)
+    if callable(state_and_jvp):
+        u_hat, du_hat = state_and_jvp(m, direction, q, frequency_hz)
+    else:
+        u_hat = surrogate.state(m, q, frequency_hz)
+        du_hat = surrogate.jvp(m, direction, q, frequency_hz)
+    u_hat = np.asarray(u_hat).reshape(-1)
+    du_hat = np.asarray(du_hat).reshape(-1)
+    if u_hat.size != physics.n or du_hat.size != physics.n:
+        raise ValueError("surrogate state and tangent must match the physics grid")
+    if not np.all(np.isfinite(u_hat)) or not np.all(np.isfinite(du_hat)):
+        raise ValueError("surrogate state and tangent must be finite")
     a = physics.operator(m, frequency_hz)
     omega = 2.0 * np.pi * float(frequency_hz)
 
@@ -133,8 +152,8 @@ def certify_direction(
         eta_du = float("nan")
     else:
         beta_value = float(beta)
-        if beta_value <= 0:
-            raise ValueError("beta must be positive")
+        if not np.isfinite(beta_value) or beta_value <= 0:
+            raise ValueError("beta must be finite and positive")
         eta_u = float(rp_norm / beta_value)
         eta_du = float(
             ((omega**2) * np.linalg.norm(direction, ord=np.inf) * eta_u + rt_norm)
@@ -145,7 +164,7 @@ def certify_direction(
     alpha = receiver_resolvent_norm
     kappa = directional_tangent_resolvent_norm
 
-    if stability_mode == "beta":
+    if stability_mode in {"beta", "analytic"}:
         eta_pu = sampling_norm * eta_u
         eta_pdu = sampling_norm * eta_du
     else:
@@ -158,6 +177,8 @@ def certify_direction(
                 receiver_resolvent_matrix=receiver_resolvent_matrix,
             )
         alpha = float(alpha)
+        if not np.isfinite(alpha) or alpha < 0:
+            raise ValueError("receiver resolvent norm must be finite and non-negative")
         eta_pu = alpha * rp_norm
         if stability_mode == "receiver":
             eta_pdu = alpha * (
@@ -174,6 +195,8 @@ def certify_direction(
                     receiver_resolvent_matrix=receiver_resolvent_matrix,
                 )
             kappa = float(kappa)
+            if not np.isfinite(kappa) or kappa < 0:
+                raise ValueError("directional resolvent norm must be finite and non-negative")
             eta_pdu = alpha * rt_norm + (omega**2) * kappa * rp_norm
 
     p_u_hat = physics.restrict(u_hat, receiver_indices)

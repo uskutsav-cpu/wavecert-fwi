@@ -58,6 +58,23 @@ def build_parser() -> argparse.ArgumentParser:
     end_to_end.add_argument("--cases", type=int, default=4)
     end_to_end.add_argument("--iterations", type=int, default=8)
     end_to_end.add_argument("--seed", type=int, default=20261101)
+    end_to_end.add_argument("--output", default="results/phase7")
+    end_to_end.add_argument("--step-acceptance", choices=("surrogate", "exact-decrease", "exact-armijo"), default="surrogate")
+
+    evidence = sub.add_parser("evidence-study", help="reproduce a cost-accounted, multi-policy development study")
+    evidence.add_argument("--checkpoint", default="checkpoints/fno_phase2.pt")
+    evidence.add_argument("--output", default="results/evidence_study")
+    evidence.add_argument("--seeds", type=int, nargs="+", default=[731, 1907, 8101])
+    evidence.add_argument("--cases-per-seed", type=int, default=4)
+    evidence.add_argument("--iterations", type=int, default=12)
+    evidence.add_argument("--calibration-cases", type=int, default=30)
+    evidence.add_argument("--alpha", type=float, default=0.10)
+    evidence.add_argument("--scenarios", nargs="+", default=["clean", "noise-5pct", "sparse-receivers", "frequency-shift"])
+    evidence.add_argument("--step-acceptance", choices=("surrogate", "exact-decrease", "exact-armijo"), default="exact-decrease")
+    evidence.add_argument("--threads", type=int, default=1)
+
+    independent = sub.add_parser("verify-physics", help="check sparse physics against a spectral solver and analytic continuum solution")
+    independent.add_argument("--output", default="results/independent_physics")
 
     production = sub.add_parser(
         "production-study", help="run Phase-8 production/Marmousi readiness study"
@@ -80,6 +97,11 @@ def build_parser() -> argparse.ArgumentParser:
     real_train.add_argument("--width", type=int, default=48)
     real_train.add_argument("--modes", type=int, default=12)
     real_train.add_argument("--depth", type=int, default=4)
+    real_train.add_argument("--output", default="results/real_geology_v2")
+    real_train.add_argument("--seed", type=int, default=20260911)
+    real_train.add_argument("--threads", type=int, default=1)
+    real_train.add_argument("--jacobian-weight", type=float, default=0.0)
+    real_train.add_argument("--jacobian-seed", type=int, default=20261107)
 
     rw = sub.add_parser(
         "real-wavecert-study", help="run real-geology ID/OOD gradient and certificate study"
@@ -87,10 +109,12 @@ def build_parser() -> argparse.ArgumentParser:
     rw.add_argument("--dataset", default="data/external/subsurfacegen-wavecert")
     rw.add_argument("--checkpoint", default="checkpoints/fno_subsurfacegen_v2.pt")
     rw.add_argument("--alpha", type=float, default=0.10)
+    rw.add_argument("--output", default="results/real_wavecert")
 
     devito = sub.add_parser("devito-study", help="actually execute Devito forward/adjoint/L-BFGS-B")
     devito.add_argument("--marmousi", required=True)
     devito.add_argument("--iterations", type=int, default=5)
+    devito.add_argument("--output", default="results/devito_verified")
 
     openfwi = sub.add_parser(
         "openfwi-study", help="run WaveCert surrogate on an official OpenFWI velocity batch"
@@ -185,12 +209,31 @@ def main(argv: list[str] | None = None) -> int:
         print(
             json.dumps(
                 run_end_to_end_study(
-                    n_cases=args.cases, iterations=args.iterations, seed=args.seed
+                    n_cases=args.cases, iterations=args.iterations, seed=args.seed,
+                    output_dir=args.output, step_acceptance=args.step_acceptance,
                 ),
                 indent=2,
             )
         )
         return 0
+    if args.command == "evidence-study":
+        from wavecert.experiments.evidence_study import EvidenceConfig, run_evidence_study
+
+        config = EvidenceConfig(
+            seeds=tuple(args.seeds), cases_per_seed=args.cases_per_seed,
+            iterations=args.iterations, calibration_cases=args.calibration_cases,
+            alpha=args.alpha, scenarios=tuple(args.scenarios),
+            step_acceptance=args.step_acceptance, torch_threads=args.threads,
+        )
+        summary = run_evidence_study(checkpoint_path=args.checkpoint, output_dir=args.output, config=config)
+        print(json.dumps(summary, indent=2, allow_nan=False))
+        return 0
+    if args.command == "verify-physics":
+        from wavecert.physics.independent_verification import verify_physics_independently
+
+        summary = verify_physics_independently(output_dir=args.output)
+        print(json.dumps(summary, indent=2, allow_nan=False))
+        return 0 if summary["passed"] else 1
     if args.command == "production-study":
         from wavecert.experiments.production_study import run_production_study
 
@@ -211,12 +254,21 @@ def main(argv: list[str] | None = None) -> int:
         )
         return 0
     if args.command == "train-real-fno":
+        import torch
+
         from wavecert.experiments.real_geology_training import run_real_geology_training
         from wavecert.surrogates.fno import FNOConfig
 
+        if args.threads < 1:
+            raise ValueError("threads must be positive")
+        torch.set_num_threads(args.threads)
         summary = run_real_geology_training(
             dataset_dir=args.dataset,
             checkpoint_path=args.checkpoint,
+            output_dir=args.output,
+            seed=args.seed,
+            jacobian_weight=args.jacobian_weight,
+            jacobian_seed=args.jacobian_seed,
             epochs=args.epochs,
             batch_size=args.batch_size,
             patience=args.patience,
@@ -239,6 +291,7 @@ def main(argv: list[str] | None = None) -> int:
                     dataset_dir=args.dataset,
                     checkpoint_path=args.checkpoint,
                     alpha=args.alpha,
+                    output_dir=args.output,
                 ),
                 indent=2,
             )
@@ -252,6 +305,7 @@ def main(argv: list[str] | None = None) -> int:
                 run_devito_study(
                     marmousi_path=args.marmousi,
                     optimizer_iterations=args.iterations,
+                    output_dir=args.output,
                 ),
                 indent=2,
             )

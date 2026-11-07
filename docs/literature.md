@@ -38,7 +38,7 @@ Why it matters: directly demonstrates that neural operators trained without deri
 
 ### Park et al. (2026)
 *Neural Operators with Accurate Jacobian for High-Fidelity Image-Domain Seismic Inversion.*
-https://slim.gatech.edu/Publications/Public/Submitted/2026/park2026IMAGEnoa/abstract.html
+https://slim.gatech.edu/Publications/Public/Conferences/SEG/2026/park2026IMAGEnoa/abstract.html
 
 Why it matters: closest seismic evidence for the core failure mode. Forward-only neural operators can have inaccurate inversion-relevant Jacobians; Jacobian-informed training improves gradient structure and reconstruction quality.
 
@@ -77,6 +77,39 @@ https://arxiv.org/abs/2605.30541
 Why it matters: provides geologically diverse field-scale models, wavefields, and shot gathers, including a held-out geological setting for OOD evaluation. It is a natural second-stage benchmark after Marmousi.
 
 ## F. The conceptual synthesis
+
+### Additional close comparison identified in the 2026-11-07 review
+
+**Cheng et al. (ICML 2025), _Accelerating PDE-Constrained Optimization by the
+Derivative of Neural Operators_.**
+Primary proceedings: https://proceedings.mlr.press/v267/cheng25f.html
+
+This work combines optimization-oriented training, enhanced derivative learning,
+and hybrid numerical/neural optimization. It makes broad claims of novelty about
+"hybrid neural optimization" inappropriate for WaveCert. The specific comparison
+must concern post-training residual bounds on inversion-relevant directions and
+the source/frequency fallback decision, with equally accounted total cost.
+
+**O'Leary-Roseberry, DINO research overview.**
+Author's explanation and primary-paper links: https://tomoleary.github.io/dino/
+
+The optional random-JVP-supervised FNO is an established derivative-informed
+baseline. It is not a reproduction of every architectural/compression choice in
+DINO or Park et al.; its training directions, loss, label precision, and offline
+solve cost are explicitly recorded.
+
+**Jha and Enakoutsa (2026), _Neural operators with residual-based correction:
+Applications to optimization and Bayesian inference_.**
+Author's publication page:
+https://prashjha.github.io/publication/jha-2026-nop-chapter/
+
+Residual correction already appears inside optimization loops. A useful WaveCert
+claim therefore needs a clear distinction between correction and directional
+certification/abstention. The existence of a PDE residual alone is not novelty.
+
+These comparisons are a targeted review, not an exhaustive novelty clearance.
+The student should read the primary methods and decide what contribution the
+final results actually support.
 
 The working hypothesis is:
 

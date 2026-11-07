@@ -25,6 +25,10 @@ class AdaptiveDirectionResult:
     surrogate_gradient_norm: float
     final_hybrid_gradient_norm: float
     certificate_rounds: int
+    surrogate_gradient_evaluated: bool = True
+    # Available only after all blocks were evaluated online by exact physics.
+    # Reusing it avoids a duplicate current-objective forward pass.
+    exact_objective: float | None = None
 
     @property
     def exact_block_fraction(self) -> float:
@@ -43,6 +47,7 @@ class _BlockState:
     q: Array
     neural_gradient: Array
     exact_gradient: Array | None = None
+    exact_objective: float | None = None
 
 
 def _normalised_negative(gradient: Array) -> Array:
@@ -52,6 +57,13 @@ def _normalised_negative(gradient: Array) -> Array:
     return -np.asarray(gradient, dtype=float) / norm
 
 
+def _validate_scale(value: float) -> float:
+    scale = float(value)
+    if not np.isfinite(scale) or scale <= 0:
+        raise ValueError("bound scales must be finite and strictly positive")
+    return scale
+
+
 def _frequency_constants(
     physics: Helmholtz2D,
     m: Array,
@@ -59,25 +71,58 @@ def _frequency_constants(
     frequencies: Iterable[float],
     *,
     need_beta: bool = False,
+    need_receiver: bool = True,
+    analytic_beta: bool = False,
 ) -> dict[float, dict[str, object]]:
     constants: dict[float, dict[str, object]] = {}
     for frequency in sorted({float(v) for v in frequencies}):
-        receiver_matrix = physics.receiver_resolvent_matrix(
-            m, frequency, receiver_indices
-        )
-        entry: dict[str, object] = {
-            "receiver_matrix": receiver_matrix,
-            "alpha": physics.receiver_resolvent_norm(
-                m,
-                frequency,
-                receiver_indices,
-                receiver_resolvent_matrix=receiver_matrix,
-            ),
-        }
+        entry: dict[str, object] = {}
+        if need_receiver:
+            receiver_matrix = physics.receiver_resolvent_matrix(m, frequency, receiver_indices)
+            entry.update(
+                receiver_matrix=receiver_matrix,
+                alpha=physics.receiver_resolvent_norm(
+                    m, frequency, receiver_indices, receiver_resolvent_matrix=receiver_matrix,
+                ),
+            )
         if need_beta:
             entry["beta"] = physics.smallest_singular_value(m, frequency)
+        if analytic_beta:
+            entry["beta"] = physics.analytical_stability_bound(m, frequency).beta_lower_bound
         constants[frequency] = entry
     return constants
+
+
+def _exact_fallback(
+    *, physics: Helmholtz2D, surrogate_gradient: Array | None, m: Array,
+    blocks: tuple[SurveyBlock, ...], receiver_indices: tuple[int, ...], mode: str,
+    initial_upper: float = float("inf"), certificate_rounds: int = 0,
+) -> AdaptiveDirectionResult:
+    gradients = []
+    objective = 0.0
+    for block in blocks:
+        value, gradient, _, _ = physics.objective_and_gradient(
+            m, physics.source(block.source_index), block.observed, receiver_indices,
+            block.frequency_hz,
+        )
+        objective += float(value)
+        gradients.append(gradient)
+    total = np.sum(gradients, axis=0)
+    norm = float(np.linalg.norm(total))
+    return AdaptiveDirectionResult(
+        mode=mode, certified_descent=norm > 0, direction=_normalised_negative(total),
+        repaired_blocks=tuple(block.label for block in blocks),
+        exact_block_evaluations=len(blocks), total_blocks=len(blocks),
+        initial_upper_derivative=initial_upper, final_upper_derivative=-norm,
+        # A preflight rejection deliberately skips the neural gradient. The
+        # zero sentinel is disambiguated by surrogate_gradient_evaluated.
+        surrogate_gradient_norm=(
+            0.0 if surrogate_gradient is None else float(np.linalg.norm(surrogate_gradient))
+        ),
+        final_hybrid_gradient_norm=norm, certificate_rounds=certificate_rounds,
+        surrogate_gradient_evaluated=surrogate_gradient is not None,
+        exact_objective=float(objective),
+    )
 
 
 def adaptive_hybrid_direction(
@@ -91,18 +136,26 @@ def adaptive_hybrid_direction(
     max_exact_blocks: int | None = None,
     bound_scales: dict[str, float] | None = None,
 ) -> AdaptiveDirectionResult:
-    """Build a descent direction with the minimum greedy exact-block repairs.
+    """Build a descent direction using greedy exact-block repairs.
 
     The algorithm begins with the summed neural gradient. For the *current*
-    hybrid direction it certifies every unrepaired source/frequency block. If
-    the sum of exact repaired contributions plus rigorous upper bounds for the
-    unrepaired contributions is negative, the direction is certified.
+    hybrid direction it evaluates every unrepaired source/frequency block. If
+    the sum of exact repaired contributions plus the selected upper bounds is
+    negative, the direction passes the gate. With scales equal to one these
+    are deterministic discrete bounds; calibrated scales have separate
+    statistical semantics and require a valid calibration protocol.
 
     Otherwise the block with the largest current certificate uncertainty is
     replaced by its exact PDE gradient, the direction is recomputed, and all
     remaining certificates are recomputed for that new direction. This detail
     is essential: changing the hybrid gradient changes the direction being
     certified.
+
+    Analytical stability is checked before neural inference or autodiff. If
+    unavailable, the policy directly uses exact physics, or abstains when the
+    exact budget is insufficient. Its unevaluated neural norm is recorded as
+    zero with ``surrogate_gradient_evaluated=False``; no neural zero-gradient
+    or stationarity claim is implied.
     """
 
     m = physics.validate_model(m)
@@ -112,28 +165,42 @@ def adaptive_hybrid_direction(
     max_exact = len(blocks) if max_exact_blocks is None else int(max_exact_blocks)
     if max_exact < 0:
         raise ValueError("max_exact_blocks must be non-negative")
+    if bound_scales is not None:
+        bound_scales = {label: _validate_scale(value) for label, value in bound_scales.items()}
+    constants = _frequency_constants(
+        physics,
+        m,
+        receiver_indices,
+        [block.frequency_hz for block in blocks],
+        need_beta=stability_mode in {"beta", "receiver"},
+        need_receiver=stability_mode in {"receiver", "directional"},
+        analytic_beta=stability_mode == "analytic",
+    )
+    if stability_mode == "analytic" and any(float(c["beta"]) <= 0 for c in constants.values()):
+        if max_exact < len(blocks):
+            return AdaptiveDirectionResult(
+                mode="unavailable-stability-budget-exhausted", certified_descent=False,
+                direction=np.zeros_like(m), repaired_blocks=(),
+                exact_block_evaluations=0, total_blocks=len(blocks),
+                initial_upper_derivative=float("inf"), final_upper_derivative=float("inf"),
+                surrogate_gradient_norm=0.0, final_hybrid_gradient_norm=0.0,
+                certificate_rounds=0, surrogate_gradient_evaluated=False,
+            )
+        return _exact_fallback(
+            physics=physics, surrogate_gradient=None, m=m, blocks=blocks,
+            receiver_indices=receiver_indices, mode="unavailable-stability-exact-fallback",
+        )
 
     states: list[_BlockState] = []
     for block in blocks:
         q = physics.source(block.source_index)
         _, ng, _, _ = surrogate.objective_and_gradient(
-            m,
-            q,
-            block.observed,
-            receiver_indices,
-            block.frequency_hz,
+            m, q, block.observed, receiver_indices, block.frequency_hz,
         )
         states.append(_BlockState(block=block, q=q, neural_gradient=np.asarray(ng, dtype=float)))
 
     surrogate_gradient = np.sum([s.neural_gradient for s in states], axis=0)
     surrogate_norm = float(np.linalg.norm(surrogate_gradient))
-    constants = _frequency_constants(
-        physics,
-        m,
-        receiver_indices,
-        [s.block.frequency_hz for s in states],
-        need_beta=stability_mode != "directional",
-    )
 
     repaired: list[str] = []
     rounds = 0
@@ -146,6 +213,10 @@ def adaptive_hybrid_direction(
         )
         direction = _normalised_negative(hybrid_gradient)
         hybrid_norm = float(np.linalg.norm(hybrid_gradient))
+        exact_objective = (
+            float(sum(state.exact_objective for state in states))
+            if all(state.exact_objective is not None for state in states) else None
+        )
         if np.linalg.norm(direction) <= 1e-14:
             return AdaptiveDirectionResult(
                 mode="stationary",
@@ -159,11 +230,15 @@ def adaptive_hybrid_direction(
                 surrogate_gradient_norm=surrogate_norm,
                 final_hybrid_gradient_norm=hybrid_norm,
                 certificate_rounds=rounds,
+                exact_objective=exact_objective,
             )
 
         rounds += 1
         contributions: list[tuple[_BlockState, float, float]] = []
         total_upper = 0.0
+        # kappa depends on frequency and the current direction, not source.
+        # It must be recomputed after repair changes the hybrid direction.
+        kappas: dict[float, float] = {}
         for state in states:
             if state.exact_gradient is not None:
                 exact_dd = float(np.dot(state.exact_gradient, direction))
@@ -175,13 +250,12 @@ def adaptive_hybrid_direction(
             c = constants[frequency]
             kappa = None
             if stability_mode == "directional":
-                kappa = physics.directional_receiver_tangent_resolvent_norm(
-                    m,
-                    frequency,
-                    receiver_indices,
-                    direction,
-                    receiver_resolvent_matrix=np.asarray(c["receiver_matrix"]),
-                )
+                if frequency not in kappas:
+                    kappas[frequency] = physics.directional_receiver_tangent_resolvent_norm(
+                        m, frequency, receiver_indices, direction,
+                        receiver_resolvent_matrix=np.asarray(c["receiver_matrix"]),
+                    )
+                kappa = kappas[frequency]
             cert = certify_direction(
                 physics=physics,
                 surrogate=surrogate,
@@ -193,8 +267,8 @@ def adaptive_hybrid_direction(
                 direction=direction,
                 beta=None if stability_mode == "directional" else float(c["beta"]),
                 stability_mode=stability_mode,
-                receiver_resolvent_matrix=np.asarray(c["receiver_matrix"]),
-                receiver_resolvent_norm=float(c["alpha"]),
+                receiver_resolvent_matrix=c.get("receiver_matrix"),
+                receiver_resolvent_norm=c.get("alpha"),
                 directional_tangent_resolvent_norm=kappa,
             )
             scale = 1.0 if bound_scales is None else float(bound_scales.get(state.block.label, 1.0))
@@ -221,6 +295,7 @@ def adaptive_hybrid_direction(
                 surrogate_gradient_norm=surrogate_norm,
                 final_hybrid_gradient_norm=hybrid_norm,
                 certificate_rounds=rounds,
+                exact_objective=exact_objective,
             )
 
         unrepaired = [(s, bound) for s, _, bound in contributions if s.exact_gradient is None]
@@ -237,12 +312,13 @@ def adaptive_hybrid_direction(
                 surrogate_gradient_norm=surrogate_norm,
                 final_hybrid_gradient_norm=hybrid_norm,
                 certificate_rounds=rounds,
+                exact_objective=exact_objective,
             )
 
         # Greedy repair: the largest uncertainty contributes the most avoidable
         # slack to the global upper bound.
         selected = max(unrepaired, key=lambda item: item[1])[0]
-        _, exact_gradient, _, _ = physics.objective_and_gradient(
+        exact_value, exact_gradient, _, _ = physics.objective_and_gradient(
             m,
             selected.q,
             selected.block.observed,
@@ -250,6 +326,7 @@ def adaptive_hybrid_direction(
             selected.block.frequency_hz,
         )
         selected.exact_gradient = np.asarray(exact_gradient, dtype=float)
+        selected.exact_objective = float(exact_value)
         repaired.append(selected.block.label)
 
 
@@ -263,10 +340,33 @@ def global_fallback_direction(
     stability_mode: StabilityMode = "directional",
     bound_scale: float = 1.0,
 ) -> AdaptiveDirectionResult:
-    """Certify the neural direction globally; otherwise use the exact gradient."""
+    """Certify the neural direction globally; otherwise use the exact gradient.
+
+    Unavailable analytical stability is rejected before any neural work. The
+    result records ``surrogate_gradient_evaluated=False`` and a zero norm
+    sentinel when the neural gradient was deliberately not computed.
+    """
 
     m = physics.validate_model(m)
     blocks = tuple(blocks)
+    if not blocks:
+        raise ValueError("at least one survey block is required")
+    bound_scale = _validate_scale(bound_scale)
+    constants = _frequency_constants(
+        physics,
+        m,
+        receiver_indices,
+        [b.frequency_hz for b in blocks],
+        need_beta=stability_mode in {"beta", "receiver"},
+        need_receiver=stability_mode in {"receiver", "directional"},
+        analytic_beta=stability_mode == "analytic",
+    )
+    if stability_mode == "analytic" and any(float(c["beta"]) <= 0 for c in constants.values()):
+        return _exact_fallback(
+            physics=physics, surrogate_gradient=None, m=m, blocks=blocks,
+            receiver_indices=receiver_indices, mode="unavailable-stability-exact-fallback",
+        )
+
     neural_grads: list[Array] = []
     for block in blocks:
         q = physics.source(block.source_index)
@@ -276,27 +376,21 @@ def global_fallback_direction(
         neural_grads.append(np.asarray(ng, dtype=float))
     neural_gradient = np.sum(neural_grads, axis=0)
     direction = _normalised_negative(neural_gradient)
-    constants = _frequency_constants(
-        physics,
-        m,
-        receiver_indices,
-        [b.frequency_hz for b in blocks],
-        need_beta=stability_mode != "directional",
-    )
 
     total_upper = 0.0
+    kappas: dict[float, float] = {}
     for block in blocks:
         q = physics.source(block.source_index)
         c = constants[float(block.frequency_hz)]
         kappa = None
         if stability_mode == "directional":
-            kappa = physics.directional_receiver_tangent_resolvent_norm(
-                m,
-                block.frequency_hz,
-                receiver_indices,
-                direction,
-                receiver_resolvent_matrix=np.asarray(c["receiver_matrix"]),
-            )
+            frequency = float(block.frequency_hz)
+            if frequency not in kappas:
+                kappas[frequency] = physics.directional_receiver_tangent_resolvent_norm(
+                    m, frequency, receiver_indices, direction,
+                    receiver_resolvent_matrix=np.asarray(c["receiver_matrix"]),
+                )
+            kappa = kappas[frequency]
         cert = certify_direction(
             physics=physics,
             surrogate=surrogate,
@@ -308,8 +402,8 @@ def global_fallback_direction(
             direction=direction,
             beta=None if stability_mode == "directional" else float(c["beta"]),
             stability_mode=stability_mode,
-            receiver_resolvent_matrix=np.asarray(c["receiver_matrix"]),
-            receiver_resolvent_norm=float(c["alpha"]),
+            receiver_resolvent_matrix=c.get("receiver_matrix"),
+            receiver_resolvent_norm=c.get("alpha"),
             directional_tangent_resolvent_norm=kappa,
         )
         total_upper += cert.surrogate_directional_derivative + float(bound_scale) * cert.directional_error_bound
@@ -330,11 +424,13 @@ def global_fallback_direction(
         )
 
     exact_grads: list[Array] = []
+    exact_value = 0.0
     for block in blocks:
         q = physics.source(block.source_index)
-        _, eg, _, _ = physics.objective_and_gradient(
+        value, eg, _, _ = physics.objective_and_gradient(
             m, q, block.observed, receiver_indices, block.frequency_hz
         )
+        exact_value += float(value)
         exact_grads.append(np.asarray(eg, dtype=float))
     exact_gradient = np.sum(exact_grads, axis=0)
     exact_direction = _normalised_negative(exact_gradient)
@@ -351,4 +447,5 @@ def global_fallback_direction(
         surrogate_gradient_norm=float(np.linalg.norm(neural_gradient)),
         final_hybrid_gradient_norm=float(np.linalg.norm(exact_gradient)),
         certificate_rounds=1,
+        exact_objective=float(exact_value),
     )

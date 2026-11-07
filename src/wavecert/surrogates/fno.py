@@ -225,6 +225,12 @@ class TrainedFNOWavefieldSurrogate:
         return yc.reshape(-1).cpu().numpy()
 
     def jvp(self, m: Array, direction: Array, q: Array, frequency_hz: float) -> Array:
+        return self.state_and_jvp(m, direction, q, frequency_hz)[1]
+
+    def state_and_jvp(
+        self, m: Array, direction: Array, q: Array, frequency_hz: float
+    ) -> tuple[Array, Array]:
+        """Evaluate a state and its tangent in one forward-mode AD pass."""
         q = np.asarray(q)
         source_index = int(np.argmax(np.abs(q)))
         mt = torch.as_tensor(np.asarray(m), dtype=torch.float32, device=self.device)
@@ -233,9 +239,26 @@ class TrainedFNOWavefieldSurrogate:
         def fn(x):
             return self._forward_tensor(x, source_index, float(frequency_hz))
 
-        _, tangent = torch.func.jvp(fn, (mt,), (vt,))
+        value, tangent = torch.func.jvp(fn, (mt,), (vt,))
+        vc = torch.complex(value[..., 0], value[..., 1])
         tc = torch.complex(tangent[..., 0], tangent[..., 1])
-        return tc.reshape(-1).detach().cpu().numpy()
+        return (
+            vc.reshape(-1).detach().cpu().numpy(),
+            tc.reshape(-1).detach().cpu().numpy(),
+        )
+
+    def objective(
+        self,
+        m: Array,
+        q: Array,
+        observed: Array,
+        receiver_indices: tuple[int, ...],
+        frequency_hz: float,
+    ) -> float:
+        """Forward-only merit evaluation; line searches do not need a VJP."""
+        state = self.state(m, q, frequency_hz)
+        residual = state[np.asarray(receiver_indices, dtype=int)] - np.asarray(observed)
+        return 0.5 * float(np.vdot(residual, residual).real)
 
     def objective_and_gradient(
         self,
@@ -272,7 +295,7 @@ class TrainedFNOWavefieldSurrogate:
     def load(cls, path: str | Path, *, device: str = "cpu") -> TrainedFNOWavefieldSurrogate:
         if torch is None:  # pragma: no cover
             raise ImportError("PyTorch is required")
-        payload: dict[str, Any] = torch.load(path, map_location=device, weights_only=False)
+        payload: dict[str, Any] = torch.load(path, map_location=device, weights_only=True)
         config = FNOConfig(**payload["model_config"])
         model = FNO2dWavefield(config)
         model.load_state_dict(payload["model_state"])

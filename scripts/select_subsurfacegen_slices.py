@@ -12,7 +12,10 @@ def main() -> None:
     parser.add_argument("--train", type=int, default=1000)
     parser.add_argument("--id", type=int, default=50)
     parser.add_argument("--ood", type=int, default=50)
-    parser.add_argument("--no-download", action="store_true")
+    parser.add_argument("--seed", type=int, default=20260911)
+    download = parser.add_mutually_exclusive_group()
+    download.add_argument("--download", action="store_true", help="download selected velocity files after the split audit passes")
+    download.add_argument("--no-download", action="store_true", help="compatibility flag; no download is the default")
     args = parser.parse_args()
     manifest = select_subsurfacegen_slices(
         index_root=args.index_root,
@@ -20,7 +23,8 @@ def main() -> None:
         train_count=args.train,
         id_count=args.id,
         ood_count=args.ood,
-        download=not args.no_download,
+        seed=args.seed,
+        download=args.download,
     )
     print(manifest.groupby(["split", "model_type"]).size())
 

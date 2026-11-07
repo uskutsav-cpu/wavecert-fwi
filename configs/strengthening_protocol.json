@@ -1,0 +1,14 @@
+{
+  "status": "development engineering evaluation; not student-approved preregistration",
+  "dataset": "subsurfacegen/field-scale-dataset",
+  "dataset_revision": "c612dc2255f6dc4a139bb667f12eaaedf61a8d3d",
+  "selection_seed": 20261107,
+  "slices_per_id_parent": 2,
+  "ood_slices": 4,
+  "assignment": "unstratified whole-parent random assignment from the common ID pool",
+  "role_fractions": {"train": 0.4, "validation": 0.1, "calibration": 0.3, "test_id": 0.2},
+  "geology_training": {"seed": 20261107, "shape": [24, 24], "epochs": 40, "patience": 10, "width": 24, "modes": 8, "depth": 3, "threads": 1, "explored_jacobian_weights": [0.0, 0.1], "jacobian_seed": 20261107, "selection": "within each training run by model-selection validation only; no winning model chosen using test results"},
+  "calibration": {"alpha": 0.1, "unit": "maximum normalized error over sampled slices/blocks within one parent", "trajectory_guarantee": false},
+  "synthetic_evidence": {"seeds": [731, 1907, 8101], "cases_per_seed": 20, "iterations": 12, "calibration_cases": 30, "step_acceptance": "exact-decrease", "threads": 1},
+  "scope_exclusions": ["field-scale certification", "measured seismic data", "unconditional OOD guarantee", "entire-trajectory conformal guarantee", "competition outcome prediction"]
+}
