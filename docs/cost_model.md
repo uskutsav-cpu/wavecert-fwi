@@ -4,6 +4,13 @@ This note documents a limitation of the current discrete `directional`
 certificate implementation. It is an engineering analysis and reproducibility
 record, not a student-authored competition paper or evidence of acceleration.
 
+The stronger [residual-coded exact reference](residual_coded_reference.md)
+now includes a complete exact-gradient route costing `2rf` RHS. Consequently,
+the initial two-map certificate cannot save RHS against the best implemented
+exact reference for **any** source/receiver count. The ordinary `2sf`
+comparison and its saved sweep below remain a historical, narrower audit;
+they do not identify an advantageous acquisition regime by themselves.
+
 ## The implementation being counted
 
 Let `s` be the number of source positions per frequency, `r` the number of
@@ -42,9 +49,9 @@ and no blocks are repaired. Neural inference, residual evaluation, further
 direction-dependent maps, repairs, and finite-step checks add work beyond this
 initial comparison.
 
-If `r < s`, a lower initial RHS count becomes possible. That is a necessary
-condition for an RHS saving by this implementation, not evidence that the
-complete inversion is faster or that its directions are reliable.
+If `r < s`, the maps use fewer RHS than this particular ordinary `2sf` route.
+The residual-coded exact full gradient also uses `2rf`, so this does not
+provide an RHS advantage over the stronger exact reference.
 
 ## What this does not establish
 
@@ -94,13 +101,16 @@ Artifacts are saved in `results/cost_break_even/`:
 
 ## Research implications
 
-The [exact receiver controls](receiver_controls.md) sharpen this comparison:
-the same two maps contain the exact discrete directional derivative without
-neural residual bounds or SVDs. Transpose reciprocity can also reduce the
-complete exact-gradient cost to `min(2s, r+s-c)` RHS per frequency, where `c`
-sources coincide with unique receiver positions. The recorded `2sf` audit
-continues to describe its stated ordinary implementation; it is not an optimal
-exact-solver lower bound.
+The [exact receiver controls](receiver_controls.md) show that the same two
+maps contain the exact discrete directional derivative without neural
+residual bounds or SVDs. The stronger residual-coded route obtains the whole
+gradient with `2r` RHS, independent of transpose symmetry. The exact chooser
+therefore uses `min(2s, 2r, r+s-c)` RHS per frequency, with the last option
+available only for the explicitly checked transpose-symmetric operator; `r`
+counts unique point receivers and `c` counts sources at those positions.
+This minimizes counts among the implemented routes, without asserting a
+universal runtime lower bound. Historical `2sf` artifacts retain their
+original numbers and declared scope.
 
 A practical next experiment should first establish an acquisition and
 certificate construction where the full online budget can plausibly beat an

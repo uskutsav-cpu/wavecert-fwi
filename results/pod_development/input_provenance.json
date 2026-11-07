@@ -1,0 +1,202 @@
+{
+  "teacher_study": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/results/gradient_development",
+  "verified_file_sha256": {
+    "protocol.json": "9262ab19fc87c3d04f4bad1bcc2da5b6978babc10c55ee2e461c981c8fdefe82",
+    "teacher_labels.json": "2140b9790845caae527ce6a0437a5d8563b377fda455a8d41f44ff0f1546657f",
+    "input_audit.json": "5bbd02bde77422dfa189ecdb434e043e005ea90a51ce7e7ad7fc0c7e886feb8a",
+    "labels/train.npz": "e0711c00a0b576c5ac7940e8a247d333031ca3d9091aada56e15bd0b8298a7d8",
+    "labels/validation.npz": "3d969f7c71145faed10266ab99af30266aaa99994b5aa3814440b2a2979fc2c0",
+    "labels/validation_inverse_cases.npz": "be429def325b741d415546167b8e13b5d52a3304d79f36efd3945a58363177db"
+  },
+  "identities": {
+    "train": {
+      "parent_ids": [
+        "f3_044",
+        "f3_045",
+        "f3_047",
+        "f3_049",
+        "f3_050",
+        "gom_142",
+        "gom_143",
+        "gom_145",
+        "gom_146",
+        "gom_147",
+        "gom_150",
+        "salt_canopy_000",
+        "salt_canopy_001",
+        "seam_003",
+        "seam_006",
+        "seam_007",
+        "seam_010"
+      ],
+      "slice_ids": [
+        "f3_044_il_0120",
+        "f3_044_xl_0480",
+        "f3_045_il_0133",
+        "f3_045_xl_0497",
+        "f3_047_il_0139",
+        "f3_047_xl_0460",
+        "f3_049_il_0131",
+        "f3_049_xl_0459",
+        "f3_050_il_0110",
+        "f3_050_xl_0467",
+        "gom_142_il_0315",
+        "gom_142_xl_0817",
+        "gom_143_il_0337",
+        "gom_143_xl_0872",
+        "gom_145_il_0350",
+        "gom_145_xl_0839",
+        "gom_146_il_0343",
+        "gom_146_xl_0866",
+        "gom_147_il_0273",
+        "gom_147_xl_0802",
+        "gom_150_il_0292",
+        "gom_150_xl_0890",
+        "salt_canopy_000_xl_0337",
+        "salt_canopy_000_xl_0663",
+        "salt_canopy_001_xl_0316",
+        "salt_canopy_001_xl_0734",
+        "seam_003_il_0518",
+        "seam_003_xl_0828",
+        "seam_006_il_0378",
+        "seam_006_xl_0768",
+        "seam_007_il_0494",
+        "seam_007_xl_0762",
+        "seam_010_il_0506",
+        "seam_010_xl_0797"
+      ],
+      "state_examples": 1632
+    },
+    "validation": {
+      "parent_ids": [
+        "gom_148",
+        "gom_151",
+        "seam_005",
+        "seam_011"
+      ],
+      "slice_ids": [
+        "gom_148_il_0236",
+        "gom_148_xl_0768",
+        "gom_151_il_0247",
+        "gom_151_xl_0857",
+        "seam_005_il_0596",
+        "seam_005_xl_0795",
+        "seam_011_il_0522",
+        "seam_011_xl_0866"
+      ],
+      "state_examples": 384
+    }
+  },
+  "shared_offline_teacher_label_generation": {
+    "train": {
+      "role": "train",
+      "raw_examples": 816,
+      "all_state_examples": 1632,
+      "n_parent_models": 17,
+      "seconds": 2.5593842079979368,
+      "offline_physics_cost": {
+        "factorizations": 272,
+        "forward_rhs": 1632,
+        "tangent_rhs": 1632,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 2992,
+        "analytic_bound_evaluations": 0
+      },
+      "array_sha256": {
+        "models": "75904cb143f81b736ec7306bcd81662bcf4107fdcb06e1281077ad6ecfe211a7",
+        "directions": "8912a11c31fc400d2696ec92246ac193aa9d992d07bc4110bf8ca917b8036cfe",
+        "fields": "b17faa3da4c9ee255c55cb18391771b5539a2cd8c80ffc4f20d897e1dd9e79d5",
+        "tangents": "8f8bb9a1a31481979a303f54f5432a876b74d6683782929c58a6a28d0bd1c713",
+        "source_indices": "d13776ebfd4e4988cac09314baa27bcfd8a58e5560842a5295841c99cfa8dc45",
+        "frequencies_hz": "cc63dd81bb3fc067380c47d14eb6ec5f3b824516e76e3eef510040626a73f97a",
+        "parent_ids": "94edf6f621857b8591681f040569ca6b922fc18b19cd7f184c08824f26f32eee",
+        "slice_ids": "3d07a788e7abfb9ef7948cf29531cb256c62ec94fdfae5e0a9aa54dd0507046d",
+        "state_types": "10c3b96704c814fdbf9730df0970079305a307c9ca0f74c7052bdf2130b6389b",
+        "original_example_indices": "9e698a45d9b46466f75225b83685dc8c00d7cb6b9b0e41cecff0ea72e3dc20d4",
+        "receiver_indices": "46ccc0d8cd90e555765c0c578e4ab9b4de5fe81e25614605b9afdcdd189b59a4"
+      },
+      "maximum_direction_unit_norm_error": 6.475864400279363e-09,
+      "calibration_or_test_labels_generated": false,
+      "artifact": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/results/gradient_development/labels/train.npz",
+      "artifact_sha256": "e0711c00a0b576c5ac7940e8a247d333031ca3d9091aada56e15bd0b8298a7d8"
+    },
+    "validation": {
+      "role": "validation",
+      "raw_examples": 192,
+      "all_state_examples": 384,
+      "n_parent_models": 4,
+      "seconds": 0.6133954169999924,
+      "offline_physics_cost": {
+        "factorizations": 64,
+        "forward_rhs": 384,
+        "tangent_rhs": 384,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 704,
+        "analytic_bound_evaluations": 0
+      },
+      "array_sha256": {
+        "models": "28b1ecf21a6be88a6c6b0e4303ac5b097ea3683875045aae9c49978c995604a6",
+        "directions": "b29f934db5f63f85b66bc240ee47648ff80bf52814211027b89510a3817f5fd9",
+        "fields": "afa3623c3cf258f1a4e760c0b85d66fa1f3bb7e2a20805d45637531106abeae7",
+        "tangents": "e2325580d3219310ba316134862f22198078ec0c9db4b200ccd1e4306b7f1a3d",
+        "source_indices": "38500a9f1cefceeecd6930fa993bb6459fef5ab43b4f257e29624692ce21fbb1",
+        "frequencies_hz": "cfcc644dbd5501bbb3e300f634e814a36ed8e81a84747c893e2aeacde4031f17",
+        "parent_ids": "097a22179b8994d94c6ac797b340b93e68ab4fe0fe466ea64137e3a00bf018c7",
+        "slice_ids": "6d40de3101c64f4a52c94783a4350ddbc1fa60fa2520032a8af287e8be0e3ffd",
+        "state_types": "329522aa073fbcc33b7a9b6316978fa07854483dbba5f7d0463ab041900500aa",
+        "original_example_indices": "52de92cd4fb5fe3df079675a37a0498349a152beb92f162f8b6867cc8e827ef1",
+        "receiver_indices": "46ccc0d8cd90e555765c0c578e4ab9b4de5fe81e25614605b9afdcdd189b59a4"
+      },
+      "maximum_direction_unit_norm_error": 4.82655493350137e-09,
+      "calibration_or_test_labels_generated": false,
+      "artifact": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/results/gradient_development/labels/validation.npz",
+      "artifact_sha256": "3d969f7c71145faed10266ab99af30266aaa99994b5aa3814440b2a2979fc2c0"
+    },
+    "validation_inverse_cases": {
+      "n_slices": 8,
+      "n_parents": 4,
+      "n_blocks": 192,
+      "seconds": 0.3439862919985899,
+      "offline_physics_cost": {
+        "factorizations": 32,
+        "forward_rhs": 192,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 192,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 352,
+        "analytic_bound_evaluations": 0
+      },
+      "array_sha256": {
+        "models": "2fcbd0bd8aab4a4f658fa9e40fbe64d95957aea7a52a901beaa016bd187dc9d7",
+        "parent_ids": "dbe551bdf509061a0b15a3a7e2ddbab09b23ea89c4f1637b00359a5778f479d9",
+        "slice_ids": "671d67b8cd60655495ee9867bc625589134417ec859f5ef8e6fac56c77166b6a",
+        "block_case_indices": "cc750e366c08dd8916e6f31a0ab9c8ad8fc9ecf0f03b200666c83c5e4aff633d",
+        "observations": "d9c2c9d96c924513c70c33e130a0581012924602ea6bac559190d31875969479",
+        "source_indices": "dc2804fe5cce0164d1d79ba6313b3aa8d9310eb6cfbcf6979780b3fd05ff9a70",
+        "frequencies_hz": "662c25e298f6e443c199990b9231761d631f470e025887d88dd4d963010fa014",
+        "receiver_indices": "46ccc0d8cd90e555765c0c578e4ab9b4de5fe81e25614605b9afdcdd189b59a4",
+        "exact_gradients": "e4622d94db2f96245dea9852883903190568485f160a48bae24e8f8ddd9df35b",
+        "exact_objectives": "51f61d8040f9ab073785e4387bec259162858348d421c5074c4532ea3b6ae5d2"
+      },
+      "case_sampling": "every original validation slice, without subsampling",
+      "artifact": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/results/gradient_development/labels/validation_inverse_cases.npz",
+      "artifact_sha256": "be429def325b741d415546167b8e13b5d52a3304d79f36efd3945a58363177db"
+    }
+  },
+  "cost_scope": "Teacher state/tangent/inverse-gradient labels are reused shared offline work, not free computation",
+  "opened_archive_roles": [
+    "train",
+    "validation",
+    "validation_inverse_cases"
+  ],
+  "calibration_or_test_arrays_loaded": false,
+  "external_test_arrays_loaded": false
+}
