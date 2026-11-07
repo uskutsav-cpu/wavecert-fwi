@@ -191,8 +191,9 @@ def test_all20_slices_are_clustered_into8_id_and1_ood_parent_without_iid_interva
 def historical_prior_chain(request, tmp_path):
     pytest.importorskip("torch")
     selection, calibration, pod_dir = request.getfixturevalue("integrated_freeze_inputs")
+    synthetic = request.getfixturevalue("synthetic_confirmation_artifacts")
     coarse_dir = tmp_path / "fifth"
-    coarse.freeze_coarse_pod_comparator(addendum_path=ROOT / "configs/coarse_corrected_pod_confirmation_addendum.json",
+    coarse.freeze_coarse_pod_comparator(addendum_path=synthetic["fifth_addendum"],
         repository_root=ROOT, selection_dir=selection, calibration_dir=calibration, pod_dir=pod_dir, output_dir=coarse_dir)
     def old_provenance(value):
         old = value["provenance"]
@@ -225,6 +226,7 @@ def test_new_historical_freeze_runs_old_guards_cleanly_and_never_opens_test_arra
         selection_dir=selection, calibration_dir=calibration, pod_dir=pod_dir, coarse_dir=coarse_dir, output_dir=output)
     assert set(frozen["source_admission"]["added_phase_files"]) == historical.PHASE_FILES
     assert frozen["project_test_arrays_loaded_by_this_stage"] is False
+    assert json.loads((output / "prior_guard_audit.json").read_text())["synthetic_test_fixture"] is True
     assert [model["label"] for model in frozen["models"]] == list(historical.LABELS)
     historical.validate_historical_freeze(output, ROOT)
     assert all(sha256_file(path) == checksum for path, checksum in original.items())

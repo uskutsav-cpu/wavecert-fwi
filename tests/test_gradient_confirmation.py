@@ -91,6 +91,28 @@ def synthetic_confirmation_artifacts(monkeypatch, training_provenance):
             prior_four_model_pod_addendum={"path": pod_path.relative_to(ROOT).as_posix(), "sha256": sha256_file(pod_path), "preserved_unchanged": True})
         _save(fifth_path, fifth)
         monkeypatch.setattr(coarse, "ADDENDUM_SHA256", sha256_file(fifth_path))
+        # The H fixture audits older gates in a fresh interpreter. Give that
+        # child the same SYNTHETIC expected pins; never replace its validators.
+        original_run = subprocess.run
+        bootstrap = ("from wavecert.experiments import gradient_confirmation as _g, pod_confirmation as _p, coarse_pod_confirmation as _c\n"
+                     f"_g.FROZEN_PLAN_SHA256={sha256_file(plan_path)!r}\n"
+                     f"_p.ADDENDUM_SHA256={sha256_file(pod_path)!r}\n"
+                     f"_c.ADDENDUM_SHA256={sha256_file(fifth_path)!r}\n")
+        def synthetic_child_pins(arguments, *args, **kwargs):
+            if isinstance(arguments, (list, tuple)) and "-c" in arguments:
+                index = arguments.index("-c") + 1
+                if index < len(arguments) and "validate_coarse_pod_freeze(E,B,C,P,root)" in arguments[index]:
+                    arguments = list(arguments)
+                    arguments[index] = bootstrap + arguments[index]
+                    result = original_run(arguments, *args, **kwargs)
+                    if result.returncode == 0:
+                        receipt = json.loads(result.stdout)
+                        receipt.update(synthetic_test_fixture=True,
+                            synthetic_scope="Expected fixture pins injected; all unchanged source/runtime/weight/freeze validators executed")
+                        result.stdout = json.dumps(receipt)
+                    return result
+            return original_run(arguments, *args, **kwargs)
+        monkeypatch.setattr(subprocess, "run", synthetic_child_pins)
         replacements = {published: plan_path, ROOT / "configs/pod_confirmation_addendum.json": pod_path,
                         ROOT / "configs/coarse_corrected_pod_confirmation_addendum.json": fifth_path}
 
