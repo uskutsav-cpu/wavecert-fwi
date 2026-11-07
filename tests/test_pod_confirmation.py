@@ -4,7 +4,11 @@ from pathlib import Path
 
 import numpy as np
 import pytest
-from test_gradient_confirmation import completed_training, training_provenance  # noqa: F401
+from test_gradient_confirmation import (  # noqa: F401
+    completed_training,
+    synthetic_confirmation_artifacts,
+    training_provenance,
+)
 
 from wavecert.experiments import gradient_confirmation as confirmation
 from wavecert.experiments import pod_confirmation as pod
@@ -18,8 +22,9 @@ ADDENDUM = ROOT / "configs/pod_confirmation_addendum.json"
 
 
 @pytest.fixture
-def teacher_receipt_files(tmp_path, monkeypatch):
+def teacher_receipt_files(tmp_path, monkeypatch, request):
     """Mock binary teacher I/O; no large archives or held-out arrays needed."""
+    request.getfixturevalue("synthetic_confirmation_artifacts")
     teacher = tmp_path / "teacher"
     expected = json.loads((ROOT / "results/pod_development/input_provenance.json").read_text())["verified_file_sha256"]
     standins = {}
@@ -56,7 +61,8 @@ def test_changed_pod_addendum_is_rejected_before_teacher_load(tmp_path):
         pod.validate_pod_addendum(path, ROOT, teacher_study=tmp_path / "absent")
 
 
-def test_pod_addendum_rejects_teacher_tamper_without_loading_outcomes(tmp_path):
+def test_pod_addendum_rejects_teacher_tamper_without_loading_outcomes(tmp_path, request):
+    request.getfixturevalue("synthetic_confirmation_artifacts")
     (tmp_path / "protocol.json").write_bytes(b"changed original teacher protocol")
     with pytest.raises(ValueError, match="teacher input"):
         pod.validate_pod_addendum(ADDENDUM, ROOT, teacher_study=tmp_path)

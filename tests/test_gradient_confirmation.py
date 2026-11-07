@@ -2,8 +2,10 @@ import copy
 import csv
 import hashlib
 import json
+import shutil
 import subprocess
 import sys
+import tempfile
 import types
 import zlib
 from pathlib import Path
@@ -23,9 +25,9 @@ def _save(path, value):
     path.write_text(json.dumps(value, indent=2, allow_nan=False) + "\n")
 
 
-@pytest.fixture(scope="module")
-def training_provenance():
-    revision = subprocess.check_output(["git", "rev-parse", "be6e51e"], cwd=ROOT, text=True).strip()
+def _current_head_source_provenance():
+    """Synthetic runs bind the checkout under test, including shallow clones."""
+    revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     names = subprocess.check_output(["git", "ls-tree", "-r", "--name-only", revision], cwd=ROOT, text=True).splitlines()
     manifest = {name: sha256_file(ROOT / name) for name in sorted(names) if confirmation._training_source_path(name)}
     digest = hashlib.sha256()
@@ -34,10 +36,96 @@ def training_provenance():
     return {"git_revision": revision, "source_files": manifest, "source_sha256": digest.hexdigest()}
 
 
+@pytest.fixture(scope="module")
+def training_provenance():
+    return _current_head_source_provenance()
+
+
 @pytest.fixture
-def completed_training(tmp_path, training_provenance):
+def synthetic_confirmation_artifacts(monkeypatch, training_provenance):
+    """Consistent synthetic plans/receipts; production pins and files stay intact.
+
+    Historical-study reproduction deliberately needs its historical Git objects.
+    These unit fixtures instead claim CURRENT HEAD, then exercise the unchanged
+    production source/blob, runtime, identity, selection and freeze validators.
+    Generated files live under tests/, outside the production source manifest.
+    """
+    from wavecert.experiments import coarse_pod_confirmation as coarse
+    from wavecert.experiments import pod_confirmation as pod
+
+    with tempfile.TemporaryDirectory(prefix=".synthetic-confirmation-", dir=ROOT / "tests") as directory:
+        fixture_root = Path(directory)
+        published = ROOT / "configs/gradient_confirmation_plan.json"
+        plan = json.loads(published.read_text())
+        plan["synthetic_test_fixture"] = True
+        plan["development_training"]["source_commit"] = training_provenance["git_revision"]
+        plan_path = fixture_root / "plan.json"
+        _save(plan_path, plan)
+        monkeypatch.setattr(confirmation, "FROZEN_PLAN_SHA256", sha256_file(plan_path))
+
+        study = fixture_root / "pod_development"
+        shutil.copytree(ROOT / "results/pod_development", study)
+        summary = json.loads((study / "summary.json").read_text())
+        summary.update(synthetic_test_fixture=True, provenance=copy.deepcopy(training_provenance),
+            source_sha256_at_end=training_provenance["source_sha256"],
+            scope="SYNTHETIC unit-test copy of archived POD outcomes with current-checkout source binding; no scientific result")
+        _save(study / "summary.json", summary)
+        pod_path = fixture_root / "pod_addendum.json"
+        addendum = json.loads((ROOT / "configs/pod_confirmation_addendum.json").read_text())
+        addendum.update(synthetic_test_fixture=True,
+            original_three_fno_plan_path=plan_path.relative_to(ROOT).as_posix(),
+            original_three_fno_plan_sha256=sha256_file(plan_path),
+            pod_study_path=study.relative_to(ROOT).as_posix(),
+            pod_source_commit=training_provenance["git_revision"],
+            pod_source_sha256=training_provenance["source_sha256"],
+            pod_equivalent_local_cherry_pick_commit=training_provenance["git_revision"],
+            pod_source_receipt_scope="SYNTHETIC test metadata, not the historical source-study receipt")
+        addendum["pod_study_files_sha256"] = {name: sha256_file(study / name) for name in addendum["pod_study_files_sha256"]}
+        _save(pod_path, addendum)
+        monkeypatch.setattr(pod, "ADDENDUM_SHA256", sha256_file(pod_path))
+
+        fifth_path = fixture_root / "coarse_addendum.json"
+        fifth = json.loads((ROOT / "configs/coarse_corrected_pod_confirmation_addendum.json").read_text())
+        fifth.update(synthetic_test_fixture=True,
+            original_three_fno_plan={"path": plan_path.relative_to(ROOT).as_posix(), "sha256": sha256_file(plan_path)},
+            prior_four_model_pod_addendum={"path": pod_path.relative_to(ROOT).as_posix(), "sha256": sha256_file(pod_path), "preserved_unchanged": True})
+        _save(fifth_path, fifth)
+        monkeypatch.setattr(coarse, "ADDENDUM_SHA256", sha256_file(fifth_path))
+        replacements = {published: plan_path, ROOT / "configs/pod_confirmation_addendum.json": pod_path,
+                        ROOT / "configs/coarse_corrected_pod_confirmation_addendum.json": fifth_path}
+
+        historical_path = ROOT / "configs/historical_transfer_protocol.json"
+        if historical_path.is_file():
+            from wavecert.experiments import historical_transfer as historical
+
+            historical_protocol = json.loads(historical_path.read_text())
+            historical_protocol.update(synthetic_test_fixture=True, required_prior_plans={
+                Path(os_relative).as_posix(): sha256_file(path) for os_relative, path in (
+                    (f"../{plan_path.relative_to(ROOT).as_posix()}", plan_path),
+                    (f"../{pod_path.relative_to(ROOT).as_posix()}", pod_path),
+                    (f"../{fifth_path.relative_to(ROOT).as_posix()}", fifth_path))})
+            synthetic_historical = fixture_root / "historical_protocol.json"
+            _save(synthetic_historical, historical_protocol)
+            monkeypatch.setattr(historical, "PROTOCOL_SHA256", sha256_file(synthetic_historical))
+            replacements[historical_path] = synthetic_historical
+
+        # Test consumers refer to these fixture paths. No validator is mocked:
+        # only expected synthetic artifact identities are parameters of the test.
+        for module in tuple(sys.modules.values()):
+            filename = getattr(module, "__file__", None)
+            if filename and Path(filename).resolve().is_relative_to(ROOT / "tests"):
+                for name in ("PLAN", "POD_PLAN", "ADDENDUM", "PROTOCOL"):
+                    value = getattr(module, name, None)
+                    if isinstance(value, Path) and value in replacements:
+                        monkeypatch.setattr(module, name, replacements[value])
+        yield {"plan": plan_path, "pod_addendum": pod_path, "fifth_addendum": fifth_path,
+               "source_provenance": training_provenance}
+
+
+@pytest.fixture
+def completed_training(tmp_path, training_provenance, synthetic_confirmation_artifacts):
     """Fabricated audit receipts only; no learned model or held-out prediction."""
-    plan = json.loads(PLAN.read_text())
+    plan = json.loads(synthetic_confirmation_artifacts["plan"].read_text())
     protocol = json.loads((ROOT / plan["development_training"]["protocol_path"]).read_text())
     training = tmp_path / "training"
     training.mkdir()
@@ -77,7 +165,8 @@ def completed_training(tmp_path, training_provenance):
     selection = {"winner": chosen["name"], "checkpoint_sha256": chosen["checkpoint_sha256"],
                  "best_optimizer_update": 100, "validation_selection_score": chosen["best_validation_score"],
                  "source_and_inputs_unchanged": True}
-    summary = {"status": "complete", "source_unchanged_during_run": True, "inputs_unchanged_during_run": True,
+    summary = {"status": "complete", "synthetic_test_fixture": True,
+               "source_unchanged_during_run": True, "inputs_unchanged_during_run": True,
                "protocol_sha256": sha256_file(training / "protocol.json"), "provenance": training_provenance,
                "source_sha256_at_end": training_provenance["source_sha256"], "candidates": candidates,
                "input_audit": input_audit, "calibration_or_test_arrays_loaded": False, "external_test_arrays_loaded": False}
