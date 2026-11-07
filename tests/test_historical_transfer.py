@@ -38,6 +38,7 @@ def test_protocol_counts_every_cached_slice_without_opening_test_arrays(monkeypa
 
 
 def test_project_array_loading_and_models_require_historical_freeze_first(tmp_path, monkeypatch):
+    pytest.importorskip("torch")
     monkeypatch.setattr(historical, "load_historical_arrays", lambda *a, **k: pytest.fail("project arrays opened before freeze"))
     monkeypatch.setattr(historical.TrainedFNOWavefieldSurrogate, "load", lambda *a, **k: pytest.fail("model opened before freeze"))
     with pytest.raises(FileNotFoundError):

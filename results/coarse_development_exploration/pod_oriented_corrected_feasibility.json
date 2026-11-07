@@ -1,0 +1,5085 @@
+{
+  "schema_version": 1,
+  "created_before_computation_utc": "2026-11-07T21:50:00.987482+00:00",
+  "scope": "Last private orientation/coarse-correction feasibility on identical four train/validation models, 24 fixed cases per method. No held-out data, rank tuning, public method, optimizer, NN JVP or timings.",
+  "methods": [
+    "uncorrected_generic_M",
+    "uncorrected_oriented",
+    "coarse_corrected_oriented"
+  ],
+  "summary": {
+    "uncorrected_generic_M": {
+      "32": {
+        "cases": 8,
+        "available": 5,
+        "true_descent": 8,
+        "certified_descent": 0,
+        "false_certifications": 0,
+        "all_available_covered": true,
+        "median_gradient_cosine": 0.9988879378371807,
+        "median_receiver_relative_error": 0.01545196561966005,
+        "median_effectivity_available": 6427.122093697574,
+        "median_bound_margin_ratio_available": 44.526675442150996,
+        "minimum_bound_margin_ratio_available": 22.801824727934
+      },
+      "64": {
+        "cases": 8,
+        "available": 8,
+        "true_descent": 8,
+        "certified_descent": 0,
+        "false_certifications": 0,
+        "all_available_covered": true,
+        "median_gradient_cosine": 0.9988879378371807,
+        "median_receiver_relative_error": 0.01545196561966005,
+        "median_effectivity_available": 8897.906399010144,
+        "median_bound_margin_ratio_available": 125.3992839432069,
+        "minimum_bound_margin_ratio_available": 15.437690722911444
+      },
+      "96": {
+        "cases": 8,
+        "available": 8,
+        "true_descent": 8,
+        "certified_descent": 0,
+        "false_certifications": 0,
+        "all_available_covered": true,
+        "median_gradient_cosine": 0.9988879378371807,
+        "median_receiver_relative_error": 0.01545196561966005,
+        "median_effectivity_available": 19934.35946269701,
+        "median_bound_margin_ratio_available": 233.3205099240273,
+        "minimum_bound_margin_ratio_available": 44.243299556272255
+      }
+    },
+    "uncorrected_oriented": {
+      "32": {
+        "cases": 8,
+        "available": 5,
+        "true_descent": 8,
+        "certified_descent": 0,
+        "false_certifications": 0,
+        "all_available_covered": true,
+        "median_gradient_cosine": 0.9988879378371807,
+        "median_receiver_relative_error": 0.01545196561966005,
+        "median_effectivity_available": 2103.556536006763,
+        "median_bound_margin_ratio_available": 16.882728707322126,
+        "minimum_bound_margin_ratio_available": 6.049746987523668
+      },
+      "64": {
+        "cases": 8,
+        "available": 8,
+        "true_descent": 8,
+        "certified_descent": 4,
+        "false_certifications": 0,
+        "all_available_covered": true,
+        "median_gradient_cosine": 0.9988879378371807,
+        "median_receiver_relative_error": 0.01545196561966005,
+        "median_effectivity_available": 200.7525322258639,
+        "median_bound_margin_ratio_available": 4.887663094149135,
+        "minimum_bound_margin_ratio_available": 0.6269876584340717
+      },
+      "96": {
+        "cases": 8,
+        "available": 8,
+        "true_descent": 8,
+        "certified_descent": 4,
+        "false_certifications": 0,
+        "all_available_covered": true,
+        "median_gradient_cosine": 0.9988879378371807,
+        "median_receiver_relative_error": 0.01545196561966005,
+        "median_effectivity_available": 96.93934482969158,
+        "median_bound_margin_ratio_available": 1.009565992696639,
+        "minimum_bound_margin_ratio_available": 0.3219501748924404
+      }
+    },
+    "coarse_corrected_oriented": {
+      "32": {
+        "cases": 8,
+        "available": 5,
+        "true_descent": 8,
+        "certified_descent": 0,
+        "false_certifications": 0,
+        "all_available_covered": true,
+        "median_gradient_cosine": 0.9988813125051053,
+        "median_receiver_relative_error": 0.01682181300101765,
+        "median_effectivity_available": 2677.0360458112123,
+        "median_bound_margin_ratio_available": 16.42926935018569,
+        "minimum_bound_margin_ratio_available": 5.957338621579023
+      },
+      "64": {
+        "cases": 8,
+        "available": 8,
+        "true_descent": 8,
+        "certified_descent": 4,
+        "false_certifications": 0,
+        "all_available_covered": true,
+        "median_gradient_cosine": 0.9989718921824736,
+        "median_receiver_relative_error": 0.015929483296952512,
+        "median_effectivity_available": 219.54431197741556,
+        "median_bound_margin_ratio_available": 4.1282953468036645,
+        "minimum_bound_margin_ratio_available": 0.5504780359278902
+      },
+      "96": {
+        "cases": 8,
+        "available": 8,
+        "true_descent": 8,
+        "certified_descent": 4,
+        "false_certifications": 0,
+        "all_available_covered": true,
+        "median_gradient_cosine": 0.999296029564009,
+        "median_receiver_relative_error": 0.013371515342931444,
+        "median_effectivity_available": 163.1910420080448,
+        "median_bound_margin_ratio_available": 0.7405449165253094,
+        "minimum_bound_margin_ratio_available": 0.2348122623708384
+      }
+    }
+  },
+  "cases": [
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 3.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.3028235981750057,
+      "exact_objective": 0.12672973242168512,
+      "approximate_objective": 0.12718194927070395,
+      "exact_gradient_norm": 4.814582324352405,
+      "approximate_gradient_norm": 4.839909155485105,
+      "gradient_cosine": 0.9999066026718001,
+      "approximate_receiver_relative_error": 0.008476961281787572,
+      "exact_directional_derivative": -4.814132655226912,
+      "approximate_directional_derivative": -4.839909155485104,
+      "actual_directional_error": 0.02577650025819267,
+      "true_descent": true,
+      "primal_residual_norms": [
+        2.542223647737683,
+        57.77907912172209
+      ],
+      "adjoint_residual_norms": [
+        0.0113992860393713,
+        0.4112881698262705
+      ],
+      "primal_coarse_fraction": 0.04395650621404422,
+      "adjoint_coarse_fraction": 0.027705416896897532,
+      "primal_reduced_response_norm": 0.01983044581231003,
+      "adjoint_reduced_response_norm": 0.00013242815046293427,
+      "reduced_receiver_adjoint_response_norm": 0.06534606135929094,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 127.08412082896663,
+      "certified_upper_derivative": 122.24421167348153,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 4930.231783058869,
+      "bound_to_descent_margin": 26.257542599728605,
+      "eta_u_components": [
+        2.0310661846359634,
+        0.6229858494989371
+      ],
+      "eta_lambda_components": [
+        0.43867637473517757,
+        0.0741211520639586
+      ],
+      "actual_u_error_components": [
+        0.02883653123605097,
+        0.0808019284908139
+      ],
+      "actual_lambda_error_components": [
+        0.00032254601295327463,
+        0.0004273932025502806
+      ],
+      "eta_receiver_state": 1.790769149697542,
+      "directional_bound_terms": {
+        "first": 83.29918636795816,
+        "second": 1.6137143986935678,
+        "cross": 42.171220062314895
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 3.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.3028235981750057,
+      "exact_objective": 0.12672973242168512,
+      "approximate_objective": 0.12718194927070395,
+      "exact_gradient_norm": 4.814582324352405,
+      "approximate_gradient_norm": 4.839909155485105,
+      "gradient_cosine": 0.9999066026718001,
+      "approximate_receiver_relative_error": 0.008476961281787572,
+      "exact_directional_derivative": -4.814132655226912,
+      "approximate_directional_derivative": -4.839909155485104,
+      "actual_directional_error": 0.02577650025819267,
+      "true_descent": true,
+      "primal_residual_norms": [
+        2.542223647737683,
+        57.77907912172209
+      ],
+      "adjoint_residual_norms": [
+        0.0113992860393713,
+        0.4112881698262705
+      ],
+      "primal_coarse_fraction": 0.04395650621404422,
+      "adjoint_coarse_fraction": 0.027705416896897532,
+      "primal_reduced_response_norm": 0.01983044581231003,
+      "adjoint_reduced_response_norm": 0.00013242815046293427,
+      "reduced_receiver_adjoint_response_norm": 0.06534606135929094,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 33.63434636133904,
+      "certified_upper_derivative": 28.79443720585394,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 1304.845344575002,
+      "bound_to_descent_margin": 6.949375552477259,
+      "eta_u_components": [
+        1.0867373562034939,
+        0.4913014132564775
+      ],
+      "eta_lambda_components": [
+        0.13278116925120495,
+        0.0274977183740235
+      ],
+      "actual_u_error_components": [
+        0.02883653123605097,
+        0.0808019284908139
+      ],
+      "actual_lambda_error_components": [
+        0.00032254601295327463,
+        0.0004273932025502806
+      ],
+      "eta_receiver_state": 1.116132719038807,
+      "directional_bound_terms": {
+        "first": 25.519855884907777,
+        "second": 0.8988919663061111,
+        "cross": 7.215598510125152
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 3.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.3028235981750057,
+      "exact_objective": 0.12672973242168512,
+      "approximate_objective": 0.1260674475255272,
+      "exact_gradient_norm": 4.814582324352405,
+      "approximate_gradient_norm": 4.801867451564965,
+      "gradient_cosine": 0.9999050548820922,
+      "approximate_receiver_relative_error": 0.008662538433287573,
+      "exact_directional_derivative": -4.814125203265944,
+      "approximate_directional_derivative": -4.8018674515649655,
+      "actual_directional_error": 0.012257751700978758,
+      "true_descent": true,
+      "primal_residual_norms": [
+        2.601367485320887e-13,
+        57.794254026023246
+      ],
+      "adjoint_residual_norms": [
+        7.597114635758943e-16,
+        0.4098317374682719
+      ],
+      "primal_coarse_fraction": 4.501083246354488e-15,
+      "adjoint_coarse_fraction": 1.853715547431729e-15,
+      "primal_reduced_response_norm": 1.246567244763832e-14,
+      "adjoint_reduced_response_norm": 5.92650759871543e-17,
+      "reduced_receiver_adjoint_response_norm": 0.06534606135929094,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 32.814443144123835,
+      "certified_upper_derivative": 28.01257569255887,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 2677.0360458112123,
+      "bound_to_descent_margin": 6.833683660599452,
+      "eta_u_components": [
+        1.0585713598815794,
+        0.48746296427300995
+      ],
+      "eta_lambda_components": [
+        0.13031995361726556,
+        0.027028144511845695
+      ],
+      "actual_u_error_components": [
+        0.032707846046736926,
+        0.08080192849081393
+      ],
+      "actual_lambda_error_components": [
+        0.0002417373034325513,
+        0.00042739320255028056
+      ],
+      "eta_receiver_state": 1.096099928193416,
+      "directional_bound_terms": {
+        "first": 25.042195886081934,
+        "second": 0.8701211920022606,
+        "cross": 6.9021260660396395
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 3.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.06135452679695385,
+      "exact_objective": 0.12672973242168512,
+      "approximate_objective": 0.12718194927070395,
+      "exact_gradient_norm": 4.814582324352405,
+      "approximate_gradient_norm": 4.839909155485105,
+      "gradient_cosine": 0.9999066026718001,
+      "approximate_receiver_relative_error": 0.008476961281787572,
+      "exact_directional_derivative": -4.814132655226912,
+      "approximate_directional_derivative": -4.839909155485104,
+      "actual_directional_error": 0.02577650025819267,
+      "true_descent": true,
+      "primal_residual_norms": [
+        21.557991060316695,
+        53.66691631417486
+      ],
+      "adjoint_residual_norms": [
+        0.06308105511616638,
+        0.40658170500734714
+      ],
+      "primal_coarse_fraction": 0.37275004063800576,
+      "adjoint_coarse_fraction": 0.15331547293868503,
+      "primal_reduced_response_norm": 0.06370139301221583,
+      "adjoint_reduced_response_norm": 0.0002362926394357085,
+      "reduced_receiver_adjoint_response_norm": 0.06358473631616218,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 311.20140180125793,
+      "certified_upper_derivative": 306.36149264577284,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 12073.066501816797,
+      "bound_to_descent_margin": 64.29901715171061,
+      "eta_u_components": [
+        6.044775153128994,
+        0.4907594415367957
+      ],
+      "eta_lambda_components": [
+        0.6668588617264152,
+        0.050573544454643224
+      ],
+      "actual_u_error_components": [
+        0.06340019407542584,
+        0.05780062778863813
+      ],
+      "actual_lambda_error_components": [
+        0.0003636827481163655,
+        0.0003929831278576311
+      ],
+      "eta_receiver_state": 4.005764714411151,
+      "directional_bound_terms": {
+        "first": 125.65939313471168,
+        "second": 4.576296494614328,
+        "cross": 180.96571217193193
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 3.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.06135452679695385,
+      "exact_objective": 0.12672973242168512,
+      "approximate_objective": 0.12718194927070395,
+      "exact_gradient_norm": 4.814582324352405,
+      "approximate_gradient_norm": 4.839909155485105,
+      "gradient_cosine": 0.9999066026718001,
+      "approximate_receiver_relative_error": 0.008476961281787572,
+      "exact_directional_derivative": -4.814132655226912,
+      "approximate_directional_derivative": -4.839909155485104,
+      "actual_directional_error": 0.02577650025819267,
+      "true_descent": true,
+      "primal_residual_norms": [
+        21.557991060316695,
+        53.66691631417486
+      ],
+      "adjoint_residual_norms": [
+        0.06308105511616638,
+        0.40658170500734714
+      ],
+      "primal_coarse_fraction": 0.37275004063800576,
+      "adjoint_coarse_fraction": 0.15331547293868503,
+      "primal_reduced_response_norm": 0.06370139301221583,
+      "adjoint_reduced_response_norm": 0.0002362926394357085,
+      "reduced_receiver_adjoint_response_norm": 0.06358473631616218,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 4.116746259473692,
+      "certified_upper_derivative": -0.723162896011412,
+      "certified_descent": true,
+      "covers_directional_error": true,
+      "effectivity": 159.709278538123,
+      "bound_to_descent_margin": 0.8505833740305133,
+      "eta_u_components": [
+        0.20570579691022736,
+        0.1393081929884689
+      ],
+      "eta_lambda_components": [
+        0.019500884333339852,
+        0.0027477307577497044
+      ],
+      "actual_u_error_components": [
+        0.06340019407542584,
+        0.05780062778863813
+      ],
+      "actual_lambda_error_components": [
+        0.0003636827481163655,
+        0.0003929831278576311
+      ],
+      "eta_receiver_state": 0.258925042661693,
+      "directional_bound_terms": {
+        "first": 3.7245882389137726,
+        "second": 0.17385876380109977,
+        "cross": 0.21829925675881998
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 3.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.06135452679695385,
+      "exact_objective": 0.12672973242168512,
+      "approximate_objective": 0.1258654836969742,
+      "exact_gradient_norm": 4.814582324352405,
+      "approximate_gradient_norm": 4.800743660326892,
+      "gradient_cosine": 0.9999335199248477,
+      "approximate_receiver_relative_error": 0.00777041843835274,
+      "exact_directional_derivative": -4.814262250557656,
+      "approximate_directional_derivative": -4.800743660326891,
+      "actual_directional_error": 0.01351859023076507,
+      "true_descent": true,
+      "primal_residual_norms": [
+        3.6363081192078526e-13,
+        53.6241078149208
+      ],
+      "adjoint_residual_norms": [
+        1.0285931514402845e-15,
+        0.4044694043513547
+      ],
+      "primal_coarse_fraction": 6.781106982251847e-15,
+      "adjoint_coarse_fraction": 2.5430678819571865e-15,
+      "primal_reduced_response_norm": 1.7713974081622118e-14,
+      "adjoint_reduced_response_norm": 4.351097313421264e-17,
+      "reduced_receiver_adjoint_response_norm": 0.06358473631616218,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 3.353076709585373,
+      "certified_upper_derivative": -1.4476669507415179,
+      "certified_descent": true,
+      "covers_directional_error": true,
+      "effectivity": 248.03449563509767,
+      "bound_to_descent_margin": 0.698449437593395,
+      "eta_u_components": [
+        0.13773061337991654,
+        0.13511554812713675
+      ],
+      "eta_lambda_components": [
+        0.016169804145937706,
+        0.0024388373969933324
+      ],
+      "actual_u_error_components": [
+        0.01694845942174771,
+        0.05780062778863815
+      ],
+      "actual_lambda_error_components": [
+        0.00036431757886267753,
+        0.0003929831278576311
+      ],
+      "eta_receiver_state": 0.2152051825639158,
+      "directional_bound_terms": {
+        "first": 3.0897769797210373,
+        "second": 0.12143305730985893,
+        "cross": 0.14186667255447702
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 3.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.02657155849976185,
+      "exact_objective": 0.12672973242168512,
+      "approximate_objective": 0.12718194927070395,
+      "exact_gradient_norm": 4.814582324352405,
+      "approximate_gradient_norm": 4.839909155485105,
+      "gradient_cosine": 0.9999066026718001,
+      "approximate_receiver_relative_error": 0.008476961281787572,
+      "exact_directional_derivative": -4.814132655226912,
+      "approximate_directional_derivative": -4.839909155485104,
+      "actual_directional_error": 0.02577650025819267,
+      "true_descent": true,
+      "primal_residual_norms": [
+        31.830476699258547,
+        48.2877379707033
+      ],
+      "adjoint_residual_norms": [
+        0.12101702487360386,
+        0.39324646476731623
+      ],
+      "primal_coarse_fraction": 0.5503672141796231,
+      "adjoint_coarse_fraction": 0.2941260631731924,
+      "primal_reduced_response_norm": 0.07712694090814697,
+      "adjoint_reduced_response_norm": 0.00028463476618533184,
+      "reduced_receiver_adjoint_response_norm": 0.06362926003191934,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 609.9986195509895,
+      "certified_upper_derivative": 605.1587103955044,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 23664.912359741724,
+      "bound_to_descent_margin": 126.03513825454215,
+      "eta_u_components": [
+        8.470926869532947,
+        0.4371335755082953
+      ],
+      "eta_lambda_components": [
+        1.0612980634984892,
+        0.055232344212102276
+      ],
+      "actual_u_error_components": [
+        0.0774522843483211,
+        0.036900417759005995
+      ],
+      "actual_lambda_error_components": [
+        0.0004099759150910922,
+        0.0003444134566236641
+      ],
+      "eta_receiver_state": 5.9452310938376955,
+      "directional_bound_terms": {
+        "first": 201.3558284196937,
+        "second": 6.441562633695697,
+        "cross": 402.2012284976001
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 3.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.02657155849976185,
+      "exact_objective": 0.12672973242168512,
+      "approximate_objective": 0.12718194927070395,
+      "exact_gradient_norm": 4.814582324352405,
+      "approximate_gradient_norm": 4.839909155485105,
+      "gradient_cosine": 0.9999066026718001,
+      "approximate_receiver_relative_error": 0.008476961281787572,
+      "exact_directional_derivative": -4.814132655226912,
+      "approximate_directional_derivative": -4.839909155485104,
+      "actual_directional_error": 0.02577650025819267,
+      "true_descent": true,
+      "primal_residual_norms": [
+        31.830476699258547,
+        48.2877379707033
+      ],
+      "adjoint_residual_norms": [
+        0.12101702487360386,
+        0.39324646476731623
+      ],
+      "primal_coarse_fraction": 0.5503672141796231,
+      "adjoint_coarse_fraction": 0.2941260631731924,
+      "primal_reduced_response_norm": 0.07712694090814697,
+      "adjoint_reduced_response_norm": 0.00028463476618533184,
+      "reduced_receiver_adjoint_response_norm": 0.06362926003191934,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 2.4386370986352808,
+      "certified_upper_derivative": -2.4012720568498236,
+      "certified_descent": true,
+      "covers_directional_error": true,
+      "effectivity": 94.60698986318738,
+      "bound_to_descent_margin": 0.5038600974300428,
+      "eta_u_components": [
+        0.1293063670904551,
+        0.08329780824150021
+      ],
+      "eta_lambda_components": [
+        0.011814582726153149,
+        0.0014045649567085443
+      ],
+      "actual_u_error_components": [
+        0.0774522843483211,
+        0.036900417759005995
+      ],
+      "actual_lambda_error_components": [
+        0.0004099759150910922,
+        0.0003444134566236641
+      ],
+      "eta_receiver_state": 0.16737740078724436,
+      "directional_bound_terms": {
+        "first": 2.2544344859958594,
+        "second": 0.10254977325191028,
+        "cross": 0.08165283938751122
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 3.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.02657155849976185,
+      "exact_objective": 0.12672973242168512,
+      "approximate_objective": 0.1276647022727962,
+      "exact_gradient_norm": 4.814582324352405,
+      "approximate_gradient_norm": 4.827940035405744,
+      "gradient_cosine": 0.9999556469334994,
+      "approximate_receiver_relative_error": 0.007356625035188492,
+      "exact_directional_derivative": -4.814368782862401,
+      "approximate_directional_derivative": -4.827940035405745,
+      "actual_directional_error": 0.013571252543344237,
+      "true_descent": true,
+      "primal_residual_norms": [
+        4.247467813362813e-13,
+        48.305160049436914
+      ],
+      "adjoint_residual_norms": [
+        1.2356632979117752e-15,
+        0.3940329918833311
+      ],
+      "primal_coarse_fraction": 8.79298983590124e-15,
+      "adjoint_coarse_fraction": 3.1359386735759476e-15,
+      "primal_reduced_response_norm": 1.7293959578821103e-14,
+      "adjoint_reduced_response_norm": 6.800856842383426e-17,
+      "reduced_receiver_adjoint_response_norm": 0.06362926003191934,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 1.5846436745787427,
+      "certified_upper_derivative": -3.243296360827002,
+      "certified_descent": true,
+      "covers_directional_error": true,
+      "effectivity": 116.76473262270115,
+      "bound_to_descent_margin": 0.32822356180021767,
+      "eta_u_components": [
+        0.050092167993033995,
+        0.079965766378973
+      ],
+      "eta_lambda_components": [
+        0.007881450859227914,
+        0.0011506250347118872
+      ],
+      "actual_u_error_components": [
+        0.006408612302269946,
+        0.03690041775900598
+      ],
+      "actual_lambda_error_components": [
+        0.00012858150588354253,
+        0.000344413456623664
+      ],
+      "eta_receiver_state": 0.11253747316616461,
+      "directional_bound_terms": {
+        "first": 1.5083452989207788,
+        "second": 0.04230233937709538,
+        "cross": 0.03399603628086839
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 4.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.9644658146810426,
+      "exact_objective": 0.008712630261105858,
+      "approximate_objective": 0.008565196731901814,
+      "exact_gradient_norm": 0.19288909702748225,
+      "approximate_gradient_norm": 0.18516299277895823,
+      "gradient_cosine": 0.9978868109652698,
+      "approximate_receiver_relative_error": 0.015116154870498222,
+      "exact_directional_derivative": -0.19248148590272474,
+      "approximate_directional_derivative": -0.18516299277895826,
+      "actual_directional_error": 0.0073184931237664785,
+      "true_descent": true,
+      "primal_residual_norms": [
+        1.2902413276731852,
+        44.22588423379779
+      ],
+      "adjoint_residual_norms": [
+        0.0023332682964690324,
+        0.09221464231709822
+      ],
+      "primal_coarse_fraction": 0.029161488291877317,
+      "adjoint_coarse_fraction": 0.02529448353522878,
+      "primal_reduced_response_norm": 0.02741371377682888,
+      "adjoint_reduced_response_norm": 4.629546172149927e-05,
+      "reduced_receiver_adjoint_response_norm": 0.02295781833966183,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 598997.279249775,
+      "certified_upper_derivative": 598997.0940867822,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 81847078.23316225,
+      "bound_to_descent_margin": 3234972.983855576,
+      "eta_u_components": [
+        34.51403219590999,
+        21.635320765545366
+      ],
+      "eta_lambda_components": [
+        101.43431549687357,
+        62.217456228080124
+      ],
+      "actual_u_error_components": [
+        0.02407675571338818,
+        0.06322892362276981
+      ],
+      "actual_lambda_error_components": [
+        0.0001431256121528496,
+        0.00010247017311513877
+      ],
+      "eta_receiver_state": 41.47953398015545,
+      "directional_bound_terms": {
+        "first": 17447.032687547704,
+        "second": 4.094990952260281,
+        "cross": 581546.1515712751
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 4.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.9644658146810426,
+      "exact_objective": 0.008712630261105858,
+      "approximate_objective": 0.008565196731901814,
+      "exact_gradient_norm": 0.19288909702748225,
+      "approximate_gradient_norm": 0.18516299277895823,
+      "gradient_cosine": 0.9978868109652698,
+      "approximate_receiver_relative_error": 0.015116154870498222,
+      "exact_directional_derivative": -0.19248148590272474,
+      "approximate_directional_derivative": -0.18516299277895826,
+      "actual_directional_error": 0.0073184931237664785,
+      "true_descent": true,
+      "primal_residual_norms": [
+        1.2902413276731852,
+        44.22588423379779
+      ],
+      "adjoint_residual_norms": [
+        0.0023332682964690324,
+        0.09221464231709822
+      ],
+      "primal_coarse_fraction": 0.029161488291877317,
+      "adjoint_coarse_fraction": 0.02529448353522878,
+      "primal_reduced_response_norm": 0.02741371377682888,
+      "adjoint_reduced_response_norm": 4.629546172149927e-05,
+      "reduced_receiver_adjoint_response_norm": 0.02295781833966183,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 272850.1502738113,
+      "certified_upper_derivative": 272849.9651108185,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 37282285.52784216,
+      "bound_to_descent_margin": 1473567.4023131134,
+      "eta_u_components": [
+        31.35347532173485,
+        19.716741311451813
+      ],
+      "eta_lambda_components": [
+        50.55008143625775,
+        31.27099535022315
+      ],
+      "actual_u_error_components": [
+        0.02407675571338818,
+        0.06322892362276981
+      ],
+      "actual_lambda_error_components": [
+        0.0001431256121528496,
+        0.00010247017311513877
+      ],
+      "eta_receiver_state": 37.74375843225211,
+      "directional_bound_terms": {
+        "first": 8716.55108556488,
+        "second": 3.7234846045252894,
+        "cross": 264129.87570364185
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 4.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.9644658146810426,
+      "exact_objective": 0.008712630261105858,
+      "approximate_objective": 0.008335797905804158,
+      "exact_gradient_norm": 0.19288909702748225,
+      "approximate_gradient_norm": 0.18170901554102542,
+      "gradient_cosine": 0.9965575206597946,
+      "approximate_receiver_relative_error": 0.017643310339349856,
+      "exact_directional_derivative": -0.19222508029601426,
+      "approximate_directional_derivative": -0.18170901554102542,
+      "actual_directional_error": 0.01051606475498884,
+      "true_descent": true,
+      "primal_residual_norms": [
+        1.0872306878568453e-13,
+        44.286304521027944
+      ],
+      "adjoint_residual_norms": [
+        6.73036455565754e-17,
+        0.09143410801726935
+      ],
+      "primal_coarse_fraction": 2.4550043170583557e-15,
+      "adjoint_coarse_fraction": 7.360890483435746e-16,
+      "primal_reduced_response_norm": 2.842053773810456e-15,
+      "adjoint_reduced_response_norm": 2.27783538067923e-18,
+      "reduced_receiver_adjoint_response_norm": 0.02295781833966183,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 260286.22499661715,
+      "certified_upper_derivative": 260286.0432876016,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 24751295.381015684,
+      "bound_to_descent_margin": 1432434.291835404,
+      "eta_u_components": [
+        30.623781294515492,
+        19.274723433763853
+      ],
+      "eta_lambda_components": [
+        49.39583551105925,
+        30.556987113926642
+      ],
+      "actual_u_error_components": [
+        0.0269493158953562,
+        0.06322892362276981
+      ],
+      "actual_lambda_error_components": [
+        0.00017824091681831398,
+        0.00010247017311513877
+      ],
+      "eta_receiver_state": 36.88219514255968,
+      "directional_bound_terms": {
+        "first": 8475.356118010402,
+        "second": 3.5447521826861266,
+        "cross": 251807.32412642406
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 4.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.1307194987263601,
+      "exact_objective": 0.008712630261105858,
+      "approximate_objective": 0.008565196731901814,
+      "exact_gradient_norm": 0.19288909702748225,
+      "approximate_gradient_norm": 0.18516299277895823,
+      "gradient_cosine": 0.9978868109652698,
+      "approximate_receiver_relative_error": 0.015116154870498222,
+      "exact_directional_derivative": -0.19248148590272474,
+      "approximate_directional_derivative": -0.18516299277895826,
+      "actual_directional_error": 0.0073184931237664785,
+      "true_descent": true,
+      "primal_residual_norms": [
+        12.24049178238809,
+        42.517807091502384
+      ],
+      "adjoint_residual_norms": [
+        0.01276429210399652,
+        0.09135675807348624
+      ],
+      "primal_coarse_fraction": 0.27665441351398534,
+      "adjoint_coarse_fraction": 0.13837507540473962,
+      "primal_reduced_response_norm": 0.04448435993737945,
+      "adjoint_reduced_response_norm": 5.842725171749149e-05,
+      "reduced_receiver_adjoint_response_norm": 0.023437882179822983,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 34.532814965968804,
+      "certified_upper_derivative": 34.34765197318985,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 4718.569025340071,
+      "bound_to_descent_margin": 186.49955073470318,
+      "eta_u_components": [
+        1.6436170429831942,
+        0.34903120851517794
+      ],
+      "eta_lambda_components": [
+        0.0989462415869253,
+        0.017346456267762062
+      ],
+      "actual_u_error_components": [
+        0.04337623549155131,
+        0.0519238783485759
+      ],
+      "actual_lambda_error_components": [
+        0.00014969434096925152,
+        9.26103747652275e-05
+      ],
+      "eta_receiver_state": 1.3047859597372367,
+      "directional_bound_terms": {
+        "first": 14.118266098639348,
+        "second": 0.16377722281130572,
+        "cross": 20.250771644518156
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 4.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.1307194987263601,
+      "exact_objective": 0.008712630261105858,
+      "approximate_objective": 0.008565196731901814,
+      "exact_gradient_norm": 0.19288909702748225,
+      "approximate_gradient_norm": 0.18516299277895823,
+      "gradient_cosine": 0.9978868109652698,
+      "approximate_receiver_relative_error": 0.015116154870498222,
+      "exact_directional_derivative": -0.19248148590272474,
+      "approximate_directional_derivative": -0.18516299277895826,
+      "actual_directional_error": 0.0073184931237664785,
+      "true_descent": true,
+      "primal_residual_norms": [
+        12.24049178238809,
+        42.517807091502384
+      ],
+      "adjoint_residual_norms": [
+        0.01276429210399652,
+        0.09135675807348624
+      ],
+      "primal_coarse_fraction": 0.27665441351398534,
+      "adjoint_coarse_fraction": 0.13837507540473962,
+      "primal_reduced_response_norm": 0.04448435993737945,
+      "adjoint_reduced_response_norm": 5.842725171749149e-05,
+      "reduced_receiver_adjoint_response_norm": 0.023437882179822983,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 1.6450276829551143,
+      "certified_upper_derivative": 1.459864690176156,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 224.77682975651922,
+      "bound_to_descent_margin": 8.884214163242092,
+      "eta_u_components": [
+        0.20510088211671162,
+        0.16078815619415335
+      ],
+      "eta_lambda_components": [
+        0.00896273380366844,
+        0.002342952444161072
+      ],
+      "actual_u_error_components": [
+        0.04337623549155131,
+        0.0519238783485759
+      ],
+      "actual_lambda_error_components": [
+        0.00014969434096925152,
+        9.26103747652275e-05
+      ],
+      "eta_receiver_state": 0.2800532510650922,
+      "directional_bound_terms": {
+        "first": 1.3297239632733915,
+        "second": 0.02564872323931824,
+        "cross": 0.28965499644240456
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 4.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.1307194987263601,
+      "exact_objective": 0.008712630261105858,
+      "approximate_objective": 0.008309914656313817,
+      "exact_gradient_norm": 0.19288909702748225,
+      "approximate_gradient_norm": 0.185238524770241,
+      "gradient_cosine": 0.997961474502821,
+      "approximate_receiver_relative_error": 0.01630410005586936,
+      "exact_directional_derivative": -0.19249588768506395,
+      "approximate_directional_derivative": -0.18523852477024097,
+      "actual_directional_error": 0.007257362914822985,
+      "true_descent": true,
+      "primal_residual_norms": [
+        1.7419663277290782e-13,
+        42.412754617207085
+      ],
+      "adjoint_residual_norms": [
+        8.068597402376487e-17,
+        0.09021387265515003
+      ],
+      "primal_coarse_fraction": 4.107175644334012e-15,
+      "adjoint_coarse_fraction": 8.943854381708416e-16,
+      "primal_reduced_response_norm": 3.754643189324057e-15,
+      "adjoint_reduced_response_norm": 2.804652697604135e-18,
+      "reduced_receiver_adjoint_response_norm": 0.023437882179822983,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 1.3865491455914654,
+      "certified_upper_derivative": 1.2013106208212243,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 191.05412831973345,
+      "bound_to_descent_margin": 7.485209393193235,
+      "eta_u_components": [
+        0.15354679147729333,
+        0.15371087081312987
+      ],
+      "eta_lambda_components": [
+        0.007758119248882307,
+        0.0020649760278384005
+      ],
+      "actual_u_error_components": [
+        0.01707044110894978,
+        0.0519238783485759
+      ],
+      "actual_lambda_error_components": [
+        0.00014107466583800776,
+        9.26103747652275e-05
+      ],
+      "eta_receiver_state": 0.2429975304494686,
+      "directional_bound_terms": {
+        "first": 1.1546584096610286,
+        "second": 0.020489399332675528,
+        "cross": 0.21140133659776097
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 4.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.04890409060984864,
+      "exact_objective": 0.008712630261105858,
+      "approximate_objective": 0.008565196731901814,
+      "exact_gradient_norm": 0.19288909702748225,
+      "approximate_gradient_norm": 0.18516299277895823,
+      "gradient_cosine": 0.9978868109652698,
+      "approximate_receiver_relative_error": 0.015116154870498222,
+      "exact_directional_derivative": -0.19248148590272474,
+      "approximate_directional_derivative": -0.18516299277895826,
+      "actual_directional_error": 0.0073184931237664785,
+      "true_descent": true,
+      "primal_residual_norms": [
+        22.228078882602347,
+        38.25579783684724
+      ],
+      "adjoint_residual_norms": [
+        0.0224401175679557,
+        0.08947304355027817
+      ],
+      "primal_coarse_fraction": 0.5023896291207021,
+      "adjoint_coarse_fraction": 0.2432687167653319,
+      "primal_reduced_response_norm": 0.059079358929043896,
+      "adjoint_reduced_response_norm": 6.510054089630421e-05,
+      "reduced_receiver_adjoint_response_norm": 0.023146596377458136,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 63.06760439397026,
+      "certified_upper_derivative": 62.8824414011913,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 8617.566939997667,
+      "bound_to_descent_margin": 340.60588159351244,
+      "eta_u_components": [
+        2.494084705632983,
+        0.280761541848359
+      ],
+      "eta_lambda_components": [
+        0.14111118186060465,
+        0.015550230606684565
+      ],
+      "actual_u_error_components": [
+        0.05824287807291374,
+        0.03442897184000605
+      ],
+      "actual_lambda_error_components": [
+        0.00015496349419403797,
+        8.349486630655068e-05
+      ],
+      "eta_receiver_state": 1.902504001579662,
+      "directional_bound_terms": {
+        "first": 20.076552839714875,
+        "second": 0.2427776179049762,
+        "cross": 42.74827393635041
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 4.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.04890409060984864,
+      "exact_objective": 0.008712630261105858,
+      "approximate_objective": 0.008565196731901814,
+      "exact_gradient_norm": 0.19288909702748225,
+      "approximate_gradient_norm": 0.18516299277895823,
+      "gradient_cosine": 0.9978868109652698,
+      "approximate_receiver_relative_error": 0.015116154870498222,
+      "exact_directional_derivative": -0.19248148590272474,
+      "approximate_directional_derivative": -0.18516299277895826,
+      "actual_directional_error": 0.0073184931237664785,
+      "true_descent": true,
+      "primal_residual_norms": [
+        22.228078882602347,
+        38.25579783684724
+      ],
+      "adjoint_residual_norms": [
+        0.0224401175679557,
+        0.08947304355027817
+      ],
+      "primal_coarse_fraction": 0.5023896291207021,
+      "adjoint_coarse_fraction": 0.2432687167653319,
+      "primal_reduced_response_norm": 0.059079358929043896,
+      "adjoint_reduced_response_norm": 6.510054089630421e-05,
+      "reduced_receiver_adjoint_response_norm": 0.023146596377458136,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 0.6845586542422296,
+      "certified_upper_derivative": 0.49939566146327136,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 93.53819736731815,
+      "bound_to_descent_margin": 3.6970597848320272,
+      "eta_u_components": [
+        0.10823409868491193,
+        0.08322103748422119
+      ],
+      "eta_lambda_components": [
+        0.004099563401553884,
+        0.0008112649393821094
+      ],
+      "actual_u_error_components": [
+        0.05824287807291374,
+        0.03442897184000605
+      ],
+      "actual_lambda_error_components": [
+        0.00015496349419403797,
+        8.349486630655068e-05
+      ],
+      "eta_receiver_state": 0.15359869267437312,
+      "directional_bound_terms": {
+        "first": 0.6028594532405754,
+        "second": 0.013245561901561294,
+        "cross": 0.06845363910009288
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 4.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.04890409060984864,
+      "exact_objective": 0.008712630261105858,
+      "approximate_objective": 0.00838577437970596,
+      "exact_gradient_norm": 0.19288909702748225,
+      "approximate_gradient_norm": 0.18934126396764966,
+      "gradient_cosine": 0.9994040556140064,
+      "approximate_receiver_relative_error": 0.011597304700946583,
+      "exact_directional_derivative": -0.19277414585298935,
+      "approximate_directional_derivative": -0.1893412639676496,
+      "actual_directional_error": 0.0034328818853397447,
+      "true_descent": true,
+      "primal_residual_norms": [
+        1.9141879353552754e-13,
+        38.33023329155011
+      ],
+      "adjoint_residual_norms": [
+        9.001606594836424e-17,
+        0.08880390751962709
+      ],
+      "primal_coarse_fraction": 4.9939376074114804e-15,
+      "adjoint_coarse_fraction": 1.0136498321143046e-15,
+      "primal_reduced_response_norm": 3.1235230398067726e-15,
+      "adjoint_reduced_response_norm": 1.5545219684323915e-18,
+      "reduced_receiver_adjoint_response_norm": 0.023146596377458136,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 0.468365872567288,
+      "certified_upper_derivative": 0.2790246085996384,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 136.43518425945928,
+      "bound_to_descent_margin": 2.4736597968803666,
+      "eta_u_components": [
+        0.04620668860166658,
+        0.0782298631472607
+      ],
+      "eta_lambda_components": [
+        0.0028726419951890787,
+        0.0006204018797202066
+      ],
+      "actual_u_error_components": [
+        0.0076587814692702615,
+        0.03442897184000606
+      ],
+      "actual_lambda_error_components": [
+        9.22710645080919e-05,
+        8.349486630655068e-05
+      ],
+      "eta_receiver_state": 0.10827509323093062,
+      "directional_bound_terms": {
+        "first": 0.429191051346059,
+        "second": 0.00729371426496374,
+        "cross": 0.031881106956265254
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 3.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.3559872256372834,
+      "exact_objective": 2.4225575298874333,
+      "approximate_objective": 2.422541341178506,
+      "exact_gradient_norm": 1.8990037217157816,
+      "approximate_gradient_norm": 1.903597186843857,
+      "gradient_cosine": 0.9988625496337913,
+      "approximate_receiver_relative_error": 0.015567422488961397,
+      "exact_directional_derivative": -1.8968436992370845,
+      "approximate_directional_derivative": -1.9035971868438573,
+      "actual_directional_error": 0.006753487606772746,
+      "true_descent": true,
+      "primal_residual_norms": [
+        1.5706080448623456,
+        43.13779010110472
+      ],
+      "adjoint_residual_norms": [
+        0.031425475290333856,
+        1.348652569317171
+      ],
+      "primal_coarse_fraction": 0.03638499001451352,
+      "adjoint_coarse_fraction": 0.023295063661270723,
+      "primal_reduced_response_norm": 0.008413278399268769,
+      "adjoint_reduced_response_norm": 0.0001964061288094771,
+      "reduced_receiver_adjoint_response_norm": 0.02878966528606082,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 43.405489407001866,
+      "certified_upper_derivative": 41.50189222015801,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 6427.122093697574,
+      "bound_to_descent_margin": 22.801824727934,
+      "eta_u_components": [
+        1.0044330408884719,
+        0.5556873027539208
+      ],
+      "eta_lambda_components": [
+        0.22193683237221437,
+        0.07680469477162569
+      ],
+      "actual_u_error_components": [
+        0.0105189684306922,
+        0.04464724004095847
+      ],
+      "actual_lambda_error_components": [
+        0.0002726240310248468,
+        0.0012011364177925026
+      ],
+      "eta_receiver_state": 1.1331968591584034,
+      "directional_bound_terms": {
+        "first": 26.067921430046066,
+        "second": 1.305017843120391,
+        "cross": 16.03255013383541
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 3.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.3559872256372834,
+      "exact_objective": 2.4225575298874333,
+      "approximate_objective": 2.422541341178506,
+      "exact_gradient_norm": 1.8990037217157816,
+      "approximate_gradient_norm": 1.903597186843857,
+      "gradient_cosine": 0.9988625496337913,
+      "approximate_receiver_relative_error": 0.015567422488961397,
+      "exact_directional_derivative": -1.8968436992370845,
+      "approximate_directional_derivative": -1.9035971868438573,
+      "actual_directional_error": 0.006753487606772746,
+      "true_descent": true,
+      "primal_residual_norms": [
+        1.5706080448623456,
+        43.13779010110472
+      ],
+      "adjoint_residual_norms": [
+        0.031425475290333856,
+        1.348652569317171
+      ],
+      "primal_coarse_fraction": 0.03638499001451352,
+      "adjoint_coarse_fraction": 0.023295063661270723,
+      "primal_reduced_response_norm": 0.008413278399268769,
+      "adjoint_reduced_response_norm": 0.0001964061288094771,
+      "reduced_receiver_adjoint_response_norm": 0.02878966528606082,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 11.516281346567155,
+      "certified_upper_derivative": 9.612684159723297,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 1705.2346901500248,
+      "bound_to_descent_margin": 6.049746987523668,
+      "eta_u_components": [
+        0.5824477170928672,
+        0.44042952591076184
+      ],
+      "eta_lambda_components": [
+        0.06299891343590755,
+        0.03105952404854666
+      ],
+      "actual_u_error_components": [
+        0.0105189684306922,
+        0.04464724004095847
+      ],
+      "actual_lambda_error_components": [
+        0.0002726240310248468,
+        0.0012011364177925026
+      ],
+      "eta_receiver_state": 0.7753140916649607,
+      "directional_bound_terms": {
+        "first": 7.670984639976656,
+        "second": 0.7950062142644233,
+        "cross": 3.0502904923260745
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 3.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.3559872256372834,
+      "exact_objective": 2.4225575298874333,
+      "approximate_objective": 2.4214058834012615,
+      "exact_gradient_norm": 1.8990037217157816,
+      "approximate_gradient_norm": 1.8915075405918385,
+      "gradient_cosine": 0.9988690662431855,
+      "approximate_receiver_relative_error": 0.01593769128245706,
+      "exact_directional_derivative": -1.896856074302577,
+      "approximate_directional_derivative": -1.8915075405918391,
+      "actual_directional_error": 0.005348533710737957,
+      "true_descent": true,
+      "primal_residual_norms": [
+        1.3671821675718022e-13,
+        43.13671438132483
+      ],
+      "adjoint_residual_norms": [
+        7.159173061412462e-16,
+        1.3482739967996331
+      ],
+      "primal_coarse_fraction": 3.1694165565926735e-15,
+      "adjoint_coarse_fraction": 5.309879949035601e-16,
+      "primal_reduced_response_norm": 5.4648105744432256e-15,
+      "adjoint_reduced_response_norm": 3.2673183673180284e-17,
+      "reduced_receiver_adjoint_response_norm": 0.02878966528606082,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 11.268350924575715,
+      "certified_upper_derivative": 9.376843383983877,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 2106.8112372467367,
+      "bound_to_descent_margin": 5.957338621579023,
+      "eta_u_components": [
+        0.569369680703903,
+        0.436850477318193
+      ],
+      "eta_lambda_components": [
+        0.062046315922614184,
+        0.030724486243812098
+      ],
+      "actual_u_error_components": [
+        0.007657621573706,
+        0.04464724004095845
+      ],
+      "actual_lambda_error_components": [
+        0.00022087255435864077,
+        0.0012011364177925024
+      ],
+      "eta_receiver_state": 0.7642156856974576,
+      "directional_bound_terms": {
+        "first": 7.540701263585302,
+        "second": 0.7781432314321381,
+        "cross": 2.949506429558274
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 3.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.06737481179812112,
+      "exact_objective": 2.4225575298874333,
+      "approximate_objective": 2.422541341178506,
+      "exact_gradient_norm": 1.8990037217157816,
+      "approximate_gradient_norm": 1.903597186843857,
+      "gradient_cosine": 0.9988625496337913,
+      "approximate_receiver_relative_error": 0.015567422488961397,
+      "exact_directional_derivative": -1.8968436992370845,
+      "approximate_directional_derivative": -1.9035971868438573,
+      "actual_directional_error": 0.006753487606772746,
+      "true_descent": true,
+      "primal_residual_norms": [
+        8.523302229409472,
+        42.316534162708685
+      ],
+      "adjoint_residual_norms": [
+        0.14127455888041943,
+        1.3416008393841192
+      ],
+      "primal_coarse_fraction": 0.19745236090072663,
+      "adjoint_coarse_fraction": 0.10472394808455249,
+      "primal_reduced_response_norm": 0.022132153786123734,
+      "adjoint_reduced_response_norm": 0.0003913988488173324,
+      "reduced_receiver_adjoint_response_norm": 0.02855367311291906,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 38.64849618811491,
+      "certified_upper_derivative": 36.74489900127105,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 5722.7462962034915,
+      "bound_to_descent_margin": 20.30287523811363,
+      "eta_u_components": [
+        1.6871173785150841,
+        0.2819072600464179
+      ],
+      "eta_lambda_components": [
+        0.1703892329477277,
+        0.02436063673636118
+      ],
+      "actual_u_error_components": [
+        0.022948707547603846,
+        0.03971626319299707
+      ],
+      "actual_lambda_error_components": [
+        0.00044215987085880344,
+        0.0011495856666824669
+      ],
+      "eta_receiver_state": 1.2629572298486496,
+      "directional_bound_terms": {
+        "first": 19.145202908218288,
+        "second": 1.9940439610416103,
+        "cross": 17.50924931885502
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 3.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.06737481179812112,
+      "exact_objective": 2.4225575298874333,
+      "approximate_objective": 2.422541341178506,
+      "exact_gradient_norm": 1.8990037217157816,
+      "approximate_gradient_norm": 1.903597186843857,
+      "gradient_cosine": 0.9988625496337913,
+      "approximate_receiver_relative_error": 0.015567422488961397,
+      "exact_directional_derivative": -1.8968436992370845,
+      "approximate_directional_derivative": -1.9035971868438573,
+      "actual_directional_error": 0.006753487606772746,
+      "true_descent": true,
+      "primal_residual_norms": [
+        8.523302229409472,
+        42.316534162708685
+      ],
+      "adjoint_residual_norms": [
+        0.14127455888041943,
+        1.3416008393841192
+      ],
+      "primal_coarse_fraction": 0.19745236090072663,
+      "adjoint_coarse_fraction": 0.10472394808455249,
+      "primal_reduced_response_norm": 0.022132153786123734,
+      "adjoint_reduced_response_norm": 0.0003913988488173324,
+      "reduced_receiver_adjoint_response_norm": 0.02855367311291906,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 1.1935319427809161,
+      "certified_upper_derivative": -0.7100652440629411,
+      "certified_descent": true,
+      "covers_directional_error": true,
+      "effectivity": 176.72823469520856,
+      "bound_to_descent_margin": 0.6269876584340717,
+      "eta_u_components": [
+        0.09520323972105912,
+        0.11423349633782441
+      ],
+      "eta_lambda_components": [
+        0.00816442378451156,
+        0.004581313119289957
+      ],
+      "actual_u_error_components": [
+        0.022948707547603846,
+        0.03971626319299707
+      ],
+      "actual_lambda_error_components": [
+        0.00044215987085880344,
+        0.0011495856666824669
+      ],
+      "eta_receiver_state": 0.16959368445681883,
+      "directional_bound_terms": {
+        "first": 0.9769476565162758,
+        "second": 0.13379074440096292,
+        "cross": 0.08279354186367743
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 3.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.06737481179812112,
+      "exact_objective": 2.4225575298874333,
+      "approximate_objective": 2.4209391339499966,
+      "exact_gradient_norm": 1.8990037217157816,
+      "approximate_gradient_norm": 1.8898741466091662,
+      "gradient_cosine": 0.998878372786844,
+      "approximate_receiver_relative_error": 0.015373518318640419,
+      "exact_directional_derivative": -1.896873747463621,
+      "approximate_directional_derivative": -1.8898741466091655,
+      "actual_directional_error": 0.006999600854455501,
+      "true_descent": true,
+      "primal_residual_norms": [
+        2.106884071272309e-13,
+        42.28422269222302
+      ],
+      "adjoint_residual_norms": [
+        1.209882924074056e-15,
+        1.3411244840634897
+      ],
+      "primal_coarse_fraction": 4.982671874112067e-15,
+      "adjoint_coarse_fraction": 9.021406576727442e-16,
+      "primal_reduced_response_norm": 6.251923424698586e-15,
+      "adjoint_reduced_response_norm": 2.176105139979227e-17,
+      "reduced_receiver_adjoint_response_norm": 0.02855367311291906,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 1.0403342083763112,
+      "certified_upper_derivative": -0.8495399382328543,
+      "certified_descent": true,
+      "covers_directional_error": true,
+      "effectivity": 148.62764749137096,
+      "bound_to_descent_margin": 0.5504780359278902,
+      "eta_u_components": [
+        0.07141763868025222,
+        0.11164862903365527
+      ],
+      "eta_lambda_components": [
+        0.0072136165031778795,
+        0.004439567945062012
+      ],
+      "actual_u_error_components": [
+        0.007534228902771415,
+        0.039716263192997064
+      ],
+      "actual_lambda_error_components": [
+        0.0001777679923769312,
+        0.0011495856666824669
+      ],
+      "eta_receiver_state": 0.1531776140129193,
+      "directional_bound_terms": {
+        "first": 0.8682679216918261,
+        "second": 0.1054561324606147,
+        "cross": 0.06661015422387039
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 3.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.027157813745902686,
+      "exact_objective": 2.4225575298874333,
+      "approximate_objective": 2.422541341178506,
+      "exact_gradient_norm": 1.8990037217157816,
+      "approximate_gradient_norm": 1.903597186843857,
+      "gradient_cosine": 0.9988625496337913,
+      "approximate_receiver_relative_error": 0.015567422488961397,
+      "exact_directional_derivative": -1.8968436992370845,
+      "approximate_directional_derivative": -1.9035971868438573,
+      "actual_directional_error": 0.006753487606772746,
+      "true_descent": true,
+      "primal_residual_norms": [
+        17.7955402425707,
+        39.32752842364496
+      ],
+      "adjoint_residual_norms": [
+        0.30382705702391355,
+        1.3143593240218672
+      ],
+      "primal_coarse_fraction": 0.4122547036142025,
+      "adjoint_coarse_fraction": 0.2252207984127328,
+      "primal_reduced_response_norm": 0.03485116084195455,
+      "adjoint_reduced_response_norm": 0.0005999654653228154,
+      "reduced_receiver_adjoint_response_norm": 0.028468011729415297,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 109.43220682367564,
+      "certified_upper_derivative": 107.52860963683179,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 16203.806565652298,
+      "bound_to_descent_margin": 57.48706059243185,
+      "eta_u_components": [
+        3.260856401095962,
+        0.3005718834465175
+      ],
+      "eta_lambda_components": [
+        0.3438554835897849,
+        0.03101314083806854
+      ],
+      "actual_u_error_components": [
+        0.0358174064413318,
+        0.028655507951130515
+      ],
+      "actual_lambda_error_components": [
+        0.0006428819801978829,
+        0.0010505975994530403
+      ],
+      "eta_receiver_state": 2.420896533527638,
+      "directional_bound_terms": {
+        "first": 38.37911913727338,
+        "second": 3.815744031492706,
+        "cross": 67.23734365490955
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 3.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.027157813745902686,
+      "exact_objective": 2.4225575298874333,
+      "approximate_objective": 2.422541341178506,
+      "exact_gradient_norm": 1.8990037217157816,
+      "approximate_gradient_norm": 1.903597186843857,
+      "gradient_cosine": 0.9988625496337913,
+      "approximate_receiver_relative_error": 0.015567422488961397,
+      "exact_directional_derivative": -1.8968436992370845,
+      "approximate_directional_derivative": -1.9035971868438573,
+      "actual_directional_error": 0.006753487606772746,
+      "true_descent": true,
+      "primal_residual_norms": [
+        17.7955402425707,
+        39.32752842364496
+      ],
+      "adjoint_residual_norms": [
+        0.30382705702391355,
+        1.3143593240218672
+      ],
+      "primal_coarse_fraction": 0.4122547036142025,
+      "adjoint_coarse_fraction": 0.2252207984127328,
+      "primal_reduced_response_norm": 0.03485116084195455,
+      "adjoint_reduced_response_norm": 0.0005999654653228154,
+      "reduced_receiver_adjoint_response_norm": 0.028468011729415297,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 0.6704301942768726,
+      "certified_upper_derivative": -1.2331669925669848,
+      "certified_descent": true,
+      "covers_directional_error": true,
+      "effectivity": 99.27169979619576,
+      "bound_to_descent_margin": 0.35219120878637056,
+      "eta_u_components": [
+        0.06100559886015165,
+        0.06953484205636638
+      ],
+      "eta_lambda_components": [
+        0.004723797975366029,
+        0.0026986227030846416
+      ],
+      "actual_u_error_components": [
+        0.0358174064413318,
+        0.028655507951130515
+      ],
+      "actual_lambda_error_components": [
+        0.0006428819801978829,
+        0.0010505975994530403
+      ],
+      "eta_receiver_state": 0.10920284921321809,
+      "directional_bound_terms": {
+        "first": 0.5595442548508854,
+        "second": 0.08095749091843579,
+        "cross": 0.029928448507551306
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 3.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.027157813745902686,
+      "exact_objective": 2.4225575298874333,
+      "approximate_objective": 2.4220728750993348,
+      "exact_gradient_norm": 1.8990037217157816,
+      "approximate_gradient_norm": 1.8962193302833699,
+      "gradient_cosine": 0.9990506612038891,
+      "approximate_receiver_relative_error": 0.013057376992074533,
+      "exact_directional_derivative": -1.8972009238087975,
+      "approximate_directional_derivative": -1.8962193302833694,
+      "actual_directional_error": 0.0009815935254280372,
+      "true_descent": true,
+      "primal_residual_norms": [
+        2.4712346833424293e-13,
+        39.50512150820665
+      ],
+      "adjoint_residual_norms": [
+        1.530879281481583e-15,
+        1.3182133028731253
+      ],
+      "primal_coarse_fraction": 6.2554792619206694e-15,
+      "adjoint_coarse_fraction": 1.1613289580259425e-15,
+      "primal_reduced_response_norm": 7.211014444527647e-15,
+      "adjoint_reduced_response_norm": 2.741844603032756e-17,
+      "reduced_receiver_adjoint_response_norm": 0.028468011729415297,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 0.46182773955961753,
+      "certified_upper_derivative": -1.4343915907237519,
+      "certified_descent": true,
+      "covers_directional_error": true,
+      "effectivity": 470.4877605607996,
+      "bound_to_descent_margin": 0.2435518572055704,
+      "eta_u_components": [
+        0.025295248143982024,
+        0.06725057840065682
+      ],
+      "eta_lambda_components": [
+        0.0033468928127351125,
+        0.002563351649492299
+      ],
+      "actual_u_error_components": [
+        0.003349803825150584,
+        0.028655507951130504
+      ],
+      "actual_lambda_error_components": [
+        9.329743321841929e-05,
+        0.0010505975994530403
+      ],
+      "eta_receiver_state": 0.08369844717266947,
+      "directional_bound_terms": {
+        "first": 0.40458739751270395,
+        "second": 0.039171593821568526,
+        "cross": 0.018068748225345096
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 4.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": false,
+      "stability_reason": "Schur small-gain condition unavailable",
+      "tau": 11.493356772997478,
+      "exact_objective": 1.296081559967283,
+      "approximate_objective": 1.3012785555860762,
+      "exact_gradient_norm": 1.2017768640219475,
+      "approximate_gradient_norm": 1.212680183477955,
+      "gradient_cosine": 0.9969669161826203,
+      "approximate_receiver_relative_error": 0.021907689235836452,
+      "exact_directional_derivative": -1.1981317740635813,
+      "approximate_directional_derivative": -1.2126801834779557,
+      "actual_directional_error": 0.014548409414374408,
+      "true_descent": true,
+      "primal_residual_norms": [
+        3.0070755541574363,
+        46.783876696681595
+      ],
+      "adjoint_residual_norms": [
+        0.012962281017041607,
+        0.9162185681348229
+      ],
+      "primal_coarse_fraction": 0.06414353074722821,
+      "adjoint_coarse_fraction": 0.014146170395450639,
+      "primal_reduced_response_norm": 0.03588899046923201,
+      "adjoint_reduced_response_norm": 0.00013321554917229225,
+      "reduced_receiver_adjoint_response_norm": 0.040466204935899266,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": null,
+      "certified_upper_derivative": null,
+      "certified_descent": false,
+      "covers_directional_error": null,
+      "effectivity": null,
+      "bound_to_descent_margin": null
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 4.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": false,
+      "stability_reason": "Schur small-gain condition unavailable",
+      "tau": 11.493356772997478,
+      "exact_objective": 1.296081559967283,
+      "approximate_objective": 1.3012785555860762,
+      "exact_gradient_norm": 1.2017768640219475,
+      "approximate_gradient_norm": 1.212680183477955,
+      "gradient_cosine": 0.9969669161826203,
+      "approximate_receiver_relative_error": 0.021907689235836452,
+      "exact_directional_derivative": -1.1981317740635813,
+      "approximate_directional_derivative": -1.2126801834779557,
+      "actual_directional_error": 0.014548409414374408,
+      "true_descent": true,
+      "primal_residual_norms": [
+        3.0070755541574363,
+        46.783876696681595
+      ],
+      "adjoint_residual_norms": [
+        0.012962281017041607,
+        0.9162185681348229
+      ],
+      "primal_coarse_fraction": 0.06414353074722821,
+      "adjoint_coarse_fraction": 0.014146170395450639,
+      "primal_reduced_response_norm": 0.03588899046923201,
+      "adjoint_reduced_response_norm": 0.00013321554917229225,
+      "reduced_receiver_adjoint_response_norm": 0.040466204935899266,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": null,
+      "certified_upper_derivative": null,
+      "certified_descent": false,
+      "covers_directional_error": null,
+      "effectivity": null,
+      "bound_to_descent_margin": null
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 4.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": false,
+      "stability_reason": "Schur small-gain condition unavailable",
+      "tau": 11.493356772997478,
+      "exact_objective": 1.296081559967283,
+      "approximate_objective": 1.2977636643751636,
+      "exact_gradient_norm": 1.2017768640219475,
+      "approximate_gradient_norm": 1.209253547094828,
+      "gradient_cosine": 0.9972027598547176,
+      "approximate_receiver_relative_error": 0.021466592690886143,
+      "exact_directional_derivative": -1.198415205532234,
+      "approximate_directional_derivative": -1.209253547094828,
+      "actual_directional_error": 0.010838341562594112,
+      "true_descent": true,
+      "primal_residual_norms": [
+        1.3916699516626905e-13,
+        46.79162126362939
+      ],
+      "adjoint_residual_norms": [
+        3.4044842930045573e-16,
+        0.9151000138359404
+      ],
+      "primal_coarse_fraction": 2.974186219840218e-15,
+      "adjoint_coarse_fraction": 3.72034121028318e-16,
+      "primal_reduced_response_norm": 1.113674152539423e-14,
+      "adjoint_reduced_response_norm": 2.811495127059659e-17,
+      "reduced_receiver_adjoint_response_norm": 0.040466204935899266,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": null,
+      "certified_upper_derivative": null,
+      "certified_descent": false,
+      "covers_directional_error": null,
+      "effectivity": null,
+      "bound_to_descent_margin": null
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 4.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.6509698090833335,
+      "exact_objective": 1.296081559967283,
+      "approximate_objective": 1.3012785555860762,
+      "exact_gradient_norm": 1.2017768640219475,
+      "approximate_gradient_norm": 1.212680183477955,
+      "gradient_cosine": 0.9969669161826203,
+      "approximate_receiver_relative_error": 0.021907689235836452,
+      "exact_directional_derivative": -1.1981317740635813,
+      "approximate_directional_derivative": -1.2126801834779557,
+      "actual_directional_error": 0.014548409414374408,
+      "true_descent": true,
+      "primal_residual_norms": [
+        12.752788830210736,
+        45.112525967970065
+      ],
+      "adjoint_residual_norms": [
+        0.08316094404095796,
+        0.9125287626756793
+      ],
+      "primal_coarse_fraction": 0.2720280510785941,
+      "adjoint_coarse_fraction": 0.09075631697100944,
+      "primal_reduced_response_norm": 0.04560065636118469,
+      "adjoint_reduced_response_norm": 0.0003270429061222599,
+      "reduced_receiver_adjoint_response_norm": 0.038431150457310784,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 8159.545462919077,
+      "certified_upper_derivative": 8158.332782735599,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 560854.8144690732,
+      "bound_to_descent_margin": 6728.522139710056,
+      "eta_u_components": [
+        10.336212723140086,
+        2.7968418788248917
+      ],
+      "eta_lambda_components": [
+        3.997714015022973,
+        1.05486359567014
+      ],
+      "actual_u_error_components": [
+        0.047571719969217545,
+        0.05022761416218688
+      ],
+      "actual_lambda_error_components": [
+        0.0007239267532127425,
+        0.0007994847082575232
+      ],
+      "eta_receiver_state": 8.807295750642066,
+      "directional_bound_terms": {
+        "first": 577.5801215191497,
+        "second": 14.135694214539853,
+        "cross": 7567.829647185387
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 4.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.6509698090833335,
+      "exact_objective": 1.296081559967283,
+      "approximate_objective": 1.3012785555860762,
+      "exact_gradient_norm": 1.2017768640219475,
+      "approximate_gradient_norm": 1.212680183477955,
+      "gradient_cosine": 0.9969669161826203,
+      "approximate_receiver_relative_error": 0.021907689235836452,
+      "exact_directional_derivative": -1.1981317740635813,
+      "approximate_directional_derivative": -1.2126801834779557,
+      "actual_directional_error": 0.014548409414374408,
+      "true_descent": true,
+      "primal_residual_norms": [
+        12.752788830210736,
+        45.112525967970065
+      ],
+      "adjoint_residual_norms": [
+        0.08316094404095796,
+        0.9125287626756793
+      ],
+      "primal_coarse_fraction": 0.2720280510785941,
+      "adjoint_coarse_fraction": 0.09075631697100944,
+      "primal_reduced_response_norm": 0.04560065636118469,
+      "adjoint_reduced_response_norm": 0.0003270429061222599,
+      "reduced_receiver_adjoint_response_norm": 0.038431150457310784,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 75.91555115841824,
+      "certified_upper_derivative": 74.70287097494028,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 5218.134092611571,
+      "bound_to_descent_margin": 62.60146095625405,
+      "eta_u_components": [
+        1.2757671302754081,
+        0.4826688857993453
+      ],
+      "eta_lambda_components": [
+        0.19001298947059916,
+        0.05596090581537797
+      ],
+      "actual_u_error_components": [
+        0.047571719969217545,
+        0.05022761416218688
+      ],
+      "actual_lambda_error_components": [
+        0.0007239267532127425,
+        0.0007994847082575232
+      ],
+      "eta_receiver_state": 1.2245208283908897,
+      "directional_bound_terms": {
+        "first": 27.894984687873425,
+        "second": 1.835164467961318,
+        "cross": 46.185402002583494
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 4.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.6509698090833335,
+      "exact_objective": 1.296081559967283,
+      "approximate_objective": 1.2968099219170839,
+      "exact_gradient_norm": 1.2017768640219475,
+      "approximate_gradient_norm": 1.202797336369311,
+      "gradient_cosine": 0.9975231930377358,
+      "approximate_receiver_relative_error": 0.021955948369906383,
+      "exact_directional_derivative": -1.1988002947180498,
+      "approximate_directional_derivative": -1.2027973363693105,
+      "actual_directional_error": 0.003997041651260691,
+      "true_descent": true,
+      "primal_residual_norms": [
+        2.022651082171254e-13,
+        45.02171343543096
+      ],
+      "adjoint_residual_norms": [
+        5.571044022486376e-16,
+        0.9113674468791493
+      ],
+      "primal_coarse_fraction": 4.492612403728459e-15,
+      "adjoint_coarse_fraction": 6.112840700601758e-16,
+      "primal_reduced_response_norm": 1.2972225171447235e-14,
+      "adjoint_reduced_response_norm": 2.365937731688457e-17,
+      "reduced_receiver_adjoint_response_norm": 0.038431150457310784,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 65.06528174430449,
+      "certified_upper_derivative": 63.86248440793518,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 16278.359702301952,
+      "bound_to_descent_margin": 54.0949666056848,
+      "eta_u_components": [
+        1.1428123784777175,
+        0.44839457837150837
+      ],
+      "eta_lambda_components": [
+        0.17392739102053079,
+        0.05146047204344729
+      ],
+      "actual_u_error_components": [
+        0.02168072695224487,
+        0.050227614162186865
+      ],
+      "actual_lambda_error_components": [
+        0.00046553338977058556,
+        0.000799484708257523
+      ],
+      "eta_receiver_state": 1.1129340251656412,
+      "directional_bound_terms": {
+        "first": 25.479765553427544,
+        "second": 1.6383375664711404,
+        "cross": 37.9471786244058
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 4.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.1966500700127472,
+      "exact_objective": 1.296081559967283,
+      "approximate_objective": 1.3012785555860762,
+      "exact_gradient_norm": 1.2017768640219475,
+      "approximate_gradient_norm": 1.212680183477955,
+      "gradient_cosine": 0.9969669161826203,
+      "approximate_receiver_relative_error": 0.021907689235836452,
+      "exact_directional_derivative": -1.1981317740635813,
+      "approximate_directional_derivative": -1.2126801834779557,
+      "actual_directional_error": 0.014548409414374408,
+      "true_descent": true,
+      "primal_residual_norms": [
+        21.402035851183054,
+        41.71002857327474
+      ],
+      "adjoint_residual_norms": [
+        0.19978827189342804,
+        0.8942645759158907
+      ],
+      "primal_coarse_fraction": 0.45652399480806904,
+      "adjoint_coarse_fraction": 0.21803561684100023,
+      "primal_reduced_response_norm": 0.05575416542707921,
+      "adjoint_reduced_response_norm": 0.0004542107148791273,
+      "reduced_receiver_adjoint_response_norm": 0.03587028269020865,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 1539.6646043002997,
+      "certified_upper_derivative": 1538.4519241168218,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 105830.44238355361,
+      "bound_to_descent_margin": 1269.6378033362066,
+      "eta_u_components": [
+        6.6763105925260025,
+        1.1111970443122654
+      ],
+      "eta_lambda_components": [
+        1.1651520771791786,
+        0.19200523948870854
+      ],
+      "actual_u_error_components": [
+        0.05740576221661135,
+        0.038606479114068955
+      ],
+      "actual_lambda_error_components": [
+        0.0008092476171225945,
+        0.0007129965195820827
+      ],
+      "eta_receiver_state": 5.452371318706199,
+      "directional_bound_terms": {
+        "first": 164.54932181344228,
+        "second": 8.930833943792093,
+        "cross": 1366.1844485430654
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 4.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.1966500700127472,
+      "exact_objective": 1.296081559967283,
+      "approximate_objective": 1.3012785555860762,
+      "exact_gradient_norm": 1.2017768640219475,
+      "approximate_gradient_norm": 1.212680183477955,
+      "gradient_cosine": 0.9969669161826203,
+      "approximate_receiver_relative_error": 0.021907689235836452,
+      "exact_directional_derivative": -1.1981317740635813,
+      "approximate_directional_derivative": -1.2126801834779557,
+      "actual_directional_error": 0.014548409414374408,
+      "true_descent": true,
+      "primal_residual_norms": [
+        21.402035851183054,
+        41.71002857327474
+      ],
+      "adjoint_residual_norms": [
+        0.19978827189342804,
+        0.8942645759158907
+      ],
+      "primal_coarse_fraction": 0.45652399480806904,
+      "adjoint_coarse_fraction": 0.21803561684100023,
+      "primal_reduced_response_norm": 0.05575416542707921,
+      "adjoint_reduced_response_norm": 0.0004542107148791273,
+      "reduced_receiver_adjoint_response_norm": 0.03587028269020865,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 3.323191329774413,
+      "certified_upper_derivative": 2.1105111462964574,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 228.4230004203049,
+      "bound_to_descent_margin": 2.740369122090814,
+      "eta_u_components": [
+        0.206367993477953,
+        0.11761774493270064
+      ],
+      "eta_lambda_components": [
+        0.015572159525951658,
+        0.004752392653239376
+      ],
+      "actual_u_error_components": [
+        0.05740576221661135,
+        0.038606479114068955
+      ],
+      "actual_lambda_error_components": [
+        0.0008092476171225945,
+        0.0007129965195820827
+      ],
+      "eta_receiver_state": 0.25180554400659394,
+      "directional_bound_terms": {
+        "first": 2.34118861689852,
+        "second": 0.32093212251578307,
+        "cross": 0.6610705903601096
+      }
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 4.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.1966500700127472,
+      "exact_objective": 1.296081559967283,
+      "approximate_objective": 1.292545833051399,
+      "exact_gradient_norm": 1.2017768640219475,
+      "approximate_gradient_norm": 1.2126712246022013,
+      "gradient_cosine": 0.9980553768442761,
+      "approximate_receiver_relative_error": 0.01878632177174726,
+      "exact_directional_derivative": -1.1994398609041568,
+      "approximate_directional_derivative": -1.2126712246022016,
+      "actual_directional_error": 0.013231363698044785,
+      "true_descent": true,
+      "primal_residual_norms": [
+        2.0906631380027913e-13,
+        41.975461889764986
+      ],
+      "adjoint_residual_norms": [
+        5.976709023831217e-16,
+        0.8946968584161251
+      ],
+      "primal_coarse_fraction": 4.980679291852093e-15,
+      "adjoint_coarse_fraction": 6.68014978214156e-16,
+      "primal_reduced_response_norm": 8.508395741579061e-15,
+      "adjoint_reduced_response_norm": 1.5830720100934715e-17,
+      "reduced_receiver_adjoint_response_norm": 0.03587028269020865,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 2.5132565139960303,
+      "certified_upper_derivative": 1.3005852893938288,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 189.94689975663033,
+      "bound_to_descent_margin": 2.0724962075524354,
+      "eta_u_components": [
+        0.13783752232187788,
+        0.10764043881238436
+      ],
+      "eta_lambda_components": [
+        0.01239391136528884,
+        0.0041528510966301595
+      ],
+      "actual_u_error_components": [
+        0.010012293328911208,
+        0.03860647911406899
+      ],
+      "actual_lambda_error_components": [
+        0.0004176233649326011,
+        0.0007129965195820827
+      ],
+      "eta_receiver_state": 0.19726729149653102,
+      "directional_bound_terms": {
+        "first": 1.8958803225301777,
+        "second": 0.2286116682268717,
+        "cross": 0.38876452323898086
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 3.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.7378589104120677,
+      "exact_objective": 4.040474630798203,
+      "approximate_objective": 4.074680727243447,
+      "exact_gradient_norm": 15.733241797926533,
+      "approximate_gradient_norm": 15.942731337343425,
+      "gradient_cosine": 0.9996544002410468,
+      "approximate_receiver_relative_error": 0.008984518827371103,
+      "exact_directional_derivative": -15.727804393353615,
+      "approximate_directional_derivative": -15.942731337343433,
+      "actual_directional_error": 0.21492694398981804,
+      "true_descent": true,
+      "primal_residual_norms": [
+        1.9953732886544375,
+        59.251857761633346
+      ],
+      "adjoint_residual_norms": [
+        0.04830645685299765,
+        2.2486431133167777
+      ],
+      "primal_coarse_fraction": 0.03365705088806899,
+      "adjoint_coarse_fraction": 0.021477536284158934,
+      "primal_reduced_response_norm": 0.030943811782376193,
+      "adjoint_reduced_response_norm": 0.0004955723088346706,
+      "reduced_receiver_adjoint_response_norm": 0.07575688383876551,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 3230.686936713785,
+      "certified_upper_derivative": 3214.7442053764416,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 15031.558522819902,
+      "bound_to_descent_margin": 202.64325279987565,
+      "eta_u_components": [
+        6.499155877810205,
+        2.0511908202420353
+      ],
+      "eta_lambda_components": [
+        4.257379092588577,
+        1.139741657595899
+      ],
+      "actual_u_error_components": [
+        0.02551911276314936,
+        0.06250418502819288
+      ],
+      "actual_lambda_error_components": [
+        0.001841517806587371,
+        0.0021537111345640075
+      ],
+      "eta_receiver_state": 5.787950240937467,
+      "directional_bound_terms": {
+        "first": 943.3040976960851,
+        "second": 36.024508832364404,
+        "cross": 2251.358330185336
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 3.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.7378589104120677,
+      "exact_objective": 4.040474630798203,
+      "approximate_objective": 4.074680727243447,
+      "exact_gradient_norm": 15.733241797926533,
+      "approximate_gradient_norm": 15.942731337343425,
+      "gradient_cosine": 0.9996544002410468,
+      "approximate_receiver_relative_error": 0.008984518827371103,
+      "exact_directional_derivative": -15.727804393353615,
+      "approximate_directional_derivative": -15.942731337343433,
+      "actual_directional_error": 0.21492694398981804,
+      "true_descent": true,
+      "primal_residual_norms": [
+        1.9953732886544375,
+        59.251857761633346
+      ],
+      "adjoint_residual_norms": [
+        0.04830645685299765,
+        2.2486431133167777
+      ],
+      "primal_coarse_fraction": 0.03365705088806899,
+      "adjoint_coarse_fraction": 0.021477536284158934,
+      "primal_reduced_response_norm": 0.030943811782376193,
+      "adjoint_reduced_response_norm": 0.0004955723088346706,
+      "reduced_receiver_adjoint_response_norm": 0.07575688383876551,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 993.8229716137436,
+      "certified_upper_derivative": 977.8802402764002,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 4624.003641259725,
+      "bound_to_descent_margin": 62.33705822325838,
+      "eta_u_components": [
+        4.448111312005108,
+        1.5277596415700974
+      ],
+      "eta_lambda_components": [
+        1.645372700088147,
+        0.4618699833573257
+      ],
+      "actual_u_error_components": [
+        0.02551911276314936,
+        0.06250418502819288
+      ],
+      "actual_lambda_error_components": [
+        0.001841517806587371,
+        0.0021537111345640075
+      ],
+      "eta_receiver_state": 4.085248977406335,
+      "directional_bound_terms": {
+        "first": 366.45966402607183,
+        "second": 24.914381700709846,
+        "cross": 602.4489258869619
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 3.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.7378589104120677,
+      "exact_objective": 4.040474630798203,
+      "approximate_objective": 4.071217553778997,
+      "exact_gradient_norm": 15.733241797926533,
+      "approximate_gradient_norm": 15.984614547081305,
+      "gradient_cosine": 0.9996590809285244,
+      "approximate_receiver_relative_error": 0.009443651344283564,
+      "exact_directional_derivative": -15.727878035741488,
+      "approximate_directional_derivative": -15.98461454708131,
+      "actual_directional_error": 0.2567365113398221,
+      "true_descent": true,
+      "primal_residual_norms": [
+        2.3155120813431163e-13,
+        59.26051736760996
+      ],
+      "adjoint_residual_norms": [
+        4.437607063809479e-15,
+        2.2482196411107713
+      ],
+      "primal_coarse_fraction": 3.90734368210006e-15,
+      "adjoint_coarse_fraction": 1.9738316411189267e-15,
+      "primal_reduced_response_norm": 2.1132811338810672e-14,
+      "adjoint_reduced_response_norm": 3.7351901887336846e-16,
+      "reduced_receiver_adjoint_response_norm": 0.07575688383876551,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 955.683096208966,
+      "certified_upper_derivative": 939.6984816618848,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 3722.4276797311577,
+      "bound_to_descent_margin": 59.78768480116199,
+      "eta_u_components": [
+        4.330701562930645,
+        1.4978537868886184
+      ],
+      "eta_lambda_components": [
+        1.6081811876856897,
+        0.4517303874682597
+      ],
+      "actual_u_error_components": [
+        0.019666252075743344,
+        0.06250418502819288
+      ],
+      "actual_lambda_error_components": [
+        0.0015828786059358599,
+        0.0021537111345640075
+      ],
+      "eta_receiver_state": 3.987837127456543,
+      "directional_bound_terms": {
+        "first": 358.4846993234177,
+        "second": 24.250287738364836,
+        "cross": 572.9481091471836
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 3.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.12396979237237143,
+      "exact_objective": 4.040474630798203,
+      "approximate_objective": 4.074680727243447,
+      "exact_gradient_norm": 15.733241797926533,
+      "approximate_gradient_norm": 15.942731337343425,
+      "gradient_cosine": 0.9996544002410468,
+      "approximate_receiver_relative_error": 0.008984518827371103,
+      "exact_directional_derivative": -15.727804393353615,
+      "approximate_directional_derivative": -15.942731337343433,
+      "actual_directional_error": 0.21492694398981804,
+      "true_descent": true,
+      "primal_residual_norms": [
+        10.84615051220289,
+        58.28486237293992
+      ],
+      "adjoint_residual_norms": [
+        0.29452404475799276,
+        2.2297948228256486
+      ],
+      "primal_coarse_fraction": 0.1829479435274169,
+      "adjoint_coarse_fraction": 0.13094835079908168,
+      "primal_reduced_response_norm": 0.041079569578871294,
+      "adjoint_reduced_response_norm": 0.0010383375196822639,
+      "reduced_receiver_adjoint_response_norm": 0.07305096508435127,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 315.96508619081783,
+      "certified_upper_derivative": 300.0223548534744,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 1470.1045868208425,
+      "bound_to_descent_margin": 19.818754986525896,
+      "eta_u_components": [
+        3.66412494700951,
+        0.5092176594697951
+      ],
+      "eta_lambda_components": [
+        0.600619782719472,
+        0.07186652481221179
+      ],
+      "actual_u_error_components": [
+        0.036326161632526714,
+        0.056907014007980136
+      ],
+      "actual_lambda_error_components": [
+        0.0019772524127341104,
+        0.0020298109220960644
+      ],
+      "eta_receiver_state": 2.639887234919933,
+      "directional_bound_terms": {
+        "first": 128.8253373515771,
+        "second": 19.41131018431192,
+        "cross": 167.72843865492882
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 3.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.12396979237237143,
+      "exact_objective": 4.040474630798203,
+      "approximate_objective": 4.074680727243447,
+      "exact_gradient_norm": 15.733241797926533,
+      "approximate_gradient_norm": 15.942731337343425,
+      "gradient_cosine": 0.9996544002410468,
+      "approximate_receiver_relative_error": 0.008984518827371103,
+      "exact_directional_derivative": -15.727804393353615,
+      "approximate_directional_derivative": -15.942731337343433,
+      "actual_directional_error": 0.21492694398981804,
+      "true_descent": true,
+      "primal_residual_norms": [
+        10.84615051220289,
+        58.28486237293992
+      ],
+      "adjoint_residual_norms": [
+        0.29452404475799276,
+        2.2297948228256486
+      ],
+      "primal_coarse_fraction": 0.1829479435274169,
+      "adjoint_coarse_fraction": 0.13094835079908168,
+      "primal_reduced_response_norm": 0.041079569578871294,
+      "adjoint_reduced_response_norm": 0.0010383375196822639,
+      "reduced_receiver_adjoint_response_norm": 0.07305096508435127,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 10.5991462570066,
+      "certified_upper_derivative": -5.343585080336833,
+      "certified_descent": true,
+      "covers_directional_error": true,
+      "effectivity": 49.3151117316809,
+      "bound_to_descent_margin": 0.6648262479453383,
+      "eta_u_components": [
+        0.2520967234065777,
+        0.16948377718589844
+      ],
+      "eta_lambda_components": [
+        0.036505746658913214,
+        0.009941463981472392
+      ],
+      "actual_u_error_components": [
+        0.036326161632526714,
+        0.056907014007980136
+      ],
+      "actual_lambda_error_components": [
+        0.0019772524127341104,
+        0.0020298109220960644
+      ],
+      "eta_receiver_state": 0.316076709032136,
+      "directional_bound_terms": {
+        "first": 8.19526899607801,
+        "second": 1.542407695769391,
+        "cross": 0.8614695651591996
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 3.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.12396979237237143,
+      "exact_objective": 4.040474630798203,
+      "approximate_objective": 4.062465296645016,
+      "exact_gradient_norm": 15.733241797926533,
+      "approximate_gradient_norm": 15.915127134797187,
+      "gradient_cosine": 0.9996469927408979,
+      "approximate_receiver_relative_error": 0.008800719962726581,
+      "exact_directional_derivative": -15.727687849362656,
+      "approximate_directional_derivative": -15.91512713479718,
+      "actual_directional_error": 0.18743928543452348,
+      "true_descent": true,
+      "primal_residual_norms": [
+        3.861223915349303e-13,
+        58.24433859687345
+      ],
+      "adjoint_residual_norms": [
+        4.798176378012424e-15,
+        2.227910541312627
+      ],
+      "primal_coarse_fraction": 6.629354901038525e-15,
+      "adjoint_coarse_fraction": 2.153666535993615e-15,
+      "primal_reduced_response_norm": 1.7239944792044222e-14,
+      "adjoint_reduced_response_norm": 2.1078098267758646e-16,
+      "reduced_receiver_adjoint_response_norm": 0.07305096508435127,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 9.29605403873923,
+      "certified_upper_derivative": -6.619073096057949,
+      "certified_descent": true,
+      "covers_directional_error": true,
+      "effectivity": 49.59501428523392,
+      "bound_to_descent_margin": 0.5841017768820794,
+      "eta_u_components": [
+        0.20506118232602258,
+        0.1647000876677275
+      ],
+      "eta_lambda_components": [
+        0.032521038737470205,
+        0.009460437440317222
+      ],
+      "actual_u_error_components": [
+        0.016167929270792927,
+        0.05690701400798017
+      ],
+      "actual_lambda_error_components": [
+        0.0009806897095707896,
+        0.002029810922096063
+      ],
+      "eta_receiver_state": 0.28394209731712067,
+      "directional_bound_terms": {
+        "first": 7.337811728455879,
+        "second": 1.2889883613284898,
+        "cross": 0.669253948954861
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 3.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.05155881395767803,
+      "exact_objective": 4.040474630798203,
+      "approximate_objective": 4.074680727243447,
+      "exact_gradient_norm": 15.733241797926533,
+      "approximate_gradient_norm": 15.942731337343425,
+      "gradient_cosine": 0.9996544002410468,
+      "approximate_receiver_relative_error": 0.008984518827371103,
+      "exact_directional_derivative": -15.727804393353615,
+      "approximate_directional_derivative": -15.942731337343433,
+      "actual_directional_error": 0.21492694398981804,
+      "true_descent": true,
+      "primal_residual_norms": [
+        23.490020120021708,
+        54.433290526357894
+      ],
+      "adjoint_residual_norms": [
+        0.6070760704476338,
+        2.165684189703225
+      ],
+      "primal_coarse_fraction": 0.39621899673442673,
+      "adjoint_coarse_fraction": 0.2699121231342095,
+      "primal_reduced_response_norm": 0.05384830568573893,
+      "adjoint_reduced_response_norm": 0.001389911093404506,
+      "reduced_receiver_adjoint_response_norm": 0.07253908980996962,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 899.4866004566105,
+      "certified_upper_derivative": 883.5438691192671,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 4185.080677921996,
+      "bound_to_descent_margin": 56.41985563350111,
+      "eta_u_components": [
+        6.968768469595031,
+        0.5703196999878232
+      ],
+      "eta_lambda_components": [
+        1.1618384667799706,
+        0.09207826885007508
+      ],
+      "actual_u_error_components": [
+        0.051631011143852594,
+        0.04349985000572162
+      ],
+      "actual_lambda_error_components": [
+        0.0021789377193624578,
+        0.0018115987133642127
+      ],
+      "eta_receiver_state": 5.101660473480409,
+      "directional_bound_terms": {
+        "first": 251.6161523631978,
+        "second": 37.05933349415795,
+        "cross": 610.8111145992548
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 3.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.05155881395767803,
+      "exact_objective": 4.040474630798203,
+      "approximate_objective": 4.074680727243447,
+      "exact_gradient_norm": 15.733241797926533,
+      "approximate_gradient_norm": 15.942731337343425,
+      "gradient_cosine": 0.9996544002410468,
+      "approximate_receiver_relative_error": 0.008984518827371103,
+      "exact_directional_derivative": -15.727804393353615,
+      "approximate_directional_derivative": -15.942731337343433,
+      "actual_directional_error": 0.21492694398981804,
+      "true_descent": true,
+      "primal_residual_norms": [
+        23.490020120021708,
+        54.433290526357894
+      ],
+      "adjoint_residual_norms": [
+        0.6070760704476338,
+        2.165684189703225
+      ],
+      "primal_coarse_fraction": 0.39621899673442673,
+      "adjoint_coarse_fraction": 0.2699121231342095,
+      "primal_reduced_response_norm": 0.05384830568573893,
+      "adjoint_reduced_response_norm": 0.001389911093404506,
+      "reduced_receiver_adjoint_response_norm": 0.07253908980996962,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 5.132765142320908,
+      "certified_upper_derivative": -10.809966195022525,
+      "certified_descent": true,
+      "covers_directional_error": true,
+      "effectivity": 23.881441047075363,
+      "bound_to_descent_margin": 0.3219501748924404,
+      "eta_u_components": [
+        0.12823469588142103,
+        0.09933595901139051
+      ],
+      "eta_lambda_components": [
+        0.01852318454535932,
+        0.005180068567928638
+      ],
+      "actual_u_error_components": [
+        0.051631011143852594,
+        0.04349985000572162
+      ],
+      "actual_lambda_error_components": [
+        0.0021789377193624578,
+        0.0018115987133642127
+      ],
+      "eta_receiver_state": 0.18271871287373437,
+      "directional_bound_terms": {
+        "first": 4.147779460073446,
+        "second": 0.7511355950752211,
+        "cross": 0.23385008717224107
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 3.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.05155881395767803,
+      "exact_objective": 4.040474630798203,
+      "approximate_objective": 4.06053361076912,
+      "exact_gradient_norm": 15.733241797926533,
+      "approximate_gradient_norm": 15.853514073781236,
+      "gradient_cosine": 0.999688712369568,
+      "approximate_receiver_relative_error": 0.008069520430338064,
+      "exact_directional_derivative": -15.728344234368244,
+      "approximate_directional_derivative": -15.85351407378123,
+      "actual_directional_error": 0.12516983941298676,
+      "true_descent": true,
+      "primal_residual_norms": [
+        3.517293421401517e-13,
+        54.54497178383949
+      ],
+      "adjoint_residual_norms": [
+        7.444533166330311e-15,
+        2.1704410859980907
+      ],
+      "primal_coarse_fraction": 6.448428345220296e-15,
+      "adjoint_coarse_fraction": 3.4299632523344414e-15,
+      "primal_reduced_response_norm": 1.0832746451086808e-14,
+      "adjoint_reduced_response_norm": 3.4084434091026723e-16,
+      "reduced_receiver_adjoint_response_norm": 0.07253908980996962,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 3.7225995061924975,
+      "certified_upper_derivative": -12.130914567588732,
+      "certified_descent": true,
+      "covers_directional_error": true,
+      "effectivity": 29.740387330130794,
+      "bound_to_descent_margin": 0.2348122623708384,
+      "eta_u_components": [
+        0.0716057215112302,
+        0.095622640086552
+      ],
+      "eta_lambda_components": [
+        0.013910493210479014,
+        0.004802986598195566
+      ],
+      "actual_u_error_components": [
+        0.009781656870992349,
+        0.043499850005721596
+      ],
+      "actual_lambda_error_components": [
+        0.0006812465295040707,
+        0.001811598713364213
+      ],
+      "eta_receiver_state": 0.1421832234830109,
+      "directional_bound_terms": {
+        "first": 3.143757663366904,
+        "second": 0.44737303768724407,
+        "cross": 0.13146880513834983
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 4.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": false,
+      "stability_reason": "Schur small-gain condition unavailable",
+      "tau": 9.719891009135296,
+      "exact_objective": 1.0755795630385223,
+      "approximate_objective": 1.0849954169841372,
+      "exact_gradient_norm": 1.9774597747549625,
+      "approximate_gradient_norm": 1.9985447470708053,
+      "gradient_cosine": 0.9989133260405699,
+      "approximate_receiver_relative_error": 0.020254566829977134,
+      "exact_directional_derivative": -1.9753109207119162,
+      "approximate_directional_derivative": -1.9985447470708047,
+      "actual_directional_error": 0.023233826358888487,
+      "true_descent": true,
+      "primal_residual_norms": [
+        2.051218945403301,
+        52.03282979188739
+      ],
+      "adjoint_residual_norms": [
+        0.021420586065842868,
+        0.9396742043500113
+      ],
+      "primal_coarse_fraction": 0.039391033415982046,
+      "adjoint_coarse_fraction": 0.022789837762418542,
+      "primal_reduced_response_norm": 0.022850040309093274,
+      "adjoint_reduced_response_norm": 0.00020653350742187653,
+      "reduced_receiver_adjoint_response_norm": 0.03285532828140447,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": null,
+      "certified_upper_derivative": null,
+      "certified_descent": false,
+      "covers_directional_error": null,
+      "effectivity": null,
+      "bound_to_descent_margin": null
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 4.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": false,
+      "stability_reason": "Schur small-gain condition unavailable",
+      "tau": 9.719891009135296,
+      "exact_objective": 1.0755795630385223,
+      "approximate_objective": 1.0849954169841372,
+      "exact_gradient_norm": 1.9774597747549625,
+      "approximate_gradient_norm": 1.9985447470708053,
+      "gradient_cosine": 0.9989133260405699,
+      "approximate_receiver_relative_error": 0.020254566829977134,
+      "exact_directional_derivative": -1.9753109207119162,
+      "approximate_directional_derivative": -1.9985447470708047,
+      "actual_directional_error": 0.023233826358888487,
+      "true_descent": true,
+      "primal_residual_norms": [
+        2.051218945403301,
+        52.03282979188739
+      ],
+      "adjoint_residual_norms": [
+        0.021420586065842868,
+        0.9396742043500113
+      ],
+      "primal_coarse_fraction": 0.039391033415982046,
+      "adjoint_coarse_fraction": 0.022789837762418542,
+      "primal_reduced_response_norm": 0.022850040309093274,
+      "adjoint_reduced_response_norm": 0.00020653350742187653,
+      "reduced_receiver_adjoint_response_norm": 0.03285532828140447,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": null,
+      "certified_upper_derivative": null,
+      "certified_descent": false,
+      "covers_directional_error": null,
+      "effectivity": null,
+      "bound_to_descent_margin": null
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 4.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": false,
+      "stability_reason": "Schur small-gain condition unavailable",
+      "tau": 9.719891009135296,
+      "exact_objective": 1.0755795630385223,
+      "approximate_objective": 1.084225505370135,
+      "exact_gradient_norm": 1.9774597747549625,
+      "approximate_gradient_norm": 2.0069097051006315,
+      "gradient_cosine": 0.9988935587670249,
+      "approximate_receiver_relative_error": 0.020103311116523963,
+      "exact_directional_derivative": -1.9752718317236242,
+      "approximate_directional_derivative": -2.0069097051006306,
+      "actual_directional_error": 0.03163787337700641,
+      "true_descent": true,
+      "primal_residual_norms": [
+        1.7554674925265154e-13,
+        52.05792260879164
+      ],
+      "adjoint_residual_norms": [
+        6.713006818862196e-16,
+        0.9394499602675891
+      ],
+      "primal_coarse_fraction": 3.3721428066168145e-15,
+      "adjoint_coarse_fraction": 7.145677899597858e-16,
+      "primal_reduced_response_norm": 9.022915963699776e-15,
+      "adjoint_reduced_response_norm": 2.417130115805023e-17,
+      "reduced_receiver_adjoint_response_norm": 0.03285532828140447,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": null,
+      "certified_upper_derivative": null,
+      "certified_descent": false,
+      "covers_directional_error": null,
+      "effectivity": null,
+      "bound_to_descent_margin": null
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 4.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.46768548836527674,
+      "exact_objective": 1.0755795630385223,
+      "approximate_objective": 1.0849954169841372,
+      "exact_gradient_norm": 1.9774597747549625,
+      "approximate_gradient_norm": 1.9985447470708053,
+      "gradient_cosine": 0.9989133260405699,
+      "approximate_receiver_relative_error": 0.020254566829977134,
+      "exact_directional_derivative": -1.9753109207119162,
+      "approximate_directional_derivative": -1.9985447470708047,
+      "actual_directional_error": 0.023233826358888487,
+      "true_descent": true,
+      "primal_residual_norms": [
+        16.20392539016671,
+        49.4879346635462
+      ],
+      "adjoint_residual_norms": [
+        0.10295617514091854,
+        0.9342625315341426
+      ],
+      "primal_coarse_fraction": 0.311175639219069,
+      "adjoint_coarse_fraction": 0.10953736377186078,
+      "primal_reduced_response_norm": 0.04731205407314018,
+      "adjoint_reduced_response_norm": 0.00039939133973649303,
+      "reduced_receiver_adjoint_response_norm": 0.03293408017098382,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 1930.076799110511,
+      "certified_upper_derivative": 1928.0782543634402,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 83071.84401299134,
+      "bound_to_descent_margin": 965.7410983363546,
+      "eta_u_components": [
+        6.702490842225485,
+        1.8032687290764866
+      ],
+      "eta_lambda_components": [
+        1.365233419603449,
+        0.35515194211794476
+      ],
+      "actual_u_error_components": [
+        0.05282817815276058,
+        0.0534951815059021
+      ],
+      "actual_lambda_error_components": [
+        0.000553725581509711,
+        0.0008770340946496816
+      ],
+      "eta_receiver_state": 5.700732250051212,
+      "directional_bound_terms": {
+        "first": 221.1786184445476,
+        "second": 10.355579896736183,
+        "cross": 1698.5426007692272
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 4.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.46768548836527674,
+      "exact_objective": 1.0755795630385223,
+      "approximate_objective": 1.0849954169841372,
+      "exact_gradient_norm": 1.9774597747549625,
+      "approximate_gradient_norm": 1.9985447470708053,
+      "gradient_cosine": 0.9989133260405699,
+      "approximate_receiver_relative_error": 0.020254566829977134,
+      "exact_directional_derivative": -1.9753109207119162,
+      "approximate_directional_derivative": -1.9985447470708047,
+      "actual_directional_error": 0.023233826358888487,
+      "true_descent": true,
+      "primal_residual_norms": [
+        16.20392539016671,
+        49.4879346635462
+      ],
+      "adjoint_residual_norms": [
+        0.10295617514091854,
+        0.9342625315341426
+      ],
+      "primal_coarse_fraction": 0.311175639219069,
+      "adjoint_coarse_fraction": 0.10953736377186078,
+      "primal_reduced_response_norm": 0.04731205407314018,
+      "adjoint_reduced_response_norm": 0.00039939133973649303,
+      "reduced_receiver_adjoint_response_norm": 0.03293408017098382,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 23.182899089248043,
+      "certified_upper_derivative": 21.184354342177237,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 997.8080549947399,
+      "bound_to_descent_margin": 11.599889931524618,
+      "eta_u_components": [
+        0.7202611939452278,
+        0.34963847685541555
+      ],
+      "eta_lambda_components": [
+        0.07001891374651792,
+        0.023022176889596124
+      ],
+      "actual_u_error_components": [
+        0.05282817815276058,
+        0.0534951815059021
+      ],
+      "actual_lambda_error_components": [
+        0.000553725581509711,
+        0.0008770340946496816
+      ],
+      "eta_receiver_state": 0.7684666103143987,
+      "directional_bound_terms": {
+        "first": 11.709884599218949,
+        "second": 1.2357870809555476,
+        "cross": 10.237227409073547
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 4.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.46768548836527674,
+      "exact_objective": 1.0755795630385223,
+      "approximate_objective": 1.0810481544649257,
+      "exact_gradient_norm": 1.9774597747549625,
+      "approximate_gradient_norm": 1.986509240739494,
+      "gradient_cosine": 0.9990654115781032,
+      "approximate_receiver_relative_error": 0.019662263095857172,
+      "exact_directional_derivative": -1.9756116637447099,
+      "approximate_directional_derivative": -1.9865092407394944,
+      "actual_directional_error": 0.010897576994784552,
+      "true_descent": true,
+      "primal_residual_norms": [
+        1.9620304058837333e-13,
+        49.37986701078262
+      ],
+      "adjoint_residual_norms": [
+        7.689719734746202e-16,
+        0.9340510776368418
+      ],
+      "primal_coarse_fraction": 3.973340805991445e-15,
+      "adjoint_coarse_fraction": 8.232654422070009e-16,
+      "primal_reduced_response_norm": 6.503141502973036e-15,
+      "adjoint_reduced_response_norm": 1.8738175904518674e-17,
+      "reduced_receiver_adjoint_response_norm": 0.03293408017098382,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 20.109073609575784,
+      "certified_upper_derivative": 18.12256436883629,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 1845.2793331214582,
+      "bound_to_descent_margin": 10.122819062291407,
+      "eta_u_components": [
+        0.6300025479356487,
+        0.3273250803427995
+      ],
+      "eta_lambda_components": [
+        0.06368388342120816,
+        0.021218142491722887
+      ],
+      "actual_u_error_components": [
+        0.025336421609654054,
+        0.0534951815059021
+      ],
+      "actual_lambda_error_components": [
+        0.0002495721397085923,
+        0.0008770340946496817
+      ],
+      "eta_receiver_state": 0.6936682811766303,
+      "directional_bound_terms": {
+        "first": 10.677847194666642,
+        "second": 1.0906107402396843,
+        "cross": 8.340615674669458
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 4.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.1506275219038062,
+      "exact_objective": 1.0755795630385223,
+      "approximate_objective": 1.0849954169841372,
+      "exact_gradient_norm": 1.9774597747549625,
+      "approximate_gradient_norm": 1.9985447470708053,
+      "gradient_cosine": 0.9989133260405699,
+      "approximate_receiver_relative_error": 0.020254566829977134,
+      "exact_directional_derivative": -1.9753109207119162,
+      "approximate_directional_derivative": -1.9985447470708047,
+      "actual_directional_error": 0.023233826358888487,
+      "true_descent": true,
+      "primal_residual_norms": [
+        24.80196853881367,
+        45.7873916260056
+      ],
+      "adjoint_residual_norms": [
+        0.19674919211021194,
+        0.9190953199925513
+      ],
+      "primal_coarse_fraction": 0.4762900487458478,
+      "adjoint_coarse_fraction": 0.20932583983911715,
+      "primal_reduced_response_norm": 0.06043475962651215,
+      "adjoint_reduced_response_norm": 0.0005263265032057522,
+      "reduced_receiver_adjoint_response_norm": 0.03195383335208189,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 946.6931195933761,
+      "certified_upper_derivative": 944.6945748463053,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 40746.32843380974,
+      "bound_to_descent_margin": 473.6912300717361,
+      "eta_u_components": [
+        5.86580059230259,
+        0.9566847268067857
+      ],
+      "eta_lambda_components": [
+        0.7792072748378464,
+        0.12626947754005743
+      ],
+      "actual_u_error_components": [
+        0.063860186638199,
+        0.03967905510245435
+      ],
+      "actual_lambda_error_components": [
+        0.0006519566761330035,
+        0.0008066928258276882
+      ],
+      "eta_receiver_state": 4.770836611612094,
+      "directional_bound_terms": {
+        "first": 123.96795156106457,
+        "second": 8.86754999482211,
+        "cross": 813.8576180374895
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 4.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.1506275219038062,
+      "exact_objective": 1.0755795630385223,
+      "approximate_objective": 1.0849954169841372,
+      "exact_gradient_norm": 1.9774597747549625,
+      "approximate_gradient_norm": 1.9985447470708053,
+      "gradient_cosine": 0.9989133260405699,
+      "approximate_receiver_relative_error": 0.020254566829977134,
+      "exact_directional_derivative": -1.9753109207119162,
+      "approximate_directional_derivative": -1.9985447470708047,
+      "actual_directional_error": 0.023233826358888487,
+      "true_descent": true,
+      "primal_residual_norms": [
+        24.80196853881367,
+        45.7873916260056
+      ],
+      "adjoint_residual_norms": [
+        0.19674919211021194,
+        0.9190953199925513
+      ],
+      "primal_coarse_fraction": 0.4762900487458478,
+      "adjoint_coarse_fraction": 0.20932583983911715,
+      "primal_reduced_response_norm": 0.06043475962651215,
+      "adjoint_reduced_response_norm": 0.0005263265032057522,
+      "reduced_receiver_adjoint_response_norm": 0.03195383335208189,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 3.015679410180313,
+      "certified_upper_derivative": 1.0171346631095082,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 129.79693329878978,
+      "bound_to_descent_margin": 1.50893764805631,
+      "eta_u_components": [
+        0.18605650094408957,
+        0.12248963480503657
+      ],
+      "eta_lambda_components": [
+        0.012696617951427699,
+        0.004281018616809244
+      ],
+      "actual_u_error_components": [
+        0.063860186638199,
+        0.03967905510245435
+      ],
+      "actual_lambda_error_components": [
+        0.0006519566761330035,
+        0.0008066928258276882
+      ],
+      "eta_receiver_state": 0.24347018001610576,
+      "directional_bound_terms": {
+        "first": 2.1567276090072247,
+        "second": 0.3411775791779975,
+        "cross": 0.5177742219950902
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 4.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.1506275219038062,
+      "exact_objective": 1.0755795630385223,
+      "approximate_objective": 1.0776967196365397,
+      "exact_gradient_norm": 1.9774597747549625,
+      "approximate_gradient_norm": 1.9828942870041524,
+      "gradient_cosine": 0.9992554790315944,
+      "approximate_receiver_relative_error": 0.017886747247450766,
+      "exact_directional_derivative": -1.9759875144884793,
+      "approximate_directional_derivative": -1.9828942870041522,
+      "actual_directional_error": 0.006906772515672843,
+      "true_descent": true,
+      "primal_residual_norms": [
+        2.554561643969235e-13,
+        46.038424733626655
+      ],
+      "adjoint_residual_norms": [
+        1.0350765114836266e-15,
+        0.9209060468602368
+      ],
+      "primal_coarse_fraction": 5.548759886441929e-15,
+      "adjoint_coarse_fraction": 1.1239762351573713e-15,
+      "primal_reduced_response_norm": 9.224948983153432e-15,
+      "adjoint_reduced_response_norm": 2.6310958935264458e-17,
+      "reduced_receiver_adjoint_response_norm": 0.03195383335208189,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 2.2360063186816057,
+      "certified_upper_derivative": 0.25311203167745355,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 323.74112707602023,
+      "bound_to_descent_margin": 1.1276477688883086,
+      "eta_u_components": [
+        0.11553422674861481,
+        0.11265363060159098
+      ],
+      "eta_lambda_components": [
+        0.00984657121831952,
+        0.0037504412677304847
+      ],
+      "actual_u_error_components": [
+        0.01560936028991597,
+        0.03967905510245435
+      ],
+      "actual_lambda_error_components": [
+        0.0002139149581630531,
+        0.0008066928258276879
+      ],
+      "eta_receiver_state": 0.18777808834245197,
+      "directional_bound_terms": {
+        "first": 1.7016787121301171,
+        "second": 0.23395250031041812,
+        "cross": 0.3003751062410707
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 3.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.4767619256764999,
+      "exact_objective": 0.8948118916425306,
+      "approximate_objective": 0.8974636444839755,
+      "exact_gradient_norm": 1.614866465377472,
+      "approximate_gradient_norm": 1.6265302949249891,
+      "gradient_cosine": 0.9991390118458446,
+      "approximate_receiver_relative_error": 0.015336508750358706,
+      "exact_directional_derivative": -1.6134760844802392,
+      "approximate_directional_derivative": -1.626530294924988,
+      "actual_directional_error": 0.01305421044474886,
+      "true_descent": true,
+      "primal_residual_norms": [
+        2.0101394332152247,
+        49.243475955782955
+      ],
+      "adjoint_residual_norms": [
+        0.013194439114557838,
+        0.8257922238097054
+      ],
+      "primal_coarse_fraction": 0.040786454039353034,
+      "adjoint_coarse_fraction": 0.01597587725732459,
+      "primal_reduced_response_norm": 0.013223013027301266,
+      "adjoint_reduced_response_norm": 0.00010499849042547134,
+      "reduced_receiver_adjoint_response_norm": 0.027283153121249026,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 72.42398653895108,
+      "certified_upper_derivative": 70.7974562440261,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 5547.940784736169,
+      "bound_to_descent_margin": 44.526675442150996,
+      "eta_u_components": [
+        1.4017388762716856,
+        0.7750252786354043
+      ],
+      "eta_lambda_components": [
+        0.24764676183783757,
+        0.09430529105419172
+      ],
+      "actual_u_error_components": [
+        0.0156599482531139,
+        0.05554625873124932
+      ],
+      "actual_lambda_error_components": [
+        0.000266028017687772,
+        0.0007839403514455844
+      ],
+      "eta_receiver_state": 1.5809700889679275,
+      "directional_bound_terms": {
+        "first": 33.552755039286524,
+        "second": 1.6170327051527147,
+        "cross": 37.25419879451185
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 3.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.4767619256764999,
+      "exact_objective": 0.8948118916425306,
+      "approximate_objective": 0.8974636444839755,
+      "exact_gradient_norm": 1.614866465377472,
+      "approximate_gradient_norm": 1.6265302949249891,
+      "gradient_cosine": 0.9991390118458446,
+      "approximate_receiver_relative_error": 0.015336508750358706,
+      "exact_directional_derivative": -1.6134760844802392,
+      "approximate_directional_derivative": -1.626530294924988,
+      "actual_directional_error": 0.01305421044474886,
+      "true_descent": true,
+      "primal_residual_norms": [
+        2.0101394332152247,
+        49.243475955782955
+      ],
+      "adjoint_residual_norms": [
+        0.013194439114557838,
+        0.8257922238097054
+      ],
+      "primal_coarse_fraction": 0.040786454039353034,
+      "adjoint_coarse_fraction": 0.01597587725732459,
+      "primal_reduced_response_norm": 0.013223013027301266,
+      "adjoint_reduced_response_norm": 0.00010499849042547134,
+      "reduced_receiver_adjoint_response_norm": 0.027283153121249026,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 27.46026970345922,
+      "certified_upper_derivative": 25.833739408534232,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 2103.556536006763,
+      "bound_to_descent_margin": 16.882728707322126,
+      "eta_u_components": [
+        0.9899780945730379,
+        0.64532538626528
+      ],
+      "eta_lambda_components": [
+        0.10350038317785927,
+        0.04641914675642973
+      ],
+      "actual_u_error_components": [
+        0.0156599482531139,
+        0.05554625873124932
+      ],
+      "actual_lambda_error_components": [
+        0.000266028017687772,
+        0.0007839403514455844
+      ],
+      "eta_receiver_state": 1.214523916155648,
+      "directional_bound_terms": {
+        "first": 14.499147724612975,
+        "second": 1.1956654142473804,
+        "cross": 11.765456564598864
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 3.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.4767619256764999,
+      "exact_objective": 0.8948118916425306,
+      "approximate_objective": 0.8975730691049596,
+      "exact_gradient_norm": 1.614866465377472,
+      "approximate_gradient_norm": 1.6281618137010794,
+      "gradient_cosine": 0.9991481854360291,
+      "approximate_receiver_relative_error": 0.016000315662685446,
+      "exact_directional_derivative": -1.6134908986033953,
+      "approximate_directional_derivative": -1.6281618137010796,
+      "actual_directional_error": 0.014670915097684256,
+      "true_descent": true,
+      "primal_residual_norms": [
+        1.1865563599765086e-13,
+        49.240882470977425
+      ],
+      "adjoint_residual_norms": [
+        7.118218287804188e-16,
+        0.8258900438542356
+      ],
+      "primal_coarse_fraction": 2.4096975936121066e-15,
+      "adjoint_coarse_fraction": 8.618845015475822e-16,
+      "primal_reduced_response_norm": 3.69540311892574e-15,
+      "adjoint_reduced_response_norm": 2.2353195868827054e-17,
+      "reduced_receiver_adjoint_response_norm": 0.027283153121249026,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 26.749508982981894,
+      "certified_upper_derivative": 25.121347169280813,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 1823.3020097842564,
+      "bound_to_descent_margin": 16.42926935018569,
+      "eta_u_components": [
+        0.9646557829055707,
+        0.6373315864724496
+      ],
+      "eta_lambda_components": [
+        0.10168381476113267,
+        0.045694873582312195
+      ],
+      "actual_u_error_components": [
+        0.008881724556869352,
+        0.055546258731249326
+      ],
+      "actual_lambda_error_components": [
+        0.0002502603923751019,
+        0.0007839403514455842
+      ],
+      "eta_receiver_state": 1.191970781511308,
+      "directional_bound_terms": {
+        "first": 14.263118916343336,
+        "second": 1.1706863898009021,
+        "cross": 11.315703676837654
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 3.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.07640017644214275,
+      "exact_objective": 0.8948118916425306,
+      "approximate_objective": 0.8974636444839755,
+      "exact_gradient_norm": 1.614866465377472,
+      "approximate_gradient_norm": 1.6265302949249891,
+      "gradient_cosine": 0.9991390118458446,
+      "approximate_receiver_relative_error": 0.015336508750358706,
+      "exact_directional_derivative": -1.6134760844802392,
+      "approximate_directional_derivative": -1.626530294924988,
+      "actual_directional_error": 0.01305421044474886,
+      "true_descent": true,
+      "primal_residual_norms": [
+        10.519369597668787,
+        48.14876372261683
+      ],
+      "adjoint_residual_norms": [
+        0.0993449546256643,
+        0.8199008904242953
+      ],
+      "primal_coarse_fraction": 0.2134418028564428,
+      "adjoint_coarse_fraction": 0.1202872503676925,
+      "primal_reduced_response_norm": 0.029241145026070343,
+      "adjoint_reduced_response_norm": 0.0003091634801412542,
+      "reduced_receiver_adjoint_response_norm": 0.027970827136443138,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 25.109871644497904,
+      "certified_upper_derivative": 23.483341349572918,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 1923.5074959741064,
+      "bound_to_descent_margin": 15.437690722911444,
+      "eta_u_components": [
+        1.3832819747206329,
+        0.28547396725660157
+      ],
+      "eta_lambda_components": [
+        0.09389917688925625,
+        0.015985275351442695
+      ],
+      "actual_u_error_components": [
+        0.030157681899938702,
+        0.04920503084798557
+      ],
+      "actual_lambda_error_components": [
+        0.00039251962500218,
+        0.0007288770299629832
+      ],
+      "eta_receiver_state": 1.0898452320005354,
+      "directional_bound_terms": {
+        "first": 11.910069032640441,
+        "second": 1.3916652337352182,
+        "cross": 11.808137378122241
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 3.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.07640017644214275,
+      "exact_objective": 0.8948118916425306,
+      "approximate_objective": 0.8974636444839755,
+      "exact_gradient_norm": 1.614866465377472,
+      "approximate_gradient_norm": 1.6265302949249891,
+      "gradient_cosine": 0.9991390118458446,
+      "approximate_receiver_relative_error": 0.015336508750358706,
+      "exact_directional_derivative": -1.6134760844802392,
+      "approximate_directional_derivative": -1.626530294924988,
+      "actual_directional_error": 0.01305421044474886,
+      "true_descent": true,
+      "primal_residual_norms": [
+        10.519369597668787,
+        48.14876372261683
+      ],
+      "adjoint_residual_norms": [
+        0.0993449546256643,
+        0.8199008904242953
+      ],
+      "primal_coarse_fraction": 0.2134418028564428,
+      "adjoint_coarse_fraction": 0.1202872503676925,
+      "primal_reduced_response_norm": 0.029241145026070343,
+      "adjoint_reduced_response_norm": 0.0003091634801412542,
+      "reduced_receiver_adjoint_response_norm": 0.027970827136443138,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 1.4494207049258285,
+      "certified_upper_derivative": -0.1771095899991595,
+      "certified_descent": true,
+      "covers_directional_error": true,
+      "effectivity": 111.03089773681927,
+      "bound_to_descent_margin": 0.891112025056178,
+      "eta_u_components": [
+        0.11493413469870702,
+        0.13397474890676894
+      ],
+      "eta_lambda_components": [
+        0.008181467981853869,
+        0.0035263551246816948
+      ],
+      "actual_u_error_components": [
+        0.030157681899938702,
+        0.04920503084798557
+      ],
+      "actual_lambda_error_components": [
+        0.00039251962500218,
+        0.0007288770299629832
+      ],
+      "eta_receiver_state": 0.2008083497049864,
+      "directional_bound_terms": {
+        "first": 1.1489592630791312,
+        "second": 0.16243151768730021,
+        "cross": 0.13802992415939694
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 3.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.07640017644214275,
+      "exact_objective": 0.8948118916425306,
+      "approximate_objective": 0.8983297391597285,
+      "exact_gradient_norm": 1.614866465377472,
+      "approximate_gradient_norm": 1.6313481222315693,
+      "gradient_cosine": 0.9991689707684359,
+      "approximate_receiver_relative_error": 0.015554866538035667,
+      "exact_directional_derivative": -1.6135244641396707,
+      "approximate_directional_derivative": -1.631348122231569,
+      "actual_directional_error": 0.017823658091898453,
+      "true_descent": true,
+      "primal_residual_norms": [
+        1.749022658570163e-13,
+        48.12387525627149
+      ],
+      "adjoint_residual_norms": [
+        1.2973375139976402e-15,
+        0.8198365780230722
+      ],
+      "primal_coarse_fraction": 3.63441773808985e-15,
+      "adjoint_coarse_fraction": 1.5824342908997773e-15,
+      "primal_reduced_response_norm": 5.595275102717773e-15,
+      "adjoint_reduced_response_norm": 2.775396262777844e-17,
+      "reduced_receiver_adjoint_response_norm": 0.027970827136443138,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 1.258391435955079,
+      "certified_upper_derivative": -0.37295668627649015,
+      "certified_descent": true,
+      "covers_directional_error": true,
+      "effectivity": 70.60231011315611,
+      "bound_to_descent_margin": 0.7713813004140945,
+      "eta_u_components": [
+        0.08323111713155275,
+        0.13012579047046105
+      ],
+      "eta_lambda_components": [
+        0.007133214101804982,
+        0.0033453325437965468
+      ],
+      "actual_u_error_components": [
+        0.008914032968273266,
+        0.049205030847985554
+      ],
+      "actual_lambda_error_components": [
+        0.0002372563105856352,
+        0.0007288770299629829
+      ],
+      "eta_receiver_state": 0.1785242516494832,
+      "directional_bound_terms": {
+        "first": 1.0190359865378862,
+        "second": 0.13182797982878441,
+        "cross": 0.10752746958840846
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 3.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.032162482644404015,
+      "exact_objective": 0.8948118916425306,
+      "approximate_objective": 0.8974636444839755,
+      "exact_gradient_norm": 1.614866465377472,
+      "approximate_gradient_norm": 1.6265302949249891,
+      "gradient_cosine": 0.9991390118458446,
+      "approximate_receiver_relative_error": 0.015336508750358706,
+      "exact_directional_derivative": -1.6134760844802392,
+      "approximate_directional_derivative": -1.626530294924988,
+      "actual_directional_error": 0.01305421044474886,
+      "true_descent": true,
+      "primal_residual_norms": [
+        23.347576719508528,
+        43.40335523983609
+      ],
+      "adjoint_residual_norms": [
+        0.1861211886705594,
+        0.8046525916543027
+      ],
+      "primal_coarse_fraction": 0.4737307517406157,
+      "adjoint_coarse_fraction": 0.22535624586781483,
+      "primal_reduced_response_norm": 0.04808022969539405,
+      "adjoint_reduced_response_norm": 0.0004073203510032818,
+      "reduced_receiver_adjoint_response_norm": 0.027915024644043232,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 71.9630670757181,
+      "certified_upper_derivative": 70.33653678079311,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 5512.632677425981,
+      "bound_to_descent_margin": 44.243299556272255,
+      "eta_u_components": [
+        2.7867288671198924,
+        0.2959986849055791
+      ],
+      "eta_lambda_components": [
+        0.1858342868933455,
+        0.019769415866999894
+      ],
+      "actual_u_error_components": [
+        0.04855079678952478,
+        0.03120001553575518
+      ],
+      "actual_lambda_error_components": [
+        0.00047786675444116397,
+        0.0006760005516413278
+      ],
+      "eta_receiver_state": 2.1080287724804343,
+      "directional_bound_terms": {
+        "first": 23.27717425838066,
+        "second": 2.718622519601661,
+        "cross": 45.96727029773577
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 3.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.032162482644404015,
+      "exact_objective": 0.8948118916425306,
+      "approximate_objective": 0.8974636444839755,
+      "exact_gradient_norm": 1.614866465377472,
+      "approximate_gradient_norm": 1.6265302949249891,
+      "gradient_cosine": 0.9991390118458446,
+      "approximate_receiver_relative_error": 0.015336508750358706,
+      "exact_directional_derivative": -1.6134760844802392,
+      "approximate_directional_derivative": -1.626530294924988,
+      "actual_directional_error": 0.01305421044474886,
+      "true_descent": true,
+      "primal_residual_norms": [
+        23.347576719508528,
+        43.40335523983609
+      ],
+      "adjoint_residual_norms": [
+        0.1861211886705594,
+        0.8046525916543027
+      ],
+      "primal_coarse_fraction": 0.4737307517406157,
+      "adjoint_coarse_fraction": 0.22535624586781483,
+      "primal_reduced_response_norm": 0.04808022969539405,
+      "adjoint_reduced_response_norm": 0.0004073203510032818,
+      "reduced_receiver_adjoint_response_norm": 0.027915024644043232,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 0.8298465459777578,
+      "certified_upper_derivative": -0.7966837489472303,
+      "certified_descent": true,
+      "covers_directional_error": true,
+      "effectivity": 63.569263686228446,
+      "bound_to_descent_margin": 0.5101943373369682,
+      "eta_u_components": [
+        0.07975190809666649,
+        0.07895559602777077
+      ],
+      "eta_lambda_components": [
+        0.004842034922639155,
+        0.0019521294338488858
+      ],
+      "actual_u_error_components": [
+        0.04855079678952478,
+        0.03120001553575518
+      ],
+      "actual_lambda_error_components": [
+        0.00047786675444116397,
+        0.0006760005516413278
+      ],
+      "eta_receiver_state": 0.13081311927581452,
+      "directional_bound_terms": {
+        "first": 0.6732473486535088,
+        "second": 0.1051749207288649,
+        "cross": 0.05142427659538398
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 3.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.032162482644404015,
+      "exact_objective": 0.8948118916425306,
+      "approximate_objective": 0.8997745267480306,
+      "exact_gradient_norm": 1.614866465377472,
+      "approximate_gradient_norm": 1.6243305985574585,
+      "gradient_cosine": 0.9993365800964237,
+      "approximate_receiver_relative_error": 0.013685653693788354,
+      "exact_directional_derivative": -1.6137951308227223,
+      "approximate_directional_derivative": -1.6243305985574599,
+      "actual_directional_error": 0.01053546773473757,
+      "true_descent": true,
+      "primal_residual_norms": [
+        1.7085495478867804e-13,
+        43.52975168291052
+      ],
+      "adjoint_residual_norms": [
+        1.2307221593227633e-15,
+        0.8067929571383705
+      ],
+      "primal_coarse_fraction": 3.9250156084799006e-15,
+      "adjoint_coarse_fraction": 1.5254498052239268e-15,
+      "primal_reduced_response_norm": 2.9053242742431066e-15,
+      "adjoint_reduced_response_norm": 3.248444557806533e-17,
+      "reduced_receiver_adjoint_response_norm": 0.027915024644043232,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 0.5741067596361494,
+      "certified_upper_derivative": -1.0502238389213105,
+      "certified_descent": true,
+      "covers_directional_error": true,
+      "effectivity": 54.492764259834736,
+      "bound_to_descent_margin": 0.35344206416231017,
+      "eta_u_components": [
+        0.03016148996824565,
+        0.07519078677663509
+      ],
+      "eta_lambda_components": [
+        0.003359078256001774,
+        0.0017766039978706185
+      ],
+      "actual_u_error_components": [
+        0.0038839978680724496,
+        0.0312000155357552
+      ],
+      "actual_lambda_error_components": [
+        0.000180244177125894,
+        0.0006760005516413278
+      ],
+      "eta_receiver_state": 0.09480285882045512,
+      "directional_bound_terms": {
+        "first": 0.4893931885491223,
+        "second": 0.05709275428862748,
+        "cross": 0.027620816798399662
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 4.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": false,
+      "stability_reason": "Schur small-gain condition unavailable",
+      "tau": 9.311996447030165,
+      "exact_objective": 1.7171740517089542,
+      "approximate_objective": 1.7281011619230058,
+      "exact_gradient_norm": 1.43731877318446,
+      "approximate_gradient_norm": 1.4264543914090548,
+      "gradient_cosine": 0.9948000854515137,
+      "approximate_receiver_relative_error": 0.020050564585442434,
+      "exact_directional_derivative": -1.4298448383849656,
+      "approximate_directional_derivative": -1.4264543914090546,
+      "actual_directional_error": 0.0033904469759109546,
+      "true_descent": true,
+      "primal_residual_norms": [
+        1.7369645657958315,
+        63.343723856145154
+      ],
+      "adjoint_residual_norms": [
+        0.02328589214848315,
+        1.307804312873766
+      ],
+      "primal_coarse_fraction": 0.02741095398693383,
+      "adjoint_coarse_fraction": 0.017802511916053317,
+      "primal_reduced_response_norm": 0.015905276474037087,
+      "adjoint_reduced_response_norm": 0.00020603912774161284,
+      "reduced_receiver_adjoint_response_norm": 0.014457633925879423,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": null,
+      "certified_upper_derivative": null,
+      "certified_descent": false,
+      "covers_directional_error": null,
+      "effectivity": null,
+      "bound_to_descent_margin": null
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 4.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": false,
+      "stability_reason": "Schur small-gain condition unavailable",
+      "tau": 9.311996447030165,
+      "exact_objective": 1.7171740517089542,
+      "approximate_objective": 1.7281011619230058,
+      "exact_gradient_norm": 1.43731877318446,
+      "approximate_gradient_norm": 1.4264543914090548,
+      "gradient_cosine": 0.9948000854515137,
+      "approximate_receiver_relative_error": 0.020050564585442434,
+      "exact_directional_derivative": -1.4298448383849656,
+      "approximate_directional_derivative": -1.4264543914090546,
+      "actual_directional_error": 0.0033904469759109546,
+      "true_descent": true,
+      "primal_residual_norms": [
+        1.7369645657958315,
+        63.343723856145154
+      ],
+      "adjoint_residual_norms": [
+        0.02328589214848315,
+        1.307804312873766
+      ],
+      "primal_coarse_fraction": 0.02741095398693383,
+      "adjoint_coarse_fraction": 0.017802511916053317,
+      "primal_reduced_response_norm": 0.015905276474037087,
+      "adjoint_reduced_response_norm": 0.00020603912774161284,
+      "reduced_receiver_adjoint_response_norm": 0.014457633925879423,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": null,
+      "certified_upper_derivative": null,
+      "certified_descent": false,
+      "covers_directional_error": null,
+      "effectivity": null,
+      "bound_to_descent_margin": null
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 4.0,
+      "rank": 32,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": false,
+      "stability_reason": "Schur small-gain condition unavailable",
+      "tau": 9.311996447030165,
+      "exact_objective": 1.7171740517089542,
+      "approximate_objective": 1.7286088773883337,
+      "exact_gradient_norm": 1.43731877318446,
+      "approximate_gradient_norm": 1.427149709661052,
+      "gradient_cosine": 0.9948467118158649,
+      "approximate_receiver_relative_error": 0.020330777432808412,
+      "exact_directional_derivative": -1.429911855333773,
+      "approximate_directional_derivative": -1.4271497096610517,
+      "actual_directional_error": 0.0027621456727213722,
+      "true_descent": true,
+      "primal_residual_norms": [
+        6.827018712984569e-14,
+        63.35018904460843
+      ],
+      "adjoint_residual_norms": [
+        6.522188736023023e-16,
+        1.307876993100228
+      ],
+      "primal_coarse_fraction": 1.077663510708276e-15,
+      "adjoint_coarse_fraction": 4.986851799084443e-16,
+      "primal_reduced_response_norm": 1.6382438096495358e-15,
+      "adjoint_reduced_response_norm": 1.7059795241992786e-17,
+      "reduced_receiver_adjoint_response_norm": 0.014457633925879423,
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": null,
+      "certified_upper_derivative": null,
+      "certified_descent": false,
+      "covers_directional_error": null,
+      "effectivity": null,
+      "bound_to_descent_margin": null
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 4.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.36064143007363925,
+      "exact_objective": 1.7171740517089542,
+      "approximate_objective": 1.7281011619230058,
+      "exact_gradient_norm": 1.43731877318446,
+      "approximate_gradient_norm": 1.4264543914090548,
+      "gradient_cosine": 0.9948000854515137,
+      "approximate_receiver_relative_error": 0.020050564585442434,
+      "exact_directional_derivative": -1.4298448383849656,
+      "approximate_directional_derivative": -1.4264543914090546,
+      "actual_directional_error": 0.0033904469759109546,
+      "true_descent": true,
+      "primal_residual_norms": [
+        13.10762712412375,
+        61.997052422202565
+      ],
+      "adjoint_residual_norms": [
+        0.13248227679280483,
+        1.3012850571186045
+      ],
+      "primal_coarse_fraction": 0.20685083107186103,
+      "adjoint_coarse_fraction": 0.10128524585747582,
+      "primal_reduced_response_norm": 0.048511081106254704,
+      "adjoint_reduced_response_norm": 0.0007165966419860911,
+      "reduced_receiver_adjoint_response_norm": 0.0232443138257177,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 641.4154517144548,
+      "certified_upper_derivative": 639.9889973230457,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 189183.1538058835,
+      "bound_to_descent_margin": 449.65717486478013,
+      "eta_u_components": [
+        3.6078702707798467,
+        1.304913521789871
+      ],
+      "eta_lambda_components": [
+        0.5453167569890154,
+        0.18042273144732976
+      ],
+      "actual_u_error_components": [
+        0.05680997199813492,
+        0.07234444907504528
+      ],
+      "actual_lambda_error_components": [
+        0.0008190977777666497,
+        0.0012290692430643037
+      ],
+      "eta_receiver_state": 3.402871295963373,
+      "directional_bound_terms": {
+        "first": 106.7810360365677,
+        "second": 7.484554640449638,
+        "cross": 527.1498610374375
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 4.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.36064143007363925,
+      "exact_objective": 1.7171740517089542,
+      "approximate_objective": 1.7281011619230058,
+      "exact_gradient_norm": 1.43731877318446,
+      "approximate_gradient_norm": 1.4264543914090548,
+      "gradient_cosine": 0.9948000854515137,
+      "approximate_receiver_relative_error": 0.020050564585442434,
+      "exact_directional_derivative": -1.4298448383849656,
+      "approximate_directional_derivative": -1.4264543914090546,
+      "actual_directional_error": 0.0033904469759109546,
+      "true_descent": true,
+      "primal_residual_norms": [
+        13.10762712412375,
+        61.997052422202565
+      ],
+      "adjoint_residual_norms": [
+        0.13248227679280483,
+        1.3012850571186045
+      ],
+      "primal_coarse_fraction": 0.20685083107186103,
+      "adjoint_coarse_fraction": 0.10128524585747582,
+      "primal_reduced_response_norm": 0.048511081106254704,
+      "adjoint_reduced_response_norm": 0.0007165966419860911,
+      "reduced_receiver_adjoint_response_norm": 0.0232443138257177,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 15.992497758727714,
+      "certified_upper_derivative": 14.56604336731866,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 4716.929028046754,
+      "bound_to_descent_margin": 11.211362841352601,
+      "eta_u_components": [
+        0.4960993162763312,
+        0.37205748723041
+      ],
+      "eta_lambda_components": [
+        0.03843256550626408,
+        0.018588606609637782
+      ],
+      "actual_u_error_components": [
+        0.05680997199813492,
+        0.07234444907504528
+      ],
+      "actual_lambda_error_components": [
+        0.0008190977777666497,
+        0.0012290692430643037
+      ],
+      "eta_receiver_state": 0.660536656166581,
+      "directional_bound_terms": {
+        "first": 8.360119559492055,
+        "second": 1.299545160399223,
+        "cross": 6.332833038836435
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 4.0,
+      "rank": 64,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.36064143007363925,
+      "exact_objective": 1.7171740517089542,
+      "approximate_objective": 1.7223398398391296,
+      "exact_gradient_norm": 1.43731877318446,
+      "approximate_gradient_norm": 1.4202588449600302,
+      "gradient_cosine": 0.9952968715453294,
+      "approximate_receiver_relative_error": 0.021689486204016114,
+      "exact_directional_derivative": -1.4305588783638634,
+      "approximate_directional_derivative": -1.4202588449600309,
+      "actual_directional_error": 0.010300033403832565,
+      "true_descent": true,
+      "primal_residual_norms": [
+        1.195842766856854e-13,
+        61.935994925896495
+      ],
+      "adjoint_residual_norms": [
+        9.34678863741072e-16,
+        1.2994372496009643
+      ],
+      "primal_coarse_fraction": 1.9307718690684204e-15,
+      "adjoint_coarse_fraction": 7.192951133485641e-16,
+      "primal_reduced_response_norm": 1.6405020143103598e-15,
+      "adjoint_reduced_response_norm": 1.966297553959198e-17,
+      "reduced_receiver_adjoint_response_norm": 0.0232443138257177,
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "directional_error_bound": 13.641415552414161,
+      "certified_upper_derivative": 12.22115670745413,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 1324.404981768146,
+      "bound_to_descent_margin": 9.604879843433089,
+      "eta_u_components": [
+        0.41981085163347515,
+        0.34896755164142645
+      ],
+      "eta_lambda_components": [
+        0.03438980402982428,
+        0.01712701557820373
+      ],
+      "actual_u_error_components": [
+        0.02854489041656872,
+        0.0723444490750453
+      ],
+      "actual_lambda_error_components": [
+        0.00036774441267370086,
+        0.0012290692430643039
+      ],
+      "eta_receiver_state": 0.5930853756663113,
+      "directional_bound_terms": {
+        "first": 7.51456788366676,
+        "second": 1.1438926220582941,
+        "cross": 4.982955046689108
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 4.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_generic_M",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.12372094595773196,
+      "exact_objective": 1.7171740517089542,
+      "approximate_objective": 1.7281011619230058,
+      "exact_gradient_norm": 1.43731877318446,
+      "approximate_gradient_norm": 1.4264543914090548,
+      "gradient_cosine": 0.9948000854515137,
+      "approximate_receiver_relative_error": 0.020050564585442434,
+      "exact_directional_derivative": -1.4298448383849656,
+      "approximate_directional_derivative": -1.4264543914090546,
+      "actual_directional_error": 0.0033904469759109546,
+      "true_descent": true,
+      "primal_residual_norms": [
+        28.562295719261027,
+        56.56535742936562
+      ],
+      "adjoint_residual_norms": [
+        0.2561709206592773,
+        1.2826811033740808
+      ],
+      "primal_coarse_fraction": 0.4507402103295918,
+      "adjoint_coarse_fraction": 0.1958475903995031,
+      "primal_reduced_response_norm": 0.07885588194884591,
+      "adjoint_reduced_response_norm": 0.0008517099134233115,
+      "reduced_receiver_adjoint_response_norm": 0.02349260385876029,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 829.0556505676783,
+      "certified_upper_derivative": 827.6291961762693,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 244526.9477617845,
+      "bound_to_descent_margin": 581.2002511687285,
+      "eta_u_components": [
+        5.161764876440538,
+        1.018410108060138
+      ],
+      "eta_lambda_components": [
+        0.5595517086359998,
+        0.10940084814863883
+      ],
+      "actual_u_error_components": [
+        0.07843268489622973,
+        0.04805628127903205
+      ],
+      "actual_lambda_error_components": [
+        0.0009464161016408807,
+        0.0011339439740762364
+      ],
+      "eta_receiver_state": 4.37477296468926,
+      "directional_bound_terms": {
+        "first": 101.69898839126903,
+        "second": 9.797090932259444,
+        "cross": 717.5595712441498
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 4.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "uncorrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.12372094595773196,
+      "exact_objective": 1.7171740517089542,
+      "approximate_objective": 1.7281011619230058,
+      "exact_gradient_norm": 1.43731877318446,
+      "approximate_gradient_norm": 1.4264543914090548,
+      "gradient_cosine": 0.9948000854515137,
+      "approximate_receiver_relative_error": 0.020050564585442434,
+      "exact_directional_derivative": -1.4298448383849656,
+      "approximate_directional_derivative": -1.4264543914090546,
+      "actual_directional_error": 0.0033904469759109546,
+      "true_descent": true,
+      "primal_residual_norms": [
+        28.562295719261027,
+        56.56535742936562
+      ],
+      "adjoint_residual_norms": [
+        0.2561709206592773,
+        1.2826811033740808
+      ],
+      "primal_coarse_fraction": 0.4507402103295918,
+      "adjoint_coarse_fraction": 0.1958475903995031,
+      "primal_reduced_response_norm": 0.07885588194884591,
+      "adjoint_reduced_response_norm": 0.0008517099134233115,
+      "reduced_receiver_adjoint_response_norm": 0.02349260385876029,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 3.5976232197035944,
+      "certified_upper_derivative": 2.17116882829454,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 1061.1058793323189,
+      "bound_to_descent_margin": 2.522073780536267,
+      "eta_u_components": [
+        0.18641375446363107,
+        0.15148119529248139
+      ],
+      "eta_lambda_components": [
+        0.010934127475010767,
+        0.0051773405618843055
+      ],
+      "actual_u_error_components": [
+        0.07843268489622973,
+        0.04805628127903205
+      ],
+      "actual_lambda_error_components": [
+        0.0009464161016408807,
+        0.0011339439740762364
+      ],
+      "eta_receiver_state": 0.2726940394307764,
+      "directional_bound_terms": {
+        "first": 2.3972019338052655,
+        "second": 0.5052889187773272,
+        "cross": 0.695132367121002
+      }
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 4.0,
+      "rank": 96,
+      "pod_rank": 64,
+      "source_index": 54,
+      "method": "coarse_corrected_oriented",
+      "stability_available": true,
+      "stability_reason": null,
+      "tau": 0.12372094595773196,
+      "exact_objective": 1.7171740517089542,
+      "approximate_objective": 1.712924067509083,
+      "exact_gradient_norm": 1.43731877318446,
+      "approximate_gradient_norm": 1.423642880111379,
+      "gradient_cosine": 0.9961285670837617,
+      "approximate_receiver_relative_error": 0.020436544003338438,
+      "exact_directional_derivative": -1.4317542899748266,
+      "approximate_directional_derivative": -1.4236428801113794,
+      "actual_directional_error": 0.008111409863447161,
+      "true_descent": true,
+      "primal_residual_norms": [
+        1.2678685876375443e-13,
+        56.790867589396484
+      ],
+      "adjoint_residual_norms": [
+        1.196521932933217e-15,
+        1.2811938664920903
+      ],
+      "primal_coarse_fraction": 2.2325219554741763e-15,
+      "adjoint_coarse_fraction": 9.339116930127794e-16,
+      "primal_reduced_response_norm": 1.9837806183234548e-15,
+      "adjoint_reduced_response_norm": 2.690428426136072e-17,
+      "reduced_receiver_adjoint_response_norm": 0.02349260385876029,
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "directional_error_bound": 2.512727133590609,
+      "certified_upper_derivative": 1.0890842534792298,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 309.7768668938594,
+      "bound_to_descent_margin": 1.7649982089567466,
+      "eta_u_components": [
+        0.09680870747437374,
+        0.1363424022813594
+      ],
+      "eta_lambda_components": [
+        0.007866600834775268,
+        0.004485289110494587
+      ],
+      "actual_u_error_components": [
+        0.01075477264846172,
+        0.04805628127903204
+      ],
+      "actual_lambda_error_components": [
+        0.00023705372696198804,
+        0.0011339439740762369
+      ],
+      "eta_receiver_state": 0.1992908623029102,
+      "directional_bound_terms": {
+        "first": 1.8185965701325206,
+        "second": 0.3369247470825919,
+        "cross": 0.35720581637549637
+      }
+    }
+  ],
+  "correction": "u'=u-B0 Ar0^-1 B0.T(Au-q); recompute adjoint residual using u', then lambda'=lambda-B0 Ar0^-H B0.T ra. Physical approximate derivative only; no ROM-autograd claim for this sequential correction.",
+  "coverage_tolerance": 1e-12,
+  "direction": "negative physical approximate gradient, L2-normalized; zero if norm<=1e-14",
+  "cost_scope": {
+    "fine_solves": "Offline reference/truth and independent tangent derivative checks only",
+    "extra_online_orientation": "Reduced residual solves and rank-by-receiver adjoint response, no fine solves/maps",
+    "extra_online_correction": "One reduced primal and one reduced adjoint correction plus reconstruction/residual applications",
+    "timings": "not measured"
+  },
+  "limits": [
+    "Ordinary floating point, not formally verified rounding enclosures.",
+    "No extension to arbitrary backends or complex coarse bases.",
+    "All unavailable cases and failed acceptances retained.",
+    "No additional aggregate experiment is authorized by a failed first test; stop this bound route if both oriented and corrected variants remain unusable."
+  ],
+  "pod_file_sha256": "f2ae08cbcb251802ba7be92d69e87c28f425c5b1dfeede02fd94d6720c484447",
+  "stability_evidence_sha256": "f787a7bff0a96655ee79e63daa41df7e21423087b3e51b9f49354feb9fb0d17e",
+  "previous_uncorrected_evidence_sha256": "8c4245f955dc8b8d1d48eb5040502cd4dd728d7aadfceb7fcb9c5e5c64a1f5fa",
+  "input_sha256": {
+    "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/data/reference/subsurfacegen_parent_split/train.npz": "5cd86a6af207190f242ec372ae28ea4872c825c8a9bc4dee7e0cdb2637fb590b",
+    "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/data/reference/subsurfacegen_parent_split/validation.npz": "36d11aba94ae9093cac888e9b28a2d01edcef1aa3a54b12f8e10269b963db2fc"
+  },
+  "scratch_script_sha256": "ee7641a2cffc201f5a043865684396475485472049374759201022bf31384793",
+  "provenance": {
+    "git_revision": "be6e51e090b4722d0610baaf812b56d4d355ae40",
+    "working_tree_dirty": false,
+    "source_sha256": "5e56226791eb0d2297667bc3502f3d24813c81e27c4e4d3ed317b9f556871f98",
+    "source_hash_schema": "sha256-of-path-and-file-sha256-v2",
+    "source_files": {
+      ".github/workflows/ci.yml": "416a6055e3e7983ba76b3720f30a17c78833d52005eccf9368fbe53a4181c6bf",
+      ".github/workflows/research-evidence.yml": "5a5a84a3a115006aaa2a24a3ff3ceaf79b0ef4652e98f4df7dc7c7d937c535ca",
+      "configs/demo.yaml": "fdc2afa3a4f023c0b1b058b8fd3dac9624b4346ae87cfccd3456375f2c51913a",
+      "configs/final_subsurfacegen_protocol.json": "67aca3b512c5dc6f5c0ab2a844722b638dd97744c0050c59dd312c0859b7309b",
+      "configs/final_subsurfacegen_split.csv": "c4c1cb9a46bac7473f31792e2c468f94f4c613247f06641614593b18983ad25c",
+      "configs/gradient_development_protocol.json": "9262ab19fc87c3d04f4bad1bcc2da5b6978babc10c55ee2e461c981c8fdefe82",
+      "configs/grouped_subsurfacegen_manifest.csv": "95cb3c030f1b38f0cfeb5e920d5c8746a58a0c35bd61aa18c55323772c86a027",
+      "configs/marmousi2d.yaml": "757ad04fafc3ba76ba9abbd0f88ff705348efdebbe07b72a49e8225e44c26f51",
+      "configs/openfwi_external_stress.json": "6578df1b931b9fe472192fd69c9f5050531f7214c0d1777e832296b55a3ecc77",
+      "configs/openfwi_external_stress_analysis_addendum.json": "f4370f1a0cd0a9b1a3b3a0dab513fac99bca143c30cdbf27560d222d211bb736",
+      "configs/phase7_end_to_end.yaml": "560a69540296cbbb0b2ccb1f227d24154e9bb414d2940ae421be8af1f5cbe2af",
+      "configs/phase9_ood.yaml": "917f1f8ba3c71531e184a9e5e33d370f7f33dc0f481975054331bfbfde1c08d8",
+      "configs/remote_evidence_run.json": "a09c0ce648112e5bab1d9716e9fc01117438e6b37050494411dd2236083fbbcc",
+      "configs/strengthening_protocol.json": "9ceda571a1b46e77c0c17d51e84af4618ce658711cbc3465d14811991e785888",
+      "configs/subsurfacegen.yaml": "f9a799da5b16971deda2a2c0987408adefc1a3746ae37d9773c52683b26711f2",
+      "pyproject.toml": "81e00bf085f2054bb992fdb22706a37a1970e9dce3fdece67a4de284897092e5",
+      "requirements-reproduction.txt": "7b87ebf39610d946659a1f59aa98872cd24712730df75d7d18df9289ee8566dc",
+      "scripts/audit_evidence_study.py": "2a9ab6b87032eb623f7f7b936b5ea3e1eff8a84904a3b387ba3b0988e7f41d88",
+      "scripts/benchmark_batched_neural.py": "73d07c8988563f3a0e4c825a1869b60c6c45b0c1a0fd9f4c48d04d85edfab5be",
+      "scripts/benchmark_reference_cache.py": "ffce9fa1f1bf2f0e6e19e3ec03a8dddc0720f6147e48785a18a8fe19f3d7a6bf",
+      "scripts/build_subsurfacegen_wavecert.py": "880e3659672e50cd3d85186b491c410761ac59ceebf8b45d97828f60e6d7d237",
+      "scripts/check_repo.sh": "48838e71d5a920ff9d453319640772897c22a709943f3b288c8ce36bef5a1a3c",
+      "scripts/diagnose_development_generalization.py": "11898494cacce97689f8374b0a2be2e89ffe73b14a1c5e150591b5cf52ff883c",
+      "scripts/diagnose_tolerance_calibration.py": "9c49a1ffed7ac547d33ffa6b3592617ff5be672d55043a61d09756c2426fcee5",
+      "scripts/download_marmousi_public.sh": "23f1a7412e4e7507adb2970d1b5c64a4aba2b3f0f1209796b62a0e54f151c85e",
+      "scripts/evaluate_openfwi_stress.py": "318627c883ac54da52158e05aa742b3f1fd01f9165d5068274928ff44f28241b",
+      "scripts/make_grouped_split.py": "c759ce122e3c41d639f8a0e00dbc6cf1edaa55bd8d71a0e73aa669110e74d2f0",
+      "scripts/prepare_grouped_subsurfacegen.py": "40f07f3e6c44c7bcdf5aad67393f39a411aff4b6bbf30552664c38d94c360b21",
+      "scripts/prepare_openfwi_stress.py": "3eed3bb6c797644edc979dc3f49252d93c052461c710c6f9536f9247f4a99b63",
+      "scripts/reproduce_strengthening.sh": "48dbb98e9fb95b46936dc2db27befb2d27781b937ad8151bd44ddd5b5534cfb0",
+      "scripts/run_baseline_study.py": "76dd43504632c230286b0b8c99286a3fe44d7a517af73efbcb3da1a851834ff2",
+      "scripts/run_cost_break_even.py": "a03e88003da29ced2af4ed2376e179b5ffcbf13e772196ed5311c21bdaba82a3",
+      "scripts/run_demo.sh": "de363dde3a78278a8c14900a63ebfe6974b8d12c567f6e7a192be047a8a110d0",
+      "scripts/run_devito_real.py": "e899961a9c61d50c0efbd7c5287fe9a96b7d47829d5bd4e929daa67a9aa3f182",
+      "scripts/run_gradient_development.py": "0e3d4456fe62e4ee9571599258ba27b6b813f7ce30a64b79678421e3669bd33a",
+      "scripts/run_heuristic_baselines.py": "987424ddfde41152b6f907e82a19ee58418b79c8b2512b80d9790320d5e4cad6",
+      "scripts/run_openfwi_study.py": "590d432c9b1e05ec8a3168203444a4bef407a357584e56425dca46f120a75fad",
+      "scripts/run_phase1_verification.py": "8aabcd0d0e9272c7eb8ec646c333522ea297f54970e55f61cdff079a61f69acb",
+      "scripts/run_phase2_train_fno.py": "e10fb0dcacb0c83f92c40a74061a0037aa141b6381684e8403a02ee84f433242",
+      "scripts/run_phase2_validate.py": "6ccabc08f8d37048183466af1e87a922d5754ae7071b06c867466dd9f0935b33",
+      "scripts/run_phase3_failure_study.py": "71df1d686dc41bf5946fc5adab4d7a21bcf352a76c7bdd521231dbad35727fac",
+      "scripts/run_phase4_certificate_study.py": "a7012a525af132322d317c2448205c189c55bbb8b6798407e5d421baff60b6cc",
+      "scripts/run_phase5_calibration.py": "f240b218b7dc9bb948e1e3830daee30cc0da199ec012a5d02738c065817b7169",
+      "scripts/run_phase6_adaptive_study.py": "a263f389ceedd7f186f84354cfec74e6644d8cdede687dcd96007de42f517b8e",
+      "scripts/run_phase7_end_to_end.py": "b04016425edd864466b0f1348b71f4d593047af79cd3e26b934054c3c3ec6e8e",
+      "scripts/run_phase8_production_study.py": "c0aefe51b490c9af020f4c2be1bf77c43111384373d98569c1d769caace64501",
+      "scripts/run_phase9_ood_study.py": "f09b1f3d48de72cbe43e838d723080a7e3e8630fee1e36b6af60d9b41fe03254",
+      "scripts/run_real_adaptive_matched_mc.py": "79a7e2291180ca9bc01d65cfc14f3c4bf3266363ab9caa1bac44dddd2c64857b",
+      "scripts/run_real_adaptive_pathwise.py": "4373997e04d3a4c8642b750bf8aca4ecb0158ac6575f0c9fdb3ffcdd60a50ef5",
+      "scripts/run_real_geology_training.py": "43142b67006c77840490cf075e8a36ac9e6e280a91e168e8cbb63aae5512654b",
+      "scripts/run_real_wavecert.py": "caff9e9387bdbabc0aa912faf1ec198b50540e46e74adcf2ec0a94026b11a751",
+      "scripts/run_receiver_controls.py": "ea07011cdea457a785d8bddbcb1f3e3c46caf0fbd42117084dfdb2fc299d6276",
+      "scripts/run_research_audit.py": "c580c1371747e0b81d9cf6c7613241bef7aceb664d0910fa6cefcea380d1b4e8",
+      "scripts/run_stability_benchmark.py": "03928837cd54cde745257769165750e43ee70f8f9c25f58d082a62fd965c9a33",
+      "scripts/select_subsurfacegen_slices.py": "a2e2e658273e9fac723c815bcb5f4269136569c00e87f28a3a129b7f826006ae",
+      "src/wavecert/__init__.py": "de0bb59120c27a66e8c3914a3fda8a53de1b89a30fb2db9e8bcf0052af0df054",
+      "src/wavecert/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "src/wavecert/_version.py": "7080f58cb9c2fef8f8f0680c37a61bd4503726c43de73366087991604f131616",
+      "src/wavecert/benchmarks/__init__.py": "3315b356ba8f46b155886b93c79e8c34c293dd65b900cb229ca23d48f6d3b78c",
+      "src/wavecert/benchmarks/marmousi.py": "4e574b062a0cd24bf4f18a2579a26bbb89cb662dfdb58c1e9c1a85624f461822",
+      "src/wavecert/benchmarks/openfwi.py": "e4c83e6075404a79fe3a12ad97e6fd9eafcef9f63ad1ad48e95fa3a5a0e598e0",
+      "src/wavecert/benchmarks/procedural.py": "696666b77bf70f38bc109c9a2fec21e48931b00b14171b8d238f96e79bbef4d0",
+      "src/wavecert/benchmarks/subsurfacegen.py": "1a3e9f754a387a957a467cd19d76446f98c0e845f65044f9a6557c7c9a51d5be",
+      "src/wavecert/certificates/__init__.py": "58f29c2df2190b203a67eeb5f831bc500262c7571763b9caf046c1dbcc893df4",
+      "src/wavecert/certificates/directional.py": "fec69f8a712c1108782449047e8f366d3c562546ebde55be75a26d843d5987b2",
+      "src/wavecert/cli.py": "7b02e01dbb7507345199d97a227d1d90637324ac3da5a6ed6d762545caa74223",
+      "src/wavecert/data/__init__.py": "fca09028afa34083f1b92b0c09b4ad98058417f72f0671c930a201146ff7c981",
+      "src/wavecert/data/real_geology.py": "ceb7ef296f5d6f46ad344b22bde38d4c0919b9849b3d440d4d70af11e8d943d1",
+      "src/wavecert/data/splits.py": "e255e4b329f28169d4ab762fbf45218318487db72fe14adee63bf48f73152a62",
+      "src/wavecert/data/subsurfacegen_selection.py": "934a7bab3712bd5d1462f73bac34cecd46a8da90bf95d4d40b706a3caeceed65",
+      "src/wavecert/data/wavefields.py": "44a023b8062144c572233e12acb72bb8149a6566880adc50179902312e0e112a",
+      "src/wavecert/experiments/__init__.py": "cc6d3a87568c3d6f4890e39f076d861ce60158fbd1405447f3160211dbcec895",
+      "src/wavecert/experiments/ablation.py": "dd49f3a3e489d69823681a488daaa14332628a2f4765b445a9d06957f46f81b5",
+      "src/wavecert/experiments/adaptive_study.py": "3ee233e8cf38bedee5b3d638cd2858715f08246e4b8f6a066197699029fe4320",
+      "src/wavecert/experiments/baseline_study.py": "77bda36229ba2e04e969b3dd02151f2c83dd380514a6eedb10918fb6ca3bbc06",
+      "src/wavecert/experiments/batched_neural_controls.py": "259327cf368937b95d8537b07b97bf49d55d70f85975f41d7059a42c81d1cd72",
+      "src/wavecert/experiments/certificate_calibration.py": "e0ba7288d33d8e7dad8dc7e0c429a8361a085fdfa7b3e0d71caa3206f4f8af2d",
+      "src/wavecert/experiments/certificate_study.py": "55f1f52d0ce77069454c005c17b1f9a28ca807b80f7528328a50fdc82bb24072",
+      "src/wavecert/experiments/cost_break_even.py": "fd6f3a1bac36eb7a04691bda5c2139e54ac695f08b0dd85e495513f1da4c1da0",
+      "src/wavecert/experiments/derivative_training.py": "c82c7e32a27e5cf4dcfa9814fe5b4c8438ad1023331e0ae3a24b0c3d0cc45522",
+      "src/wavecert/experiments/devito_study.py": "ad5ae5123607ba92fe573bf6c56616509e6055d28750ab12c237de84a5d5f4b8",
+      "src/wavecert/experiments/end_to_end.py": "b2e37b6f96671be11ec7125a35a1c5dfeeaf0e9e005bdde9403def3f5ed6ded1",
+      "src/wavecert/experiments/evidence_study.py": "e14f9013bd71a11b454a4a8f5e84e8df79c5c449da440adbe173b18b5701629f",
+      "src/wavecert/experiments/failure_study.py": "bc59a3ff119473f142f8d6dcd7e98595713ac21ba22c6656af56fd1b083c14b1",
+      "src/wavecert/experiments/gradient_development.py": "993670de7902a2ae0b867344803bc950ddbd0c627440c83ce8f74e42f17dcf1b",
+      "src/wavecert/experiments/heuristic_baselines.py": "677ea77c09f7d645c2a4f403e49dedd236f2da216f3d84c95631239b37a82d61",
+      "src/wavecert/experiments/ood_study.py": "396fbc2ca081ccee5a9759c325b128cd411bd20a06faa310551251bddcd1d4b8",
+      "src/wavecert/experiments/openfwi_stress.py": "03711c5f6757b59008c5a9d51c65ab684ac7fadc104df5e6b4a71997d849b97a",
+      "src/wavecert/experiments/openfwi_study.py": "124c61847c03ae4a3df61c41598888301a1fbe9b2eae86df1aacee98d596e70a",
+      "src/wavecert/experiments/production_study.py": "5f64317e2ed89ab52630564af195531cd3c2f5769a4324faa1e34afcad8a801c",
+      "src/wavecert/experiments/real_geology_training.py": "b48dd5ac253478bb6e898a45eb88d3e029708f314d875eef1744624cf201d2c7",
+      "src/wavecert/experiments/real_wavecert.py": "5fa2baa9e1364230b57f3f8e2ea31befea2ea538de86425f512f8c701705625f",
+      "src/wavecert/experiments/receiver_controls.py": "b5d47bfe30fc4cf566563db5fb0a86f6df4bbc86635ecd863f417da0cced4df1",
+      "src/wavecert/experiments/runner.py": "c10ed7ce2b93db806a05d284c04dc09e8618073fad5d9ee59e6d425563151dff",
+      "src/wavecert/experiments/synthetic.py": "1cc5746f72649daf5ee744123de8dc6d754fca78f3a5ff98ed6bfcbf7ac5974a",
+      "src/wavecert/experiments/train_fno.py": "283d473b7420904170bac939be96e6dfb3014367fc38bb1b52ee397bf7c4bf4a",
+      "src/wavecert/metrics.py": "aff3cceddf52c634e39a31a864e4705e8389acba4d79d09badbedd9ca04f6382",
+      "src/wavecert/optimization/__init__.py": "e3a133b64f85ed832fff5967a81ad0d5cf74de8106a1e48ec46e6a90ae7ed506",
+      "src/wavecert/optimization/fwi.py": "a4ccc550aa597d8e8ba630ecde82cd338bc64dbc5538936998ffafff4e618756",
+      "src/wavecert/physics/__init__.py": "68248d95659de7888efbf10dc8f410e3ecf21c609e93407bbdfa82f93ec3f592",
+      "src/wavecert/physics/certified_stability.py": "350db67a2d24cbfcf1258e68ec0c8c6521df6114c975298e9dd672bef88a8ce3",
+      "src/wavecert/physics/devito_backend.py": "67b91aa2f7ed8c653c1f92b99e4c6e48591b8e47d31588d9e2b19445d6b6060a",
+      "src/wavecert/physics/helmholtz.py": "caf51b58da24ed6d3633bda4eaaab804714f5c7932d9d5f343644763bc158131",
+      "src/wavecert/physics/independent_verification.py": "a56d932aff9acd9ffb3391e55e73fe9e7407a306e07f37c52522b82794d9db28",
+      "src/wavecert/physics/production.py": "f0eb2854a4d07a0d82ac41b2c28fe04052826f5b4ced3b71548df9151c6fa138",
+      "src/wavecert/physics/receiver_oracle.py": "918ceaf5596fa8452b1e29357c8e694e7ea83b0e9a162f86f6a03f28714c3e6b",
+      "src/wavecert/physics/verification.py": "518c3b249957f23a9754b9482437309fda96a50548726a577e4486aad17cafb2",
+      "src/wavecert/provenance.py": "9e54e51a311aa9adab6a4572c45456695bc7f228149495779e556a101345e63c",
+      "src/wavecert/repair/__init__.py": "a60d11f7e6d9b180193b542c62bce2aad0c6e87f9f2eeffcc570e8e5afbe4401",
+      "src/wavecert/repair/adaptive.py": "39ccc9fa14610558aeca2d3bd4020511fd9a59ab65984ce29b51867b6ed4c405",
+      "src/wavecert/repair/policies.py": "ae59f2e9e290c3795aa81bef4198510e894d40ee8a02764524e96b213e24bc2d",
+      "src/wavecert/statistics/__init__.py": "c28a5e0deb7a2808b35b8f54e2f7f401c11424be8f8955ab263b9a78f6738364",
+      "src/wavecert/statistics/audit.py": "fe2751439a2b9554daaeebd075072e39b727fbf094c5b722370da34b7a6175bb",
+      "src/wavecert/statistics/conformal.py": "50a983a6f5560e12374ddd7461605f3600f18852f6d19abd6093f1cfae8a2fdb",
+      "src/wavecert/statistics/finite_population.py": "590c7f9d61dffdf4e3308516854f2f6e718e05e22870be274393db7559ab44a1",
+      "src/wavecert/statistics/inference.py": "75bd6e9a82dc2d0802097710b1161cb1799b22692fb41de1eb088d7d7040d608",
+      "src/wavecert/statistics/pathwise.py": "87181a6e818a29fcbd30ecda30f40985edd300b1590b5badb418396e2b6c0863",
+      "src/wavecert/statistics/tolerance.py": "e67c7274a4949a5bb1b724844d811e3da948278600b98a81d40d83eeaeb1c2c2",
+      "src/wavecert/surrogates/__init__.py": "fc6e735e3c35edfa11fe9faa5b19fc13a6691778856c0ae12123f6c03f418c3b",
+      "src/wavecert/surrogates/base.py": "6a128b568254bda4e4c384547f6ccdcc8795d689925c507ebdcb4db29785307e",
+      "src/wavecert/surrogates/fno.py": "56760590e3ac351180643f7bbd2f5decfe91cb21265775ee61cbd8721020f8cc",
+      "src/wavecert/surrogates/low_fidelity.py": "b766ec44d7667c4a4bbc9f8837d586e7f391ffb91e97533917aeb68bba8b5f5c",
+      "src/wavecert/surrogates/torch_adapter.py": "e8274a119af40ea3aa7962f235be777eaacc6d4e7cc81aeffd1ce9c7d35caf46"
+    },
+    "python": "3.13.13",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "packages": {
+      "numpy": "2.4.3",
+      "scipy": "1.18.1",
+      "torch": "2.14.0",
+      "matplotlib": "3.11.2",
+      "pandas": "3.0.5",
+      "pytest": "9.1.1",
+      "h5py": "3.16.0",
+      "hdf5plugin": "7.1.0",
+      "pyarrow": "25.0.1",
+      "devito": "4.8.23"
+    },
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": null,
+      "NUMEXPR_NUM_THREADS": null
+    },
+    "torch_threads": null
+  },
+  "main_source_unchanged": true
+}

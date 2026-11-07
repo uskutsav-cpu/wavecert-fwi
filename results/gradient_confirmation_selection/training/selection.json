@@ -1,0 +1,29 @@
+{
+  "winner": "augmented_derivative",
+  "checkpoint_path": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/results/gradient_development/recovery_attempts/20261107T214641503789Z/candidate/augmented_derivative/best.pt",
+  "checkpoint_sha256": "b1786eb61fa6d0b7fec3afba7fd35954eb30cea3ac40db6a099d61f9afc89d02",
+  "best_optimizer_update": 400,
+  "validation_selection_score": 2.4395108301533956,
+  "ranking": [
+    {
+      "name": "augmented_derivative",
+      "score": 2.4395108301533956
+    },
+    {
+      "name": "raw_derivative",
+      "score": 2.808487229438304
+    },
+    {
+      "name": "augmented_forward",
+      "score": 3.0804676889368094
+    },
+    {
+      "name": "raw_forward",
+      "score": 3.197331155097582
+    }
+  ],
+  "selection_scope": "common train-development validation rule only; no calibration/test/external outcomes",
+  "frozen_for_heldout_evaluation": false,
+  "next_step": "Review and separately freeze the selected artifact before any held-out evaluation",
+  "source_and_inputs_unchanged": true
+}

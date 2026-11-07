@@ -143,3 +143,42 @@ post-training residual certificate for neural seismic derivative reliability
 - **OpenFWI official code** — canonical `.npy` batch shapes and train/test file splits: https://github.com/lanl/OpenFWI
 - **SubsurfaceGen (2026)** — 42 field-scale 3-D models, 4,276 2-D slices, wavefields and shot gathers across Penobscot, F3, Gulf of Mexico, Fault, Salt Canopy and SEAM settings, with explicit ID/OOD evaluation: https://arxiv.org/abs/2605.30541
 - **SubsurfaceGen field-scale dataset** — HDF5 key/shape and split conventions: https://huggingface.co/datasets/subsurfacegen/field-scale-dataset
+
+## Boundary check after the classical/coarse experiments
+
+The targeted primary-source review is archived in
+`results/strengthening_audit/coarse_adjoint_primary_literature_review.json`. It is
+not exhaustive and does not establish priority for an implementation recipe.
+
+- [Qian, Grepl, Veroy and Willcox (2017), DOI 10.1137/16M1081981](https://kiwi.oden.utexas.edu/papers/multifidelity-optimization-adaptive-reduced-model-qian-grepl-veroy-willcox.pdf):
+  Lemma 3 and Theorem 5 already bound coupled state/adjoint and cost-gradient
+  errors, including the three state/adjoint/product terms used here. The current
+  complex-indefinite component constants require a separate derivation, but the
+  general residual-gradient error decomposition is established prior work.
+- [Keil et al. (2020 preprint; M2AN 2021), DOI 10.1051/m2an/2021019](https://arxiv.org/abs/2006.09297):
+  Section 2.3 and Proposition 2.7 distinguish plug-in state/adjoint gradients from
+  derivatives of the reduced objective and provide error bounds. WaveCert's
+  sequentially corrected physical proposal must preserve that distinction.
+- [Sen et al. (2006)](https://www.mit.edu/~cuongng/project/rbm4/rbm4.pdf):
+  natural-norm reduced-basis estimation, Helmholtz stability and deflated output
+  bounds predate the current coarse-space certificate.
+- [Tang et al. (2009)](https://diamhomes.ewi.tudelft.nl/~kvuik/papers/Tan09NVE.pdf):
+  coarse correction/deflation is classical. Its SPD results do not automatically
+  prove convergence for the current complex damped operator.
+- [Shen et al. (2016)](https://www.math.purdue.edu/~shen7/pub/SWX16.pdf),
+  [Morin and Paux (2024)](https://doi.org/10.1016/j.cma.2024.116772), and
+  [Paux, Morin and Gelebart (2024/2025)](https://doi.org/10.1002/nme.7615):
+  fast transform/Galerkin multiplication and assembly are established methods.
+  No first-fast-assembly claim follows from the two-DCT moment implementation.
+- [Buhr et al. (2014)](https://arxiv.org/abs/1407.8005):
+  residual-estimator cancellation can undermine numerical stability; the current
+  floating-point allowance does not replace verified error enclosures.
+- [Li and Que (2026)](https://arxiv.org/abs/2609.24776):
+  adaptive coarse/POD Helmholtz residual estimation is another close comparison.
+
+The supported contribution is the particular discrete component/oriented
+implementation, its abstention behavior, exact controls, and transparent
+quality/cost/generalization evidence. General gradient certification, POD, coarse
+correction and residual repair are not claimed as new. A more ambitious novelty
+claim requires a broader primary-source comparison and substantive human
+mathematical review.

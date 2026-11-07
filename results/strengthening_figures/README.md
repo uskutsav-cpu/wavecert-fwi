@@ -1,0 +1,3 @@
+# Figures from completed raw evidence
+
+All figures are generated from the completed study tables and saved vectors; no invented timings or confidence bars. Full captions and a numeric/input/output-hash manifest accompany them. The archived portable plotting script accepts `--repository` and a new `--output` directory outside that repository. It asserts full cohort identities and arithmetic before plotting. The runtime plot uses the original complete scalar 72-call study; any later batching study is development reuse and must be reported separately. Figures are AI-assisted technical artifacts, not a student-authored competition submission.

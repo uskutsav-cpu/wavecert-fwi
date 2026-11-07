@@ -1,0 +1,192 @@
+{
+  "name": "raw_forward",
+  "status": "complete",
+  "candidate": {
+    "name": "raw_forward",
+    "augmentation": "raw",
+    "derivative_weight": 0.0
+  },
+  "optimizer_updates_completed": 2000,
+  "training_examples": 816,
+  "training_parent_counts": {
+    "f3_044": 48,
+    "f3_045": 48,
+    "f3_047": 48,
+    "f3_049": 48,
+    "f3_050": 48,
+    "gom_142": 48,
+    "gom_143": 48,
+    "gom_145": 48,
+    "gom_146": 48,
+    "gom_147": 48,
+    "gom_150": 48,
+    "salt_canopy_000": 48,
+    "salt_canopy_001": 48,
+    "seam_003": 48,
+    "seam_006": 48,
+    "seam_007": 48,
+    "seam_010": 48
+  },
+  "best_optimizer_update": 100,
+  "best_validation_score": 3.197331155097582,
+  "best_validation": {
+    "optimizer_update": 100,
+    "checkpoint_eligible": true,
+    "full_field_relative_squared_l2": 0.8168523868080229,
+    "receiver_relative_squared_l2": 0.6552891136767963,
+    "jvp_relative_squared_l2": 1.375447050668299,
+    "aggregate_gradient_cosine": -0.16659499075248652,
+    "aggregate_exact_gradient_norm": 40.029435193122595,
+    "aggregate_neural_gradient_norm": 3.1517640624866177,
+    "aggregate_neural_true_descent": 0.25,
+    "direction_loss": 1.1665949907524866,
+    "selection_score": 3.197331155097582,
+    "inverse_cases": [
+      {
+        "slice_id": "gom_148_il_0236",
+        "model_id": "gom_148",
+        "gradient_cosine": 0.15908830037776223,
+        "exact_gradient_norm": 64.88430224314989,
+        "neural_gradient_norm": 2.901962692224043,
+        "exact_gradient_zero": false,
+        "neural_gradient_zero": false,
+        "neural_direction_exact_derivative": -10.322333365059741,
+        "neural_true_descent": true
+      },
+      {
+        "slice_id": "gom_148_xl_0768",
+        "model_id": "gom_148",
+        "gradient_cosine": 0.08964279322937921,
+        "exact_gradient_norm": 52.1544425177059,
+        "neural_gradient_norm": 4.5379477393876035,
+        "exact_gradient_zero": false,
+        "neural_gradient_zero": false,
+        "neural_direction_exact_derivative": -4.6752699066082535,
+        "neural_true_descent": true
+      },
+      {
+        "slice_id": "gom_151_il_0247",
+        "model_id": "gom_151",
+        "gradient_cosine": -0.13292793354269827,
+        "exact_gradient_norm": 46.30513185965271,
+        "neural_gradient_norm": 3.668512804662189,
+        "exact_gradient_zero": false,
+        "neural_gradient_zero": false,
+        "neural_direction_exact_derivative": 6.155245490525796,
+        "neural_true_descent": false
+      },
+      {
+        "slice_id": "gom_151_xl_0857",
+        "model_id": "gom_151",
+        "gradient_cosine": -0.023704781163558366,
+        "exact_gradient_norm": 61.672891231207764,
+        "neural_gradient_norm": 3.7771987237911424,
+        "exact_gradient_zero": false,
+        "neural_gradient_zero": false,
+        "neural_direction_exact_derivative": 1.4619423903597175,
+        "neural_true_descent": false
+      },
+      {
+        "slice_id": "seam_005_il_0596",
+        "model_id": "seam_005",
+        "gradient_cosine": -0.33206029602924364,
+        "exact_gradient_norm": 24.061077939475624,
+        "neural_gradient_norm": 2.178774941943388,
+        "exact_gradient_zero": false,
+        "neural_gradient_zero": false,
+        "neural_direction_exact_derivative": 7.989728663364979,
+        "neural_true_descent": false
+      },
+      {
+        "slice_id": "seam_005_xl_0795",
+        "model_id": "seam_005",
+        "gradient_cosine": -0.3342895318687974,
+        "exact_gradient_norm": 23.811066272214585,
+        "neural_gradient_norm": 2.136887360644933,
+        "exact_gradient_zero": false,
+        "neural_gradient_zero": false,
+        "neural_direction_exact_derivative": 7.959790197435526,
+        "neural_true_descent": false
+      },
+      {
+        "slice_id": "seam_011_il_0522",
+        "model_id": "seam_011",
+        "gradient_cosine": -0.46726426503886653,
+        "exact_gradient_norm": 23.783528379793328,
+        "neural_gradient_norm": 4.095015357271301,
+        "exact_gradient_zero": false,
+        "neural_gradient_zero": false,
+        "neural_direction_exact_derivative": 11.113192908415153,
+        "neural_true_descent": false
+      },
+      {
+        "slice_id": "seam_011_xl_0866",
+        "model_id": "seam_011",
+        "gradient_cosine": -0.29124421198386946,
+        "exact_gradient_norm": 23.563041101780932,
+        "neural_gradient_norm": 1.91781287996834,
+        "exact_gradient_zero": false,
+        "neural_gradient_zero": false,
+        "neural_direction_exact_derivative": 6.862599337631716,
+        "neural_true_descent": false
+      }
+    ],
+    "parent_components": {
+      "gom_148": {
+        "full_field_relative_squared_l2": 0.8359239920973778,
+        "receiver_relative_squared_l2": 0.6713659257317582,
+        "jvp_relative_squared_l2": 1.2973777875304222,
+        "aggregate_gradient_cosine": 0.12436554680357072,
+        "aggregate_neural_true_descent": 1.0,
+        "aggregate_exact_gradient_norm": 58.519372380427896,
+        "aggregate_neural_gradient_norm": 3.7199552158058236
+      },
+      "gom_151": {
+        "full_field_relative_squared_l2": 0.8326440087209145,
+        "receiver_relative_squared_l2": 0.7279723333194852,
+        "jvp_relative_squared_l2": 1.4470485554387171,
+        "aggregate_gradient_cosine": -0.07831635735312832,
+        "aggregate_neural_true_descent": 0.0,
+        "aggregate_exact_gradient_norm": 53.98901154543024,
+        "aggregate_neural_gradient_norm": 3.722855764226666
+      },
+      "seam_005": {
+        "full_field_relative_squared_l2": 0.7950881154586872,
+        "receiver_relative_squared_l2": 0.5949302275354663,
+        "jvp_relative_squared_l2": 1.236566619326671,
+        "aggregate_gradient_cosine": -0.33317491394902055,
+        "aggregate_neural_true_descent": 0.0,
+        "aggregate_exact_gradient_norm": 23.936072105845106,
+        "aggregate_neural_gradient_norm": 2.15783115129416
+      },
+      "seam_011": {
+        "full_field_relative_squared_l2": 0.803753430955112,
+        "receiver_relative_squared_l2": 0.6268879681204756,
+        "jvp_relative_squared_l2": 1.5207952403773863,
+        "aggregate_gradient_cosine": -0.37925423851136797,
+        "aggregate_neural_true_descent": 0.0,
+        "aggregate_exact_gradient_norm": 23.673284740787132,
+        "aggregate_neural_gradient_norm": 3.00641411861982
+      }
+    },
+    "state_type_components": {
+      "raw": {
+        "full_field_relative_squared_l2": 0.7780473961805304,
+        "receiver_relative_squared_l2": 0.6053088914292554,
+        "jvp_relative_squared_l2": 1.3644542520244916
+      },
+      "smoothed": {
+        "full_field_relative_squared_l2": 0.8556573774355153,
+        "receiver_relative_squared_l2": 0.7052693359243373,
+        "jvp_relative_squared_l2": 1.3864398493121068
+      }
+    }
+  },
+  "checkpoint_path": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/results/gradient_development/candidates/raw_forward/best.pt",
+  "checkpoint_sha256": "70e57af910e66088efae9bd3e6dd6afb504edcfc78996ea047a5c0c6ac79375c",
+  "training_seconds": 698.6407039349724,
+  "validation_seconds": 144.68503170699842,
+  "elapsed_seconds": 844.1269242080016,
+  "calibration_or_test_arrays_loaded": false,
+  "external_test_arrays_loaded": false
+}

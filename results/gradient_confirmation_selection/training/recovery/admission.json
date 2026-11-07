@@ -1,0 +1,20 @@
+{
+  "mode": "explicit-audited-ENOSPC-restart",
+  "recovery_id": "20261107T214641503789Z",
+  "whole_run_source_and_inputs_unchanged": null,
+  "original_start_runtime_receipt_available": false,
+  "recorded_initial_end_recovery_source_identities_match": true,
+  "source_and_inputs_unchanged_during_recovery": true,
+  "logical_optimizer_updates_per_candidate": 2000,
+  "fourth_candidate_actual_executed_updates": 2100,
+  "total_actual_executed_updates": 8100,
+  "driver_sha256": "f38f3ed712346a198e364e92585adf1f04dc167f4b8eaa835311715bfe5298bc",
+  "receipt_sha256": "498362930fbc2bc93c42410ee285138cd5bde7dfdc20ed92c731f55038d0a815",
+  "limitations": [
+    "Interrupted study; original full start-runtime/end-to-end wall-time receipt unavailable.",
+    "Fourth candidate reran its original 2000-update budget; 100 failed-attempt updates remain additional spent work.",
+    "Atomic I/O retries may add elapsed wall time; no loss/model/optimizer/protocol changes were made.",
+    "Development-only validation on four parents; no independent confirmation or deployment authorization."
+  ],
+  "scope": "Explicit restart admission, not uninterrupted-run provenance; original runtime and total wall time remain unknown."
+}

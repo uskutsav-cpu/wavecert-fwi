@@ -34,3 +34,31 @@ analyze the results, assess novelty against primary sources, draw their own
 conclusions, and author the submitted content. Review the
 [2026–2027 JSHS rules](https://www.jshs.org/wp-content/uploads/2026/08/JSHS-Core-Rules-of-Competition-2026-27.pdf),
 especially the AI and outside-assistance sections.
+
+## Additional assistance in the controlled strengthening phase
+
+Codex designed and implemented the four-candidate raw/augmented and forward/JVP
+comparison, executed its fixed budgets, diagnosed a disk-full interruption,
+provided the bounded I/O-only recovery driver, and audited preserved prefix
+identity and model selection. Codex designed the eight-candidate POD control,
+trained its bases from train-only teacher fields, and performed validation
+selection. These choices and mathematical work are AI assistance.
+
+Codex derived/implemented the component coarse stability and physical-adjoint
+certificate, DCT moment assembly, classical exact receiver controls, and scalar
+then batched development implementations. It designed and executed the
+validation, immutable freezes, five-model unused-index comparison, historical
+transfer, runtime studies, and private feasibility probes. It authored code and
+tests, performed statistical/vector/source audits, reviewed primary literature,
+and generated research figures and technical development plans. Multiple AI
+workers provided separate checks, not independent human reproduction.
+
+The saved protocols explicitly distinguish development choices, prior inspected
+test roles, known data batches, and later additions. They are not student-originated
+preregistrations. Null findings, failed/restarted jobs, unknown whole-run training
+timestamps, abstentions, poor neural generalization, and unfavorable runtimes
+are preserved. No final competition submission has been authored here.
+
+The student must determine which contributions they actually made, independently
+verify and understand assisted work, and disclose the actual assistance. A
+repository score cannot assess their ownership or oral defense.

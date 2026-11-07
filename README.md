@@ -1,6 +1,6 @@
 # WaveCert-FWI
 
-**Residual checks and selective exact-physics fallback for learned seismic inversion.**
+**Residual checks, classical reduced models, and selective exact-physics fallback for seismic inversion.**
 
 A neural wave simulator can predict useful wavefields while producing derivatives
 that send an inversion in the wrong direction. WaveCert investigates when a
@@ -42,6 +42,28 @@ receiver-aware repair, and analytical-bound repair. It saves raw trajectories,
 paired model-level summaries, uncertainty intervals, all online exact costs,
 checkpoint/source hashes, and quality-versus-time figures. `status.json` marks
 running, failed, and complete runs; source changes during execution mark a run stale.
+
+## Latest controlled comparison
+
+A train-only classical POD model substantially outperforms the tested FNOs on
+inversion-relevant gradients. On 200 previously unevaluated original model slots
+from two known generated batches, raw POD has mean gradient cosine 0.99745 and
+0.99953; coarse-corrected POD has 0.99866 and 0.99975. The new neural model has
+0.05583 and -0.01178. All five fixed comparators and all 4,000 blocks are retained.
+
+The new coarse state/adjoint certificate accepts 168/200 directions, observes
+zero false certifications, and abstains on 32. Its guarantee is a pointwise,
+discrete, exact-arithmetic inequality evaluated in ordinary floating point;
+it is not a universal safety or trajectory claim. Its scalar implementation
+is **5.43× slower than exact** on the eight-slice small-grid cold-query study,
+including setup. Zero fine-grid solves does not establish acceleration.
+
+See the [evidence ledger](docs/strengthening_status.md),
+[coarse certificate](docs/coarse_adjoint.md), [classical control](docs/pod_controls.md),
+[fixed confirmation](docs/gradient_confirmation.md), and
+[prior-work boundaries](docs/literature.md). The
+[research assessment and next milestones](docs/jshs_research_plan.md) distinguish
+completed software work from open scientific outcomes.
 
 ## Current evidence and limits
 

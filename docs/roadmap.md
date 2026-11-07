@@ -39,13 +39,17 @@ Historical phase reports describe older implementations and experimental designs
   independent reproduction and a student-authored submission with assistance
   disclosed under the current competition rules.
 
-## Next controlled development experiment
+## Completed controlled strengthening phase
 
-Diagnose the observed prediction and Jacobian failures before increasing model
-size. A possible development comparison is train-only smoothing/perturbation
-augmentation with stronger, appropriately normalized derivative supervision.
-Choose any settings exclusively on development validation, preserve all explored
-models, and freeze the eventual confirmation protocol before accessing new
-confirmation data. This is a proposed experiment, not a demonstrated improvement.
+- [x] Fixed-budget four-candidate augmentation/JVP development comparison, with retained failures and recovery evidence.
+- [x] Train-only classical POD rank/family comparison using the same validation criterion.
+- [x] Component coarse-stability and physical-adjoint directional certificate, including unavailable cases.
+- [x] Fixed five-model unused-index comparison: all 200 slots and 4,000 blocks retained.
+- [x] Separately frozen historical transfer, all 20 slices and nine parents retained.
+- [x] Cold-query scalar cost study with optimized exact and raw-POD controls; unfavorable acceleration result retained.
+- [x] Separate vector/source arithmetic audits and direct primary-literature boundary check.
 
-The competition outcome is not a software milestone and is not promised here.
+The next scientific milestones, success criteria and subjective assessment are in
+[jshs_research_plan.md](jshs_research_plan.md). The bounded batching/rank comparison
+is development reuse, not a new independent confirmation. None of these checks
+establishes field-scale acceleration, a national ranking, or student authorship.

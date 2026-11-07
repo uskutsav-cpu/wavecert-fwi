@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-07T22:00:12.685409+00:00",
+  "stage": "Prospective assistant-development fifth-comparator addendum before any fresh confirmation outcomes; public implementation and freeze still required",
+  "original_three_fno_plan": {
+    "path": "configs/gradient_confirmation_plan.json",
+    "sha256": "8330f33ee38255dbb14f54e2ddcd6f154bbe7d5f4a40b11f2560b652f563eb41"
+  },
+  "prior_four_model_pod_addendum": {
+    "path": "configs/pod_confirmation_addendum.json",
+    "sha256": "4022fabf898c8865e9d36849c144a0cecc08e26b1910b97f9b40e09f35a2751c",
+    "preserved_unchanged": true
+  },
+  "change": "Add exactly one fixed coarse-corrected POD physical state/adjoint proposal with an aggregate residual certificate as a fifth reported model. Preserve all three FNO controls and the uncorrected classical POD comparator.",
+  "choice_timing": "Chosen AFTER private train/validation-only stability/correction feasibility and the completed eight-validation-slice aggregate pilot on four source parents. This was not part of the original four-FNO training grid or either earlier confirmation plan. No fresh confirmation model outcomes have been evaluated.",
+  "known_development_evidence": {
+    "private_protocol_sha256": "567b8bd1b63341dd3a70b9c7cb1a947c3f491cb72ea8c5fc6df2c786c825fda2",
+    "private_script_sha256": "eba903a98fbf059d51cfc66eea6641cb3531b821941b0d8d24968b7ea2061654",
+    "private_result_sha256": {
+      "aggregate_cases.csv": "5bd7e154da8e8b703da2a37c820c41d93802ce8c168c889252c5e11f9f68c51e",
+      "block_cases.csv": "8df92ceb9452eb68eb2b7e4a3439fe2261978e55598e36bee820f39ea650465f",
+      "protocol.json": "567b8bd1b63341dd3a70b9c7cb1a947c3f491cb72ea8c5fc6df2c786c825fda2",
+      "status.json": "f928568ba2a9121b0e9b7acd259d4f4df8e168009ae674b6c6d67acfe7677410",
+      "summary.json": "67a84f64ba4ad972c23f6096f25df6a0c31bb238c00327311ffd2dc86c81eb84"
+    },
+    "observation": "On all eight original validation inverse slices (four parents, 24 source/frequency blocks each), generic uncorrected bound certified0/8, oriented uncorrected2/8 and fixed coarse-corrected oriented8/8. All observed directional errors were covered. This is development evidence used to choose this fifth comparator, not independent confirmation."
+  },
+  "fixed_method": {
+    "label": "coarse_corrected_pod",
+    "pod_family": "state+tangent",
+    "pod_rank": 64,
+    "pod_basis_artifact_sha256": "f2ae08cbcb251802ba7be92d69e87c28f425c5b1dfeede02fd94d6720c484447",
+    "coarse_stability_rank": 96,
+    "coarse_basis": "Fixed real low-stiffness eigenmodes of the existing fine-grid K operator; no fresh-model fitting or rank tuning",
+    "method_name": "coarse_corrected_oriented",
+    "proposal": "One fixed coarse defect correction to the POD physical state and recomputed physical adjoint. Build the physical approximate gradient from the corrected state/adjoint; no claim this is AD of the corrected-state objective.",
+    "direction": "For each original model, normalize minus the SUM of all four physical approximate block gradients at the identical shared smoothed m. Use this SAME direction in every block certificate.",
+    "aggregate_certificate": "Sum the four signed physical approximate directional derivatives and the four nonnegative deterministic residual error bounds at that shared direction. Report upper derivative and certified descent only when every block is available.",
+    "unavailable_policy": "If any frequency stability certificate is unavailable, retain raw POD fields/proposal for its blocks and report correction_skipped. Retain every model outcome and quality/cost. Aggregate available=false, certified_descent=false, exact_fallback_required=true, total bound and certified upper derivative=null. No online exact recovery is executed by this evaluator.",
+    "zero_or_nonfinite": "Preserve explicit abstention; zero aggregate gradient yields no strict certified descent. Nonfinite computation fails the attempt with all completed raw outcomes retained; no silent clipping into a passing value."
+  },
+  "prospective_cohort": "Exactly the existing fresh100 indices per family from each fixed400 complement; all4 source/frequency blocks retained per original index. No resampling, new models, family pooling, source/frequency change or fresh-data fit.",
+  "model_labels": [
+    "legacy_forward",
+    "legacy_jvp",
+    "development_winner",
+    "classical_pod",
+    "coarse_corrected_pod"
+  ],
+  "staging": "No fifth-model prediction until root reviews the public additive coarse-stability/certificate modules and a NEW immutable fifth-comparator freeze binds their exact source manifest, numerical runtime, fixed method parameters, selected POD basis, original StageB/StageC/POD freezes, and this addendum. All five labels and both families must be retained. Existing source/calibration/results remain immutable.",
+  "source_calibration": "Not evaluated for this fifth method. No FNO or uncorrected-POD calibration scale is transferred. This is a deterministic aggregate residual certificate; any later statistical calibration requires a separate explicit prospective protocol and dedicated freeze.",
+  "reporting": {
+    "primary": [
+      "Actual aggregate physical gradient cosine and true descent relative to the exact four-block reference",
+      "Aggregate certificate availability, strict certified descent, false acceptance and bound coverage, with failures/abstentions in denominators",
+      "Physical objective, exact/approximate gradient norms, aggregate directional derivative, deterministic bound, upper derivative and per-block components"
+    ],
+    "uncertainty": "Separate family/model N400,n100 fixed-index hypergeometric model-event bounds. Conditional generated-draw bootstrap clearly labeled; no real-site IID assumption or nominal conformal claim.",
+    "cost": "All online state/adjoint reduced solves, coarse setup/factorization/correction/residual/operator/norm work recorded. Exact held-out validation work separate; no exact online-recovery costs fabricated. No inference-to-inversion speedup extrapolation.",
+    "limits": [
+      "No new inversion policy or acceleration claim",
+      "No trajectory, unseen-family, real-site or field-scale guarantee",
+      "No claim of new POD, defect correction, Schur complement or residual bound theory",
+      "Private validation evidence is not independent confirmation; all previous controls remain reported"
+    ]
+  }
+}

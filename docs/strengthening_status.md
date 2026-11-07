@@ -3,6 +3,71 @@
 This is a technical development record, not a competition research paper,
 student interpretation, mentor endorsement, or claim of a 10/10 project.
 
+## Latest controlled evidence: 2026-11-07
+
+The project now has a much stronger classical comparator and a useful small-grid
+certificate, while the neural generalization and total-cost results remain limiting.
+All five models and negative outcomes were retained.
+
+| Completed study | Result | Scope |
+|---|---|---|
+| Four FNO training candidates | Smoothing + JVP winner: validation cosine 0.161, true descent 5/8 | Train/validation selection only; ENOSPC restart, all histories and recovery receipts retained |
+| Eight classical POD candidates | State+tangent rank64: validation cosine 0.99876, descent 8/8 | Train-only snapshots; established classical baseline, selected on the same validation criterion |
+| Coarse certificate validation | Generic / oriented / corrected: 0/8, 2/8, 8/8 certified | Eight reused validation slices / four parents; not confirmation |
+| Fixed five-model comparison | 200 original model slots, 1,000 model-label aggregates, 4,000 blocks | Previously unused indices from two known generated batches; source and inputs unchanged |
+| Corrected certificate on those 200 slots | 168/200 certified, 0 observed false certifications, 32 abstentions | All 200 stability contexts available; exact fallback required on abstention but not executed in this gradient-only study |
+| Historical parent transfer | Corrected: 16/16 ID and 2/4 OOD slices certified; all true directions descend | Eight ID parents and one OOD parent, descriptive historical test reuse |
+| Scalar cold-query controls | Exact 12.57 ms; raw POD 13.66 ms; corrected certificate 68.30 ms median total | Eight validation slices / four parents / three cold repetitions, setup included; different information tasks |
+
+On the fixed fresh indices, the newly trained neural model's mean actual aggregate
+gradient cosines are 0.05583 on FlatVel-A and -0.01178 on CurveFault-A. Raw POD's
+are 0.99745 and 0.99953; corrected POD's are 0.99866 and 0.99975. Both POD variants
+produce true descent on all 200 slots. Therefore this study demonstrates strong
+classical gradient quality and useful abstaining certification, but does not show
+that correction is needed for descent on this cohort or that the neural model is
+competitive. Cosines refer to summed gradient vectors, not averages of block cosines.
+
+All available block/aggregate errors were covered. Zero observed false
+certifications does not prove universal safety. Under each declared uniform
+100-index sample from its named 400-entry complement, the individual one-sided
+95% finite-population upper bound is 10/400 = 2.5%; it is not a simultaneous,
+independent-site, or future-inversion guarantee. The two source batches were
+already known during development. No held-out selection was made among the five
+fixed models.
+
+Historical transfer improves the new neural model's ID mean cosine to 0.35535,
+but its one-parent OOD mean is -0.45425 with 0/4 true descent. Raw/corrected POD
+remain above 0.9997 there. Four OOD slices do not create four independent parents.
+Other models in that study were not assigned a new certificate/calibration gate.
+
+The scalar corrected certificate performs zero online fine-grid LU/RHS work but
+is about 5.43 times slower than exact on this small grid. Its dense rank96 linear
+algebra, transforms, setup, and all current-model work are paid. This negative
+cost outcome is preserved. There is no inversion or equal-accuracy speedup claim.
+A separately frozen, validation-only batching/rank development study follows;
+its results must be reported separately from the earlier confirmation.
+
+The mathematical derivation is specific to the implemented real Dirichlet
+Laplacian plus diagonal complex damping. Exact-arithmetic inequalities use
+ordinary floating point with an engineering cancellation allowance, not a formal
+roundoff enclosure. The physical state/adjoint proposal is not asserted to be the
+exact derivative of the composite corrected-ROM objective. Close published
+state/adjoint gradient bounds and coarse corrections predate this project; see
+[literature.md](literature.md).
+
+### Reproducible result entry points
+
+- `results/gradient_development/README.md`: all four training paths and restart.
+- `results/pod_development`: eight classical comparisons and frozen basis.
+- `results/coarse_adjoint_validation`: all three certificate formulations.
+- `results/gradient_confirmation_selection`, `gradient_confirmation_calibration`,
+  `pod_confirmation_freeze`, `coarse_pod_confirmation_freeze`: immutable phase receipts.
+- `results/gradient_confirmation`: complete five-model comparison.
+- `results/historical_transfer_freeze`, `historical_transfer`: separately frozen transfer.
+- `results/coarse_runtime_controls`: complete scalar cold costs including failures of the acceleration hypothesis.
+- `results/strengthening_audit`: separate saved-vector/source arithmetic checks.
+- `results/coarse_development_exploration`: exploratory discovery including negative controls.
+
 ## Completed implementation improvements
 
 - Correct finite-sample conformal order statistics, explicit unsupported ranks,

@@ -1,0 +1,174 @@
+{
+  "recorded_utc": "2026-11-07T22:37:38.804593+00:00",
+  "review_role": "private read-only targeted primary-literature boundary check; not student competition prose",
+  "method_source_commit": "2edd4ad9beea9773f58b26f6dfda2c5d243a548f",
+  "runtime_source_commit": "53fb771cb100a03820609c0713c7df5daffbfcf7",
+  "scope": "Close certified RB state/adjoint-gradient bounds, Helmholtz/coarse-space certification, and transform-based spectral multiplication. A narrow search is not a systematic review and cannot prove novelty or priority.",
+  "sources": [
+    {
+      "id": "qian2017",
+      "authors": "Qian, Grepl, Veroy, Willcox",
+      "year": 2017,
+      "title": "A Certified Trust Region Reduced Basis Approach to PDE-Constrained Optimization",
+      "doi": "10.1137/16M1081981",
+      "primary_url": "https://kiwi.oden.utexas.edu/papers/multifidelity-optimization-adaptive-reduced-model-qian-grepl-veroy-willcox.pdf",
+      "checked_locations": "Lemma 3 eqs24\u201326; Theorem5 eqs28\u201332, ppS441\u2013S443",
+      "established": "Primal/dual residual error bounds and the three-term state/adjoint/product gradient-error expansion for quadratic costs.",
+      "scope_difference": "Coercive elliptic/parabolic RB setting; does not directly provide our current complex-indefinite component constants."
+    },
+    {
+      "id": "keil2021",
+      "authors": "Keil, Mechelli, Ohlberger, Schindler, Volkwein",
+      "year": 2021,
+      "preprint_year": 2020,
+      "title": "A non-conforming dual approach for adaptive Trust-Region Reduced Basis approximation of PDE-constrained optimization",
+      "doi": "10.1051/m2an/2021019",
+      "primary_url": "https://arxiv.org/pdf/2006.09297",
+      "checked_locations": "Section2.3 eqs13\u201314; Proposition2.7; Proposition2.8",
+      "established": "Explicit distinction between physical plug-in inexact gradients and true reduced-objective derivatives, with a posteriori gradient bounds.",
+      "scope_difference": "Their NCD-corrected reduced functional is not our sequential coarse-corrected state/adjoint proposal."
+    },
+    {
+      "id": "sen2006",
+      "authors": "Sen, Veroy, Huynh, Deparis, Nguyen, Patera",
+      "year": 2006,
+      "title": "Natural norm a posteriori error estimators for reduced basis approximations",
+      "doi": "10.1016/j.jcp.2006.02.012",
+      "primary_url": "https://www.mit.edu/~cuongng/project/rbm4/rbm4.pdf",
+      "checked_locations": "Abstract; Section6 deflated output estimates; Section7 offline/online cost",
+      "established": "Certified noncoercive Helmholtz RB outputs, inf-sup lower bounds and deflation near singular modes.",
+      "scope_difference": "Linear-functional output analysis; not our exact receiver least-squares directional implementation."
+    },
+    {
+      "id": "tang2009",
+      "authors": "Tang, Nabben, Vuik, Erlangga",
+      "year": 2009,
+      "title": "Comparison of Two-Level Preconditioners Derived from Deflation, Domain Decomposition and Multigrid Methods",
+      "doi": "10.1007/s10915-009-9272-6",
+      "primary_url": "https://diamhomes.ewi.tudelft.nl/~kvuik/papers/Tan09NVE.pdf",
+      "checked_locations": "Definition2.1 and Lemma2.1, p343; Section2.1",
+      "established": "Classical coarse matrix E=Z^TAZ and correction/projection Q=ZE^-1Z^T.",
+      "scope_difference": "Their convergence comparison assumes SPD matrices; no transfer of those convergence claims to our complex Helmholtz matrix."
+    },
+    {
+      "id": "shen2016",
+      "authors": "Shen, Wang, Xia",
+      "year": 2016,
+      "title": "Fast Structured Direct Spectral Methods for Differential Equations with Variable Coefficients, I. The One-Dimensional Case",
+      "doi": "10.1137/140986815",
+      "primary_url": "https://www.math.purdue.edu/~shen7/pub/SWX16.pdf",
+      "checked_locations": "Section2.1 eq2.8 and Remark1; abstract",
+      "established": "Fast-transform spectral multiplication/operator assembly for variable coefficients and structured spectral solvers.",
+      "scope_difference": "Fourier/Chebyshev 1D setting, not this selected DST-I low-mode 2D coupling Gram identity."
+    },
+    {
+      "id": "morin2024",
+      "authors": "Morin, Paux",
+      "year": 2024,
+      "title": "A fast numerical method for the conductivity of heterogeneous media with Dirichlet boundary conditions based on discrete sine\u2013cosine transforms",
+      "doi": "10.1016/j.cma.2024.116772",
+      "primary_url": "https://www.sciencedirect.com/science/article/pii/S0045782524000288",
+      "checked_locations": "Publisher indexed abstract; direct full-text open403",
+      "established": "Sine-Galerkin Dirichlet discretization with elementary integrals evaluated by sine/cosine transforms.",
+      "scope_difference": "Conductivity solver, not our Helmholtz stability certificate. Full derivation not inspected in this narrow review."
+    },
+    {
+      "id": "paux2025",
+      "authors": "Paux, Morin, Gelebart",
+      "year": 2025,
+      "first_online": "2024-11-26",
+      "title": "A Discrete Sine-Cosine Transforms Galerkin Method for the Conductivity of Heterogeneous Materials With Mixed Dirichlet/Neumann Boundary Conditions",
+      "doi": "10.1002/nme.7615",
+      "primary_url": "https://onlinelibrary.wiley.com/doi/full/10.1002/nme.7615",
+      "checked_locations": "Publisher-indexed abstract/conclusion; direct open403",
+      "established": "DCT/DST type-I/III evaluation of Galerkin integrals for heterogeneous conductivity.",
+      "scope_difference": "Related spectral-assembly motif; not evidence that the exact two-DCT Gram recipe has or has not appeared before."
+    },
+    {
+      "id": "buhr2014",
+      "authors": "Buhr, Engwer, Ohlberger, Rave",
+      "year": 2014,
+      "title": "A numerically stable a posteriori error estimator for reduced basis approximations of elliptic equations",
+      "primary_url": "https://arxiv.org/html/1407.8005v1",
+      "checked_locations": "Sections4.1\u20134.3; discussion of sqrt(epsilon) stagnation",
+      "established": "Traditional residual-norm Gram evaluation can suffer cancellation; a dedicated orthonormal residual basis improves stability.",
+      "scope_difference": "Does not validate our heuristic PSD shift. Its warning motivates independent floating-point reliability work."
+    },
+    {
+      "id": "li2026",
+      "authors": "Li, Que",
+      "year": 2026,
+      "version": "v2, 2026-10-13",
+      "title": "An adaptive localized orthogonal decomposition method for Helmholtz problems",
+      "primary_url": "https://arxiv.org/html/2609.24776v2",
+      "checked_locations": "Abstract; Section1; Section2.1 discrete-stability assumption",
+      "established": "Helmholtz residual-certified coarse spaces, additive-Schwarz enrichment and POD compression across load families.",
+      "scope_difference": "LOD/load-family/coarse-space framework, not our frozen global POD parameter-gradient certificate; no gradient analysis identified in the inspected text."
+    }
+  ],
+  "claim_vs_prior": [
+    {
+      "claim": "New certified surrogate gradient theorem",
+      "assessment": "Not supportable",
+      "prior": [
+        "qian2017",
+        "keil2021"
+      ],
+      "project_boundary": "Direction/component specialization of established physical-gradient error expansion."
+    },
+    {
+      "claim": "First certified Helmholtz reduced model or deflated estimator",
+      "assessment": "Not supportable",
+      "prior": [
+        "sen2006",
+        "li2026"
+      ],
+      "project_boundary": "Specific reference-operator implementation and empirical availability/effectivity evidence."
+    },
+    {
+      "claim": "New coarse residual correction",
+      "assessment": "Not supportable as a general idea",
+      "prior": [
+        "tang2009",
+        "sen2006"
+      ],
+      "project_boundary": "Sequential POD state/updated-adjoint-RHS correction integrated with the same fine-DD bound."
+    },
+    {
+      "claim": "New use of fast sine/cosine transforms for Galerkin variable coefficients",
+      "assessment": "Not supportable as a general idea",
+      "prior": [
+        "shen2016",
+        "morin2024",
+        "paux2025"
+      ],
+      "project_boundary": "Exact discrete selected-moment and coupling-Gram recipe for this real-Laplacian/diagonal-potential operator; no priority established."
+    },
+    {
+      "claim": "Formally reliable floating-point certificate",
+      "assessment": "Not established",
+      "prior": [
+        "buhr2014"
+      ],
+      "project_boundary": "Exact-arithmetic inequalities plus ordinary-FP implementation/heuristic cancellation allowance and observed discrete checks."
+    },
+    {
+      "claim": "End-to-end inversion acceleration or certified optimizer convergence",
+      "assessment": "Not established by current implementation/pilot",
+      "prior": [
+        "qian2017",
+        "keil2021"
+      ],
+      "project_boundary": "Pointwise directional proposals and abstentions only; no finite-step or trajectory result."
+    }
+  ],
+  "remaining_evidence_gaps": [
+    "Fair same-operator comparison against established global primal/dual error-bound practice; current generic/oriented/corrected pilot is an internal ablation.",
+    "Stability-bound availability as frequency/contrast/grid/boundary assumptions change; no general field-physics claim.",
+    "Verified or stably controlled floating-point Gram and residual evaluation; heuristic PSD margin is not a roundoff proof.",
+    "Actual cold setup/query costs and eventually complete inversion/time-to-target evidence; runtime source exists but no timing executed by this review.",
+    "A separate honest account of prior art, student-created work, and AI-assisted derivation/implementation; this search does not establish student ownership."
+  ],
+  "structure_specific_observation": "The present mass coefficient has one parameter per grid cell. Standard small-affine-complexity RB offline/online claims do not automatically make that grid-sized parameter complexity free. The fast DCT stability assembly exploits the fixed discrete sine structure; full-grid POD mass projection and residual stencils remain paid work.",
+  "files_or_experiments_changed": "Only this outer-work scratch JSON; no repository source/docs edits, timing, experiments, held-out inspection or main writes."
+}
