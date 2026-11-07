@@ -147,3 +147,45 @@ def test_output_symlink_cannot_escape_root_and_atomic_write_leaves_no_partial(tm
     prep._atomic_write(root, "family/payload.npy", b"verified payload")
     assert (root / "family/payload.npy").read_bytes() == b"verified payload"
     assert list((root / "family").iterdir()) == [root / "family/payload.npy"]
+
+
+def _calibration_fixture(root):
+    frozen = b'{"conformal_scale": 0.25, "frozen_development_summary": true}\n'
+    checkpoint = {
+        "label": "forward_only",
+        "calibration_summary_path": "results/grouped_wavecert/summary.json",
+        "calibration_summary_sha256": prep._sha256(frozen),
+    }
+    original = root / checkpoint["calibration_summary_path"]
+    bundled = root / "data/reference/openfwi_source_calibration/forward_only.json"
+    original.parent.mkdir(parents=True)
+    bundled.parent.mkdir(parents=True)
+    return frozen, checkpoint, original, bundled
+
+
+@pytest.mark.parametrize("original_exists", [True, False])
+def test_stale_or_missing_calibration_uses_exact_bundled_snapshot(tmp_path, original_exists):
+    frozen, checkpoint, original, bundled = _calibration_fixture(tmp_path)
+    if original_exists:
+        original.write_bytes(b'{"conformal_scale": 0.9, "later_reproduction": true}\n')
+    bundled.write_bytes(frozen)
+    data, resolved = prep.resolve_calibration_snapshot(tmp_path, checkpoint)
+    assert data == frozen
+    assert resolved == "data/reference/openfwi_source_calibration/forward_only.json"
+
+
+def test_calibration_resolution_rejects_both_corrupt_candidates(tmp_path):
+    _, checkpoint, original, bundled = _calibration_fixture(tmp_path)
+    original.write_bytes(b'{"conformal_scale": 0.9}\n')
+    bundled.write_bytes(b'{"conformal_scale": 0.1}\n')
+    with pytest.raises(ValueError, match="neither original calibration summary nor bundled snapshot"):
+        prep.resolve_calibration_snapshot(tmp_path, checkpoint)
+
+
+def test_matching_original_calibration_is_preferred(tmp_path):
+    frozen, checkpoint, original, bundled = _calibration_fixture(tmp_path)
+    original.write_bytes(frozen)
+    bundled.write_bytes(b"corrupt fallback must not replace matching original")
+    data, resolved = prep.resolve_calibration_snapshot(tmp_path, checkpoint)
+    assert data == frozen
+    assert resolved == checkpoint["calibration_summary_path"]

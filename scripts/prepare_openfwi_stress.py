@@ -205,6 +205,36 @@ def _duplicate_groups(hashes):
     return [indices for indices in groups.values() if len(indices) > 1]
 
 
+def resolve_calibration_snapshot(root: Path, checkpoint: dict) -> tuple[bytes, str]:
+    """Resolve the exact protocol-pinned calibration bytes without recalibration.
+
+    A later reproduction may overwrite the original results summary. Prefer
+    that original path only when its bytes match; otherwise require the bundled
+    historical snapshot to match the same frozen hash. Neither candidate can
+    substitute a newly computed scale or bypass the protocol identity check.
+    """
+    root = root.resolve()
+    label = checkpoint["label"]
+    expected = checkpoint["calibration_summary_sha256"]
+    if not re.fullmatch(r"[A-Za-z][A-Za-z0-9_]*", label):
+        raise ValueError("checkpoint label must be safe")
+    if not re.fullmatch(r"[0-9a-f]{64}", expected):
+        raise ValueError("calibration summary must have a frozen SHA256")
+    candidates = [
+        checkpoint["calibration_summary_path"],
+        f"data/reference/openfwi_source_calibration/{label}.json",
+    ]
+    for relative in candidates:
+        candidate = _contained_path(root, relative)
+        if candidate.is_file():
+            data = candidate.read_bytes()
+            if _sha256(data) == expected:
+                return data, candidate.relative_to(root).as_posix()
+    raise ValueError(
+        "neither original calibration summary nor bundled snapshot matches the frozen protocol"
+    )
+
+
 def prepare(protocol_path: Path, output: Path, *, opener=urllib.request.urlopen) -> dict:
     root = Path(__file__).resolve().parents[1]
     protocol_bytes = protocol_path.read_bytes()
@@ -237,10 +267,8 @@ def prepare(protocol_path: Path, output: Path, *, opener=urllib.request.urlopen)
             raise ValueError("checkpoint labels must be safe and unique")
         if sha256_file(_contained_path(root, checkpoint["path"])) != checkpoint["sha256"]:
             raise ValueError("checkpoint differs from frozen protocol")
-        calibration = _contained_path(root, checkpoint["calibration_summary_path"]).read_bytes()
-        if _sha256(calibration) != checkpoint["calibration_summary_sha256"]:
-            raise ValueError("calibration summary differs from frozen protocol")
-        calibration_snapshots[label] = calibration
+        calibration, resolved_path = resolve_calibration_snapshot(root, checkpoint)
+        calibration_snapshots[label] = {"bytes": calibration, "resolved_snapshot_path": resolved_path}
 
     # Publish the exact protocol, selections and freeze timestamp before ANY
     # velocity payload request or inspection. Never resample after inspection.
@@ -256,11 +284,13 @@ def prepare(protocol_path: Path, output: Path, *, opener=urllib.request.urlopen)
     frozen_calibrations = []
     for checkpoint in protocol["checkpoints"]:
         relative = f"calibration/{checkpoint['label']}.json"
-        data = calibration_snapshots[checkpoint["label"]]
+        snapshot = calibration_snapshots[checkpoint["label"]]
+        data = snapshot["bytes"]
         _atomic_write(output, relative, data)
         frozen_calibrations.append({
             "label": checkpoint["label"], "path": relative,
             "source_path": checkpoint["calibration_summary_path"], "sha256": _sha256(data),
+            "resolved_snapshot_path": snapshot["resolved_snapshot_path"],
         })
     provenance = environment_record(root)
     request = urllib.request.Request(archive["metadata_url"], headers={"Accept-Encoding": "identity"})
