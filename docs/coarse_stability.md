@@ -28,6 +28,9 @@ eigenvalue multiplicity remains valid: the first omitted eigenvalue is still
 the minimum eigenvalue on Q. Projection/lifting use orthonormal DST-I without
 storing an N×r basis. A deterministic signature hashes the configuration,
 selected integer modes, ordered eigenvalues and damping vector.
+Each result separately binds its input model with a SHA256 of the flat,
+C-order little-endian float64 squared-slowness bytes. Complex model inputs
+are rejected explicitly, even when their imaginary component is zero.
 
 For any real grid field f, set M_f=Bᵀdiag(f)B. Products of two sines give four
 cosine terms. On a zero-padded `(nz+2)×(nx+2)` grid, unnormalized DCT-I T gives

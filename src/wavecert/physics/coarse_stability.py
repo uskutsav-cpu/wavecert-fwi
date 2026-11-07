@@ -166,6 +166,8 @@ class FastCoarseStability:
                 - transformed[zd, xs] + transformed[zs, xs]) / (4 * (nz + 1) * (nx + 1))
 
     def evaluate(self, m: np.ndarray, frequency_hz: float) -> CoarseStabilityResult:
+        if np.iscomplexobj(m):
+            raise ValueError("squared slowness must be real; complex inputs are not supported")
         model = np.asarray(m, dtype=float).reshape(-1)
         if model.size != self.n or not np.all(np.isfinite(model)) or np.any(model <= 0):
             raise ValueError("squared slowness must match the grid and be finite and positive")
@@ -271,6 +273,8 @@ class CoarseStabilityResult:
     def __init__(self, engine: FastCoarseStability, model: np.ndarray, frequency_hz: float):
         self._engine = engine
         self._model = _readonly(model)
+        self._model_sha256 = hashlib.sha256(
+            self._model.astype("<f8").tobytes(order="C")).hexdigest()
         self._frequency_hz = frequency_hz
         self._omega = 2 * np.pi * frequency_hz
         self.available = False
@@ -295,6 +299,10 @@ class CoarseStabilityResult:
     @property
     def omega(self) -> float:
         return self._omega
+
+    @property
+    def model_sha256(self) -> str:
+        return self._model_sha256
 
     @property
     def n(self) -> int:
@@ -346,6 +354,8 @@ class CoarseStabilityResult:
         return dict(available=self.available, reason=self.reason, rank=self.rank, n=self.n,
                     frequency_hz=self.frequency_hz, physics_config=self.physics_config,
                     operator_signature=self.operator_signature,
+                    model_sha256=self.model_sha256,
+                    model_sha256_encoding="C-order flat little-endian float64 squared slowness",
                     gamma=finite(self.gamma), a=finite(self.a), ell=finite(self.ell),
                     k=finite(self.k), tau=finite(self.tau),
                     beta_lower_bound=self.beta_lower_bound,

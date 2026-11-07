@@ -161,6 +161,7 @@ def test_snapshot_immutability_model_byte_cache_and_no_fine_solver_calls(monkeyp
     engine = FastCoarseStability(p, 10, model_cache_size=1)
     m = np.full(p.n, 0.2)
     first = engine.evaluate(m, 2.0)
+    first_model_hash = first.to_dict()["model_sha256"]
     with pytest.raises(AttributeError):
         first.frequency_hz = 123.0
     with pytest.raises(AttributeError):
@@ -182,7 +183,9 @@ def test_snapshot_immutability_model_byte_cache_and_no_fine_solver_calls(monkeyp
     monkeypatch.setattr(Helmholtz2D, "solve_state", prohibited)
     engine.evaluate(np.full(engine.n, 0.2), 2.1)
     assert engine.cost_snapshot()["model_cache_hits"] == 1
-    engine.evaluate(m, 2.0)
+    changed = engine.evaluate(m, 2.0)
+    assert changed.to_dict()["model_sha256"] != first_model_hash
+    assert first.to_dict()["model_sha256"] == first_model_hash
     assert engine.cost_snapshot()["online_dct_I_real_transforms"] == 4
     m[:] = 0.2
     engine.evaluate(m, 2.0)
@@ -217,6 +220,9 @@ def test_explicit_unavailability_and_validation(monkeypatch):
     for invalid in (np.zeros(p.n), np.full(p.n, np.nan), np.ones(p.n - 1)):
         with pytest.raises(ValueError):
             engine.evaluate(invalid, 2.0)
+    for imaginary in (0.0, 0.1):
+        with pytest.raises(ValueError, match="must be real"):
+            engine.evaluate(np.full(p.n, 0.2 + 1j * imaginary), 2.0)
     for rank in (True, 0, p.n):
         with pytest.raises(ValueError):
             FastCoarseStability(p, rank)
