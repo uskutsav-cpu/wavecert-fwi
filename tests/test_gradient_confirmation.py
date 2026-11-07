@@ -246,6 +246,12 @@ def test_heldout_tools_cannot_predict_without_the_selection_and_calibration_free
     with pytest.raises(FileNotFoundError):
         confirmation.run_selected_calibration(freeze_dir=tmp_path / "absent", repository_root=ROOT,
             dataset_dir=ROOT / "data/reference/subsurfacegen_parent_split", output_dir=tmp_path / "calibration")
+    assert not (tmp_path / "calibration").exists()
+
+
+def test_fno_outcome_prediction_requires_both_freezes(tmp_path, monkeypatch):
+    pytest.importorskip("torch")
+    monkeypatch.setattr(confirmation.TrainedFNOWavefieldSurrogate, "load", lambda *a, **k: pytest.fail("prediction model loaded before freeze"))
     with pytest.raises(FileNotFoundError):
         confirmation.run_gradient_confirmation(plan_path=PLAN, repository_root=ROOT,
             selection_dir=tmp_path / "absent", calibration_dir=tmp_path / "absent", data_dir=tmp_path,
@@ -423,7 +429,7 @@ def recovered_training(completed_training, monkeypatch):
     import math
     import shutil
 
-    import torch
+    torch = pytest.importorskip("torch")
 
     from wavecert.surrogates.fno import WavefieldNormalization
 

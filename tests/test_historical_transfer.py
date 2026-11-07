@@ -189,6 +189,7 @@ def test_all20_slices_are_clustered_into8_id_and1_ood_parent_without_iid_interva
 
 @pytest.fixture
 def historical_prior_chain(request, tmp_path):
+    pytest.importorskip("torch")
     selection, calibration, pod_dir = request.getfixturevalue("integrated_freeze_inputs")
     coarse_dir = tmp_path / "fifth"
     coarse.freeze_coarse_pod_comparator(addendum_path=ROOT / "configs/coarse_corrected_pod_confirmation_addendum.json",
