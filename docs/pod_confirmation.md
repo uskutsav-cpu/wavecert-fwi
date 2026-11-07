@@ -78,3 +78,34 @@ certification, records correction skipped and exact fallback required, and
 serializes unavailable bound/upper values as null. This evaluator does not
 execute an online exact recovery. No fifth-comparator outcome has been run by
 these tools.
+
+The fifth adapter is `scripts/coarse_pod_confirmation.py`. It has a distinct
+`freeze` stage after B, C and the raw-POD freeze, followed by `evaluate-five`.
+The latter retains the complete earlier four-model report and a separate fifth
+report. A complete wrapper requires **4,000 blocks / 1,000 model-label cases**;
+any failed subrun leaves a failed wrapper and all already returned outcomes.
+The fifth report retains per-model JSON certificates, stability contexts,
+canonical physical-model hashes, fixed coarse operator signature, per-block
+components, vectors and all online cost counters. Public module paths must
+match the checkout whose source manifest is being frozen. No source tree is
+frozen while silently executing another installed copy of these modules.
+
+The fifth evaluator checks the public certificate's actual four physical
+block gradients, their sum, the shared normalized negative direction, signed
+block/aggregate derivatives and summed nonnegative bounds against saved exact
+reference gradients. An observed false acceptance or missed bound is retained
+as a failure outcome, not rewritten as passing. Every unavailable case remains
+in all100-index denominators. Hypergeometric failure events are unconditional;
+availability is reported separately, without implying a conditional coverage
+guarantee among a data-selected subset of available cases. Optional cosine
+bootstrap intervals retain their conditional generated-draw assumption.
+
+The public reference operator is the unchanged damped complex-symmetric
+Dirichlet Helmholtz discretization with real positive squared slowness. The
+coarse bound uses its fixed low Laplacian modes. The inequalities concern exact
+arithmetic for this discrete operator; numerical Gram allowances and ordinary
+floating-point residual calculations are **not formally verified roundoff
+enclosures**. A new PDE/operator, geometry, parameter choice or statistical
+gate requires an explicit new prospective amendment and freeze. The evaluator
+runs no online exact fallback even when the certificate says one is required;
+its separately paid exact solves are offline validation references.
