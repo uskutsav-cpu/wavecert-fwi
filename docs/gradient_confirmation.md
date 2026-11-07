@@ -161,3 +161,24 @@ The native velocity cache can be obtained with the existing bounded
 `prepare_openfwi_stress.py` workflow. These confirmation tools download nothing
 and have no training option. Runtime/source/input hashes, raw tables, offline
 physics costs, aggregate vectors and completion/failure status are saved.
+
+## Explicit admission of an interrupted training study
+
+An ENOSPC-interrupted run is not silently treated as uninterrupted. The
+optional recovery admission checks the separately reviewed I/O-only driver
+SHA256, preserved original failure and all three completed candidates,
+unchanged pinned teacher archives, recomputed shared raw-training normalization,
+all four checkpoint metadata, finite optimizer histories and exact learning-rate
+schedule. The restarted fourth candidate must reproduce the preserved first
+100 optimizer records and update-zero validation baseline exactly, then finish
+the original 2,000-update chain. Its alternate recovery directory is explicit.
+
+The Stage B freeze copies the driver, failure/recovery receipts, original partial
+and completed histories. It preserves `source_unchanged_during_run=null`,
+`inputs_unchanged_during_run=null` and the absence of an original start-runtime
+receipt. Matching initial/end/recovery source identities and unchanged recovery
+inputs are reported separately. Actual work is **2,100 fourth-candidate updates,
+8,100 total updates** including the preserved failed prefix; no end-to-end wall
+time is reconstructed. The original selection/protocol and all partial outcomes
+remain intact. This admission enables later separately authorized stages; it
+makes no new unseen-data or uninterrupted-runtime claim.

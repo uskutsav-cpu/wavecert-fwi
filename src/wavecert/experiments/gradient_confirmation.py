@@ -31,6 +31,13 @@ from wavecert.statistics.finite_population import finite_population_failure_summ
 from wavecert.surrogates.fno import TrainedFNOWavefieldSurrogate
 
 FROZEN_PLAN_SHA256 = "8330f33ee38255dbb14f54e2ddcd6f154bbe7d5f4a40b11f2560b652f563eb41"
+RECOVERY_DRIVER_SHA256 = "f38f3ed712346a198e364e92585adf1f04dc167f4b8eaa835311715bfe5298bc"
+RECOVERY_TEACHER_SHA256 = "2140b9790845caae527ce6a0437a5d8563b377fda455a8d41f44ff0f1546657f"
+RECOVERY_LABEL_SHA256 = {
+    "train": "e0711c00a0b576c5ac7940e8a247d333031ca3d9091aada56e15bd0b8298a7d8",
+    "validation": "3d969f7c71145faed10266ab99af30266aaa99994b5aa3814440b2a2979fc2c0",
+    "validation_inverse_cases": "be429def325b741d415546167b8e13b5d52a3304d79f36efd3945a58363177db",
+}
 
 
 def _json(path):
@@ -205,16 +212,161 @@ def _training_source_path(name):
             (path.parent.as_posix() == "." and path.match("requirements*.txt")))
 
 
+def _recovered_training_admission(summary, status, training_dir, protocol):
+    """Admit the specifically reviewed I/O-only restart with explicit limits.
+
+    This does not turn unknown original runtime or continuous source monitoring
+    into True. Stored initial/end/recovery identities and restart equality are
+    evidence of reproducibility, not a reconstructed uninterrupted experiment.
+    """
+    import torch
+
+    from wavecert.experiments.gradient_development import WavefieldNormalization
+
+    _require(summary.get("recovered_from_interruption") is True and
+             summary["source_unchanged_during_run"] is None and summary["inputs_unchanged_during_run"] is None and
+             summary["source_unchanged_during_recovery"] is True and
+             summary["inputs_unchanged_during_recovery"] is True and
+             summary["recorded_initial_end_and_recovery_source_digests_match"] is True and
+             summary["original_start_runtime_receipt_available"] is False and summary["elapsed_seconds"] is None,
+             "recovered training must preserve unknown original runtime/whole-run monitoring")
+    receipt = summary["recovery"]
+    tag = receipt["recovery_id"]
+    _require(isinstance(tag, str) and Path(tag).name == tag and tag not in {"", ".", ".."},
+             "invalid recovery attempt identity")
+    recovery = _inside(training_dir, f"recovery_attempts/{tag}")
+    failure = _inside(training_dir, f"failure_attempts/{tag}")
+    _require(_json(recovery / "recovery_receipt.json") == receipt and receipt["status"] == "complete" and
+             status.get("recovered_from_enospc") is True and status["recovery_id"] == tag,
+             "recovery completion receipt is missing or inconsistent")
+    _require(receipt["driver_sha256"] == RECOVERY_DRIVER_SHA256 and
+             sha256_file(receipt["driver_path"]) == RECOVERY_DRIVER_SHA256,
+             "reviewed recovery driver bytes changed")
+    _require(receipt["frozen_source_sha256"] == summary["source_sha256_at_end"] ==
+             summary["initial_source_sha256_recovered_from_retained_checkpoints"] == summary["provenance"]["source_sha256"] and
+             receipt["protocol_sha256"] == summary["protocol_sha256"],
+             "initial/end/recovery source or protocol identities differ")
+    _require(receipt["runtime_audit"]["original_start_runtime_receipt_available"] is False and
+             receipt["runtime_audit"]["current_environment"] == summary["provenance"],
+             "recovery runtime reconstruction differs from the recorded environment")
+    _require(receipt["fourth_candidate_restarted_from_seed"] is True and
+             receipt["fourth_failed_attempt_updates_preserved"] == 100 and
+             receipt["fourth_successful_attempt_updates"] == 2000 and
+             receipt["fourth_total_executed_updates_across_attempts"] == 2100 and
+             receipt["retained_three_candidates_retrained"] is False and
+             receipt["io_policy"]["first_100_optimizer_records_identical"] is True and
+             receipt["io_policy"]["initial_validation_baseline_identical"] is True,
+             "recovery must retain its original 100 extra updates and fixed restart budget")
+    original = _json(failure / "status.json")
+    _require(original == receipt["original_failure"] and original["status"] == "failed" and
+             "No space left on device" in original["error"] and
+             original["completed_candidate_names"] == [c["name"] for c in protocol["candidates"][:3]] and
+             original["protocol_sha256"] == summary["protocol_sha256"],
+             "preserved original ENOSPC failure is inconsistent")
+    preservation = _json(failure / "preservation_receipt.json")
+    _require(preservation["status"] == "running" and
+             all(receipt.get(key) == value for key, value in preservation.items() if key != "status"),
+             "initial recovery preservation receipt changed")
+    _require(_json(failure / "completed_candidates.json") == summary["candidates"][:3],
+             "recovery must preserve all three previously completed candidates")
+    required_protected = {"protocol.json", "teacher_labels.json", "input_audit.json", "normalization.json"}
+    required_protected |= {f"labels/{role}.npz" for role in RECOVERY_LABEL_SHA256}
+    required_protected |= {f"candidates/{c['name']}/{name}" for c in protocol["candidates"][:3]
+                          for name in ("summary.json", "training_history.csv", "validation_history.json", "best.pt", "best_validation.json")}
+    _require(required_protected <= set(receipt["protected_file_sha256"]),
+             "recovery receipt omits protected original inputs/candidate files")
+    for name, checksum in receipt["protected_file_sha256"].items():
+        _require(sha256_file(_inside(training_dir, name)) == checksum, f"protected recovery input changed: {name}")
+    partial = _inside(training_dir, "candidates/augmented_derivative")
+    partial_copy = failure / "partial_candidate/augmented_derivative"
+    _require({"training_history.csv", "validation_history.json"} <= set(receipt["preserved_partial_sha256"]),
+             "preserved restart baseline/history is missing")
+    for name, checksum in receipt["preserved_partial_sha256"].items():
+        _require(sha256_file(_inside(partial, name)) == sha256_file(_inside(partial_copy, name)) == checksum,
+                 "preserved original failed partial changed")
+    restarted = recovery / "candidate/augmented_derivative"
+    def rows(path):
+        with path.open(newline="") as stream:
+            return list(csv.DictReader(stream))
+    prefix = rows(partial / "training_history.csv")
+    baseline = _json(partial / "validation_history.json")
+    _require(len(prefix) == 100 and rows(restarted / "training_history.csv")[:100] == prefix,
+             "restarted first 100 optimizer records differ from original partial")
+    _require(len(baseline) == 1 and baseline[0]["optimizer_update"] == 0 and
+             baseline[0]["checkpoint_eligible"] is False and
+             _json(restarted / "validation_history.json")[0] == baseline[0],
+             "restarted initial validation differs from the original baseline")
+    teacher_path = training_dir / "teacher_labels.json"
+    _require(sha256_file(teacher_path) == RECOVERY_TEACHER_SHA256,
+             "original pinned teacher-label receipt changed")
+    records = _json(teacher_path)
+    _require(summary["teacher_labels"] == records and _json(training_dir / "input_audit.json") == summary["input_audit"],
+             "recovered summary teacher/input receipts differ")
+    for role, checksum in RECOVERY_LABEL_SHA256.items():
+        _require(sha256_file(training_dir / f"labels/{role}.npz") == checksum == records[role]["artifact_sha256"],
+                 "original pinned teacher archive changed")
+    with np.load(training_dir / "labels/train.npz", allow_pickle=False) as archive:
+        raw_count = len(archive["models"]) // 2
+        normalization = vars(WavefieldNormalization.from_arrays(archive["models"][:raw_count],
+            archive["frequencies_hz"][:raw_count], archive["fields"][:raw_count]))
+    stored = _json(training_dir / "normalization.json")
+    _require(summary["normalization"] == normalization == {key: stored[key] for key in normalization},
+             "shared raw-training-only normalization changed")
+    for candidate, item in zip(protocol["candidates"], summary["candidates"], strict=True):
+        directory = restarted if candidate["name"] == "augmented_derivative" else training_dir / "candidates" / candidate["name"]
+        history = rows(directory / "training_history.csv")
+        _require(len(history) == 2000, "recovered candidate optimizer history is incomplete")
+        for update, row in enumerate(history, 1):
+            keys = ["total_loss", "full_field_relative_squared_l2", "receiver_relative_squared_l2",
+                    "preclip_parameter_gradient_norm", "learning_rate_used"]
+            if candidate["derivative_weight"] > 0:
+                keys.append("jvp_relative_squared_l2")
+            lr = protocol["training"]["scheduler_eta_min"] + .5 * (
+                protocol["training"]["learning_rate"] - protocol["training"]["scheduler_eta_min"]) * (
+                    1 + math.cos(math.pi * (update - 1) / 2000))
+            _require(int(row["optimizer_update"]) == update and int(row["batch_size"]) == 32 and
+                     float(row["derivative_weight"]) == candidate["derivative_weight"] and
+                     row["jvp_training_evaluated"] == str(candidate["derivative_weight"] > 0) and
+                     all(math.isfinite(float(row[key])) for key in keys) and
+                     math.isclose(float(row["learning_rate_used"]), lr, rel_tol=1e-10, abs_tol=1e-12),
+                     "recovered optimizer history has nonfinite losses or changed training budget/schedule")
+        best = _json(directory / "best_validation.json")
+        _require(item["candidate"] == candidate and item["best_validation"] == best and
+                 best in _json(directory / "validation_history.json"),
+                 "recovered best-checkpoint validation receipt changed")
+        _require(Path(item["checkpoint_path"]).resolve() == (directory / "best.pt").resolve(),
+                 "recovered candidate checkpoint points outside its audited attempt")
+        payload = torch.load(directory / "best.pt", map_location="cpu", weights_only=True)
+        _require(payload["development_source_sha256"] == receipt["frozen_source_sha256"] and
+                 payload["development_protocol_sha256"] == receipt["protocol_sha256"] and
+                 payload["candidate"] == candidate and payload["optimizer_updates_budget"] == 2000 and
+                 payload["best_optimizer_update"] == item["best_optimizer_update"] and
+                 payload["best_validation_selection_score"] == item["best_validation_score"] and
+                 payload["normalization"] == normalization and payload["model_config"] == protocol["model"] and
+                 payload["teacher_label_artifacts"] == records and
+                 payload["dataset_manifest_sha256"] == summary["input_audit"]["dataset_manifest_sha256"] and
+                 payload["training_manifest_sha256"] == summary["input_audit"]["role_manifest_sha256"] and
+                 payload["calibration_role_used_for_model_selection"] is False and
+                 payload["calibration_or_test_arrays_loaded"] is False and payload["external_test_arrays_loaded"] is False,
+                 "recovered checkpoint metadata differs from the frozen source/protocol/input budget")
+    return {"mode": "explicit-audited-ENOSPC-restart", "recovery_id": tag,
+        "whole_run_source_and_inputs_unchanged": None, "original_start_runtime_receipt_available": False,
+        "recorded_initial_end_recovery_source_identities_match": True, "source_and_inputs_unchanged_during_recovery": True,
+        "logical_optimizer_updates_per_candidate": 2000, "fourth_candidate_actual_executed_updates": 2100,
+        "total_actual_executed_updates": 8100, "driver_sha256": RECOVERY_DRIVER_SHA256,
+        "receipt_sha256": sha256_file(recovery / "recovery_receipt.json"),
+        "limitations": summary["limitations"],
+        "scope": "Explicit restart admission, not uninterrupted-run provenance; original runtime and total wall time remain unknown."}
+
+
 def _training_selection(plan, training_dir, source_root):
     """Audit all candidates and the existing selector, without held-out loads."""
     training_dir, source_root = Path(training_dir), Path(source_root)
     summary, status = _json(training_dir / "summary.json"), _json(training_dir / "status.json")
     selection, completed = _json(training_dir / "selection.json"), _json(training_dir / "completed_candidates.json")
     cfg = plan["development_training"]
-    _require(status["status"] == summary["status"] == "complete" and
-             summary["source_unchanged_during_run"] is True and summary["inputs_unchanged_during_run"] is True and
-             selection["source_and_inputs_unchanged"] is True,
-             "training must be complete with unchanged source and inputs")
+    _require(status["status"] == summary["status"] == "complete" and selection["source_and_inputs_unchanged"] is True,
+             "training must be complete with its frozen selection receipt")
     _require(summary["calibration_or_test_arrays_loaded"] is False and summary["external_test_arrays_loaded"] is False and
              summary["input_audit"]["opened_array_roles"] == ["train", "validation"],
              "development training must exclude calibration/test/external arrays")
@@ -224,6 +376,12 @@ def _training_selection(plan, training_dir, source_root):
     _require(summary["provenance"]["git_revision"].startswith(cfg["source_commit"]),
              "training source commit differs from the prospective plan")
     protocol = _json(training_dir / "protocol.json")
+    if summary.get("recovered_from_interruption") is True:
+        admission = _recovered_training_admission(summary, status, training_dir, protocol)
+    else:
+        _require(summary["source_unchanged_during_run"] is True and summary["inputs_unchanged_during_run"] is True,
+                 "training must be complete with unchanged source and inputs or explicit audited recovery")
+        admission = {"mode": "uninterrupted-recorded-run", "whole_run_source_and_inputs_unchanged": True}
     names = cfg["required_candidates"]
     _require([c["name"] for c in protocol["candidates"]] == names and
              protocol["training"]["optimizer_updates"] == cfg["required_optimizer_updates_per_candidate"] == 2000,
@@ -239,7 +397,9 @@ def _training_selection(plan, training_dir, source_root):
              "source role/dataset identity changed after training")
     snapshots = {}
     for item in completed:
-        candidate_dir = training_dir / "candidates" / item["name"]
+        candidate_dir = (training_dir / "recovery_attempts" / admission["recovery_id"] / "candidate" / item["name"]
+                         if admission["mode"] == "explicit-audited-ENOSPC-restart" and item["name"] == "augmented_derivative"
+                         else training_dir / "candidates" / item["name"])
         _require(item["status"] == "complete" and item["optimizer_updates_completed"] == 2000 and
                  item["calibration_or_test_arrays_loaded"] is False and item["external_test_arrays_loaded"] is False and
                  _json(candidate_dir / "summary.json") == item, "a candidate is incomplete or its report changed")
@@ -272,18 +432,31 @@ def _training_selection(plan, training_dir, source_root):
              selection["best_optimizer_update"] == chosen["best_optimizer_update"] and
              selection["validation_selection_score"] == chosen["best_validation_score"],
              "winner differs from the frozen validation-only selection rule")
-    return summary, selection, snapshots
+    return summary, selection, snapshots, admission
 
 
 def freeze_selected_checkpoint(*, plan_path, repository_root, training_dir, training_source_root, output_dir):
     """Stage B: write an immutable selection freeze before new held-out calls."""
     root = Path(repository_root)
     plan = validate_confirmation_plan(plan_path, root)
-    summary, selection, candidates = _training_selection(plan, training_dir, training_source_root)
+    summary, selection, candidates, admission = _training_selection(plan, training_dir, training_source_root)
     output = _new_directory(output_dir)
     _write_once(output, "plan.json", Path(plan_path).read_bytes())
     for name in ("summary.json", "selection.json", "status.json", "protocol.json", "input_audit.json"):
         _write_once(output, f"training/{name}", (Path(training_dir) / name).read_bytes())
+    if admission["mode"] == "explicit-audited-ENOSPC-restart":
+        training = Path(training_dir)
+        tag = admission["recovery_id"]
+        receipt = summary["recovery"]
+        _write_once(output, "training/recovery/driver_snapshot.py", Path(receipt["driver_path"]).read_bytes())
+        paths = {f"recovery_attempts/{tag}/recovery_receipt.json", "teacher_labels.json", "normalization.json"}
+        paths |= {p.relative_to(training).as_posix() for p in (training / f"failure_attempts/{tag}").rglob("*") if p.is_file()}
+        for item in candidates.values():
+            paths |= {p.relative_to(training).as_posix() for p in item["path"].parent.iterdir()
+                      if p.is_file() and p.suffix in {".json", ".csv"}}
+        for name in sorted(paths):
+            _write_once(output, f"training/recovery/evidence/{name}", _inside(training, name).read_bytes())
+        _write_once(output, "training/recovery/admission.json", _json_bytes(admission))
     models = []
     for old in plan["legacy_models"]:
         checkpoint_path, calibration_path = f"checkpoints/{old['label']}.pt", f"calibration/{old['label']}.json"
@@ -306,7 +479,8 @@ def freeze_selected_checkpoint(*, plan_path, repository_root, training_dir, trai
         "all_candidate_checkpoints": {name: {k: v for k, v in item.items() if k != "path"} for name, item in candidates.items()},
         "training_source_commit": summary["provenance"]["git_revision"],
         "training_source_sha256": summary["provenance"]["source_sha256"],
-        "training_source_and_inputs_unchanged": True,
+        "training_source_and_inputs_unchanged": admission["whole_run_source_and_inputs_unchanged"],
+        "training_admission": admission,
         "new_selected_checkpoint_calibration_or_test_performed_by_this_stage": False,
         "scope": "Immutable assistant-development selection/weight receipt; not student preregistration or unseen-data proof.",
         "runtime_contract": _runtime_contract(stage_environment), "provenance": stage_environment}
@@ -322,11 +496,24 @@ def validate_selection_freeze(freeze_dir):
              len(frozen["models"]) == 3, "a complete three-model selection freeze is required before evaluation")
     required = {"plan.json", "training/summary.json", "training/selection.json", "training/status.json",
                 "training/protocol.json", "training/input_audit.json"}
-    _require(required <= set(frozen["files"]) and frozen["training_source_and_inputs_unchanged"] is True and
+    _require(required <= set(frozen["files"]) and
              frozen["new_selected_checkpoint_calibration_or_test_performed_by_this_stage"] is False,
              "selection freeze lacks its completed-training receipts")
     for relative, checksum in frozen["files"].items():
         _require(sha256_file(_inside(root, relative)) == checksum, "immutable selection-freeze input changed")
+    if frozen.get("training_admission", {}).get("mode") == "explicit-audited-ENOSPC-restart":
+        admission = frozen["training_admission"]
+        _require(frozen["training_source_and_inputs_unchanged"] is None and
+                 _json(root / "training/recovery/admission.json") == admission and
+                 admission["fourth_candidate_actual_executed_updates"] == 2100 and
+                 admission["total_actual_executed_updates"] == 8100 and
+                 admission["original_start_runtime_receipt_available"] is False and
+                 admission["whole_run_source_and_inputs_unchanged"] is None and
+                 sha256_file(root / "training/recovery/driver_snapshot.py") == admission["driver_sha256"] == RECOVERY_DRIVER_SHA256,
+                 "recovered selection freeze must retain interruption and restart evidence")
+    else:
+        _require(frozen["training_source_and_inputs_unchanged"] is True,
+                 "selection freeze lacks unchanged training or explicit audited recovery")
     _require(sha256_file(root / "plan.json") == frozen["plan_sha256"], "selection-freeze plan changed")
     _require(frozen["plan_sha256"] == FROZEN_PLAN_SHA256, "selection freeze uses another prospective plan")
     plan = _json(root / "plan.json")

@@ -326,3 +326,183 @@ def test_unrelated_optional_package_versions_are_recorded_without_exact_binding(
     _, previous, runtime = _prior_stage(tmp_path)
     previous["packages"]["devito"] = "different-optional-version"
     assert confirmation.verify_prior_stage_binding(previous, runtime, tmp_path)["numerical_runtime_versions_unchanged"]
+
+
+@pytest.fixture
+def recovered_training(completed_training, monkeypatch):
+    """An interrupted receipt chain with real torch containers, no predictions."""
+    import math
+    import shutil
+
+    import torch
+
+    from wavecert.surrogates.fno import WavefieldNormalization
+
+    training = completed_training
+    protocol = json.loads((training / "protocol.json").read_text())
+    summary = json.loads((training / "summary.json").read_text())
+    inputs = summary["input_audit"]
+    selected_cal = json.loads(PLAN.read_text())["selected_calibration"]
+    inputs.update(dataset_manifest_sha256=selected_cal["dataset_manifest_sha256"],
+                  role_manifest_sha256=selected_cal["role_manifest_sha256"])
+    _save(training / "input_audit.json", inputs)
+    (training / "labels").mkdir()
+    models = np.arange(16, dtype=np.float32).reshape(4, 2, 2) + 1
+    frequencies = np.array([3., 4., 3., 4.])
+    fields = np.arange(32, dtype=np.float32).reshape(4, 2, 2, 2)
+    np.savez(training / "labels/train.npz", models=models, frequencies_hz=frequencies, fields=fields)
+    for role in ("validation", "validation_inverse_cases"):
+        np.savez(training / f"labels/{role}.npz", placeholder=np.array([1.]))
+    hashes = {role: sha256_file(training / f"labels/{role}.npz") for role in confirmation.RECOVERY_LABEL_SHA256}
+    records = {role: {"artifact_sha256": value} for role, value in hashes.items()}
+    _save(training / "teacher_labels.json", records)
+    normalization = vars(WavefieldNormalization.from_arrays(models[:2], frequencies[:2], fields[:2]))
+    _save(training / "normalization.json", {"source_role": "raw train only", **normalization})
+    monkeypatch.setattr(confirmation, "RECOVERY_TEACHER_SHA256", sha256_file(training / "teacher_labels.json"))
+    monkeypatch.setattr(confirmation, "RECOVERY_LABEL_SHA256", hashes)
+    driver = training / "reviewed_driver.py"
+    driver.write_text("# fixture reviewed I/O-only driver\n")
+    monkeypatch.setattr(confirmation, "RECOVERY_DRIVER_SHA256", sha256_file(driver))
+    for candidate, item in zip(protocol["candidates"], summary["candidates"], strict=True):
+        directory = training / "candidates" / candidate["name"]
+        validations = json.loads((directory / "validation_history.json").read_text())
+        best = validations[1]
+        item.update(candidate=candidate, best_validation=best)
+        _save(directory / "best_validation.json", best)
+        payload = dict(development_source_sha256=summary["source_sha256_at_end"],
+            development_protocol_sha256=summary["protocol_sha256"], candidate=candidate,
+            optimizer_updates_budget=2000, best_optimizer_update=100,
+            best_validation_selection_score=item["best_validation_score"], normalization=normalization,
+            model_config=protocol["model"], teacher_label_artifacts=records,
+            dataset_manifest_sha256=inputs["dataset_manifest_sha256"], training_manifest_sha256=inputs["role_manifest_sha256"],
+            calibration_role_used_for_model_selection=False, calibration_or_test_arrays_loaded=False,
+            external_test_arrays_loaded=False)
+        torch.save(payload, directory / "best.pt")
+        item["checkpoint_sha256"] = sha256_file(directory / "best.pt")
+        _save(directory / "summary.json", item)
+        keys = ["optimizer_update", "batch_size", "derivative_weight", "jvp_training_evaluated", "total_loss",
+                "full_field_relative_squared_l2", "receiver_relative_squared_l2", "preclip_parameter_gradient_norm",
+                "learning_rate_used", "jvp_relative_squared_l2"]
+        with (directory / "training_history.csv").open("w", newline="") as stream:
+            writer = csv.DictWriter(stream, fieldnames=keys)
+            writer.writeheader()
+            for update in range(1, 2001):
+                row = dict.fromkeys(keys, 1.)
+                row.update(optimizer_update=update, batch_size=32, derivative_weight=candidate["derivative_weight"],
+                    jvp_training_evaluated=candidate["derivative_weight"] > 0,
+                    learning_rate_used=protocol["training"]["scheduler_eta_min"] + .5 * (
+                        protocol["training"]["learning_rate"] - protocol["training"]["scheduler_eta_min"]) * (
+                            1 + math.cos(math.pi * (update - 1) / 2000)))
+                writer.writerow(row)
+    tag = "fixture-recovery"
+    recovery = training / "recovery_attempts" / tag
+    restarted = recovery / "candidate/augmented_derivative"
+    restarted.parent.mkdir(parents=True)
+    partial = training / "candidates/augmented_derivative"
+    partial.rename(restarted)
+    fourth = summary["candidates"][-1]
+    fourth["checkpoint_path"] = str(restarted / "best.pt")
+    _save(restarted / "summary.json", fourth)
+    partial.mkdir()
+    lines = (restarted / "training_history.csv").read_text().splitlines()
+    (partial / "training_history.csv").write_text("\n".join(lines[:101]) + "\n")
+    _save(partial / "validation_history.json", json.loads((restarted / "validation_history.json").read_text())[:1])
+    failure = training / "failure_attempts" / tag
+    failure.mkdir(parents=True)
+    shutil.copytree(partial, failure / "partial_candidate/augmented_derivative")
+    failed = {"status": "failed", "error": "[Errno 28] No space left on device", "protocol_sha256": summary["protocol_sha256"],
+              "completed_candidate_names": [c["name"] for c in protocol["candidates"][:3]]}
+    _save(failure / "status.json", failed)
+    _save(failure / "completed_candidates.json", summary["candidates"][:3])
+    protected = {name: sha256_file(training / name) for name in ("protocol.json", "teacher_labels.json", "input_audit.json", "normalization.json")}
+    protected.update({f"labels/{role}.npz": value for role, value in hashes.items()})
+    for candidate in protocol["candidates"][:3]:
+        directory = training / "candidates" / candidate["name"]
+        protected.update({p.relative_to(training).as_posix(): sha256_file(p) for p in directory.iterdir()})
+    receipt = {"status": "running", "recovery_id": tag, "driver_path": str(driver), "driver_sha256": sha256_file(driver),
+        "frozen_source_sha256": summary["source_sha256_at_end"], "protocol_sha256": summary["protocol_sha256"],
+        "runtime_audit": {"original_start_runtime_receipt_available": False, "current_environment": summary["provenance"]},
+        "original_failure": failed, "protected_file_sha256": protected,
+        "preserved_partial_sha256": {p.name: sha256_file(p) for p in partial.iterdir()}}
+    _save(failure / "preservation_receipt.json", receipt)
+    receipt.update(status="complete", fourth_candidate_restarted_from_seed=True, fourth_failed_attempt_updates_preserved=100,
+        fourth_successful_attempt_updates=2000, fourth_total_executed_updates_across_attempts=2100,
+        retained_three_candidates_retrained=False, io_policy={"first_100_optimizer_records_identical": True,
+        "initial_validation_baseline_identical": True})
+    _save(recovery / "recovery_receipt.json", receipt)
+    summary.update(recovered_from_interruption=True, source_unchanged_during_run=None, inputs_unchanged_during_run=None,
+        source_unchanged_during_recovery=True, inputs_unchanged_during_recovery=True,
+        recorded_initial_end_and_recovery_source_digests_match=True, original_start_runtime_receipt_available=False,
+        elapsed_seconds=None, initial_source_sha256_recovered_from_retained_checkpoints=summary["source_sha256_at_end"],
+        recovery=receipt, teacher_labels=records, normalization=normalization,
+        limitations=["Original full start-runtime receipt unavailable; 100 additional updates spent."])
+    selection = json.loads((training / "selection.json").read_text())
+    selection["checkpoint_sha256"] = fourth["checkpoint_sha256"]
+    _save(training / "selection.json", selection)
+    _save(training / "completed_candidates.json", summary["candidates"])
+    _save(training / "summary.json", summary)
+    _save(training / "status.json", {"status": "complete", "protocol_sha256": summary["protocol_sha256"],
+                                     "recovery_id": tag, "recovered_from_enospc": True})
+    return training
+
+
+def test_explicit_recovery_admission_preserves_unknowns_and_extra_spent_work(recovered_training, tmp_path):
+    original = {p: sha256_file(p) for p in recovered_training.rglob("*") if p.is_file()}
+    output = tmp_path / "restart-freeze"
+    frozen = confirmation.freeze_selected_checkpoint(plan_path=PLAN, repository_root=ROOT,
+        training_dir=recovered_training, training_source_root=ROOT, output_dir=output)
+    assert frozen["training_source_and_inputs_unchanged"] is None
+    assert frozen["training_admission"]["fourth_candidate_actual_executed_updates"] == 2100
+    assert frozen["training_admission"]["total_actual_executed_updates"] == 8100
+    assert frozen["training_admission"]["original_start_runtime_receipt_available"] is False
+    assert (output / "training/recovery/driver_snapshot.py").read_bytes() == (recovered_training / "reviewed_driver.py").read_bytes()
+    confirmation.validate_selection_freeze(output)
+    assert all(sha256_file(p) == digest for p, digest in original.items())
+    frozen["training_source_and_inputs_unchanged"] = True
+    _save(output / "freeze.json", frozen)
+    with pytest.raises(ValueError, match="interruption"):
+        confirmation.validate_selection_freeze(output)
+
+
+@pytest.mark.parametrize("change", ["restart_prefix", "initial_baseline", "driver", "protected_history", "runtime", "extra_updates", "nonfinite_loss", "checkpoint_source"])
+def test_recovery_admission_rejects_changed_evidence(recovered_training, tmp_path, change):
+    import torch
+
+    summary = json.loads((recovered_training / "summary.json").read_text())
+    tag = summary["recovery"]["recovery_id"]
+    restarted = recovered_training / "recovery_attempts" / tag / "candidate/augmented_derivative"
+    if change in {"restart_prefix", "nonfinite_loss"}:
+        path = restarted / "training_history.csv"
+        with path.open(newline="") as stream:
+            reader = csv.DictReader(stream)
+            keys, rows = reader.fieldnames, list(reader)
+        rows[0 if change == "restart_prefix" else 200]["total_loss"] = "7" if change == "restart_prefix" else "nan"
+        with path.open("w", newline="") as stream:
+            writer = csv.DictWriter(stream, fieldnames=keys)
+            writer.writeheader()
+            writer.writerows(rows)
+    elif change == "initial_baseline":
+        path = restarted / "validation_history.json"
+        rows = json.loads(path.read_text())
+        rows[0]["selection_score"] += 1
+        _save(path, rows)
+    elif change == "driver":
+        (recovered_training / "reviewed_driver.py").write_text("# unreviewed change\n")
+    elif change == "protected_history":
+        path = recovered_training / "candidates/raw_forward/training_history.csv"
+        path.write_text(path.read_text() + "\n")
+    elif change == "runtime":
+        summary["original_start_runtime_receipt_available"] = True
+        _save(recovered_training / "summary.json", summary)
+    elif change == "extra_updates":
+        summary["recovery"]["fourth_total_executed_updates_across_attempts"] = 2000
+        _save(recovered_training / "summary.json", summary)
+        _save(recovered_training / "recovery_attempts" / tag / "recovery_receipt.json", summary["recovery"])
+    else:
+        payload = torch.load(restarted / "best.pt", weights_only=True)
+        payload["development_source_sha256"] = "different source"
+        torch.save(payload, restarted / "best.pt")
+    with pytest.raises(ValueError):
+        confirmation.freeze_selected_checkpoint(plan_path=PLAN, repository_root=ROOT,
+            training_dir=recovered_training, training_source_root=ROOT, output_dir=tmp_path / "rejected-restart")
+    assert not (tmp_path / "rejected-restart").exists()
