@@ -54,9 +54,11 @@ No exact recovery occurs inside this API.
 `reference_solver`, and `dimensions` groups. The new `batch_dispatches` group
 counts actual source assembly, matrix projection/solve/lift, receiver
 injection, stencil, norm and FFT dispatches. Existing reduced/coarse RHS
-counters count matrix **columns**. `coarse_solve_calls`,
-`coarse_projection_calls`, and `coarse_lift_calls` count actual calls, while
-`full_operator_applications` counts applied field columns. Existing
+counters count matrix **columns**. `coarse_solve_calls` counts actual solve
+calls. The legacy-named `coarse_projection_calls` and `coarse_lift_calls`
+retain logical single-vector column units, as does
+`full_operator_applications`. Their actual matrix/FFT dispatches are recorded
+separately in `batch_dispatches`. Existing
 `dst_I_real_transforms`/`idst_I_real_transforms` count real-equivalent spatial
 transforms per field column (two for a complex field), using the same units
 as the scalar implementation. Dispatch reduction is not a reduction in those

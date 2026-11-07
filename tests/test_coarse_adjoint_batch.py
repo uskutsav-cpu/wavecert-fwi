@@ -63,9 +63,16 @@ def test_batched_fft_source_axis_stencils_and_stable_column_norms_match_independ
     values[:, 2] = 0
     dispatches = {}
     operations = BatchedCoarseOperations(context, dispatches)
+    before = context.cost_snapshot()
     projected = operations.project(values)
+    lifted = operations.lift(projected)
+    after = context.cost_snapshot()
+    assert after["coarse_projection_calls"]-before["coarse_projection_calls"] == values.shape[1]
+    assert after["coarse_lift_calls"]-before["coarse_lift_calls"] == values.shape[1]
+    assert after["dst_I_real_transforms"]-before["dst_I_real_transforms"] == 2*values.shape[1]
+    assert after["idst_I_real_transforms"]-before["idst_I_real_transforms"] == 2*values.shape[1]
     assert np.allclose(projected, np.column_stack([context.project(v) for v in values.T]), rtol=1e-13, atol=1e-13)
-    assert np.allclose(operations.lift(projected), np.column_stack([context.lift(v) for v in projected.T]), rtol=1e-13, atol=1e-13)
+    assert np.allclose(lifted, np.column_stack([context.lift(v) for v in projected.T]), rtol=1e-13, atol=1e-13)
     for adjoint in (False, True):
         assert np.allclose(operations.apply_operator(values, adjoint=adjoint),
             np.column_stack([context.apply_operator(v, adjoint=adjoint) for v in values.T]), rtol=1e-13, atol=1e-11)

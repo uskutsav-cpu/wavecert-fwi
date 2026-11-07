@@ -38,7 +38,7 @@ class BatchedCoarseOperations:
     def project(self, values):
         values = self._matrix(values, self.context.n)
         columns = values.shape[1]
-        self.engine._count("coarse_projection_calls")
+        self.engine._count("coarse_projection_calls", columns)
         self.engine._count("dst_I_real_transforms", columns*(2 if np.iscomplexobj(values) else 1))
         self._dispatch("coarse_projection_dispatches")
         self._dispatch("dst_I_dispatches")
@@ -50,7 +50,7 @@ class BatchedCoarseOperations:
     def lift(self, coefficients):
         coefficients = self._matrix(coefficients, self.context.rank)
         columns = coefficients.shape[1]
-        self.engine._count("coarse_lift_calls")
+        self.engine._count("coarse_lift_calls", columns)
         self.engine._count("idst_I_real_transforms", columns*(2 if np.iscomplexobj(coefficients) else 1))
         self._dispatch("coarse_lift_dispatches")
         self._dispatch("idst_I_dispatches")
