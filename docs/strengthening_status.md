@@ -47,6 +47,14 @@ cost outcome is preserved. There is no inversion or equal-accuracy speedup claim
 A separately frozen, validation-only batching/rank development study follows;
 its results must be reported separately from the earlier confirmation.
 
+The residual-coded exact-gradient reference also strengthens the cost comparison:
+the implemented routes require the minimum of `2s`, `2r`, and (when complex
+symmetry permits) `r+s-c` fine RHS per frequency. Thus the current two-receiver-map
+certificate's `2r` work never saves fine RHS over the best of these full-gradient
+routes for any geometry. This is a comparison of these implementations and
+information tasks, not a universal runtime lower bound. The new coarse
+certificate avoids those fine solves; it still must beat their measured total cost.
+
 The mathematical derivation is specific to the implemented real Dirichlet
 Laplacian plus diagonal complex damping. Exact-arithmetic inequalities use
 ordinary floating point with an engineering cancellation allowance, not a formal
