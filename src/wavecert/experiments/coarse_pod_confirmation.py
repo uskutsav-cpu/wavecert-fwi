@@ -118,6 +118,12 @@ def validate_coarse_pod_freeze(coarse_dir, selection_dir, calibration_dir, pod_d
 
 def coarse_result_records(result, reference, *, identity):
     """Audit physical sums, shared direction, availability and honest nulls."""
+    _require(result.approximate_directional_derivative is not None and
+             math.isfinite(result.approximate_directional_derivative) and
+             all(block.approximate_directional_derivative is not None and
+                 math.isfinite(block.approximate_directional_derivative) for block in result.block_certificates) and
+             not (result.available is False and all(block.available for block in result.block_certificates)),
+             "numeric aggregate abstention: retain raw certificate and mark the evaluation attempt incomplete")
     gradient = np.asarray(result.approximate_gradient, dtype=float)
     direction = np.asarray(result.direction, dtype=float)
     exact = np.sum([item[1] for item in reference.values()], axis=0)

@@ -211,3 +211,14 @@ def test_fifth_operator_only_freeze_binds_prior_stages_without_outcome_predictio
     (output / "pod_basis.npz").write_bytes(b"substituted basis")
     with pytest.raises(ValueError, match="input changed"):
         coarse.validate_coarse_pod_freeze(output, selection, calibration, pod_dir, ROOT)
+
+
+def test_numeric_aggregate_abstention_cannot_be_marked_a_complete_model_record():
+    result, reference = _result()
+    result.available, result.certified_descent, result.exact_fallback_required = False, False, True
+    result.directional_error_bound = result.certified_upper_derivative = None
+    with pytest.raises(ValueError, match="numeric aggregate abstention"):
+        coarse.coarse_result_records(result, reference, identity={"checkpoint": coarse.LABEL})
+    result.approximate_directional_derivative = None
+    with pytest.raises(ValueError, match="numeric aggregate abstention"):
+        coarse.coarse_result_records(result, reference, identity={"checkpoint": coarse.LABEL})
