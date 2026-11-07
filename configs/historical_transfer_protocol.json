@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-07T22:24:47.935556+00:00",
+  "stage": "Prospective engineering historical-test-reuse/development-transfer protocol before any new POD historical-role outcomes",
+  "freshness": "HISTORICAL TEST REUSE: old FNO results and source-data roles were previously inspected. This is development transfer, not pristine confirmation, independent test discovery, student preregistration or a new benchmark split.",
+  "pre_outcome_access": "Protocol compiled from cached dataset/split manifests and metadata CSVs only. Array hashes were taken from the existing dataset manifest; no historical test arrays or new model outcomes were opened to choose this protocol.",
+  "dataset": {
+    "path": "data/reference/subsurfacegen_parent_split",
+    "dataset_manifest_sha256": "e297ab5196bd50142db76a575c78355587bba04f6b381a0ef8700c950d04155a",
+    "role_manifest_sha256": "30fed6e30e07a1b54d17f3ae9511d06eac6f44c69fcb57b6ee588f2ade65ef14",
+    "roles": {
+      "test_id": {
+        "parents": {
+          "f3_042": [
+            "f3_042_il_0139",
+            "f3_042_xl_0408"
+          ],
+          "fault_001": [
+            "fault_001_il_0506",
+            "fault_001_il_0636"
+          ],
+          "fault_003": [
+            "fault_003_il_0484",
+            "fault_003_il_0599"
+          ],
+          "gom_144": [
+            "gom_144_il_0188",
+            "gom_144_xl_0848"
+          ],
+          "seam_001": [
+            "seam_001_il_0580",
+            "seam_001_xl_0858"
+          ],
+          "seam_002": [
+            "seam_002_il_0536",
+            "seam_002_xl_0848"
+          ],
+          "seam_008": [
+            "seam_008_il_0583",
+            "seam_008_xl_0857"
+          ],
+          "seam_009": [
+            "seam_009_il_0573",
+            "seam_009_xl_0829"
+          ]
+        },
+        "n_parents": 8,
+        "n_slices": 16,
+        "n_blocks": 384,
+        "arrays_file": "test_id.npz",
+        "arrays_sha256": "8c07d0b2f595480071b2d8f3ffe8b584cbc4dbc86322afc4145e51b03781f232",
+        "metadata_file": "test_id_metadata.csv",
+        "metadata_sha256": "4638a71979b9df7c450ada2626a00a058af42d8c4434b9ee45e3b2c81d26f3ff"
+      },
+      "test_ood": {
+        "parents": {
+          "penobscot_000": [
+            "penobscot_000_il_0506",
+            "penobscot_000_xl_0442",
+            "penobscot_000_xl_0749",
+            "penobscot_000_xl_0798"
+          ]
+        },
+        "n_parents": 1,
+        "n_slices": 4,
+        "n_blocks": 96,
+        "arrays_file": "test_ood.npz",
+        "arrays_sha256": "bd999d2dd0358531a355785749addf302ba28f5b61373de347f0809ce8aa7594",
+        "metadata_file": "test_ood_metadata.csv",
+        "metadata_sha256": "a282ec3be81b7958528935951a4fc0c59a4f7cf3c1bbfa6d799ca0573a174e0c"
+      }
+    }
+  },
+  "cohort_correction": "The original parent task assumed two OOD slices. Existing manifests show four for penobscot_000; root approved retaining ALL FOUR before new outcomes. Fixed totals are16ID+4OOD=20 slices,8ID+1OOD parents.",
+  "geometry": {
+    "shape": [
+      24,
+      24
+    ],
+    "spacing": 0.05,
+    "damping_width": 3,
+    "damping_strength": 2.0,
+    "source_depth": 2,
+    "receiver_depth": 2,
+    "margin": 2,
+    "n_sources": 6,
+    "n_receivers": 20,
+    "source_indices": [
+      50,
+      54,
+      58,
+      61,
+      65,
+      69
+    ],
+    "frequencies_hz": [
+      2.5,
+      3.0,
+      3.5,
+      4.0
+    ],
+    "blocks_per_slice": 24
+  },
+  "preprocessing": {
+    "evaluation_model": "Convert cached positive physical squared slowness to velocity, Gaussian smooth velocity, convert back to squared slowness",
+    "velocity_smoothing_sigma_grid_cells": 1.6,
+    "boundary_mode": "reflect",
+    "velocity_denominator_floor": 1e-08,
+    "observations": "Cached float32 regenerated synthetic true wavefields restricted to the original receiver indices. No new measured field data; no regeneration or outcome-dependent preprocessing."
+  },
+  "model_labels": [
+    "legacy_forward",
+    "legacy_jvp",
+    "development_winner",
+    "classical_pod",
+    "coarse_corrected_pod"
+  ],
+  "method_parameters": {
+    "pod_family": "state+tangent",
+    "pod_rank": 64,
+    "pod_basis_artifact_sha256": "f2ae08cbcb251802ba7be92d69e87c28f425c5b1dfeede02fd94d6720c484447",
+    "coarse_stability_rank": 96,
+    "coarse_method": "coarse_corrected_oriented",
+    "gradient_zero_threshold": 1e-14,
+    "no_learning_selection_recalibration": true
+  },
+  "required_prior_plans": {
+    "gradient_confirmation_plan.json": "8330f33ee38255dbb14f54e2ddcd6f154bbe7d5f4a40b11f2560b652f563eb41",
+    "pod_confirmation_addendum.json": "4022fabf898c8865e9d36849c144a0cecc08e26b1910b97f9b40e09f35a2751c",
+    "coarse_corrected_pod_confirmation_addendum.json": "af6331f38a9f8eac987314dda92fc778ff9c0d0d6011fba2bebb99d5f1c8724b"
+  },
+  "staging": {
+    "require_prior_receipts": [
+      "B complete four-FNO selection",
+      "C dedicated source calibration",
+      "raw-POD all-eight comparator freeze",
+      "coarse-corrected fifth-comparator freeze"
+    ],
+    "historical_new_source_allowlist": [
+      "configs/historical_transfer_protocol.json",
+      "scripts/run_historical_transfer.py",
+      "src/wavecert/experiments/historical_transfer.py"
+    ],
+    "new_historical_freeze": "A fresh clean Python subprocess audits all preceding source/runtime/weight freeze guards without importing the new historical module. Then this explicit prospective phase admits only its allowlisted new imported files, records all added unrelated/unimported paths, and freezes the complete current manifest/runtime plus prior receipt and weight snapshots. Existing stage guards and previous artifacts are unchanged.",
+    "evaluation_gate": "No historical test-array loading or project outcomes until root approves this protocol/source and a new immutable historical freeze exists. Every previously frozen source path and numerical runtime must remain unchanged."
+  },
+  "reporting": {
+    "primary": "Actual shared24-block aggregate objective/gradient cosine, norms and true descent per slice for all five fixed models. No average-block-cosine substitute.",
+    "corrected_certificate": "At one common normalized negative summed physical-gradient direction, save all24 block diagnostics and sum signed physical derivatives/bounds. Report aggregate availability, strict certification, false acceptance, bound coverage and exact-fallback requirement. No AD-of-composite-state-objective claim.",
+    "unavailable": "Retain all finite raw/partially corrected proposals and quality outcomes, null unavailable bounds/uppers and explicit exact-fallback-required. No online exact fallback. Numeric aggregate overflow/nonfinite proposals retain raw diagnostics and make the attempt incomplete; never silently discard a case into a complete comparison.",
+    "clustering": "Within each role, first average each parent across all its slices; report8 ID-parent summaries and1 OOD-parent summary separately. Do not pool20 slices or480 blocks as independent samples.",
+    "uncertainty": "Descriptive fixed historical cohort only: no IID confidence intervals, binomial coverage claims, conformal nominal guarantee, new-population generalization or ID/OOD pooling.",
+    "statistical_gates": "No new statistical gates or scale fitting in this phase. The old calibration receipts bind model identity only; no FNO scale is transferred to POD.",
+    "cost": "Record all current exact-reference verification work, neural single-block/shared-batch calls, POD operator projections/reduced work, coarse setup/correction/operator/norm work, per-case and cumulative counters. Historical observation generation, training, SVD and calibration remain referenced paid offline work, not newly measured free compute. No inversion or speedup claim.",
+    "all_outcomes": "All20 slices and all5 models are mandatory for completion:100 slice-model aggregates,2400 block-model rows,45 parent-model summaries. Retain failures/abstentions and original artifacts."
+  },
+  "limits": [
+    "Previously inspected historical source roles, not pristine confirmation",
+    "One OOD parent cannot establish broad OOD reliability",
+    "Parent isolation is audited but no independent geological sampling assumption is asserted",
+    "Ordinary floating-point discrete certificate implementation, not a formally verified roundoff enclosure",
+    "No optimizer, inversion trajectory, runtime acceleration or field-scale claim"
+  ]
+}
