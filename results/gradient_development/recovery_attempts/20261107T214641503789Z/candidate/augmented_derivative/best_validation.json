@@ -1,0 +1,153 @@
+{
+  "optimizer_update": 400,
+  "checkpoint_eligible": true,
+  "full_field_relative_squared_l2": 0.6217850461058939,
+  "receiver_relative_squared_l2": 0.5190020901888298,
+  "jvp_relative_squared_l2": 1.0817561596632004,
+  "aggregate_gradient_cosine": 0.16124741969863457,
+  "aggregate_exact_gradient_norm": 40.029435193122595,
+  "aggregate_neural_gradient_norm": 10.09442354495474,
+  "aggregate_neural_true_descent": 0.625,
+  "direction_loss": 0.8387525803013655,
+  "selection_score": 2.4395108301533956,
+  "inverse_cases": [
+    {
+      "slice_id": "gom_148_il_0236",
+      "model_id": "gom_148",
+      "gradient_cosine": 0.6219143889597841,
+      "exact_gradient_norm": 64.88430224314989,
+      "neural_gradient_norm": 14.631168996986016,
+      "exact_gradient_zero": false,
+      "neural_gradient_zero": false,
+      "neural_direction_exact_derivative": -40.35248118263052,
+      "neural_true_descent": true
+    },
+    {
+      "slice_id": "gom_148_xl_0768",
+      "model_id": "gom_148",
+      "gradient_cosine": 0.23216222228266994,
+      "exact_gradient_norm": 52.1544425177059,
+      "neural_gradient_norm": 17.367967340881275,
+      "exact_gradient_zero": false,
+      "neural_gradient_zero": false,
+      "neural_direction_exact_derivative": -12.10829127682437,
+      "neural_true_descent": true
+    },
+    {
+      "slice_id": "gom_151_il_0247",
+      "model_id": "gom_151",
+      "gradient_cosine": 0.4794112622914362,
+      "exact_gradient_norm": 46.30513185965271,
+      "neural_gradient_norm": 17.659969613546412,
+      "exact_gradient_zero": false,
+      "neural_gradient_zero": false,
+      "neural_direction_exact_derivative": -22.199201715407508,
+      "neural_true_descent": true
+    },
+    {
+      "slice_id": "gom_151_xl_0857",
+      "model_id": "gom_151",
+      "gradient_cosine": 0.5111073078186402,
+      "exact_gradient_norm": 61.672891231207764,
+      "neural_gradient_norm": 16.351276869312834,
+      "exact_gradient_zero": false,
+      "neural_gradient_zero": false,
+      "neural_direction_exact_derivative": -31.52146540257442,
+      "neural_true_descent": true
+    },
+    {
+      "slice_id": "seam_005_il_0596",
+      "model_id": "seam_005",
+      "gradient_cosine": -0.13549019203806745,
+      "exact_gradient_norm": 24.061077939475624,
+      "neural_gradient_norm": 1.6814242579114647,
+      "exact_gradient_zero": false,
+      "neural_gradient_zero": false,
+      "neural_direction_exact_derivative": 3.2600400706624604,
+      "neural_true_descent": false
+    },
+    {
+      "slice_id": "seam_005_xl_0795",
+      "model_id": "seam_005",
+      "gradient_cosine": -0.12979840402358125,
+      "exact_gradient_norm": 23.811066272214585,
+      "neural_gradient_norm": 1.703479180042345,
+      "exact_gradient_zero": false,
+      "neural_gradient_zero": false,
+      "neural_direction_exact_derivative": 3.090638400233177,
+      "neural_true_descent": false
+    },
+    {
+      "slice_id": "seam_011_il_0522",
+      "model_id": "seam_011",
+      "gradient_cosine": -0.548714608573664,
+      "exact_gradient_norm": 23.783528379793328,
+      "neural_gradient_norm": 9.756235571251821,
+      "exact_gradient_zero": false,
+      "neural_gradient_zero": false,
+      "neural_direction_exact_derivative": 13.050369465418926,
+      "neural_true_descent": false
+    },
+    {
+      "slice_id": "seam_011_xl_0866",
+      "model_id": "seam_011",
+      "gradient_cosine": 0.2593873808718588,
+      "exact_gradient_norm": 23.563041101780932,
+      "neural_gradient_norm": 1.6038665297057626,
+      "exact_gradient_zero": false,
+      "neural_gradient_zero": false,
+      "neural_direction_exact_derivative": -6.111955516766915,
+      "neural_true_descent": true
+    }
+  ],
+  "parent_components": {
+    "gom_148": {
+      "full_field_relative_squared_l2": 0.6784354317933321,
+      "receiver_relative_squared_l2": 0.5237330535116295,
+      "jvp_relative_squared_l2": 1.0744827259331942,
+      "aggregate_gradient_cosine": 0.427038305621227,
+      "aggregate_neural_true_descent": 1.0,
+      "aggregate_exact_gradient_norm": 58.519372380427896,
+      "aggregate_neural_gradient_norm": 15.999568168933646
+    },
+    "gom_151": {
+      "full_field_relative_squared_l2": 0.6918938383460045,
+      "receiver_relative_squared_l2": 0.5119375668776532,
+      "jvp_relative_squared_l2": 1.0749924530585606,
+      "aggregate_gradient_cosine": 0.49525928505503825,
+      "aggregate_neural_true_descent": 1.0,
+      "aggregate_exact_gradient_norm": 53.98901154543024,
+      "aggregate_neural_gradient_norm": 17.005623241429625
+    },
+    "seam_005": {
+      "full_field_relative_squared_l2": 0.5106390742585063,
+      "receiver_relative_squared_l2": 0.4805514876109858,
+      "jvp_relative_squared_l2": 1.0381677486002445,
+      "aggregate_gradient_cosine": -0.13264429803082434,
+      "aggregate_neural_true_descent": 0.0,
+      "aggregate_exact_gradient_norm": 23.936072105845106,
+      "aggregate_neural_gradient_norm": 1.6924517189769048
+    },
+    "seam_011": {
+      "full_field_relative_squared_l2": 0.6061718400257329,
+      "receiver_relative_squared_l2": 0.5597862527550509,
+      "jvp_relative_squared_l2": 1.1393817110608022,
+      "aggregate_gradient_cosine": -0.14466361385090262,
+      "aggregate_neural_true_descent": 0.5,
+      "aggregate_exact_gradient_norm": 23.673284740787132,
+      "aggregate_neural_gradient_norm": 5.6800510504787916
+    }
+  },
+  "state_type_components": {
+    "raw": {
+      "full_field_relative_squared_l2": 0.5822856668382883,
+      "receiver_relative_squared_l2": 0.47320259145150584,
+      "jvp_relative_squared_l2": 1.0855261664837599
+    },
+    "smoothed": {
+      "full_field_relative_squared_l2": 0.6612844253734996,
+      "receiver_relative_squared_l2": 0.5648015889261538,
+      "jvp_relative_squared_l2": 1.0779861528426409
+    }
+  }
+}
