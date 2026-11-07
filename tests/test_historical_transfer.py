@@ -126,9 +126,15 @@ def test_historical_pod_sum_gradient_matches_independent24_block_objective_fd():
     direction /= np.linalg.norm(direction)
     def objective(m):
         return sum(pod.objective(m, physics.source(block.source_index), block.observed, receivers, block.frequency_hz) for block in survey)
-    step = 1e-6
-    numerical = (objective(model + step * direction) - objective(model - step * direction)) / (2 * step)
-    assert np.dot(gradient, direction) == pytest.approx(numerical, rel=2e-6, abs=1e-8)
+    # A tiny two-point step subtracts large summed objectives and can lose
+    # the small derivative on different BLAS builds. Two independent larger
+    # five-point stencils retain the same tolerance without that cancellation.
+    for step in (1e-3, 3e-4):
+        numerical = (-objective(model + 2 * step * direction)
+            + 8 * objective(model + step * direction)
+            - 8 * objective(model - step * direction)
+            + objective(model - 2 * step * direction)) / (12 * step)
+        assert np.dot(gradient, direction) == pytest.approx(numerical, rel=2e-6, abs=1e-8)
     assert summary["aggregate_approximate_objective"] == pytest.approx(objective(model))
     assert len(rows) == 24 and summary["certificate_available"] is None
 
