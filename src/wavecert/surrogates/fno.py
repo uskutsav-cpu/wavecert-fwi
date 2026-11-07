@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
 
 import numpy as np
+
+from wavecert.physics.helmholtz import SurveyBlock
 
 try:
     import torch
@@ -289,6 +292,86 @@ class TrainedFNOWavefieldSurrogate:
             grad.detach().cpu().numpy().astype(float),
             wave.detach().cpu().numpy(),
             residual.detach().cpu().numpy(),
+        )
+
+    def survey_objective_and_gradient(
+        self,
+        m: Array,
+        blocks: Iterable[SurveyBlock],
+        receiver_indices: tuple[int, ...],
+    ) -> tuple[float, Array, Array, Array]:
+        """Sum a common-model survey in one batched FNO forward/VJP.
+
+        Every block supplies its source index, frequency, and observed data;
+        all blocks share the same receiver sampling and one differentiable
+        model tensor. Expanding that tensor into the batch lets autograd sum
+        its contributions, rather than returning unrelated per-example model
+        gradients. Repeated receiver samples retain their multiplicity and
+        their adjoint contributions accumulate through the gather operation.
+
+        Returns the summed objective, common-model gradient, wavefields of
+        shape ``(n_blocks, n_grid)``, and residuals of shape
+        ``(n_blocks, n_receivers)`` in input block order. It uses the existing
+        point-source-mask semantics and float32 inference; batched and serial
+        reductions can differ at floating-point precision. This optional API
+        does not change optimizer defaults or define a PDE certificate.
+        """
+        n = int(np.prod(self.shape))
+        model = np.asarray(m)
+        if (model.shape != (n,) or np.iscomplexobj(model)
+                or not np.all(np.isfinite(model)) or np.any(model <= 0)):
+            raise ValueError(f"model must be a positive finite real vector of shape ({n},)")
+        receivers = tuple(receiver_indices)
+        if not receivers or any(
+            isinstance(i, (bool, np.bool_)) or not isinstance(i, (int, np.integer))
+            or not 0 <= i < n for i in receivers
+        ):
+            raise ValueError("receiver indices must be nonempty integer grid positions")
+        blocks = tuple(blocks)
+        if not blocks:
+            raise ValueError("at least one survey block is required")
+        sources, frequencies, observations = [], [], []
+        for block in blocks:
+            source = block.source_index
+            if (isinstance(source, (bool, np.bool_))
+                    or not isinstance(source, (int, np.integer)) or not 0 <= source < n):
+                raise ValueError("each source index must be an integer grid position")
+            frequency = float(block.frequency_hz)
+            observed = np.asarray(block.observed)
+            if not np.isfinite(frequency) or frequency <= 0:
+                raise ValueError("frequencies must be finite and positive")
+            if observed.shape != (len(receivers),) or not np.all(np.isfinite(observed)):
+                raise ValueError("each observed vector must be finite and match the common receivers")
+            sources.append(int(source))
+            frequencies.append(frequency)
+            observations.append(observed)
+        mt = torch.tensor(model, dtype=torch.float32, device=self.device, requires_grad=True)
+        source_tensor = torch.tensor(sources, dtype=torch.long, device=self.device)
+        frequency_tensor = torch.tensor(frequencies, dtype=torch.float32, device=self.device)
+        observed = np.asarray(observations)
+        obs_ri = torch.as_tensor(np.stack([observed.real, observed.imag], axis=-1),
+                                 dtype=torch.float32, device=self.device)
+        if (not all(bool(torch.isfinite(value).all()) for value in (mt, frequency_tensor, obs_ri))
+                or not bool((mt > 0).all()) or not bool((frequency_tensor > 0).all())):
+            raise ValueError("survey inputs must stay finite, with positive models/frequencies, in float32")
+        models = mt.reshape(1, *self.shape).expand(len(blocks), *self.shape)
+        encoded = self.encoder.encode_batch(models, source_tensor, frequency_tensor)
+        y = self.encoder.decode_output(self.model(encoded))
+        if y.shape != (len(blocks), *self.shape, 2) or not bool(torch.isfinite(y).all()):
+            raise RuntimeError("batched neural wavefields have invalid shape or non-finite values")
+        idx = torch.tensor(receivers, dtype=torch.long, device=self.device)
+        residual_ri = y.reshape(len(blocks), n, 2)[:, idx, :] - obs_ri
+        objective = 0.5 * torch.sum(residual_ri**2)
+        (gradient,) = torch.autograd.grad(objective, mt)
+        if not bool(torch.isfinite(objective)) or not bool(torch.isfinite(gradient).all()):
+            raise RuntimeError("batched neural objective or common-model gradient is non-finite")
+        waves = torch.complex(y[..., 0], y[..., 1]).reshape(len(blocks), n)
+        residuals = torch.complex(residual_ri[..., 0], residual_ri[..., 1])
+        return (
+            float(objective.detach().cpu()),
+            gradient.detach().cpu().numpy().astype(float),
+            waves.detach().cpu().numpy(),
+            residuals.detach().cpu().numpy(),
         )
 
     @classmethod
