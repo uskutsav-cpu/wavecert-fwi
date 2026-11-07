@@ -5,6 +5,17 @@ linear-algebra consequences, not a new neural method or evidence of WaveCert
 acceleration. The implementation uses the small `Helmholtz2D` backend and
 ordinary floating-point sparse solves.
 
+## Stronger exact reference added after this control study
+
+The saved `receiver_oracle_controls` study below compares its stated ordinary
+and reciprocity implementations. The later
+[residual-coded full-gradient control](residual_coded_reference.md) adds a
+`2r` RHS route without transpose symmetry and preserves every historical
+result. The stronger chooser uses `min(2s, 2r, r+s-c)` when the symmetry option
+is available. The two-map directional oracle therefore has no initial RHS
+advantage over that complete exact gradient for any tested geometry. This is
+an implementation-specific operation-count result, not a runtime inequality.
+
 ## Exact directional information already present in the maps
 
 For a fixed model, frequency, and proposed model direction `v`, define
