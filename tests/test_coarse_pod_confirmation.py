@@ -222,3 +222,34 @@ def test_numeric_aggregate_abstention_cannot_be_marked_a_complete_model_record()
     result.approximate_directional_derivative = None
     with pytest.raises(ValueError, match="numeric aggregate abstention"):
         coarse.coarse_result_records(result, reference, identity={"checkpoint": coarse.LABEL})
+
+
+def test_synthetic_staging_uses_only_current_head_when_old_git_history_is_unavailable(request, tmp_path, monkeypatch):
+    import subprocess
+
+    from test_gradient_confirmation import _current_head_source_provenance
+
+    original = subprocess.check_output
+    git_calls = []
+    def shallow_git(arguments, *args, **kwargs):
+        if arguments and arguments[0] == "git":
+            git_calls.append(tuple(arguments))
+            assert not any("be6e51e" in str(value) or "6470e4d" in str(value) for value in arguments), "synthetic fixtures requested historical Git objects"
+            assert arguments[1] not in {"fetch", "pull"}, "unit fixtures must not fetch missing history"
+        return original(arguments, *args, **kwargs)
+    monkeypatch.setattr(subprocess, "check_output", shallow_git)
+    current = _current_head_source_provenance()
+    selection, calibration, pod_dir = request.getfixturevalue("integrated_freeze_inputs")
+    output = tmp_path / "shallow-compatible-fifth"
+    frozen = coarse.freeze_coarse_pod_comparator(addendum_path=ADDENDUM, repository_root=ROOT,
+        selection_dir=selection, calibration_dir=calibration, pod_dir=pod_dir, output_dir=output)
+    coarse.validate_coarse_pod_freeze(output, selection, calibration, pod_dir, ROOT)
+    plan = json.loads((selection / "plan.json").read_text())
+    training = json.loads((selection / "training/summary.json").read_text())
+    pod_summary = json.loads((pod_dir / "development/summary.json").read_text())
+    assert plan["synthetic_test_fixture"] and training["synthetic_test_fixture"] and pod_summary["synthetic_test_fixture"]
+    assert plan["development_training"]["source_commit"] == training["provenance"]["git_revision"] == pod_summary["provenance"]["git_revision"] == current["git_revision"]
+    assert training["provenance"]["source_files"] == pod_summary["provenance"]["source_files"] == current["source_files"]
+    assert ("git", "rev-parse", "HEAD") in git_calls
+    assert any(call[1] == "show" and call[2].startswith(current["git_revision"] + ":") for call in git_calls)
+    assert len(frozen["files"]) == 2
