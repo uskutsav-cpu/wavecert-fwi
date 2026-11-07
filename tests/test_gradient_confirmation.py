@@ -506,3 +506,20 @@ def test_recovery_admission_rejects_changed_evidence(recovered_training, tmp_pat
         confirmation.freeze_selected_checkpoint(plan_path=PLAN, repository_root=ROOT,
             training_dir=recovered_training, training_source_root=ROOT, output_dir=tmp_path / "rejected-restart")
     assert not (tmp_path / "rejected-restart").exists()
+
+
+def test_recovery_receipts_relocate_with_pinned_adjacent_driver(recovered_training, tmp_path):
+    import shutil
+
+    summary = json.loads((recovered_training / "summary.json").read_text())
+    tag = summary["recovery"]["recovery_id"]
+    driver = Path(summary["recovery"]["driver_path"])
+    shutil.copyfile(driver, recovered_training / f"recovery_attempts/{tag}/recovery_driver.py")
+    moved = tmp_path / "fresh-checkout/results/gradient_development"
+    moved.parent.mkdir(parents=True)
+    recovered_training.rename(moved)
+    assert not driver.exists()
+    frozen = confirmation.freeze_selected_checkpoint(plan_path=PLAN, repository_root=ROOT,
+        training_dir=moved, training_source_root=ROOT, output_dir=tmp_path / "portable-freeze")
+    assert frozen["training_admission"]["mode"] == "explicit-audited-ENOSPC-restart"
+    confirmation.validate_selection_freeze(tmp_path / "portable-freeze")

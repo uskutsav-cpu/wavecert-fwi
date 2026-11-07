@@ -182,3 +182,12 @@ inputs are reported separately. Actual work is **2,100 fourth-candidate updates,
 time is reconstructed. The original selection/protocol and all partial outcomes
 remain intact. This admission enables later separately authorized stages; it
 makes no new unseen-data or uninterrupted-runtime claim.
+
+Recovery evidence is portable without changing historical receipt strings.
+The resolver prefers the adjacent, hash-pinned `recovery_driver.py` archive
+inside the recovery attempt and falls back to the original driver path only
+when that archive is absent. Stage B copies those exact reviewed bytes.
+Checkpoint files are always read from known contained candidate/recovery
+locations. Historical absolute checkpoint paths are preserved as metadata and
+checked against their exact expected relative suffix; their old external
+locations are never dereferenced.

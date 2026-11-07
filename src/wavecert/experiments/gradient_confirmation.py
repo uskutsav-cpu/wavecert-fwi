@@ -212,6 +212,36 @@ def _training_source_path(name):
             (path.parent.as_posix() == "." and path.match("requirements*.txt")))
 
 
+def _recovery_driver_path(training_dir, receipt):
+    """Prefer a portable adjacent archive without rewriting the old receipt."""
+    archived = _inside(training_dir, f"recovery_attempts/{receipt['recovery_id']}/recovery_driver.py")
+    path = archived if archived.exists() else Path(receipt["driver_path"])
+    _require(receipt["driver_sha256"] == RECOVERY_DRIVER_SHA256 and
+             sha256_file(path) == RECOVERY_DRIVER_SHA256, "reviewed recovery driver bytes changed")
+    return path
+
+
+def _candidate_directory(training_dir, name, admission):
+    relative = (f"recovery_attempts/{admission['recovery_id']}/candidate/{name}"
+                if admission["mode"] == "explicit-audited-ENOSPC-restart" and name == "augmented_derivative"
+                else f"candidates/{name}")
+    return _inside(training_dir, relative)
+
+
+def _check_recorded_checkpoint_path(recorded, training_dir, directory):
+    """Read known contained files; historical absolute strings may relocate."""
+    expected = _inside(training_dir, (directory / "best.pt").relative_to(training_dir).as_posix())
+    relative = expected.relative_to(Path(training_dir).resolve())
+    recorded = Path(recorded)
+    if recorded.is_absolute():
+        # Preserve the original receipt, never access its former absolute path.
+        _require(recorded.parts[-len(relative.parts):] == relative.parts,
+                 "recorded checkpoint path does not identify this canonical/recovery candidate")
+    else:
+        _require(_inside(training_dir, recorded) == expected,
+                 "recorded checkpoint path does not identify this canonical/recovery candidate")
+
+
 def _recovered_training_admission(summary, status, training_dir, protocol):
     """Admit the specifically reviewed I/O-only restart with explicit limits.
 
@@ -239,9 +269,7 @@ def _recovered_training_admission(summary, status, training_dir, protocol):
     _require(_json(recovery / "recovery_receipt.json") == receipt and receipt["status"] == "complete" and
              status.get("recovered_from_enospc") is True and status["recovery_id"] == tag,
              "recovery completion receipt is missing or inconsistent")
-    _require(receipt["driver_sha256"] == RECOVERY_DRIVER_SHA256 and
-             sha256_file(receipt["driver_path"]) == RECOVERY_DRIVER_SHA256,
-             "reviewed recovery driver bytes changed")
+    _recovery_driver_path(training_dir, receipt)
     _require(receipt["frozen_source_sha256"] == summary["source_sha256_at_end"] ==
              summary["initial_source_sha256_recovered_from_retained_checkpoints"] == summary["provenance"]["source_sha256"] and
              receipt["protocol_sha256"] == summary["protocol_sha256"],
@@ -334,8 +362,7 @@ def _recovered_training_admission(summary, status, training_dir, protocol):
         _require(item["candidate"] == candidate and item["best_validation"] == best and
                  best in _json(directory / "validation_history.json"),
                  "recovered best-checkpoint validation receipt changed")
-        _require(Path(item["checkpoint_path"]).resolve() == (directory / "best.pt").resolve(),
-                 "recovered candidate checkpoint points outside its audited attempt")
+        _check_recorded_checkpoint_path(item["checkpoint_path"], training_dir, directory)
         payload = torch.load(directory / "best.pt", map_location="cpu", weights_only=True)
         _require(payload["development_source_sha256"] == receipt["frozen_source_sha256"] and
                  payload["development_protocol_sha256"] == receipt["protocol_sha256"] and
@@ -361,7 +388,7 @@ def _recovered_training_admission(summary, status, training_dir, protocol):
 
 def _training_selection(plan, training_dir, source_root):
     """Audit all candidates and the existing selector, without held-out loads."""
-    training_dir, source_root = Path(training_dir), Path(source_root)
+    training_dir, source_root = Path(training_dir).resolve(), Path(source_root).resolve()
     summary, status = _json(training_dir / "summary.json"), _json(training_dir / "status.json")
     selection, completed = _json(training_dir / "selection.json"), _json(training_dir / "completed_candidates.json")
     cfg = plan["development_training"]
@@ -397,9 +424,8 @@ def _training_selection(plan, training_dir, source_root):
              "source role/dataset identity changed after training")
     snapshots = {}
     for item in completed:
-        candidate_dir = (training_dir / "recovery_attempts" / admission["recovery_id"] / "candidate" / item["name"]
-                         if admission["mode"] == "explicit-audited-ENOSPC-restart" and item["name"] == "augmented_derivative"
-                         else training_dir / "candidates" / item["name"])
+        candidate_dir = _candidate_directory(training_dir, item["name"], admission)
+        _check_recorded_checkpoint_path(item["checkpoint_path"], training_dir, candidate_dir)
         _require(item["status"] == "complete" and item["optimizer_updates_completed"] == 2000 and
                  item["calibration_or_test_arrays_loaded"] is False and item["external_test_arrays_loaded"] is False and
                  _json(candidate_dir / "summary.json") == item, "a candidate is incomplete or its report changed")
@@ -445,10 +471,10 @@ def freeze_selected_checkpoint(*, plan_path, repository_root, training_dir, trai
     for name in ("summary.json", "selection.json", "status.json", "protocol.json", "input_audit.json"):
         _write_once(output, f"training/{name}", (Path(training_dir) / name).read_bytes())
     if admission["mode"] == "explicit-audited-ENOSPC-restart":
-        training = Path(training_dir)
+        training = Path(training_dir).resolve()
         tag = admission["recovery_id"]
         receipt = summary["recovery"]
-        _write_once(output, "training/recovery/driver_snapshot.py", Path(receipt["driver_path"]).read_bytes())
+        _write_once(output, "training/recovery/driver_snapshot.py", _recovery_driver_path(training, receipt).read_bytes())
         paths = {f"recovery_attempts/{tag}/recovery_receipt.json", "teacher_labels.json", "normalization.json"}
         paths |= {p.relative_to(training).as_posix() for p in (training / f"failure_attempts/{tag}").rglob("*") if p.is_file()}
         for item in candidates.values():
@@ -503,8 +529,13 @@ def validate_selection_freeze(freeze_dir):
         _require(sha256_file(_inside(root, relative)) == checksum, "immutable selection-freeze input changed")
     if frozen.get("training_admission", {}).get("mode") == "explicit-audited-ENOSPC-restart":
         admission = frozen["training_admission"]
+        training_summary = _json(root / "training/summary.json")
+        receipt_path = _inside(root, f"training/recovery/evidence/recovery_attempts/{admission['recovery_id']}/recovery_receipt.json")
         _require(frozen["training_source_and_inputs_unchanged"] is None and
                  _json(root / "training/recovery/admission.json") == admission and
+                 training_summary["source_unchanged_during_run"] is None and training_summary["inputs_unchanged_during_run"] is None and
+                 _json(receipt_path) == training_summary["recovery"] and
+                 sha256_file(receipt_path) == admission["receipt_sha256"] and
                  admission["fourth_candidate_actual_executed_updates"] == 2100 and
                  admission["total_actual_executed_updates"] == 8100 and
                  admission["original_start_runtime_receipt_available"] is False and
