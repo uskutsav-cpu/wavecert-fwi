@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "study_role": "existing_validation_cold_runtime_controls",
+  "recorded_utc": "2026-11-07T22:27:25.504641+00:00",
+  "development_scope": "Existing eight correlated model-selection validation slices/four parents; three methods/all24 blocks, no new geology, held-out arrays, tuning, or model selection. Reproduces a bounded cost question after prior development outcomes were inspected.",
+  "methods": [
+    "best_exact_objective_gradient",
+    "raw_POD_objective_gradient",
+    "corrected_POD_directional_certificate"
+  ],
+  "repetitions": 3,
+  "pod_rank": 64,
+  "spectral_coarse_rank": 96,
+  "validation_protocol": {
+    "path": "configs/coarse_adjoint_validation_protocol.json",
+    "sha256": "3731d5ee7585c7af43193b8c4c4495c05785444d1533487e1e4578442ae52b96"
+  },
+  "method_order": "rotate METHODS by (repetition + case_index) modulo 3; repetition outermost",
+  "cache_rule": "new independent physics/POD/coarse-engine/certifier objects for every method/case/repetition; no warm diagnostic",
+  "timing_scope": "single-process cold per-model solver caches, not process/OS/CPU-cache cold; no concurrent task-owned compute",
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "clock": "time.perf_counter wall time; setup constructor interval, public query interval, and their total; receipts/validation/output/teardown outside core time",
+  "setup_rule": "Include each new Helmholtz instance and applicable POD constructor (basis copy/orthogonality Gram, stiffness and damping projections) and coarse engine/certifier constructor (two damping DCT-I transforms). Separately report setup and query, as well as total cold.",
+  "query_rule": "Include all per-model mass projections, exact factor/solve routes, reduced solves/lifts, model DCTs, small SVD/eigen/inverse RHS, receiver and correction work, physical-gradient contractions, and certificate context/result construction performed by the existing API. No model/factor/receiver caches shared across cold calls.",
+  "common_work_rule": "Preload and audit identical fixture/basis before timing; prepare identical model/block arrays once. Independently recompute fine validation on another solver outside core times; report its wall time/work and retain historical teacher-generation and basis-fit costs. Write output only between complete rotated triples.",
+  "task_difference": "Exact objective/full gradient; approximate raw POD objective/gradient; corrected physical proposal plus deterministic directional bound in the documented ordinary-floating-point scope. These are different tasks. No equal-accuracy, inversion, time-to-target, native-64 or field-scale speedup claim.",
+  "summary_rule": "Raw paired times by repetition/slice; four-parent descriptive summaries. No IID-eight confidence interval. No optional warm diagnostic.",
+  "numerical_check_relative_tolerance": 1e-09,
+  "numerical_check_absolute_tolerance": 1e-10,
+  "heldout_arrays_loaded": false,
+  "inversion_or_time_to_target_claim": false
+}
