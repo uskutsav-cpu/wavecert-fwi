@@ -49,7 +49,8 @@ A train-only classical POD model substantially outperforms the tested FNOs on
 inversion-relevant gradients. On 200 previously unevaluated original model slots
 from two known generated batches, raw POD has mean gradient cosine 0.99745 and
 0.99953; coarse-corrected POD has 0.99866 and 0.99975. The new neural model has
-0.05583 and -0.01178. All five fixed comparators and all 4,000 blocks are retained.
+0.05583 and -0.01178. All five fixed comparators and all 4,000 model-block evaluations (800 distinct
+source/frequency blocks) are retained.
 
 The new coarse state/adjoint certificate accepts 168/200 directions, observes
 zero false certifications, and abstains on 32. Its guarantee is a pointwise,

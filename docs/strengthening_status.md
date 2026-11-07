@@ -14,8 +14,8 @@ All five models and negative outcomes were retained.
 | Four FNO training candidates | Smoothing + JVP winner: validation cosine 0.161, true descent 5/8 | Train/validation selection only; ENOSPC restart, all histories and recovery receipts retained |
 | Eight classical POD candidates | State+tangent rank64: validation cosine 0.99876, descent 8/8 | Train-only snapshots; established classical baseline, selected on the same validation criterion |
 | Coarse certificate validation | Generic / oriented / corrected: 0/8, 2/8, 8/8 certified | Eight reused validation slices / four parents; not confirmation |
-| Fixed five-model comparison | 200 original model slots, 1,000 model-label aggregates, 4,000 blocks | Previously unused indices from two known generated batches; source and inputs unchanged |
-| Corrected certificate on those 200 slots | 168/200 certified, 0 observed false certifications, 32 abstentions | All 200 stability contexts available; exact fallback required on abstention but not executed in this gradient-only study |
+| Fixed five-model comparison | 200 original model slots, 1,000 model-label aggregates, 4,000 model-block evaluations across 800 distinct physics blocks | Previously unused indices from two known generated batches; source and inputs unchanged |
+| Corrected certificate on those 200 slots | 168/200 certified, 0 observed false certifications, 32 abstentions | All frequency stability bounds available in all 200 model evaluations; exact fallback required on abstention but not executed in this gradient-only study |
 | Historical parent transfer | Corrected: 16/16 ID and 2/4 OOD slices certified; all true directions descend | Eight ID parents and one OOD parent, descriptive historical test reuse |
 | Scalar cold-query controls | Exact 12.57 ms; raw POD 13.66 ms; corrected certificate 68.30 ms median total | Eight validation slices / four parents / three cold repetitions, setup included; different information tasks |
 

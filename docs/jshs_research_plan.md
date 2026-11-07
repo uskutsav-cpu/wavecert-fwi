@@ -37,7 +37,7 @@ The train-only classical POD baseline was far stronger: mean cosines 0.99745 and
 0.99953, with true descent on all 200 original model slots. Coarse correction
 increased these to 0.99866 and 0.99975. The certificate accepted 168/200 directions,
 with no observed false certifications and 32 abstentions. All five fixed models,
-all 4,000 source/frequency blocks, and negative outcomes are retained. The two
+all 4,000 model-block evaluations (800 distinct source/frequency blocks), and negative outcomes are retained. The two
 batches were known during development; unused indices are not new geological
 families or measured field data. No finite-step/inversion benefit follows from
 these direction measurements.

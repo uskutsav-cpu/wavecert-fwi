@@ -25,7 +25,7 @@ Why it matters: broad mathematical/operator-learning framework.
 ### Official NeuralOperator library
 https://github.com/neuraloperator/neuraloperator
 
-Why it matters: maintained PyTorch implementation of FNO/TFNO and related operator-learning infrastructure. WaveCert intentionally wraps arbitrary differentiable PyTorch surrogates instead of reimplementing FNO.
+Why it matters: maintained PyTorch implementation of FNO/TFNO and related operator-learning infrastructure. WaveCert has a generic differentiable PyTorch adapter and also implements its own compact FNO baseline in `surrogates/fno.py`. The compact baseline is not an official NeuralOperator-library reproduction.
 
 
 ### O'Leary-Roseberry et al. (2024) — DINO
