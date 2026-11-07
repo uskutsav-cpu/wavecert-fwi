@@ -1,0 +1,57 @@
+{
+  "seeds": [
+    731,
+    1907,
+    8101
+  ],
+  "cases_per_seed": 4,
+  "iterations": 12,
+  "calibration_cases": 30,
+  "calibration_seed": 2026110701,
+  "alpha": 0.1,
+  "scenarios": [
+    "clean",
+    "noise-5pct",
+    "sparse-receivers",
+    "frequency-shift"
+  ],
+  "policies": [
+    "exact",
+    "neural-only",
+    "random-repair",
+    "residual-repair",
+    "periodic-exact",
+    "conformal-selective",
+    "deterministic-selective",
+    "analytic-selective"
+  ],
+  "step_acceptance": "exact-decrease",
+  "repair_blocks": 2,
+  "periodic_interval": 2,
+  "torch_threads": 1,
+  "checkpoint": "checkpoints/fno_phase2.pt",
+  "checkpoint_sha256": "70920f1e3b72eaf9cac635547713d45ab6e6d7b7ec713eb2044e04b23f50ddee",
+  "shape": [
+    16,
+    16
+  ],
+  "study_status": "development; not preregistered",
+  "scope": "synthetic 2-D discrete Helmholtz inversion; not field-scale or measured seismic data",
+  "timing_protocol": "warm FNO state/VJP/JVP; fresh policy solver cache; rotated policy order across model/scenario cases; CPU",
+  "provenance": {
+    "git_revision": "7ee700f08609e13c1224a18b75db85fac7b01e82",
+    "working_tree_dirty": true,
+    "source_sha256": "1bd6d49e2465e0b149b9fa5f24cc2f0b42a26391a5d9fa090183e4f0266bdcc4",
+    "python": "3.13.13",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "packages": {
+      "numpy": "2.4.3",
+      "scipy": "1.18.1",
+      "torch": "2.14.0",
+      "matplotlib": "3.11.2",
+      "pandas": "3.0.5",
+      "pytest": "9.1.1"
+    }
+  }
+}

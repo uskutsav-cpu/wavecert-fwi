@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "shapes": [
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "runs": [
+        {
+          "cache_size": 0,
+          "seconds": 0.07793991699873004,
+          "costs": {
+            "factorizations": 96,
+            "forward_rhs": 48,
+            "tangent_rhs": 0,
+            "adjoint_rhs": 48,
+            "stability_rhs": 0,
+            "dense_inverse_rhs": 0,
+            "svd_evaluations": 0,
+            "cache_hits": 0,
+            "analytic_bound_evaluations": 0
+          },
+          "outputs_match_uncached": true
+        },
+        {
+          "cache_size": 8,
+          "seconds": 0.01007295900126337,
+          "costs": {
+            "factorizations": 2,
+            "forward_rhs": 48,
+            "tangent_rhs": 0,
+            "adjoint_rhs": 48,
+            "stability_rhs": 0,
+            "dense_inverse_rhs": 0,
+            "svd_evaluations": 0,
+            "cache_hits": 94,
+            "analytic_bound_evaluations": 0
+          },
+          "outputs_match_uncached": true
+        }
+      ]
+    },
+    {
+      "shape": [
+        32,
+        32
+      ],
+      "runs": [
+        {
+          "cache_size": 0,
+          "seconds": 0.3447525840019807,
+          "costs": {
+            "factorizations": 96,
+            "forward_rhs": 48,
+            "tangent_rhs": 0,
+            "adjoint_rhs": 48,
+            "stability_rhs": 0,
+            "dense_inverse_rhs": 0,
+            "svd_evaluations": 0,
+            "cache_hits": 0,
+            "analytic_bound_evaluations": 0
+          },
+          "outputs_match_uncached": true
+        },
+        {
+          "cache_size": 8,
+          "seconds": 0.026889415999903576,
+          "costs": {
+            "factorizations": 2,
+            "forward_rhs": 48,
+            "tangent_rhs": 0,
+            "adjoint_rhs": 48,
+            "stability_rhs": 0,
+            "dense_inverse_rhs": 0,
+            "svd_evaluations": 0,
+            "cache_hits": 94,
+            "analytic_bound_evaluations": 0
+          },
+          "outputs_match_uncached": true
+        }
+      ]
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "runs": [
+        {
+          "cache_size": 0,
+          "seconds": 4.331179749999137,
+          "costs": {
+            "factorizations": 96,
+            "forward_rhs": 48,
+            "tangent_rhs": 0,
+            "adjoint_rhs": 48,
+            "stability_rhs": 0,
+            "dense_inverse_rhs": 0,
+            "svd_evaluations": 0,
+            "cache_hits": 0,
+            "analytic_bound_evaluations": 0
+          },
+          "outputs_match_uncached": true
+        },
+        {
+          "cache_size": 8,
+          "seconds": 0.1536439170013182,
+          "costs": {
+            "factorizations": 2,
+            "forward_rhs": 48,
+            "tangent_rhs": 0,
+            "adjoint_rhs": 48,
+            "stability_rhs": 0,
+            "dense_inverse_rhs": 0,
+            "svd_evaluations": 0,
+            "cache_hits": 94,
+            "analytic_bound_evaluations": 0
+          },
+          "outputs_match_uncached": true
+        }
+      ]
+    }
+  ],
+  "scope": "Single-process microbenchmark of 48 exact reference gradient blocks per run; no neural model or certification. Benefits exact FWI too; not WaveCert-versus-exact speedup.",
+  "protocol": {
+    "sources": 8,
+    "frequencies_hz": [
+      3.0,
+      4.0
+    ],
+    "repeats": 3,
+    "spacing": 0.05,
+    "squared_slowness": 0.25
+  },
+  "python": "3.13.13",
+  "numpy": "2.4.3",
+  "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": null
+  }
+}

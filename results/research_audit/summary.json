@@ -1,0 +1,890 @@
+{
+  "audit_kind": "archived-results provenance and statistical-unit audit",
+  "source_commit": "7ee700f08609e13c1224a18b75db85fac7b01e82",
+  "seed": 20260912,
+  "environment_versions": {
+    "numpy": "2.4.3",
+    "scipy": "1.18.1",
+    "pandas": "3.0.5",
+    "torch": "2.14.0"
+  },
+  "manifest_sha256_matches_recorded_protocol": true,
+  "split_audit": {
+    "roles": {
+      "final_calibration": {
+        "rows": 30,
+        "unique_slices": 30,
+        "unique_parent_models": 23,
+        "parent_models": [
+          "f3_042",
+          "f3_045",
+          "f3_046",
+          "f3_048",
+          "f3_050",
+          "fault_000",
+          "fault_001",
+          "fault_002",
+          "fault_003",
+          "fault_004",
+          "gom_143",
+          "gom_144",
+          "gom_146",
+          "gom_150",
+          "salt_canopy_000",
+          "salt_canopy_001",
+          "salt_canopy_002",
+          "salt_canopy_003",
+          "seam_000",
+          "seam_001",
+          "seam_003",
+          "seam_004",
+          "seam_011"
+        ],
+        "rows_per_parent": {
+          "f3_042": 1,
+          "f3_045": 2,
+          "f3_046": 1,
+          "f3_048": 1,
+          "f3_050": 1,
+          "fault_000": 2,
+          "fault_001": 1,
+          "fault_002": 2,
+          "fault_003": 2,
+          "fault_004": 1,
+          "gom_143": 2,
+          "gom_144": 1,
+          "gom_146": 1,
+          "gom_150": 1,
+          "salt_canopy_000": 1,
+          "salt_canopy_001": 2,
+          "salt_canopy_002": 2,
+          "salt_canopy_003": 1,
+          "seam_000": 1,
+          "seam_001": 1,
+          "seam_003": 1,
+          "seam_004": 1,
+          "seam_011": 1
+        },
+        "geology_counts": {
+          "f3": 6,
+          "fault": 8,
+          "gom": 5,
+          "salt_canopy": 6,
+          "seam": 5
+        }
+      },
+      "final_id_evaluation": {
+        "rows": 45,
+        "unique_slices": 45,
+        "unique_parent_models": 31,
+        "parent_models": [
+          "f3_043",
+          "f3_044",
+          "f3_046",
+          "f3_047",
+          "f3_048",
+          "f3_049",
+          "f3_050",
+          "f3_051",
+          "fault_000",
+          "fault_001",
+          "fault_002",
+          "fault_003",
+          "fault_004",
+          "gom_142",
+          "gom_145",
+          "gom_147",
+          "gom_148",
+          "gom_149",
+          "gom_151",
+          "salt_canopy_000",
+          "salt_canopy_001",
+          "salt_canopy_002",
+          "salt_canopy_003",
+          "seam_000",
+          "seam_002",
+          "seam_003",
+          "seam_004",
+          "seam_005",
+          "seam_006",
+          "seam_007",
+          "seam_008"
+        ],
+        "rows_per_parent": {
+          "f3_043": 2,
+          "f3_044": 1,
+          "f3_046": 1,
+          "f3_047": 1,
+          "f3_048": 1,
+          "f3_049": 1,
+          "f3_050": 1,
+          "f3_051": 1,
+          "fault_000": 1,
+          "fault_001": 2,
+          "fault_002": 1,
+          "fault_003": 1,
+          "fault_004": 3,
+          "gom_142": 1,
+          "gom_145": 1,
+          "gom_147": 1,
+          "gom_148": 1,
+          "gom_149": 2,
+          "gom_151": 1,
+          "salt_canopy_000": 2,
+          "salt_canopy_001": 2,
+          "salt_canopy_002": 3,
+          "salt_canopy_003": 3,
+          "seam_000": 1,
+          "seam_002": 2,
+          "seam_003": 1,
+          "seam_004": 1,
+          "seam_005": 2,
+          "seam_006": 2,
+          "seam_007": 1,
+          "seam_008": 1
+        },
+        "geology_counts": {
+          "f3": 9,
+          "fault": 8,
+          "gom": 7,
+          "salt_canopy": 10,
+          "seam": 11
+        }
+      },
+      "final_ood_stress": {
+        "rows": 55,
+        "unique_slices": 55,
+        "unique_parent_models": 1,
+        "parent_models": [
+          "penobscot_000"
+        ],
+        "rows_per_parent": {
+          "penobscot_000": 55
+        },
+        "geology_counts": {
+          "penobscot": 55
+        }
+      }
+    },
+    "pairwise_overlap": [
+      {
+        "roles": [
+          "final_calibration",
+          "final_id_evaluation"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": [
+          "f3_046",
+          "f3_048",
+          "f3_050",
+          "fault_000",
+          "fault_001",
+          "fault_002",
+          "fault_003",
+          "fault_004",
+          "salt_canopy_000",
+          "salt_canopy_001",
+          "salt_canopy_002",
+          "salt_canopy_003",
+          "seam_000",
+          "seam_003",
+          "seam_004"
+        ]
+      },
+      {
+        "roles": [
+          "final_calibration",
+          "final_ood_stress"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      },
+      {
+        "roles": [
+          "final_id_evaluation",
+          "final_ood_stress"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      }
+    ],
+    "conflicting_slice_parent_ids": [],
+    "slice_isolation_passed": true,
+    "parent_isolation_passed": false,
+    "scope": "Manifest isolation only; does not prove independent sampling, unseen data, or checkpoint provenance."
+  },
+  "archived_policy_parent_summaries": {
+    "id": {
+      "exact": {
+        "n_slices": 45,
+        "n_parent_models": 31,
+        "observed_slice_descent_rate": 1.0,
+        "parent_any_non_descent": {
+          "n_units": 31,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.0921140599473237,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 31,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.0921140599473237,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "global-fallback": {
+        "n_slices": 45,
+        "n_parent_models": 31,
+        "observed_slice_descent_rate": 1.0,
+        "parent_any_non_descent": {
+          "n_units": 31,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.0921140599473237,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 31,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.0921140599473237,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "neural-only": {
+        "n_slices": 45,
+        "n_parent_models": 31,
+        "observed_slice_descent_rate": 0.7333333333333333,
+        "parent_any_non_descent": {
+          "n_units": 31,
+          "failures": 9,
+          "observed_failure_rate": 0.2903225806451613,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.4519044172193685,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 31,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.0921140599473237,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "random-1": {
+        "n_slices": 45,
+        "n_parent_models": 31,
+        "observed_slice_descent_rate": 0.7555555555555555,
+        "parent_any_non_descent": {
+          "n_units": 31,
+          "failures": 8,
+          "observed_failure_rate": 0.25806451612903225,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.4176603337442609,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 31,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.0921140599473237,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "random-12": {
+        "n_slices": 45,
+        "n_parent_models": 31,
+        "observed_slice_descent_rate": 1.0,
+        "parent_any_non_descent": {
+          "n_units": 31,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.0921140599473237,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 31,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.0921140599473237,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "random-15": {
+        "n_slices": 45,
+        "n_parent_models": 31,
+        "observed_slice_descent_rate": 1.0,
+        "parent_any_non_descent": {
+          "n_units": 31,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.0921140599473237,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 31,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.0921140599473237,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "random-16": {
+        "n_slices": 45,
+        "n_parent_models": 31,
+        "observed_slice_descent_rate": 1.0,
+        "parent_any_non_descent": {
+          "n_units": 31,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.0921140599473237,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 31,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.0921140599473237,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "random-2": {
+        "n_slices": 45,
+        "n_parent_models": 31,
+        "observed_slice_descent_rate": 0.8,
+        "parent_any_non_descent": {
+          "n_units": 31,
+          "failures": 6,
+          "observed_failure_rate": 0.1935483870967742,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.3466525437888071,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 31,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.0921140599473237,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "random-20": {
+        "n_slices": 45,
+        "n_parent_models": 31,
+        "observed_slice_descent_rate": 1.0,
+        "parent_any_non_descent": {
+          "n_units": 31,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.0921140599473237,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 31,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.0921140599473237,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "random-4": {
+        "n_slices": 45,
+        "n_parent_models": 31,
+        "observed_slice_descent_rate": 0.8888888888888888,
+        "parent_any_non_descent": {
+          "n_units": 31,
+          "failures": 3,
+          "observed_failure_rate": 0.0967741935483871,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.23150297514336832,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 31,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.0921140599473237,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "random-8": {
+        "n_slices": 45,
+        "n_parent_models": 31,
+        "observed_slice_descent_rate": 0.9777777777777777,
+        "parent_any_non_descent": {
+          "n_units": 31,
+          "failures": 1,
+          "observed_failure_rate": 0.03225806451612903,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.14409039131834475,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 31,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.0921140599473237,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "wavecert-selective": {
+        "n_slices": 45,
+        "n_parent_models": 31,
+        "observed_slice_descent_rate": 1.0,
+        "parent_any_non_descent": {
+          "n_units": 31,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.0921140599473237,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 31,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.0921140599473237,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      }
+    },
+    "ood": {
+      "exact": {
+        "n_slices": 55,
+        "n_parent_models": 1,
+        "observed_slice_descent_rate": 1.0,
+        "parent_any_non_descent": {
+          "n_units": 1,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.95,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 1,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.95,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "global-fallback": {
+        "n_slices": 55,
+        "n_parent_models": 1,
+        "observed_slice_descent_rate": 1.0,
+        "parent_any_non_descent": {
+          "n_units": 1,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.95,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 1,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.95,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "neural-only": {
+        "n_slices": 55,
+        "n_parent_models": 1,
+        "observed_slice_descent_rate": 0.0,
+        "parent_any_non_descent": {
+          "n_units": 1,
+          "failures": 1,
+          "observed_failure_rate": 1.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 1.0,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 1,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.95,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "random-1": {
+        "n_slices": 55,
+        "n_parent_models": 1,
+        "observed_slice_descent_rate": 0.23636363636363636,
+        "parent_any_non_descent": {
+          "n_units": 1,
+          "failures": 1,
+          "observed_failure_rate": 1.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 1.0,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 1,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.95,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "random-12": {
+        "n_slices": 55,
+        "n_parent_models": 1,
+        "observed_slice_descent_rate": 1.0,
+        "parent_any_non_descent": {
+          "n_units": 1,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.95,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 1,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.95,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "random-15": {
+        "n_slices": 55,
+        "n_parent_models": 1,
+        "observed_slice_descent_rate": 1.0,
+        "parent_any_non_descent": {
+          "n_units": 1,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.95,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 1,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.95,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "random-16": {
+        "n_slices": 55,
+        "n_parent_models": 1,
+        "observed_slice_descent_rate": 0.9818181818181818,
+        "parent_any_non_descent": {
+          "n_units": 1,
+          "failures": 1,
+          "observed_failure_rate": 1.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 1.0,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 1,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.95,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "random-2": {
+        "n_slices": 55,
+        "n_parent_models": 1,
+        "observed_slice_descent_rate": 0.36363636363636365,
+        "parent_any_non_descent": {
+          "n_units": 1,
+          "failures": 1,
+          "observed_failure_rate": 1.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 1.0,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 1,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.95,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "random-20": {
+        "n_slices": 55,
+        "n_parent_models": 1,
+        "observed_slice_descent_rate": 1.0,
+        "parent_any_non_descent": {
+          "n_units": 1,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.95,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 1,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.95,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "random-4": {
+        "n_slices": 55,
+        "n_parent_models": 1,
+        "observed_slice_descent_rate": 0.4727272727272727,
+        "parent_any_non_descent": {
+          "n_units": 1,
+          "failures": 1,
+          "observed_failure_rate": 1.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 1.0,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 1,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.95,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "random-8": {
+        "n_slices": 55,
+        "n_parent_models": 1,
+        "observed_slice_descent_rate": 0.8545454545454545,
+        "parent_any_non_descent": {
+          "n_units": 1,
+          "failures": 1,
+          "observed_failure_rate": 1.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 1.0,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 1,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.95,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      },
+      "wavecert-selective": {
+        "n_slices": 55,
+        "n_parent_models": 1,
+        "observed_slice_descent_rate": 1.0,
+        "parent_any_non_descent": {
+          "n_units": 1,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.95,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "parent_any_false_acceptance": {
+          "n_units": 1,
+          "failures": 0,
+          "observed_failure_rate": 0.0,
+          "confidence": 0.95,
+          "one_sided_failure_probability_upper": 0.95,
+          "method": "exact one-sided Clopper-Pearson",
+          "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+        },
+        "interpretation": "Parent-any-event intervals require independent parent sampling; they are not per-slice probability intervals."
+      }
+    }
+  },
+  "matched_cost_cosine_effects": {
+    "id": {
+      "n_observations": 45,
+      "n_parent_groups": 31,
+      "mean": 0.08361311582549741,
+      "confidence": 0.95,
+      "interval": [
+        0.05184106175401672,
+        0.11984405280318325
+      ],
+      "method": "whole-parent percentile bootstrap of observation-weighted mean",
+      "seed": 20260912,
+      "n_resamples": 4000,
+      "assumption": "independently sampled parent groups; slices within a parent may be dependent",
+      "status": "descriptive interval conditional on the parent-sampling assumption",
+      "quantity": "per-slice WaveCert cosine minus median of 100 matched-cost random-repair cosines",
+      "scope": "descriptive reanalysis of archived final cases; not a new held-out test"
+    },
+    "ood": {
+      "n_observations": 55,
+      "n_parent_groups": 1,
+      "mean": 0.18933956905437876,
+      "confidence": 0.95,
+      "interval": null,
+      "method": "whole-parent percentile bootstrap of observation-weighted mean",
+      "seed": 20260912,
+      "n_resamples": 4000,
+      "assumption": "independently sampled parent groups; slices within a parent may be dependent",
+      "status": "unavailable: fewer than two independent parent groups",
+      "quantity": "per-slice WaveCert cosine minus median of 100 matched-cost random-repair cosines",
+      "scope": "descriptive reanalysis of archived final cases; not a new held-out test"
+    }
+  },
+  "artifacts": [
+    {
+      "path": "configs/final_subsurfacegen_split.csv",
+      "exists": true,
+      "sha256": "c4c1cb9a46bac7473f31792e2c468f94f4c613247f06641614593b18983ad25c",
+      "bytes": 13934
+    },
+    {
+      "path": "configs/final_subsurfacegen_protocol.json",
+      "exists": true,
+      "sha256": "67aca3b512c5dc6f5c0ab2a844722b638dd97744c0050c59dd312c0859b7309b",
+      "bytes": 366
+    },
+    {
+      "path": "results/final_subsurfacegen/policy_cases.csv",
+      "exists": true,
+      "sha256": "983db00092d9558fc91dfe25439b54d8cb8016def9a3d33e795918c231ff2e32",
+      "bytes": 152475
+    },
+    {
+      "path": "results/final_subsurfacegen_matched_mc/matched_random_cases.csv",
+      "exists": true,
+      "sha256": "08111c912f9d8300aec81e871258807c5d8b0c661e5b841974ffa81b2c32ce88",
+      "bytes": 18871
+    },
+    {
+      "path": "results/final_subsurfacegen/summary.json",
+      "exists": true,
+      "sha256": "f917304396fad3301881f8ef1c9609857a2697619e45eba45766b81aeecab538",
+      "bytes": 10517
+    },
+    {
+      "path": "checkpoints/fno_subsurfacegen_v2.pt",
+      "exists": false,
+      "sha256": null,
+      "bytes": null
+    }
+  ],
+  "final_dataset": {
+    "path": "data/external/subsurfacegen-wavecert-final",
+    "directory_available": false,
+    "files_available": {
+      "train.npz": false,
+      "validation.npz": false,
+      "calibration.npz": false,
+      "test_id.npz": false,
+      "test_ood.npz": false
+    },
+    "checkpoint_available": false,
+    "checkpoint_training_manifest_recorded_in_archived_summary": false,
+    "model_selection_calibration_disjointness": "unverified: archived summary does not identify a separate checkpoint-selection dataset and its parent IDs"
+  },
+  "limitations": [
+    "A correct manifest hash proves file identity, not a timestamped preregistration or absence of test-set inspection.",
+    "No nominal conformal coverage statement is established by observed descent or zero false acceptances alone.",
+    "Correlated slices and 100 Monte Carlo repeats per slice are not independent geological replications.",
+    "The single OOD parent supports a stress test; it cannot estimate uncertainty across new OOD parent models.",
+    "Bootstrap intervals are descriptive and assume the observed parent groups represent independent draws."
+  ]
+}

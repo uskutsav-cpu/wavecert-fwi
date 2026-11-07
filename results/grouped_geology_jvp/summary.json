@@ -1,0 +1,388 @@
+{
+  "dataset": "SubsurfaceGen real geology with WaveCert reference wavefields",
+  "dataset_provenance": {
+    "dataset_manifest_sha256": "e297ab5196bd50142db76a575c78355587bba04f6b381a0ef8700c950d04155a",
+    "role_manifest_sha256": "30fed6e30e07a1b54d17f3ae9511d06eac6f44c69fcb57b6ee588f2ade65ef14",
+    "verified_content_files": [
+      "split_manifest.csv",
+      "train.npz",
+      "train_metadata.csv",
+      "validation.npz",
+      "validation_metadata.csv",
+      "calibration.npz",
+      "calibration_metadata.csv",
+      "test_id.npz",
+      "test_id_metadata.csv",
+      "test_ood.npz",
+      "test_ood_metadata.csv"
+    ],
+    "scope": "file identity only; no proof of unseen test data or independent parent sampling"
+  },
+  "split_audit": {
+    "roles": {
+      "calibration": {
+        "rows": 576,
+        "unique_slices": 24,
+        "unique_parent_models": 12,
+        "parent_models": [
+          "f3_043",
+          "f3_046",
+          "f3_048",
+          "f3_051",
+          "fault_000",
+          "fault_002",
+          "fault_004",
+          "gom_149",
+          "salt_canopy_002",
+          "salt_canopy_003",
+          "seam_000",
+          "seam_004"
+        ],
+        "rows_per_parent": {
+          "f3_043": 48,
+          "f3_046": 48,
+          "f3_048": 48,
+          "f3_051": 48,
+          "fault_000": 48,
+          "fault_002": 48,
+          "fault_004": 48,
+          "gom_149": 48,
+          "salt_canopy_002": 48,
+          "salt_canopy_003": 48,
+          "seam_000": 48,
+          "seam_004": 48
+        },
+        "geology_counts": {
+          "f3": 192,
+          "fault": 144,
+          "gom": 48,
+          "salt_canopy": 96,
+          "seam": 96
+        }
+      },
+      "test_id": {
+        "rows": 384,
+        "unique_slices": 16,
+        "unique_parent_models": 8,
+        "parent_models": [
+          "f3_042",
+          "fault_001",
+          "fault_003",
+          "gom_144",
+          "seam_001",
+          "seam_002",
+          "seam_008",
+          "seam_009"
+        ],
+        "rows_per_parent": {
+          "f3_042": 48,
+          "fault_001": 48,
+          "fault_003": 48,
+          "gom_144": 48,
+          "seam_001": 48,
+          "seam_002": 48,
+          "seam_008": 48,
+          "seam_009": 48
+        },
+        "geology_counts": {
+          "f3": 48,
+          "fault": 96,
+          "gom": 48,
+          "seam": 192
+        }
+      },
+      "test_ood": {
+        "rows": 96,
+        "unique_slices": 4,
+        "unique_parent_models": 1,
+        "parent_models": [
+          "penobscot_000"
+        ],
+        "rows_per_parent": {
+          "penobscot_000": 96
+        },
+        "geology_counts": {
+          "penobscot": 96
+        }
+      },
+      "train": {
+        "rows": 816,
+        "unique_slices": 34,
+        "unique_parent_models": 17,
+        "parent_models": [
+          "f3_044",
+          "f3_045",
+          "f3_047",
+          "f3_049",
+          "f3_050",
+          "gom_142",
+          "gom_143",
+          "gom_145",
+          "gom_146",
+          "gom_147",
+          "gom_150",
+          "salt_canopy_000",
+          "salt_canopy_001",
+          "seam_003",
+          "seam_006",
+          "seam_007",
+          "seam_010"
+        ],
+        "rows_per_parent": {
+          "f3_044": 48,
+          "f3_045": 48,
+          "f3_047": 48,
+          "f3_049": 48,
+          "f3_050": 48,
+          "gom_142": 48,
+          "gom_143": 48,
+          "gom_145": 48,
+          "gom_146": 48,
+          "gom_147": 48,
+          "gom_150": 48,
+          "salt_canopy_000": 48,
+          "salt_canopy_001": 48,
+          "seam_003": 48,
+          "seam_006": 48,
+          "seam_007": 48,
+          "seam_010": 48
+        },
+        "geology_counts": {
+          "f3": 240,
+          "gom": 288,
+          "salt_canopy": 96,
+          "seam": 192
+        }
+      },
+      "validation": {
+        "rows": 192,
+        "unique_slices": 8,
+        "unique_parent_models": 4,
+        "parent_models": [
+          "gom_148",
+          "gom_151",
+          "seam_005",
+          "seam_011"
+        ],
+        "rows_per_parent": {
+          "gom_148": 48,
+          "gom_151": 48,
+          "seam_005": 48,
+          "seam_011": 48
+        },
+        "geology_counts": {
+          "gom": 96,
+          "seam": 96
+        }
+      }
+    },
+    "pairwise_overlap": [
+      {
+        "roles": [
+          "calibration",
+          "test_id"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      },
+      {
+        "roles": [
+          "calibration",
+          "test_ood"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      },
+      {
+        "roles": [
+          "calibration",
+          "train"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      },
+      {
+        "roles": [
+          "calibration",
+          "validation"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      },
+      {
+        "roles": [
+          "test_id",
+          "test_ood"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      },
+      {
+        "roles": [
+          "test_id",
+          "train"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      },
+      {
+        "roles": [
+          "test_id",
+          "validation"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      },
+      {
+        "roles": [
+          "test_ood",
+          "train"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      },
+      {
+        "roles": [
+          "test_ood",
+          "validation"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      },
+      {
+        "roles": [
+          "train",
+          "validation"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      }
+    ],
+    "conflicting_slice_parent_ids": [],
+    "slice_isolation_passed": true,
+    "parent_isolation_passed": true,
+    "exchangeability_established": false,
+    "statistical_scope": "Parent isolation is necessary but not sufficient for pooled conformal coverage; fixed geology quotas and unequal within-parent sampling require separate justification.",
+    "scope": "Manifest isolation only; does not prove independent sampling, unseen data, or checkpoint provenance."
+  },
+  "calibration_role_use": "not loaded for training, early stopping, normalization, or checkpoint selection",
+  "training_objective": "forward full-field normalized MSE + 0.25 receiver MSE + jacobian_weight * normalized tangent MSE",
+  "model_selection_objective": "validation forward normalized MSE + jacobian_weight * normalized tangent MSE",
+  "jacobian_weight": 0.1,
+  "jacobian_seed": 20261107,
+  "jacobian_labels": {
+    "train": {
+      "role": "train",
+      "seed": 20261107,
+      "role_seed_code": 0,
+      "n_examples": 816,
+      "directions_per_example": 1,
+      "direction_distribution": "fixed Gaussian random squared-slowness directions, unit L2 over all model pixels",
+      "reference_physics": "same discrete Helmholtz operator as grouped forward data; complex128 solves at stored model values",
+      "saved_dtype": "float32 directions and physical real/imaginary tangent channels",
+      "models_sha256": "287e56061821240decf075fe9cd3096a7994207fdb6f22786b9ef1d5940e931a",
+      "directions_sha256": "69e38bf41ffcd59d897a93124040cfe1490b1a633aac9222b8776ee3e2a469a7",
+      "tangents_sha256": "ad10d291531909bee7ae25b404cf74ec87e696b90f1947c67abaa6257e1a3c6c",
+      "offline_label_physics_cost": {
+        "factorizations": 136,
+        "forward_rhs": 816,
+        "tangent_rhs": 816,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 1496,
+        "analytic_bound_evaluations": 0
+      },
+      "calibration_or_test_labels_used": false,
+      "artifact": "jacobian_train_labels.npz",
+      "artifact_sha256": "20207393b41ef8fe4869706a2f8f67be2bcb40b67b353f9d50019344bf2e938d"
+    },
+    "validation": {
+      "role": "validation",
+      "seed": 20261107,
+      "role_seed_code": 1,
+      "n_examples": 192,
+      "directions_per_example": 1,
+      "direction_distribution": "fixed Gaussian random squared-slowness directions, unit L2 over all model pixels",
+      "reference_physics": "same discrete Helmholtz operator as grouped forward data; complex128 solves at stored model values",
+      "saved_dtype": "float32 directions and physical real/imaginary tangent channels",
+      "models_sha256": "bf954ae4e2897aeb3ec0b386e423e3bbdeaa390b5c0bdc72cbdb8cc83fc26df0",
+      "directions_sha256": "bfc3f2dd8be79e4e1b5880c739c2fbbcfdc124816c573ee4ff62cd2494054a44",
+      "tangents_sha256": "bac3656c3f99fccc7f5a6b87cd97f98460b80fc908954fdfec7d5da4f5265f36",
+      "offline_label_physics_cost": {
+        "factorizations": 32,
+        "forward_rhs": 192,
+        "tangent_rhs": 192,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 352,
+        "analytic_bound_evaluations": 0
+      },
+      "calibration_or_test_labels_used": false,
+      "artifact": "jacobian_validation_labels.npz",
+      "artifact_sha256": "77d0699be7d403df159668e411f7ecfb3d48af9b5d76c951bb8d4872bfd2f3f2"
+    }
+  },
+  "jacobian_label_generation_seconds": 0.9144414999973378,
+  "training_seconds": 567.0586857909984,
+  "seconds_before_artifact_writes": 571.6128279580007,
+  "derivative_baseline_scope": "Existing derivative-supervision strategy used as a comparator; float32 neural derivatives and stored tangent labels are numerical approximations, not a new certification theorem.",
+  "seed": 20261107,
+  "shape": [
+    24,
+    24
+  ],
+  "model_config": {
+    "modes_z": 8,
+    "modes_x": 8,
+    "width": 24,
+    "depth": 3,
+    "padding": 2
+  },
+  "normalization": {
+    "model_mean": 0.2030394971370697,
+    "model_std": 0.13493861258029938,
+    "frequency_mean": 3.25,
+    "frequency_std": 0.55901700258255,
+    "output_mean_real": -0.0034792423248291016,
+    "output_std_real": 0.16280725598335266,
+    "output_mean_imag": -0.0029588211327791214,
+    "output_std_imag": 0.1859275847673416
+  },
+  "examples": {
+    "train": 816,
+    "validation": 192,
+    "test_id": 384,
+    "test_ood": 96
+  },
+  "best_epoch": 37,
+  "best_validation_normalized_mse": 0.5688574910163879,
+  "best_validation_selection_score": 0.5801733821630478,
+  "id": {
+    "n_examples": 384,
+    "wavefield_relative_l2_mean": 0.78055739402771,
+    "wavefield_relative_l2_median": 0.7678095102310181,
+    "wavefield_relative_l2_p90": 1.0589066743850708,
+    "receiver_relative_l2_mean": 0.7257230281829834,
+    "receiver_relative_l2_median": 0.672741711139679,
+    "receiver_relative_l2_p90": 1.1609667539596558
+  },
+  "ood": {
+    "n_examples": 96,
+    "wavefield_relative_l2_mean": 1.0388948917388916,
+    "wavefield_relative_l2_median": 0.9737597703933716,
+    "wavefield_relative_l2_p90": 1.308321475982666,
+    "receiver_relative_l2_mean": 1.005273461341858,
+    "receiver_relative_l2_median": 0.9766340255737305,
+    "receiver_relative_l2_p90": 1.1707584857940674
+  },
+  "ood_to_id_receiver_error_ratio": 1.4517221236650144,
+  "exit_criteria": {
+    "validation_selected_checkpoint": true,
+    "id_receiver_median_below_0_30": false,
+    "id_receiver_median_below_0_20": false
+  }
+}

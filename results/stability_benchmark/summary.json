@@ -1,0 +1,4578 @@
+{
+  "schema_version": 1,
+  "seed": 20260930,
+  "cases_per_shape": 20,
+  "model_generator": "wavecert.experiments.certificate_study._make_case; smoothed Phase4 eval models",
+  "scope": "Fixed-spacing discrete five-point Dirichlet Helmholtz sufficient bounds. Changing shape changes physical domain size; this is not a fixed-domain convergence study. No success is inferred for real field data, PML, time-domain physics, or arbitrary OOD geology.",
+  "failure_behavior": "zero is unavailable; deployment must use explicit exact fallback or abstain",
+  "roundoff_semantics": "ordinary floating point with downward allowance; not interval arithmetic",
+  "python": "3.13.13",
+  "numpy": "2.4.3",
+  "aggregates": [
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "spacing": 0.05,
+      "damping_width": 3,
+      "frequency_hz": 1.0,
+      "n_cases": 20,
+      "available_cases": 20,
+      "median_beta_lower_bound": 16.31889159905398,
+      "mean_analytic_seconds": 0.000866406200111669,
+      "median_lower_to_svd_ratio_offline_subset": 0.8640619021976927,
+      "costs_including_offline_svd_checks": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 3,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      },
+      "online_costs": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      }
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "spacing": 0.05,
+      "damping_width": 3,
+      "frequency_hz": 2.5,
+      "n_cases": 20,
+      "available_cases": 18,
+      "median_beta_lower_bound": 2.584831320919741,
+      "mean_analytic_seconds": 0.0008032417497815913,
+      "median_lower_to_svd_ratio_offline_subset": 0.18349274924948075,
+      "costs_including_offline_svd_checks": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 3,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      },
+      "online_costs": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      }
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "spacing": 0.05,
+      "damping_width": 3,
+      "frequency_hz": 3.0,
+      "n_cases": 20,
+      "available_cases": 15,
+      "median_beta_lower_bound": 0.9469112513468219,
+      "mean_analytic_seconds": 0.0008020917497560731,
+      "median_lower_to_svd_ratio_offline_subset": 0.01577499219265295,
+      "costs_including_offline_svd_checks": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 3,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      },
+      "online_costs": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      }
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "spacing": 0.05,
+      "damping_width": 3,
+      "frequency_hz": 4.0,
+      "n_cases": 20,
+      "available_cases": 0,
+      "median_beta_lower_bound": 0.0,
+      "mean_analytic_seconds": 0.0007640146000994719,
+      "median_lower_to_svd_ratio_offline_subset": 0.0,
+      "costs_including_offline_svd_checks": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 3,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      },
+      "online_costs": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      }
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "spacing": 0.05,
+      "damping_width": 3,
+      "frequency_hz": 1.0,
+      "n_cases": 20,
+      "available_cases": 20,
+      "median_beta_lower_bound": 1.826332535448245,
+      "mean_analytic_seconds": 0.00073682704987732,
+      "median_lower_to_svd_ratio_offline_subset": 0.5110318735172309,
+      "costs_including_offline_svd_checks": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 3,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      },
+      "online_costs": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      }
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "spacing": 0.05,
+      "damping_width": 3,
+      "frequency_hz": 2.5,
+      "n_cases": 20,
+      "available_cases": 0,
+      "median_beta_lower_bound": 0.0,
+      "mean_analytic_seconds": 0.0006574416998773813,
+      "median_lower_to_svd_ratio_offline_subset": 0.0,
+      "costs_including_offline_svd_checks": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 3,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      },
+      "online_costs": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      }
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "spacing": 0.05,
+      "damping_width": 3,
+      "frequency_hz": 3.0,
+      "n_cases": 20,
+      "available_cases": 0,
+      "median_beta_lower_bound": 0.0,
+      "mean_analytic_seconds": 0.0006672978999631596,
+      "median_lower_to_svd_ratio_offline_subset": 0.0,
+      "costs_including_offline_svd_checks": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 3,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      },
+      "online_costs": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      }
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "spacing": 0.05,
+      "damping_width": 3,
+      "frequency_hz": 4.0,
+      "n_cases": 20,
+      "available_cases": 0,
+      "median_beta_lower_bound": 0.0,
+      "mean_analytic_seconds": 0.0005978376999337343,
+      "median_lower_to_svd_ratio_offline_subset": 0.0,
+      "costs_including_offline_svd_checks": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 3,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      },
+      "online_costs": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      }
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "spacing": 0.05,
+      "damping_width": 8,
+      "frequency_hz": 1.0,
+      "n_cases": 20,
+      "available_cases": 0,
+      "median_beta_lower_bound": 0.0,
+      "mean_analytic_seconds": 0.0016811772497021594,
+      "median_lower_to_svd_ratio_offline_subset": null,
+      "costs_including_offline_svd_checks": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      },
+      "online_costs": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      }
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "spacing": 0.05,
+      "damping_width": 8,
+      "frequency_hz": 2.5,
+      "n_cases": 20,
+      "available_cases": 0,
+      "median_beta_lower_bound": 0.0,
+      "mean_analytic_seconds": 0.0016109499998492537,
+      "median_lower_to_svd_ratio_offline_subset": null,
+      "costs_including_offline_svd_checks": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      },
+      "online_costs": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      }
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "spacing": 0.05,
+      "damping_width": 8,
+      "frequency_hz": 3.0,
+      "n_cases": 20,
+      "available_cases": 0,
+      "median_beta_lower_bound": 0.0,
+      "mean_analytic_seconds": 0.0016923875506108742,
+      "median_lower_to_svd_ratio_offline_subset": null,
+      "costs_including_offline_svd_checks": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      },
+      "online_costs": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      }
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "spacing": 0.05,
+      "damping_width": 8,
+      "frequency_hz": 4.0,
+      "n_cases": 20,
+      "available_cases": 0,
+      "median_beta_lower_bound": 0.0,
+      "mean_analytic_seconds": 0.0016213000499192276,
+      "median_lower_to_svd_ratio_offline_subset": null,
+      "costs_including_offline_svd_checks": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      },
+      "online_costs": {
+        "factorizations": 0,
+        "forward_rhs": 0,
+        "tangent_rhs": 0,
+        "adjoint_rhs": 0,
+        "stability_rhs": 0,
+        "dense_inverse_rhs": 0,
+        "svd_evaluations": 0,
+        "cache_hits": 0,
+        "analytic_bound_evaluations": 20
+      }
+    }
+  ],
+  "cases": [
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 0,
+      "seconds": 0.0009625839993532281,
+      "beta_lower_bound": 15.887153464172258,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 15.887153464217684,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5427543926026326e-11,
+      "available": true,
+      "offline_svd_beta": 18.477312407784776,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 1,
+      "seconds": 0.0009413749976374675,
+      "beta_lower_bound": 15.581221995357444,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 15.581221995402876,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.543189147368246e-11,
+      "available": true,
+      "offline_svd_beta": 18.03252979413568,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 2,
+      "seconds": 0.0006737500007147901,
+      "beta_lower_bound": 16.526278326901018,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 16.526278326946436,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5418461415457214e-11,
+      "available": true,
+      "offline_svd_beta": 18.587751303110068,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 3,
+      "seconds": 0.0011458330009190831,
+      "beta_lower_bound": 17.075122650520147,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 17.075122650565557,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5410661868513e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 4,
+      "seconds": 0.0007890000015322585,
+      "beta_lower_bound": 15.704648768203082,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 15.704648768248513,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.543013747374559e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 5,
+      "seconds": 0.0007645420009794179,
+      "beta_lower_bound": 15.711488105140075,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 15.711488105185506,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.543004028092203e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 6,
+      "seconds": 0.0014151249997667037,
+      "beta_lower_bound": 16.46267123343563,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 16.462671233481046,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5419365326621304e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 7,
+      "seconds": 0.0008425829983025324,
+      "beta_lower_bound": 16.277909560216397,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 16.27790956026182,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.542199094791636e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 8,
+      "seconds": 0.001110832999984268,
+      "beta_lower_bound": 15.55301329965608,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 15.553013299701512,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.543229234335878e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 9,
+      "seconds": 0.0007714579987805337,
+      "beta_lower_bound": 17.03497418408149,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 17.034974184126902,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5411232412536596e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 10,
+      "seconds": 0.0007435420011461247,
+      "beta_lower_bound": 16.31016363249724,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 16.31016363254266,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5421532589981204e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 11,
+      "seconds": 0.0007970000006025657,
+      "beta_lower_bound": 16.313229592366472,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 16.313229592411894,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.542148902007094e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 12,
+      "seconds": 0.0007428749995597173,
+      "beta_lower_bound": 16.95971064319704,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 16.959710643242452,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5412301971781456e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 13,
+      "seconds": 0.0008276250009657815,
+      "beta_lower_bound": 16.893266080357947,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 16.89326608040336,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5413246205810577e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 14,
+      "seconds": 0.000738000002456829,
+      "beta_lower_bound": 16.310619600474315,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 16.310619600519736,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.542152611028653e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 15,
+      "seconds": 0.0007382910007436294,
+      "beta_lower_bound": 16.32455360574149,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 16.32455360578691,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5421328096162073e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 16,
+      "seconds": 0.0010303749986633193,
+      "beta_lower_bound": 17.06839122427244,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 17.06839122431785,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.541075752783343e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 17,
+      "seconds": 0.0007788330003677402,
+      "beta_lower_bound": 16.60921414331382,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 16.60921414335924,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5417282826619485e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 18,
+      "seconds": 0.0007694589985476341,
+      "beta_lower_bound": 16.394859798487957,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 16.39485979853338,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.542032898507138e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 19,
+      "seconds": 0.0007450410012097564,
+      "beta_lower_bound": 15.953205335698382,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 15.953205335743808,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.54266052724764e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 0,
+      "seconds": 0.0007595419992867392,
+      "beta_lower_bound": 2.862681028268559,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.19121039933486123,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 30.86452157711036,
+      "perturbation_norm": 28.001840548795258,
+      "floating_point_allowance": 4.654264074644859e-11,
+      "available": true,
+      "offline_svd_beta": 12.750123821062008,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 1,
+      "seconds": 0.0010222919991065282,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.656981291929944e-11,
+      "available": false,
+      "offline_svd_beta": 8.921712437568178,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 2,
+      "seconds": 0.0008424589977948926,
+      "beta_lower_bound": 2.5388124515278228,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.18794672359408995,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 30.350595996235292,
+      "perturbation_norm": 27.811783544660983,
+      "floating_point_allowance": 4.648587505539164e-11,
+      "available": true,
+      "offline_svd_beta": 13.836036911060708,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 3,
+      "seconds": 0.0008572080005251337,
+      "beta_lower_bound": 2.8643551308260204,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.20325126730672968,
+      "reference_damping": 1.0,
+      "reference_singular_gap": 23.510902488080017,
+      "perturbation_norm": 20.64654735720756,
+      "floating_point_allowance": 4.64371278869903e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 4,
+      "seconds": 0.000778417001129128,
+      "beta_lower_bound": 1.1409510536650909,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.21252484150646048,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 28.04224363652873,
+      "perturbation_norm": 26.90129258281708,
+      "floating_point_allowance": 4.655885041969397e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 5,
+      "seconds": 0.0007550420014013071,
+      "beta_lower_bound": 0.1000840691908423,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.19438640625249876,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 30.70015742827588,
+      "perturbation_norm": 30.60007335903848,
+      "floating_point_allowance": 4.6558242964546715e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 6,
+      "seconds": 0.0010351249984523747,
+      "beta_lower_bound": 3.2046987320890876,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.1944393741165487,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 30.691780791448785,
+      "perturbation_norm": 27.487082059313206,
+      "floating_point_allowance": 4.6491524500167223e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 7,
+      "seconds": 0.0007680419985263143,
+      "beta_lower_bound": 1.1958290913309433,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.19929169648275546,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 29.93866961857753,
+      "perturbation_norm": 28.74284052720008,
+      "floating_point_allowance": 4.6507934633261326e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 8,
+      "seconds": 0.0007581250029033981,
+      "beta_lower_bound": 3.125370614947194,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.19640961113931588,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 30.382549600581047,
+      "perturbation_norm": 27.25717898558728,
+      "floating_point_allowance": 4.657231835477642e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 9,
+      "seconds": 0.0007568339970021043,
+      "beta_lower_bound": 3.3641453902290555,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.20055110176170182,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 29.747962155723904,
+      "perturbation_norm": 26.383816765448408,
+      "floating_point_allowance": 4.644069378713779e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 10,
+      "seconds": 0.0007492080003430601,
+      "beta_lower_bound": 2.6308501903116586,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.20747458952576048,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 28.736995628509256,
+      "perturbation_norm": 26.106145438151092,
+      "floating_point_allowance": 4.6505069896166596e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 11,
+      "seconds": 0.0007624170029885136,
+      "beta_lower_bound": 0.8136286929473153,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.20249661957190845,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 29.457375780742673,
+      "perturbation_norm": 28.643747087748853,
+      "floating_point_allowance": 4.650479758422745e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 12,
+      "seconds": 0.000757791000069119,
+      "beta_lower_bound": 2.358866208981248,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.2048432933942429,
+      "reference_damping": 1.0,
+      "reference_singular_gap": 23.22010692847797,
+      "perturbation_norm": 20.861240719450276,
+      "floating_point_allowance": 4.6447378532418165e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 13,
+      "seconds": 0.0007946249970700592,
+      "beta_lower_bound": 2.7278361331816883,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.20198450831898004,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 29.53338637382101,
+      "perturbation_norm": 26.80555024059287,
+      "floating_point_allowance": 4.6453279995100175e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 14,
+      "seconds": 0.0007675000015296973,
+      "beta_lower_bound": 2.651448520874805,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.2096491630639278,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 28.433231024447224,
+      "perturbation_norm": 25.781782503525914,
+      "floating_point_allowance": 4.650502939807486e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 15,
+      "seconds": 0.0007549589972768445,
+      "beta_lower_bound": 1.4996418373232898,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.19721103364407722,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 30.258095814386614,
+      "perturbation_norm": 28.75845397701682,
+      "floating_point_allowance": 4.6503791809797036e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 16,
+      "seconds": 0.0007511250005336478,
+      "beta_lower_bound": 2.8059335480935204,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.20457258952100463,
+      "reference_damping": 1.0,
+      "reference_singular_gap": 23.26934154197325,
+      "perturbation_norm": 20.463407993833293,
+      "floating_point_allowance": 4.6437725757743e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 17,
+      "seconds": 0.0009007500011648517,
+      "beta_lower_bound": 4.033293334474253,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.19675714841233125,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 30.328484543158712,
+      "perturbation_norm": 26.29519120863798,
+      "floating_point_allowance": 4.6478508875155836e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 18,
+      "seconds": 0.0007560409976576921,
+      "beta_lower_bound": 2.5310078354695453,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.20653132541119168,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 28.870866551413027,
+      "perturbation_norm": 26.339858715896984,
+      "floating_point_allowance": 4.6497547365480164e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 19,
+      "seconds": 0.0007373330008704215,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.653677416176156e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 0,
+      "seconds": 0.0009286249987781048,
+      "beta_lower_bound": 0.19894993572414196,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.23942918921211354,
+      "reference_damping": 1.0,
+      "reference_singular_gap": 25.671000460092234,
+      "perturbation_norm": 25.472050524321016,
+      "floating_point_allowance": 4.707571654749891e-11,
+      "available": true,
+      "offline_svd_beta": 12.611729584043848,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 1,
+      "seconds": 0.0009709160003694706,
+      "beta_lower_bound": 1.104046030160036,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.2450986374883593,
+      "reference_damping": 1.0,
+      "reference_singular_gap": 27.07889981405261,
+      "perturbation_norm": 25.974853783845457,
+      "floating_point_allowance": 4.7114844476404125e-11,
+      "available": true,
+      "offline_svd_beta": 16.150037777910406,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 2,
+      "seconds": 0.0008022919973882381,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.69939739523769e-11,
+      "available": false,
+      "offline_svd_beta": 11.220685964134843,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 3,
+      "seconds": 0.0008952089992817491,
+      "beta_lower_bound": 0.7910607062619595,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.23945466781325522,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 33.21818875531739,
+      "perturbation_norm": 32.42712804900851,
+      "floating_point_allowance": 4.692377802987897e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 4,
+      "seconds": 0.0007404169991787057,
+      "beta_lower_bound": 1.8120096050802623,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.2391068533520857,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 33.153489500447705,
+      "perturbation_norm": 31.341479895320344,
+      "floating_point_allowance": 4.709905847697225e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 5,
+      "seconds": 0.0006733750014973339,
+      "beta_lower_bound": 3.3546940271389047,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.24324202043369436,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 33.94384657891458,
+      "perturbation_norm": 30.589152551728578,
+      "floating_point_allowance": 4.709818374156021e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 6,
+      "seconds": 0.0006675840013485868,
+      "beta_lower_bound": 0.8859535203497625,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.23375465890433705,
+      "reference_damping": 1.0,
+      "reference_singular_gap": 24.347352476061822,
+      "perturbation_norm": 23.461398955665057,
+      "floating_point_allowance": 4.700210915285374e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 7,
+      "seconds": 0.0008809169994492549,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.702573974450924e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 8,
+      "seconds": 0.0007845000000088476,
+      "beta_lower_bound": 1.5111463704788737,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.24626072973574387,
+      "reference_damping": 1.0,
+      "reference_singular_gap": 27.37684760416561,
+      "perturbation_norm": 25.86570123363962,
+      "floating_point_allowance": 4.711845230349098e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 9,
+      "seconds": 0.0007596670002385508,
+      "beta_lower_bound": 0.5052154162328601,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.23923259432174415,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 33.176840839979114,
+      "perturbation_norm": 32.671625423699325,
+      "floating_point_allowance": 4.692891292609135e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 10,
+      "seconds": 0.0007483750014216639,
+      "beta_lower_bound": 1.0078689823438813,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.2306273951346763,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 31.684598695030544,
+      "perturbation_norm": 30.67672971263964,
+      "floating_point_allowance": 4.702161452309283e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 11,
+      "seconds": 0.0007737079977232497,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.702122239390045e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 12,
+      "seconds": 0.0007388749982055742,
+      "beta_lower_bound": 2.4846291055515515,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.24193429004051215,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 33.688976489792495,
+      "perturbation_norm": 31.204347384194005,
+      "floating_point_allowance": 4.693853895929509e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 13,
+      "seconds": 0.0007408330020552967,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.694703706555719e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 14,
+      "seconds": 0.0007363749973592348,
+      "beta_lower_bound": 1.978921512011207,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.23207326089219288,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 31.91973867631268,
+      "perturbation_norm": 29.94081716425445,
+      "floating_point_allowance": 4.702155620584074e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 15,
+      "seconds": 0.0007377500005532056,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.701977407872067e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 16,
+      "seconds": 0.0008164579994627275,
+      "beta_lower_bound": 3.6019624775874663,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.24443830519420573,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 34.180864040041065,
+      "perturbation_norm": 30.578901562406674,
+      "floating_point_allowance": 4.692463896376286e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 17,
+      "seconds": 0.000978792002570117,
+      "beta_lower_bound": 1.3515168086489537,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.23305755841682196,
+      "reference_damping": 1.0,
+      "reference_singular_gap": 24.191341173162943,
+      "perturbation_norm": 22.839824364467006,
+      "floating_point_allowance": 4.698336665283734e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 18,
+      "seconds": 0.0008546249991923105,
+      "beta_lower_bound": 0.4394716138892379,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.2292834260759515,
+      "reference_damping": 1.5,
+      "reference_singular_gap": 31.471975188038652,
+      "perturbation_norm": 31.032503574102403,
+      "floating_point_allowance": 4.701078207890437e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 19,
+      "seconds": 0.0008125419990392402,
+      "beta_lower_bound": 2.01325778065588,
+      "method": "normal-reference-perturbation",
+      "reference_slowness": 0.24241508311325238,
+      "reference_damping": 1.0,
+      "reference_singular_gap": 26.40269348799442,
+      "perturbation_norm": 24.389435707291472,
+      "floating_point_allowance": 4.7067268665549584e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 0,
+      "seconds": 0.0007215000005089678,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8383933440963885e-11,
+      "available": false,
+      "offline_svd_beta": 13.507275547499,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 1,
+      "seconds": 0.0011711670013028197,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8453494203462054e-11,
+      "available": false,
+      "offline_svd_beta": 16.12906502673505,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 2,
+      "seconds": 0.0013095409995003138,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.82386132718581e-11,
+      "available": false,
+      "offline_svd_beta": 10.565229360707743,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 3,
+      "seconds": 0.0007647089987585787,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.811382052075066e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 4,
+      "seconds": 0.0008620830012660008,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.842543020447204e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 5,
+      "seconds": 0.0007833329982531723,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8423875119295083e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 6,
+      "seconds": 0.0007394999993266538,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.825307585048358e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 7,
+      "seconds": 0.0007872499991208315,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.829508579120448e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 8,
+      "seconds": 0.0005490830008056946,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8459908118283136e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 9,
+      "seconds": 0.0005312079993018415,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.812294922512823e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 10,
+      "seconds": 0.0005845000014232937,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.828775206424197e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 11,
+      "seconds": 0.0006854579987702891,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8287054945677745e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 12,
+      "seconds": 0.0008241670002462342,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8140062173046e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 13,
+      "seconds": 0.0006704580009682104,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.815516991751194e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 14,
+      "seconds": 0.0007740830005786847,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8287648389127145e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 15,
+      "seconds": 0.000659041998005705,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.82844801631359e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 16,
+      "seconds": 0.000640583999484079,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.811535106987758e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 17,
+      "seconds": 0.0006365420013025869,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8219755850454435e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 18,
+      "seconds": 0.0008861670030455571,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.826849438568472e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        16,
+        16
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 19,
+      "seconds": 0.0006999170000199229,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8368914984165085e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 0,
+      "seconds": 0.0008707499982847366,
+      "beta_lower_bound": 1.8274758099470712,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 1.8274758099926984,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.562734396251309e-11,
+      "available": true,
+      "offline_svd_beta": 4.116885782040339,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 1,
+      "seconds": 0.001056958000845043,
+      "beta_lower_bound": 1.9274497327303786,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 1.9274497327760045,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.562592324762111e-11,
+      "available": true,
+      "offline_svd_beta": 3.6496144297007667,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 2,
+      "seconds": 0.000826084000436822,
+      "beta_lower_bound": 2.068880707762629,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 2.068880707808253,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.56239133925827e-11,
+      "available": true,
+      "offline_svd_beta": 4.0484377100068905,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 3,
+      "seconds": 0.0009047080020536669,
+      "beta_lower_bound": 1.5379033819351764,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 1.537903381980808,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.56314590342171e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 4,
+      "seconds": 0.0007506249967264012,
+      "beta_lower_bound": 2.108625409367044,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 2.1086254094126673,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.56233485864025e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 5,
+      "seconds": 0.0006702079990645871,
+      "beta_lower_bound": 2.4259177817432036,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 2.4259177817888222,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.561883959059642e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 6,
+      "seconds": 0.0006665420005447231,
+      "beta_lower_bound": 0.03136953837682682,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.03136953842247969,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.565286816779144e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 7,
+      "seconds": 0.000666125000861939,
+      "beta_lower_bound": 1.9107850420062333,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 1.9107850420518595,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5626160067119866e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 8,
+      "seconds": 0.0006933339973329566,
+      "beta_lower_bound": 1.8160906793714382,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 1.8160906794170657,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.562750575494962e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 9,
+      "seconds": 0.0007637080016138498,
+      "beta_lower_bound": 1.61177033873101,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 1.6117703387766404,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.563040932162582e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 10,
+      "seconds": 0.0006902499990246724,
+      "beta_lower_bound": 1.7516571382636785,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 1.751657138309307,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5628421410641086e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 11,
+      "seconds": 0.0006422500009648502,
+      "beta_lower_bound": 1.365371639071301,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 1.365371639116935,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.56339108577487e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 12,
+      "seconds": 0.0006329160023597069,
+      "beta_lower_bound": 1.7335642549822114,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 1.73356425502784,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.562867852597678e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 13,
+      "seconds": 0.000642374998278683,
+      "beta_lower_bound": 1.9565652931686872,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 1.9565652932143127,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.562550949062177e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 14,
+      "seconds": 0.0008171250010491349,
+      "beta_lower_bound": 2.107275383413642,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 2.1072753834592657,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5623367771425187e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 15,
+      "seconds": 0.0007219999970402569,
+      "beta_lower_bound": 1.8251892609494187,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 1.825189260995046,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.56273764563287e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 16,
+      "seconds": 0.0007140410016290843,
+      "beta_lower_bound": 2.190062770645463,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 2.1900627706910853,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5622191291892985e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 17,
+      "seconds": 0.0007113329993444495,
+      "beta_lower_bound": 1.5686425098713315,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 1.5686425099169625,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5631022204935926e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 18,
+      "seconds": 0.0006554999999934807,
+      "beta_lower_bound": 1.277291399802338,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 1.2772913998479734,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.563516255323223e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 19,
+      "seconds": 0.0006397090000973549,
+      "beta_lower_bound": 2.1013177774696445,
+      "method": "positive-real-part",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 2.101317777515268,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5623452434097706e-11,
+      "available": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 0,
+      "seconds": 0.0006537910012411885,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.670014720434536e-11,
+      "available": false,
+      "offline_svd_beta": 4.46150014067125,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 1,
+      "seconds": 0.0007612080007675104,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.6691267736270475e-11,
+      "available": false,
+      "offline_svd_beta": 5.650329328628607,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 2,
+      "seconds": 0.0012251249972905498,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.6678706142280394e-11,
+      "available": false,
+      "offline_svd_beta": 4.368485022642888,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 3,
+      "seconds": 0.0008120419988699723,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.672586640249539e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 4,
+      "seconds": 0.000968459000432631,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.6675176103654146e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 5,
+      "seconds": 0.0007315000002563465,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.6646994879866155e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 6,
+      "seconds": 0.0005971249993308447,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.6859673487335034e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 7,
+      "seconds": 0.0006192090004333295,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.669274785813769e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 8,
+      "seconds": 0.000555665999854682,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.6701158407073636e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 9,
+      "seconds": 0.0005973330007691402,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.6719305698799895e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 10,
+      "seconds": 0.0005903329983993899,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.6706881255145316e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 11,
+      "seconds": 0.0005570840003201738,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.674119029956789e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 12,
+      "seconds": 0.000552999998035375,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.670848822599339e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 13,
+      "seconds": 0.0005461250002554152,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.668868175502459e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 14,
+      "seconds": 0.0005413750004663598,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.6675296010045933e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 15,
+      "seconds": 0.0005466250004246831,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.670035029069289e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 16,
+      "seconds": 0.0006372499992721714,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.666794301296967e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 17,
+      "seconds": 0.000563292000151705,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.672313621948807e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 18,
+      "seconds": 0.0005441670000436716,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.6749013396339964e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 19,
+      "seconds": 0.0005481250009324867,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.6675825151749186e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 0,
+      "seconds": 0.0005596250011876691,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.721106922613425e-11,
+      "available": false,
+      "offline_svd_beta": 4.557090871240594,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 1,
+      "seconds": 0.0006462080018536653,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.719828279210641e-11,
+      "available": false,
+      "offline_svd_beta": 3.9550446441243645,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 2,
+      "seconds": 0.0010895000013988465,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.7180194096760694e-11,
+      "available": false,
+      "offline_svd_beta": 4.660155945309967,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 3,
+      "seconds": 0.000721415999578312,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.7248104871470295e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 4,
+      "seconds": 0.0006532910010719206,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.71751108411389e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 5,
+      "seconds": 0.00059783400138258,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.713452987888418e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 6,
+      "seconds": 0.0005581669975072145,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.7440787073639375e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 7,
+      "seconds": 0.0008888330012268852,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.7200414167595195e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 8,
+      "seconds": 0.0005973330007691402,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.7212525358062966e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 9,
+      "seconds": 0.0005577499978244305,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.723865745814878e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 10,
+      "seconds": 0.0005532499999389984,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.7220766259286176e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 11,
+      "seconds": 0.0008116249991871882,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.7270171283254686e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 12,
+      "seconds": 0.0006885839975439012,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.722308029730741e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 13,
+      "seconds": 0.0005748330004280433,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.719455897911234e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 14,
+      "seconds": 0.0007214590004878119,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.7175283506343067e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 15,
+      "seconds": 0.0005587499981629662,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.721136167047469e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 16,
+      "seconds": 0.0006224999997357372,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.7164695190553246e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 17,
+      "seconds": 0.00060995800231467,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.724417340793974e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 18,
+      "seconds": 0.0007499579987779725,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.728143654260647e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 19,
+      "seconds": 0.0005850839988852385,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.7176045470395756e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 0,
+      "seconds": 0.0008794169989414513,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8462894681479226e-11,
+      "available": false,
+      "offline_svd_beta": 14.543735638918676,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 1,
+      "seconds": 0.0007787499998812564,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.844016324320751e-11,
+      "available": false,
+      "offline_svd_beta": 16.37242703741677,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 2,
+      "seconds": 0.0007640000003448222,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8408005562592905e-11,
+      "available": false,
+      "offline_svd_beta": 13.68337410334198,
+      "lower_bound_valid_against_svd": true
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 3,
+      "seconds": 0.0006528330013679806,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.852873582874331e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 4,
+      "seconds": 0.000561500000912929,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.839896866370972e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 5,
+      "seconds": 0.0005612919994746335,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.832682473081245e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 6,
+      "seconds": 0.000545292001334019,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8871281965932785e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 7,
+      "seconds": 0.0005440419990918599,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8443952355187584e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 8,
+      "seconds": 0.0005361250005080365,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.846548336046361e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 9,
+      "seconds": 0.0006147089989099186,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.851194042728284e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 10,
+      "seconds": 0.0006105840002419427,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.84801338515271e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 11,
+      "seconds": 0.000558750001800945,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8567965005248895e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 12,
+      "seconds": 0.000549832999240607,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.848424769689817e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 13,
+      "seconds": 0.0005452090008475352,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.843354313121806e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 14,
+      "seconds": 0.0005400000009103678,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8399275624072685e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 15,
+      "seconds": 0.0005426669995358679,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8463414582528905e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 16,
+      "seconds": 0.0005441670000436716,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.838045195155744e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 17,
+      "seconds": 0.000543541998922592,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.852174656024455e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 18,
+      "seconds": 0.0005433749975054525,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.85879921329854e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        24,
+        24
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 19,
+      "seconds": 0.0005406669988587964,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.840063022683301e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 0,
+      "seconds": 0.0016507090003869962,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5797693661751824e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 1,
+      "seconds": 0.0014249589985411149,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.578274973253526e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 2,
+      "seconds": 0.0018509580004320014,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.577149878212485e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 3,
+      "seconds": 0.0017821250003180467,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5789514678334193e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 4,
+      "seconds": 0.0018763750013022218,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5791362594418795e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 5,
+      "seconds": 0.0016992919991025701,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5790197391323614e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 6,
+      "seconds": 0.0016610419988865033,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.577845901182006e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 7,
+      "seconds": 0.0016703750006854534,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.580742860402474e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 8,
+      "seconds": 0.0016484999978274573,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.578586411470203e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 9,
+      "seconds": 0.0014174579991959035,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.579250756734465e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 10,
+      "seconds": 0.0014107499991951045,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.578620902085759e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 11,
+      "seconds": 0.0014065420000406448,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.578064970705907e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 12,
+      "seconds": 0.001414917001966387,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.580361570229156e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 13,
+      "seconds": 0.001408667001669528,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.577954533095666e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 14,
+      "seconds": 0.00140816700150026,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5791443254360685e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 15,
+      "seconds": 0.002551958998083137,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.577925850930473e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 16,
+      "seconds": 0.0021699169992643874,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.578814012125895e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 17,
+      "seconds": 0.001848999996582279,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.580450447032905e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 18,
+      "seconds": 0.001674625000305241,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.5814378101746506e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 1.0,
+      "case_id": 19,
+      "seconds": 0.001647207998757949,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.578366147729493e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 0,
+      "seconds": 0.001708250001684064,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.696295387947703e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 1,
+      "seconds": 0.0017696670001896564,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.686955432187351e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 2,
+      "seconds": 0.0016808340005809441,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.6799235881808454e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 3,
+      "seconds": 0.0016949999990174547,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.691183523311682e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 4,
+      "seconds": 0.0016483750005136244,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.69233847086456e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 5,
+      "seconds": 0.001649875001021428,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.691610218930073e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 6,
+      "seconds": 0.0016517910007678438,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.6842737317403515e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 7,
+      "seconds": 0.0016389999982493464,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.702379726868277e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 8,
+      "seconds": 0.0016610419988865033,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.6889019210415795e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 9,
+      "seconds": 0.0016913750005187467,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.6930540789432214e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 10,
+      "seconds": 0.0017113329995481763,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.689117487388807e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 11,
+      "seconds": 0.0014247500002966262,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.685642916264731e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 12,
+      "seconds": 0.001416374998370884,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.6999966632850346e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 13,
+      "seconds": 0.0014153749980323482,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.6849526812007254e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 14,
+      "seconds": 0.0015768330013088416,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.692388883328242e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 15,
+      "seconds": 0.0018706249975366518,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.684773417668269e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 16,
+      "seconds": 0.0014735000004293397,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.690324425139655e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 17,
+      "seconds": 0.0014200410005287267,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.700552143308468e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 18,
+      "seconds": 0.001459041999623878,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.70672316294438e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 2.5,
+      "case_id": 19,
+      "seconds": 0.0016559169998799916,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.6875252726621464e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 0,
+      "seconds": 0.00166700000045239,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.7522305745781265e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 1,
+      "seconds": 0.001664750001509674,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.73878103828322e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 2,
+      "seconds": 0.0016635000029054936,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.728655182913851e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 3,
+      "seconds": 0.001658917000895599,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.744869489502256e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 4,
+      "seconds": 0.0018404170004941989,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.7465326139784006e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 5,
+      "seconds": 0.0017404999998689163,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.7454839311927395e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 6,
+      "seconds": 0.001667917000304442,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.73491938963954e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 7,
+      "seconds": 0.0022377089990186505,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.760992022623753e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 8,
+      "seconds": 0.0016877919988473877,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.7415839822333093e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 9,
+      "seconds": 0.0017542500027047936,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.747563089611673e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 10,
+      "seconds": 0.0016994170000543818,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.741894397773316e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 11,
+      "seconds": 0.0014211660018190742,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.7368910153546465e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 12,
+      "seconds": 0.002005665999604389,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.757560411063884e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 13,
+      "seconds": 0.001836292001826223,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.7358970768624786e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 14,
+      "seconds": 0.0014767079992452636,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.746605207926102e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 15,
+      "seconds": 0.0014272910011641216,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.735638937375741e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 16,
+      "seconds": 0.0014701250001962762,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.743632388134537e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 17,
+      "seconds": 0.0014619590001530014,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.7583603022976283e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 18,
+      "seconds": 0.0017801249996409751,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.7672465705733415e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 3.0,
+      "case_id": 19,
+      "seconds": 0.001686250001512235,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.7396016085669254e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 0,
+      "seconds": 0.0016747500012570526,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8897407168983496e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 1,
+      "seconds": 0.0016550420004932676,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8658304301518494e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 2,
+      "seconds": 0.001781124999979511,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.847828909495193e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 3,
+      "seconds": 0.001693541998974979,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8766543434301356e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 4,
+      "seconds": 0.001662083999690367,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.879611009165503e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 5,
+      "seconds": 0.001643583000259241,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.877746684213217e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 6,
+      "seconds": 0.0016605419987172354,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.858965277007529e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 7,
+      "seconds": 0.0016478329998790286,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.905316624535019e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 8,
+      "seconds": 0.0016502090002177283,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.870813441618674e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 9,
+      "seconds": 0.001646291002543876,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8814429658468766e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 10,
+      "seconds": 0.0016765000000305008,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8713652914675746e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 11,
+      "seconds": 0.0016433749988209456,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.862470389389941e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 12,
+      "seconds": 0.002108583998051472,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.899215981761918e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 13,
+      "seconds": 0.001709167001536116,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.8607033876260864e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 14,
+      "seconds": 0.0014669999982288573,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.879740065072529e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 15,
+      "seconds": 0.001427999999577878,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.860244472982998e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 16,
+      "seconds": 0.0014256249996833503,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.874455052109746e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 17,
+      "seconds": 0.0014184159990691114,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.900638010621908e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 18,
+      "seconds": 0.0014180409998516552,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.916435820889843e-11,
+      "available": false
+    },
+    {
+      "shape": [
+        64,
+        64
+      ],
+      "frequency_hz": 4.0,
+      "case_id": 19,
+      "seconds": 0.001416292001522379,
+      "beta_lower_bound": 0.0,
+      "method": "unavailable",
+      "reference_slowness": null,
+      "reference_damping": null,
+      "reference_singular_gap": 0.0,
+      "perturbation_norm": 0.0,
+      "floating_point_allowance": 4.867289221767325e-11,
+      "available": false
+    }
+  ],
+  "offline_svd_checks": 24,
+  "all_offline_svd_checks_pass": true,
+  "no_svd_or_linear_solve_in_online_bound": true
+}

@@ -1,0 +1,54 @@
+{
+  "scope": "undamped constant-coefficient Dirichlet discrete/continuous Helmholtz verification",
+  "boundary_fidelity_or_field_validation": false,
+  "rows": [
+    {
+      "shape": [
+        15,
+        15
+      ],
+      "spacing": 0.0625,
+      "spectral_relative_error": 1.7043208618550578e-15,
+      "continuum_relative_error": 0.01119300303719728
+    },
+    {
+      "shape": [
+        31,
+        31
+      ],
+      "spacing": 0.03125,
+      "spectral_relative_error": 6.220168749567765e-15,
+      "continuum_relative_error": 0.0027852260151992408
+    },
+    {
+      "shape": [
+        63,
+        63
+      ],
+      "spacing": 0.015625,
+      "spectral_relative_error": 1.9370194997041478e-14,
+      "continuum_relative_error": 0.0006954958694629505
+    }
+  ],
+  "observed_orders": [
+    2.006730848381796,
+    2.0016805521997543
+  ],
+  "passed": true,
+  "provenance": {
+    "git_revision": "7ee700f08609e13c1224a18b75db85fac7b01e82",
+    "working_tree_dirty": true,
+    "source_sha256": "5d6c4b014a585f8a95efee93848ef147d3e217896cbb947f622e37d8fd5c098b",
+    "python": "3.13.13",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "packages": {
+      "numpy": "2.4.3",
+      "scipy": "1.18.1",
+      "torch": "2.14.0",
+      "matplotlib": "3.11.2",
+      "pandas": "3.0.5",
+      "pytest": "9.1.1"
+    }
+  }
+}
