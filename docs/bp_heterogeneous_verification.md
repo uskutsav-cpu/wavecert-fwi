@@ -59,3 +59,11 @@ and the remaining matrix jobs are cancelled. Its same-version passing and
 failing jobs are retained in the archive. Failure-only test diagnostics are
 being added before drawing a cause or cross-environment success conclusion.
 No numerical criterion, core implementation or native protocol is changed.
+
+The diagnostic-only revision subsequently passes all four jobs in
+[CI42467661756](https://github.com/uskutsav-cpu/wavecert-fwi/actions/runs/42467661756),
+with all six known-fixture numerical reports per job retained. Across the BP
+repetitions, maximum trace/DD relative differences are4.4091e-14/6.8235e-14.
+These are three unique inputs repeated across jobs, not new geological samples.
+The replay, success criteria and tolerances were unchanged; these passing jobs
+do not establish the cause of the earlier failure. Its anomaly remains open.

@@ -36,3 +36,19 @@ The [first CI history](CI_history_c197/README.md) retains the failure and the
 successful known-fixture reports. A diagnostic-only test change exposes saved
 comparison/model details; numerical criteria and the frozen replay remain
 unchanged. Full cross-environment verification is unresolved at this point.
+
+## Subsequent source/test CI
+
+Diagnostic-only commit d2c34fcf8028507b8f13111bd56bfcf8e5515837 passed all four
+jobs in [CI42467661756](https://github.com/uskutsav-cpu/wavecert-fwi/actions/runs/42467661756).
+All six known-fixture numerical reports from every job are archived in
+`cross_environment_CI_reports_d2c34fc.json`. The BP portions repeat three unique
+inputs:12 trace comparisons and24 informative directional comparisons across
+jobs, without adding geological samples. Their maximum relative trace/DD
+errors are4.4091e-14/6.8235e-14.
+
+This revision only adds failure diagnostics. Its success checks, frozen replay
+source/core/protocol and numerical tolerances are unchanged. Therefore the four
+passing jobs do not identify or repair the original c197 failure. That anomaly
+remains unresolved and both outcomes remain visible. No native57-call study,
+new recovery cohort or physical acceptance test was repeated by CI.
