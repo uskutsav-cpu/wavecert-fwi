@@ -58,8 +58,9 @@ not a newly untouched confirmation cohort.
   fiat. Both forward and receiver-coded routes, duplicate receiver weights and
   residual coherence must be checked against independent fine gradients.
 
-The four new modules passed 88 focused synthetic tests and the complete
-560-test suite. The original 156 production files remain byte-identical. These
+The four new modules passed 89 focused synthetic tests with warnings as errors;
+all four Linux CI jobs passed at source commit `3e82ed2`. The original 156
+production files remain byte-identical. These
 are software verification results, not a project-data speedup or new theorem.
 
 ## Next controlled sequence

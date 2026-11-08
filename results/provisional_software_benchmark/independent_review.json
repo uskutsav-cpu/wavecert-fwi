@@ -1,0 +1,71 @@
+{
+  "status": "CLEAR_for_archived_provisional_software_candidate",
+  "recorded_utc": "2026-11-08T02:31:46.544038+00:00",
+  "reviewer": "separate AI review /root/candidate_final_review; helper subreview /root/candidate_final_review/verification_helpers_review",
+  "reviewed_git_revision": "3e82ed241dc600265ad318d6603d891b4de50341",
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "candidate_files": {
+    "README.md": {
+      "bytes": 4130,
+      "sha256": "56d00231bc79e5598ad4efc7733da1c6af806c5137facd2ff4a256bd0730af5d"
+    },
+    "__init__.py": {
+      "bytes": 82,
+      "sha256": "8f5dde1292081eedb460cc9752025c72350673a2bd705bd407a5e6fa531bf22b"
+    },
+    "adapter.py": {
+      "bytes": 10372,
+      "sha256": "f793f4439551bf7614bd72421057d209f3cb353710fe06f8c13de85b44eecf61"
+    },
+    "protocol.json": {
+      "bytes": 8670,
+      "sha256": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c"
+    },
+    "test_adapter.py": {
+      "bytes": 8283,
+      "sha256": "e0265c67779dda21219ffa7b5ebda92416af7416975a49d61342b61ece5bef27"
+    },
+    "test_verification.py": {
+      "bytes": 6081,
+      "sha256": "3e630d65f424d0988afc8dd4d42ecec1a6e7aa01aebb63331ee38ce0d1c8aef0"
+    },
+    "verification.py": {
+      "bytes": 16344,
+      "sha256": "64d61eac0fda075bf4d52beeb0ebf23b0a97a63b3df4081cd2a92eb21308b283"
+    }
+  },
+  "tests": {
+    "command": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 PYTHONPATH=src python -m pytest -o addopts='' -q -s -W error -p no:cacheprovider -o tmp_path_retention_policy=failed results/provisional_software_benchmark/matched_cost_pilot",
+    "session": 74333,
+    "terminal_exit_code": 0,
+    "passed": 15,
+    "scope": "synthetic fixtures only; reported fixture seconds are abstract, not benchmark evidence"
+  },
+  "ruff": {
+    "command": "python -m ruff check --config pyproject.toml results/provisional_software_benchmark/matched_cost_pilot",
+    "terminal_exit_code": 0
+  },
+  "reviewed_properties": [
+    "Five controls use policy-owned paid LU merit and accepted-field/factor reuse; no cross-policy sharing",
+    "Uncertified and certified controls use identical missing fields, gradient and raw direction for both U and C routes; uncertified arm performs no certificate SVD",
+    "Certificate local/dispatch counts accumulated without adding stability engine query counts twice",
+    "Same-preconditioner GMRES starts from same coarse fields, checks true residuals, retains failed/partial reports and paid work",
+    "Issued owner/model binding and duplicate-receiver/conjugation conventions agree with native export semantics",
+    "Budget endpoints exclude late or incomplete paid states; unreached targets stay censored",
+    "Offline truth/gradient checks cannot influence policy; original fields are not treated exact by fiat",
+    "Complex arrays retain typed little-endian hashes; existing artifacts rejected before single-writer publication",
+    "Candidate has no project-study orchestration loop or CLI, and explicitly disclaims student final design/competition evidence"
+  ],
+  "material_blockers": [],
+  "limitations": [
+    "Single-writer publication only; existing-file preflight is not a concurrent-writer transaction",
+    "Source-path/file-byte checks assume a fresh, frozen process; not a proof against malicious same-path hot reload or Python private mutation",
+    "Logical work-category counters are not an exhaustive FLOP count; wall-clock study accounting still needs a reviewed orchestrator",
+    "Only initial/budget/final dense models are retained by helpers; intermediate raw-vector replay is not available from compact hashes alone",
+    "No project arrays, payload acquisition, measured timings, new project trajectories, or independent human reproduction performed"
+  ],
+  "main_files_modified_by_this_review": false,
+  "student_final_research_design": false,
+  "competition_evidence": false,
+  "scientific_goal_complete": false
+}

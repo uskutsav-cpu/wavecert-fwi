@@ -13,3 +13,6 @@ vectors while retaining true-residual checks and explicit override. All cost,
 novelty, floating-point and student-ownership limits remain explicit. No project
 benchmark was executed by this integration. Separate AI review is not human
 reproduction. See docs/cached_merit_scope.md and docs/paid_descent_design.md.
+
+All four Linux CI jobs passed at `3e82ed2`; `ci_receipt.json` preserves the job
+metadata. This verifies the final integration source, not a scientific outcome.

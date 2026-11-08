@@ -52,7 +52,8 @@ ancestry/site separation. Historical outcomes remain, with narrower interpretati
 See [continuing research](docs/continuing_research.md) for the full active goal,
 new controlled development evidence and the gates before any success claim.
 The new paid-merit, cached-field bound, norm-free GMRES and trajectory components
-pass the full 560-test suite. No new matched-cost trajectory result is claimed.
+pass the full CI suite and 89 focused checks with warnings treated as errors.
+No new matched-cost trajectory result is claimed.
 Student scientific ownership and final design decisions remain open; see the
 [assistance record](docs/assistance_record.md).
 
