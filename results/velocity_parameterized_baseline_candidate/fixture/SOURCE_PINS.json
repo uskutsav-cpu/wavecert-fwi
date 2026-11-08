@@ -1,0 +1,10 @@
+{
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "dependency_sha256": {
+    "src/wavecert/physics/exact_merit.py": "0fec1f215b28e36017c1e28409d7f7e909a03cbf5b717de5d23eb8d52eb26810",
+    "src/wavecert/physics/helmholtz.py": "caf51b58da24ed6d3633bda4eaaab804714f5c7932d9d5f343644763bc158131",
+    "src/wavecert/optimization/paid_descent.py": "b863af87f03c2470fde8d72412b1c89e76e389a528cb7d8b08efe89ceeb3a12c"
+  },
+  "source_read_findings": "PaidMeritOracle is structural; ExactMeritOracle exposes public evaluate/gradient/accept/cost_snapshot, but no public tangent solve. Therefore one coordinate wrapper suffices; pushforward maps direction only.",
+  "candidate_role": "AI manufactured-software verification only; no project execution, benchmark protocol, coordinate-specific hyperparameter or student scientific design"
+}

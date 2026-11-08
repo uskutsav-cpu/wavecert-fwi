@@ -124,3 +124,32 @@ They address eight fixed initial states only; they do not make unavailable
 intermediate trajectory vectors reproducible or establish a formal roundoff
 enclosure. The student's own interpretation of the fit-versus-recovery result,
 next scientific question and actual contribution account remain pending.
+
+## Additional recovery and analytical diagnostics
+
+Codex designed and executed a fixed, explicitly post-outcome diagnostic on all
+eight raw initial states and all 1,440 stored internal endpoint instances. It
+authored the half-relative-squared m/velocity derivative calculations, fixed
+two-scale finite-difference and bound-feasibility controls, independent scalar
+post-audit and explanatory plot. An overbroad root metadata guard failed before
+any diagnostic launch; the failed attempt and exact unchanged numerical source
+are retained. These local numerical findings are AI analysis support, not the
+student's personal explanation or a complete cause of later reconstruction drift.
+
+Codex also derived and implemented the causal two-dimensional Green/Ricker
+reference, fixed source normalization/time/sample conventions and three
+quadrature orders, retained a pre-GO interrupted-prefix fix and its history,
+and compared all seven existing homogeneous traces. A separate AI worker
+implemented alternate-substitution QUADPACK integration and independently
+checked the metrics. Codex prepared the all-seven figure, source notes and known-
+fixture CI regressions. No PDE was rerun, physical acceptance tolerance selected,
+or heterogeneous/certificate-transfer conclusion established by these checks.
+
+Codex reviewed four primary FWI method sources to distinguish continuation,
+curvature/coordinates, priors and WRI from gradient-error certification. It began
+a standard physical-velocity paid-merit adapter as software support, motivated
+by inspected development outcomes. It passed 31 manufactured controls and two
+AI source reviews. Codex is preparing a separate paired-coordinate total-cost
+engineering protocol; no project-data result or final scientific design exists
+for that candidate. The student's question, interpretation,
+comparison decisions and actual contribution account remain pending.

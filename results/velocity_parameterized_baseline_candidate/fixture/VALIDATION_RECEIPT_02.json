@@ -1,0 +1,215 @@
+{
+  "API_scope": "Every optimizer receipt/checkpoint/final_model is velocity. Actual native m and its hash are separate. Old m-quality/budget helpers must not directly consume v. A future endpoint adapter must convert/rehash, pay output/provenance work before actual API return, refresh costs and keep offline truth audits after timing.",
+  "actual_pytest": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/src OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 OMP_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest -q -s -W error -p no:cacheprovider --basetemp /tmp/wavecert-velocity-baseline-puretests-02 test_velocity_oracle.py",
+    "exec_session": 16146,
+    "executed_test_identity": {
+      "bytes": 16988,
+      "sha256": "74d10efa177dcc9e98d346746acdde7f5a1100b79ae60d621ce38fd235cddc0d"
+    },
+    "executed_test_source": "history/test_velocity_oracle.py.puretests02.preformat.original",
+    "execution_owner": "realistic_physics_gap executed the tests; reviewers source-read only, without duplicate project or manufactured execution.",
+    "exit_code": 0,
+    "final_format_equivalence": "Final import was line-wrapped only after execution. ast.dump(include_attributes=False) exactly matches the executed test source; Python3.10 grammar passes. Actual tool4a8e15. No numerical or optimizer change and no test outcome rerun/tuning.",
+    "initial_tool_chunk_id": "eedd6b",
+    "log": "puretests_02.log",
+    "log_identity": {
+      "bytes": 2838,
+      "sha256": "5993cd2760183ce5ef2e04869bb6ccabd3555b37941a3a86dcbfc5423bca5789"
+    },
+    "passed": 31,
+    "terminal_tool_chunk_id": "e1307d"
+  },
+  "current_files": {
+    "LICENSE": {
+      "bytes": 1071,
+      "sha256": "e12ade3dc3d3b6d5dbfee013afcb27ceb9f1cbbda3d32760af3f33f334ec75cd"
+    },
+    "SCOPE.md": {
+      "bytes": 5576,
+      "sha256": "fde0795899f8b8100bcf00ad4ac138342a1d76635ba030423b4d54b6f3770f21"
+    },
+    "SOURCE_PINS.json": {
+      "bytes": 877,
+      "sha256": "4bb1ad6716118ebf0251ca59434dd92b901ab570e2b70b7b9b1777023df25d27"
+    },
+    "test_velocity_oracle.py": {
+      "bytes": 17005,
+      "sha256": "8f04c324a4bc35e0b44ca298874eba2e68d48a559f1a7e77d84a63e8806fc3df"
+    },
+    "velocity_oracle.py": {
+      "bytes": 14640,
+      "sha256": "61dc9b2c80f7adba64154a92e4e63d716c127b81cdfb161c8267e43a08734d5c"
+    }
+  },
+  "final_ruff": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -m ruff check --no-cache --config ../../wavecert-fwi/pyproject.toml velocity_oracle.py test_velocity_oracle.py",
+    "exit_code": 0,
+    "log": "ruff_03.log",
+    "log_identity": {
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    "tool_output_chunk_id": "f8de23"
+  },
+  "integration_interpretation": {
+    "accepted_checkpoints_including_initial": 3,
+    "actual_iterations": 2,
+    "checks": "Real existing L-BFGS-B fun/jac/callback calls, strict paid-merit decreases, velocity state hashes, actual native-m exposure, finite serialized receipt/contract/cost/provenance, foreign-owner rejection, gradient-chain equality and explicit injected native-gradient failed status/costs.",
+    "native_solver_status_preserved": "solver_terminated: TOTAL NO. OF ITERATIONS REACHED LIMIT; native success=false, not relabeled success.",
+    "rejected_trial_scope": "The two-step integration used3merit evaluations and had no rejected trial. Separate manufactured cache tests preserve accepted LU/fields across two unaccepted trials and compare all native counts exactly; no tuning was used to force a rejection.",
+    "timing": "Constant abstract clock only; engine/extra post-return interface checks are not project runtime, reconstruction or performance evidence."
+  },
+  "manufactured_integration": {
+    "actual_native_final_sha256": "33544ef4993b61d6486de24447f11afdd0c5130d51566eeab8d3b5cb038e44e0",
+    "checkpoints": 3,
+    "engine_costs": {
+      "oracle": {
+        "accepted_receipts": 3,
+        "adjoint_solve_dispatches": 6,
+        "contract_checks": 15,
+        "factorization_attempts": 6,
+        "forward_solve_dispatches": 6,
+        "gradient_contractions": 6,
+        "gradient_evaluations": 3,
+        "linear_solve_dispatches": 12,
+        "objective_cache_hits": 6,
+        "objective_contractions": 6,
+        "objective_evaluations": 3,
+        "operator_assemblies": 12,
+        "pinned_factor_reuses": 6,
+        "transpose_symmetry_checks": 6
+      },
+      "physics": {
+        "adjoint_rhs": 12,
+        "analytic_bound_evaluations": 0,
+        "cache_hits": 0,
+        "dense_inverse_rhs": 0,
+        "factorizations": 6,
+        "forward_rhs": 12,
+        "stability_rhs": 0,
+        "svd_evaluations": 0,
+        "tangent_rhs": 0
+      },
+      "velocity_coordinates": {
+        "accepted_receipts": 3,
+        "canonical_copy_bytes": 10080,
+        "constructions": 1,
+        "converted_model_entries": 630,
+        "evaluations": 9,
+        "gradient_pullback_attempts": 3,
+        "gradient_pullback_entries": 90,
+        "gradient_pullbacks": 3,
+        "receipt_validation_attempts": 12,
+        "source_validation_attempts": 21,
+        "source_validation_bytes": 950271,
+        "velocity_receipt_cache_hits": 6,
+        "velocity_to_slowness_attempts": 21
+      }
+    },
+    "failure_costs": {
+      "oracle": {
+        "accepted_receipts": 1,
+        "contract_checks": 4,
+        "factorization_attempts": 2,
+        "forward_solve_dispatches": 2,
+        "linear_solve_dispatches": 2,
+        "manufactured_gradient_failures": 1,
+        "objective_cache_hits": 2,
+        "objective_contractions": 2,
+        "objective_evaluations": 1,
+        "operator_assemblies": 2
+      },
+      "physics": {
+        "adjoint_rhs": 0,
+        "analytic_bound_evaluations": 0,
+        "cache_hits": 0,
+        "dense_inverse_rhs": 0,
+        "factorizations": 2,
+        "forward_rhs": 4,
+        "stability_rhs": 0,
+        "svd_evaluations": 0,
+        "tangent_rhs": 0
+      },
+      "velocity_coordinates": {
+        "accepted_receipts": 1,
+        "canonical_copy_bytes": 3360,
+        "constructions": 1,
+        "converted_model_entries": 210,
+        "evaluations": 3,
+        "gradient_pullback_attempts": 1,
+        "receipt_validation_attempts": 4,
+        "source_validation_attempts": 7,
+        "source_validation_bytes": 316757,
+        "velocity_receipt_cache_hits": 2,
+        "velocity_to_slowness_attempts": 7
+      }
+    },
+    "failure_status": "failed",
+    "objectives": [
+      0.0005036081303481447,
+      0.0004905093765040421,
+      6.119470431424162e-05
+    ],
+    "post_return_verification_costs_scope": "additional interface checks above are not engine runtime/cost evidence",
+    "problem_fingerprint": "2751c548db6e18dd28b3cb9791ee0dd4dd283101de005be95bbc5949c2fd72f2",
+    "scope": "Tiny manufactured control and injected failure; constant abstract clock; no project performance/recovery evidence",
+    "solver_result": {
+      "message": "STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT",
+      "nfev": 3,
+      "nit": 2,
+      "njev": 3,
+      "status": 1,
+      "success": false
+    },
+    "success_status": "solver_terminated",
+    "velocity_final_sha256": "8e72c97a09e9bc454640bc4b8cc867dda1ec4dc5d2631fd323a13485650e300d"
+  },
+  "not_performed": [
+    "No project datasets, project-data optimizer trajectories, saved benchmark model arrays, performance benchmark or hyperparameter selection.",
+    "No production/source9f/workflow or old result edits; no new optimizer, prior, certificate transfer proof or final student scientific design."
+  ],
+  "original_frozen_candidate_history": {
+    "history/SCOPE.md.482ce254.original": {
+      "bytes": 5121,
+      "sha256": "482ce254e48007b04b0cbdcd83b4f416c03f4c3317d582aec7c954b7f41d4b20"
+    },
+    "history/TEST_RECEIPT.json.1cd7fa5e.original": {
+      "bytes": 4745,
+      "sha256": "1cd7fa5ec58ac7d59a8273915e71c694f6e9d0ca7f4192181f1a0c4ed437636f"
+    },
+    "history/test_velocity_oracle.py.d0396b1c.original": {
+      "bytes": 12329,
+      "sha256": "d0396b1c27117612b53e65b966ba46573f6e81b24838e8da3bab4287124dcc5e"
+    },
+    "history/velocity_oracle.py.61dc9b2c.original": {
+      "bytes": 14640,
+      "sha256": "61dc9b2c80f7adba64154a92e4e63d716c127b81cdfb161c8267e43a08734d5c"
+    }
+  },
+  "preserved_style_attempt": {
+    "exit_code": 1,
+    "identity": {
+      "bytes": 1260,
+      "sha256": "8b76d6080aca33482c53a04dca194ccaeb34ec6a5f230232b686e8e1a06c9dde"
+    },
+    "log": "ruff_02.log",
+    "reason": "Test import wrapping I001 only; corrected after31-pass execution; executed preformat test preserved byte-exact."
+  },
+  "production_invariance": {
+    "all161_entries_equal": true,
+    "both_identity": {
+      "bytes": 18234,
+      "sha256": "fe74269bf569daa4e45cc090511f219c7856bc0d56ddb508bc4df5efd5985949"
+    },
+    "source_after": "SOURCE_AFTER_02.json",
+    "source_before": "SOURCE_BEFORE_02.json",
+    "source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da"
+  },
+  "project_execution_authorized": false,
+  "recorded_utc": "2026-11-08T06:45:13.886763+00:00",
+  "remaining_gate": "Final independent source receipt/freeze. Any project execution remains held for a separate controlled protocol and root decision.",
+  "role": "AI standard-coordinate software candidate; not student design, novelty, scientific recovery or performance evidence",
+  "status": "31_MANUFACTURED_CHECKS_PASS_PENDING_FINAL_REVIEW_AND_PROJECT_PROTOCOL",
+  "supersession": "This is the current validation receipt. TEST_RECEIPT.json is the earlier 30-pass record; its exact source/test/scope/receipt snapshots remain under history/. Wrapper source61dc is unchanged."
+}

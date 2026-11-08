@@ -1,0 +1,26 @@
+{
+  "result": "CLEAR_SOURCE_MATH_FOR_PURE_VALIDATION_AND_PARENT_FREEZE_DECISION",
+  "reviewer": "candidate_final_review",
+  "runner_sha256": "0eee6af51a09055cb0fac2c972dc7159092af15ede6558ba844cd1ea42596ee0",
+  "protocol_sha256": "b1104b4159ffc0065fb5b3a47a1c552a8cb94fc329daa8f7b315418452d7a8d2",
+  "readme_sha256": "c69d40bffa7d153d8421fba613a9ada0ac0730a4568c50b301c1b123198a97f7",
+  "mathematical_checks": [
+    "Derivative targets explicitly are HALF-relative-SQUARED errors, not the earlier relativeL2 norm. Em=.5||m-mt||^2/||mt||^2 has slope(m-mt) dotd/||mt||^2, including slope0at exacttruth.",
+    "For v=m^-1/2 in km/s and m in s^2/km^2, Dv[d]=-.5(v/m)d. Substitution into Ev gives the implemented(v-vt) dotDv[d]/||vt||^2. Denominators and physical parameter chainrule are correct.",
+    "The original rawp and exact L2-normalized negative independent data gradient remain separate. Zero truegradient does not invent an exactdirection or prove stationarity. Native-m cosine uses direction versus mt-m, with undefinedzero cases retained; gtrue dot(mt-m) is separately and correctly labeled.",
+    "h=epsilon min(m_i/|d_i|) over nonzero components guarantees relative coordinate changes<=epsilon and positive central plus/minus models for fixed eps1e-4,5e-5. No clipping changes the direction. Unrepresentable steps and rounded-away perturbations are failures/unknown; rawzero direction is a trivial analytic derivative, not an empirical FD test.",
+    "Centered FD is applied only to stored-array error metrics, not claimed as a new PDE/data-Phi finite difference. Quadratic Em has zero exact-arithmetic central truncation; velocity two-scale/3 estimate and cancellation allowances remain explicitly heuristic rather than rigorous sign/error enclosures.",
+    "Literal and fixedscale-relative nearzero classifications are separate. Model and truth finitepositive/minmax/literal box feasibility, exactactivebound and64epsilon-band counts remain distinct; numerical bands do not forgive literal violations.",
+    "All8 input slots are registered before slope calculations. Both immutable complete receipts, every registered artifact, original3input hashes, rawvector/actualmodel bindings and source9f are checked without production imports or newPDE/optimizer work.",
+    "All360x4 internal endpoint instances are compared only to their own original initial. Fivearms/three repetitions/three modes remain separate, with full and eligible denominators, repeated fallback states retained and credited quality checked. Internal states are not relabeled fully returned results."
+  ],
+  "material_source_blockers": [],
+  "pure_validation_recommendations": [
+    "Known small-vector half-squared m/v derivative identities plus fixed2eps FD, including exacttruth/zero direction/zero gradient cases.",
+    "Default CLI must load no project arrays; snapshot/manifest mismatches rejected.",
+    "Literal one-ULP bound violation must remain a violation even if inside FP band; no FD clipping.",
+    "Mock interruption keeps attempted/unattempted8slot prefix and never publishes a completed1440row table."
+  ],
+  "activities": {"source_text_and_hash_review_only": true, "candidate_import_parse_tests_execution": false, "project_array_or_new_diagnostic_results": false, "repository_source_mutations": false},
+  "limits": "Post-outcome AI software diagnostic only. Local data/error slope opposition is not universal cause, illposedness, nonconvexity, cycle-skipping, finite-boxed-step behavior, a remedy, numerical rank, performance, independent geology or student authorship. Parent owns validation, exact freeze and separateGO."
+}

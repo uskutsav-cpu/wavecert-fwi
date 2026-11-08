@@ -1,0 +1,33 @@
+I001 [*] Import block is un-sorted or un-formatted
+  --> test_velocity_oracle.py:2:1
+   |
+ 1 |   """Manufactured tiny-grid verification only; no project datasets or benchmarks."""
+ 2 | / import importlib.util
+ 3 | | import json
+ 4 | | import sys
+ 5 | | from dataclasses import replace
+ 6 | | from pathlib import Path
+ 7 | |
+ 8 | | import numpy as np
+ 9 | | import pytest
+10 | | from wavecert.optimization.paid_descent import TrajectoryOptions, run_exact_lbfgsb, trajectory_to_dict
+11 | | from wavecert.physics.exact_merit import ExactMeritOracle
+12 | | from wavecert.physics.helmholtz import Helmholtz2D, SurveyBlock
+   | |_______________________________________________________________^
+13 |
+14 |   spec = importlib.util.spec_from_file_location("velocity_baseline_candidate_unique", Path(__file__).with_name("velocity_oracle.py"))
+   |
+help: Organize imports
+   |
+9  | import pytest
+   - from wavecert.optimization.paid_descent import TrajectoryOptions, run_exact_lbfgsb, trajectory_to_dict
+10 + from wavecert.optimization.paid_descent import (
+11 +     TrajectoryOptions,
+12 +     run_exact_lbfgsb,
+13 +     trajectory_to_dict,
+14 + )
+15 | from wavecert.physics.exact_merit import ExactMeritOracle
+   |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

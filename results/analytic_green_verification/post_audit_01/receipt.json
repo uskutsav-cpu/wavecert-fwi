@@ -1,0 +1,580 @@
+{
+  "role": "Independent AI post-outcome numerical audit, not student interpretation",
+  "started_utc": "2026-11-08T06:13:01.226508+00:00",
+  "source_sha256": "7672ae15a52933b417644fd590c13aa50472a6a5755100538effdcde6f4a43e7",
+  "criteria_sha256": "a65f089be1eb088f30d052e9ac3dde4bc06d9e712ce1e37902cb159d92a7163f",
+  "runtime": {
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]",
+    "numpy": "2.4.3",
+    "scipy": "1.18.1",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O"
+  },
+  "PDE_or_production_import_or_original_write": false,
+  "criteria": {
+    "role": "Post-outcome independent numerical verification; not student final design or physical-quality approval",
+    "quad_epsabs": 1e-11,
+    "quad_epsrel": 1e-11,
+    "quad_limit": 50,
+    "full_valid_curve_relative_L2_maximum": 1e-10,
+    "step_normalized_max_abs_maximum": 1e-12,
+    "source_relative_L2_maximum": 1e-14,
+    "scalar_rtol": 2e-12,
+    "scalar_atol": 1e-14,
+    "time_samples": 1101,
+    "valid_indices_inclusive": [
+      1,
+      1099
+    ],
+    "early_cutoff_ms": 250.0,
+    "quad_substitution": "s=a+z^2, U=A/pi integral_0^sqrt(t-a) q(t-a-z^2)/sqrt(2a+z^2) dz",
+    "forcing": "standard-library math.exp causal Ricker, f=.005/ms, delay200ms",
+    "no_retries_or_tolerance_changes": true,
+    "limits": "QUADPACK error estimates, convergence and cross-quadrature agreement are ordinary FP diagnostics, not enclosures or physical pass criteria. All7 traces are correlated versions of one homogeneous scene."
+  },
+  "orders": [
+    {
+      "order": 128,
+      "alternate_curve_relative_L2": {
+        "numerator": 3.6133366827601797e-13,
+        "denominator": 168.8634649130959,
+        "value": 2.139797785518467e-15,
+        "zero_denominator": false
+      },
+      "source_relative_L2": {
+        "numerator": 0.0,
+        "denominator": 7.735718283338292,
+        "value": 0.0,
+        "zero_denominator": false
+      },
+      "scalar_moment_errors": [
+        4.440892098500626e-16,
+        8.790169113426227e-16,
+        9.992007221626409e-16,
+        7.491925685636501e-16,
+        7.771561172376096e-16,
+        6.09938483764427e-16,
+        6.106226635438361e-16
+      ],
+      "step_error": 3.933420991005696e-16
+    },
+    {
+      "order": 256,
+      "alternate_curve_relative_L2": {
+        "numerator": 2.780156659489102e-13,
+        "denominator": 168.8634649130959,
+        "value": 1.6463932330891619e-15,
+        "zero_denominator": false
+      },
+      "source_relative_L2": {
+        "numerator": 0.0,
+        "denominator": 7.735718283338292,
+        "value": 0.0,
+        "zero_denominator": false
+      },
+      "scalar_moment_errors": [
+        4.440892098500626e-16,
+        7.178773634569646e-16,
+        9.992007221626409e-16,
+        6.777960505973831e-16,
+        7.216449660063518e-16,
+        5.570932265473711e-16,
+        5.551115123125783e-16
+      ],
+      "step_error": 1.966710495502848e-16
+    },
+    {
+      "order": 512,
+      "alternate_curve_relative_L2": {
+        "numerator": 3.1265331634582523e-13,
+        "denominator": 168.8634649130959,
+        "value": 1.851515462546795e-15,
+        "zero_denominator": false
+      },
+      "source_relative_L2": {
+        "numerator": 0.0,
+        "denominator": 7.735718283338292,
+        "value": 0.0,
+        "zero_denominator": false
+      },
+      "scalar_moment_errors": [
+        4.440892098500626e-16,
+        6.45476375257456e-16,
+        9.992007221626409e-16,
+        6.642005307548262e-16,
+        7.216449660063518e-16,
+        5.645841746301507e-16,
+        5.551115123125783e-16
+      ],
+      "step_error": 1.966710495502848e-16
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "small_nbl0",
+      "primary_case": false,
+      "recomputed_GL512_metrics": {
+        "full_relative": {
+          "numerator": 406.4907418484588,
+          "denominator": 168.8634649130959,
+          "value": 2.407215451001528,
+          "zero_denominator": false
+        },
+        "early_relative": {
+          "numerator": 0.046193069549815405,
+          "denominator": 141.07615406177732,
+          "value": 0.0003274335755537214,
+          "zero_denominator": false
+        },
+        "late_mismatch_over_full_analytic": {
+          "numerator": 406.49073922379915,
+          "denominator": 168.8634649130959,
+          "value": 2.40721543545844,
+          "zero_denominator": false
+        },
+        "sample_counts": {
+          "full": 1099,
+          "early": 250,
+          "late": 849
+        },
+        "physical_quality_pass": null
+      },
+      "alternate_quad_metrics": {
+        "full_relative": {
+          "numerator": 406.49074184845875,
+          "denominator": 168.8634649130959,
+          "value": 2.4072154510015276,
+          "zero_denominator": false
+        },
+        "early_relative": {
+          "numerator": 0.04619306954986629,
+          "denominator": 141.07615406177732,
+          "value": 0.00032743357555408206,
+          "zero_denominator": false
+        },
+        "late_mismatch_over_full_analytic": {
+          "numerator": 406.49073922379915,
+          "denominator": 168.8634649130959,
+          "value": 2.40721543545844,
+          "zero_denominator": false
+        },
+        "sample_counts": {
+          "full": 1099,
+          "early": 250,
+          "late": 849
+        },
+        "physical_quality_pass": null
+      },
+      "source_relative_L2": {
+        "numerator": 0.0,
+        "denominator": 7.735718283338292,
+        "value": 0.0,
+        "zero_denominator": false
+      },
+      "physical_quality_pass": null
+    },
+    {
+      "case_id": "small_nbl20",
+      "primary_case": false,
+      "recomputed_GL512_metrics": {
+        "full_relative": {
+          "numerator": 96.15039853740072,
+          "denominator": 168.8634649130959,
+          "value": 0.5693972854748875,
+          "zero_denominator": false
+        },
+        "early_relative": {
+          "numerator": 0.04619309273833411,
+          "denominator": 141.07615406177732,
+          "value": 0.0003274337399225253,
+          "zero_denominator": false
+        },
+        "late_mismatch_over_full_analytic": {
+          "numerator": 96.15038744123277,
+          "denominator": 168.8634649130959,
+          "value": 0.5693972197640012,
+          "zero_denominator": false
+        },
+        "sample_counts": {
+          "full": 1099,
+          "early": 250,
+          "late": 849
+        },
+        "physical_quality_pass": null
+      },
+      "alternate_quad_metrics": {
+        "full_relative": {
+          "numerator": 96.15039853740085,
+          "denominator": 168.8634649130959,
+          "value": 0.5693972854748883,
+          "zero_denominator": false
+        },
+        "early_relative": {
+          "numerator": 0.04619309273838499,
+          "denominator": 141.07615406177732,
+          "value": 0.000327433739922886,
+          "zero_denominator": false
+        },
+        "late_mismatch_over_full_analytic": {
+          "numerator": 96.1503874412329,
+          "denominator": 168.8634649130959,
+          "value": 0.5693972197640019,
+          "zero_denominator": false
+        },
+        "sample_counts": {
+          "full": 1099,
+          "early": 250,
+          "late": 849
+        },
+        "physical_quality_pass": null
+      },
+      "source_relative_L2": {
+        "numerator": 0.0,
+        "denominator": 7.735718283338292,
+        "value": 0.0,
+        "zero_denominator": false
+      },
+      "physical_quality_pass": null
+    },
+    {
+      "case_id": "small_nbl40",
+      "primary_case": false,
+      "recomputed_GL512_metrics": {
+        "full_relative": {
+          "numerator": 42.132150592751415,
+          "denominator": 168.8634649130959,
+          "value": 0.24950424068601434,
+          "zero_denominator": false
+        },
+        "early_relative": {
+          "numerator": 0.0461930927954973,
+          "denominator": 141.07615406177732,
+          "value": 0.0003274337403277192,
+          "zero_denominator": false
+        },
+        "late_mismatch_over_full_analytic": {
+          "numerator": 42.13212527001767,
+          "denominator": 168.8634649130959,
+          "value": 0.24950409072620058,
+          "zero_denominator": false
+        },
+        "sample_counts": {
+          "full": 1099,
+          "early": 250,
+          "late": 849
+        },
+        "physical_quality_pass": null
+      },
+      "alternate_quad_metrics": {
+        "full_relative": {
+          "numerator": 42.13215059275145,
+          "denominator": 168.8634649130959,
+          "value": 0.24950424068601454,
+          "zero_denominator": false
+        },
+        "early_relative": {
+          "numerator": 0.04619309279554818,
+          "denominator": 141.07615406177732,
+          "value": 0.00032743374032807984,
+          "zero_denominator": false
+        },
+        "late_mismatch_over_full_analytic": {
+          "numerator": 42.13212527001771,
+          "denominator": 168.8634649130959,
+          "value": 0.24950409072620083,
+          "zero_denominator": false
+        },
+        "sample_counts": {
+          "full": 1099,
+          "early": 250,
+          "late": 849
+        },
+        "physical_quality_pass": null
+      },
+      "source_relative_L2": {
+        "numerator": 0.0,
+        "denominator": 7.735718283338292,
+        "value": 0.0,
+        "zero_denominator": false
+      },
+      "physical_quality_pass": null
+    },
+    {
+      "case_id": "matched_exterior_20_undamped",
+      "primary_case": false,
+      "recomputed_GL512_metrics": {
+        "full_relative": {
+          "numerator": 175.15841477260682,
+          "denominator": 168.8634649130959,
+          "value": 1.037278341189733,
+          "zero_denominator": false
+        },
+        "early_relative": {
+          "numerator": 0.04619309280002231,
+          "denominator": 141.07615406177732,
+          "value": 0.0003274337403597941,
+          "zero_denominator": false
+        },
+        "late_mismatch_over_full_analytic": {
+          "numerator": 175.15840868154388,
+          "denominator": 168.8634649130959,
+          "value": 1.0372783051187988,
+          "zero_denominator": false
+        },
+        "sample_counts": {
+          "full": 1099,
+          "early": 250,
+          "late": 849
+        },
+        "physical_quality_pass": null
+      },
+      "alternate_quad_metrics": {
+        "full_relative": {
+          "numerator": 175.15841477260676,
+          "denominator": 168.8634649130959,
+          "value": 1.0372783411897328,
+          "zero_denominator": false
+        },
+        "early_relative": {
+          "numerator": 0.04619309280007319,
+          "denominator": 141.07615406177732,
+          "value": 0.0003274337403601548,
+          "zero_denominator": false
+        },
+        "late_mismatch_over_full_analytic": {
+          "numerator": 175.15840868154382,
+          "denominator": 168.8634649130959,
+          "value": 1.0372783051187986,
+          "zero_denominator": false
+        },
+        "sample_counts": {
+          "full": 1099,
+          "early": 250,
+          "late": 849
+        },
+        "physical_quality_pass": null
+      },
+      "source_relative_L2": {
+        "numerator": 0.0,
+        "denominator": 7.735718283338292,
+        "value": 0.0,
+        "zero_denominator": false
+      },
+      "physical_quality_pass": null
+    },
+    {
+      "case_id": "matched_exterior_40_undamped",
+      "primary_case": false,
+      "recomputed_GL512_metrics": {
+        "full_relative": {
+          "numerator": 115.94892623130043,
+          "denominator": 168.8634649130959,
+          "value": 0.6866430597700487,
+          "zero_denominator": false
+        },
+        "early_relative": {
+          "numerator": 0.04619309280002231,
+          "denominator": 141.07615406177732,
+          "value": 0.0003274337403597941,
+          "zero_denominator": false
+        },
+        "late_mismatch_over_full_analytic": {
+          "numerator": 115.9489170298271,
+          "denominator": 168.8634649130959,
+          "value": 0.686643005279438,
+          "zero_denominator": false
+        },
+        "sample_counts": {
+          "full": 1099,
+          "early": 250,
+          "late": 849
+        },
+        "physical_quality_pass": null
+      },
+      "alternate_quad_metrics": {
+        "full_relative": {
+          "numerator": 115.94892623130046,
+          "denominator": 168.8634649130959,
+          "value": 0.6866430597700489,
+          "zero_denominator": false
+        },
+        "early_relative": {
+          "numerator": 0.04619309280007319,
+          "denominator": 141.07615406177732,
+          "value": 0.0003274337403601548,
+          "zero_denominator": false
+        },
+        "late_mismatch_over_full_analytic": {
+          "numerator": 115.94891702982713,
+          "denominator": 168.8634649130959,
+          "value": 0.6866430052794382,
+          "zero_denominator": false
+        },
+        "sample_counts": {
+          "full": 1099,
+          "early": 250,
+          "late": 849
+        },
+        "physical_quality_pass": null
+      },
+      "source_relative_L2": {
+        "numerator": 0.0,
+        "denominator": 7.735718283338292,
+        "value": 0.0,
+        "zero_denominator": false
+      },
+      "physical_quality_pass": null
+    },
+    {
+      "case_id": "reference_241",
+      "primary_case": false,
+      "recomputed_GL512_metrics": {
+        "full_relative": {
+          "numerator": 0.0515272851738594,
+          "denominator": 168.8634649130959,
+          "value": 0.000305141702501352,
+          "zero_denominator": false
+        },
+        "early_relative": {
+          "numerator": 0.04619309279937317,
+          "denominator": 141.07615406177732,
+          "value": 0.0003274337403551928,
+          "zero_denominator": false
+        },
+        "late_mismatch_over_full_analytic": {
+          "numerator": 0.02283110367495906,
+          "denominator": 168.8634649130959,
+          "value": 0.00013520451973852892,
+          "zero_denominator": false
+        },
+        "sample_counts": {
+          "full": 1099,
+          "early": 250,
+          "late": 849
+        },
+        "physical_quality_pass": null
+      },
+      "alternate_quad_metrics": {
+        "full_relative": {
+          "numerator": 0.05152728517394341,
+          "denominator": 168.8634649130959,
+          "value": 0.0003051417025018495,
+          "zero_denominator": false
+        },
+        "early_relative": {
+          "numerator": 0.04619309279942405,
+          "denominator": 141.07615406177732,
+          "value": 0.00032743374035555347,
+          "zero_denominator": false
+        },
+        "late_mismatch_over_full_analytic": {
+          "numerator": 0.022831103675045712,
+          "denominator": 168.8634649130959,
+          "value": 0.00013520451973904208,
+          "zero_denominator": false
+        },
+        "sample_counts": {
+          "full": 1099,
+          "early": 250,
+          "late": 849
+        },
+        "physical_quality_pass": null
+      },
+      "source_relative_L2": {
+        "numerator": 0.0,
+        "denominator": 7.735718283338292,
+        "value": 0.0,
+        "zero_denominator": false
+      },
+      "physical_quality_pass": null
+    },
+    {
+      "case_id": "reference_321",
+      "primary_case": true,
+      "recomputed_GL512_metrics": {
+        "full_relative": {
+          "numerator": 0.05152728517385944,
+          "denominator": 168.8634649130959,
+          "value": 0.0003051417025013522,
+          "zero_denominator": false
+        },
+        "early_relative": {
+          "numerator": 0.04619309279937317,
+          "denominator": 141.07615406177732,
+          "value": 0.0003274337403551928,
+          "zero_denominator": false
+        },
+        "late_mismatch_over_full_analytic": {
+          "numerator": 0.02283110367495916,
+          "denominator": 168.8634649130959,
+          "value": 0.00013520451973852952,
+          "zero_denominator": false
+        },
+        "sample_counts": {
+          "full": 1099,
+          "early": 250,
+          "late": 849
+        },
+        "physical_quality_pass": null
+      },
+      "alternate_quad_metrics": {
+        "full_relative": {
+          "numerator": 0.051527285173943456,
+          "denominator": 168.8634649130959,
+          "value": 0.00030514170250184975,
+          "zero_denominator": false
+        },
+        "early_relative": {
+          "numerator": 0.04619309279942405,
+          "denominator": 141.07615406177732,
+          "value": 0.00032743374035555347,
+          "zero_denominator": false
+        },
+        "late_mismatch_over_full_analytic": {
+          "numerator": 0.022831103675045813,
+          "denominator": 168.8634649130959,
+          "value": 0.00013520451973904267,
+          "zero_denominator": false
+        },
+        "sample_counts": {
+          "full": 1099,
+          "early": 250,
+          "late": 849
+        },
+        "physical_quality_pass": null
+      },
+      "source_relative_L2": {
+        "numerator": 0.0,
+        "denominator": 7.735718283338292,
+        "value": 0.0,
+        "zero_denominator": false
+      },
+      "physical_quality_pass": null
+    }
+  ],
+  "quad_messages": [],
+  "alternate_curve_sha256": "0e7738a965541cb7a9177480dbc0b8ea2c7466133bbb4823e827a9bcb5761254",
+  "quad_function_evaluations": 244986,
+  "alternate_step_normalized_max_abs_error": 3.933420991005696e-16,
+  "maximum_quad_estimated_absolute_error": 3.1820166945608485e-10,
+  "quad_error_estimate_scope": "QUADPACK estimate only, not validated enclosure",
+  "actual_source_before": {
+    "sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "files": 161
+  },
+  "actual_source_after": {
+    "sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "files": 161
+  },
+  "result": "CLEAR_INDEPENDENT_GREEN_POSTAUDIT",
+  "checks": 228,
+  "issues": [],
+  "finished_utc": "2026-11-08T06:13:01.426014+00:00",
+  "source_formula": "s=a+z^2: A/pi integral q(t-a-z^2)/sqrt(2a+z^2) dz",
+  "physical_quality_pass": null,
+  "limits": "Post-outcome numerical crosscheck only. No formal quadrature/FP enclosure, no newPDE, no damping/adjoint/inversion approval, no seven independent environments or student design.",
+  "artifacts": {
+    "auditor_source.py": "7672ae15a52933b417644fd590c13aa50472a6a5755100538effdcde6f4a43e7",
+    "criteria.json": "a65f089be1eb088f30d052e9ac3dde4bc06d9e712ce1e37902cb159d92a7163f",
+    "alternate_z_squared_curve.npz": "0e7738a965541cb7a9177480dbc0b8ea2c7466133bbb4823e827a9bcb5761254"
+  }
+}

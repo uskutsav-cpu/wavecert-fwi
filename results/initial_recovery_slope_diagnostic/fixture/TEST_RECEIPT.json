@@ -1,0 +1,84 @@
+{
+  "status": "passed_12_focused_pure_mock_controls_no_actual8_or360_array_outcome_computation",
+  "scope": "Only generated/manufactured scalar/small-vector inputs and fully mocked provenance for handled-interruption output guard. No original arrays, production imports, PDE, optimizer or diagnostic result study.",
+  "files": {
+    "diagnose_initial_slopes.py": {
+      "bytes": 39663,
+      "sha256": "7998631fc3542cdd42ebce0bcc236d87755a33647b1135327ebebda6f8dec46e"
+    },
+    "protocol.json": {
+      "bytes": 6446,
+      "sha256": "b1104b4159ffc0065fb5b3a47a1c552a8cb94fc329daa8f7b315418452d7a8d2"
+    },
+    "test_diagnostic_formulas.py": {
+      "bytes": 11204,
+      "sha256": "7ef1acadcab4737389ff930c02ddd88906045f40a1fb58f2fae45ced77bd4085"
+    },
+    "README.md": {
+      "bytes": 3770,
+      "sha256": "c69d40bffa7d153d8421fba613a9ada0ac0730a4568c50b301c1b123198a97f7"
+    },
+    "pure_mock_validation_02.log": {
+      "bytes": 99,
+      "sha256": "ac2f36e71645a1de73da7440fcbb6859ffac97f0e92a46c130cee96e3a6add79"
+    }
+  },
+  "runtime": {
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "numpy": "2.4.3",
+    "pytest": "9.1.1"
+  },
+  "exact_delta_only_unused_name_rename": true,
+  "protocol_byte_unchanged": true,
+  "root_authorized_pure_validation": true,
+  "pre_cleanup_history": "history/before_cosmetic_runner_cleanup (exact0eee/b110, source/test/log/firstRuffreceipt); earlier test import-whitespace version also retained",
+  "pytest_command": "/opt/miniconda3/bin/python -m pytest -q -W error -p no:cacheprovider --basetemp /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/recovery_slope_test_tmp_02 test_diagnostic_formulas.py",
+  "pytest": {
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "830d1b",
+      "wall_time_seconds": 0.22855775,
+      "exit_code": 0,
+      "original_token_count": 25,
+      "output": "............                                                             [100%]\n12 passed in 0.10s\n"
+    }
+  },
+  "ruff_command": "/opt/miniconda3/bin/python -m ruff check --config /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/pyproject.toml diagnose_initial_slopes.py test_diagnostic_formulas.py",
+  "ruff": {
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "eb5030",
+      "wall_time_seconds": 0.000006791,
+      "exit_code": 0,
+      "original_token_count": 5,
+      "output": "All checks passed!\n"
+    }
+  },
+  "python310_grammar": {
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "5b908c",
+      "wall_time_seconds": 0.0000085,
+      "exit_code": 0,
+      "original_token_count": 27,
+      "output": "diagnose_initial_slopes.py: Python3.10 grammar clear\ntest_diagnostic_formulas.py: Python3.10 grammar clear\n"
+    }
+  },
+  "controls": [
+    "independent hand values Em9/32,dEm-3/8,Ev1/2,dEv-2 at manufacturedm1/mt4/d2",
+    "fixedpositive2epscenteredchecks, actualstep, noFDclipping evenoutsidebox, originalarrayunchanged",
+    "true=initial smoothhalfsquaredmetricderivativeszero",
+    "zero rawdirection gives trivial notempiricalFD; cosineunknown",
+    "stepunderflow/representability failure staysunknown, notzero",
+    "literaloutofbox remainsoutside despiteFPband, exactactivecountsseparate",
+    "nonfinite/nonpositivefeasibility explicit",
+    "manufacturedlocalopposition and literal/numericalsignclassification separate",
+    "defaultCLI onlyownsource/protocol hashes, nonumericbinding/projectread",
+    "KeyboardInterrupt/SystemExit aftercase0 preservesfinishedprefix/currentfailedslot/remaining6unattempted, zeroG hasnoinventednormaliseddirection"
+  ],
+  "actual_initial_witness_cases_computed": 0,
+  "actual_original_endpoint_instances_computed": 0,
+  "production_source_modified": false,
+  "student_final_research_design": false
+}

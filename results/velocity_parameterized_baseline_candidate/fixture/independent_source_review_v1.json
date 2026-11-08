@@ -1,0 +1,168 @@
+{
+  "checks": [
+    {
+      "name": "handoff_hash_velocity_oracle.py",
+      "pass": true
+    },
+    {
+      "name": "handoff_hash_test_velocity_oracle.py",
+      "pass": true
+    },
+    {
+      "name": "handoff_hash_SCOPE.md",
+      "pass": true
+    },
+    {
+      "name": "handoff_hash_VALIDATION_RECEIPT_02.json",
+      "pass": true
+    },
+    {
+      "name": "validation_current_pin_LICENSE",
+      "pass": true
+    },
+    {
+      "name": "validation_current_pin_SCOPE.md",
+      "pass": true
+    },
+    {
+      "name": "validation_current_pin_SOURCE_PINS.json",
+      "pass": true
+    },
+    {
+      "name": "validation_current_pin_test_velocity_oracle.py",
+      "pass": true
+    },
+    {
+      "name": "validation_current_pin_velocity_oracle.py",
+      "pass": true
+    },
+    {
+      "name": "history_pin_history/SCOPE.md.482ce254.original",
+      "pass": true
+    },
+    {
+      "name": "history_pin_history/TEST_RECEIPT.json.1cd7fa5e.original",
+      "pass": true
+    },
+    {
+      "name": "history_pin_history/test_velocity_oracle.py.d0396b1c.original",
+      "pass": true
+    },
+    {
+      "name": "history_pin_history/velocity_oracle.py.61dc9b2c.original",
+      "pass": true
+    },
+    {
+      "name": "actual_pytest_log_pin",
+      "pass": true
+    },
+    {
+      "name": "actual_pytest_terminal_exit_zero",
+      "pass": true
+    },
+    {
+      "name": "final_ruff_log_pin",
+      "pass": true
+    },
+    {
+      "name": "final_ruff_terminal_exit_zero",
+      "pass": true
+    },
+    {
+      "name": "31_manufactured_tests_recorded",
+      "pass": true
+    },
+    {
+      "name": "executed_test_hash",
+      "pass": true
+    },
+    {
+      "name": "executed_and_final_test_AST_equal",
+      "pass": true
+    },
+    {
+      "name": "python310_source_parse_velocity_oracle.py",
+      "pass": true
+    },
+    {
+      "name": "python310_source_parse_test_velocity_oracle.py",
+      "pass": true
+    },
+    {
+      "name": "owner_before_after_all161_equal",
+      "pass": true
+    },
+    {
+      "name": "independent_current_all161_match_frozen_baseline",
+      "pass": true
+    },
+    {
+      "name": "native_dependency_src/wavecert/physics/exact_merit.py",
+      "pass": true
+    },
+    {
+      "name": "native_dependency_src/wavecert/physics/helmholtz.py",
+      "pass": true
+    },
+    {
+      "name": "native_dependency_src/wavecert/optimization/paid_descent.py",
+      "pass": true
+    },
+    {
+      "name": "project_execution_not_authorized",
+      "pass": true
+    }
+  ],
+  "created_utc": "2026-11-08T06:46:15.749456+00:00",
+  "final_sha256": {
+    "SCOPE.md": "fde0795899f8b8100bcf00ad4ac138342a1d76635ba030423b4d54b6f3770f21",
+    "VALIDATION_RECEIPT_02.json": "95da7acf13588f595c5a75e8c1c3e09ec56d8710cb22908ba26cb69a8c695d90",
+    "test_velocity_oracle.py": "8f04c324a4bc35e0b44ca298874eba2e68d48a559f1a7e77d84a63e8806fc3df",
+    "velocity_oracle.py": "61dc9b2c80f7adba64154a92e4e63d716c127b81cdfb161c8267e43a08734d5c"
+  },
+  "findings": [
+    {
+      "assessment": "For m=v^-2, analytic J=diag(-2v^-3), g_v=J^Tg_m and d_m=Jd_v are correct. Positive real mapping is mathematically bijective; implemented float64 mapping is not promised injective or exactly invertible. Tests and metadata disclose many-v-to-same-subnormal-m and m-to-v-to-actual-m roundtrip differences. Unrepresentable models or derivative factors fail; no clipping/ULP replacement.",
+      "topic": "Coordinate mathematics"
+    },
+    {
+      "assessment": "Monotone-decreasing transform reverses lower/upper bounds. Scalars, vectors and fixed coordinates are supported. Ordinary float64 endpoints are not outward-rounded inverse boxes. Explicit unit labels and g_v formula identify coordinate units; labels do not rescale numbers or infer equivalent optimizer tolerances.",
+      "topic": "Bounds and units"
+    },
+    {
+      "assessment": "Fresh exact native type, zero native counts and native-claim registry enforce normal one-policy ownership. Immutable bytes-backed v/native arrays, owner tokens, issued identity registry, native identity/fingerprint and both actual vector hashes reject copied, foreign and changed receipts. Distinct v receipts retain distinct coordinate identities even when native m bytes match. Initial metadata does not pin all historical LU factors.",
+      "topic": "Receipt ownership and immutability"
+    },
+    {
+      "assessment": "Every evaluate dispatches native evaluate before wrapper cache reuse; accept and gradient dispatch native public validation. Native accepted factors/fields survive later trial receipts under unchanged native semantics. Native nested count dictionaries are copied, with a separate integer velocity_coordinates branch; no formula-added seconds or duplicated native physics counts. Coordinate source validation/copy/hash/conversion overhead remains actual call work. Native failure counters and exceptions survive.",
+      "topic": "Paid native work and cache"
+    },
+    {
+      "assessment": "run_exact_lbfgsb consumes n/evaluate/gradient/accept/cost_snapshot structurally. Receipt/model and gradient shapes align. Owner actually exercised two manufactured native iterations with three strictly decreasing checkpoints and finite serialization, plus an injected gradient failure. Solver maximum-iteration termination remains solver_terminated/native success=false. This two-step run contained no rejected trial; separate existing cache tests cover two unaccepted trials. No settings were tuned to force a rejection.",
+      "topic": "Structural engine compatibility"
+    },
+    {
+      "assessment": "All optimizer receipt/checkpoint/final_model arrays are v, not m. Contract and SCOPE state that old m-quality/budget helpers are unsafe for raw v. Actual native model/hash are separately exposed. A future adapter must perform required native conversion/rehash/provenance before its actual API return, refresh counters and keep offline truth audits after timing. No such project adapter/protocol exists in this stage.",
+      "topic": "Model and endpoint API"
+    },
+    {
+      "assessment": "This is an established coordinate transformation and tiny manufactured software verification, authored after inspected development outcomes. No project-data performance/recovery result, new optimizer/prior, certificate pullback proof, preregistration, novelty, remedy guarantee or student scientific design is claimed. Project execution remains held for a separate controlled protocol and root decision.",
+      "topic": "Scope and evidence"
+    }
+  ],
+  "issues": [],
+  "production_digest": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "project_execution_authorized_by_this_review": false,
+  "result": "CLEAR_STANDARD_VELOCITY_WRAPPER_SOFTWARE_ONLY",
+  "reviewer": "AI /root/candidate_final_review with independent source-only API review by verification_helpers_review",
+  "scope": "Independent source/math/ownership/cost/API review; read-only validation of author-executed manufactured evidence. No reviewer tests, project data, optimizer runs or main repository writes.",
+  "source_guard_issues": [],
+  "unresolved": "Any project comparison requires explicit actual native start/bound conversion, paid endpoint adapter and separately controlled protocol. No scientific comparison choices are made here.",
+  "validation_provenance": {
+    "execution_owner": "/root/realistic_physics_gap",
+    "reviewers": "Both reviewers source-read only. Current 161 baseline files independently hashed without importing/running project science.",
+    "style": "Prior I001 failure log and executed preformat source retained; final Ruff exit0 log pinned.",
+    "tests": "31 manufactured tests, -Werror, actual session16146 exit0; final source-equivalent import formatting verified by independent AST comparison, not duplicate execution.",
+    "timing_scope": "Constant abstract clock; test durations, native-example objective values and post-return interface checks are not project timing or recovery evidence."
+  }
+}

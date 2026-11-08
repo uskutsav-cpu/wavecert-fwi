@@ -25,6 +25,16 @@ The same eight witnesses pass all four Linux CI jobs on Python 3.10/3.11/3.12;
 their actual numerical reports are archived. These are software reproductions
 of known fixtures, not additional independent geological observations.
 
+The [new recovery/physics diagnostics](recovery_and_physics_diagnostics.md)
+separate two further issues. All eight true/initial models satisfy the bounds;
+both certified proposals and reference negative gradients initially increase
+physical-velocity error in 5/8 cases while decreasing data loss. These local
+signs do not predict every late trajectory and do not identify a causal remedy.
+The separately audited homogeneous Green comparison gives 0.0305142% enlarged-
+reference discrepancy and 24.9504% for the small 40-cell-padding case. It supplies
+an analytical forward reference but leaves the broader physical/geological goal
+open. Neither diagnostic executes new PDE solves or inversion trajectories.
+
 The new [seven-case Devito boundary diagnostic](devito_boundary_verification.md)
 has executed and been audited. In its fixed homogeneous fixture, 20/40 damping
 cells still give 56.9%/24.9% full-record relative receiver-trace differences

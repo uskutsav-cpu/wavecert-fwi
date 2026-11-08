@@ -1,0 +1,341 @@
+{
+  "approximate_data_gradient_dot_actual_proposal": {
+    "classification_scope": "fixed numerical reporting threshold, not sign enclosure",
+    "literal_sign": "negative",
+    "near_zero_threshold": 6.314258045447974e-09,
+    "numerical_sign": "negative",
+    "scale": 63.142580454479734,
+    "value": -63.142580454479734
+  },
+  "approximate_gradient_l2_norm": 63.142580454479734,
+  "case_index": 5,
+  "data_gradient_dot_toward_truth_correction": {
+    "classification_scope": "fixed numerical reporting threshold, not sign enclosure",
+    "literal_sign": "negative",
+    "near_zero_threshold": 1.4675490752168986e-08,
+    "numerical_sign": "negative",
+    "scale": 146.75490752168986,
+    "value": -35.6150831555589
+  },
+  "directions": {
+    "actual_raw_proposal": {
+      "available": true,
+      "cosine_unavailable_reason": null,
+      "data_directional_derivative": {
+        "classification_scope": "fixed numerical reporting threshold, not sign enclosure",
+        "literal_sign": "negative",
+        "near_zero_threshold": 6.314229464433986e-09,
+        "numerical_sign": "negative",
+        "scale": 63.14229464433986,
+        "value": -63.14229462812927
+      },
+      "direction_l2_norm": 1.0,
+      "finite_difference_metric_validation": {
+        "actual_steps": [
+          0.00013010342041085683,
+          6.505171020542841e-05
+        ],
+        "metric_checks": {
+          "half_relative_squared_m_error": [
+            {
+              "FD": -0.004983360096297285,
+              "analytic_absolute_discrepancy": 1.907501934184097e-14,
+              "fixed_agreement_allowance": 2.2926422008789444e-08,
+              "heuristic_allowance_not_enclosure": true,
+              "roundoff_cancellation_proxy": 9.706666817917507e-11
+            },
+            {
+              "FD": -0.004983360096310619,
+              "analytic_absolute_discrepancy": 5.741067343745243e-15,
+              "fixed_agreement_allowance": 2.3702955354222845e-08,
+              "heuristic_allowance_not_enclosure": true,
+              "roundoff_cancellation_proxy": 1.9413333635835014e-10,
+              "two_scale_difference_over_three": 4.444650666031909e-15,
+              "two_scale_scope": "quadratic metric: central formula has zero real-arithmetic truncation; observed difference is numerical"
+            }
+          ],
+          "half_relative_squared_velocity_error": [
+            {
+              "FD": 0.0030420152964070655,
+              "analytic_absolute_discrepancy": 3.7374200956286074e-11,
+              "fixed_agreement_allowance": 2.1876371721864218e-08,
+              "heuristic_allowance_not_enclosure": true,
+              "roundoff_cancellation_proxy": 1.069784844381197e-10
+            },
+            {
+              "FD": 0.0030420153244272467,
+              "analytic_absolute_discrepancy": 9.354019728929908e-12,
+              "fixed_agreement_allowance": 2.2732199597369177e-08,
+              "heuristic_allowance_not_enclosure": true,
+              "roundoff_cancellation_proxy": 2.139569688762394e-10,
+              "two_scale_difference_over_three": 9.340060409118722e-12,
+              "two_scale_scope": "finer-step O(h^2) truncation estimate if asymptotic; not a bound or proof"
+            }
+          ]
+        },
+        "positivity_ceiling_step": 1.3010342041085683,
+        "scope": "centered unconstrained metric checks, positivity only; no PDE or finite boxed step",
+        "status": "computed",
+        "step_metadata": [
+          {
+            "actual_step_in_native_m_coordinates": 0.00013010342041085683,
+            "box_violations_minus": 0,
+            "box_violations_plus": 0,
+            "dimensionless_epsilon": 0.0001,
+            "maximum_relative_coordinate_perturbation": 0.0001,
+            "minimum_positive_model_minus": 0.05277304213370202,
+            "minimum_positive_model_plus": 0.05277902081563294,
+            "no_projection_or_clipping": true
+          },
+          {
+            "actual_step_in_native_m_coordinates": 6.505171020542841e-05,
+            "box_violations_minus": 0,
+            "box_violations_plus": 0,
+            "dimensionless_epsilon": 5e-05,
+            "maximum_relative_coordinate_perturbation": 5e-05,
+            "minimum_positive_model_minus": 0.05277453680418475,
+            "minimum_positive_model_plus": 0.05277752614515021,
+            "no_projection_or_clipping": true
+          }
+        ]
+      },
+      "half_relative_squared_metric_derivatives": {
+        "half_relative_squared_m_error": {
+          "analytic": -0.00498336009631636,
+          "metric_evaluation_scale": 0.888666149298314,
+          "sign": {
+            "classification_scope": "fixed numerical reporting threshold, not sign enclosure",
+            "literal_sign": "negative",
+            "near_zero_threshold": 1.1074944331678022e-11,
+            "numerical_sign": "negative",
+            "scale": 0.11074944331678022,
+            "value": -0.00498336009631636
+          },
+          "uncancelled_derivative_scale": 0.11074944331678022
+        },
+        "half_relative_squared_velocity_error": {
+          "analytic": 0.0030420153337812664,
+          "metric_evaluation_scale": 0.9794109513258187,
+          "sign": {
+            "classification_scope": "fixed numerical reporting threshold, not sign enclosure",
+            "literal_sign": "positive",
+            "near_zero_threshold": 1.0510271923179631e-11,
+            "numerical_sign": "positive",
+            "scale": 0.10510271923179632,
+            "value": 0.0030420153337812664
+          },
+          "uncancelled_derivative_scale": 0.10510271923179632
+        }
+      },
+      "literal_local_opposition": {
+        "half_relative_squared_m_error": false,
+        "half_relative_squared_velocity_error": true
+      },
+      "native_m_cosine_direction_to_truth_correction": {
+        "classification_scope": "fixed numerical reporting threshold, not sign enclosure",
+        "literal_sign": "positive",
+        "near_zero_threshold": 1e-10,
+        "numerical_sign": "positive",
+        "scale": 1.0,
+        "value": 0.24267593968975382
+      },
+      "numerically_classified_local_opposition": {
+        "half_relative_squared_m_error": false,
+        "half_relative_squared_velocity_error": true
+      },
+      "scope": "local raw unprojected direction in squared-slowness coordinates; no finite step/causal proof"
+    },
+    "exact_normalized_negative_data_gradient": {
+      "available": true,
+      "cosine_unavailable_reason": null,
+      "data_directional_derivative": {
+        "classification_scope": "fixed numerical reporting threshold, not sign enclosure",
+        "literal_sign": "negative",
+        "near_zero_threshold": 6.314229464433986e-09,
+        "numerical_sign": "negative",
+        "scale": 63.14229464433986,
+        "value": -63.142294644339856
+      },
+      "direction_l2_norm": 1.0,
+      "finite_difference_metric_validation": {
+        "actual_steps": [
+          0.00013010033616388144,
+          6.505016808194072e-05
+        ],
+        "metric_checks": {
+          "half_relative_squared_m_error": [
+            {
+              "FD": -0.0049835277389912985,
+              "analytic_absolute_discrepancy": 1.5208320713888668e-14,
+              "fixed_agreement_allowance": 2.292649887816763e-08,
+              "heuristic_allowance_not_enclosure": true,
+              "roundoff_cancellation_proxy": 9.706896930757005e-11
+            },
+            {
+              "FD": -0.004983527739017966,
+              "analytic_absolute_discrepancy": 1.1459583282302788e-14,
+              "fixed_agreement_allowance": 2.3703050632628192e-08,
+              "heuristic_allowance_not_enclosure": true,
+              "roundoff_cancellation_proxy": 1.941379386151401e-10,
+              "two_scale_difference_over_three": 8.889301332063818e-15,
+              "two_scale_scope": "quadratic metric: central formula has zero real-arithmetic truncation; observed difference is numerical"
+            }
+          ],
+          "half_relative_squared_velocity_error": [
+            {
+              "FD": 0.0030419820672777814,
+              "analytic_absolute_discrepancy": 3.736636434298335e-11,
+              "fixed_agreement_allowance": 2.1876199813978563e-08,
+              "heuristic_allowance_not_enclosure": true,
+              "roundoff_cancellation_proxy": 1.0698102054276621e-10
+            },
+            {
+              "FD": 0.0030419820953052935,
+              "analytic_absolute_discrepancy": 9.338852174217704e-12,
+              "fixed_agreement_allowance": 2.273204797832069e-08,
+              "heuristic_allowance_not_enclosure": true,
+              "roundoff_cancellation_proxy": 2.1396204108553243e-10,
+              "two_scale_difference_over_three": 9.342504056255215e-12,
+              "two_scale_scope": "finer-step O(h^2) truncation estimate if asymptotic; not a bound or proof"
+            }
+          ]
+        },
+        "positivity_ceiling_step": 1.3010033616388144,
+        "scope": "centered unconstrained metric checks, positivity only; no PDE or finite boxed step",
+        "status": "computed",
+        "step_metadata": [
+          {
+            "actual_step_in_native_m_coordinates": 0.00013010033616388144,
+            "box_violations_minus": 0,
+            "box_violations_plus": 0,
+            "dimensionless_epsilon": 0.0001,
+            "maximum_relative_coordinate_perturbation": 0.0001,
+            "minimum_positive_model_minus": 0.052773042392535746,
+            "minimum_positive_model_plus": 0.052779020556799214,
+            "no_projection_or_clipping": true
+          },
+          {
+            "actual_step_in_native_m_coordinates": 6.505016808194072e-05,
+            "box_violations_minus": 0,
+            "box_violations_plus": 0,
+            "dimensionless_epsilon": 5e-05,
+            "maximum_relative_coordinate_perturbation": 5e-05,
+            "minimum_positive_model_minus": 0.05277453693360161,
+            "minimum_positive_model_plus": 0.05277752601573335,
+            "no_projection_or_clipping": true
+          }
+        ]
+      },
+      "half_relative_squared_metric_derivatives": {
+        "half_relative_squared_m_error": {
+          "analytic": -0.004983527739006507,
+          "metric_evaluation_scale": 0.888666149298314,
+          "sign": {
+            "classification_scope": "fixed numerical reporting threshold, not sign enclosure",
+            "literal_sign": "negative",
+            "near_zero_threshold": 1.1074973561853536e-11,
+            "numerical_sign": "negative",
+            "scale": 0.11074973561853535,
+            "value": -0.004983527739006507
+          },
+          "uncancelled_derivative_scale": 0.11074973561853535
+        },
+        "half_relative_squared_velocity_error": {
+          "analytic": 0.0030419821046441457,
+          "metric_evaluation_scale": 0.9794109513258187,
+          "sign": {
+            "classification_scope": "fixed numerical reporting threshold, not sign enclosure",
+            "literal_sign": "positive",
+            "near_zero_threshold": 1.0510175824818217e-11,
+            "numerical_sign": "positive",
+            "scale": 0.10510175824818217,
+            "value": 0.0030419821046441457
+          },
+          "uncancelled_derivative_scale": 0.10510175824818217
+        }
+      },
+      "literal_local_opposition": {
+        "half_relative_squared_m_error": false,
+        "half_relative_squared_velocity_error": true
+      },
+      "native_m_cosine_direction_to_truth_correction": {
+        "classification_scope": "fixed numerical reporting threshold, not sign enclosure",
+        "literal_sign": "positive",
+        "near_zero_threshold": 1e-10,
+        "numerical_sign": "positive",
+        "scale": 1.0,
+        "value": 0.2426841034279901
+      },
+      "numerically_classified_local_opposition": {
+        "half_relative_squared_m_error": false,
+        "half_relative_squared_velocity_error": true
+      },
+      "scope": "local raw unprojected direction in squared-slowness coordinates; no finite step/causal proof"
+    }
+  },
+  "identity": {
+    "array_index": 120,
+    "parent_id": "gom_151",
+    "slice_id": "gom_151_xl_0857",
+    "source_file": "slices/slice_gom_151_xl_0857.h5",
+    "source_sha256": "157ad1e6e2bdab57496379fd54e49467816c0cd75cb4f7b3b9279a35c84da7b6"
+  },
+  "independent_true_gradient_l2_norm": 63.14229464433986,
+  "initial_metrics": {
+    "half_relative_squared_m_error": 0.023863702559639325,
+    "half_relative_squared_velocity_error": 0.00894886239207149,
+    "relative_physical_velocity_L2": 0.13378237845150975,
+    "relative_squared_slowness_L2": 0.2184660273801825
+  },
+  "initial_model_box_feasibility": {
+    "FP_band_scope": "separate64epsilon-scaled numerical flag; literal violations remain violations; no clipping",
+    "cell_count": 2401,
+    "exact_lower_bound_cells": 0,
+    "exact_upper_bound_cells": 0,
+    "finite_cells": 2401,
+    "finite_maximum": 0.4418880913254456,
+    "finite_minimum": 0.05277603147466748,
+    "finite_positive": true,
+    "literal_above_but_inside_upper_FP_band_cells": 0,
+    "literal_above_upper_cells": 0,
+    "literal_below_but_inside_lower_FP_band_cells": 0,
+    "literal_below_lower_cells": 0,
+    "literal_box_feasible": true,
+    "lower_bound": 0.027777777777777776,
+    "near_lower_FP_band_cells": 0,
+    "near_upper_FP_band_cells": 0,
+    "nonfinite_cells": 0,
+    "nonpositive_finite_cells": 0,
+    "upper_bound": 1.0
+  },
+  "raw_input_pins": {
+    "case_receipt_sha256": "acf24961b917bc00013c15e1177c2cee8fcbcc25973890eaeff85669d6772e7b",
+    "independent_gradient_sha256": "96284601ff73bc8c089f2a87867cd217a89448064b907cd423692162e823875e",
+    "model_sha256": "cb9d143fd5439b85e44254471b5921f88c1a9eb489d7418b777efdc73d5950cd",
+    "raw_array_file_sha256": "560092abc78b79bb35e2cdea85aa3a20ef212e63a79c41730d689e31239720ef",
+    "truth_model_sha256": "aa19a64ab2e44b68fe2bdaf07671958bb7748aac0650629837b5232f0d83be7b"
+  },
+  "scope": "A positive half-relative-squared recovery-error slope alongside negative dataDD is local numerical opposition for that raw direction at that initialmodel. Positive gtrue dot(mtruth-m) is local numerical evidence only. Check truth/bounds feasibility; do not infer universalcause, illposedness, nonconvexity, cycle-skipping, finiteboxedstep behavior, an algorithmic remedy, improvedrank or student conclusions.",
+  "toward_truth_vector_role": "unnormalized mtruth-m, not an optimizer proposal or field-data claim",
+  "truth_model_box_feasibility": {
+    "FP_band_scope": "separate64epsilon-scaled numerical flag; literal violations remain violations; no clipping",
+    "cell_count": 2401,
+    "exact_lower_bound_cells": 0,
+    "exact_upper_bound_cells": 0,
+    "finite_cells": 2401,
+    "finite_maximum": 0.4444444477558136,
+    "finite_minimum": 0.04938271641731262,
+    "finite_positive": true,
+    "literal_above_but_inside_upper_FP_band_cells": 0,
+    "literal_above_upper_cells": 0,
+    "literal_below_but_inside_lower_FP_band_cells": 0,
+    "literal_below_lower_cells": 0,
+    "literal_box_feasible": true,
+    "lower_bound": 0.027777777777777776,
+    "near_lower_FP_band_cells": 0,
+    "near_upper_FP_band_cells": 0,
+    "nonfinite_cells": 0,
+    "nonpositive_finite_cells": 0,
+    "upper_bound": 1.0
+  }
+}

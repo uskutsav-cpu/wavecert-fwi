@@ -68,6 +68,13 @@ implemented traces in the local run, including the substantial boundary effects.
 The fixed [BP2004 acquisition](results/bp2004_acquisition/README.md) adds one
 synthetic ancestor with original terms/provenance retained; it has not been used
 to evaluate the method. Three crops do not create three independent sites.
+The [recovery/physics diagnostics](docs/recovery_and_physics_diagnostics.md)
+now show that reference data-descent itself initially increases velocity error
+in 5/8 reused cases, with feasible initial/truth models. Separately, the enlarged
+homogeneous timedomain reference agrees with an analytical Green solution to
+0.0305142% relative L2; the small 40-cell-padding case remains at 24.9504%.
+Both are independently audited, scoped diagnostics, not a recovery win or a
+completion of realistic geological validation.
 
 ## Latest controlled comparison
 

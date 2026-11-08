@@ -1,0 +1,50 @@
+{
+  "status": "metadata_only_no_Operator_apply_or_wave_propagation",
+  "recorded_utc": "2026-11-08T03:25:40.074446+00:00",
+  "query_source_sha256": "14e2bd1da0ce486218affede8ef6832fa148b65a119b8a8ee7c50a92d063c2c4",
+  "records": [
+    {
+      "mode": "undamped",
+      "scalar_arguments": {
+        "time_m": 1,
+        "time_M": 1099,
+        "x_m": 0,
+        "x_M": 60,
+        "y_m": 0,
+        "y_M": 60,
+        "dt": 1.0
+      },
+      "generated_code_sha256": "82966d6bfcc7542535163804ac127bf01053808757e9f35fc4e363a01925da38",
+      "cached_primary_code_sha256": "82966d6bfcc7542535163804ac127bf01053808757e9f35fc4e363a01925da38",
+      "byte_identical_to_cached_primary": true,
+      "stripped_text_identical_to_cached_primary": true
+    },
+    {
+      "mode": "damped",
+      "scalar_arguments": {
+        "time_m": 1,
+        "time_M": 1099,
+        "x_m": 0,
+        "x_M": 60,
+        "y_m": 0,
+        "y_M": 60,
+        "dt": 1.0
+      },
+      "generated_code_sha256": "0a6777367c0497ca008d76961ea989ad3ea99db41e7c965656dbf75a767d3c6b",
+      "cached_primary_code_sha256": "0a6777367c0497ca008d76961ea989ad3ea99db41e7c965656dbf75a767d3c6b",
+      "byte_identical_to_cached_primary": true,
+      "stripped_text_identical_to_cached_primary": true
+    }
+  ],
+  "symbolic_derivatives": {
+    "dt": "-symbolic_u_no_propagation(t, x, y)/dt + symbolic_u_no_propagation(t + dt, x, y)/dt",
+    "dt2": "-2.0*symbolic_u_no_propagation(t, x, y)/dt**2 + symbolic_u_no_propagation(t - dt, x, y)/dt**2 + symbolic_u_no_propagation(t + dt, x, y)/dt**2",
+    "dx2": "-2.5*symbolic_u_no_propagation(t, x, y)/h_x**2 - 0.0833333333*symbolic_u_no_propagation(t, x - 2*h_x, y)/h_x**2 + 1.33333333*symbolic_u_no_propagation(t, x - h_x, y)/h_x**2 + 1.33333333*symbolic_u_no_propagation(t, x + h_x, y)/h_x**2 - 0.0833333333*symbolic_u_no_propagation(t, x + 2*h_x, y)/h_x**2"
+  },
+  "source_receiver_or_wavefield_values_read": false,
+  "cached_numerical_values_read": false,
+  "own_analytic_velocity_initialization": true,
+  "Model_constructor_called": false,
+  "interpretation": "Pinned primary operator argument defaults, reference-informed verification port. Loop t=1..1099 inclusive; initial u0,u1 zero; stencil and source update u(t+1), then rec[t]=u(t). Receiver indices0 and1100 untouched. This is not a blind derivation or physical validation.",
+  "earlier_guarded_attempt": "Actual Model constructor even with nbl0 tried an Operator.apply for velocity initialization; it was blocked before any apply. Pure Grid/Function metadata construction avoids Model and initdamp entirely."
+}

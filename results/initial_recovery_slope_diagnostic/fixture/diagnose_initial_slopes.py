@@ -1,0 +1,633 @@
+"""Post-outcome software diagnostic; default CLI reads no project artifacts.
+
+All8 original initial witnesses and all360x4 internal endpoints are fixed before
+this diagnostic. No PDE, trajectories, tuning, production import or policy truth
+access occurs. Raw unprojected directions are not finite box-constrained steps.
+"""
+
+from __future__ import annotations
+
+import argparse
+import collections
+import datetime
+import gzip
+import hashlib
+import json
+import math
+import platform
+import statistics
+import sys
+from pathlib import Path
+
+PRODUCTION_SHA = "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da"
+ORIGINAL_PROTOCOL_SHA = "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c"
+WITNESS_RECEIPT_SHA = "71b9de071e4d04557784805bf9bfc4ea55171c8b07e9c9625c866d8ab68aaba2"
+BENCHMARK_RECEIPT_SHA = "e4939a3dfeda9315273e7f8918c8d2654ef177636d47cfee2862aa351586779a"
+
+
+def sha(raw):
+    return hashlib.sha256(raw).hexdigest()
+
+
+def file_sha(path):
+    digest = hashlib.sha256()
+    with Path(path).open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def utc():
+    return datetime.datetime.now(datetime.timezone.utc).isoformat()
+
+
+def json_raw(value):
+    return (json.dumps(value, indent=2, sort_keys=True, allow_nan=False) + "\n").encode()
+
+
+def json_load(path):
+    def bad_constant(value):
+        raise ValueError("nonfinite JSON token: " + value)
+    if str(path).endswith(".gz"):
+        with gzip.open(path, "rt") as stream:
+            return json.load(stream, parse_constant=bad_constant)
+    return json.loads(Path(path).read_bytes(), parse_constant=bad_constant)
+
+
+def new_json(path, value):
+    with Path(path).open("xb") as stream:
+        stream.write(json_raw(value))
+
+
+def atomic_status(path, value):
+    temporary = Path(path).with_suffix(".json.tmp")
+    new_json(temporary, value)
+    temporary.replace(path)
+
+
+def owned(root, name):
+    if not isinstance(name, str) or not name or Path(name).name != name:
+        raise ValueError("registered artifact must have one filename")
+    path = (Path(root) / name).resolve()
+    if path.parent != Path(root).resolve() or not path.is_file():
+        raise ValueError("missing/escaping artifact: " + name)
+    return path
+
+
+def source_receipt(root):
+    files = [root / "pyproject.toml"]
+    files += list((root / "src").rglob("*.py"))
+    files += [p for p in (root / "configs").rglob("*") if p.is_file()]
+    files += [p for p in (root / "scripts").rglob("*") if p.suffix in {".py", ".sh"}]
+    files += list((root / ".github/workflows").glob("*.yml"))
+    files += list(root.glob("requirements*.txt"))
+    digest, count = hashlib.sha256(), 0
+    for path in sorted(set(files)):
+        if path.is_file():
+            digest.update(path.relative_to(root).as_posix().encode())
+            digest.update(b"\0")
+            digest.update(file_sha(path).encode())
+            digest.update(b"\0")
+            count += 1
+    return {"sha256": digest.hexdigest(), "files": count}
+
+
+def norm(values):
+    return math.hypot(*(float(value) for value in np.asarray(values).ravel()))
+
+
+def dot(left, right):
+    return math.fsum(float(a) * float(b) for a, b in zip(left, right, strict=True))
+
+
+def array_sha(values):
+    return sha(np.ascontiguousarray(values, dtype="<f8").tobytes())
+
+
+class Checks:
+    def __init__(self):
+        self.count, self.issues = 0, []
+
+    def require(self, condition, context, detail=None):
+        self.count += 1
+        if not bool(condition):
+            self.issues.append({"context": context, "detail": detail})
+
+    def near(self, actual, recorded, *, context, rtol, atol):
+        allowance = atol + rtol * max(abs(actual), abs(recorded))
+        self.require(math.isfinite(actual) and math.isfinite(recorded)
+                     and abs(actual - recorded) <= allowance, context,
+                     {"computed": actual, "recorded": recorded, "allowance": allowance})
+
+
+def sign_record(value, scale, protocol):
+    threshold = protocol["numerical_near_zero_relative_threshold"] * max(scale, 1e-300)
+    literal = "positive" if value > 0 else "negative" if value < 0 else "zero"
+    numerical = "near_zero" if abs(value) <= threshold else literal
+    return {"value": value, "literal_sign": literal, "numerical_sign": numerical,
+            "near_zero_threshold": threshold, "scale": scale,
+            "classification_scope": "fixed numerical reporting threshold, not sign enclosure"}
+
+
+def metric_values(model, truth):
+    velocity, target_velocity = np.reciprocal(np.sqrt(model)), np.reciprocal(np.sqrt(truth))
+    denominator_m = dot(truth, truth)
+    denominator_v = dot(target_velocity, target_velocity)
+    numerator_m = dot(model - truth, model - truth)
+    numerator_v = dot(velocity - target_velocity, velocity - target_velocity)
+    return {
+        "half_relative_squared_m_error": 0.5 * numerator_m / denominator_m,
+        "half_relative_squared_velocity_error": 0.5 * numerator_v / denominator_v,
+        "relative_squared_slowness_L2": math.sqrt(numerator_m / denominator_m),
+        "relative_physical_velocity_L2": math.sqrt(numerator_v / denominator_v),
+    }
+
+
+def feasibility_record(values, protocol):
+    lower, upper = protocol["original_squared_slowness_box"]
+    finite = np.isfinite(values)
+    valid = values[finite]
+    lower_band = protocol["bound_FP_band_multiplier"] * sys.float_info.epsilon * np.maximum(np.abs(valid), abs(lower))
+    upper_band = protocol["bound_FP_band_multiplier"] * sys.float_info.epsilon * np.maximum(np.abs(valid), abs(upper))
+    below, above = valid < lower, valid > upper
+    return {
+        "cell_count": int(values.size), "finite_cells": int(np.count_nonzero(finite)),
+        "nonfinite_cells": int(np.count_nonzero(~finite)),
+        "nonpositive_finite_cells": int(np.count_nonzero(valid <= 0)),
+        "finite_positive": bool(np.all(finite) and np.all(valid > 0)),
+        "finite_minimum": None if not valid.size else float(np.min(valid)),
+        "finite_maximum": None if not valid.size else float(np.max(valid)),
+        "lower_bound": lower, "upper_bound": upper,
+        "literal_below_lower_cells": int(np.count_nonzero(below)),
+        "literal_above_upper_cells": int(np.count_nonzero(above)),
+        "literal_box_feasible": bool(np.all(finite) and not np.any(below) and not np.any(above)),
+        "exact_lower_bound_cells": int(np.count_nonzero(valid == lower)),
+        "exact_upper_bound_cells": int(np.count_nonzero(valid == upper)),
+        "near_lower_FP_band_cells": int(np.count_nonzero(np.abs(valid - lower) <= lower_band)),
+        "near_upper_FP_band_cells": int(np.count_nonzero(np.abs(valid - upper) <= upper_band)),
+        "literal_below_but_inside_lower_FP_band_cells": int(np.count_nonzero(below & (lower - valid <= lower_band))),
+        "literal_above_but_inside_upper_FP_band_cells": int(np.count_nonzero(above & (valid - upper <= upper_band))),
+        "FP_band_scope": "separate64epsilon-scaled numerical flag; literal violations remain violations; no clipping",
+    }
+
+
+def metric_derivatives(model, truth, direction):
+    velocity, target_velocity = np.reciprocal(np.sqrt(model)), np.reciprocal(np.sqrt(truth))
+    denominator_m, denominator_v = dot(truth, truth), dot(target_velocity, target_velocity)
+    velocity_direction = -0.5 * (velocity / model) * direction
+    return {
+        "half_relative_squared_m_error": {
+            "analytic": dot(model - truth, direction) / denominator_m,
+            "uncancelled_derivative_scale": dot(np.abs(model) + np.abs(truth), np.abs(direction)) / denominator_m,
+            "metric_evaluation_scale": 0.5 * (dot(model, model) + denominator_m) / denominator_m,
+        },
+        "half_relative_squared_velocity_error": {
+            "analytic": dot(velocity - target_velocity, velocity_direction) / denominator_v,
+            "uncancelled_derivative_scale": dot(np.abs(velocity) + np.abs(target_velocity),
+                                                np.abs(velocity_direction)) / denominator_v,
+            "metric_evaluation_scale": 0.5 * (dot(velocity, velocity) + denominator_v) / denominator_v,
+        },
+    }
+
+
+def finite_difference_metrics(model, truth, direction, derivatives, protocol, checks, context):
+    epsilons = protocol["finite_difference_dimensionless_epsilons"]
+    direction_norm = norm(direction)
+    if direction_norm == 0:
+        return {"status": "zero_direction_trivial", "actual_steps": [],
+                "analytic_derivatives": {name: row["analytic"] for name, row in derivatives.items()},
+                "scope": "no nonzero perturbation or empirical derivative test inferred"}
+    ratios = [float(m) / abs(float(d)) for m, d in zip(model, direction, strict=True) if d != 0]
+    positivity_ceiling = min(ratios)
+    steps = [float(eps) * positivity_ceiling for eps in epsilons]
+    samples = {name: [] for name in derivatives}
+    step_rows = []
+    for eps, step in zip(epsilons, steps, strict=True):
+        if not math.isfinite(step) or step <= 0:
+            checks.require(False, context + "/FD_step_representability", {"step": step})
+            return {"status": "step_not_representable", "actual_steps": steps,
+                    "unavailable_FD_information_is_unknown_not_zero": True}
+        plus, minus = model + step * direction, model - step * direction
+        if not np.all(np.isfinite(plus)) or not np.all(np.isfinite(minus)) or np.any(plus <= 0) or np.any(minus <= 0):
+            checks.require(False, context + "/FD_positive_domain")
+            return {"status": "positive_domain_guard_failed", "actual_steps": steps}
+        changed_plus, changed_minus = bool(np.any(plus != model)), bool(np.any(minus != model))
+        if not changed_plus or not changed_minus:
+            checks.require(False, context + "/FD_perturbation_rounded_to_initial")
+            return {"status": "perturbation_not_resolved", "actual_steps": steps,
+                    "unavailable_FD_information_is_unknown_not_zero": True}
+        relative_coordinate_change = float(np.max(np.abs(step * direction) / model))
+        checks.require(relative_coordinate_change <= eps * (1 + 1e-12), context + "/FD_fixed_component_cap")
+        plus_metrics, minus_metrics = metric_values(plus, truth), metric_values(minus, truth)
+        lower, upper = protocol["original_squared_slowness_box"]
+        step_rows.append({"dimensionless_epsilon": eps, "actual_step_in_native_m_coordinates": step,
+                          "maximum_relative_coordinate_perturbation": relative_coordinate_change,
+                          "minimum_positive_model_plus": float(np.min(plus)),
+                          "minimum_positive_model_minus": float(np.min(minus)),
+                          "box_violations_plus": int(np.count_nonzero((plus < lower) | (plus > upper))),
+                          "box_violations_minus": int(np.count_nonzero((minus < lower) | (minus > upper))),
+                          "no_projection_or_clipping": True})
+        for name, row in derivatives.items():
+            fd = (plus_metrics[name] - minus_metrics[name]) / (2 * step)
+            cancellation_proxy = (protocol["FD_roundoff_proxy_multiplier"] * sys.float_info.epsilon
+                                  * row["metric_evaluation_scale"] / step)
+            allowance = (protocol["FD_derivative_scale_allowance"] * row["uncancelled_derivative_scale"]
+                         + protocol["FD_roundoff_allowance_multiplier"] * cancellation_proxy)
+            error = abs(fd - row["analytic"])
+            checks.require(math.isfinite(fd) and error <= allowance, context + "/FD_agreement/" + name,
+                           {"analytic": row["analytic"], "FD": fd, "absolute_error": error,
+                            "fixed_allowance": allowance, "actual_step": step})
+            samples[name].append({"FD": fd, "analytic_absolute_discrepancy": error,
+                                  "roundoff_cancellation_proxy": cancellation_proxy,
+                                  "fixed_agreement_allowance": allowance,
+                                  "heuristic_allowance_not_enclosure": True})
+    for name, rows in samples.items():
+        difference = abs(rows[1]["FD"] - rows[0]["FD"])
+        rows[1]["two_scale_difference_over_three"] = difference / 3
+        rows[1]["two_scale_scope"] = (
+            "quadratic metric: central formula has zero real-arithmetic truncation; observed difference is numerical"
+            if name == "half_relative_squared_m_error" else
+            "finer-step O(h^2) truncation estimate if asymptotic; not a bound or proof")
+    return {"status": "computed", "positivity_ceiling_step": positivity_ceiling,
+            "actual_steps": steps, "step_metadata": step_rows, "metric_checks": samples,
+            "scope": "centered unconstrained metric checks, positivity only; no PDE or finite boxed step"}
+
+
+def direction_report(model, truth, true_gradient, direction, protocol, checks, context):
+    direction_norm, gradient_norm = norm(direction), norm(true_gradient)
+    correction = truth - model
+    correction_norm = norm(correction)
+    data_derivative = dot(true_gradient, direction)
+    derivatives = metric_derivatives(model, truth, direction)
+    for _name, row in derivatives.items():
+        row["sign"] = sign_record(row["analytic"], row["uncancelled_derivative_scale"], protocol)
+    correction_dot = dot(direction, correction)
+    cosine = None if direction_norm == 0 or correction_norm == 0 else correction_dot / (direction_norm * correction_norm)
+    if cosine is not None:
+        checks.require(-1 - 1e-12 <= cosine <= 1 + 1e-12, context + "/native_m_cosine_domain")
+    checks.near(derivatives["half_relative_squared_m_error"]["analytic"],
+                -correction_dot / dot(truth, truth), context=context + "/m_slope_truth_cosine_identity",
+                rtol=protocol["scalar_identity_rtol"], atol=0.0)
+    data_sign = sign_record(data_derivative, gradient_norm * direction_norm, protocol)
+    return {
+        "available": True, "direction_l2_norm": direction_norm,
+        "data_directional_derivative": data_sign,
+        "half_relative_squared_metric_derivatives": derivatives,
+        "native_m_cosine_direction_to_truth_correction": None if cosine is None else sign_record(cosine, 1.0, protocol),
+        "cosine_unavailable_reason": None if cosine is not None else "zero_direction_or_already_truth_model",
+        "finite_difference_metric_validation": finite_difference_metrics(
+            model, truth, direction, derivatives, protocol, checks, context),
+        "literal_local_opposition": {name: data_derivative < 0 and row["analytic"] > 0
+                                     for name, row in derivatives.items()},
+        "numerically_classified_local_opposition": {
+            name: data_sign["numerical_sign"] == "negative" and row["sign"]["numerical_sign"] == "positive"
+            for name, row in derivatives.items()},
+        "scope": "local raw unprojected direction in squared-slowness coordinates; no finite step/causal proof",
+    }
+
+
+def validate_manifest(directory, expected_receipt_sha, key):
+    complete_path = owned(directory, "complete_receipt.json")
+    if file_sha(complete_path) != expected_receipt_sha:
+        raise ValueError("immutable complete-receipt SHA mismatch: " + str(directory))
+    complete, status = json_load(complete_path), json_load(owned(directory, "status.json"))
+    if {name: value for name, value in complete.items() if name != key} != status:
+        raise ValueError("complete/status metadata differ")
+    for name, expected in complete[key].items():
+        if file_sha(owned(directory, name)) != expected:
+            raise ValueError("input artifact SHA mismatch: " + name)
+    extras = sorted(p.name for p in directory.iterdir() if p.is_file()
+                    and p.name not in complete[key] and p.name != "complete_receipt.json")
+    return status, {"complete_receipt_sha256": expected_receipt_sha,
+                    "registered_artifact_count": len(complete[key]), "unregistered_extra_filenames": extras}
+
+
+def vector_from_archive(archive, descriptors, name, *, optional=False):
+    if name not in archive.files:
+        if optional:
+            return None
+        raise ValueError("required raw witness vector unavailable: " + name)
+    values = archive[name].copy()
+    if values.dtype != np.float64 or values.shape != (2401,) or not np.all(np.isfinite(values)):
+        raise ValueError("raw vector schema differs: " + name)
+    descriptor = descriptors[name]
+    if (descriptor["shape"] != [2401] or np.dtype(descriptor["dtype"]) != values.dtype
+            or descriptor["sha256"] != array_sha(values)):
+        raise ValueError("raw vector descriptor/hash differs: " + name)
+    return values
+
+
+def load_initial_case(directory, row, protocol, checks):
+    index = row["case_index"]
+    path = owned(directory, row["receipt_artifact"])
+    if file_sha(path) != row["receipt_sha256"]:
+        raise ValueError("initial witness receipt binding differs")
+    receipt = json_load(path)
+    if receipt["status"] != "complete":
+        raise ValueError("upstream initial case not complete; no invented slopes")
+    arrays_path = owned(directory, receipt["raw_arrays_artifact"])
+    if file_sha(arrays_path) != receipt["raw_arrays_file_sha256"]:
+        raise ValueError("initial witness raw array file SHA differs")
+    with np.load(arrays_path, allow_pickle=False) as archive:
+        vectors = {name: vector_from_archive(archive, receipt["arrays"], name, optional=name in {
+            "direction", "approximate_gradient"}) for name in (
+                "initial_model", "independent_truth_model", "independent_true_gradient",
+                "approximate_gradient", "direction")}
+    model, truth = vectors["initial_model"], vectors["independent_truth_model"]
+    if np.any(model <= 0) or np.any(truth <= 0):
+        raise ValueError("metric domain requires positive squared slowness")
+    checks.require(array_sha(model) == receipt["production"]["snapshot"]["model_sha256"],
+                   f"initial{index}/actual_snapshot_model_binding")
+    for name, certificate_name in (("direction", "direction_sha256"),
+                                   ("approximate_gradient", "approximate_gradient_sha256")):
+        if vectors[name] is not None:
+            checks.require(array_sha(vectors[name]) == receipt["production"]["certificate"][certificate_name],
+                           f"initial{index}/actual_certificate_" + name + "_binding")
+    return vectors, {"case_receipt_sha256": row["receipt_sha256"],
+                     "raw_array_file_sha256": receipt["raw_arrays_file_sha256"],
+                     "model_sha256": array_sha(model), "truth_model_sha256": array_sha(truth),
+                     "independent_gradient_sha256": array_sha(vectors["independent_true_gradient"])}
+
+
+def summary_numbers(values):
+    if not values:
+        return {"count": 0, "mean": None, "median": None, "minimum": None, "maximum": None}
+    return {"count": len(values), "mean": math.fsum(values) / len(values),
+            "median": statistics.median(values), "minimum": min(values), "maximum": max(values)}
+
+
+def endpoint_comparisons(benchmark, initial_cases, original, protocol, checks):
+    status = json_load(owned(benchmark, "status.json"))
+    output_rows = []
+    groups = collections.defaultdict(list)
+    for row in status["runs"]:
+        index = row["run_index"]
+        case = initial_cases[row["case_index"]]
+        core_path = owned(benchmark, row["core_artifact"])
+        if file_sha(core_path) != row["core_sha256"]:
+            raise ValueError("registered core SHA mismatch")
+        core = json_load(core_path)
+        model_path = owned(benchmark, row["models_artifact"])
+        if file_sha(model_path) != row["models_sha256"] or core["models_sha256"] != row["models_sha256"]:
+            raise ValueError("registered endpoint model SHA mismatch")
+        audit_path = owned(benchmark, row["audit_artifact"])
+        if file_sha(audit_path) != row["audit_sha256"]:
+            raise ValueError("registered original offline audit SHA mismatch")
+        audit = json_load(audit_path)
+        with np.load(model_path, allow_pickle=False) as archive:
+            initial = archive["prepared_initial"].copy()
+            if array_sha(initial) != array_sha(case["initial_model"]):
+                raise ValueError("benchmark and initial witness prepared initial differ")
+            for budget_index, budget in enumerate(protocol["internal_budgets_seconds"]):
+                model = archive[f"internal_budget_{budget_index}"].copy()
+                if model.dtype != np.float64 or model.shape != (2401,) or np.any(model <= 0) or not np.all(np.isfinite(model)):
+                    raise ValueError("invalid original saved endpoint model")
+                endpoint = core["internal_budget_endpoints"][budget_index]
+                if endpoint["model_sha256"] != array_sha(model) or endpoint["budget_seconds"] != budget:
+                    raise ValueError("original endpoint model/budget binding differs")
+                state = metric_values(model, case["independent_truth_model"])
+                baseline = metric_values(initial, case["independent_truth_model"])
+                original_quality = audit["credited_reconstruction_quality"]["internal_budget_states"][budget_index]
+                paid = endpoint["completed_paid_checkpoint"]
+                checks.require(original_quality["eligible_paid_checkpoint"] is paid,
+                               f"run{index}/budget{budget}/original_paid_quality_binding")
+                if paid:
+                    for metric in ("relative_squared_slowness_L2", "relative_physical_velocity_L2"):
+                        checks.near(state[metric], original_quality["quality"][metric],
+                                    context=f"run{index}/budget{budget}/original_quality/" + metric,
+                                    rtol=protocol["original_quality_rtol"], atol=protocol["original_quality_atol"])
+                else:
+                    checks.require(original_quality["quality"] is None,
+                                   f"run{index}/budget{budget}/unpaid_fallback_not_credited")
+                complete = row["status"] == "complete" and row["final_study_eligible"] is True
+                deltas = {name: sign_record(state[name] - baseline[name], abs(state[name]) + abs(baseline[name]), protocol)
+                          for name in ("half_relative_squared_m_error", "half_relative_squared_velocity_error")}
+                record = {
+                    "run_index": index, "case_index": row["case_index"], "identity": row["identity"],
+                    "repetition": row["repetition"], "method": row["method"], "mode": row["measurement_mode"],
+                    "internal_budget_seconds": budget, "row_status": row["status"],
+                    "paid_checkpoint": paid, "terminal_final_study_eligible": complete,
+                    "eligible_internal_diagnostic": complete and paid,
+                    "checkpoint_elapsed_seconds": endpoint["checkpoint_elapsed_seconds"],
+                    "model_sha256": endpoint["model_sha256"],
+                    "initial_model_sha256": array_sha(initial),
+                    "initial_quality": baseline, "raw_saved_state_quality": state,
+                    "saved_endpoint_box_feasibility_and_active_bounds": feasibility_record(model, protocol),
+                    "original_credited_relative_quality": original_quality["quality"],
+                    "half_relative_squared_error_change_from_own_initial": deltas,
+                    "relative_L2_change_from_own_initial": {name: state[name] - baseline[name]
+                        for name in ("relative_squared_slowness_L2", "relative_physical_velocity_L2")},
+                    "scope": "descriptive initial comparison only; internal state is not completed-return evidence",
+                }
+                output_rows.append(record)
+                groups[(row["measurement_mode"], row["method"], budget)].append(record)
+    expected = 360 * 4
+    checks.require(len(output_rows) == expected, "all360x4_original_internal_endpoint_instances_retained")
+    summaries = []
+    for (mode, method, budget), rows in sorted(groups.items()):
+        summary = {"mode": mode, "method": method, "internal_budget_seconds": budget,
+                   "planned_endpoint_instances": len(rows),
+                   "eligible_internal_diagnostic_instances": sum(r["eligible_internal_diagnostic"] for r in rows),
+                   "unpaid_or_ineligible_instances_retained": sum(not r["eligible_internal_diagnostic"] for r in rows),
+                   "metrics": {},
+                   "scope": "all instances retained, repeated states/cases not independent samples; no between-method ranking"}
+        for metric in ("half_relative_squared_m_error", "half_relative_squared_velocity_error"):
+            values = [r["half_relative_squared_error_change_from_own_initial"][metric] for r in rows]
+            eligible_values = [r["half_relative_squared_error_change_from_own_initial"][metric] for r in rows
+                               if r["eligible_internal_diagnostic"]]
+            summary["metrics"][metric] = {
+                "all_raw_saved_states_delta_statistics": summary_numbers([v["value"] for v in values]),
+                "all_raw_literal_sign_counts": dict(collections.Counter(v["literal_sign"] for v in values)),
+                "all_raw_numerical_sign_counts": dict(collections.Counter(v["numerical_sign"] for v in values)),
+                "eligible_internal_delta_statistics": summary_numbers([v["value"] for v in eligible_values]),
+                "eligible_internal_literal_sign_counts": dict(collections.Counter(v["literal_sign"] for v in eligible_values)),
+                "eligible_denominator": len(eligible_values), "full_planned_denominator": len(values),
+            }
+        summaries.append(summary)
+    checks.require(len(summaries) == 3 * 5 * 4, "all_mode_method_budget_groups_retained")
+    return output_rows, summaries
+
+
+def run(repo, witness, benchmark, output, protocol_path, expected_source_sha, expected_protocol_sha):
+    global np
+    source_raw, protocol_raw = Path(__file__).read_bytes(), Path(protocol_path).read_bytes()
+    if sha(source_raw) != expected_source_sha or sha(protocol_raw) != expected_protocol_sha:
+        raise ValueError("reviewed diagnostic source/protocol SHA mismatch before project reads")
+    protocol = json.loads(protocol_raw)
+    if (protocol["schema_version"] != 1 or protocol["case_indices"] != list(range(8))
+            or protocol["finite_difference_dimensionless_epsilons"] != [1e-4, 5e-5]
+            or protocol["internal_budgets_seconds"] != [1.0, 2.0, 4.0, 8.0]
+            or protocol["student_final_research_design"] is not False):
+        raise ValueError("not the frozen all8/all360x4 source-only diagnostic scope")
+    repo, witness, benchmark, output = [Path(p).resolve() for p in (repo, witness, benchmark, output)]
+    if output.exists() or any(output.is_relative_to(root) for root in (repo, witness, benchmark)):
+        raise FileExistsError("new outer diagnostic output directory required")
+    witness_status, witness_pin = validate_manifest(witness, WITNESS_RECEIPT_SHA, "artifact_sha256")
+    benchmark_status, benchmark_pin = validate_manifest(benchmark, BENCHMARK_RECEIPT_SHA, "artifacts")
+    if (witness_status["status"] != "complete_initial_direction_verification"
+            or witness_status["verification_result"] != "clear"
+            or benchmark_status["status"] != "complete_engineering_benchmark"):
+        raise ValueError("both immutable upstream terminal runs must be complete and initial verification clear")
+    source_before = source_receipt(repo)
+    if source_before["sha256"] != PRODUCTION_SHA:
+        raise ValueError("current production source changed from9f")
+    if (witness_status["source_before"]["sha256"] != PRODUCTION_SHA
+            or witness_status["source_after"] != witness_status["source_before"]
+            or benchmark_status["source_before"]["candidate"]["repository_source_sha256"] != PRODUCTION_SHA
+            or benchmark_status["source_before"] != benchmark_status["source_after"]):
+        raise ValueError("upstream production source pins disagree")
+    original_raw = owned(benchmark, "historical_candidate_protocol.json").read_bytes()
+    if sha(original_raw) != ORIGINAL_PROTOCOL_SHA or file_sha(owned(witness, "original_protocol.json")) != ORIGINAL_PROTOCOL_SHA:
+        raise ValueError("upstream original configuration pins differ")
+    original = json.loads(original_raw)
+    input_pins = {}
+    for relative, expected in original["inputs_sha256"].items():
+        path = (repo / relative).resolve()
+        if not path.is_relative_to(repo) or file_sha(path) != expected:
+            raise ValueError("current original input SHA differs: " + relative)
+        input_pins[relative] = expected
+    if (len(witness_status["cases"]) != 8 or [r["case_index"] for r in witness_status["cases"]] != list(range(8))
+            or len(benchmark_status["runs"]) != 360):
+        raise ValueError("complete original eight-case/360-run denominators required")
+    import numpy as np
+
+    output.mkdir()
+    for name, raw in (("diagnostic_source.py", source_raw), ("protocol.json", protocol_raw)):
+        with (output / name).open("xb") as stream:
+            stream.write(raw)
+    checks = Checks()
+    status = {"status": "running_post_outcome_software_diagnostic", "started_utc": utc(),
+              "source_before": source_before, "source_sha256": sha(source_raw),
+              "protocol_sha256": sha(protocol_raw), "upstream_witness_pin": witness_pin,
+              "upstream_benchmark_pin": benchmark_pin, "original_input_sha256": input_pins,
+              "case_slots": [{"case_index": i, "status": "unattempted"} for i in range(8)],
+              "student_final_research_design": False, "truth_used_for_policy": False,
+              "post_outcome_diagnostic": True, "new_PDE_solves": 0, "new_optimizer_trajectories": 0}
+    atomic_status(output / "status.json", status)
+    cases, case_results = {}, []
+    try:
+        for row, slot in zip(witness_status["cases"], status["case_slots"], strict=True):
+            index = row["case_index"]
+            slot.update(status="attempted", started_utc=utc())
+            atomic_status(output / "status.json", status)
+            vectors, pins = load_initial_case(witness, row, protocol, checks)
+            cases[index] = vectors
+            model, truth, gradient = (vectors[name] for name in (
+                "initial_model", "independent_truth_model", "independent_true_gradient"))
+            baseline = metric_values(model, truth)
+            correction, gradient_norm = truth - model, norm(gradient)
+            result = {"case_index": index, "identity": original["identities"][index],
+                      "raw_input_pins": pins, "initial_metrics": baseline,
+                      "initial_model_box_feasibility": feasibility_record(model, protocol),
+                      "truth_model_box_feasibility": feasibility_record(truth, protocol),
+                      "independent_true_gradient_l2_norm": gradient_norm,
+                      "data_gradient_dot_toward_truth_correction": sign_record(
+                          dot(gradient, correction), gradient_norm * norm(correction), protocol),
+                      "toward_truth_vector_role": "unnormalized mtruth-m, not an optimizer proposal or field-data claim",
+                      "directions": {}, "scope": protocol["interpretation_scope"]}
+            if vectors["direction"] is None:
+                result["directions"]["actual_raw_proposal"] = {"available": False,
+                    "reason": "upstream certificate did not retain a non-null direction; unknown not zero"}
+            else:
+                result["directions"]["actual_raw_proposal"] = direction_report(
+                    model, truth, gradient, vectors["direction"], protocol, checks, f"case{index}/actual_raw_proposal")
+                if vectors["approximate_gradient"] is not None:
+                    approximate = vectors["approximate_gradient"]
+                    result["approximate_gradient_l2_norm"] = norm(approximate)
+                    result["approximate_data_gradient_dot_actual_proposal"] = sign_record(
+                        dot(approximate, vectors["direction"]), norm(approximate) * norm(vectors["direction"]), protocol)
+            if gradient_norm == 0:
+                result["directions"]["exact_normalized_negative_data_gradient"] = {"available": False,
+                    "reason": "zero true gradient has no normalized negative direction; not stationarity proof"}
+            else:
+                exact_direction = -gradient / gradient_norm
+                result["directions"]["exact_normalized_negative_data_gradient"] = direction_report(
+                    model, truth, gradient, exact_direction, protocol, checks, f"case{index}/exact_negative_data_gradient")
+                checks.near(dot(gradient, exact_direction), -gradient_norm,
+                            context=f"case{index}/normalized_exact_data_descent_identity",
+                            rtol=protocol["scalar_identity_rtol"], atol=0.0)
+            path = output / f"case_{index:02d}_slopes.json"
+            new_json(path, result)
+            slot.update(status="complete", artifact=path.name, artifact_sha256=file_sha(path), finished_utc=utc())
+            case_results.append(result)
+            atomic_status(output / "status.json", status)
+        endpoint_rows, endpoint_groups = endpoint_comparisons(benchmark, cases, original, protocol, checks)
+        new_json(output / "all_original_internal_endpoint_baselines.json", {
+            "scope": "post-outcome descriptive baseline comparison only; every original case/method/repetition/mode/budget retained",
+            "endpoint_instance_count": len(endpoint_rows), "all_rows": endpoint_rows, "all_groups": endpoint_groups,
+            "no_selection_or_independence_inference": True})
+        direction_summary = {}
+        for name in ("actual_raw_proposal", "exact_normalized_negative_data_gradient"):
+            available = [row["directions"][name] for row in case_results if row["directions"][name]["available"]]
+            direction_summary[name] = {"full_case_denominator": 8, "available_directions": len(available),
+                "unavailable_cases_retained": 8 - len(available), "metrics": {}}
+            for metric in ("half_relative_squared_m_error", "half_relative_squared_velocity_error"):
+                direction_summary[name]["metrics"][metric] = {
+                    "literal_local_opposition_cases": sum(row["literal_local_opposition"][metric] for row in available),
+                    "numerically_classified_local_opposition_cases": sum(row["numerically_classified_local_opposition"][metric] for row in available),
+                    "metric_derivative_literal_sign_counts": dict(collections.Counter(
+                        row["half_relative_squared_metric_derivatives"][metric]["sign"]["literal_sign"] for row in available)),
+                    "metric_derivative_numerical_sign_counts": dict(collections.Counter(
+                        row["half_relative_squared_metric_derivatives"][metric]["sign"]["numerical_sign"] for row in available))}
+        source_after = source_receipt(repo)
+        checks.require(source_after == source_before, "production_source_unchanged_after_diagnostic")
+        new_json(output / "summary.json", {
+            "result": "clear_software_diagnostic" if not checks.issues else "issues_require_review",
+            "all8_cases_retained": len(case_results) == 8,
+            "initial_models_literal_box_feasible_count": sum(row["initial_model_box_feasibility"]["literal_box_feasible"]
+                                                            for row in case_results),
+            "truth_models_literal_box_feasible_count": sum(row["truth_model_box_feasibility"]["literal_box_feasible"]
+                                                          for row in case_results),
+            "toward_truth_data_slope_literal_sign_counts": dict(collections.Counter(
+                row["data_gradient_dot_toward_truth_correction"]["literal_sign"] for row in case_results)),
+            "toward_truth_data_slope_numerical_sign_counts": dict(collections.Counter(
+                row["data_gradient_dot_toward_truth_correction"]["numerical_sign"] for row in case_results)),
+            "direction_summaries": direction_summary, "original_internal_endpoint_instances": len(endpoint_rows),
+            "checks": checks.count, "issues": checks.issues,
+            "interpretation_scope": protocol["interpretation_scope"],
+            "runtime": {"python": sys.version, "numpy": np.__version__, "platform": platform.platform()},
+            "new_PDE_solves": 0, "new_optimizer_trajectories": 0, "truth_used_for_policy": False,
+            "no_new_student_final_design_or_causal_conclusion": True})
+        status.update(status="complete_post_outcome_software_diagnostic", finished_utc=utc(),
+                      source_after=source_after, result="clear" if not checks.issues else "issues_require_review",
+                      checks=checks.count, issues=checks.issues, original_endpoint_instances=len(endpoint_rows))
+        atomic_status(output / "status.json", status)
+        new_json(output / "complete_receipt.json", {**status,
+            "artifact_sha256": {p.name: file_sha(p) for p in output.iterdir() if p.is_file()}})
+        return {"result": status["result"], "checks": checks.count, "issues": len(checks.issues),
+                "output": str(output), "complete_receipt_sha256": file_sha(output / "complete_receipt.json")}
+    except BaseException as exc:
+        for slot in status["case_slots"]:
+            if slot["status"] == "attempted":
+                slot.update(status="failed_or_interrupted", error=f"{type(exc).__name__}: {exc}", finished_utc=utc())
+        status.update(status="failed_or_interrupted", finished_utc=utc(), error=f"{type(exc).__name__}: {exc}")
+        atomic_status(output / "status.json", status)
+        raise
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--execute-reviewed-diagnostic", action="store_true")
+    parser.add_argument("--repo", type=Path)
+    parser.add_argument("--witness", type=Path)
+    parser.add_argument("--benchmark", type=Path)
+    parser.add_argument("--output", type=Path)
+    parser.add_argument("--protocol", type=Path, default=Path(__file__).with_name("protocol.json"))
+    parser.add_argument("--expected-source-sha256")
+    parser.add_argument("--expected-protocol-sha256")
+    args = parser.parse_args(argv)
+    if not args.execute_reviewed_diagnostic:
+        print(json.dumps({"status": "source_only_no_project_reads_or_numeric_imports",
+                          "source_sha256": file_sha(Path(__file__)), "protocol_sha256": file_sha(args.protocol)}))
+        return 0
+    if not all((args.repo, args.witness, args.benchmark, args.output,
+                args.expected_source_sha256, args.expected_protocol_sha256)):
+        parser.error("explicit reviewed execution requires all paths and both reviewed SHA values")
+    result = run(args.repo, args.witness, args.benchmark, args.output, args.protocol,
+                 args.expected_source_sha256, args.expected_protocol_sha256)
+    print(json.dumps(result))
+    return 0 if result["result"] == "clear" else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

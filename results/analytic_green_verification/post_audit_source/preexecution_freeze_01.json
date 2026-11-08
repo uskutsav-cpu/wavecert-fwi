@@ -1,0 +1,34 @@
+{
+  "recorded_utc": "2026-11-08T06:12:41.427964+00:00",
+  "role": "Root explicitly authorized POSTAUDIT only after producerterminal02e5e1 exit0",
+  "auditor_sha256": "7672ae15a52933b417644fd590c13aa50472a6a5755100538effdcde6f4a43e7",
+  "criteria_sha256": "a65f089be1eb088f30d052e9ac3dde4bc06d9e712ce1e37902cb159d92a7163f",
+  "producer_complete_sha256_expected": "91281a563841fea5d34359ebd7400e9cbe7036387d2321816edb5d8ec9412b04",
+  "root_producer_preexecution_freeze_sha256": "4eb85f786fc3b64e34971fd08011171e14ad82debc20a0e2c112c720b62a9cd1",
+  "producer_log_sha256": "24e6166f35264f58fcc0a375633398776014aae38a971632db1f932436fea022",
+  "command": "env OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/miniconda3/bin/python /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/analytic_green_post_audit/audit_green.py --repo /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi --bundle /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/analytic_green_verification --original /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/results/devito_boundary_verification/run_01 --run /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/analytic_green_run_01 --output /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/analytic_green_independent_post_audit_01 --criteria /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/analytic_green_post_audit/criteria.json --expected-source-sha256 7672ae15a52933b417644fd590c13aa50472a6a5755100538effdcde6f4a43e7 --expected-criteria-sha256 a65f089be1eb088f30d052e9ac3dde4bc06d9e712ce1e37902cb159d92a7163f",
+  "algorithm": "Independent s=a+z^2 substitution, standard math.exp, scipy.integrate.quad epsabs/epsrel1e-11,limit50,full_output messages retained; no originalcosh/GolubWelsch reused",
+  "numeric_criteria": {
+    "role": "Post-outcome independent numerical verification; not student final design or physical-quality approval",
+    "quad_epsabs": 1e-11,
+    "quad_epsrel": 1e-11,
+    "quad_limit": 50,
+    "full_valid_curve_relative_L2_maximum": 1e-10,
+    "step_normalized_max_abs_maximum": 1e-12,
+    "source_relative_L2_maximum": 1e-14,
+    "scalar_rtol": 2e-12,
+    "scalar_atol": 1e-14,
+    "time_samples": 1101,
+    "valid_indices_inclusive": [
+      1,
+      1099
+    ],
+    "early_cutoff_ms": 250.0,
+    "quad_substitution": "s=a+z^2, U=A/pi integral_0^sqrt(t-a) q(t-a-z^2)/sqrt(2a+z^2) dz",
+    "forcing": "standard-library math.exp causal Ricker, f=.005/ms, delay200ms",
+    "no_retries_or_tolerance_changes": true,
+    "limits": "QUADPACK error estimates, convergence and cross-quadrature agreement are ordinary FP diagnostics, not enclosures or physical pass criteria. All7 traces are correlated versions of one homogeneous scene."
+  },
+  "no_preexecution_alternate_curve_or_metric_evaluation": true,
+  "no_PDE_production_import_original_mutation": true
+}

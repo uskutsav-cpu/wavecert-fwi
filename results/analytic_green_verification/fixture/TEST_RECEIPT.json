@@ -1,0 +1,21 @@
+{
+  "status": "SOURCE_AND_PURE_CONTROL_TESTS_READY_FOR_INDEPENDENT_REVIEW_NOT_EXECUTED",
+  "scope": "AI source/math/software support; not student final design or physical agreement evidence",
+  "runner_sha256": "ba7b03027d837f6e834e47ebf13c79768287d6d2963b1df3b898a6cbce822b69",
+  "protocol_sha256": "729e23e1a8a5373ba5492a47f2259d0bcb9a0618b25ddc87f3d73e0ea44337e5",
+  "preexecution_revision": "Preserved reviewed e44 runner/9a protocol and original derivation/tests/13-pass receipt byte-exact under history. Prepopulate all3orders+7cases before any curve; update existing attempt rows; strengthen order/case interruption-prefix tests. Protocol/derivation clarify compressed NPZ byte hashing before curves versus numerical decoding after all3saved. No formula, numeric setting, source/time convention, window, threshold, quadrature order or comparison method changed.",
+  "pytest": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 OMP_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest -q -W error -p no:cacheprovider --basetemp /tmp/wavecert-analytic-green-puretests-02 test_compare_green.py",
+    "exit_code": 0,
+    "tool_output_chunk_id": "3a2832",
+    "result": "14 passed in0.08s",
+    "log": "../analytic_green_verification_puretests_02.log",
+    "cases": "Tiny synthetic Gauss moments, step/arcosh causality, normalization scaling, synthetic Ricker, endpoint masks, zero denominator, invalid orders, default-no-evaluation, precomparison guard and full3order/7case denominator retention across first-order and first-case interruption. No actual fixture analytical curve or original NPZ is evaluated."
+  },
+  "ruff": {"command":"PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -m ruff check --no-cache --config ../../wavecert-fwi/pyproject.toml compare_green.py test_compare_green.py","exit_code":0,"result":"All checks passed!","tool_output_chunk_id":"05e194"},
+  "default_cli": {"command":"PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 OMP_NUM_THREADS=1 /opt/miniconda3/bin/python compare_green.py","exit_code":0,"status":"metadata_only_no_trace_evaluation","tool_output_chunk_id":"05e194","log":"../analytic_green_verification_default_cli_02.log"},
+  "python310_grammar": "Both runner and test source parsed successfully with ast feature_version(3,10); no module import required for this check.",
+  "execution_sessions": "All checks completed synchronously; no ongoing exec session IDs returned.",
+  "not_performed": ["No original trace NPZ or old numerical receiver/source arrays opened.","No full1101-sample actual-fixture Green/Ricker or step-control result computed.","No PDE solve, new waveform/parameter/window fitting, plot, repository/source9f mutation or actual comparison execution."],
+  "remaining_gate": "Independent source/math review, then root freeze and explicit GO. Actual comparison requires both exact runner/protocol hashes and a new output path."
+}

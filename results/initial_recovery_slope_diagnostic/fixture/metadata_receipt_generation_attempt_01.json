@@ -1,0 +1,8 @@
+{
+  "status": "metadata_receipt_construction_failed_before_write",
+  "exception": "AssertionError then JSON.parse error on traceback",
+  "reason": "One-off exact-delta guard used unindented substring and selected an earlier used-name loop, while the actual patch changed only the intended unused-name loop.",
+  "source_or_protocol_changed_by_this_attempt": false,
+  "tests_failed": false,
+  "correction": "Verify exact newline-and-four-space-indented loop delta. Source diff is only name to _name in the unused loop; all12 focused tests, Ruff and Python3.10 grammar remain passed."
+}

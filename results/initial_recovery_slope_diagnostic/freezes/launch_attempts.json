@@ -1,0 +1,16 @@
+{
+  "attempts": [
+    {
+      "stage": "root preflight only",
+      "actual_tool_chunk": "0dc310",
+      "terminal_exit_code": 1,
+      "reason": "overbroad textual metadata-diff guard also matched more-indented loops; no freeze/output/projectarray computation or runner launch",
+      "diagnostic_source_and_parameters_unchanged": true
+    },
+    {
+      "stage": "corrected exact line-by-line metadata diff guard",
+      "preflight_passed": true,
+      "actual_first_diagnostic_execution": "follows reviewed freeze"
+    }
+  ]
+}

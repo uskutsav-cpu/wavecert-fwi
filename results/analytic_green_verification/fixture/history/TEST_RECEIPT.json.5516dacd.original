@@ -1,0 +1,20 @@
+{
+  "status": "SOURCE_AND_PURE_CONTROL_TESTS_READY_FOR_INDEPENDENT_REVIEW_NOT_EXECUTED",
+  "scope": "AI source/math/software support; not student final design or physical agreement evidence",
+  "runner_sha256": "e44ce3ef89bd53d2eca415f98a1e1320d3c70d1d3b162c1db63cd70ef31a229a",
+  "protocol_sha256": "9a71e8e42e381d8824a06993702b9b9f5fcdb113fd7832e2e00de8d4d73ba679",
+  "pytest": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 OMP_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest -q -W error -p no:cacheprovider --basetemp /tmp/wavecert-analytic-green-puretests-01 test_compare_green.py",
+    "exit_code": 0,
+    "tool_output_chunk_id": "540c90",
+    "result": "13 passed in0.11s",
+    "log": "../analytic_green_verification_puretests_01.log",
+    "cases": "Tiny synthetic Gauss moments, step/arcosh causality, normalization scaling, synthetic Ricker, endpoint masks, zero denominator, invalid orders, default-no-evaluation, precomparison guard and interruption prefix retention. No actual fixture analytical curve or original NPZ is evaluated."
+  },
+  "ruff": {"command":"PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -m ruff check --no-cache --config ../../wavecert-fwi/pyproject.toml compare_green.py test_compare_green.py","exit_code":0,"result":"All checks passed!","tool_output_chunk_id":"6ac042"},
+  "default_cli": {"command":"PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 OMP_NUM_THREADS=1 /opt/miniconda3/bin/python compare_green.py","exit_code":0,"status":"metadata_only_no_trace_evaluation","tool_output_chunk_id":"9fae5e","log":"../analytic_green_verification_default_cli_01.log"},
+  "python310_grammar": "Both runner and test source parsed successfully with ast feature_version(3,10); no module import required for this check.",
+  "execution_sessions": "All checks completed synchronously; no ongoing exec session IDs returned.",
+  "not_performed": ["No original trace NPZ or old numerical receiver/source arrays opened.","No full1101-sample actual-fixture Green/Ricker or step-control result computed.","No PDE solve, new waveform/parameter/window fitting, plot, repository/source9f mutation or actual comparison execution."],
+  "remaining_gate": "Independent source/math review, then root freeze and explicit GO. Actual comparison requires both exact runner/protocol hashes and a new output path."
+}
