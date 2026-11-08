@@ -1,0 +1,59 @@
+{
+  "created_utc": "2026-11-08T09:28:22.072243+00:00",
+  "result": "DIAGNOSTICS_PATCH_CLEAR",
+  "role": "Test failure observability only; original failingCI evidence and source history preserved",
+  "original_git_commit": "c197a43f5774f4a320a1de19bad85f8b9f4cea1a",
+  "original_test_sha256": "2bb3b01039ef9373bfd62e71e5e3b3444a8a6c2f7548afe3b0ef6d4286648ca6",
+  "test_sha256": "f0b9e8656274bfb63f9e16200ce2117acdc7a13cacb100876e512b6359cbc07c",
+  "patch_sha256": "c5d75e782d946320cc499ec6687f82e0d3a952e4c753d785f27fc7e99f70fbe5",
+  "preexecution_review_sha256": "79e66bcfe7254bd20267e1390b3289d385a7656ea97137cba33b202736aa8807",
+  "success_assertions_and_original_module_AST_unchanged_after_exact_diagnostic_delta_normalization": true,
+  "independent_source_review": {
+    "agent": "/root/candidate_final_review/verification_helpers_review",
+    "result": "CLEAR",
+    "reviewed_test_sha256": "f0b9e8656274bfb63f9e16200ce2117acdc7a13cacb100876e512b6359cbc07c",
+    "execution_by_reviewer": false,
+    "findings": "Nonzero exit still fails immediately; original numerical pins, criteria, flags and success assertions unchanged. Stdout/stderr survive missing/malformed/wrong-schema status. Prefix/phase/all-case/all-available-DD details retained. Timeout handling outside this exit2 patch."
+  },
+  "actual_validation": {
+    "focused_pytest": {
+      "launch_chunk": "da0f43",
+      "session_id": 83967,
+      "terminal_chunk": "92b684",
+      "exit_code": 0,
+      "passed": 1,
+      "pytest_seconds": 9.38,
+      "command": "env PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/src OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest tests/test_bp_numpy_tangent_reproduction.py -W error -s --basetemp=/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/bp_numpy_ci_diagnostics_validation_01/pytest_tmp > /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/bp_numpy_ci_diagnostics_validation_01/pytest_execution_01.log 2>&1",
+      "cwd": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi"
+    },
+    "ruff": {
+      "chunk": "027cf1",
+      "exit_code": 0,
+      "command": "/opt/miniconda3/bin/python -m ruff check tests/test_bp_numpy_tangent_reproduction.py > /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/bp_numpy_ci_diagnostics_validation_01/ruff_execution_01.log 2>&1",
+      "cwd": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi"
+    },
+    "synthetic_failure_branch": {
+      "chunk": "fc8082",
+      "exit_code": 0,
+      "script_sha256": "2ce0669dff514718d329df83f827b7a6e478bd594041d0783653252853982655",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 /opt/miniconda3/bin/python -I /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/bp_numpy_ci_diagnostics_validation_01/exercise_failure_diagnostics.py > /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/bp_numpy_ci_diagnostics_validation_01/synthetic_failure_execution_01.log 2>&1",
+      "controls": [
+        "nonzero_still_fails_with3cases6directions",
+        "missing_status",
+        "malformed_status",
+        "wrong_schema"
+      ],
+      "new_propagation": false
+    }
+  },
+  "logs_sha256": {
+    "pytest_execution_01.log": "b033b3d982401976ca4f14c422dd3e2ca1f25ebaef71850ad94c73e86756e5bc",
+    "ruff_execution_01.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "synthetic_failure_execution_01.log": "f78d665b80d6fb6855fb755c62625533cf264d7ecd5afa4926e16b30bdb34e84"
+  },
+  "production_source_files": 161,
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "native_or_numerical_source_protocol_criteria_edits": false,
+  "no_native_rerun": true,
+  "scope": "Actual local macOSARM64/Python3.13.13/NumPy2.4.3 known-fixture rerun passes. Parent reports both failing and passing Python3.12.16/NumPy2.5.4/Linux7x86_64 CI jobs, so no version, CPU, FPU or scientific cause is established. Fresh diagnostic CI is required; no numerical threshold relaxed, source retuned or failure reclassified."
+}

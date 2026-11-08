@@ -25,3 +25,14 @@ A new native execution is a separate, heavier operation. It requires the unchang
 All three crops are parts of one synthetic BP ancestor. Artificial sources lie200m below deep crop tops; constant-edge exteriors do not reproduce original BP surface surveys. There is no inverse method, certificate transfer, new theorem or accepted continuum/field accuracy here. No time-by-grid history is written. Original BP data terms and modification notice in [the acquisition archive](../bp2004_acquisition/README.md) continue to apply to derived arrays; they are not relicensed as MIT code. Copied Devito implementation references carry their license in `numpy_replay/DEVITO_LICENSE.md`.
 
 AI-authored implementation verification. All four scientific goals and student-owned interpretation remain incomplete.
+
+## First remote regression outcome
+
+The initial c197 publication passed the full learned/data Linux job, including
+all three BP traces and six derivatives, but the Python3.12 matrix replay
+returned2. The other matrix jobs were cancelled. The same reported runtime
+versions in a passing and failing job do not establish a version-only cause.
+The [first CI history](CI_history_c197/README.md) retains the failure and the
+successful known-fixture reports. A diagnostic-only test change exposes saved
+comparison/model details; numerical criteria and the frozen replay remain
+unchanged. Full cross-environment verification is unresolved at this point.

@@ -31,6 +31,82 @@ def _sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _model_array_difference(own, native):
+    details = dict(own_shape=list(own.shape), native_shape=list(native.shape),
+        own_dtype=str(own.dtype), native_dtype=str(native.dtype))
+    if own.dtype != np.float64 or native.dtype != np.float64 or own.shape != native.shape:
+        details["comparison_unavailable"] = "matching float64 shapes required"
+        return details
+    own = np.ascontiguousarray(own, dtype="<f8")
+    native = np.ascontiguousarray(native, dtype="<f8")
+    details.update(own_sha256=hashlib.sha256(own.tobytes()).hexdigest(),
+        native_sha256=hashlib.sha256(native.tobytes()).hexdigest())
+    if not (np.all(np.isfinite(own)) and np.all(np.isfinite(native))
+            and np.all(own > 0) and np.all(native > 0)):
+        details["comparison_unavailable"] = "finite positive models required for ULP ordering"
+        return details
+    own_bits, native_bits = own.view("<u8"), native.view("<u8")
+    distances = np.maximum(own_bits, native_bits) - np.minimum(own_bits, native_bits)
+    details.update(unequal_count=int(np.count_nonzero(own != native)),
+        maximum_absolute_difference=float(np.max(np.abs(own - native))),
+        maximum_ULP_distance=int(np.max(distances)))
+    return details
+
+
+def _saved_model_differences(row, output, native_run):
+    assert _sha(native_run / "complete_receipt.json") == NATIVE_COMPLETE_SHA256
+    receipt = json.loads((native_run / "complete_receipt.json").read_text())
+    probe = next(call["result"] for call in receipt["calls"]
+        if call["case_id"] == row["case_id"] and call["call_id"] == "probe_saved")
+    own_path = output / row["artifact"]
+    native_path = native_run / row["case_id"] / probe["artifact"]
+    assert _sha(own_path) == row["artifact_sha256"]
+    assert _sha(native_path) == probe["artifact_sha256"]
+    with np.load(own_path, allow_pickle=False) as own, np.load(native_path, allow_pickle=False) as native:
+        return {label: _model_array_difference(own[own_key], native[native_key])
+            for label, own_key, native_key in (
+                ("physical_velocity", "physical_probe_velocity", "actual_physical_velocity_kmps"),
+                ("physical_m", "physical_probe_m", "actual_physical_m"))}
+
+
+def _replay_failure_diagnostics(completed, output, native_run=None):
+    diagnostic = dict(check="bp_numpy_tangent_reproduction_failure",
+        returncode=completed.returncode, stdout=completed.stdout, stderr=completed.stderr,
+        output=str(output))
+    try:
+        status = json.loads((output / "status.json").read_text())
+        if not isinstance(status, dict):
+            raise ValueError("saved status is not an object")
+        diagnostic["status"] = {key: status.get(key) for key in (
+            "status", "result", "error", "source_sha256", "protocol_sha256",
+            "all3_own_complete_before_native_arrays", "native_comparison_started",
+            "native_numeric_arrays_opened", "numerical_agreement_pass",
+            "own_solves_planned", "directions_planned")}
+        diagnostic["cases"] = []
+        for row in status.get("cases", []):
+            comparison = row.get("comparison") or row.get("comparison_prefix") or {}
+            case_diagnostic = dict(
+                case_id=row.get("case_id"), own_status=row.get("status"),
+                error=row.get("error"), comparison_status=row.get("comparison_status"),
+                comparison_error=row.get("comparison_error"),
+                trace=comparison.get("trace"), trace_agreement=comparison.get("trace_agreement"),
+                source_relative_L2=comparison.get("source_relative_L2"),
+                padded_fold_relative_L2=comparison.get("padded_fold_relative_L2"),
+                directions=[{key: direction.get(key) for key in (
+                    "direction", "status", "informative", "agreement", "relative_error",
+                    "absolute_error", "independent_tangent_DD", "native_folded_gradient_DD")}
+                    for direction in row.get("directions", [])])
+            if native_run is not None and status.get("all3_own_complete_before_native_arrays") is True:
+                try:
+                    case_diagnostic["saved_models"] = _saved_model_differences(row, output, native_run)
+                except Exception as exc:
+                    case_diagnostic["saved_model_diagnostic_error"] = f"{type(exc).__name__}: {exc}"
+            diagnostic["cases"].append(case_diagnostic)
+    except (OSError, ValueError, AttributeError, TypeError) as exc:
+        diagnostic["saved_status_error"] = f"{type(exc).__name__}: {exc}"
+    return json.dumps(diagnostic, sort_keys=True)
+
+
 def test_bp_numpy_traces_and_physical_m_tangents_without_devito(tmp_path, capsys):
     script, protocol_path = FIXTURE / "run_replay.py", FIXTURE / "protocol.json"
     native_run = ARCHIVE / "native_run_01"
@@ -53,7 +129,7 @@ def test_bp_numpy_traces_and_physical_m_tangents_without_devito(tmp_path, capsys
     for key in ("OMP_NUM_THREADS", "MKL_NUM_THREADS", "OPENBLAS_NUM_THREADS",
                 "VECLIB_MAXIMUM_THREADS", "NUMEXPR_NUM_THREADS"):
         env[key] = "1"
-    subprocess.run(
+    completed = subprocess.run(
         [sys.executable, "-I", "-W", "error", str(script),
          "--protocol", str(protocol_path), "--execute-after-native-terminal",
          "--inputs", str(INPUTS), "--native-run", str(native_run),
@@ -61,8 +137,9 @@ def test_bp_numpy_traces_and_physical_m_tangents_without_devito(tmp_path, capsys
          "--expected-source-sha256", RUNNER_SHA256,
          "--expected-protocol-sha256", PROTOCOL_SHA256,
          "--expected-native-complete-sha256", NATIVE_COMPLETE_SHA256],
-        check=True, capture_output=True, text=True, env=env, timeout=300,
+        check=False, capture_output=True, text=True, env=env, timeout=300,
     )
+    assert completed.returncode == 0, _replay_failure_diagnostics(completed, output, native_run)
     result = json.loads((output / "complete_receipt.json").read_text())
     assert json.loads((output / "status.json").read_text()) == result
     assert result["status"] == "complete_comparison"

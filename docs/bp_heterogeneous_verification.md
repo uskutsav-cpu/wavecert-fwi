@@ -52,3 +52,10 @@ All six directions were informative and met the predeclared `1e-3` derivative cr
 The replay retains its own small receiver/tangent records and input/direction witnesses, all 57 native call statuses and all six comparisons. Completion receipt: `207bc209e59e6e07d8a1da1d26afd15ab1a92fcb01feef7793bd29d66438e89a`. A further independent stored-record review recomputed the trace norms, all six contractions and edge/corner folds in 132 checks with zero issues, without propagating again. The native and replay processes actually returned exit code zero; that is separate from the numerical comparisons and from physical acceptance, which remains null.
 
 The [archive README](../results/bp_heterogeneous_verification/README.md) provides exact sources, test histories, freezes, all 57 native calls, all 18 finite-difference checks, scalar audit, replay records and reproduction commands. Source-only staging receipts retain their historical unexecuted/resource-held labels. Storage was initially below the fixed guard and briefly prevented file writes. Later measured free space and RAM passed the unchanged guards before the one native run; no guard was lowered and no native run was restarted.
+
+The first remote known-fixture run is mixed: one Linux learned/data job passes
+all three traces/six derivatives, while the Python3.12 matrix replay returns2
+and the remaining matrix jobs are cancelled. Its same-version passing and
+failing jobs are retained in the archive. Failure-only test diagnostics are
+being added before drawing a cause or cross-environment success conclusion.
+No numerical criterion, core implementation or native protocol is changed.

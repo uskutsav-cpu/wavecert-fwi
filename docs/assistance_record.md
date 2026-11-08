@@ -199,3 +199,10 @@ Known-fixture regression support does not add geological samples or establish
 human reproduction, physical accuracy, useful recovery, novelty or student
 ownership. The student's own question, decisions, interpretation, contribution
 account and competition submission remain theirs and remain pending here.
+
+Codex also investigated a mixed first Linux CI outcome for the new BP replay
+regression. The passing job and failed/cancelled jobs are retained separately.
+It added failure-only test diagnostics to expose saved comparison and model
+bindings; numerical criteria and the frozen replay were not changed at this
+stage. A same-version passing job prevents attributing the failure solely to
+Python or NumPy versions without further evidence.
