@@ -5,7 +5,7 @@ paper, abstract, presentation script, student conclusion, or eligibility ruling.
 Scores below are subjective project-readiness judgments, not official judging
 scores, national rankings, or probabilities of winning.
 
-## Current assessment
+## Historical assessment before the continuing scientific phase
 
 **About 7.5/10 for research readiness**, improved from the initial roughly 6.5/10
 assessment. The repository is substantially more defensible. A national-winning
@@ -19,6 +19,16 @@ matched-cost inversion, or that student ownership has been established. The
 Its implementation benchmarks are provisional AI-authored development tools;
 the final scientific decisions must originate with the student under the
 [current JSHS rules](https://www.jshs.org/wp-content/uploads/2026/08/JSHS-Core-Rules-of-Competition-2026-27.pdf).
+
+The later [360-run comparison](paid_merit_engineering_benchmark.md) now supplies
+negative practical evidence: exact L-BFGS-B meets both targets in 48/48 attempts,
+the certified arm in 30/48, and certified internal velocity error is worse than
+initialization on 7/8 cases. Independent raw initial-direction replay improves
+software credibility; it does not repair those outcomes. The historical 7.5
+score is not an updated national-readiness rating. No new 10/10 score or national
+placement is justified. The next scientific priority is a student-owned
+interpretation of the fit-versus-recovery gap and a defensible contribution,
+with the strong controls and initialization baseline retained.
 
 | Area | Judgment | Evidence / remaining issue |
 |---|---:|---|

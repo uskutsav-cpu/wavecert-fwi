@@ -1,0 +1,120 @@
+{
+  "actions_not_performed": {
+    "PDE_runs": false,
+    "project_array_loads": false,
+    "repository_edits": false,
+    "student_design_authored": false,
+    "tests_or_benchmarks": false,
+    "velocity_payload_downloads": false
+  },
+  "blockers": [
+    {
+      "authors": "Frederic Billette and Sverre Brandsberg-Dahl",
+      "current_title": "Complex subsalt imaging challenges",
+      "doi": "10.3997/2214-4609-pdb.1.B035",
+      "id": "B1",
+      "location": "collect_bp2004.py modification_readme() and README.md reference",
+      "primary_source": "https://s3.amazonaws.com/open.source.geoscience/open_data/bpvelanal2004/2004_Benchmark_READMES.pdf",
+      "primary_source_location": "page3, README_History, bibliographic entry (zero-index PDF page2; extracted lines101-107)",
+      "remedy": "preserve byte-exact v1; title-only v2 correction, re-freeze SHA, verify generated modification notice and documentation consistency before fetch; root controls execution",
+      "required_title": "The 2004 BP velocity benchmark",
+      "severity": "bibliographic correctness; no numerical/parser defect identified",
+      "venue": "67th Annual International Meeting, EAGE, Expanded Abstracts, B035",
+      "year": 2005
+    }
+  ],
+  "created_utc": "2026-11-08T04:43:30.005756+00:00",
+  "current_official_source_HEAD_only": {
+    "content_length": 19533256,
+    "etag": "e2c4ad66a0553c9f108ffcf05506da82",
+    "last_modified": "Sun, 01 Nov 2015 23:32:08 GMT",
+    "matches_frozen_metadata": true,
+    "note": "HEAD does not verify actual payload bytes or availability of a later GET",
+    "payload_body_read": false,
+    "redirect": false,
+    "status": 200,
+    "url": "https://s3.amazonaws.com/open.source.geoscience/open_data/bpvelanal2004/vel_z6.25m_x12.5m_exact.segy.gz"
+  },
+  "inputs": {
+    "ARCHIVE_SCOPE.md": {
+      "bytes": 567,
+      "sha256": "d25333f16c6bd31b12e7ffc4e7bf746980b6295f293656d358207dd028e8adbd"
+    },
+    "README.md": {
+      "bytes": 2617,
+      "sha256": "c39d965584a1c5af21548b634d62a58adc497b8c4b761ed71559b40548b51490"
+    },
+    "TEST_RECEIPT.json": {
+      "bytes": 1629,
+      "sha256": "62df742da84ac6c342eee1180dee752d42aa31bd00c38e5ab9e016c2d5f7aa4b"
+    },
+    "collect_bp2004.py": {
+      "bytes": 23390,
+      "sha256": "f1f126d34ce83b85f95459ca44507357491e2b3c3a5f41caeccbe63b878cc41b"
+    },
+    "docs/ancestry_audit.md": {
+      "bytes": 13712,
+      "sha256": "8f7b44ce2e9d387e3354e274a2e3cc958677799fa881d49ac7ed670c10581cbe"
+    },
+    "documentation_manifest.json": {
+      "bytes": 336,
+      "sha256": "c98ba723da343ad75e36ba0c4549b666d7c2143b18521bacf516ca605d00b05d"
+    },
+    "original_BP2004_READMES.pdf": {
+      "bytes": 24615,
+      "sha256": "e29b003fc2161c44d2b9f04448195e58ebe6f476a195b31c3be77440adb60e24"
+    },
+    "protocol.json": {
+      "bytes": 5144,
+      "sha256": "a84ce64dcac7f93f035007daf313cb2ab7bde713800d10d9d37d812f12c836f4"
+    },
+    "test_collect_bp2004.py": {
+      "bytes": 11973,
+      "sha256": "245555dddb95eab9e0712603ac99cf8fbb03c62562374f495e6e061dc96fe44f"
+    }
+  },
+  "primary_sources": [
+    {
+      "url": "https://s3.amazonaws.com/open.source.geoscience/open_data/bpvelanal2004/2004_Benchmark_READMES.pdf",
+      "use": "original terms, citation, geometry and composite ancestry"
+    },
+    {
+      "url": "https://wiki.seg.org/wiki/2004_BP_velocity_estimation_benchmark_model",
+      "use": "publisher indexed source-link list; direct web-open403; not used to override original documentation"
+    }
+  ],
+  "provenance_supplied_on_success": {
+    "IID_site_inference": false,
+    "array_files_count": 6,
+    "crops_count": 3,
+    "distinct_from_legacy_original_models": true,
+    "independent_ancestor_count_for_bundle": 1,
+    "independent_sites_claim": false,
+    "later_observations": "Newly generated acoustic data would be a separate controlled benchmark requiring its own frozen technical checks, not reproduction of original shots.",
+    "measured_field_data": false,
+    "new_named_original_numerical_ancestor": "BP2004_Billette_BrandsbergDahl_composite_exact_velocity",
+    "original_shot_reproduction": false
+  },
+  "remaining_limits": [
+    "No payload SHA is known before acquisition; official HTTPS/metadata identifies source, full SHA recorded on successful GET. ETag is not SHA256.",
+    "No actual BP velocity bytes decoded, no crop outcomes or quality computed. Static review cannot certify actual source layout.",
+    "One distinct named composite synthetic model does not establish several independent geological environments or random-site inference.",
+    "Title fix must not alter windows, source URL, bounds or scientific roles; any such additional change requires separate review."
+  ],
+  "review_role": "separate AI static preflight and metadata review; not human review or student final scientific design",
+  "scope": "acquisition only after root verifies timing benchmark terminal; no PDE, outcome analysis, plots or inference",
+  "static_checks": [
+    "Expected code/protocol/document hashes independently recomputed and match archived TEST_RECEIPT.",
+    "Explicit fetch plus exact protocol/source hashes checked before network; default CLI has no fetch branch.",
+    "HTTPS official URL, HTTP200/exact URL, identity transfer, length, ETag and streamed body caps checked.",
+    "Single gzip member, CRC32/ISIZE, full decompressed length and SHA256; no archive written to disk.",
+    "SEG-Y big-endian layout, binary/trace sample counts, format1 or5, no extended text headers; all samples finite-positive validated.",
+    "IBM32 sign/fraction/exponent formula and IEEE32 path statically inspected; actual BP format/content remains unobserved.",
+    "Only three predetermined192x192 raw crops plus raw[::2,:]96x192 views retained; full decoded matrix never allocated.",
+    "Original text/binary/all trace headers retained losslessly with hashes; float32 NPY and exact parent positions recorded.",
+    "Original PDF retained; modification notice records decoding/cropping/decimation and no new data license.",
+    "New-directory staged publication and existing-output refusal preserve earlier artifacts; failed own-stage cleaned."
+  ],
+  "test_status": "Existing archived35synthetic/mock-HTTP-pass receipt inspected; NO tests rerun during live timing benchmark.",
+  "verdict": "NO_GO_AS_FROZEN_v1_UNTIL_BIBLIOGRAPHIC_TITLE_CORRECTED_AND_v2_REVIEWED"
+}

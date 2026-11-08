@@ -53,7 +53,11 @@ See [continuing research](docs/continuing_research.md) for the full active goal,
 new controlled development evidence and the gates before any success claim.
 The new paid-merit, cached-field bound, norm-free GMRES and trajectory components
 pass the full CI suite and 89 focused checks with warnings treated as errors.
-No new matched-cost trajectory result is claimed.
+The [360-run paid-merit engineering comparison](docs/paid_merit_engineering_benchmark.md)
+is now complete and independently checked. Exact L-BFGS-B returns both targets
+in 48/48 planned attempts versus 30/48 for the certified arm. At internal
+8-second checkpoints, certified velocity error is worse than initialization
+on 7/8 cases. A useful certificate advantage remains unestablished.
 Student scientific ownership and final design decisions remain open; see the
 [assistance record](docs/assistance_record.md).
 The new [boundary diagnostic](docs/devito_boundary_verification.md) also exposes
@@ -61,6 +65,9 @@ substantial finite-record trace errors in a fixed homogeneous Devito fixture;
 passing gradient checks alone does not establish boundary fidelity.
 Its [separate NumPy replay](docs/numpy_boundary_replay.md) reproduces all seven
 implemented traces in the local run, including the substantial boundary effects.
+The fixed [BP2004 acquisition](results/bp2004_acquisition/README.md) adds one
+synthetic ancestor with original terms/provenance retained; it has not been used
+to evaluate the method. Three crops do not create three independent sites.
 
 ## Latest controlled comparison
 

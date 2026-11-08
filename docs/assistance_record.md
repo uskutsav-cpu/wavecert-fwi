@@ -100,3 +100,27 @@ The replay was AI-coded and reference-informed, with the earlier outcomes alread
 known; it is not a student's independently conceived investigation or personal
 analysis. The student scientific question, prediction, comparison and contribution
 account requested during this session remain pending.
+
+Codex designed the separate frozen paid-merit engineering execution addendum,
+corrected a CLI-flag launch typo before project execution, and executed all 360
+classical development runs. It authored the two post-auditors, timing/eligibility
+checks, descriptive collector and figures, and added the explicitly post-outcome
+initialization comparison after observing poor reconstruction. All 360 runs,
+censored/late targets, source histories, negative results and assistance remain
+recorded. These are AI-authored software benchmarks and analysis support, not
+the student's final design or personal conclusions.
+
+Codex also corrected two BP2004 citation-title strings while preserving v1,
+validated v2 with 35 mocked/synthetic tests, acquired the three predeclared crops
+and their stride views, and audited retained headers/arrays/terms/provenance.
+This adds one synthetic ancestor and no method evaluation. Full original payload
+streams were hashed during acquisition and discarded; no independent full-payload
+re-decode is implied by the retained-artifact audit. The original BP terms and
+modification notice accompany the data.
+
+The additional initial-direction witness producer and NumPy raw replay were also
+AI-authored, with separate AI source review and interruption/adverse/tamper tests.
+They address eight fixed initial states only; they do not make unavailable
+intermediate trajectory vectors reproducible or establish a formal roundoff
+enclosure. The student's own interpretation of the fit-versus-recovery result,
+next scientific question and actual contribution account remain pending.

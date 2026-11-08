@@ -1,0 +1,27 @@
+{
+  "result": "CLEAR_SOURCE_SCOPE_RETAINED_ARTIFACT_AUDITOR",
+  "reviewer": "candidate_final_review",
+  "auditor_sha256": "ee6b47136cbbd7c28b612e27b46320a4466879f891461380d24a480fe5a5747b",
+  "activities": {
+    "source_text_and_source_sha_only": true,
+    "auditor_rerun_or_tests": false,
+    "velocity_array_or_payload_reads": false,
+    "network_fetch": false,
+    "repository_or_acquisition_artifact_changes": false
+  },
+  "checks": [
+    "Audit does not import or execute collector and makes no network/PDE calls. Exact12-file inventory, source/protocol/freeze pins, saved file manifests, original documentation and generated notice are checked from retained bytes.",
+    "SEG-Y text3200/binary400 and5395 concatenated240-byte trace headers are losslessly decoded and hashed. Zlib decoding is bounded at1294801 bytes and requires EOF/no extra stream/tail/exact1294800 bytes. Binary and all trace sample/count/coordinate fields are independently reparsed.",
+    "Recorded shape1911x5395 and trace stride240+4*1911=7884 imply42537780 bytes including3600-byte preamble. Hardcoded crop origins/stops agree with frozen center-fraction floor arithmetic,192x192 raw and96x192 stride views,6.25m/12.5m spacing and m/s velocity units.",
+    "Every NPY checks little-endian float32 C layout, exact shape, no trailing data, finite positivity and both file/data hashes. Coarse views are checked byte-for-byte against raw[::2,::1]. Combined six-array data size663552 bytes is correct.",
+    "Original PDF SHA, documentation manifest and corrected title/DOI/BP acknowledgement/terms/one-ancestor notice remain visible. All three crops/six arrays retain exactly one composite synthetic ancestor with no independent-site or original-shot claim.",
+    "Before/after inventories bind retained run and frozen top-level files, plus auditor source. No actual result is inferred from this static review."
+  ],
+  "material_source_blockers": [],
+  "essential_limits": [
+    "Whole compressed/uncompressed streams were discarded. Their SHA/CRC/ISIZE and crop-to-original sample assignment are checked only as recorded collector/root-log evidence, not independently re-decoded. The source prominently states this distinction.",
+    "Post-acquisition whole-stream SHA constants are observed identity anchors, not prospectively known independent payload checksums or blind acquisition criteria.",
+    "Root process-terminal observation is external supplied evidence; the auditor checks final CLI/status but does not independently reconstruct process lifecycle.",
+    "This reviewer did not rerun the reported84-check audit or inspect raw velocity arrays. Separate AI source review is not independent physical validation, external human reproduction, student ownership or scientific performance evidence."
+  ]
+}

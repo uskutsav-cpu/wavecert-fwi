@@ -1,0 +1,110 @@
+{
+  "role": "Independent AI read-only engineering novelty advisory; not student final question, design, paper, ownership account or human review",
+  "recorded_utc": "2026-11-08T04:43:51.335440+00:00",
+  "live_benchmark_isolation": {
+    "project_array_loads": 0,
+    "tests_or_PDE_or_trajectory_runs": 0,
+    "partial_outcomes_read": false,
+    "source_or_config_edits": false,
+    "repo_mutations": false
+  },
+  "reviewed_text_sha256": {
+    "results/primary_research_followup/coarse_dst_primary_research_matrix_20261108.json": "f627a5bbd135cef3bfeaa8da1315a748b33fa58b939555520bf50f1fb43977f5",
+    "results/primary_research_followup/cached_merit_duality_review_20261108.json": "b56f8efd13870c4e6bcfeb62e6a1c6d99a501f61ff80cd04de2f4ce4bfc4f712",
+    "docs/cached_merit_scope.md": "ee34d9a7f218874f9a5fc160a6c9f8ee46ad22782486cde6c6353f0cb0878cb9",
+    "docs/coarse_stability.md": "b171fa35efaddd8cd4f94ccb45553b0bc5456cc984ca145cd4455bf965de0dbd",
+    "src/wavecert/certificates/cached_merit_certificate.py": "00ae473b116841804f66164ad97a8e10fd679d4b5ca68430d6947c8c2eb72985",
+    "src/wavecert/optimization/paid_descent.py": "b863af87f03c2470fde8d72412b1c89e76e389a528cb7d8b08efe89ceeb3a12c",
+    "results/provisional_software_benchmark/matched_cost_pilot/adapter.py": "f793f4439551bf7614bd72421057d209f3cb353710fe06f8c13de85b44eecf61"
+  },
+  "assessment": "Existing primary-methods matrix is substantively cautious and largely correct. No general new gradient-certification, descent-certification, Green-function gradient, coarse correction, or Krylov theorem is established. The potentially supportable contribution remains a precisely scoped discrete-operator implementation and its honest full-cost/abstention evidence. Priority for its exact recipe remains unresolved.",
+  "material_scope_clarifications": [
+    "The LIVE five-control adapter performs classical cached sparse-LU merit, low-sine/DST missing-field proposals, optional component certification and exact fallback. It executes no neural-network or POD inference. Any later positive result here cannot establish neural-operator derivative certification, learned-model necessity or learned-surrogate acceleration.",
+    "All five controls use the same paid reference objective for finite-step acceptance. The certificate controls raw-direction admission and fallback; paid decrease controls accepted finite steps. It cannot be credited with unique finite-step monotonic safety. Clipping changes the direction and the certificate does not cover the clipped displacement.",
+    "The certificate is limited to the five-point constant-spacing real-Dirichlet stiffness plus complex diagonal potential, real squared slowness and fixed source/receiver maps. Separate Devito forward reproduction does not transfer this certificate to Devito, PML, elasticity or continuum physics.",
+    "Exact-arithmetic inequalities evaluated in ordinary floating point with heuristic Gram allowances are not verified numerical enclosures. Successful discrete tests cannot justify a guaranteed floating-point certificate."
+  ],
+  "closest_primary_sources_rechecked_online": [
+    {
+      "source": "Qian, Grepl, Veroy, Willcox (2017), Lemma3/Theorem5 eq29",
+      "url": "https://kiwi.oden.utexas.edu/papers/multifidelity-optimization-adaptive-reduced-model-qian-grepl-veroy-willcox.pdf",
+      "checked": "Author final PDF theorem text",
+      "defeats": "Generic coupled state/adjoint/product gradient-error bounds and certification-driven high-fidelity refinement. Setting one field error to zero is an existing limiting case.",
+      "remaining_boundary": "Present complex-indefinite low/complement response constants and their concrete computable cost; no priority established."
+    },
+    {
+      "source": "Giacomini, Pantz, Trabelsi (2017), section2.4 eq2.14, Remark3.1",
+      "url": "https://www.numdam.org/item/10.1051/cocv/2016021.pdf",
+      "checked": "Primary full PDF directional criterion and linearization disclaimer",
+      "defeats": "Novelty from approximate directional derivative plus error upper bound being negative, including an arbitrary approximate direction.",
+      "remaining_boundary": "Shape/EIT estimates differ from acoustic mass derivatives. Their neglected shape-linearization remainder must be acknowledged; it does not restore novelty to the general sign rule."
+    },
+    {
+      "source": "Keil etal (2021), section2.3, Proposition2.7",
+      "url": "https://arxiv.org/pdf/2006.09297",
+      "checked": "Primary preprint proposition and corrected-functional formulation",
+      "defeats": "Conflating a plug-in physical proposal gradient with the derivative of a repaired reduced objective, or claiming a new general corrected-gradient optimizer.",
+      "remaining_boundary": "Sequential missing-field repair here is a proposal with independent reference-merit acceptance, without that paper's trust-region convergence theorem."
+    },
+    {
+      "source": "Tao and Sen (2013), frequency-domain scattering-integral FWI",
+      "url": "https://academic.oup.com/jge/article/10/6/065008/5111276",
+      "checked": "Publisher-indexed abstract and conclusions; direct open failed",
+      "defeats": "First FWI gradient from receiver/source Green functions, or first source-versus-receiver solve-count tradeoff.",
+      "remaining_boundary": "The ownership-checked cached-merit finite-residual coupling and full marginal-cost implementation are specific engineering details, not established new duality."
+    },
+    {
+      "source": "Southworth, Sivas, Rhebergen (2020), sections2-3",
+      "url": "https://arxiv.org/pdf/1911.02664",
+      "checked": "Primary full PDF abstract, block/Schur formulation and scope",
+      "defeats": "A new general coarse/Schur fixed-point iteration or automatic superiority of fixed repair over Krylov.",
+      "remaining_boundary": "Actual full cost and directional task of this fixed inverse action. Eigenvalues alone do not establish practical nonnormal convergence."
+    },
+    {
+      "source": "Ekre etal (2022), spectral/POD error estimation",
+      "url": "https://link.springer.com/article/10.1007/s00466-021-02113-2",
+      "checked": "Primary full article, estimator discussion and section5.2",
+      "defeats": "Generic novelty from combining spectral structure and POD for improved error estimates.",
+      "remaining_boundary": "Independent spectral stability space and acoustic physical-gradient specialization; irrelevant to claiming POD use in the current classical benchmark."
+    },
+    {
+      "source": "Smetana, Zahm, Patera (2019), randomized residual estimators",
+      "url": "https://arxiv.org/abs/1807.10489",
+      "checked": "Primary author abstract; full proof not freshly audited",
+      "defeats": "Absence of a fine inverse-map computation or cheap residual estimation alone as novelty; provides a distinct reduced-dual alternative with Helmholtz examples.",
+      "remaining_boundary": "Different probabilistic guarantee and dual-training costs versus conditional deterministic exact-arithmetic component bounds."
+    },
+    {
+      "source": "Buhr etal (2014), stable residual estimation",
+      "url": "https://arxiv.org/abs/1407.8005",
+      "checked": "Primary abstract; full derivation already covered by archived matrix",
+      "defeats": "Treating cancellation-prone Gram evaluation plus heuristic PSD shift as a validated roundoff guarantee.",
+      "remaining_boundary": "No verified enclosure or new numerical-stability proof is presently established."
+    },
+    {
+      "source": "Cheng etal (ICML2025), derivative neural operators and hybrid optimization",
+      "url": "https://proceedings.mlr.press/v267/cheng25f.html",
+      "checked": "Primary proceedings abstract",
+      "defeats": "Generic novelty from neural derivatives combined with numerical fallback/hybrid optimization.",
+      "remaining_boundary": "Post-training residual directional certification would need its own neural execution and evidence; the current cached classical benchmark cannot supply it."
+    }
+  ],
+  "additional_primary_gap_to_record": [
+    {
+      "source": "Biros and Ghattas, Inexactness Issues in the Lagrange-Newton-Krylov-Schur Method for PDE-constrained Optimization",
+      "url": "https://www.cs.cmu.edu/~oghattas/papers/lnks/sf01.pdf",
+      "checked": "Primary PDF inexactness discussion and eqs24-25, pp11-12",
+      "implication": "Optimization-aware inexact linear algebra and conditions preserving descent predate this project. Do not claim first avoiding oversolving or first paying only for descent accuracy. Its practical unknown-gradient substitution is not a drop-in theorem validating this code."
+    }
+  ],
+  "concrete_unresolved_differentiators": [
+    "Is residual orientation through Ar^-1 and receiver/source coupling materially sharper than a valid specialization of prior state/adjoint bounds on identical fields, direction and operator? Replacing norms or naming a direction is not by itself new mathematics.",
+    "Does conditional certification add useful performance beyond identical fixed-sweep fields with the same paid objective and fallback? Same-M converged GMRES and cached exact LU/L-BFGS-B must retain their legal reuse. A useful preconditioner is distinct from a useful certificate.",
+    "What exact additional computational advantage survives ordinary Green-function identities and the best implemented incremental exact route? min(s,r-c) or min(r,s-c) counts describe implemented routes, not global lower bounds; low-rank data/source structure could permit other exact implementations.",
+    "Can a claimed advantage survive complete preparation/setup/rejection/return-tail costs and stability unavailability? Fixed-rank gamma/tau restrictions and reduced cubic work constrain the regime; tiny-grid comparisons cannot establish scalable Helmholtz superiority.",
+    "Specific complex transpose/conjugation, source-amplitude squared, duplicate-slot sums, nonzero paid-field residuals, affine defects, fail-closed ownership and complete cost receipts are strong correctness work. They do not establish priority or a new physical model.",
+    "Reused correlated validation slices, one discrete boundary model and AI-authored implementation support development evidence only. Independent geology, a student-owned contribution and substantive human mathematical review remain separate outstanding requirements."
+  ],
+  "safe_technical_scope_not_student_submission_text": "An ordinary-floating-point implementation specializes established adjoint/duality error bounds to owner-validated cached merit fields for one finite complex-symmetric Helmholtz discretization. It exposes directional abstention and compares full returned-cost behavior against cached exact and same-preconditioner controls. Whether it improves time to target is an outcome question not assessed in this live-run review.",
+  "review_limit": "Targeted primary-source verification, not exhaustive search or novelty clearance. No live benchmark result, rank, winner, acceleration, human authorship or research-goal completion is inferred."
+}

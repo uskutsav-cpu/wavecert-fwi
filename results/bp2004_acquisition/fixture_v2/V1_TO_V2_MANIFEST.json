@@ -1,0 +1,90 @@
+{
+  "candidate_role": "AI-authored source-only acquisition support; not student preregistration, final research design, geological confirmation, or executed acquisition",
+  "created_utc": "2026-11-08T04:55:08Z",
+  "status": "STAGED_ONLY_PENDING_POST_TERMINAL_INDEPENDENT_REVIEW_AND_ROOT_EXECUTION_DECISION",
+  "version": "v2",
+  "immutable_v1_directory": "../../wavecert-fwi/results/bp2004_acquisition_candidate",
+  "title_only_change": {
+    "old_title": "Complex subsalt imaging challenges",
+    "new_title": "The 2004 BP velocity benchmark",
+    "locations": [
+      "collect_bp2004.py: modification_readme() citation string",
+      "README.md: bibliographic reference"
+    ],
+    "authors_year_venue_identifier_and_doi_unchanged": true,
+    "doi": "10.3997/2214-4609-pdb.1.B035",
+    "primary_document": "original_BP2004_READMES.pdf",
+    "primary_document_location": "page 3, README_History bibliographic entry; zero-index PDF page 2, review-extracted lines 101-107",
+    "primary_document_url": "https://s3.amazonaws.com/open.source.geoscience/open_data/bpvelanal2004/2004_Benchmark_READMES.pdf",
+    "review_evidence": "../bp2004_acquisition_review_followup.json",
+    "review_evidence_sha256": "4ed6ba1bdb38e849d2f36eb4c1683c2998952ef24528923d0b121019fb713fdb",
+    "exact_textual_diff": "citation_only.patch"
+  },
+  "copied_assets": {
+    "collect_bp2004.py": {
+      "v1_bytes": 23390,
+      "v1_sha256": "f1f126d34ce83b85f95459ca44507357491e2b3c3a5f41caeccbe63b878cc41b",
+      "v2_bytes": 23386,
+      "v2_sha256": "7a499a425ca495c8cffb2714af260e88e9ad929e9c6f85b0d9d7c0ef9624e28d",
+      "change": "title string only",
+      "v1_byte_exact_snapshot": "history/collect_bp2004.py.v1.original"
+    },
+    "README.md": {
+      "v1_bytes": 2617,
+      "v1_sha256": "c39d965584a1c5af21548b634d62a58adc497b8c4b761ed71559b40548b51490",
+      "v2_bytes": 2613,
+      "v2_sha256": "71c7dd67024a7c28bc31233c30ff8f532417859b3c9604189929f38edb9895e2",
+      "change": "title text only",
+      "v1_byte_exact_snapshot": "history/README.md.v1.original"
+    },
+    "protocol.json": {
+      "v1_and_v2_bytes": 5144,
+      "v1_and_v2_sha256": "a84ce64dcac7f93f035007daf313cb2ab7bde713800d10d9d37d812f12c836f4",
+      "change": "none; protocol has no citation title and remains byte-identical"
+    },
+    "test_collect_bp2004.py": {
+      "v1_and_v2_bytes": 11973,
+      "v1_and_v2_sha256": "245555dddb95eab9e0712603ac99cf8fbb03c62562374f495e6e061dc96fe44f",
+      "change": "none"
+    },
+    "documentation_manifest.json": {
+      "v1_and_v2_bytes": 336,
+      "v1_and_v2_sha256": "c98ba723da343ad75e36ba0c4549b666d7c2143b18521bacf516ca605d00b05d",
+      "change": "none"
+    },
+    "original_BP2004_READMES.pdf": {
+      "v1_and_v2_bytes": 24615,
+      "v1_and_v2_sha256": "e29b003fc2161c44d2b9f04448195e58ebe6f476a195b31c3be77440adb60e24",
+      "change": "none; original publisher terms, disclaimer and documentation retained; no new data license asserted"
+    }
+  },
+  "historical_receipts": {
+    "history/TEST_RECEIPT.json.v1.original": "62df742da84ac6c342eee1180dee752d42aa31bd00c38e5ab9e016c2d5f7aa4b",
+    "history/artifact_hashes.json.v1.original": "3676b7bd3d2ba8286bbe7a843a2e03be1459133f0eb13b9afd3caa136f73082d",
+    "history/ARCHIVE_SCOPE.md.v1.original": "d25333f16c6bd31b12e7ffc4e7bf746980b6295f293656d358207dd028e8adbd",
+    "meaning": "V1 historical evidence only. The archived 35 synthetic-test result does not claim execution or passage of v2 tests."
+  },
+  "source_pin_effect": {
+    "future_expected_source_sha256": "7a499a425ca495c8cffb2714af260e88e9ad929e9c6f85b0d9d7c0ef9624e28d",
+    "future_expected_protocol_sha256": "a84ce64dcac7f93f035007daf313cb2ab7bde713800d10d9d37d812f12c836f4",
+    "meaning": "Only the caller-provided collector source pin changes. No execution is authorized by this manifest."
+  },
+  "unchanged_scope": {
+    "numeric_algorithms_parameters_and_parser": true,
+    "acquisition_urls_expected_bytes_etag_and_bounds": true,
+    "three_fixed_crops_centers_shapes_indices_and_decimation": true,
+    "single_BP2004_composite_ancestor_and_no_IID_site_claim": true,
+    "source_9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da": "untouched; no repository edits"
+  },
+  "actions_performed": [
+    "Copied only named source, protocol, tests and original documentation assets; no pycache copied.",
+    "Preserved byte-exact changed v1 files and historical v1 receipts separately.",
+    "Applied two title-only text substitutions; compared textual diffs and file SHA256 hashes."
+  ],
+  "actions_not_performed": [
+    "No Python imports, CLI execution, tests or benchmarks.",
+    "No network requests, velocity-payload downloads, project-array loads, numerical replay or PDE solve.",
+    "No repository edits, candidate activation, GO decision, or benchmark partial-outcome inspection."
+  ],
+  "remaining_gate": "After the 360-run benchmark is terminal, root and an independent reviewer must validate v2, including generated modification notice and documentation consistency, before any separate acquisition decision."
+}

@@ -1,0 +1,81 @@
+{
+  "verdict": "CLEAR_POST_OUTCOME_DESCRIPTIVE_ARITHMETIC_AND_DOCUMENT_SCOPE",
+  "role": "AI independent software/data-record review; not external human review, student interpretation, new confirmation or competition evidence",
+  "reviewed_documents": {
+    "docs/paid_merit_engineering_benchmark.md": "542435dd37e7e7fea8366d6070dd02ad8b0f2c26c6a4016a3af42b57bdaecf9b",
+    "results/paid_merit_engineering_benchmark/README.md": "bfd8704d040a362a8da0c4b3b71bc8e761d3a9a8353dc6072b533d45f619e07f"
+  },
+  "actual_execution": {
+    "source": "rederive_descriptive_records.py",
+    "source_sha256": "e4a845dbedb151076d2fddd63abd376765257c6b9c0d8581c313d8bcf85333f6",
+    "command": "PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -W error rederive_descriptive_records.py",
+    "working_directory": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/paid_merit_postoutcome_analysis_review",
+    "exec_session": 11799,
+    "initial_tool_chunk_id": "53328a",
+    "terminal_tool_chunk_id": "a8ce4a",
+    "exit_code": 0,
+    "log": "descriptive_review_01.log",
+    "log_sha256": "eecd9648749fba6dbe0fe582c813675ab498cf109895db476a34276ea37c5934",
+    "report": "descriptive_review_01.json",
+    "report_sha256": "8cc51e704629d05568bd30d84cd600e77e30581e7cc63cce1e098913ee76eef2",
+    "result": "PASS_DESCRIPTIVE_RECORD_REVIEW",
+    "checks": 1734,
+    "numeric_comparisons": 250,
+    "failures": 0,
+    "maximum_absolute_numeric_difference": 2.1316282072803006e-14,
+    "numeric_tolerance": {"relative": 5e-11, "absolute": 2e-13},
+    "lint": "Repository-config Ruff passed on final source; tool chunk5246b7."
+  },
+  "independent_arithmetic": {
+    "source_of_reconstruction_values": "Direct objective-audit records: anytime internal_budget_3 and prepared_initial. The baseline plotting/CSV-generation helper was neither imported nor run.",
+    "coverage": "All8cases x5methods x3repetitions. All40 case-method medians for both physical velocity and squared-slowness error and their ratios to initial error independently matched the CSV.",
+    "complete_denominators": "Exactly360 unique case/method/repetition/mode combinations; all15method-mode groups contain24runs; every case/method/mode has3repetitions.",
+    "velocity_improved_worse_cases": {
+      "exact_lu_projected": [1,7],
+      "exact_lu_lbfgsb": [3,5],
+      "same_M_gmres_projected": [1,7],
+      "fixed_sweeps_uncertified": [1,7],
+      "fixed_sweeps_certified": [1,7]
+    },
+    "squared_slowness_improved_worse_cases_every_method": [3,5],
+    "certified_lower_velocity_error_than_lbfgsb_cases": [0,1,2,4,5],
+    "every_arm_worse_than_initial_on_all_those_five_cases": true,
+    "target_source": "Raw terminal status plus240 retained core trajectories. Eligibility independently recomputed using actual return wall<=8s, positive initial objective, returned objective target, objective_target stop, complete costs and final study eligibility; checked against independent saved-model audit eligibility.",
+    "returned_targets_half_quarter_out_of24_each": {
+      "exact_lu_projected": [21,9],
+      "exact_lu_lbfgsb": [24,24],
+      "same_M_gmres_projected": [17,9],
+      "fixed_sweeps_uncertified": [21,9],
+      "fixed_sweeps_certified": [21,9]
+    },
+    "total_eligible_target_events": 164,
+    "total_target_runs": 240,
+    "late_target_run_excluded": 167,
+    "engine_status_counts": {"budget_exhausted":190,"solver_terminated":5,"objective_target":165},
+    "conditional_half_target_medians_and_counts_match_document": true,
+    "late_or_unreached_events_keep_null_times_no8second_success_imputation": true,
+    "outer_and_archived_baseline_csv_summary_caption_source_match": true
+  },
+  "separate_AI_scope_review": {
+    "reviewer": "/root/realistic_physics_gap/measurement_scope_review",
+    "finding": "No material overclaim in assigned dimension/internal-vs-returned/post-outcome scope.",
+    "local_primary_evidence": [
+      "results/provisional_software_benchmark/matched_cost_pilot/protocol.json:17-24 shape49x49;33-40 sixsources;41-62 twentyreceivers;63-70 fourfrequencies/24blocks",
+      "results/provisional_software_benchmark/matched_cost_pilot/verification.py:181-197 real reciprocal-square model and20complex receiver values per source-frequency",
+      "src/wavecert/physics/helmholtz.py:151-153 product(shape) and181-186 real model validation",
+      "results/paid_merit_engineering_benchmark/fixture/run_engineering_benchmark.py:173-200 actual-return target gate and separate internal timing"
+    ],
+    "dimension_derivation": "49*49=2401 real model parameters;6*20*4=480 complex observations; stacking real and imaginary parts gives at most960 real Jacobian rows/rank, potentially fewer through dependencies.",
+    "qualification": "A rank upper bound is not a numerical rank estimate, proof of a specific drift mechanism, optimal regularizer or scientific remedy. Document expressly retains those limits."
+  },
+  "overclaim_review": [
+    "The main document correctly says this comparison does not establish a useful certificate advantage; it does not claim the method is universally useless.",
+    "Internal8second diagnostics are explicitly separated from fully returned target evidence. Conditional medians are labeled as using differing success subsets and not ranking unconditional speed.",
+    "The all40 initialization comparison is explicitly additive POST-OUTCOME analysis; it is not called a preregistered endpoint and does not replace the frozen original figures/study.",
+    "Data-fit decrease is separated from physical-velocity/squared-slowness recovery, without selecting cases by truth metrics or claiming a causal diagnosis.",
+    "Reused slices and repetitions are not represented as independent sites; one additional BP ancestor/acquisition is not represented as method validation.",
+    "Saved-model and receipt audit coverage is accurately limited; unavailable raw intermediate gradient/direction vectors are not claimed as reconstructed. Ordinary floating-point checks are not formal enclosures."
+  ],
+  "mutation_and_replay_scope": "No repository/raw artifact mutation, optimizer rerun, PDE solve, model construction, plot generation or acquisition. Reviewed input hashes and review source remained unchanged. Mechanical check count is not a sample-size or independence claim.",
+  "material_findings_requiring_document_change": []
+}

@@ -7,6 +7,21 @@ and scientific defense with accurate assistance disclosure. **None is declared
 complete merely because code/tests pass.** The previous software-strengthening
 pass is a foundation, not completion of this scientific goal.
 
+The [360-run paid-merit engineering comparison](paid_merit_engineering_benchmark.md)
+has completed with two passed independent post-audits. Its strong exact L-BFGS-B
+baseline returns both objective targets in 48/48 attempts, versus 30/48 for the
+certified arm. An additive post-outcome baseline diagnostic shows certified
+internal 8-second velocity error worse than initialization on 7/8 cases.
+This establishes a limitation, not the requested positive practical result.
+No neural/POD inference occurs in this classical cached-field comparison.
+The [fixed BP2004 acquisition](../results/bp2004_acquisition/README.md) is also
+complete and audited; it adds one synthetic ancestor, with no method evaluation.
+The [eight initial-state raw witnesses](../results/paid_merit_initial_direction_verification/README.md)
+also pass independent gradient/direction/field arithmetic replay, with all eight
+bounds covering literally and no false certifications. This advances a specific
+numerical-reproduction subrequirement, not all-trajectory replay or the four
+scientific goals as a whole.
+
 The new [seven-case Devito boundary diagnostic](devito_boundary_verification.md)
 has executed and been audited. In its fixed homogeneous fixture, 20/40 damping
 cells still give 56.9%/24.9% full-record relative receiver-trace differences
@@ -28,14 +43,16 @@ require student ownership of the final scientific question, hypothesis, design
 and interpretation. The AI-authored software benchmarks below are provisional
 development tools, not the student's final research design or a completed JSHS
 research contribution. The student's own scientific choices/contribution account
-has been requested and is still pending. Software support continues; no new
-project-data timing or trajectory study has been executed in this integration.
+has been requested and is still pending. Software support continues. The actual
+engineering trajectories are explicitly AI-authored development work; no final
+student design, interpretation or ownership is inferred. The student's own
+explanation of the new fit-versus-recovery result has also been requested.
 
 ## Evidence and completion requirements
 
 | Requirement | Current evidence | What would prove completion |
 |---|---|---|
-| Matched total computational cost | No inversion/time-to-target advantage yet. The new fixed development refinement probe motivates residual repair but contains no timings. | Frozen, fully paid trajectories at matched wall budgets/targets, adequate parent-level replication, exact accepted-forward/factor reuse, strong L-BFGS-B and same-preconditioner converged GMRES controls. Positive reconstruction/time benefit must be measured, not assumed. |
+| Matched total computational cost | Completed 360-run development comparison: certified arm misses 18/48 targets while exact L-BFGS-B meets 48/48. Internal reconstruction is worse than initialization on 7/8 certified case medians. | Positive useful recovery/time evidence at fully paid cost under a student-owned scientific objective and independently registered confirmation; data fit, model recovery, initialization and all failures remain separate. |
 | Realistic physics and independent geology | Existing small discrete operator; separate exact Devito baseline. New ancestry audit identifies common SEAM ancestry and zero untouched released IDs. | Backend-specific physics/gradient/convergence checks and declared independent original-model or generator-draw roles. Several named benchmark ancestors are distinct stress environments; crops never become independent sites. |
 | Specific contribution | Close primary methods already cover directional certification, spectral/POD estimation and Schur/deflation iteration. | Precisely delimited derivation/implementation with primary-method comparisons and falsifiable practical evidence. A new application or sharper computable implementation must be distinguished from a new general theorem. |
 | Reproduction, interpretation and defense | Separate AI audits and independent synthetic linear-algebra/FD controls; assistance documented. Student contribution/understanding is unverified. | A separate reproducible numerical implementation/environment, independently checked decisive results, honest interpretation and the student's own demonstrated understanding/writing. AI review cannot substitute for human/student ownership. |
@@ -79,25 +96,27 @@ all four Linux CI jobs passed at source commit `3e82ed2`. The original 156
 production files remain byte-identical. These
 are software verification results, not a project-data speedup or new theorem.
 
-## Next controlled sequence
+## Next scientific decisions and technical work
 
-1. Complete source review/tests for the paid-merit, trajectory, norm-free solver
-   and cached-field certificate interfaces; preserve all 156 previous production
-   files byte-for-byte by adding new implementations.
-2. Freeze a development protocol before actual timing/trajectory outcomes. Use
-   common paid true-merit acceptance and all setup/cache/rejected/fallback costs.
-   Include the uncertified **same proposal** control and strong exact optimizer.
-   Count only states accepted by the budget timestamp; retain overshoot work.
-3. Register new data source/ancestor/crop/role acquisition before payload use.
-   BP2004 is one feasible new numerical ancestor; its three fixed crops remain
-   one cluster. Original terms, source geometry and every modification stay with
-   the data. Do not tune on the named future stress outcome.
-4. Use development outcomes to freeze method/rank/iteration/budget settings,
-   then collect new independent original-model/generator streams for confirmation.
-   Keep named source-family stresses descriptive and conditional synthetic-draw
-   uncertainty separate from real-site claims.
-5. Independently reproduce decisive results and record what the student can
-   explain and contributed. Keep the actual submission student-authored.
+1. Preserve the completed comparison and initialization diagnostic. The student
+   must interpret why data fit and model error diverge and choose their own
+   scientific question and definition of useful recovery. Information content,
+   prior/parameterization, regularization and stopping are possible topics to
+   investigate; this document does not choose a final hypothesis or full design.
+2. Keep exact cached-merit L-BFGS-B and the identical uncertified proposal as
+   strong controls. Do not claim a certificate gain from weaker baselines,
+   slower drift, conditional successful-only timings or omitted initialization.
+3. Preserve the old source/operator evidence. Any new physical boundary/backend
+   needs explicit source/sample/adjoint/refinement checks before a fidelity or
+   certificate-transfer claim. The measured Devito truncation limit remains.
+4. BP2004's fixed three crops remain one ancestor, with original terms and all
+   transformations retained. No BP method outcome exists. Future source roles
+   and confirmation settings must be determined before their outcomes; crops
+   cannot become independent sites by renaming them.
+5. Reproduce raw initial-state directions as a narrowly labeled software check,
+   independently reproduce decisive scientific results, obtain substantive human
+   criticism and record the student's actual contributions/understanding. Keep
+   the real submission student-authored and all assistance disclosed.
 
 Primary comparison/duality notes are archived in `results/primary_research_followup`.
 The broader descent-certificate idea already appears in

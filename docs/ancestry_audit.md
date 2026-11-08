@@ -172,7 +172,15 @@ For the 128-by-256 crop the floors are 35, 64 and 154. These are eigenvalue
 counts, not model evaluations or sufficient certification conditions. A fixed
 coarse96 method cannot be advertised as scaling unchanged to the full domain.
 
-## Additional original sources: access and terms checked, no downloads
+## Historical additional-source preflight, before acquisition
+
+The table and registration details below retain the pre-acquisition state.
+Since that snapshot, the fixed [BP2004 acquisition](../results/bp2004_acquisition/README.md)
+has completed: three native crops and three stride views, one ancestor, original
+terms/source headers retained and 84 retained-artifact checks passed. Actual
+full-stream SHA256 values are now recorded in its receipt. There is no BP PDE or
+method evaluation, and no additional-site inference. The earlier “no payload”
+statement below describes the historical preflight, not the current acquisition.
 
 | Candidate | Provenance/rights evidence | Role and bounded route |
 | --- | --- | --- |

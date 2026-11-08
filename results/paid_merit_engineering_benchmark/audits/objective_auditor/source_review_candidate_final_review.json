@@ -1,0 +1,35 @@
+{
+  "result": "CLEAR_SOURCE_ONLY_FOR_POST_TERMINAL_VALIDATION",
+  "reviewer": "candidate_final_review",
+  "script_sha256": "213182c05608eaf506ca9b10e5de8070097444c45747db3a36e12ed09932e012",
+  "readme_sha256": "4e914aff457d48cb0abc2b4db42ad640166bb7427016c6056bd2b7451290ba2a",
+  "reference_source": "src/wavecert/physics/helmholtz.py; archived candidate verification.py; fixed protocol.json; exact_merit.py",
+  "reference_helmholtz_sha256": "caf51b58da24ed6d3633bda4eaaab804714f5c7932d9d5f343644763bc158131",
+  "activities": {
+    "source_text_review": true,
+    "source_file_sha256_read": true,
+    "import_parse_or_execution": false,
+    "tests": false,
+    "project_arrays_loaded": false,
+    "current_run_artifacts_or_outcomes_read": false,
+    "repository_edits": false
+  },
+  "mathematical_checks": [
+    "Direct COO graph assembly gives the identical five-point positive -Laplacian: diagonal4/h^2 and in-domain neighbor -1/h^2, including unchanged boundary diagonal for exterior Dirichlet zeros. No row-wrap edges.",
+    "The mass/damping signs match A=K-omega^2 diag(m)+i omega diag(d), omega=2pi f. The distance-to-nearest-edge ramp2 max(0,(6-distance)/6)^2 equals the fixed repository clip ramp because distance is nonnegative.",
+    "Each of six distinct source columns injects1/h^2 exactly once. Ordered twenty receivers are sampled for every column/frequency. Phi=0.5 sum of complex residual magnitude squares over all sources/slots/four frequencies, without averaging or source rescaling.",
+    "Raw24x24 float32 values are squared slowness. Explicit velocity interpolation on edge-padded26x26 at half-index nodes0.5..24.5 equals the frozen49-grid RegularGridInterpolator coordinates j*25/50. Truth is reciprocal-square of interpolated velocity. Generic SciPy sigma3.2 reflect smoothing reconstructs the specified initial velocity, then reciprocal-square.",
+    "C-order mapping old(z,x)->(2z+1,2x+1) on49 preserves the source/receiver integer geometry. spacing0.025km and squared slowness s^2/km^2 retain physical velocity km/s; both relative L2 metrics are dimensionless, not MSE or a velocity/squared-slowness substitution.",
+    "Truth observations are independently generated from direct sparse matrices and new SuperLU solves, rather than read from a receipt/oracle/helper. The shared NumPy/SciPy/SuperLU dependency is disclosed, so this is an independent equation implementation rather than an independent algebra library.",
+    "Saved-model deduplication is scoped to case_index plus canonical float64 model hash; every original slot occurrence remains in the report. Initial/final/four internal states retain separate eligibility from their diagnostic numerical values.",
+    "Terminal rowcomplete plus final-study flag gates credited rows; target additionally needs finite positive initialPhi, final ratio, complete costs, objective_target status and actual return<=8. Internal paid checkpoints remain internal-state diagnostics.",
+    "Script SHA and terminal status checks precede numerical imports/fixture loads. It permits an explicitly terminal failed/interrupted ledger as uncredited diagnostic work, while preserving all360 scheduled slots; the separate integrity auditor requires complete_engineering_benchmark.",
+    "All listed agreement and true-linear-residual tolerances are source constants fixed before output inspection. Their passing cannot be inferred from static review. No intermediate direction/field or certificate derivative is reconstructed."
+  ],
+  "material_source_blockers": [],
+  "post_terminal_requirements": [
+    "Parent must independently confirm the live process has terminated, authorize execution, and validate this currently unexecuted script before treating any numerical output as audited.",
+    "Pass a fresh OUTER output path outside the repository and benchmark run directory; the reviewed CLI only checks nonexistence, so this location requirement is a caller responsibility.",
+    "Keep the frozen tolerances and all failures. A source-only CLEAR is not a test pass, a new physical validation, raw bound replay, performance result, independent-site inference, student design or ownership."
+  ]
+}

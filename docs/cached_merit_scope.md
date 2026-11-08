@@ -130,14 +130,13 @@ needs the same strict paid-reference objective criterion for credited endpoints.
 Fixed-sweep and certificate-stopped comparisons must report failures and full
 costs rather than exclude unavailable cases.
 
-The staged synthetic checks run from this directory with
+The integrated synthetic checks run from the repository root with
 
 ```sh
-PYTHONPATH=.:independent_gmres:../wavecert-fwi/src \
+PYTHONPATH=src \
 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
-python -m pytest test_cached_merit_certificate.py -q -W error
-python -m ruff check --config ../wavecert-fwi/pyproject.toml \
-  cached_merit_certificate.py test_cached_merit_certificate.py
+python -m pytest tests/test_cached_merit_certificate.py -q -W error
+python -m ruff check src tests scripts
 ```
 
 They include independent LU/finite differences, substantial deliberately

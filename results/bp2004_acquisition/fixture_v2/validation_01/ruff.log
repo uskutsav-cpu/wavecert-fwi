@@ -1,0 +1,41 @@
+I001 [*] Import block is un-sorted or un-formatted
+  --> test_collect_bp2004.py:2:1
+   |
+ 1 |   """Synthetic bytes/mock HTTP only. No BP velocity/network/PDE input is used."""
+ 2 | / import base64
+ 3 | | import gzip
+ 4 | | import io
+ 5 | | import json
+ 6 | | import struct
+ 7 | | import zlib
+ 8 | | from pathlib import Path
+ 9 | |
+10 | | import collect_bp2004 as module
+11 | | import numpy as np
+12 | | import pytest
+13 | | from collect_bp2004 import (
+14 | |     AcquisitionError,
+15 | |     BoundedGzipStream,
+16 | |     array_bytes,
+17 | |     contained_path,
+18 | |     decode_samples,
+19 | |     fetch_bounded,
+20 | |     load_protocol,
+21 | |     parse_velocity_gzip,
+22 | |     resolve_windows,
+23 | |     sha256,
+24 | | )
+   | |_^
+help: Organize imports
+   |
+9  |
+   - import collect_bp2004 as module
+10 | import numpy as np
+11 | import pytest
+12 +
+13 + import collect_bp2004 as module
+14 | from collect_bp2004 import (
+   |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

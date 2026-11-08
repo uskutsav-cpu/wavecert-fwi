@@ -1,0 +1,46 @@
+{
+  "status": "CLEAR_source_only_for_frozen_schema_pending_post_terminal_execution",
+  "recorded_utc": "2026-11-08T04:51:15.358767+00:00",
+  "script_path": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/summarize_paid_merit.py",
+  "script_sha256": "070974996a9c896b226cc361398d298ceb1b3852a1582e0e2783e9a4ee7d327a",
+  "executed_summary": false,
+  "tests_run": false,
+  "benchmark_outcome_artifacts_read": false,
+  "partial_outcomes_analyzed": false,
+  "main_or_summary_source_modified_by_reviewer": false,
+  "reviewed_contracts": [
+    {
+      "requirement": "Terminal360 schedule and identity completeness",
+      "source_lines": "38-70",
+      "finding": "Rejects partial/interrupted status, verifies receipt/status equality and every recorded artifact hash, all360Cartesian(mode,method,case,rep) keys, sequential uniqueindices, saved stable schedule fields and frozen case identity. Planned denominators remain complete."
+    },
+    {
+      "requirement": "Actual API-return events versus internal states",
+      "source_lines": "83-133",
+      "finding": "Target eligibility requires both terminal study usability and runtime event eligibility. Eligible time must be finite, equal actual API-return wall and in[0,maxbudget], with non-null credited quality. Anytime rows remain explicitly returned_API_evidence=false, and unpaid points retain null quality/objective ratios."
+    },
+    {
+      "requirement": "Failure reasons and missing events",
+      "source_lines": "97-107,128-133",
+      "finding": "Study-invalid failures override the statistical reason while preserving runtime_reason separately. Missing/ineligible events have null target times; actual observation/return seconds remain distinct. No8second event imputation."
+    },
+    {
+      "requirement": "Conditional medians and per-case3repetition summaries",
+      "source_lines": "137-153",
+      "finding": "Pooled medians are explicitly eligible-only with planned/success/failure denominators. Per-case observed medians are accompanied by eligible counts; all_three and median_all_three require planned==observed==3. Zero eligible observations produce median null."
+    },
+    {
+      "requirement": "Scope and dependence",
+      "source_lines": "154-168",
+      "finding": "All8 reused cases and3 repetitions remain descriptive; SEAM shared ancestry explicit; noIIDconfidence interval,pvalue,unconditionalspeedup,winnerpromotion,studentownership or scientific-goal completion claimed."
+    }
+  ],
+  "initial_adverse_review_resolved_by_parent": [
+    "Replaced modecounts-only schedule check with uniqueCartesian/saved-plan/identity validation.",
+    "Corrected study-ineligible reason instead of labeling a failed post-integrity row target_returned_in_budget.",
+    "Added explicit finite/end-to-end budget equality and non-null quality gate before eligible medians."
+  ],
+  "remaining_material_source_blockers": [],
+  "verification_limit": "Source-only review against frozen driver/helper schemas, not an arithmetic replay or result verification. Summary must run only after authoritative process terminal success plus complete receipt. No new thresholds or data selection were proposed.",
+  "next_state": "Wait for parent terminal authorization; no execution, tests or benchmark-outcome reads while live."
+}
