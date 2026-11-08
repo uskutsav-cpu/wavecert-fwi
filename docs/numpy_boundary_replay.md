@@ -104,9 +104,22 @@ python results/numpy_boundary_replay/fixture/replay_numpy.py \
 
 The new repository test reproduces all seven faithful traces before loading
 targets, checks the frozen tolerances, and prints each result into CI logs.
-It passed locally with warnings as errors; cross-platform CI results are recorded
-separately when available. The existing CI workflow and original 156 production
-files remain unchanged.
+It passed locally with warnings as errors. All four Linux CI jobs at `f8ecf74`
+then passed, with the seven numerical comparisons printed into each job log:
+
+| Python | NumPy | Maximum trace relative L2 | Maximum source relative L2 |
+|---|---|---:|---:|
+| 3.10.22 | 2.2.6 | 3.411e−14 | 1.015e−17 |
+| 3.11.18 | 2.4.6 | 3.423e−14 | 1.470e−17 |
+| 3.12.16 | 2.5.4 | 3.423e−14 | 1.470e−17 |
+
+The learned/data job separately repeated Python 3.12 with the same reported
+values. All exact time checks passed. Source samples were not bitwise identical
+to the ARM reference in Linux, while remaining well inside the **predeclared**
+1e−14 excitation tolerance. Full case reports and job identities are archived
+in `ci_reports_f8ecf74.json` and [CI run 42445601820](https://github.com/uskutsav-cpu/wavecert-fwi/actions/runs/42445601820).
+These are repeated known numerical fixtures, not additional geological samples.
+The existing CI workflow and original 156 production files remain unchanged.
 
 This verifies the fixed discrete implementation and its conditional trace
 measurements. Matched-cost reconstruction benefit, broader physical fidelity,

@@ -5,6 +5,9 @@ All fourteen fixed local replays completed. Generated-literal agreement is 7/7
 the unchanged 1e−9 threshold. All mismatches are retained. Source and time samples
 match exactly in this local run. The original substantial boundary errors are
 reproduced. See [scope and reproduction](../../docs/numpy_boundary_replay.md).
+The portable seven-trace test also passed in all four Linux CI jobs at
+`f8ecf74`, covering three Python versions and three NumPy versions. Every
+case's numerical report is in `ci_reports_f8ecf74.json`.
 
 - `run_01/` contains every actual raw NumPy trace/profile, frozen runner/protocol,
   source ledger, agreement record and completion receipt.

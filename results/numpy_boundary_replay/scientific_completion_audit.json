@@ -35,12 +35,13 @@
     {
       "requirement": "Independent reproduction, personal scientific interpretation/defense and accurate assistance disclosure",
       "status": "partly verified computationally; personal scientific interpretation/defense remains incomplete",
-      "evidence": "Reference-informed separate NumPy implementation reproduced all7 faithful Devito traces within3.42e-14 locally.14 variants retained, rational0/7at1e-9; an independent raw audit passed. Student contribution/understanding account remains pending; cross-environment CI not yet launched.",
+      "evidence": "Separate reference-informed NumPy propagation reproduced all7 faithful traces within3.42e-14 locally; all4 LinuxCI jobs independently repeated7cases under3Python/3NumPyversions withmax3.43e-14.14localvariants retained, rational0/7atpredeclared1e-9. Rawpost-auditpassed. Student personal contribution/interpretation/defense remains unverified. These knownfixtures do not reproduce a decisive matched-cost inversion result.",
       "sources": [
         "docs/numpy_boundary_replay.md",
         "results/numpy_boundary_replay/run_01/complete_receipt.json",
         "results/numpy_boundary_replay/review/numpy_boundary_post_audit.json",
-        "docs/assistance_record.md"
+        "docs/assistance_record.md",
+        "results/numpy_boundary_replay/ci_reports_f8ecf74.json"
       ]
     }
   ],

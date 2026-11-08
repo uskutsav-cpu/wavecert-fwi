@@ -19,6 +19,9 @@ faithful traces within 3.42e−14 relative L2 error and retains all seven failed
 rational-coefficient comparisons at the fixed 1e−9 criterion. This advances
 numerical reproduction while student interpretation and the other scientific
 requirements remain unproved.
+The same seven faithful traces now also pass on Linux in Python 3.10/3.11/3.12
+and NumPy 2.2.6/2.4.6/2.5.4, with maximum relative L2 error 3.43e−14 across
+four CI jobs. These repeat the known fixtures; they do not add geological samples.
 
 The [current JSHS rules, Section IX](https://www.jshs.org/wp-content/uploads/2026/08/JSHS-Core-Rules-of-Competition-2026-27.pdf)
 require student ownership of the final scientific question, hypothesis, design
