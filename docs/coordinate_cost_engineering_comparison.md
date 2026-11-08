@@ -96,7 +96,10 @@ shared bootstrap. Its protocol, algorithms, data, thresholds and budgets are
 byte-identical. Eleven pre-run controls, including the real offline-audit API
 on manufactured data, pass. A new isolated-process CI regression protects this
 integration boundary and checks known manufactured errors. It passes locally
-with warnings as errors; its remote CI is pending publication.
+with warnings as errors and in all four jobs at source/test commit `8ef6c61`
+in [CI run 42459913526](https://github.com/uskutsav-cpu/wavecert-fwi/actions/runs/42459913526).
+Actual per-job numerical reports are archived. Those repeat known fixtures and
+manufactured controls; they do not rerun this 48-run performance study.
 
 These are already inspected development slices; repetitions and SEAM provider
 IDs do not create independent ancestors. No BP data, realistic heterogeneous

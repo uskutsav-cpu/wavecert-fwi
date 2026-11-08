@@ -36,6 +36,9 @@ scientific confirmation, a new method, a certificate win or a student submission
 - `figures/` contains the visually checked all-eight-case figure, all 48 rows,
   case summaries, plotting source and exact execution/format-history receipts.
   Layout revisions change tick labels only; their CSV bytes are unchanged.
+- `cross_platform_CI_reports_8ef6c61.json` retains actual numerical output from
+  all four passing source/test CI jobs, including the manufactured imported-API
+  regression. This repeats known controls and does not rerun the 48-run study.
 
 The original 161-file production source remains `9f30afa9`. The standard
 velocity wrapper is `61dc9b2c`, imported sparse auditor `807f4f2f`, V2 driver
