@@ -7,6 +7,14 @@ and scientific defense with accurate assistance disclosure. **None is declared
 complete merely because code/tests pass.** The previous software-strengthening
 pass is a foundation, not completion of this scientific goal.
 
+The [current JSHS rules, Section IX](https://www.jshs.org/wp-content/uploads/2026/08/JSHS-Core-Rules-of-Competition-2026-27.pdf)
+require student ownership of the final scientific question, hypothesis, design
+and interpretation. The AI-authored software benchmarks below are provisional
+development tools, not the student's final research design or a completed JSHS
+research contribution. The student's own scientific choices/contribution account
+has been requested and is still pending. Software support continues; no new
+project-data timing or trajectory study has been executed in this integration.
+
 ## Evidence and completion requirements
 
 | Requirement | Current evidence | What would prove completion |
@@ -36,19 +44,23 @@ not a newly untouched confirmation cohort.
   cases, immutable outputs, numerical failures and zero-proposal abstention.
   This is no claim of novel repair theory or project-data performance for the
   new implementation before its own frozen study.
-- A stronger paid-merit oracle is being integrated: retain accepted exact
+- A stronger paid-merit oracle is integrated: retain accepted exact
   forward fields/receiver maps and LU factors across rejected trials; charge
   only the genuinely additional exact gradient work. The old optimizer's
   repeated forward solves cannot be the strongest baseline.
-- A norm-free coarse/DST right-GMRES reference is being integrated with actual
+- A norm-free coarse/DST right-GMRES reference is integrated with actual
   true-residual stopping, explicit nonconvergence, warm starts, forward/adjoint
   checks and actual RHS/FFT/Arnoldi work. It avoids unused certificate SVDs.
   Tolerance-converged fields are numerical approximations, not exact arithmetic.
-- A cached-merit-conditioned certificate is in staged development. Paid U or
+- A cached-merit-conditioned certificate is integrated. Paid U or
   receiver-map fields can reduce missing gradient work, but their measured
   residuals must remain in the bound. A numerical solve is never set exact by
   fiat. Both forward and receiver-coded routes, duplicate receiver weights and
   residual coherence must be checked against independent fine gradients.
+
+The four new modules passed 88 focused synthetic tests and the complete
+560-test suite. The original 156 production files remain byte-identical. These
+are software verification results, not a project-data speedup or new theorem.
 
 ## Next controlled sequence
 

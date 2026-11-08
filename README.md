@@ -7,7 +7,7 @@ that send an inversion in the wrong direction. WaveCert investigates when a
 post-training physics check can justify a neural direction, and when exact wave
 physics should replace unreliable source/frequency contributions.
 
-This is a **research prototype**. Its verified certificate applies to a discrete
+This is a **research prototype**. Its tested certificate applies to a discrete
 2-D Helmholtz system. Field-scale acceleration, time-domain certification, and
 reliability on measured seismic data remain unestablished.
 
@@ -51,6 +51,10 @@ original model across research roles; model-ID separation is not independent
 ancestry/site separation. Historical outcomes remain, with narrower interpretation.
 See [continuing research](docs/continuing_research.md) for the full active goal,
 new controlled development evidence and the gates before any success claim.
+The new paid-merit, cached-field bound, norm-free GMRES and trajectory components
+pass the full 560-test suite. No new matched-cost trajectory result is claimed.
+Student scientific ownership and final design decisions remain open; see the
+[assistance record](docs/assistance_record.md).
 
 ## Latest controlled comparison
 
@@ -91,8 +95,9 @@ completed software work from open scientific outcomes.
 - Optional true-objective decrease and projected Armijo checks count their
   online forward/gradient work. Surrogate-merit acceptance alone can increase
   the true objective.
-- New geological data separate training, model-selection, calibration, and test
-  parents. The historical final split remains archived with an overlap audit.
+- The newer split separates provider model IDs across research roles, but its
+  SEAM IDs share one original ancestor across roles. See the ancestry audit;
+  model-ID disjointness does not establish site or original-model independence.
 - The fresh parent-held-out FNO still has substantial error. Negative results
   are retained rather than described as successful production validation.
 - Training/validation diagnostics separate receiver-residual error from neural

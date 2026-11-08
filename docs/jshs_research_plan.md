@@ -11,6 +11,15 @@ scores, national rankings, or probabilities of winning.
 assessment. The repository is substantially more defensible. A national-winning
 result remains unestablished; polishing the repository alone cannot create one.
 
+This historical score predates the [ancestry correction](ancestry_audit.md) and
+the continuing scientific phase. It must not be read as evidence that shared
+SEAM subregions are independent original models, that the method improves
+matched-cost inversion, or that student ownership has been established. The
+[continuing research record](continuing_research.md) tracks those open issues.
+Its implementation benchmarks are provisional AI-authored development tools;
+the final scientific decisions must originate with the student under the
+[current JSHS rules](https://www.jshs.org/wp-content/uploads/2026/08/JSHS-Core-Rules-of-Competition-2026-27.pdf).
+
 | Area | Judgment | Evidence / remaining issue |
 |---|---:|---|
 | Problem and motivation | 9/10 | Wrong surrogate derivatives can damage inverse problems; useful and clearly testable |
@@ -69,12 +78,18 @@ retained as meaningful negative controls. Neural acceleration remains a hypothes
 | 5 | Extend the operator scope deliberately | Derive and test the stability/adjoint result for the actual intended boundary treatment/backend; retain explicit unavailability and compare against an independently checked exact solver |
 | 6 | Establish student ownership and independent reproduction | Student independently reproduces a decisive result, explains the assumptions and failed controls, receives substantive human criticism, and writes their own conclusions/submission with actual assistance disclosed |
 
-Do priorities 1–3 before another broad neural hyperparameter search. If the
+The historical technical recommendation was to investigate priorities 1–3 before
+another broad neural hyperparameter search. If the
 certificate loses to an optimized exact method at every relevant tested scale,
 report that boundary and revise the research question. A strong negative
 computational study can still be valuable; it cannot support an acceleration claim.
 
-### A concrete cost experiment to design next
+### Historical AI-developed cost-study alternative
+
+This and the next alternative document AI-generated technical planning for
+critique. They are not a student's final experimental design. The student-origin
+question, prediction, comparison and contribution account remain pending;
+subsequent approval or paraphrasing does not establish original ownership.
 
 Separate mesh refinement on a fixed physical domain from increasing domain size
 or physical frequency. A fixed coarse rank can remain useful under refinement
@@ -92,7 +107,7 @@ to one is a diagnostic, not this endpoint. If a physical corrected proposal is
 not the derivative of the reduced objective, do not use a line search that assumes
 that identity.
 
-### A concrete generalization experiment to design next
+### Historical AI-developed generalization-study alternative
 
 Choose independent parent models and geological shifts before evaluating them.
 Separate model selection, statistical calibration and final confirmation roles.

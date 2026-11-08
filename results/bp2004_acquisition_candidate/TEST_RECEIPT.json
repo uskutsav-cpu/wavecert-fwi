@@ -1,0 +1,47 @@
+{
+  "files": {
+    "README.md": {
+      "bytes": 2617,
+      "sha256": "c39d965584a1c5af21548b634d62a58adc497b8c4b761ed71559b40548b51490"
+    },
+    "collect_bp2004.py": {
+      "bytes": 23390,
+      "sha256": "f1f126d34ce83b85f95459ca44507357491e2b3c3a5f41caeccbe63b878cc41b"
+    },
+    "documentation_manifest.json": {
+      "bytes": 336,
+      "sha256": "c98ba723da343ad75e36ba0c4549b666d7c2143b18521bacf516ca605d00b05d"
+    },
+    "original_BP2004_READMES.pdf": {
+      "bytes": 24615,
+      "sha256": "e29b003fc2161c44d2b9f04448195e58ebe6f476a195b31c3be77440adb60e24"
+    },
+    "protocol.json": {
+      "bytes": 5144,
+      "sha256": "a84ce64dcac7f93f035007daf313cb2ab7bde713800d10d9d37d812f12c836f4"
+    },
+    "test_collect_bp2004.py": {
+      "bytes": 11973,
+      "sha256": "245555dddb95eab9e0712603ac99cf8fbb03c62562374f495e6e061dc96fe44f"
+    }
+  },
+  "only_documentation_downloaded": true,
+  "protocol_written_before_velocity_inspection": true,
+  "recorded_utc": "2026-11-08T01:43:39.097880+00:00",
+  "runtime": {
+    "numpy": "2.4.3",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]"
+  },
+  "status": "ready_for_root_review_no_velocity_fetch",
+  "student_preregistration_claim": false,
+  "tests": {
+    "command": "python -m pytest -q -s -W error -p no:cacheprovider --basetemp TASK_OWNED_TEMP test_collect_bp2004.py",
+    "network_requests_in_tests": 0,
+    "result": "passed",
+    "ruff": "passed",
+    "synthetic_mock_http_cases": 35,
+    "warnings": "error"
+  },
+  "velocity_payload_downloaded": false
+}

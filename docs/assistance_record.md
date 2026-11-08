@@ -29,11 +29,20 @@ or determine the student's personal contribution. No such contribution or
 approval should be inferred from repository activity.
 
 Before submission, the student should independently explain the residual and
-adjoint derivations, review the final research question/design, reproduce and
+adjoint derivations, originate the final research question/design, reproduce and
 analyze the results, assess novelty against primary sources, draw their own
 conclusions, and author the submitted content. Review the
 [2026–2027 JSHS rules](https://www.jshs.org/wp-content/uploads/2026/08/JSHS-Core-Rules-of-Competition-2026-27.pdf),
 especially the AI and outside-assistance sections.
+
+The current rules' Section IX permits disclosed software-development support,
+but prohibits AI from generating the final research question or hypothesis,
+creating the complete experimental design, or developing the entire engineering
+solution. Students must perform their own analysis, interpretation and scientific
+decisions. Disclosure or approval of an AI-authored plan alone does not establish
+student ownership. The provisional software benchmarks here are development
+records; they are not a student's final competition design. The student's actual
+contributions and decisions remain unverified and have been requested directly.
 
 ## Additional assistance in the controlled strengthening phase
 
@@ -62,3 +71,13 @@ are preserved. No final competition submission has been authored here.
 The student must determine which contributions they actually made, independently
 verify and understand assisted work, and disclose the actual assistance. A
 repository score cannot assess their ownership or oral defense.
+
+## Continuing software support
+
+Codex additionally audited shared SEAM ancestry, preserved the fixed refinement
+probe and negative results, implemented the pure coarse repair direction, and
+integrated the paid-merit cache, norm-free GMRES reference, paid trajectory engine
+and cached-merit derivative bound. Separate AI workers reviewed mathematics and
+code. Codex also prepared and tested a bounded BP2004 acquisition candidate;
+no BP velocity payload had been fetched at this record's update. New software
+benchmark configurations remain explicitly provisional and AI-authored.
