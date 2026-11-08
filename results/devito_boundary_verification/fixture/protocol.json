@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "role": "AI-authored fixed SOFTWARE VERIFICATION fixture; not student final research design or competition proof",
+  "created_utc": "2026-11-08T02:36:43.950571+00:00",
+  "student_final_research_design": false,
+  "research_goal2_completed_by_this_check": false,
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "devito_version": "4.8.23",
+  "installed_example_sha256": {
+    "model.py": "22faa9eafcb2ef7012ce5bbcd977418b5a8515c3f4f9d1c42fcb105f7854ebd4",
+    "operators.py": "1ab37a6f2e95b7ab7fdec58d141290880127da9705dfe8deb6045fc0590d6336",
+    "wavesolver.py": "9e8cca80ac1fd1bb66abe3133a09ad0f2d23b2b55aba0e0c1003362c458b929e",
+    "source.py": "f8c4bba77e982490a25e5924e654f482afd21f8f2ebae3274e87eb1b45c147ac",
+    "utils.py": "27532feafcaf32f760ffff0b7978cdfa4ee1f7920a9d3367d4d05016657eff19"
+  },
+  "common": {
+    "velocity_km_per_s": 2.0,
+    "spacing_m": [
+      10.0,
+      10.0
+    ],
+    "dt_ms": 1.0,
+    "t0_ms": 0.0,
+    "tmax_ms": 1100.0,
+    "f0_per_ms": 0.005,
+    "space_order": 4,
+    "dtype": "float64",
+    "save_wavefield": false,
+    "source_base_x_z_m": [
+      300.0,
+      300.0
+    ],
+    "receiver_base_x_z_m": [
+      350.0,
+      300.0
+    ]
+  },
+  "cases": [
+    {
+      "id": "small_nbl0",
+      "shape_x_z": [
+        61,
+        61
+      ],
+      "nbl": 0,
+      "translation_m": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "small_nbl20",
+      "shape_x_z": [
+        61,
+        61
+      ],
+      "nbl": 20,
+      "translation_m": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "small_nbl40",
+      "shape_x_z": [
+        61,
+        61
+      ],
+      "nbl": 40,
+      "translation_m": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "matched_exterior_20_undamped",
+      "shape_x_z": [
+        101,
+        101
+      ],
+      "nbl": 0,
+      "translation_m": [
+        200.0,
+        200.0
+      ]
+    },
+    {
+      "id": "matched_exterior_40_undamped",
+      "shape_x_z": [
+        141,
+        141
+      ],
+      "nbl": 0,
+      "translation_m": [
+        400.0,
+        400.0
+      ]
+    },
+    {
+      "id": "reference_241",
+      "shape_x_z": [
+        241,
+        241
+      ],
+      "nbl": 40,
+      "translation_m": [
+        900.0,
+        900.0
+      ]
+    },
+    {
+      "id": "reference_321",
+      "shape_x_z": [
+        321,
+        321
+      ],
+      "nbl": 40,
+      "translation_m": [
+        1300.0,
+        1300.0
+      ]
+    }
+  ],
+  "windows": {
+    "early": "time_ms<=250.0",
+    "late": "time_ms>250.0",
+    "cutoff_ms": 250.0
+  },
+  "metrics": {
+    "early_relative": "norm((candidate-reference)[early]) / norm(reference[early])",
+    "late_mismatch_over_full_reference": "norm((candidate-reference)[late]) / norm(reference)",
+    "full_relative": "norm(candidate-reference) / norm(reference)",
+    "case_reference": "reference_321",
+    "reference_comparison": "reference_241 against reference_321",
+    "quality_thresholds": null,
+    "zero_denominator_policy": "value null; denominator_zero true; preserve numerator and denominator; no pass by fiat"
+  },
+  "source_policy": "Explicit actual geometry.src object passed to current audited solver.forward(src=source, save=False, dt=fixed_dt); retain raw source/time/receiver records before and after. No cell-volume normalization added; identical spacing/source in all cases. This is not absolute physical amplitude calibration.",
+  "reference_scope": "Physical image-path travel times are continuum geometric estimates, not rigorous discrete causality bounds. Fourth-order stencils and finite-sampled Ricker wavelets have tails. Both references and complete raw traces are retained for an empirical reference-window check; no perfectly clean window is asserted. Changing nbl also changes exterior return paths and spreading; these trace-difference norms are not intrinsic absorber reflection coefficients.",
+  "memory": {
+    "minimum_free_disk_bytes": 104857600,
+    "maximum_nominal_grid_shape": [
+      401,
+      401
+    ],
+    "maximum_nominal_three_slice_bytes": 3859224,
+    "saved_full_time_history": false,
+    "other_memory": "Halos, model arrays, compiler and Python/Devito process memory are additional; record actual logical and halo shape/bytes."
+  },
+  "publication": "Exclusive new output directory; retain running/failed status and all attempted cases; completion receipt published atomically only after all seven cases/raw arrays and source checks. Existing output is never reused.",
+  "physics_limits": [
+    "One homogeneous source band and geometry only; same-code enlarged-box truncation diagnostic.",
+    "No certificate transfer, free-surface/PML validation, independent-geology evidence, inversion advantage or final scientific conclusion."
+  ],
+  "matched_exterior_controls": {
+    "small_nbl20": "matched_exterior_20_undamped",
+    "small_nbl40": "matched_exterior_40_undamped",
+    "scope": "Same padded stencil grid shape and translated source/receiver grid nodes; vary damping only. Record all differences against reference321 and direct paired traces. Paired normalizers are the undamped-control norms, with numerator/denominator retained."
+  }
+}

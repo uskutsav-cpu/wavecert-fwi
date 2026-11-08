@@ -56,6 +56,9 @@ pass the full CI suite and 89 focused checks with warnings treated as errors.
 No new matched-cost trajectory result is claimed.
 Student scientific ownership and final design decisions remain open; see the
 [assistance record](docs/assistance_record.md).
+The new [boundary diagnostic](docs/devito_boundary_verification.md) also exposes
+substantial finite-record trace errors in a fixed homogeneous Devito fixture;
+passing gradient checks alone does not establish boundary fidelity.
 
 ## Latest controlled comparison
 

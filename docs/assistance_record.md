@@ -81,3 +81,12 @@ and cached-merit derivative bound. Separate AI workers reviewed mathematics and
 code. Codex also prepared and tested a bounded BP2004 acquisition candidate;
 no BP velocity payload had been fetched at this record's update. New software
 benchmark configurations remain explicitly provisional and AI-authored.
+
+Codex subsequently designed and executed a fixed seven-case homogeneous Devito
+boundary software-verification fixture, including matched-exterior undamped
+controls and two enlarged references. It corrected an interrupted-attempt
+logging bug before execution, retained the adverse review and original source,
+audited raw trace arithmetic, and generated the diagnostic figure/documentation.
+The substantial truncation errors remain recorded. These are AI contributions;
+they do not establish a student-authored study, personal analysis or independent
+human reproduction.

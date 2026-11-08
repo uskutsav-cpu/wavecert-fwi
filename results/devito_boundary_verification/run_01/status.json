@@ -1,0 +1,1375 @@
+{
+  "status": "complete_software_verification",
+  "started_utc": "2026-11-08T02:50:50.355091+00:00",
+  "case_records": [
+    {
+      "case_id": "small_nbl0",
+      "status": "complete",
+      "started_utc": "2026-11-08T02:50:50.355851+00:00",
+      "record": {
+        "case": {
+          "id": "small_nbl0",
+          "shape_x_z": [
+            61,
+            61
+          ],
+          "nbl": 0,
+          "translation_m": [
+            0.0,
+            0.0
+          ]
+        },
+        "geometry": {
+          "source_x_z_m": [
+            300.0,
+            300.0
+          ],
+          "receiver_x_z_m": [
+            350.0,
+            300.0
+          ],
+          "source_grid_index": [
+            30,
+            30
+          ],
+          "receiver_grid_index": [
+            35,
+            30
+          ],
+          "nominal_physical_image_path_lengths_m": [
+            650.0,
+            550.0,
+            602.0797289396148,
+            602.0797289396148
+          ],
+          "nominal_padded_image_path_lengths_m": [
+            650.0,
+            550.0,
+            602.0797289396148,
+            602.0797289396148
+          ],
+          "nearest_physical_image_travel_ms": 275.0,
+          "nearest_padded_image_travel_ms": 275.0,
+          "scope": "continuum geometric estimates at nominal box edges; no strict discrete causal or clean-window bound"
+        },
+        "dt_before_ms": 1.0,
+        "physics_before": {
+          "vp": {
+            "shape": [
+              61,
+              61
+            ],
+            "dtype": "float64",
+            "sha256": "60761fccb712c7ac9d74be70f0d8e89d978d12f74282e27bf5977ce8fa111612"
+          },
+          "derived_squared_slowness": {
+            "shape": [
+              61,
+              61
+            ],
+            "dtype": "float64",
+            "sha256": "f92285bfb5b0a596efdc7e3555297985894dae160e16f889dc50ffe9b7a94595"
+          },
+          "damping": {
+            "shape": [
+              1
+            ],
+            "dtype": "int64",
+            "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+          },
+          "grid_shape": [
+            61,
+            61
+          ],
+          "grid_spacing": [
+            10.0,
+            10.0
+          ],
+          "grid_origin": [
+            0.0,
+            0.0
+          ],
+          "critical_dt_ms": 2.773
+        },
+        "call": "adapter.solver.forward(src=actual_source_object,save=False,dt=adapter.dt); same audited backend as adapter.forward",
+        "computational_source_index": [
+          [
+            30.0,
+            30.0
+          ]
+        ],
+        "computational_receiver_index": [
+          [
+            35.0,
+            30.0
+          ]
+        ],
+        "dt_after_ms": 1.0,
+        "physics_after": {
+          "vp": {
+            "shape": [
+              61,
+              61
+            ],
+            "dtype": "float64",
+            "sha256": "60761fccb712c7ac9d74be70f0d8e89d978d12f74282e27bf5977ce8fa111612"
+          },
+          "derived_squared_slowness": {
+            "shape": [
+              61,
+              61
+            ],
+            "dtype": "float64",
+            "sha256": "f92285bfb5b0a596efdc7e3555297985894dae160e16f889dc50ffe9b7a94595"
+          },
+          "damping": {
+            "shape": [
+              1
+            ],
+            "dtype": "int64",
+            "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+          },
+          "grid_shape": [
+            61,
+            61
+          ],
+          "grid_spacing": [
+            10.0,
+            10.0
+          ],
+          "grid_origin": [
+            0.0,
+            0.0
+          ],
+          "critical_dt_ms": 2.773
+        },
+        "wavefield": {
+          "logical_shape": [
+            3,
+            61,
+            61
+          ],
+          "logical_bytes": 89304,
+          "halo_shape": [
+            3,
+            69,
+            69
+          ],
+          "halo_bytes": 114264,
+          "dtype": "float64",
+          "full_time_history_saved": false
+        }
+      },
+      "software_invariants": {
+        "all_arrays_finite": true,
+        "receiver_shape": true,
+        "source_shape": true,
+        "fixed_dt": true,
+        "exact_fixture_time_axis": true,
+        "physics_unchanged": true,
+        "fixed_step_under_reported_CFL": true,
+        "time_axis_unchanged": true,
+        "actual_source_times_match": true,
+        "actual_receiver_times_match": true,
+        "source_unchanged": true,
+        "actual_Ricker_samples_match_fixed_spec": true,
+        "source_coordinates_unchanged": true,
+        "source_coordinates_match": true,
+        "receiver_coordinates_match": true,
+        "exactly_three_wavefield_slices": true,
+        "float64": true
+      },
+      "raw_artifact": "small_nbl0_raw.npz",
+      "raw_sha256": "4c050ebd9902ac0ff60676c6f01d3cfa4d7a449217110ca6766b3ef551e96a53",
+      "finished_utc": "2026-11-08T02:50:52.206083+00:00"
+    },
+    {
+      "case_id": "small_nbl20",
+      "status": "complete",
+      "started_utc": "2026-11-08T02:50:52.206489+00:00",
+      "record": {
+        "case": {
+          "id": "small_nbl20",
+          "shape_x_z": [
+            61,
+            61
+          ],
+          "nbl": 20,
+          "translation_m": [
+            0.0,
+            0.0
+          ]
+        },
+        "geometry": {
+          "source_x_z_m": [
+            300.0,
+            300.0
+          ],
+          "receiver_x_z_m": [
+            350.0,
+            300.0
+          ],
+          "source_grid_index": [
+            30,
+            30
+          ],
+          "receiver_grid_index": [
+            35,
+            30
+          ],
+          "nominal_physical_image_path_lengths_m": [
+            650.0,
+            550.0,
+            602.0797289396148,
+            602.0797289396148
+          ],
+          "nominal_padded_image_path_lengths_m": [
+            1050.0,
+            950.0,
+            1001.2492197250393,
+            1001.2492197250393
+          ],
+          "nearest_physical_image_travel_ms": 275.0,
+          "nearest_padded_image_travel_ms": 475.0,
+          "scope": "continuum geometric estimates at nominal box edges; no strict discrete causal or clean-window bound"
+        },
+        "dt_before_ms": 1.0,
+        "physics_before": {
+          "vp": {
+            "shape": [
+              101,
+              101
+            ],
+            "dtype": "float64",
+            "sha256": "9e5dc7104b0effb483f2b15a1d87eee8935fd3fbf0c4ac3c3f90298f20623635"
+          },
+          "derived_squared_slowness": {
+            "shape": [
+              101,
+              101
+            ],
+            "dtype": "float64",
+            "sha256": "4da02d77faac3b25c8bc971555848938a6f4e680da3681c4a87933bc917e3cfd"
+          },
+          "damping": {
+            "shape": [
+              101,
+              101
+            ],
+            "dtype": "float64",
+            "sha256": "e66040395ea4c3a4faade26281d20d1402072f08a4871c9e5e1eaaff6591c5a4"
+          },
+          "grid_shape": [
+            101,
+            101
+          ],
+          "grid_spacing": [
+            10.0,
+            10.0
+          ],
+          "grid_origin": [
+            -200.0,
+            -200.0
+          ],
+          "critical_dt_ms": 2.773
+        },
+        "call": "adapter.solver.forward(src=actual_source_object,save=False,dt=adapter.dt); same audited backend as adapter.forward",
+        "computational_source_index": [
+          [
+            50.0,
+            50.0
+          ]
+        ],
+        "computational_receiver_index": [
+          [
+            55.0,
+            50.0
+          ]
+        ],
+        "dt_after_ms": 1.0,
+        "physics_after": {
+          "vp": {
+            "shape": [
+              101,
+              101
+            ],
+            "dtype": "float64",
+            "sha256": "9e5dc7104b0effb483f2b15a1d87eee8935fd3fbf0c4ac3c3f90298f20623635"
+          },
+          "derived_squared_slowness": {
+            "shape": [
+              101,
+              101
+            ],
+            "dtype": "float64",
+            "sha256": "4da02d77faac3b25c8bc971555848938a6f4e680da3681c4a87933bc917e3cfd"
+          },
+          "damping": {
+            "shape": [
+              101,
+              101
+            ],
+            "dtype": "float64",
+            "sha256": "e66040395ea4c3a4faade26281d20d1402072f08a4871c9e5e1eaaff6591c5a4"
+          },
+          "grid_shape": [
+            101,
+            101
+          ],
+          "grid_spacing": [
+            10.0,
+            10.0
+          ],
+          "grid_origin": [
+            -200.0,
+            -200.0
+          ],
+          "critical_dt_ms": 2.773
+        },
+        "wavefield": {
+          "logical_shape": [
+            3,
+            101,
+            101
+          ],
+          "logical_bytes": 244824,
+          "halo_shape": [
+            3,
+            109,
+            109
+          ],
+          "halo_bytes": 285144,
+          "dtype": "float64",
+          "full_time_history_saved": false
+        }
+      },
+      "software_invariants": {
+        "all_arrays_finite": true,
+        "receiver_shape": true,
+        "source_shape": true,
+        "fixed_dt": true,
+        "exact_fixture_time_axis": true,
+        "physics_unchanged": true,
+        "fixed_step_under_reported_CFL": true,
+        "time_axis_unchanged": true,
+        "actual_source_times_match": true,
+        "actual_receiver_times_match": true,
+        "source_unchanged": true,
+        "actual_Ricker_samples_match_fixed_spec": true,
+        "source_coordinates_unchanged": true,
+        "source_coordinates_match": true,
+        "receiver_coordinates_match": true,
+        "exactly_three_wavefield_slices": true,
+        "float64": true
+      },
+      "raw_artifact": "small_nbl20_raw.npz",
+      "raw_sha256": "627edd39671bf733f2913cd000276bfe23f2e90924d7ce495482c89cc4e037ad",
+      "finished_utc": "2026-11-08T02:50:53.861690+00:00"
+    },
+    {
+      "case_id": "small_nbl40",
+      "status": "complete",
+      "started_utc": "2026-11-08T02:50:53.862163+00:00",
+      "record": {
+        "case": {
+          "id": "small_nbl40",
+          "shape_x_z": [
+            61,
+            61
+          ],
+          "nbl": 40,
+          "translation_m": [
+            0.0,
+            0.0
+          ]
+        },
+        "geometry": {
+          "source_x_z_m": [
+            300.0,
+            300.0
+          ],
+          "receiver_x_z_m": [
+            350.0,
+            300.0
+          ],
+          "source_grid_index": [
+            30,
+            30
+          ],
+          "receiver_grid_index": [
+            35,
+            30
+          ],
+          "nominal_physical_image_path_lengths_m": [
+            650.0,
+            550.0,
+            602.0797289396148,
+            602.0797289396148
+          ],
+          "nominal_padded_image_path_lengths_m": [
+            1450.0,
+            1350.0,
+            1400.89257261219,
+            1400.89257261219
+          ],
+          "nearest_physical_image_travel_ms": 275.0,
+          "nearest_padded_image_travel_ms": 675.0,
+          "scope": "continuum geometric estimates at nominal box edges; no strict discrete causal or clean-window bound"
+        },
+        "dt_before_ms": 1.0,
+        "physics_before": {
+          "vp": {
+            "shape": [
+              141,
+              141
+            ],
+            "dtype": "float64",
+            "sha256": "bb7d45048a4e5c5b033a0cef5d511bc5a4fe58c286b6f1fbdbe8e8a9b6e5a3d4"
+          },
+          "derived_squared_slowness": {
+            "shape": [
+              141,
+              141
+            ],
+            "dtype": "float64",
+            "sha256": "c9df8f779b21ffdee1fc323cb161211ec5b6027ca2e9f929a03992d7df891ce0"
+          },
+          "damping": {
+            "shape": [
+              141,
+              141
+            ],
+            "dtype": "float64",
+            "sha256": "8b1a63b9c570c2130efa51fac5f5ebce951c5edf1e7fd987e180bd1c3753f452"
+          },
+          "grid_shape": [
+            141,
+            141
+          ],
+          "grid_spacing": [
+            10.0,
+            10.0
+          ],
+          "grid_origin": [
+            -400.0,
+            -400.0
+          ],
+          "critical_dt_ms": 2.773
+        },
+        "call": "adapter.solver.forward(src=actual_source_object,save=False,dt=adapter.dt); same audited backend as adapter.forward",
+        "computational_source_index": [
+          [
+            70.0,
+            70.0
+          ]
+        ],
+        "computational_receiver_index": [
+          [
+            75.0,
+            70.0
+          ]
+        ],
+        "dt_after_ms": 1.0,
+        "physics_after": {
+          "vp": {
+            "shape": [
+              141,
+              141
+            ],
+            "dtype": "float64",
+            "sha256": "bb7d45048a4e5c5b033a0cef5d511bc5a4fe58c286b6f1fbdbe8e8a9b6e5a3d4"
+          },
+          "derived_squared_slowness": {
+            "shape": [
+              141,
+              141
+            ],
+            "dtype": "float64",
+            "sha256": "c9df8f779b21ffdee1fc323cb161211ec5b6027ca2e9f929a03992d7df891ce0"
+          },
+          "damping": {
+            "shape": [
+              141,
+              141
+            ],
+            "dtype": "float64",
+            "sha256": "8b1a63b9c570c2130efa51fac5f5ebce951c5edf1e7fd987e180bd1c3753f452"
+          },
+          "grid_shape": [
+            141,
+            141
+          ],
+          "grid_spacing": [
+            10.0,
+            10.0
+          ],
+          "grid_origin": [
+            -400.0,
+            -400.0
+          ],
+          "critical_dt_ms": 2.773
+        },
+        "wavefield": {
+          "logical_shape": [
+            3,
+            141,
+            141
+          ],
+          "logical_bytes": 477144,
+          "halo_shape": [
+            3,
+            149,
+            149
+          ],
+          "halo_bytes": 532824,
+          "dtype": "float64",
+          "full_time_history_saved": false
+        }
+      },
+      "software_invariants": {
+        "all_arrays_finite": true,
+        "receiver_shape": true,
+        "source_shape": true,
+        "fixed_dt": true,
+        "exact_fixture_time_axis": true,
+        "physics_unchanged": true,
+        "fixed_step_under_reported_CFL": true,
+        "time_axis_unchanged": true,
+        "actual_source_times_match": true,
+        "actual_receiver_times_match": true,
+        "source_unchanged": true,
+        "actual_Ricker_samples_match_fixed_spec": true,
+        "source_coordinates_unchanged": true,
+        "source_coordinates_match": true,
+        "receiver_coordinates_match": true,
+        "exactly_three_wavefield_slices": true,
+        "float64": true
+      },
+      "raw_artifact": "small_nbl40_raw.npz",
+      "raw_sha256": "026732481fd815c2674146d606e1602ab08ef2e1c1acbfff3b31d134f599643c",
+      "finished_utc": "2026-11-08T02:50:55.143922+00:00"
+    },
+    {
+      "case_id": "matched_exterior_20_undamped",
+      "status": "complete",
+      "started_utc": "2026-11-08T02:50:55.144442+00:00",
+      "record": {
+        "case": {
+          "id": "matched_exterior_20_undamped",
+          "shape_x_z": [
+            101,
+            101
+          ],
+          "nbl": 0,
+          "translation_m": [
+            200.0,
+            200.0
+          ]
+        },
+        "geometry": {
+          "source_x_z_m": [
+            500.0,
+            500.0
+          ],
+          "receiver_x_z_m": [
+            550.0,
+            500.0
+          ],
+          "source_grid_index": [
+            50,
+            50
+          ],
+          "receiver_grid_index": [
+            55,
+            50
+          ],
+          "nominal_physical_image_path_lengths_m": [
+            1050.0,
+            950.0,
+            1001.2492197250393,
+            1001.2492197250393
+          ],
+          "nominal_padded_image_path_lengths_m": [
+            1050.0,
+            950.0,
+            1001.2492197250393,
+            1001.2492197250393
+          ],
+          "nearest_physical_image_travel_ms": 475.0,
+          "nearest_padded_image_travel_ms": 475.0,
+          "scope": "continuum geometric estimates at nominal box edges; no strict discrete causal or clean-window bound"
+        },
+        "dt_before_ms": 1.0,
+        "physics_before": {
+          "vp": {
+            "shape": [
+              101,
+              101
+            ],
+            "dtype": "float64",
+            "sha256": "9e5dc7104b0effb483f2b15a1d87eee8935fd3fbf0c4ac3c3f90298f20623635"
+          },
+          "derived_squared_slowness": {
+            "shape": [
+              101,
+              101
+            ],
+            "dtype": "float64",
+            "sha256": "4da02d77faac3b25c8bc971555848938a6f4e680da3681c4a87933bc917e3cfd"
+          },
+          "damping": {
+            "shape": [
+              1
+            ],
+            "dtype": "int64",
+            "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+          },
+          "grid_shape": [
+            101,
+            101
+          ],
+          "grid_spacing": [
+            10.0,
+            10.0
+          ],
+          "grid_origin": [
+            0.0,
+            0.0
+          ],
+          "critical_dt_ms": 2.773
+        },
+        "call": "adapter.solver.forward(src=actual_source_object,save=False,dt=adapter.dt); same audited backend as adapter.forward",
+        "computational_source_index": [
+          [
+            50.0,
+            50.0
+          ]
+        ],
+        "computational_receiver_index": [
+          [
+            55.0,
+            50.0
+          ]
+        ],
+        "dt_after_ms": 1.0,
+        "physics_after": {
+          "vp": {
+            "shape": [
+              101,
+              101
+            ],
+            "dtype": "float64",
+            "sha256": "9e5dc7104b0effb483f2b15a1d87eee8935fd3fbf0c4ac3c3f90298f20623635"
+          },
+          "derived_squared_slowness": {
+            "shape": [
+              101,
+              101
+            ],
+            "dtype": "float64",
+            "sha256": "4da02d77faac3b25c8bc971555848938a6f4e680da3681c4a87933bc917e3cfd"
+          },
+          "damping": {
+            "shape": [
+              1
+            ],
+            "dtype": "int64",
+            "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+          },
+          "grid_shape": [
+            101,
+            101
+          ],
+          "grid_spacing": [
+            10.0,
+            10.0
+          ],
+          "grid_origin": [
+            0.0,
+            0.0
+          ],
+          "critical_dt_ms": 2.773
+        },
+        "wavefield": {
+          "logical_shape": [
+            3,
+            101,
+            101
+          ],
+          "logical_bytes": 244824,
+          "halo_shape": [
+            3,
+            109,
+            109
+          ],
+          "halo_bytes": 285144,
+          "dtype": "float64",
+          "full_time_history_saved": false
+        }
+      },
+      "software_invariants": {
+        "all_arrays_finite": true,
+        "receiver_shape": true,
+        "source_shape": true,
+        "fixed_dt": true,
+        "exact_fixture_time_axis": true,
+        "physics_unchanged": true,
+        "fixed_step_under_reported_CFL": true,
+        "time_axis_unchanged": true,
+        "actual_source_times_match": true,
+        "actual_receiver_times_match": true,
+        "source_unchanged": true,
+        "actual_Ricker_samples_match_fixed_spec": true,
+        "source_coordinates_unchanged": true,
+        "source_coordinates_match": true,
+        "receiver_coordinates_match": true,
+        "exactly_three_wavefield_slices": true,
+        "float64": true
+      },
+      "raw_artifact": "matched_exterior_20_undamped_raw.npz",
+      "raw_sha256": "d0e178dad419dc7e6bc2437de675d15497fa350032c52b0291e76c9f70c0364a",
+      "finished_utc": "2026-11-08T02:50:55.500726+00:00"
+    },
+    {
+      "case_id": "matched_exterior_40_undamped",
+      "status": "complete",
+      "started_utc": "2026-11-08T02:50:55.501224+00:00",
+      "record": {
+        "case": {
+          "id": "matched_exterior_40_undamped",
+          "shape_x_z": [
+            141,
+            141
+          ],
+          "nbl": 0,
+          "translation_m": [
+            400.0,
+            400.0
+          ]
+        },
+        "geometry": {
+          "source_x_z_m": [
+            700.0,
+            700.0
+          ],
+          "receiver_x_z_m": [
+            750.0,
+            700.0
+          ],
+          "source_grid_index": [
+            70,
+            70
+          ],
+          "receiver_grid_index": [
+            75,
+            70
+          ],
+          "nominal_physical_image_path_lengths_m": [
+            1450.0,
+            1350.0,
+            1400.89257261219,
+            1400.89257261219
+          ],
+          "nominal_padded_image_path_lengths_m": [
+            1450.0,
+            1350.0,
+            1400.89257261219,
+            1400.89257261219
+          ],
+          "nearest_physical_image_travel_ms": 675.0,
+          "nearest_padded_image_travel_ms": 675.0,
+          "scope": "continuum geometric estimates at nominal box edges; no strict discrete causal or clean-window bound"
+        },
+        "dt_before_ms": 1.0,
+        "physics_before": {
+          "vp": {
+            "shape": [
+              141,
+              141
+            ],
+            "dtype": "float64",
+            "sha256": "bb7d45048a4e5c5b033a0cef5d511bc5a4fe58c286b6f1fbdbe8e8a9b6e5a3d4"
+          },
+          "derived_squared_slowness": {
+            "shape": [
+              141,
+              141
+            ],
+            "dtype": "float64",
+            "sha256": "c9df8f779b21ffdee1fc323cb161211ec5b6027ca2e9f929a03992d7df891ce0"
+          },
+          "damping": {
+            "shape": [
+              1
+            ],
+            "dtype": "int64",
+            "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+          },
+          "grid_shape": [
+            141,
+            141
+          ],
+          "grid_spacing": [
+            10.0,
+            10.0
+          ],
+          "grid_origin": [
+            0.0,
+            0.0
+          ],
+          "critical_dt_ms": 2.773
+        },
+        "call": "adapter.solver.forward(src=actual_source_object,save=False,dt=adapter.dt); same audited backend as adapter.forward",
+        "computational_source_index": [
+          [
+            70.0,
+            70.0
+          ]
+        ],
+        "computational_receiver_index": [
+          [
+            75.0,
+            70.0
+          ]
+        ],
+        "dt_after_ms": 1.0,
+        "physics_after": {
+          "vp": {
+            "shape": [
+              141,
+              141
+            ],
+            "dtype": "float64",
+            "sha256": "bb7d45048a4e5c5b033a0cef5d511bc5a4fe58c286b6f1fbdbe8e8a9b6e5a3d4"
+          },
+          "derived_squared_slowness": {
+            "shape": [
+              141,
+              141
+            ],
+            "dtype": "float64",
+            "sha256": "c9df8f779b21ffdee1fc323cb161211ec5b6027ca2e9f929a03992d7df891ce0"
+          },
+          "damping": {
+            "shape": [
+              1
+            ],
+            "dtype": "int64",
+            "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+          },
+          "grid_shape": [
+            141,
+            141
+          ],
+          "grid_spacing": [
+            10.0,
+            10.0
+          ],
+          "grid_origin": [
+            0.0,
+            0.0
+          ],
+          "critical_dt_ms": 2.773
+        },
+        "wavefield": {
+          "logical_shape": [
+            3,
+            141,
+            141
+          ],
+          "logical_bytes": 477144,
+          "halo_shape": [
+            3,
+            149,
+            149
+          ],
+          "halo_bytes": 532824,
+          "dtype": "float64",
+          "full_time_history_saved": false
+        }
+      },
+      "software_invariants": {
+        "all_arrays_finite": true,
+        "receiver_shape": true,
+        "source_shape": true,
+        "fixed_dt": true,
+        "exact_fixture_time_axis": true,
+        "physics_unchanged": true,
+        "fixed_step_under_reported_CFL": true,
+        "time_axis_unchanged": true,
+        "actual_source_times_match": true,
+        "actual_receiver_times_match": true,
+        "source_unchanged": true,
+        "actual_Ricker_samples_match_fixed_spec": true,
+        "source_coordinates_unchanged": true,
+        "source_coordinates_match": true,
+        "receiver_coordinates_match": true,
+        "exactly_three_wavefield_slices": true,
+        "float64": true
+      },
+      "raw_artifact": "matched_exterior_40_undamped_raw.npz",
+      "raw_sha256": "20938f8347cf08097e5526cba3e8a75f6d755d184bfd80abb87f3bf4b7252f4d",
+      "finished_utc": "2026-11-08T02:50:55.874080+00:00"
+    },
+    {
+      "case_id": "reference_241",
+      "status": "complete",
+      "started_utc": "2026-11-08T02:50:55.874563+00:00",
+      "record": {
+        "case": {
+          "id": "reference_241",
+          "shape_x_z": [
+            241,
+            241
+          ],
+          "nbl": 40,
+          "translation_m": [
+            900.0,
+            900.0
+          ]
+        },
+        "geometry": {
+          "source_x_z_m": [
+            1200.0,
+            1200.0
+          ],
+          "receiver_x_z_m": [
+            1250.0,
+            1200.0
+          ],
+          "source_grid_index": [
+            120,
+            120
+          ],
+          "receiver_grid_index": [
+            125,
+            120
+          ],
+          "nominal_physical_image_path_lengths_m": [
+            2450.0,
+            2350.0,
+            2400.520776831561,
+            2400.520776831561
+          ],
+          "nominal_padded_image_path_lengths_m": [
+            3250.0,
+            3150.0,
+            3200.390601161052,
+            3200.390601161052
+          ],
+          "nearest_physical_image_travel_ms": 1175.0,
+          "nearest_padded_image_travel_ms": 1575.0,
+          "scope": "continuum geometric estimates at nominal box edges; no strict discrete causal or clean-window bound"
+        },
+        "dt_before_ms": 1.0,
+        "physics_before": {
+          "vp": {
+            "shape": [
+              321,
+              321
+            ],
+            "dtype": "float64",
+            "sha256": "5caf66c9f491b59daf45918bf562971e6345d7a6a25b8ee1d93d6dd1443d9c2f"
+          },
+          "derived_squared_slowness": {
+            "shape": [
+              321,
+              321
+            ],
+            "dtype": "float64",
+            "sha256": "f50cdfb377f6e2dc79f6e14cf7455f383e9a5b4701f06e3b9307f36ec4d29833"
+          },
+          "damping": {
+            "shape": [
+              321,
+              321
+            ],
+            "dtype": "float64",
+            "sha256": "4a7bb35c1c148254a5a3a721defa789bf30a968d279a51ec10ee53a4f9b3e924"
+          },
+          "grid_shape": [
+            321,
+            321
+          ],
+          "grid_spacing": [
+            10.0,
+            10.0
+          ],
+          "grid_origin": [
+            -400.0,
+            -400.0
+          ],
+          "critical_dt_ms": 2.773
+        },
+        "call": "adapter.solver.forward(src=actual_source_object,save=False,dt=adapter.dt); same audited backend as adapter.forward",
+        "computational_source_index": [
+          [
+            160.0,
+            160.0
+          ]
+        ],
+        "computational_receiver_index": [
+          [
+            165.0,
+            160.0
+          ]
+        ],
+        "dt_after_ms": 1.0,
+        "physics_after": {
+          "vp": {
+            "shape": [
+              321,
+              321
+            ],
+            "dtype": "float64",
+            "sha256": "5caf66c9f491b59daf45918bf562971e6345d7a6a25b8ee1d93d6dd1443d9c2f"
+          },
+          "derived_squared_slowness": {
+            "shape": [
+              321,
+              321
+            ],
+            "dtype": "float64",
+            "sha256": "f50cdfb377f6e2dc79f6e14cf7455f383e9a5b4701f06e3b9307f36ec4d29833"
+          },
+          "damping": {
+            "shape": [
+              321,
+              321
+            ],
+            "dtype": "float64",
+            "sha256": "4a7bb35c1c148254a5a3a721defa789bf30a968d279a51ec10ee53a4f9b3e924"
+          },
+          "grid_shape": [
+            321,
+            321
+          ],
+          "grid_spacing": [
+            10.0,
+            10.0
+          ],
+          "grid_origin": [
+            -400.0,
+            -400.0
+          ],
+          "critical_dt_ms": 2.773
+        },
+        "wavefield": {
+          "logical_shape": [
+            3,
+            321,
+            321
+          ],
+          "logical_bytes": 2472984,
+          "halo_shape": [
+            3,
+            329,
+            329
+          ],
+          "halo_bytes": 2597784,
+          "dtype": "float64",
+          "full_time_history_saved": false
+        }
+      },
+      "software_invariants": {
+        "all_arrays_finite": true,
+        "receiver_shape": true,
+        "source_shape": true,
+        "fixed_dt": true,
+        "exact_fixture_time_axis": true,
+        "physics_unchanged": true,
+        "fixed_step_under_reported_CFL": true,
+        "time_axis_unchanged": true,
+        "actual_source_times_match": true,
+        "actual_receiver_times_match": true,
+        "source_unchanged": true,
+        "actual_Ricker_samples_match_fixed_spec": true,
+        "source_coordinates_unchanged": true,
+        "source_coordinates_match": true,
+        "receiver_coordinates_match": true,
+        "exactly_three_wavefield_slices": true,
+        "float64": true
+      },
+      "raw_artifact": "reference_241_raw.npz",
+      "raw_sha256": "2ec0f70d0e6cee58376899adf78d8c922bcd58a0e6918597428ee388ddfa3837",
+      "finished_utc": "2026-11-08T02:50:56.550766+00:00"
+    },
+    {
+      "case_id": "reference_321",
+      "status": "complete",
+      "started_utc": "2026-11-08T02:50:56.551309+00:00",
+      "record": {
+        "case": {
+          "id": "reference_321",
+          "shape_x_z": [
+            321,
+            321
+          ],
+          "nbl": 40,
+          "translation_m": [
+            1300.0,
+            1300.0
+          ]
+        },
+        "geometry": {
+          "source_x_z_m": [
+            1600.0,
+            1600.0
+          ],
+          "receiver_x_z_m": [
+            1650.0,
+            1600.0
+          ],
+          "source_grid_index": [
+            160,
+            160
+          ],
+          "receiver_grid_index": [
+            165,
+            160
+          ],
+          "nominal_physical_image_path_lengths_m": [
+            3250.0,
+            3150.0,
+            3200.390601161052,
+            3200.390601161052
+          ],
+          "nominal_padded_image_path_lengths_m": [
+            4050.0,
+            3950.0,
+            4000.312487793922,
+            4000.312487793922
+          ],
+          "nearest_physical_image_travel_ms": 1575.0,
+          "nearest_padded_image_travel_ms": 1975.0,
+          "scope": "continuum geometric estimates at nominal box edges; no strict discrete causal or clean-window bound"
+        },
+        "dt_before_ms": 1.0,
+        "physics_before": {
+          "vp": {
+            "shape": [
+              401,
+              401
+            ],
+            "dtype": "float64",
+            "sha256": "2fd59e92e2b7ddb09b0786e9da8fdea00515af1985cd9f0f0f9f5e5df14890a2"
+          },
+          "derived_squared_slowness": {
+            "shape": [
+              401,
+              401
+            ],
+            "dtype": "float64",
+            "sha256": "9b809f11c5556c6feb2d7f71c12adbfbc6f08a41a8f8d9330b8753dc7e48bce4"
+          },
+          "damping": {
+            "shape": [
+              401,
+              401
+            ],
+            "dtype": "float64",
+            "sha256": "d97e3a7f31b9d369f26c9eafe402d68ae54e378adf70d5fba32b66aeeb2a2c78"
+          },
+          "grid_shape": [
+            401,
+            401
+          ],
+          "grid_spacing": [
+            10.0,
+            10.0
+          ],
+          "grid_origin": [
+            -400.0,
+            -400.0
+          ],
+          "critical_dt_ms": 2.773
+        },
+        "call": "adapter.solver.forward(src=actual_source_object,save=False,dt=adapter.dt); same audited backend as adapter.forward",
+        "computational_source_index": [
+          [
+            200.0,
+            200.0
+          ]
+        ],
+        "computational_receiver_index": [
+          [
+            205.0,
+            200.0
+          ]
+        ],
+        "dt_after_ms": 1.0,
+        "physics_after": {
+          "vp": {
+            "shape": [
+              401,
+              401
+            ],
+            "dtype": "float64",
+            "sha256": "2fd59e92e2b7ddb09b0786e9da8fdea00515af1985cd9f0f0f9f5e5df14890a2"
+          },
+          "derived_squared_slowness": {
+            "shape": [
+              401,
+              401
+            ],
+            "dtype": "float64",
+            "sha256": "9b809f11c5556c6feb2d7f71c12adbfbc6f08a41a8f8d9330b8753dc7e48bce4"
+          },
+          "damping": {
+            "shape": [
+              401,
+              401
+            ],
+            "dtype": "float64",
+            "sha256": "d97e3a7f31b9d369f26c9eafe402d68ae54e378adf70d5fba32b66aeeb2a2c78"
+          },
+          "grid_shape": [
+            401,
+            401
+          ],
+          "grid_spacing": [
+            10.0,
+            10.0
+          ],
+          "grid_origin": [
+            -400.0,
+            -400.0
+          ],
+          "critical_dt_ms": 2.773
+        },
+        "wavefield": {
+          "logical_shape": [
+            3,
+            401,
+            401
+          ],
+          "logical_bytes": 3859224,
+          "halo_shape": [
+            3,
+            409,
+            409
+          ],
+          "halo_bytes": 4014744,
+          "dtype": "float64",
+          "full_time_history_saved": false
+        }
+      },
+      "software_invariants": {
+        "all_arrays_finite": true,
+        "receiver_shape": true,
+        "source_shape": true,
+        "fixed_dt": true,
+        "exact_fixture_time_axis": true,
+        "physics_unchanged": true,
+        "fixed_step_under_reported_CFL": true,
+        "time_axis_unchanged": true,
+        "actual_source_times_match": true,
+        "actual_receiver_times_match": true,
+        "source_unchanged": true,
+        "actual_Ricker_samples_match_fixed_spec": true,
+        "source_coordinates_unchanged": true,
+        "source_coordinates_match": true,
+        "receiver_coordinates_match": true,
+        "exactly_three_wavefield_slices": true,
+        "float64": true
+      },
+      "raw_artifact": "reference_321_raw.npz",
+      "raw_sha256": "7fadc5d340acb6140fe8f017f8f824941ec765fe2ecbd5425b779e80b0bdb9d0",
+      "finished_utc": "2026-11-08T02:50:57.310884+00:00"
+    }
+  ],
+  "protocol_sha256": "a83f2de93543b16af428d1fbe562f4d7db8d9df982b203a04bb0d445e93306b8",
+  "runner_sha256": "f8a522f34a3ce1be68293944dbef362ea86ae9731f28fd802eabb0434fb57cb1",
+  "source_before": {
+    "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "native_module_sha256": {
+      "backend": "67b91aa2f7ed8c653c1f92b99e4c6e48591b8e47d31588d9e2b19445d6b6060a",
+      "provenance": "9e54e51a311aa9adab6a4572c45456695bc7f228149495779e556a101345e63c"
+    },
+    "installed_example_modules": {
+      "examples.seismic.model": {
+        "path": "/opt/miniconda3/lib/python3.13/site-packages/examples/seismic/model.py",
+        "sha256": "22faa9eafcb2ef7012ce5bbcd977418b5a8515c3f4f9d1c42fcb105f7854ebd4"
+      },
+      "examples.seismic.acoustic.operators": {
+        "path": "/opt/miniconda3/lib/python3.13/site-packages/examples/seismic/acoustic/operators.py",
+        "sha256": "1ab37a6f2e95b7ab7fdec58d141290880127da9705dfe8deb6045fc0590d6336"
+      },
+      "examples.seismic.acoustic.wavesolver": {
+        "path": "/opt/miniconda3/lib/python3.13/site-packages/examples/seismic/acoustic/wavesolver.py",
+        "sha256": "9e8cca80ac1fd1bb66abe3133a09ad0f2d23b2b55aba0e0c1003362c458b929e"
+      },
+      "examples.seismic.source": {
+        "path": "/opt/miniconda3/lib/python3.13/site-packages/examples/seismic/source.py",
+        "sha256": "f8c4bba77e982490a25e5924e654f482afd21f8f2ebae3274e87eb1b45c147ac"
+      },
+      "examples.seismic.utils": {
+        "path": "/opt/miniconda3/lib/python3.13/site-packages/examples/seismic/utils.py",
+        "sha256": "27532feafcaf32f760ffff0b7978cdfa4ee1f7920a9d3367d4d05016657eff19"
+      }
+    }
+  },
+  "student_final_research_design": false,
+  "goal2_completion_claim": false,
+  "finished_utc": "2026-11-08T02:50:57.326114+00:00",
+  "source_after": {
+    "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "native_module_sha256": {
+      "backend": "67b91aa2f7ed8c653c1f92b99e4c6e48591b8e47d31588d9e2b19445d6b6060a",
+      "provenance": "9e54e51a311aa9adab6a4572c45456695bc7f228149495779e556a101345e63c"
+    },
+    "installed_example_modules": {
+      "examples.seismic.model": {
+        "path": "/opt/miniconda3/lib/python3.13/site-packages/examples/seismic/model.py",
+        "sha256": "22faa9eafcb2ef7012ce5bbcd977418b5a8515c3f4f9d1c42fcb105f7854ebd4"
+      },
+      "examples.seismic.acoustic.operators": {
+        "path": "/opt/miniconda3/lib/python3.13/site-packages/examples/seismic/acoustic/operators.py",
+        "sha256": "1ab37a6f2e95b7ab7fdec58d141290880127da9705dfe8deb6045fc0590d6336"
+      },
+      "examples.seismic.acoustic.wavesolver": {
+        "path": "/opt/miniconda3/lib/python3.13/site-packages/examples/seismic/acoustic/wavesolver.py",
+        "sha256": "9e8cca80ac1fd1bb66abe3133a09ad0f2d23b2b55aba0e0c1003362c458b929e"
+      },
+      "examples.seismic.source": {
+        "path": "/opt/miniconda3/lib/python3.13/site-packages/examples/seismic/source.py",
+        "sha256": "f8c4bba77e982490a25e5924e654f482afd21f8f2ebae3274e87eb1b45c147ac"
+      },
+      "examples.seismic.utils": {
+        "path": "/opt/miniconda3/lib/python3.13/site-packages/examples/seismic/utils.py",
+        "sha256": "27532feafcaf32f760ffff0b7978cdfa4ee1f7920a9d3367d4d05016657eff19"
+      }
+    }
+  },
+  "matched_exterior_layout": {
+    "small_nbl20": {
+      "same_background_and_stencil_grid": true,
+      "same_computational_source_index": true,
+      "same_computational_receiver_index": true
+    },
+    "small_nbl40": {
+      "same_background_and_stencil_grid": true,
+      "same_computational_source_index": true,
+      "same_computational_receiver_index": true
+    }
+  },
+  "quality_thresholds": null,
+  "boundary_fidelity_pass_claim": false,
+  "scope": "Physical image-path travel times are continuum geometric estimates, not rigorous discrete causality bounds. Fourth-order stencils and finite-sampled Ricker wavelets have tails. Both references and complete raw traces are retained for an empirical reference-window check; no perfectly clean window is asserted. Changing nbl also changes exterior return paths and spreading; these trace-difference norms are not intrinsic absorber reflection coefficients.",
+  "environment": {
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "packages": {
+      "numpy": "2.4.3",
+      "scipy": "1.18.1",
+      "devito": "4.8.23"
+    },
+    "threads": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  }
+}

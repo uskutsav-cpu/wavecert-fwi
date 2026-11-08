@@ -7,6 +7,14 @@ and scientific defense with accurate assistance disclosure. **None is declared
 complete merely because code/tests pass.** The previous software-strengthening
 pass is a foundation, not completion of this scientific goal.
 
+The new [seven-case Devito boundary diagnostic](devito_boundary_verification.md)
+has executed and been audited. In its fixed homogeneous fixture, 20/40 damping
+cells still give 56.9%/24.9% full-record relative receiver-trace differences
+from an enlarged reference. Matched-exterior undamped controls are worse;
+the two enlarged references agree to ordinary floating-point precision. These
+are conditional truncation diagnostics, not reflection coefficients or a
+physics-quality pass. This adds evidence about a limitation; goal 2 stays open.
+
 The [current JSHS rules, Section IX](https://www.jshs.org/wp-content/uploads/2026/08/JSHS-Core-Rules-of-Competition-2026-27.pdf)
 require student ownership of the final scientific question, hypothesis, design
 and interpretation. The AI-authored software benchmarks below are provisional

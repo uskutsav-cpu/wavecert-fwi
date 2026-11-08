@@ -1,0 +1,45 @@
+{
+  "status": "preexecution_blocker_found_before_any_PDE",
+  "recorded_utc": "2026-11-08T02:46:34.895773+00:00",
+  "reviewer": "/root/candidate_final_review with /root/candidate_final_review/verification_helpers_review",
+  "reviewed_runner_sha256": "664cf543eb93fa93cab18d77ca3826da481f311c21d7ad3d5ab7c5524eaf7559",
+  "reviewed_protocol_sha256": "a83f2de93543b16af428d1fbe562f4d7db8d9df982b203a04bb0d445e93306b8",
+  "cases": 7,
+  "PDE_executed": false,
+  "main_files_modified": false,
+  "checks": {
+    "synthetic_pytest": {
+      "passed": 10,
+      "warnings": "error",
+      "exit_code": 0,
+      "scope": "geometry/metrics/defaultCLI/sourcehash/existing-output guards only"
+    },
+    "separate_pure_validation_probe": {
+      "all_baseline_invariants": 17,
+      "negative_guards_passed": [
+        "shifted actual receiver time axis",
+        "zero source versus fixed Ricker",
+        "full-history buffer shape"
+      ],
+      "PDE_runs": 0
+    },
+    "matched_exterior_geometry": "61+2*20=101 with+200m shift gives source50/receiver55;61+2*40=141 with+400m gives70/75; same4th-order full-grid fs=False operator aside from damping",
+    "installed_API": "source/time factory andsave=False three-slice implementation inspected without propagation"
+  },
+  "material_blockers": [
+    {
+      "file": "verify_boundary.py",
+      "trigger": "KeyboardInterrupt/SystemExit inside execute_case, or process termination before its return",
+      "issue": "The current attempted case is appended and persisted only after execute_case returns, so interruption loses the current attempt identity from status",
+      "required_change": "Append and persist attempted entry before execute_case; preserve interruption/error/time in failure handling; never issue completion credit; add mock interruption regression without PDE"
+    }
+  ],
+  "qualifications": [
+    "Geometric image-path times are continuum estimates, not strict discrete causal/clean-window bounds",
+    "Same-backend reference and single homogeneous source band do not validate all physics, independent implementation, certificate transfer or geological independence",
+    "Reported norms are finite-record trace/truncation diagnostics, not intrinsic reflection coefficients",
+    "Source and receiver sample integrity, dependency source pins,actual grid/node metadata andthree-slice bounds checked in code"
+  ],
+  "root_GO_permitted_by_this_review": false,
+  "scientific_goal_complete": false
+}

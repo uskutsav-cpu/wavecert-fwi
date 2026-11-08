@@ -1,0 +1,299 @@
+{
+  "status": "PASS_saved_array_arithmetic_and_metadata_audit_only",
+  "recorded_utc": "2026-11-08T02:55:03.413100+00:00",
+  "reviewer": "separate AI /root/candidate_final_review; metadata/hash subreview /root/candidate_final_review/verification_helpers_review",
+  "audit_source_sha256": "176cf4eddc07976f0e54ee27d3b1bf7b61e2d779d2a088abe5ecdb2ab898bd86",
+  "complete_receipt_sha256": "a182454fdb8925997dea44d67b98871635e2cf537a0bb30ae6b15e229065fc04",
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "artifact_hashes_verified": 11,
+  "case_count": 7,
+  "recorded_invariant_count": 119,
+  "metric_comparisons": 8,
+  "reported_metric_scalars_recomputed": 72,
+  "independent_norm_implementation": "Python math.hypot; no runner metric helper imported",
+  "comparison_tolerance": {
+    "relative": 5e-14,
+    "absolute": 0.0
+  },
+  "case_audits": [
+    {
+      "case_id": "small_nbl0",
+      "raw_sha256": "4c050ebd9902ac0ff60676c6f01d3cfa4d7a449217110ca6766b3ef551e96a53",
+      "source_sha256": "fd5d4596a55edc604a1ebe04cdc0297036d46b0fa52f68367348417571f39b1f",
+      "all_saved_arrays_finite_float64": true,
+      "exact_time_wavelet_and_coordinates": true,
+      "constant_vp_and_m_fingerprints_reconstructed": true,
+      "recorded_grid_CFL_three_slice_metadata_verified": true,
+      "logical_bytes": 89304,
+      "halo_bytes": 114264
+    },
+    {
+      "case_id": "small_nbl20",
+      "raw_sha256": "627edd39671bf733f2913cd000276bfe23f2e90924d7ce495482c89cc4e037ad",
+      "source_sha256": "fd5d4596a55edc604a1ebe04cdc0297036d46b0fa52f68367348417571f39b1f",
+      "all_saved_arrays_finite_float64": true,
+      "exact_time_wavelet_and_coordinates": true,
+      "constant_vp_and_m_fingerprints_reconstructed": true,
+      "recorded_grid_CFL_three_slice_metadata_verified": true,
+      "logical_bytes": 244824,
+      "halo_bytes": 285144
+    },
+    {
+      "case_id": "small_nbl40",
+      "raw_sha256": "026732481fd815c2674146d606e1602ab08ef2e1c1acbfff3b31d134f599643c",
+      "source_sha256": "fd5d4596a55edc604a1ebe04cdc0297036d46b0fa52f68367348417571f39b1f",
+      "all_saved_arrays_finite_float64": true,
+      "exact_time_wavelet_and_coordinates": true,
+      "constant_vp_and_m_fingerprints_reconstructed": true,
+      "recorded_grid_CFL_three_slice_metadata_verified": true,
+      "logical_bytes": 477144,
+      "halo_bytes": 532824
+    },
+    {
+      "case_id": "matched_exterior_20_undamped",
+      "raw_sha256": "d0e178dad419dc7e6bc2437de675d15497fa350032c52b0291e76c9f70c0364a",
+      "source_sha256": "fd5d4596a55edc604a1ebe04cdc0297036d46b0fa52f68367348417571f39b1f",
+      "all_saved_arrays_finite_float64": true,
+      "exact_time_wavelet_and_coordinates": true,
+      "constant_vp_and_m_fingerprints_reconstructed": true,
+      "recorded_grid_CFL_three_slice_metadata_verified": true,
+      "logical_bytes": 244824,
+      "halo_bytes": 285144
+    },
+    {
+      "case_id": "matched_exterior_40_undamped",
+      "raw_sha256": "20938f8347cf08097e5526cba3e8a75f6d755d184bfd80abb87f3bf4b7252f4d",
+      "source_sha256": "fd5d4596a55edc604a1ebe04cdc0297036d46b0fa52f68367348417571f39b1f",
+      "all_saved_arrays_finite_float64": true,
+      "exact_time_wavelet_and_coordinates": true,
+      "constant_vp_and_m_fingerprints_reconstructed": true,
+      "recorded_grid_CFL_three_slice_metadata_verified": true,
+      "logical_bytes": 477144,
+      "halo_bytes": 532824
+    },
+    {
+      "case_id": "reference_241",
+      "raw_sha256": "2ec0f70d0e6cee58376899adf78d8c922bcd58a0e6918597428ee388ddfa3837",
+      "source_sha256": "fd5d4596a55edc604a1ebe04cdc0297036d46b0fa52f68367348417571f39b1f",
+      "all_saved_arrays_finite_float64": true,
+      "exact_time_wavelet_and_coordinates": true,
+      "constant_vp_and_m_fingerprints_reconstructed": true,
+      "recorded_grid_CFL_three_slice_metadata_verified": true,
+      "logical_bytes": 2472984,
+      "halo_bytes": 2597784
+    },
+    {
+      "case_id": "reference_321",
+      "raw_sha256": "7fadc5d340acb6140fe8f017f8f824941ec765fe2ecbd5425b779e80b0bdb9d0",
+      "source_sha256": "fd5d4596a55edc604a1ebe04cdc0297036d46b0fa52f68367348417571f39b1f",
+      "all_saved_arrays_finite_float64": true,
+      "exact_time_wavelet_and_coordinates": true,
+      "constant_vp_and_m_fingerprints_reconstructed": true,
+      "recorded_grid_CFL_three_slice_metadata_verified": true,
+      "logical_bytes": 3859224,
+      "halo_bytes": 4014744
+    }
+  ],
+  "comparisons": [
+    {
+      "group": "against_reference_321",
+      "case_id": "small_nbl0",
+      "reference_case_id": "reference_321",
+      "recomputed": {
+        "early_relative": {
+          "numerator": 8.591197299018788e-07,
+          "denominator": 141.09681513929735,
+          "value": 6.088866917752295e-09
+        },
+        "late_mismatch_over_full_reference": {
+          "numerator": 406.49073392336817,
+          "denominator": 168.87343653727697,
+          "value": 2.4070732630210894
+        },
+        "full_relative": {
+          "numerator": 406.49073392336817,
+          "denominator": 168.87343653727697,
+          "value": 2.4070732630210894
+        }
+      },
+      "all_reported_numbers_agree": true
+    },
+    {
+      "group": "against_reference_321",
+      "case_id": "small_nbl20",
+      "reference_case_id": "reference_321",
+      "recomputed": {
+        "early_relative": {
+          "numerator": 1.7063393582976904e-09,
+          "denominator": 141.09681513929735,
+          "value": 1.2093393863023149e-11
+        },
+        "late_mismatch_over_full_reference": {
+          "numerator": 96.15037631424006,
+          "denominator": 168.87343653727697,
+          "value": 0.5693635321563194
+        },
+        "full_relative": {
+          "numerator": 96.15037631424006,
+          "denominator": 168.87343653727697,
+          "value": 0.5693635321563194
+        }
+      },
+      "all_reported_numbers_agree": true
+    },
+    {
+      "group": "against_reference_321",
+      "case_id": "small_nbl40",
+      "reference_case_id": "reference_321",
+      "recomputed": {
+        "early_relative": {
+          "numerator": 1.0733232753881342e-10,
+          "denominator": 141.09681513929735,
+          "value": 7.606998601127173e-13
+        },
+        "late_mismatch_over_full_reference": {
+          "numerator": 42.13211438724881,
+          "denominator": 168.87343653727697,
+          "value": 0.2494892935867306
+        },
+        "full_relative": {
+          "numerator": 42.13211438724881,
+          "denominator": 168.87343653727697,
+          "value": 0.2494892935867306
+        }
+      },
+      "all_reported_numbers_agree": true
+    },
+    {
+      "group": "against_reference_321",
+      "case_id": "matched_exterior_20_undamped",
+      "reference_case_id": "reference_321",
+      "recomputed": {
+        "early_relative": {
+          "numerator": 8.01170428225195e-13,
+          "denominator": 141.09681513929735,
+          "value": 5.678160966526723e-15
+        },
+        "late_mismatch_over_full_reference": {
+          "numerator": 175.15840499450752,
+          "denominator": 168.87343653727697,
+          "value": 1.0372170341653657
+        },
+        "full_relative": {
+          "numerator": 175.15840499450752,
+          "denominator": 168.87343653727697,
+          "value": 1.0372170341653657
+        }
+      },
+      "all_reported_numbers_agree": true
+    },
+    {
+      "group": "against_reference_321",
+      "case_id": "matched_exterior_40_undamped",
+      "reference_case_id": "reference_321",
+      "recomputed": {
+        "early_relative": {
+          "numerator": 8.01170428225195e-13,
+          "denominator": 141.09681513929735,
+          "value": 5.678160966526723e-15
+        },
+        "late_mismatch_over_full_reference": {
+          "numerator": 115.94892366089488,
+          "denominator": 168.87343653727697,
+          "value": 0.6866024997087118
+        },
+        "full_relative": {
+          "numerator": 115.94892366089488,
+          "denominator": 168.87343653727697,
+          "value": 0.6866024997087118
+        }
+      },
+      "all_reported_numbers_agree": true
+    },
+    {
+      "group": "against_reference_321",
+      "case_id": "reference_241",
+      "reference_case_id": "reference_321",
+      "recomputed": {
+        "early_relative": {
+          "numerator": 0.0,
+          "denominator": 141.09681513929735,
+          "value": 0.0
+        },
+        "late_mismatch_over_full_reference": {
+          "numerator": 7.133731898073624e-14,
+          "denominator": 168.87343653727697,
+          "value": 4.224306702314861e-16
+        },
+        "full_relative": {
+          "numerator": 7.133731898073624e-14,
+          "denominator": 168.87343653727697,
+          "value": 4.224306702314861e-16
+        }
+      },
+      "all_reported_numbers_agree": true
+    },
+    {
+      "group": "matched_exterior_contrasts",
+      "case_id": "small_nbl20",
+      "reference_case_id": "matched_exterior_20_undamped",
+      "recomputed": {
+        "early_relative": {
+          "numerator": 1.7063327469541217e-09,
+          "denominator": 141.09681513929746,
+          "value": 1.2093347006235039e-11
+        },
+        "late_mismatch_over_full_reference": {
+          "numerator": 222.75698799291797,
+          "denominator": 243.21024616069838,
+          "value": 0.9159029749336047
+        },
+        "full_relative": {
+          "numerator": 222.75698799291797,
+          "denominator": 243.21024616069838,
+          "value": 0.9159029749336047
+        }
+      },
+      "all_reported_numbers_agree": true
+    },
+    {
+      "group": "matched_exterior_contrasts",
+      "case_id": "small_nbl40",
+      "reference_case_id": "matched_exterior_40_undamped",
+      "recomputed": {
+        "early_relative": {
+          "numerator": 1.073290720219502e-10,
+          "denominator": 141.09681513929746,
+          "value": 7.606767871832532e-13
+        },
+        "late_mismatch_over_full_reference": {
+          "numerator": 124.50774903435811,
+          "denominator": 204.83272093271037,
+          "value": 0.6078508768882691
+        },
+        "full_relative": {
+          "numerator": 124.50774903435811,
+          "denominator": 204.83272093271037,
+          "value": 0.6078508768882691
+        }
+      },
+      "all_reported_numbers_agree": true
+    }
+  ],
+  "maximum_recorded_logical_wavefield_bytes": 3859224,
+  "maximum_recorded_halo_wavefield_bytes": 4014744,
+  "source_wavelet_shared_exactly": true,
+  "times_and_actual_source_receiver_axes_shared_exactly": true,
+  "PDE_rerun": false,
+  "main_source_edits": false,
+  "student_final_research_design": false,
+  "scientific_goal2_complete": false,
+  "interpretation_limits": [
+    "These are conditional finite-record trace errors, not intrinsic reflection coefficients or energy-flux reflection ratios",
+    "Same-code enlarged references agree numerically for this fixture, not independent implementation or continuum validation",
+    "Damping field values and full wavefield buffers are not saved; their before/after fingerprints and recorded memory arithmetic are verified, not independently replayed",
+    "Recorded three-slice buffer sizes are not peak process memory",
+    "One homogeneous geometry/source band does not establish independent geology, certificate transfer, free-surface/PML validity, matched-cost inversion advantage or full goal completion",
+    "Separate AI raw arithmetic checks are not human reproduction or student scientific interpretation"
+  ]
+}
