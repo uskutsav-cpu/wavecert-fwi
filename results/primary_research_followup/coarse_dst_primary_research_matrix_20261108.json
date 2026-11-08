@@ -1,0 +1,347 @@
+{
+  "recorded_utc": "2026-11-08T01:00:55.012946+00:00",
+  "role": "Private engineering primary-literature research matrix and novelty-falsification plan; not student-authored paper, not exhaustive priority clearance, no human review asserted.",
+  "status": "READ_ONLY_RESEARCH_COMPLETE; proposed future evaluations only, none executed for this task.",
+  "repository_head_at_review": "be56a4a08087f7aadd0bf47b11510404999d0a00",
+  "component_and_evidence_sha256": {
+    "src/wavecert/physics/coarse_stability.py": "53e6ab1754966f63b97c62da6c3996b7babbd59648808df6f9412295e46c658a",
+    "src/wavecert/certificates/coarse_adjoint.py": "3d4f2d89c37116312f4f80c967ff4bd20d4be474efe60fe65461d758880ee565",
+    "src/wavecert/surrogates/pod.py": "b613dc2e62ba24f65a9c7587d40c3d1af4f7fc0d2e5fcab8daee649908bcd5ca",
+    "src/wavecert/physics/coarse_batch.py": "6adf41b5b836a1331661a598c4e9b6e5e24ebd35ec659b7d86db95134e22a7be",
+    "src/wavecert/certificates/coarse_adjoint_batch.py": "786e5d48653b13e6e8d73ba38e9dab8c2860ffd0e943b81e58a39d66f389dce8",
+    "src/wavecert/surrogates/pod_batch.py": "c45b15f557e414bb62f53ee18a49d18526a158410e5b39bc324c6ac19623a923",
+    "docs/literature.md": "8a6eb84419cace8e2d576d6607d7c1a32156ee168a617c056692a22fefa9e88e",
+    "docs/coarse_stability.md": "b171fa35efaddd8cd4f94ccb45553b0bc5456cc984ca145cd4455bf965de0dbd",
+    "docs/coarse_adjoint.md": "15b1c6bbfbcbfae372cb8d46fe7be15181eaf6ef460d337d99388726b480be30",
+    "results/strengthening_audit/coarse_adjoint_primary_literature_review.json": "a388dcd3eb27293ecf4147af8ef354da636e33cddd0eea50e94706f6510d7264",
+    "results/batched_pod_development/summary.json": "7d79a0023cadbe8b610cf3ac9e09b6ddb0c5e2f02b0736cf4e0e845a72b0250b"
+  },
+  "private_repair_provenance": {
+    "fft_defect_feasibility.py": "7246d5f184b243681c900a7b80af941c60c909814fa8aa508ec0bbba61704692",
+    "fft_defect_feasibility_protocol.json": "a10c39e7ece9c65fb36d4dee1e87da76115e7bc2472e410f9cde62558c6f44c4",
+    "fft_defect_feasibility.json": "1016bc7bcd46798ceb5429e9f3d91f7d93fc9c5cc319033dac85996ee980b9c3"
+  },
+  "scope": {
+    "operator": "Finite real-parameter complex-symmetric A=K−ω²diag(m)+iωdiag(d), fixed five-point constant-spacing Dirichlet K; fixed point-source/receiver maps, repeated receivers weighted by multiplicity.",
+    "current_certificate": "Exact-arithmetic low/complement small-gain and residual-oriented physical-gradient error bounds, evaluated in ordinary floating point with explicitly unverified Gram allowances. Strict upper derivative<0 is pointwise descent only.",
+    "possible_repair": "Private fixed Richardson field repair using midpoint high-space DST inverse followed by exact reduced low correction; not current public inversion policy.",
+    "no_new_activity": "No training, predictions, PDE replay, timings, heldout reads/evaluations, source edits, or result mutations performed for this review."
+  },
+  "primary_source_matrix": [
+    {
+      "id": "qian2017",
+      "authors": "Qian, Grepl, Veroy, Willcox",
+      "title": "A Certified Trust Region Reduced Basis Approach to PDE-Constrained Optimization",
+      "year": 2017,
+      "doi": "10.1137/16M1081981",
+      "url": "https://kiwi.oden.utexas.edu/papers/multifidelity-optimization-adaptive-reduced-model-qian-grepl-veroy-willcox.pdf",
+      "read_scope": "Primary author PDF; Lemma3 eqs24–26 and Theorem5 eqs28–32, ppS441–S443; existing archived review rechecked against indexed full theorem.",
+      "established_overlap": "Coupled primal/dual residual estimates and quadratic-output gradient-error bounds retain state-error, adjoint-error, and their product; certified RB trust-region optimization controls model adequacy.",
+      "boundary": "Coercive variational setting differs from this particular complex-indefinite block stability calculation. Retaining the error product and combining certification with refinement/fallback are already established.",
+      "falsifier": "Compare the proposed directional bound with a direct specialization of its gradient bound under the SAME fields, direction, norms, and valid stability constant. A renaming or norm substitution alone is not a new theorem."
+    },
+    {
+      "id": "giacomini2017_2018",
+      "authors": "Giacomini, Pantz, Trabelsi (2017); Giacomini (2018)",
+      "title": "Certified Descent Algorithm; equilibrated-flux extension",
+      "year": 2018,
+      "doi": "10.1051/cocv/2016021; 10.1007/s10915-017-0545-1",
+      "url": "https://www.numdam.org/item/10.1051/cocv/2016021.pdf",
+      "additional_primary_url": "https://arxiv.org/pdf/1611.03391",
+      "read_scope": "2017 §2.4 eq2.14, Remark3.1 and Algorithm3; extension §2.2.1, Remark2.4, §3 eq3.4 and following linearization disclaimer. Journal2018, online2017.",
+      "established_overlap": "Certifies a particular approximate descent direction by requiring approximate directional derivative plus an error upper bound to be strictly negative; otherwise refines, then uses a separate step rule.",
+      "boundary": "Shape optimization/EIT and FE flux estimates, not this discrete acoustic mass derivative. Both inspected derivations neglect a shape-gradient linearization remainder, explicitly disclosed; do not misdescribe them as universal nonlinear remainder-free certificates. Qian already retains the quadratic product term.",
+      "falsifier": "Do not claim that sign-of-directional-derivative certification or certifying an arbitrary proposed direction is new. Show what the present complex component constants add beyond that established decision rule."
+    },
+    {
+      "id": "keil2021",
+      "authors": "Keil, Mechelli, Ohlberger, Schindler, Volkwein",
+      "title": "A non-conforming dual approach for adaptive Trust-Region Reduced Basis approximation of PDE-constrained optimization",
+      "year": 2021,
+      "doi": "10.1051/m2an/2021019",
+      "url": "https://arxiv.org/pdf/2006.09297",
+      "read_scope": "§2.3 eqs13–14, Proposition2.7 and Proposition2.8; full primary PDF.",
+      "established_overlap": "Distinguishes inexact plug-in state/adjoint gradients from derivatives of the reduced objective; bounds both and analyzes a corrected reduced functional in a convergent trust-region scheme.",
+      "boundary": "Coercive problems and NCD functional correction differ from the present sequential field correction. The corrected physical proposal is not automatically the derivative of its composite approximate forward objective.",
+      "falsifier": "Finite differences of the composite repaired objective need not match its plug-in physical proposal. Preserve that distinction; any optimizer theorem must accommodate the actual inexact direction and an independent acceptance rule."
+    },
+    {
+      "id": "smetana2019",
+      "authors": "Smetana, Zahm, Patera",
+      "title": "Randomized Residual-Based Error Estimators for Parametrized Equations",
+      "year": 2019,
+      "doi": "10.1137/18M120364X",
+      "url": "https://ris.utwente.nl/ws/portalfiles/portal/103726961/SZP_SISC_19.pdf",
+      "read_scope": "Primary final PDF abstract/introduction; estimator and reduced-dual framework in §§2–3.",
+      "established_overlap": "Uses Gaussian probes and reduced dual solves for inexpensive residual-based error estimation without computing inf-sup constants; user-selected norms/quantities, high-probability effectivity and many-query control; Helmholtz examples.",
+      "boundary": "Its guarantees are probabilistic and require the stated random-dual/reduction controls. Present component bounds are exact-arithmetic deterministic conditional on valid constants, but the implementation is not a verified floating-point enclosure.",
+      "falsifier": "Do not equate absence of a fine inverse map with novelty. Compare guarantee type, cost of dual training/setup, effectivity, and failure/abstention under each method’s actual assumptions."
+    },
+    {
+      "id": "ekre2022",
+      "authors": "Ekre, Larsson, Runesson, Jänicke",
+      "title": "Combining spectral and POD modes to improve error estimation of numerical model reduction for porous media",
+      "year": 2022,
+      "online_year": 2021,
+      "doi": "10.1007/s00466-021-02113-2",
+      "url": "https://link.springer.com/article/10.1007/s00466-021-02113-2",
+      "read_scope": "Open primary full article abstract/introduction, §4 goal-oriented bounds and AppendixA spectral complement estimate eqs80–82.",
+      "established_overlap": "Combines spectral and POD modes because POD reduces residuals while spectral structure sharpens computable error bounds; compares pure and combined bases, with adaptive mode selection.",
+      "boundary": "Porous-media transient/homogenization formulation and combined reduced space differ from this fixed independent spectral stability space and physical acoustic adjoint. Nonetheless spectral-plus-POD certification and omitted-eigenvalue complement control are established ideas.",
+      "falsifier": "Attribute improvement using same-field/direction bound ablations, not merely adding spectral and POD ingredients and reporting a lower error."
+    },
+    {
+      "id": "kartmann2024",
+      "authors": "Kartmann, Keil, Ohlberger, Volkwein, Kaltenbacher",
+      "title": "Adaptive reduced basis trust region methods for parameter identification problems",
+      "year": 2024,
+      "doi": "10.1007/s44207-024-00002-z",
+      "url": "https://link.springer.com/article/10.1007/s44207-024-00002-z",
+      "read_scope": "Open primary full article abstract/introduction, §3 reduced model/estimator formulation.",
+      "established_overlap": "Combines adaptive parameter and certified state reduction in error-aware trust-region inverse identification, addressing spatially distributed/infinite-dimensional parameterization and expensive classical offline certification.",
+      "boundary": "Elliptic reaction/diffusion inverse problems, adaptive parameter reduction and regularization differ from fixed acoustic mass-grid parameters.",
+      "falsifier": "A claim that certified reduced optimization can handle high-dimensional coefficient fields cannot stand on parameter dimension alone. Show the present online cost/application regime and matched optimization outcome."
+    },
+    {
+      "id": "sekine2020",
+      "authors": "Sekine, Nakao, Oishi",
+      "title": "A new formulation using the Schur complement for the numerical existence proof of solutions to elliptic problems: without direct estimation for an inverse of the linearized operator",
+      "year": 2020,
+      "doi": "10.1007/s00211-020-01155-7",
+      "url": "https://link.springer.com/article/10.1007/s00211-020-01155-7",
+      "read_scope": "Open primary abstract, finite/complement decomposition, Lemma1, Theorem1 and verified invertibility discussion following eq22.",
+      "established_overlap": "Splits an inverse operator into finite and complement blocks and uses Schur elimination for verified PDE existence calculations instead of a global inverse-norm estimate.",
+      "boundary": "Computer-assisted semilinear elliptic existence analysis differs from finite discrete complex acoustic gradient certification. General finite/complement block inversion and rigorous response estimates are already developed.",
+      "falsifier": "Do not claim a new general block-stability principle. Numerical certification requires guaranteed rounding/error control, beyond the current heuristic Gram PSD shift."
+    },
+    {
+      "id": "dwarka2020_2022",
+      "authors": "Dwarka, Vuik",
+      "title": "Scalable Convergence Using Two-Level Deflation Preconditioning for the Helmholtz Equation; Scalable multi-level deflation preconditioning for highly indefinite time-harmonic waves",
+      "year": 2022,
+      "doi": "10.1137/18M1192093; 10.1016/j.jcp.2022.111327",
+      "url": "https://epubs.siam.org/doi/10.1137/18M1192093",
+      "additional_primary_url": "https://pure.tudelft.nl/ws/portalfiles/portal/131836085/1_s2.0_S0021999122003898_main.pdf",
+      "read_scope": "2020 publisher abstract and metadata; 2022 primary final PDF abstract/introduction and two-level/multilevel construction.",
+      "established_overlap": "Helmholtz two-level/multilevel deflation, coarse-mode alignment, shifted-Laplacian preconditioning and Krylov solves; heterogeneous wave cases and full solver scaling/cost evidence.",
+      "boundary": "High-order grid-transfer spaces and multilevel shifted-Laplacian approximations differ from fixed global low-sine modes and the midpoint high-complement inverse.",
+      "falsifier": "Use a strong deflated/shifted-Laplacian Krylov solver where scalable Helmholtz superiority is claimed. Small-grid sparse-LU comparisons or fixed repair sweeps alone cannot establish general solver competitiveness."
+    },
+    {
+      "id": "chen2024",
+      "authors": "Chen, Dwarka, Vuik",
+      "title": "A matrix-free parallel two-level deflation preconditioner for two-dimensional heterogeneous Helmholtz problems",
+      "year": 2024,
+      "doi": "10.1016/j.jcp.2024.113264",
+      "url": "https://arxiv.org/pdf/2308.06152",
+      "read_scope": "Primary preprint full PDF abstract/introduction and matrix-free Galerkin/coarse/CSLP construction; journal DOI verified from primary arXiv metadata.",
+      "established_overlap": "Matrix-free finite-difference Helmholtz Krylov solver, two-level deflation, coarse Galerkin/high-order rediscretization and geometric multigrid approximation of CSLP.",
+      "boundary": "Matrix-free does not mean matrix-free certificate, and its coarse geometry differs. It is still a substantially stronger classical iterative control than unpreconditioned GMRES.",
+      "falsifier": "Count every fine stencil, coarse factor/solve, communication/transform and setup item; avoiding explicit fine matrices alone does not distinguish the new recipe."
+    },
+    {
+      "id": "yavich2021",
+      "authors": "Yavich, Khokhlov, Malovichko, Zhdanov",
+      "title": "Contraction operator transformation for the complex heterogeneous Helmholtz equation",
+      "year": 2021,
+      "doi": "10.1016/j.camwa.2021.01.018",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0898122121000341",
+      "read_scope": "Publisher-indexed full abstract/introduction and §§3.2–3.3, formulas13–16 and28–38; direct full-page open later403. No claim of a fresh full-PDF audit.",
+      "established_overlap": "FFT/sine-transform separable-background Green inverse, shifted-Laplacian system, and an analyzed contraction transformation for complex heterogeneous Helmholtz; iterative convergence and actual cost comparisons.",
+      "boundary": "Layered background/PML treatment and scaling transformation differ from a constant-midpoint high-complement inverse plus exact low-space correction. Its contraction theorem cannot simply be transferred to this iteration.",
+      "falsifier": "Prove or test the actual preconditioned operator. An FFT inverse and residual repair are not new by themselves, and an eigenvalue plot alone cannot prove nonnormal GMRES convergence."
+    },
+    {
+      "id": "southworth2020",
+      "authors": "Southworth, Sivas, Rhebergen",
+      "title": "On fixed-point, Krylov, and 2×2 block preconditioners for nonsymmetric problems",
+      "year": 2020,
+      "doi": "10.1137/19M1298317",
+      "url": "https://arxiv.org/pdf/1911.02664",
+      "read_scope": "Primary v4 PDF §§2–3, especially §3.2 Theorems3.4–3.5 on triangular block-preconditioned GMRES.",
+      "established_overlap": "Relates fixed-point/Krylov convergence of two-by-two block preconditioners, with one exact diagonal block, to the underlying preconditioned Schur-complement problem.",
+      "boundary": "General nonsymmetric linear algebra, not the present acoustic gradient bound. Present low Ar block is exactly solved in exact arithmetic, so its framework is particularly close to the private DST repair algebra.",
+      "falsifier": "Reduce the new repair to a familiar block-triangular Schur iteration before claiming an algorithm. Compare with right-GMRES using the identical fixed inverse action, warm start and honest true residual."
+    },
+    {
+      "id": "transform_assembly2024_2025",
+      "authors": "Morin, Paux (2024); Paux, Morin, Gelebart (2025 issue, online2024)",
+      "title": "A fast numerical method for the conductivity of heterogeneous media with Dirichlet boundary conditions based on discrete sine–cosine transforms; mixed Dirichlet/Neumann Galerkin extension",
+      "year": 2025,
+      "doi": "10.1016/j.cma.2024.116772; 10.1002/nme.7615",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0045782524000288",
+      "additional_primary_url": "https://onlinelibrary.wiley.com/doi/full/10.1002/nme.7615",
+      "read_scope": "Publisher-indexed abstract and extension §§2.3–2.4, transform Table2 and iterative scheme68; direct full-page opens403. Existing2016 Shen transform-assembly primary review retained.",
+      "established_overlap": "Sine/cosine Galerkin fields, heterogeneous coefficient multiplication/assembly through fast transforms, Dirichlet and mixed boundaries, iterative reference-medium methods.",
+      "boundary": "Conductivity/elliptic formulation differs from the exact finite-grid coupling Gram assembled here. No first-DCT or first-fast-Galerkin-assembly claim follows from the current moment identity.",
+      "falsifier": "Separate an exact structured implementation identity and its measured complexity from novelty of the transform idea. Compare dense/structured evaluation of identical quantities, and include the reduced r³ algebra."
+    },
+    {
+      "id": "li2024_dst",
+      "authors": "Li, Chen, Fang, Sun, Wang",
+      "title": "Two-parameter modified matrix splitting iteration method for Helmholtz equation",
+      "year": 2024,
+      "doi": "10.1080/00207160.2023.2301570",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/00207160.2023.2301570",
+      "read_scope": "Primary publisher abstract and publication metadata only; no full theorem/formula verified.",
+      "established_overlap": "DST-invertible preconditioning for nonsymmetric indefinite complex-wavenumber Helmholtz, analyzed iteration convergence under conditions, and GMRES acceleration.",
+      "boundary": "Its exact splitting formula has not been checked here, so no equivalence to the current midpoint/complement split is asserted.",
+      "falsifier": "Before any first-DST-Helmholtz-repair claim, obtain and compare the full splitting and convergence conditions. Current abstract-level overlap already defeats the broad claim."
+    },
+    {
+      "id": "azulay2022",
+      "authors": "Azulay, Treister",
+      "title": "Multigrid-augmented deep learning preconditioners for the Helmholtz equation",
+      "year": 2023,
+      "preprint_year": 2022,
+      "doi": "10.1137/21M1433514",
+      "url": "https://arxiv.org/abs/2203.11025",
+      "read_scope": "Primary arXiv and publisher abstracts; publisher confirms journal45(3)June2023, online1August2022 and DOI.",
+      "established_overlap": "CNN/U-Net coarse solves or deflation combined with shifted-Laplacian cycles inside Krylov; model-dependent encoder and multiple-RHS motivation.",
+      "boundary": "Learned inverse preconditioners differ from a fixed POD state proposal, and this is not an a posteriori gradient certificate.",
+      "falsifier": "Calling a learned proposal followed by numerical repair a new general hybrid solver is unsupported. A converged Krylov control may use the same learned/POD warm start.",
+      "online_year": 2022,
+      "additional_primary_url": "https://epubs.siam.org/doi/10.1137/21M1433514"
+    },
+    {
+      "id": "lique2026",
+      "authors": "Li, Que",
+      "title": "An adaptive localized orthogonal decomposition method for Helmholtz problems",
+      "year": 2026,
+      "doi": "10.48550/arXiv.2609.24776",
+      "url": "https://arxiv.org/html/2609.24776v2",
+      "read_scope": "Primary v2 abstract/introduction, §§2–4; preprint asof2026-11-08, not represented as peer-reviewed.",
+      "established_overlap": "Helmholtz residual a posteriori fine-grid error control with localization error, under resolution/oversampling/stability assumptions; load-family Schwarz residual enrichment compressed with energy-weighted POD.",
+      "boundary": "LOD/local correctors and load-family enrichment differ from the current fixed global low-sine/POD setup. Does not establish a physical-gradient directional certificate for this objective.",
+      "falsifier": "Do not claim first Helmholtz coarse/POD residual certificate or family-aware correction. Compare precise assumptions, setup costs, actual guarantee and application domain."
+    },
+    {
+      "id": "gmres1986_fgmres1993",
+      "authors": "Saad, Schultz (1986); Saad (1993)",
+      "title": "GMRES; A Flexible Inner-Outer Preconditioned GMRES Algorithm",
+      "year": 1993,
+      "doi": "10.1137/0907058; 10.1137/0914028",
+      "url": "https://math.berkeley.edu/~mgu/MA228A/saad-schultz.pdf",
+      "additional_primary_url": "https://epubs.siam.org/doi/10.1137/0914028",
+      "read_scope": "Primary original GMRES abstract/minimal-residual formulation and primary FGMRES publisher abstract. Included as foundational exceptions to the targeted post2017 comparison.",
+      "established_overlap": "GMRES minimizes residual over the Krylov space; flexible GMRES permits changing preconditioners.",
+      "boundary": "Exact-arithmetic residual minimization is not a guarantee of lower oriented certificate, lower gradient error or lower runtime. Restarting changes the comparison.",
+      "falsifier": "With fixed inverse action and warm start, the k-step Richardson iterate is in the unrestarted right-GMRES search space. A fair comparison must expose GMRES orthogonalization/memory cost while allowing its stronger search."
+    },
+    {
+      "id": "graham2021",
+      "authors": "Graham, Pembery, Spence",
+      "title": "Analysis of a Helmholtz preconditioning problem motivated by uncertainty quantification",
+      "year": 2021,
+      "doi": "10.1007/s10444-021-09889-0",
+      "url": "https://arxiv.org/abs/2005.13390",
+      "additional_primary_url": "https://link.springer.com/article/10.1007/s10444-021-09889-0",
+      "read_scope": "Primary arXiv and journal abstract/metadata; full theorem hypotheses not audited here.",
+      "established_overlap": "Analyzes how coefficient changes with frequency affect reuse of one heterogeneous Helmholtz Galerkin inverse as a left/right GMRES preconditioner for another; proves parameter-perturbation convergence estimates and numerical sharpness evidence.",
+      "boundary": "Exterior Dirichlet FE scattering and prior full inverse differ from the fixed midpoint high-space inverse plus low correction.",
+      "falsifier": "Across-model reuse is an established problem with frequency-dependent limits. Give exact baseline controls the same legal reuse and charge refresh cost; do not compare a warm cached repair against an unnecessarily cold direct/Krylov solve."
+    },
+    {
+      "id": "vanharten2026",
+      "authors": "van Harten, Scarabosio",
+      "title": "Preconditioning across Parameter Space for the Parametric Helmholtz Equation",
+      "year": 2026,
+      "doi": "10.1137/25M1747828",
+      "url": "https://epubs.siam.org/doi/abs/10.1137/25M1747828",
+      "read_scope": "Primary publisher abstract, publication metadata and code/data availability link; not full-proof reviewed.",
+      "established_overlap": "Precomputes multiple Helmholtz preconditioners across parameter space, places them using predicted GMRES iteration counts and location-allocation, and studies runtime/parameter dimension in scattering.",
+      "boundary": "This is parameter-space preconditioner placement and learned iteration prediction, not a physical-gradient bound. No transfer of its reported speedup to WaveCert is implied.",
+      "falsifier": "Any future claim of unique amortized parameter-family acceleration must compare cached multiple-preconditioner methods or clearly restrict the claim to the fixed same-M control. Preserve training/setup placement cost and untouched evaluation parameters."
+    },
+    {
+      "id": "giraud2026",
+      "authors": "Giraud, Kruse, Mycek, Shpakovych, Xiang",
+      "title": "Neural Network Preconditioning: A Case Study for the Solution of the Parametric Helmholtz Equation",
+      "year": 2026,
+      "report_year": 2025,
+      "doi": "10.1002/nla.70123",
+      "url": "https://arxiv.org/abs/2610.16542",
+      "additional_primary_url": "https://cerfacs.fr/wp-content/uploads/2026/01/RR-9593-1-1.pdf",
+      "read_scope": "Primary arXiv/report abstract; author publication page confirms NLAA33(5)e70123(2026). Publisher full page unavailable.",
+      "established_overlap": "Self/unsupervised residual-trained U-Net approximates an inverse and is used as a nonlinear FGMRES preconditioner when it is inadequate as a standalone solver; tests velocity/domain changes and algebraic controls.",
+      "boundary": "No physical-adjoint descent certificate is established by its abstract. Its nonlinear preconditioner needs FGMRES; the current fixed classical DST action is linear.",
+      "falsifier": "Hybridizing an inaccurate learned predictor with converged Krylov is established. Compare identical learned/POD warm starts and distinguish a certificate contribution from learning a better Helmholtz inverse."
+    }
+  ],
+  "claim_assessment": {
+    "currently_supported": "A reproducible structure-specific implementation of established spectral/coarse stability and inexact physical-adjoint certification ideas, plus a transparent comparative study including abstention and negative full-cost evidence. The exact combination might support a narrow engineering contribution; this review does not establish its priority.",
+    "unsupported_broad_claims": [
+      "First residual-gradient certificate",
+      "First certified descent direction or certification plus fallback",
+      "First spectral/POD error-control combination",
+      "First fast sine/cosine heterogeneous Galerkin assembly",
+      "First coarse/FFT Helmholtz repair or learned-plus-numerical solver",
+      "Verified floating-point proof from zero observed false certificates",
+      "Convergence of private Richardson from gamma>0,tau<1 alone for variable damping",
+      "Inversion acceleration or field-geology generalization from static small-grid derivative quality"
+    ],
+    "current_evidence_keeps_negative": "The frozen eight-slice development batch96 certificate has equal-parent mean slice-median cold cost42.513390625ms vs best exact12.063940187ms, 3.52400542×slower; scalar96 65.991661373ms. Batch96 certifies8/8, batch64 0/8. Existing private repair is exploratory train/validation evidence only and has no timing outcome. Neither new literature nor a promising prototype converts these negatives into demonstrated acceleration."
+  },
+  "proof_and_measurement_obligations": [
+    {
+      "id": "P1_exact_discrete_theorem",
+      "required": "Write a complete exact-arithmetic proposition for real parameters and arbitrary approximate state/adjoint fields. Derive complex-symmetric C=Lᵀ coupling and conjugated Gram norm, receiver multiplicities, coupled adjoint RHS error, all three directional error terms, shared survey direction, and unavailable/stationarity semantics. Explicitly state finite discrete scope and q/P independence.",
+      "beyond_prior_needed": "Identify the specific newly computable/tighter constant or implementation regime, rather than reproducing the established error expansion and negative-upper-bound decision."
+    },
+    {
+      "id": "P2_same_field_dominance",
+      "required": "For fixed fields, direction and valid exact constants, prove oriented component bounds<=generic M bounds using ||Ar^-1 rB||<=a||rB|| and rho<=a*pB; propagate componentwise to the three-term directional bound. Distinguish this elementary specialization from a novel theorem.",
+      "measurement": "Use same-field/direction factorial ablations of raw/corrected fields × generic/oriented constants; corrected+generic is missing from the current three-proposal experiment. Do not attribute a changed-direction or changed-field benefit solely to sharper constants."
+    },
+    {
+      "id": "P3_verified_numerics",
+      "required": "Before claiming computer-verified certificates, enclose DCT moments, exact coupling Gram domination, norm/eigenvalue/inverse errors, projection/lift, residuals, and final derivative arithmetic. Replace or rigorously justify the engineering PSD shift; use outward rounding or validated matrix-defect bounds with explicit budget.",
+      "measurement": "Adversarial constant/nearconstant potentials, near-singular Ar, gamma≈0, tau≈1, repeated receivers and model/frequency scaling; exact/high-precision cross-checks help detect faults but cannot themselves prove universal enclosure."
+    },
+    {
+      "id": "P4_applicability_complexity",
+      "required": "Derive full setup/query/storage complexity including O(N log N) moment transforms, O(r²) assembly, O(r³) reduced SVD/eigensolves/factors, r inverse columns, receiver columns, every residual stencil and certificate transform. gamma>0 requires all Laplacian modes below ω²max(m) represented; on a fixed physical2D domain coarse rank grows roughly with squared frequency, not constant in a high-frequency scaling claim.",
+      "measurement": "Prespecify grids/frequencies/heterogeneity/damping and report all unavailable cases. Measure crossover and setup amortization under changed m; distinguish fixed-domain grid refinement, frequency growth and larger domains. No PML/variable-grid theorem is implied."
+    },
+    {
+      "id": "P5_repair_convergence",
+      "required": "Analyze the actual fixed preconditioner and Schur error map below; a valid conditional contraction estimate is classical, not itself proof of algorithmic novelty. Bound the adjoint forcing caused by unfinished state solves, retain actual residuals, and distinguish physical proposal from composite AD derivative.",
+      "measurement": "Compare all fixed sweep checkpoints with exact same-M converged and certificate-stopped GMRES; failures/unavailability retained. One source and eight scalar cases cannot establish survey convergence, optimality, or speedup."
+    },
+    {
+      "id": "P6_optimization_task",
+      "required": "A pointwise directional certificate needs separate accepted-step logic and, for a convergence claim, assumptions ensuring sufficient descent, step control, error/fallback progress and valid termination. Projected constraints require the actual feasible direction, not automatically raw negative gradient.",
+      "measurement": "Freeze a task and compare full wall time/work to equal objective/gradient/reconstruction targets against strongest direct and iterative controls; include setup, all trial objectives, correction, abstention/fallback, repeated work and model transitions. Use fresh evaluation units after method selection; do not repurpose inspected development or historical tests as pristine."
+    }
+  ],
+  "same_preconditioner_baseline": {
+    "notation": "In orthonormal (B,Q) coordinates A=[[Ar,C],[L,D]], C=Lᵀ; S=D−L Ar^-1 C. Let E=B Ar^-1 Bᵀ and H=Q Tq^-1 Q with Tq diagonal in the omitted sine modes, entries λj−ω²m_mid+iωd_mid.",
+    "actual_private_inverse_action": "M=E+(I−EA)H. Its block form is [[Ar^-1,−Ar^-1 C Hq],[0,Hq]], Hq=Tq^-1. Thus A M=[[I,0],[L Ar^-1,S Hq]]. This is a classical upper-triangular approximate Schur inverse, not a new general iteration.",
+    "coarse_balanced_reduction": "After exact coarse correction Bᵀ(q−Au0)=0. Right-GMRES for A M y=r0, u=u0+M y, keeps the first residual component zero and is high-space right-preconditioned Schur GMRES for S Hq. Recompute the actual full residual to control roundoff.",
+    "adjoint_warning": "The private adjoint action N=E_H+(I−E_H Aᴴ)Hᴴ, E_H=B Ar^-H Bᵀ, solves the appropriate adjoint equation approximately but is generally NOT Mᴴ=E_H+Hᴴ(I−AᴴE_H). Do not substitute one silently or claim an unrolled derivative. Use the exact same N when matching the private adjoint repair.",
+    "primary_control": "Fixed right-preconditioned unrestarted GMRES (bounded declared restart only when memory requires) for all state RHS, then adjoint RHS built from the converged states, with identical frozen rank, midpoint, cache/factor reuse and initialization as repair. Ordinary GMRES is appropriate while M/N are fixed linear actions; use FGMRES if actions change or use variable/inexact inner tolerances. Report failure or cap hits, never relabel an unconverged iterate exact.",
+    "accuracy_and_stopping": "Prespecify true unpreconditioned residual criteria and a deterministic tight-reference accuracy ladder, then independently check objective/full physical-gradient error offline. Residual relative accuracy alone does not bound a near-cancelling survey gradient. Also run certificate-stopped same-M GMRES to the SAME descent task, with exactly the same bound and shared aggregate direction, so repair is not compared only against unnecessarily over-solved PDEs. No exact gradient may enter online stopping or winner selection.",
+    "paired_sweep_control": "To match changing adjoint targets exactly, formulate K=[[A,0],[−W,Aᴴ]], b=[q;−Pᴴd], W=PᴴP, x=[u;lambda]. The private paired sweep is x+=T(b−Kx), T=[[M,0],[N W M,N]]. This fixed block inverse includes the UPDATED-state adjoint target. Right-GMRES on K T with the same initial fields is an optional direct classical control; disclose/prespecify any norm scaling between state and adjoint equations.",
+    "residual_dominance_scope": "For one fixed linear problem, same fixed inverse action and warm start, unrestarted right-GMRES search contains the k-step unit-Richardson iterate: residual_Richardson=(I−A M)^k r0, so ||r_GMRES,k||2<=||r_Richardson,k||2 in exact arithmetic. The same observation applies to fixed coupled K,T. It does NOT assert better directional bounds, gradient cosines, finite-step behavior, runtime or dominance across restarts. GMRES orthogonalization and storage are paid.",
+    "other_required_controls": "Best exact source/receiver/residual-coded route using the existing selector; sparse direct factorization reused for all RHS/frequencies at the same m; same-preconditioner GMRES is mandatory before a fast-repair claim. A scalable Helmholtz claim further requires a credible deflated/shifted-Laplacian or matrix-free solver, not unpreconditioned GMRES. Block/recycled multiple-RHS variants are strong secondary controls if their setup is paid and chosen without heldout tuning.",
+    "cost_reporting": "Separate constructor/setup vs changed-model query, factor/moment reuse vs cold work; charge POD projection/lift and offline basis costs under declared amortization, DST/DCT, stencil applications, reduced RHS/dispatches, all norms/certificate solves, Krylov orthogonalization/memory, stopping checks, failed attempts/fallbacks and objective trials. Equal-parent matched repetitions with fixed threads/hardware; exact controls may reuse every mathematically legal factor/cache too."
+  },
+  "conditional_repair_algebra_not_new_theorem": {
+    "status": "Read-only exact-arithmetic derivation; not implemented, evaluated, or asserted novel.",
+    "forward_map": "On the coarse-balanced error manifold eB=−Ar^-1 C eQ, eQ_next=(I−Hq S)eQ. For residuals rQ_next=(I−S Hq)rQ.",
+    "sufficient_bound": "h=max_omitted_j 1/|λj−ω²m_mid+iωd_mid|; epsV=max_grid_j |−ω²(mj−m_mid)+iω(dj−d_mid)|; chi=h*(epsV+ell*k). Since S−Tq=Q diag(V−Vmid) Q−L Ar^-1 C, ||I−Hq S||<=chi, with analogous adjoint fixed-RHS bound. chi<1 is a sufficient condition.",
+    "limits": "The code’s gamma>0,tau<1 proves its residual-to-error stability construction, not this variable-damping repair contraction condition by itself. Updated-state adjoint forcing needs a coupled error recurrence; convergence of state alone is insufficient to assert the same scalar contraction for paired fields. The standard Schur/Neumann argument is prior linear algebra, and a useful theorem would need a precisely scoped, justified new advantage."
+  },
+  "prospective_falsification_decisions": [
+    "If identical-field oriented bounds offer negligible improvement over specialized prior bounds, report an implementation comparison rather than a new certificate theory.",
+    "If same-M certificate-stopped GMRES matches or beats fixed repair on total cost at equal certifiability/accuracy, reject a special fast-repair advantage; a useful preconditioner may still remain.",
+    "If pure low-mode initialization matches POD-warm-start repair after charging POD cost, reject a learned/POD necessity claim.",
+    "If low-rank certificates lose applicability at higher frequency/heterogeneity or reduced r³ cost dominates exact, publish the boundary; do not drop unavailable points or select easiest blocks.",
+    "If floating-point counterexamples violate a purported numerical bound, retain the negative and limit guarantees to exact-arithmetic derivation until a validated enclosure is built.",
+    "If derivative quality improves but matched-cost accepted inversion progress does not, retain a derivative-quality/certification contribution and reject acceleration claims."
+  ],
+  "no_new_evaluations": true,
+  "original_artifacts_modified": false,
+  "research_status": "Targeted primary literature review complete within inspected sources. No exhaustive systematic search or external expert validation claimed.",
+  "existing_batch_evidence_source_sha256": "b403390e70e83b086c509fe3f43289008af689b6e28b5016a54d585bb985edec"
+}

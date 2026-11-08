@@ -1,0 +1,1815 @@
+{
+  "SEAM_common_ancestor_crosses_research_roles": {
+    "calibration": [
+      "seam_000",
+      "seam_004"
+    ],
+    "test_id": [
+      "seam_001",
+      "seam_002",
+      "seam_008",
+      "seam_009"
+    ],
+    "test_ood": [],
+    "train": [
+      "seam_003",
+      "seam_006",
+      "seam_007",
+      "seam_010"
+    ],
+    "validation": [
+      "seam_005",
+      "seam_011"
+    ]
+  },
+  "all_model_ids_previously_used": true,
+  "audit_role": "metadata-only ancestry and feasibility audit; supersedes site-independence interpretation, not historical artifacts",
+  "baseline_git_revision": "be56a4a08087f7aadd0bf47b11510404999d0a00",
+  "data_revision": "c612dc2255f6dc4a139bb667f12eaaedf61a8d3d",
+  "external_source_feasibility": [
+    {
+      "ETag_is_not_SHA256": true,
+      "HEAD": {
+        "accept_ranges": "bytes",
+        "content_length": 19533256,
+        "etag": "e2c4ad66a0553c9f108ffcf05506da82",
+        "last_modified": "Sun, 01 Nov 2015 23:32:08 GMT",
+        "status": 200
+      },
+      "ancestry_scope": "One new composite synthetic numerical ancestor, not several independent sites; crops remain one cluster.",
+      "anisotropy_scope": "Selected scalar-velocity BP2004 distribution is documented as acoustic, not the separate2007TTI parameter benchmark; README does not provide a VTI/TTI parameterization. New constant-density isotropic acoustic observations would be regenerated, not original-data reproduction.",
+      "model_extent_x_m": [
+        0.0,
+        67425.0
+      ],
+      "model_extent_z_m": [
+        0.0,
+        11937.5
+      ],
+      "name": "BP2004_exact_velocity",
+      "native_shape_z_x": [
+        1911,
+        5395
+      ],
+      "native_spacing_z_x_m": [
+        6.25,
+        12.5
+      ],
+      "original_data": {
+        "acoustic_description": "mixed-domain2D finite-difference acoustic",
+        "dominant_frequency_hz": 27.0,
+        "maximum_usable_frequency_hz_about": 54.0,
+        "offset_range_m": [
+          -15000.0,
+          0.0
+        ],
+        "receiver_depth_m": 12.5,
+        "receiver_increment_m": 12.5,
+        "receivers_per_shot": 1201,
+        "shot_increment_m": 50.0,
+        "shots": 1348,
+        "source_depth_m": 12.5,
+        "time_samples": 2001,
+        "time_sampling_s": 0.006
+      },
+      "payload_SHA256_verified": false,
+      "payload_downloaded": false,
+      "primary_url": "https://s3.amazonaws.com/open.source.geoscience/open_data/bpvelanal2004/vel_z6.25m_x12.5m_exact.segy.gz",
+      "recommendation": "First feasible fresh-source velocity-only candidate after registered payload/crop/role protocol; no download during audit",
+      "terms": "BP disclaimer, BP/Frederic Billette credit, Billette and Brandsberg-Dahl2005 citation; preserve original docs/notices for redistribution; record every change in README_Modification."
+    },
+    {
+      "HEAD_status": 403,
+      "ancestry_scope": "Distinct named3D numerical ancestor; all slices/crops one cluster, not IIDsites.",
+      "license_reported_by_publisher": "CC BY4.0, retain license/credit",
+      "name": "SEG_EAGE_Overthrust",
+      "payload_downloaded": false,
+      "primary_archive": "https://s3.amazonaws.com/open.source.geoscience/open_data/seg_eage_models_cd/Overthrust_3D_CD1.tar.gz",
+      "primary_page": "https://wiki.seg.org/wiki/SEG/EAGE_Salt_and_Overthrust_Models",
+      "recommendation": "Candidate source family after accessible publisher-authorized route and bounded extraction verified; no size claim from inaccessible HEAD"
+    },
+    {
+      "HEAD_status": 403,
+      "ancestry_scope": "Separate named model within same SEG/EAGE project; not established IID with Overthrust or other salt models.",
+      "license_reported_by_publisher": "CC BY4.0, retain license/credit",
+      "name": "SEG_EAGE_Salt",
+      "payload_downloaded": false,
+      "primary_archive": "https://s3.amazonaws.com/open.source.geoscience/open_data/seg_eage_models_cd/Salt_Model_3D.tar.gz",
+      "primary_page": "https://wiki.seg.org/wiki/SEG/EAGE_Salt_and_Overthrust_Models"
+    },
+    {
+      "ancestry_scope": "Existing cached Marmousi-family data already used by Devito baseline; not fresh confirmation.",
+      "cached_adapter_source": "https://github.com/DeepWave-KAUST/Siamese_FWI-pub",
+      "current_primary_terms_label": "Level3-Limited",
+      "name": "Marmousi2",
+      "payload_downloaded": false,
+      "primary_page": "https://www.agl.uh.edu/resources-data.php",
+      "recommendation": "Resolve original data grant/version; do not infer data relicensing from adaptation repositoryMIT or an archival mirror",
+      "small_Pwave_download_listing": "https://www.agl.uh.edu/downloads/downloads.htm"
+    },
+    {
+      "ancestry_scope": "Already present through all12 SEAM IDs; furtherPhaseI crops are same-ancestor reuse.",
+      "name": "SEG_SEAM_PhaseI",
+      "payload_downloaded": false,
+      "primary_page": "https://seg.org/seam/open-data/",
+      "recommendation": "Package-specific source/terms; no new-ancestor claim, no wholesale volume/seismic downloads"
+    }
+  ],
+  "family_definitions": {
+    "f3": {
+      "generator_pipeline": "SubsurfaceGen_F3_recipe",
+      "origin_kind": "procedural_analogue",
+      "paper_locator": "Appendix C.2; Section 3.2",
+      "region_analogue": "Dutch_North_Sea",
+      "template_group": "F3_shared_regional_template"
+    },
+    "fault": {
+      "generator_pipeline": "SubsurfaceGen_Fault_recipe",
+      "origin_kind": "procedural_stress_model",
+      "paper_locator": "Appendix C.3; Section 3.2",
+      "region_analogue": "generic_rift_fault_analogue_not_a_field",
+      "template_group": "Fault_shared_stress_template"
+    },
+    "gom": {
+      "generator_pipeline": "SubsurfaceGen_GoM_recipe",
+      "origin_kind": "procedural_analogue",
+      "paper_locator": "Appendix C.4; Section 3.2",
+      "region_analogue": "Gulf_of_Mexico",
+      "template_group": "GoM_shared_regional_template"
+    },
+    "penobscot": {
+      "generator_pipeline": "SubsurfaceGen_Penobscot_recipe",
+      "origin_kind": "single_procedural_analogue",
+      "paper_locator": "Appendix C.1; Section 3.2",
+      "region_analogue": "Scotian_Shelf_analogue",
+      "template_group": "Penobscot_shared_regional_template"
+    },
+    "salt_canopy": {
+      "generator_pipeline": "legacy_pysaltmodel_recipe",
+      "origin_kind": "legacy_procedural_analogue",
+      "paper_locator": "Appendix C.5",
+      "region_analogue": "Gulf_of_Mexico_analogue",
+      "template_group": "SaltCanopy_shared_legacy_template"
+    },
+    "seam": {
+      "generator_pipeline": "SEAM_PhaseI_subregion_extraction",
+      "origin_kind": "subregion_of_reused_model",
+      "paper_locator": "Appendix C.6",
+      "region_analogue": "deepwater_Gulf_of_Mexico",
+      "template_group": "SEG_SEAM_PhaseI_EarthModel"
+    }
+  },
+  "final_metadata_integrity_check": {
+    "all_42_CSV_IDs_match_JSON": true,
+    "all_recorded_input_bytes_and_hashes_match": true,
+    "no_source_arrays_or_model_outcomes": true
+  },
+  "geometry_only_stability_planning": [
+    {
+      "declared_vmin_km_s": 1.5,
+      "gamma_positive_rank_floor_by_frequency_hz": {
+        "12": 493,
+        "25": 576,
+        "3": 15,
+        "4": 30,
+        "6": 77
+      },
+      "lambda97": 756.0758233249667,
+      "shape": [
+        24,
+        24
+      ],
+      "spacing_km": 0.05
+    },
+    {
+      "declared_vmin_km_s": 1.5,
+      "gamma_positive_rank_floor_by_frequency_hz": {
+        "12": 12553,
+        "25": 58086,
+        "3": 748,
+        "4": 1344,
+        "6": 3068
+      },
+      "lambda97": 21.679913131916233,
+      "shape": [
+        619,
+        1000
+      ],
+      "spacing_km": 0.01
+    },
+    {
+      "declared_vmin_km_s": 1.5,
+      "gamma_positive_rank_floor_by_frequency_hz": {
+        "12": 646,
+        "25": 3053,
+        "3": 35,
+        "4": 64,
+        "6": 154
+      },
+      "lambda97": 405.0380087891821,
+      "shape": [
+        128,
+        256
+      ],
+      "spacing_km": 0.01
+    }
+  ],
+  "input_hashes": {
+    "data/external/subsurfacegen-index/data/test_in_dist.parquet": {
+      "bytes": 31656,
+      "sha256": "304b9b20d96d9ec4370caf548749a5e80bac0b3d0e10f218a5ee4aba5ffd8bff"
+    },
+    "data/external/subsurfacegen-index/data/test_out_dist.parquet": {
+      "bytes": 26201,
+      "sha256": "0a92ee9eb7276cdf070890471a799c10de63e8c41090d609bc1ae39f5d125c36"
+    },
+    "data/external/subsurfacegen-index/data/train.parquet": {
+      "bytes": 694790,
+      "sha256": "988fc0dfce5350cf31d1c9754ff69ba552fc16d4dd2407325dc0bf3844c46a64"
+    },
+    "data/reference/subsurfacegen_parent_split/dataset_manifest.json": {
+      "bytes": 22507,
+      "sha256": "e297ab5196bd50142db76a575c78355587bba04f6b381a0ef8700c950d04155a"
+    },
+    "data/reference/subsurfacegen_parent_split/source_selection.json": {
+      "bytes": 21284,
+      "sha256": "b8147f1734052d259a4dc72b37b7ac6e92b8aac0a23b946209163759f9fdae7c"
+    },
+    "data/reference/subsurfacegen_parent_split/split_manifest.csv": {
+      "bytes": 7707,
+      "sha256": "30fed6e30e07a1b54d17f3ae9511d06eac6f44c69fcb57b6ee588f2ade65ef14"
+    },
+    "src/wavecert/experiments/devito_study.py": {
+      "bytes": 5152,
+      "sha256": "ad5ae5123607ba92fe573bf6c56616509e6055d28750ab12c237de84a5d5f4b8"
+    },
+    "src/wavecert/physics/coarse_stability.py": {
+      "bytes": 25717,
+      "sha256": "53e6ab1754966f63b97c62da6c3996b7babbd59648808df6f9412295e46c658a"
+    },
+    "src/wavecert/physics/devito_backend.py": {
+      "bytes": 16377,
+      "sha256": "67b91aa2f7ed8c653c1f92b99e4c6e48591b8e47d31588d9e2b19445d6b6060a"
+    },
+    "src/wavecert/physics/helmholtz.py": {
+      "bytes": 19167,
+      "sha256": "caf51b58da24ed6d3633bda4eaaab804714f5c7932d9d5f343644763bc158131"
+    }
+  },
+  "known_base_volume_cluster_count_is_not_independent_sample_size": true,
+  "known_base_volume_clusters_after_SEAM_collapse": 31,
+  "local_resources": {
+    "devito_version": "4.8.23",
+    "disk_available_at_task_start_approximately_MiB": 179,
+    "physical_ram_bytes": 8589934592,
+    "pyrevolve_installed": false
+  },
+  "memory_estimate_scope": "Logical single saved forward history only; excludes halos/alignment/all other arrays. Actual free-surface padding differs. Not a measurement or a successful run.",
+  "model_ID_isolation_is_not_ancestor_or_site_isolation": true,
+  "model_outcomes_computed": false,
+  "model_weights_loaded": false,
+  "official_train_ID_model_overlap": [
+    "f3_042",
+    "f3_043",
+    "f3_044",
+    "f3_045",
+    "f3_046",
+    "f3_047",
+    "f3_048",
+    "f3_049",
+    "f3_050",
+    "f3_051",
+    "fault_000",
+    "fault_001",
+    "fault_002",
+    "fault_003",
+    "fault_004",
+    "gom_142",
+    "gom_143",
+    "gom_144",
+    "gom_145",
+    "gom_146",
+    "gom_147",
+    "gom_148",
+    "gom_149",
+    "gom_150",
+    "gom_151",
+    "salt_canopy_000",
+    "salt_canopy_001",
+    "salt_canopy_002",
+    "salt_canopy_003",
+    "seam_000",
+    "seam_001",
+    "seam_002",
+    "seam_003",
+    "seam_004",
+    "seam_005",
+    "seam_006",
+    "seam_007",
+    "seam_008",
+    "seam_009",
+    "seam_010",
+    "seam_011"
+  ],
+  "parents": [
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:f3_042",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_F3_recipe",
+      "independently_sampled_site": false,
+      "model_id": "f3_042",
+      "model_type": "f3",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.2; Section 3.2",
+      "region_analogue": "Dutch_North_Sea",
+      "research_role": "test_id",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "F3_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 97
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:f3_043",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_F3_recipe",
+      "independently_sampled_site": false,
+      "model_id": "f3_043",
+      "model_type": "f3",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.2; Section 3.2",
+      "region_analogue": "Dutch_North_Sea",
+      "research_role": "calibration",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "F3_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 97
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:f3_044",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_F3_recipe",
+      "independently_sampled_site": false,
+      "model_id": "f3_044",
+      "model_type": "f3",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.2; Section 3.2",
+      "region_analogue": "Dutch_North_Sea",
+      "research_role": "train",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "F3_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 97
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:f3_045",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_F3_recipe",
+      "independently_sampled_site": false,
+      "model_id": "f3_045",
+      "model_type": "f3",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.2; Section 3.2",
+      "region_analogue": "Dutch_North_Sea",
+      "research_role": "train",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "F3_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 97
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:f3_046",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_F3_recipe",
+      "independently_sampled_site": false,
+      "model_id": "f3_046",
+      "model_type": "f3",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.2; Section 3.2",
+      "region_analogue": "Dutch_North_Sea",
+      "research_role": "calibration",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "F3_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 97
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:f3_047",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_F3_recipe",
+      "independently_sampled_site": false,
+      "model_id": "f3_047",
+      "model_type": "f3",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.2; Section 3.2",
+      "region_analogue": "Dutch_North_Sea",
+      "research_role": "train",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "F3_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 97
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:f3_048",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_F3_recipe",
+      "independently_sampled_site": false,
+      "model_id": "f3_048",
+      "model_type": "f3",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.2; Section 3.2",
+      "region_analogue": "Dutch_North_Sea",
+      "research_role": "calibration",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "F3_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 97
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:f3_049",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_F3_recipe",
+      "independently_sampled_site": false,
+      "model_id": "f3_049",
+      "model_type": "f3",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.2; Section 3.2",
+      "region_analogue": "Dutch_North_Sea",
+      "research_role": "train",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "F3_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 97
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:f3_050",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_F3_recipe",
+      "independently_sampled_site": false,
+      "model_id": "f3_050",
+      "model_type": "f3",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.2; Section 3.2",
+      "region_analogue": "Dutch_North_Sea",
+      "research_role": "train",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "F3_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 97
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:f3_051",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_F3_recipe",
+      "independently_sampled_site": false,
+      "model_id": "f3_051",
+      "model_type": "f3",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.2; Section 3.2",
+      "region_analogue": "Dutch_North_Sea",
+      "research_role": "calibration",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "F3_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 97
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:fault_000",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_Fault_recipe",
+      "independently_sampled_site": false,
+      "model_id": "fault_000",
+      "model_type": "fault",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_stress_model",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.3; Section 3.2",
+      "region_analogue": "generic_rift_fault_analogue_not_a_field",
+      "research_role": "calibration",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "Fault_shared_stress_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 4,
+        "test_out_dist": 0,
+        "train": 145
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:fault_001",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_Fault_recipe",
+      "independently_sampled_site": false,
+      "model_id": "fault_001",
+      "model_type": "fault",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_stress_model",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.3; Section 3.2",
+      "region_analogue": "generic_rift_fault_analogue_not_a_field",
+      "research_role": "test_id",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "Fault_shared_stress_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 4,
+        "test_out_dist": 0,
+        "train": 145
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:fault_002",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_Fault_recipe",
+      "independently_sampled_site": false,
+      "model_id": "fault_002",
+      "model_type": "fault",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_stress_model",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.3; Section 3.2",
+      "region_analogue": "generic_rift_fault_analogue_not_a_field",
+      "research_role": "calibration",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "Fault_shared_stress_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 4,
+        "test_out_dist": 0,
+        "train": 145
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:fault_003",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_Fault_recipe",
+      "independently_sampled_site": false,
+      "model_id": "fault_003",
+      "model_type": "fault",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_stress_model",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.3; Section 3.2",
+      "region_analogue": "generic_rift_fault_analogue_not_a_field",
+      "research_role": "test_id",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "Fault_shared_stress_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 4,
+        "test_out_dist": 0,
+        "train": 145
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:fault_004",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_Fault_recipe",
+      "independently_sampled_site": false,
+      "model_id": "fault_004",
+      "model_type": "fault",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_stress_model",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.3; Section 3.2",
+      "region_analogue": "generic_rift_fault_analogue_not_a_field",
+      "research_role": "calibration",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "Fault_shared_stress_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 4,
+        "test_out_dist": 0,
+        "train": 145
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:gom_142",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_GoM_recipe",
+      "independently_sampled_site": false,
+      "model_id": "gom_142",
+      "model_type": "gom",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.4; Section 3.2",
+      "region_analogue": "Gulf_of_Mexico",
+      "research_role": "train",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "GoM_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 73
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:gom_143",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_GoM_recipe",
+      "independently_sampled_site": false,
+      "model_id": "gom_143",
+      "model_type": "gom",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.4; Section 3.2",
+      "region_analogue": "Gulf_of_Mexico",
+      "research_role": "train",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "GoM_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 73
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:gom_144",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_GoM_recipe",
+      "independently_sampled_site": false,
+      "model_id": "gom_144",
+      "model_type": "gom",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.4; Section 3.2",
+      "region_analogue": "Gulf_of_Mexico",
+      "research_role": "test_id",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "GoM_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 73
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:gom_145",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_GoM_recipe",
+      "independently_sampled_site": false,
+      "model_id": "gom_145",
+      "model_type": "gom",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.4; Section 3.2",
+      "region_analogue": "Gulf_of_Mexico",
+      "research_role": "train",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "GoM_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 73
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:gom_146",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_GoM_recipe",
+      "independently_sampled_site": false,
+      "model_id": "gom_146",
+      "model_type": "gom",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.4; Section 3.2",
+      "region_analogue": "Gulf_of_Mexico",
+      "research_role": "train",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "GoM_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 73
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:gom_147",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_GoM_recipe",
+      "independently_sampled_site": false,
+      "model_id": "gom_147",
+      "model_type": "gom",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.4; Section 3.2",
+      "region_analogue": "Gulf_of_Mexico",
+      "research_role": "train",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "GoM_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 73
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:gom_148",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_GoM_recipe",
+      "independently_sampled_site": false,
+      "model_id": "gom_148",
+      "model_type": "gom",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.4; Section 3.2",
+      "region_analogue": "Gulf_of_Mexico",
+      "research_role": "validation",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "GoM_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 73
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:gom_149",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_GoM_recipe",
+      "independently_sampled_site": false,
+      "model_id": "gom_149",
+      "model_type": "gom",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.4; Section 3.2",
+      "region_analogue": "Gulf_of_Mexico",
+      "research_role": "calibration",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "GoM_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 73
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:gom_150",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_GoM_recipe",
+      "independently_sampled_site": false,
+      "model_id": "gom_150",
+      "model_type": "gom",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.4; Section 3.2",
+      "region_analogue": "Gulf_of_Mexico",
+      "research_role": "train",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "GoM_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 73
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:gom_151",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_GoM_recipe",
+      "independently_sampled_site": false,
+      "model_id": "gom_151",
+      "model_type": "gom",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.4; Section 3.2",
+      "region_analogue": "Gulf_of_Mexico",
+      "research_role": "validation",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "GoM_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 73
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:penobscot_000",
+      "bundled_slice_count": 4,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SubsurfaceGen_Penobscot_recipe",
+      "independently_sampled_site": false,
+      "model_id": "penobscot_000",
+      "model_type": "penobscot",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "single_procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.1; Section 3.2",
+      "region_analogue": "Scotian_Shelf_analogue",
+      "research_role": "test_ood",
+      "site_independence_established": false,
+      "status": "single_realization_only",
+      "template_group": "Penobscot_shared_regional_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 0,
+        "test_out_dist": 80,
+        "train": 0
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:salt_canopy_000",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "legacy_pysaltmodel_recipe",
+      "independently_sampled_site": false,
+      "model_id": "salt_canopy_000",
+      "model_type": "salt_canopy",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "legacy_procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.5",
+      "region_analogue": "Gulf_of_Mexico_analogue",
+      "research_role": "train",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "SaltCanopy_shared_legacy_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 5,
+        "test_out_dist": 0,
+        "train": 181
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:salt_canopy_001",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "legacy_pysaltmodel_recipe",
+      "independently_sampled_site": false,
+      "model_id": "salt_canopy_001",
+      "model_type": "salt_canopy",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "legacy_procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.5",
+      "region_analogue": "Gulf_of_Mexico_analogue",
+      "research_role": "train",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "SaltCanopy_shared_legacy_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 5,
+        "test_out_dist": 0,
+        "train": 181
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:salt_canopy_002",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "legacy_pysaltmodel_recipe",
+      "independently_sampled_site": false,
+      "model_id": "salt_canopy_002",
+      "model_type": "salt_canopy",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "legacy_procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.5",
+      "region_analogue": "Gulf_of_Mexico_analogue",
+      "research_role": "calibration",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "SaltCanopy_shared_legacy_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 5,
+        "test_out_dist": 0,
+        "train": 181
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "delivered_volume:salt_canopy_003",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "legacy_pysaltmodel_recipe",
+      "independently_sampled_site": false,
+      "model_id": "salt_canopy_003",
+      "model_type": "salt_canopy",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "legacy_procedural_analogue",
+      "original_subregion_position_known": null,
+      "paper_locator": "Appendix C.5",
+      "region_analogue": "Gulf_of_Mexico_analogue",
+      "research_role": "calibration",
+      "site_independence_established": false,
+      "status": "distinct_delivered_volume_ID_only",
+      "template_group": "SaltCanopy_shared_legacy_template",
+      "upstream_slice_counts": {
+        "test_in_dist": 5,
+        "test_out_dist": 0,
+        "train": 181
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "SEG_SEAM_PhaseI_EarthModel",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SEAM_PhaseI_subregion_extraction",
+      "independently_sampled_site": false,
+      "model_id": "seam_000",
+      "model_type": "seam",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "subregion_of_reused_model",
+      "original_subregion_position_known": false,
+      "paper_locator": "Appendix C.6",
+      "region_analogue": "deepwater_Gulf_of_Mexico",
+      "research_role": "calibration",
+      "site_independence_established": false,
+      "status": "same_original_volume_across_roles",
+      "template_group": "SEG_SEAM_PhaseI_EarthModel",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 79
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "SEG_SEAM_PhaseI_EarthModel",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SEAM_PhaseI_subregion_extraction",
+      "independently_sampled_site": false,
+      "model_id": "seam_001",
+      "model_type": "seam",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "subregion_of_reused_model",
+      "original_subregion_position_known": false,
+      "paper_locator": "Appendix C.6",
+      "region_analogue": "deepwater_Gulf_of_Mexico",
+      "research_role": "test_id",
+      "site_independence_established": false,
+      "status": "same_original_volume_across_roles",
+      "template_group": "SEG_SEAM_PhaseI_EarthModel",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 79
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "SEG_SEAM_PhaseI_EarthModel",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SEAM_PhaseI_subregion_extraction",
+      "independently_sampled_site": false,
+      "model_id": "seam_002",
+      "model_type": "seam",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "subregion_of_reused_model",
+      "original_subregion_position_known": false,
+      "paper_locator": "Appendix C.6",
+      "region_analogue": "deepwater_Gulf_of_Mexico",
+      "research_role": "test_id",
+      "site_independence_established": false,
+      "status": "same_original_volume_across_roles",
+      "template_group": "SEG_SEAM_PhaseI_EarthModel",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 79
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "SEG_SEAM_PhaseI_EarthModel",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SEAM_PhaseI_subregion_extraction",
+      "independently_sampled_site": false,
+      "model_id": "seam_003",
+      "model_type": "seam",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "subregion_of_reused_model",
+      "original_subregion_position_known": false,
+      "paper_locator": "Appendix C.6",
+      "region_analogue": "deepwater_Gulf_of_Mexico",
+      "research_role": "train",
+      "site_independence_established": false,
+      "status": "same_original_volume_across_roles",
+      "template_group": "SEG_SEAM_PhaseI_EarthModel",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 79
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "SEG_SEAM_PhaseI_EarthModel",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SEAM_PhaseI_subregion_extraction",
+      "independently_sampled_site": false,
+      "model_id": "seam_004",
+      "model_type": "seam",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "subregion_of_reused_model",
+      "original_subregion_position_known": false,
+      "paper_locator": "Appendix C.6",
+      "region_analogue": "deepwater_Gulf_of_Mexico",
+      "research_role": "calibration",
+      "site_independence_established": false,
+      "status": "same_original_volume_across_roles",
+      "template_group": "SEG_SEAM_PhaseI_EarthModel",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 79
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "SEG_SEAM_PhaseI_EarthModel",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SEAM_PhaseI_subregion_extraction",
+      "independently_sampled_site": false,
+      "model_id": "seam_005",
+      "model_type": "seam",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "subregion_of_reused_model",
+      "original_subregion_position_known": false,
+      "paper_locator": "Appendix C.6",
+      "region_analogue": "deepwater_Gulf_of_Mexico",
+      "research_role": "validation",
+      "site_independence_established": false,
+      "status": "same_original_volume_across_roles",
+      "template_group": "SEG_SEAM_PhaseI_EarthModel",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 79
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "SEG_SEAM_PhaseI_EarthModel",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SEAM_PhaseI_subregion_extraction",
+      "independently_sampled_site": false,
+      "model_id": "seam_006",
+      "model_type": "seam",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "subregion_of_reused_model",
+      "original_subregion_position_known": false,
+      "paper_locator": "Appendix C.6",
+      "region_analogue": "deepwater_Gulf_of_Mexico",
+      "research_role": "train",
+      "site_independence_established": false,
+      "status": "same_original_volume_across_roles",
+      "template_group": "SEG_SEAM_PhaseI_EarthModel",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 79
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "SEG_SEAM_PhaseI_EarthModel",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SEAM_PhaseI_subregion_extraction",
+      "independently_sampled_site": false,
+      "model_id": "seam_007",
+      "model_type": "seam",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "subregion_of_reused_model",
+      "original_subregion_position_known": false,
+      "paper_locator": "Appendix C.6",
+      "region_analogue": "deepwater_Gulf_of_Mexico",
+      "research_role": "train",
+      "site_independence_established": false,
+      "status": "same_original_volume_across_roles",
+      "template_group": "SEG_SEAM_PhaseI_EarthModel",
+      "upstream_slice_counts": {
+        "test_in_dist": 2,
+        "test_out_dist": 0,
+        "train": 79
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "SEG_SEAM_PhaseI_EarthModel",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SEAM_PhaseI_subregion_extraction",
+      "independently_sampled_site": false,
+      "model_id": "seam_008",
+      "model_type": "seam",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "subregion_of_reused_model",
+      "original_subregion_position_known": false,
+      "paper_locator": "Appendix C.6",
+      "region_analogue": "deepwater_Gulf_of_Mexico",
+      "research_role": "test_id",
+      "site_independence_established": false,
+      "status": "same_original_volume_across_roles",
+      "template_group": "SEG_SEAM_PhaseI_EarthModel",
+      "upstream_slice_counts": {
+        "test_in_dist": 1,
+        "test_out_dist": 0,
+        "train": 79
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "SEG_SEAM_PhaseI_EarthModel",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SEAM_PhaseI_subregion_extraction",
+      "independently_sampled_site": false,
+      "model_id": "seam_009",
+      "model_type": "seam",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "subregion_of_reused_model",
+      "original_subregion_position_known": false,
+      "paper_locator": "Appendix C.6",
+      "region_analogue": "deepwater_Gulf_of_Mexico",
+      "research_role": "test_id",
+      "site_independence_established": false,
+      "status": "same_original_volume_across_roles",
+      "template_group": "SEG_SEAM_PhaseI_EarthModel",
+      "upstream_slice_counts": {
+        "test_in_dist": 1,
+        "test_out_dist": 0,
+        "train": 79
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "SEG_SEAM_PhaseI_EarthModel",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SEAM_PhaseI_subregion_extraction",
+      "independently_sampled_site": false,
+      "model_id": "seam_010",
+      "model_type": "seam",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "subregion_of_reused_model",
+      "original_subregion_position_known": false,
+      "paper_locator": "Appendix C.6",
+      "region_analogue": "deepwater_Gulf_of_Mexico",
+      "research_role": "train",
+      "site_independence_established": false,
+      "status": "same_original_volume_across_roles",
+      "template_group": "SEG_SEAM_PhaseI_EarthModel",
+      "upstream_slice_counts": {
+        "test_in_dist": 1,
+        "test_out_dist": 0,
+        "train": 79
+      },
+      "within_setting_draw_independence_verified": false
+    },
+    {
+      "all_existing_ids_already_in_project": true,
+      "base_volume_ancestor_id": "SEG_SEAM_PhaseI_EarthModel",
+      "bundled_slice_count": 2,
+      "cached_seed_or_parameter_draw_id_available": false,
+      "generator_pipeline": "SEAM_PhaseI_subregion_extraction",
+      "independently_sampled_site": false,
+      "model_id": "seam_011",
+      "model_type": "seam",
+      "native_shape": [
+        619,
+        1000
+      ],
+      "native_spacing_m": [
+        10.0,
+        10.0
+      ],
+      "origin_kind": "subregion_of_reused_model",
+      "original_subregion_position_known": false,
+      "paper_locator": "Appendix C.6",
+      "region_analogue": "deepwater_Gulf_of_Mexico",
+      "research_role": "validation",
+      "site_independence_established": false,
+      "status": "same_original_volume_across_roles",
+      "template_group": "SEG_SEAM_PhaseI_EarthModel",
+      "upstream_slice_counts": {
+        "test_in_dist": 1,
+        "test_out_dist": 0,
+        "train": 78
+      },
+      "within_setting_draw_independence_verified": false
+    }
+  ],
+  "protected_source_manifest_unchanged_by_audit": true,
+  "raw_cache_retained": false,
+  "raw_selected_source_bytes": 100282235,
+  "raw_selected_source_files": 86,
+  "recorded_utc": "2026-11-08T01:03:21.922337+00:00",
+  "schema_version": 1,
+  "source_arrays_opened": false,
+  "source_sha256": "b403390e70e83b086c509fe3f43289008af689b6e28b5016a54d585bb985edec",
+  "sources": [
+    {
+      "id": "subsurfacegen_paper",
+      "locator": "Section3.2; AppendixC.1-C.6; Table6",
+      "quote_word_total": 18,
+      "short_quotes_in": "docs/ancestry_audit.md",
+      "url": "https://arxiv.org/html/2605.30541v1"
+    },
+    {
+      "id": "pinned_dataset_card",
+      "locator": "DatasetSummary; DatasetCreation; WavefieldGeneration; License",
+      "read_cap_bytes": 65536,
+      "role": "primary author dataset card",
+      "url": "https://huggingface.co/datasets/subsurfacegen/field-scale-dataset/resolve/c612dc2255f6dc4a139bb667f12eaaedf61a8d3d/README.md"
+    },
+    {
+      "id": "devito_primary",
+      "locator": "Finite domains; acoustic equation; time/space discretization",
+      "url": "https://www.devitoproject.org/examples/seismic/tutorials/01_modelling.html"
+    },
+    {
+      "access_note": "Search-indexed primary publisher page available, direct fetch403; listed S3 HEADs403 during audit",
+      "id": "overthrust_primary",
+      "locator": "License; How to Download",
+      "url": "https://wiki.seg.org/wiki/SEG/EAGE_Salt_and_Overthrust_Models"
+    },
+    {
+      "id": "BP_primary",
+      "locator": "pp1-3 attribution/distribution/history; p4 geometry (PDF1-based)",
+      "url": "https://s3.amazonaws.com/open.source.geoscience/open_data/bpvelanal2004/2004_Benchmark_READMES.pdf"
+    },
+    {
+      "id": "BP2007_distinct",
+      "locator": "Overview identifies separate TTI benchmark",
+      "url": "https://wiki.seg.org/wiki/2007_BP_Anisotropic_Velocity_Benchmark"
+    },
+    {
+      "id": "Marmousi_primary",
+      "locator": "MarmousiII Dataset; License and Constraints",
+      "url": "https://www.agl.uh.edu/resources-data.php"
+    },
+    {
+      "id": "Marmousi_adaptation",
+      "locator": "Project structure; data contains Marmousi2 and Overthrust; repositoryMIT is not verified original data grant",
+      "url": "https://github.com/DeepWave-KAUST/Siamese_FWI-pub"
+    },
+    {
+      "id": "SEAM_primary",
+      "locator": "Selected open-data packages; terms depend on package",
+      "url": "https://seg.org/seam/open-data/"
+    }
+  ],
+  "statistical_design": {
+    "duplicate_scope": "Record duplicate outputs without silently changing the unit. Independent RNG-draw slots may remain valid draw trials. Deduplicating selected finite-pool slots changes the sampling design and cannot retain the original pool size.",
+    "existing_release_fresh_confirmation_possible": false,
+    "illustrative_upper_by_n": {
+      "1": 0.95,
+      "12": 0.22092219194555585,
+      "20": 0.13910834066826516,
+      "30": 0.09503385285530419,
+      "4": 0.5271291954984121,
+      "5": 0.4507197283469412,
+      "59": 0.049507609888227,
+      "6": 0.39303776899708276,
+      "60": 0.04870291331009746,
+      "8": 0.31234397806636793
+    },
+    "n_for_pointwise_zero_failure_upper_5_percent": 59,
+    "role_strategy": "All current42 IDs become legacy development/reuse for a new physics study. Freeze new ancestor/generator configuration and seed provenance before payload/outcome inspection. Known original ancestors cannot straddle roles. Hold whole source/generator settings out when claiming unseen-setting transfer; new draws within known settings support conditional synthetic-draw confirmation only. Keep per-setting confirmation and descriptive named-benchmark cases separate; no slice-IID or pooled-site claim.",
+    "simultaneous_stratum_zero_failure_n_5_percent": {
+      "1": 59,
+      "3": 80,
+      "4": 86,
+      "6": 94
+    },
+    "these_are_planning_calculations_not_intervals_for_existing_results": true,
+    "unit": "entire original base model / verified independent procedural draw, including every slice/source/frequency/state/iteration; group reused ancestors before any split",
+    "zero_failure_one_sided_95_upper_formula": "1 - 0.05**(1/n); ONLY for predeclared independent identically distributed model-event trials"
+  },
+  "total_distinct_model_ids": 42,
+  "unrolled_wavefield_memory_estimates_GiB": [
+    {
+      "GiB": 15.419824719429016,
+      "dtype": "float32",
+      "nbl_all_sides": 60,
+      "shape": [
+        619,
+        1000
+      ],
+      "time_steps": 5001
+    },
+    {
+      "GiB": 30.839649438858032,
+      "dtype": "float64",
+      "nbl_all_sides": 60,
+      "shape": [
+        619,
+        1000
+      ],
+      "time_steps": 5001
+    },
+    {
+      "GiB": 1.3020257949829102,
+      "dtype": "float32",
+      "nbl_all_sides": 40,
+      "shape": [
+        128,
+        256
+      ],
+      "time_steps": 5001
+    }
+  ],
+  "untouched_parent_ids": [],
+  "upstream_counts": {
+    "test_in_dist": {
+      "index_rows": 1100,
+      "model_ids": 41,
+      "slices": 100,
+      "types": {
+        "f3": 10,
+        "fault": 5,
+        "gom": 10,
+        "salt_canopy": 4,
+        "seam": 12
+      }
+    },
+    "test_out_dist": {
+      "index_rows": 880,
+      "model_ids": 1,
+      "slices": 80,
+      "types": {
+        "penobscot": 1
+      }
+    },
+    "train": {
+      "index_rows": 45056,
+      "model_ids": 41,
+      "slices": 4096,
+      "types": {
+        "f3": 10,
+        "fault": 5,
+        "gom": 10,
+        "salt_canopy": 4,
+        "seam": 12
+      }
+    }
+  }
+}

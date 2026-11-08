@@ -1,0 +1,111 @@
+{
+  "recorded_utc": "2026-11-08T01:24:10.812887+00:00",
+  "role": "Read-only mathematical and marginal-cost review of paid-merit cached-field proposals; private engineering note, not student manuscript, no new theorem/priority or human review claim.",
+  "activity": "No project arrays, outcomes, predictions, timing, PDE replay or source edits. Only existing source/document text and primary literature consulted.",
+  "source_snapshot_sha256": {
+    "new-phase-staging/exact_merit.py": "a305e46efc4ae102da10169ac8305f548e8c6a7190b500fe3d52bc055f2bf206",
+    "wavecert-fwi/src/wavecert/physics/helmholtz.py": "caf51b58da24ed6d3633bda4eaaab804714f5c7932d9d5f343644763bc158131",
+    "wavecert-fwi/src/wavecert/physics/coarse_stability.py": "53e6ab1754966f63b97c62da6c3996b7babbd59648808df6f9412295e46c658a",
+    "wavecert-fwi/docs/residual_coded_reference.md": "db2688a21a31f2cce6a5df2341d88a186d2c6c081e17f539a20e53353b6da766"
+  },
+  "scope": {
+    "operator": "Invertible discrete A(m)=K−omega²diag(m)+i*omega*diag(d), m real; fixed q/sampling/data. The existing two-component stability implementation additionally requires its specific real-basis complex-symmetric Dirichlet operator and gamma/tau availability.",
+    "data": "Complex sources and observations are allowed by the exact identities. Native point-source specialization uses distinct fixed source locations and real amplitude a=1/h². No source/geometry dependence on m.",
+    "objective": "Per frequency Phi=1/2||R_slots||F², summed over all sources/receiver slots, without averaging. Any explicit objective weighting must multiply both derivative center and bound consistently.",
+    "convention": "Errors are true-minus-computed. Primal residual rX=A*Xhat−forcing; adjoint residual rLambda=Aᴴ*Lambdahat−Pᴴ*Rhat. Residual signs below follow this convention.",
+    "projections": "B is real orthonormal, Qperp=I−BBᵀ. c(w)=(||Bᵀw||2,||Qperp*w||2); etaX bounds those two components, and ||etaX||2 bounds total error. v is a real model direction."
+  },
+  "duplicate_receivers": {
+    "notation": "P_slots=J*P_unique, where J is the real0/1 expansion from r distinct receiver positions to ordered receiver slots. W=JᵀJ=diag(w_l), w_l is slot multiplicity.",
+    "residual": "R_slots=P_slots*U−D_slots. R_unique=Jᵀ*R_slots is SUMMED by unique position, never averaged. The full-slot objective and all distinct observed values remain intact.",
+    "gradient_rhs": "P_slotsᴴ R_slots=P_uniqueᵀ R_unique for real point sampling. General complex expansion uses Jᴴ, not Jᵀ.",
+    "important_distinction": "R_unique may cancel although R_slots is nonzero. Summing residuals is correct for the gradient; replacing the full objective by1/2||R_unique||F² is generally wrong."
+  },
+  "exact_identities": {
+    "ordinary": "U=A^-1 Qsrc; R_slots=P_slots U−D; Lambda=A^-H P_slotsᴴ R_slots. g_j=omega² Re sum_s conj(Lambda_j,s)*U_j,s. Source scale is already inside Qsrc/U; there is no extra a outside this gradient contraction.",
+    "receiver_map": "C=P_unique A^-1, R_unique=Jᵀ(J*C*Qsrc−D), V=A^-1(Qsrc R_uniqueᴴ)=U R_uniqueᴴ. Then g_j=omega² Re sum_l C_l,j V_j,l. No conjugate on C or V in this contraction; conjugation is already in R_uniqueᴴ. This identity does not require Aᵀ=A.",
+    "Z_specialization": "If Aᵀ=A, Z=A^-1 P_uniqueᵀ satisfies C=Zᵀ. Hence g_j=omega² Re sum_l Z_j,l V_j,l, with NO conjugate Z. Hermitian symmetry is neither assumed nor implied. The native oracle stores C from X=A^-H P_uniqueᵀ then C=Xᴴ; for real point sampling and transpose-symmetric A, Zhat=C.T=conj(X). Do not replace transpose by conjugate transpose.",
+    "source_scaling": "For native Qsrc=a Esource, a=1/h² real. Merit from a unit-amplitude receiver map is a*C[:,source_positions]. Coded RHS is a*Esource*R_uniqueᴴ. An arbitrary complex source amplitude remains inside Qsrc; overlap reuse divides a source state by its amplitude, not its conjugate."
+  },
+  "ideal_exact_cached_field_limits": {
+    "cached_U": "If cached U and R are mathematically exact, only Lambda is approximated. Aᴴ eLambda=−rLambda; etaLambda may be evaluated with oriented_error_bounds(rLambda,adjoint=True). Error at v is bounded by omega² sum_s c(v*U_s) dot etaLambda_s. No state-error/product terms or receiver-orientation constants are needed. Calling the coupled receiver bound with eta_receiver=0 is algebraically valid but needlessly computes rho/pB/pQ if not cached.",
+    "cached_C_or_Z": "If cached C is exact, only V is approximated, A eV=−rV. Error at v is bounded by omega² sum_l c(v*C_l,: ) dot etaV_l; if using Z=C.T this is c(v*Z_l). Existing forward oriented_error_bounds is sufficient. This is a standard linear-functional duality bound, not a new nonlinear gradient theorem.",
+    "limit_only": "These simplified formulas require zero cached-field error as a mathematical assumption. Numerical sparseLU or tolerance-GMRES fields cannot silently be declared error-free. The actual implementation should measure their residuals and retain the coupled terms below."
+  },
+  "finite_residual_cached_U_route": {
+    "fields": "Use paid Uhat with Rhat_slots=P_slots Uhat−D; approximate Lambdahat for Aᴴ Lambdahat≈P_slotsᴴ Rhat. No new approximate state is generated.",
+    "identities": "rU=A Uhat−Qsrc, rLambda=Aᴴ Lambdahat−P_slotsᴴ Rhat. A eU=−rU; Aᴴ eLambda=P_slotsᴴP_slots eU−rLambda.",
+    "bound": "Use the unchanged coupled state/adjoint component estimates and full omega² sum_s[c(v*Uhat_s) dot etaLambda_s + c(v*Lambdahat_s) dot etaU_s + ||v||inf*||etaU_s||2*||etaLambda_s||2]. Center is omega² Re sum_s conj(Lambdahat_s)*Uhat_s.",
+    "limit": "When rU is exactly zero, etaU and the coupled forcing contribution vanish, reducing to the ideal one-term formula. Nonzero measured paid-state residual must not be replaced by zero by provenance labels."
+  },
+  "finite_residual_cached_Z_native_route": {
+    "notation": "Esource is n×s real point-source selection, Psource=Esourceᵀ, Qsrc=a Esource with real a=1/h². Zhat approximates A^-1 P_uniqueᵀ. rZ=A Zhat−P_uniqueᵀ; AeZ=−rZ.",
+    "computed_residual": "Rhat_unique[l,s]=w_l*a*Zhat[source_s,l]−sum_{slot at l}D[slot,s]. Equivalently W*Zhatᵀ*Qsrc−JᵀD. Use full-slot Rhat for merit.",
+    "V_equation": "rV_l=A Vhat_l−Qsrc*Rhat_uniqueᴴ[:,l]. With Vtrue=A^-1 Qsrc*Rtrue_uniqueᴴ, A eV_l=w_l*a²*Esource Esourceᵀ*conj(eZ_l)−rV_l. Sign is plus for the source-coupling term and minus for rV.",
+    "proof_of_forcing": "DeltaR_unique=W*eZᵀ*(a Esource). Its Hermitian transpose is a*Esourceᵀ*conj(eZ)*W. Left-multiplication by Qsrc=a Esource yields a² Esource Esourceᵀ conj(eZ)W. Complex observations disappear from this difference; they still affect V/R and all centers.",
+    "eta_Z": "etaZ_l=oriented_error_bounds(rZ_l,adjoint=False). Sampling errors satisfy ||Psource conj(eZ_l)||=||Psource eZ_l||<=pB_s*etaZB_l+pQ_s*etaZQ_l because Psource and B are real.",
+    "eta_force": "eta_force_l=w_l*a²*(pB_s*etaZB_l+pQ_s*etaZQ_l). It is a bound on the SOURCE-SPACE coefficient vector injected by Psourceᵀ, not yet the full forcing norm; pQ_s/rho_s must still multiply it in the component response.",
+    "rho": "rho_forward=||Ar^-1(Psource B)ᵀ||2. For real Psource/B and complex-symmetric Ar, Ar^-H=conj(Ar^-1), so rho_forward equals existing rho_adjoint. This equality need not hold for an arbitrary complex sampling map or nonsymmetric Ar.",
+    "eta_VB": "[||Ar^-1 Bᵀ rV_l|| + rho_s*eta_force_l + (k/gamma)*(||Qperp rV_l||+pQ_s*eta_force_l)]/(1−tau).",
+    "eta_VQ": "[||Qperp rV_l||+pQ_s*eta_force_l+ell*etaVB_l]/gamma.",
+    "center_and_bound": "Center ghat_j=omega² Re sum_l Zhat_j,l*Vhat_j,l. Error at real v <=omega² sum_l[c(v*Zhat_l) dot etaV_l + c(v*Vhat_l) dot etaZ_l + ||v||inf*||etaZ_l||2*||etaV_l||2]. There is NO conjugation in the center. Orthogonal real B/Q decomposition and Cauchy–Schwarz bound each complex bilinear term.",
+    "ideal_limit": "rZ=0 implies etaZ=0 and eta_force=0; the three-term bound reduces to the ideal one-term V bound. No state-generation or random-source approximation is introduced."
+  },
+  "general_complex_source_extension": {
+    "status": "Exact identity only; NOT authorization to implement a broader sampling-bound API. Native implementation may stay at real scaled point sources.",
+    "forcing": "For arbitrary fixed complex Qsrc, DeltaR_unique=W eZᵀ Qsrc, so A eV=Qsrc Qsrcᴴ conj(eZ)W−rV. Replace a² Esource Esourceᵀ by Qsrc Qsrcᴴ. A common complex amplitude uses |a|², not a².",
+    "bound_requirements": "A source-space bound may use eta_t=||Qsrcᴴ B||*etaZB+||Qsrcᴴ Qperp||*etaZQ, rho_Q=||Ar^-1 BᵀQsrc||, and pQ_Q=||Qperp Qsrc||. For column l, inject w_l*Qsrc with coefficient norm eta_t; coarse/complement forcing bounds are w_l*rho_Q*eta_t and w_l*pQ_Q*eta_t. These quantities require their own correctly charged construction. Existing real point receiver rho must not be reused silently for a general complex map."
+  },
+  "floating_point_and_cache_scope": [
+    "The derivations above are exact-arithmetic identities for fixed approximate fields with their mathematical residuals. Measuring paid-field residuals is necessary but still does not make ordinary FFT/LU/norm arithmetic a formally verified enclosure.",
+    "The exact cached residual identity Rhat_unique=W Zhatᵀ Qsrc−JᵀD is part of the theorem. If a saved Rhat does not equal that affine relation, include its defect: define F=Rhat_unique−[W Zhatᵀ Qsrc−JᵀD], then A eV=Qsrc Qsrcᴴ conj(eZ)W−Qsrc Fᴴ−rV. A genuine cache/data inconsistency must fail closed; ordinary rounding in construction is part of the already disclosed unverified FP scope.",
+    "Likewise the U-route coupled identity assumes Rhat=P Uhat−D. A stale/tampered or differently normalized residual cannot be substituted without its extra forcing defect.",
+    "Cache receipts must bind current m, frequency, actual operator/damping, ordered sources/receiver slots, full observed data, physical source amplitudes and backend/tolerance. Current/trial/policy ownership must prevent crossing caches at different model states.",
+    "Future GMRES-backed merits must retain their measured residual and tolerance/backend diagnostics. A converged field is a tolerance approximation, not mathematically exact. A nonsymmetric backend requires a separate component-bound derivation even though the general C/V gradient identity remains valid.",
+    "Finite nonzero residuals, overflow and unavailable stability must remain visible; no partial survey bound may be relabeled complete. All frequencies/columns use the same actual survey direction and all paid work remains in cost."
+  ],
+  "marginal_cost_controls": {
+    "common_paid_merit": "Compare from the SAME already-paid current-model merit receipt, reusing its factorization/fields legitimately on every arm. Also report full end-to-end cost including creation of that receipt and all trial/rejected merit work. Do not erase paid work by starting a timer after it.",
+    "cached_U_exact_increment": "Among current implemented point-source routes, min(s,r−c) additional fine RHS for a complete gradient: s adjoints or r−c missing receiver Green columns plus overlap reuse. c counts distinct collocated source/receiver positions under explicit transpose-symmetry check.",
+    "cached_C_exact_increment": "Among current implemented routes, min(r,s−c) additional fine RHS: r residual-coded forward solves or s−c missing source states plus exact receiver-map contractions. If c eliminates all missing work, the exact gradient can have zero additional fine RHS; certification still has work.",
+    "not_global_minimum": "These counts compare stated implementations, not a global lower bound or runtime ordering; structured source/residual rank, zero aggregated residuals, other solvers or prior cached complete gradients can change the best route.",
+    "new_proposal_work": "Charge residual recomputation of every paid U/Z column, approximate Lambda/V generation/repair, exact current/trial objective, all coarse stability SVD/eig/inverse columns, source/receiver constants, transform/stencil work, contractions, unavailable/retry/fallback and cache management. No extra fine solve may be hidden inside a bound.",
+    "strong_control": "Same norm-free coarse/DST right-GMRES, converged at declared true-residual tolerance, supplies a strong numerical gradient control; additionally allow certificate-stopped GMRES at the same directional task. Pay factor/setup and orthogonalization. A certificate speed claim must survive both marginal and total-cost comparisons at matched useful accuracy/accepted progress.",
+    "candidate_units": "Keep families/parents/trajectory units and all proposed arms; source/receiver counts and collocation cases fixed before outcomes. This is a new prospective marginal-cost experiment, not a retrospective reinterpretation of published timing negatives."
+  },
+  "prospective_falsifiers_not_executed": [
+    "Compare both exact algebra identities against independently assembled fine LU and directional finite differences with non-square grids, variable real damping and arbitrary complex data. The coded center with conjugated Z/C must fail in a genuinely complex case.",
+    "Expand repeated receiver slots with unequal complex observations; verify full-slot Phi, summed R_unique and multiplicities w. A mean collapse must produce a detectable gradient/bound error.",
+    "Change grid spacing and physical source amplitude; verify a=1/h² enters Q once and the Z-induced V forcing contains a². If extending to complex amplitude, test |a|² rather than a².",
+    "Use deliberately perturbed paid Uhat or Zhat, with exact independently known eU/eZ; check every coupled forcing identity and all three bound terms. Do not test only nearly exact LU fields where an omitted term may hide below tolerance.",
+    "Construct both a large direct rV and a small rV with significant Z-induced forcing. A V-only residual bound must not pass as a complete bound in the latter case.",
+    "Use collocated and disjoint source/receiver geometries, r<s, r>s and c near full overlap. Compare against the implemented best incremental exact gradient route and against already cached gradients; retain zero-additional-RHS controls.",
+    "Tamper model/frequency/data/ordering/amplitude/backend receipt or the affine Rhat relation. Reject mismatch or explicitly bound its defect, never reuse another current/trial/policy field silently.",
+    "Near gamma0/tau1, singular factors, zero aggregated residual and overflow: require explicit abstention/null aggregate bounds and accurate accounting. Zero approximate gradient does not establish true stationarity.",
+    "Use shared aggregate direction across every source/frequency and full signed derivative sum; blockwise negative directions or mean block cosine are not a survey certificate.",
+    "If the new bound certifies more cheaply only because full-merit work or expensive coarse setup was omitted, reject the speed claim. If it improves bounds without matched accepted-optimization benefit, report that narrower result."
+  ],
+  "closest_established_primary_context": [
+    {
+      "url": "https://kiwi.oden.utexas.edu/papers/multifidelity-optimization-adaptive-reduced-model-qian-grepl-veroy-willcox.pdf",
+      "doi": "10.1137/16M1081981",
+      "location": "Qian etal2017 Lemma3/Theorem5; primary theorem indexed text checked again",
+      "overlap": "Coupled state/adjoint residual-gradient bounds already reduce to one-sided terms when one field error vanishes. The new cache accounting is not a new error expansion."
+    },
+    {
+      "url": "https://arxiv.org/pdf/2006.09297",
+      "doi": "10.1051/m2an/2021019",
+      "location": "Keil etal2021 §2.3, Proposition2.7; earlier targeted primary full-text review",
+      "overlap": "Inexact physical gradients and corrected reduced-objective derivatives remain distinct; paid cached fields do not remove that distinction."
+    },
+    {
+      "url": "https://academic.oup.com/jge/article/10/6/065008/5111276",
+      "doi": "10.1088/1742-2132/10/6/065008",
+      "location": "Tao/Sen2013 primary publisher PDF indexed abstract/introduction; direct article open unavailable",
+      "overlap": "FWI gradients from source/receiver Green functions and residual weighting, including a receiver/source count tradeoff, are established. No claim that this source states the exact present cache-bound implementation."
+    }
+  ],
+  "conclusion": "Both ideal one-residual formulas and the proposed finite-residual native Z/V extension are correct under their explicit assumptions. Their strongest scientific opportunity is an honest, fixed cached-merit marginal-cost/accepted-step comparison. They are classical adjoint/duality specializations, not a demonstrated new gradient theorem, roundoff proof, or speedup.",
+  "project_evaluations_performed": false,
+  "main_or_staging_source_modified": false
+}

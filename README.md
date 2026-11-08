@@ -43,6 +43,15 @@ paired model-level summaries, uncertainty intervals, all online exact costs,
 checkpoint/source hashes, and quality-versus-time figures. `status.json` marks
 running, failed, and complete runs; source changes during execution mark a run stale.
 
+## Ongoing scientific phase
+
+The next scientific objectives remain open. The new
+[ancestry audit](docs/ancestry_audit.md) finds that the twelve SEAM IDs share one
+original model across research roles; model-ID separation is not independent
+ancestry/site separation. Historical outcomes remain, with narrower interpretation.
+See [continuing research](docs/continuing_research.md) for the full active goal,
+new controlled development evidence and the gates before any success claim.
+
 ## Latest controlled comparison
 
 A train-only classical POD model substantially outperforms the tested FNOs on

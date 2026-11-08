@@ -1,0 +1,11 @@
+# Fixed development refinement/repair probe
+
+All 144 predeclared aggregate comparisons and 3,456 block rows completed with source/input bytes unchanged. Protocol a3d87c1572df5c610622f96b5c589ba81dcda71cc23fe494e81f62e622de1de5 was pinned before outcomes on production source b403390e70e83b086c509fe3f43289008af689b6e28b5016a54d585bb985edec (Git be56a4a). Original script/protocol/pre-execution clarification bytes are preserved; this original exploratory script uses historical workspace paths and is not the portable future public runner.
+
+The probe interpolates the existing 24×24 validation velocities/POD space to 24, 49, 99 interior nodes at fixed 1.25 km extent, preserves physical acquisition coordinates and scales smoothing/sponge width. It is resolution/method development on already used data, NOT native high-resolution geology, fresh ancestors, timing evidence or an inversion outcome. The sponge sampling changes with h as the protocol discloses. SEAM model IDs share an ancestor; no IID-parent inference is made.
+
+Six fixed methods/all 8 slices/all 24 blocks are retained. Raw interpolated POD mean gradient cosine falls from 0.99876 to0.9010/0.8732 at 49/99. A single coarse rank 96 correction gives accurate directions but certifies 0/8 at both finer grids. Two fixed residual repairs at 96 certify 8/8 on all 3 grids. Pure coarse rank 64  + four paired repairs (no POD/training) also certifies 8/8 on all 3, with worst finer-grid gradient relative error below 1e-4. POD+coarse rank 64 + two repairs certifies 7/8 at 99; that negative is retained. All available bounds cover measured errors and no false certification is observed.
+
+Exact fields are OFFLINE validation. Costs include reused contexts/proof diagnostics and cannot be read as independent cold timings. The proposed procedure still must face a converged solver using the SAME preconditioner and matched-total-cost full inversion. Classical deflation/repair/duality are not claimed as new. Every conclusion remains ordinary floating point with the existing unverified cancellation allowance.
+
+`raw_arithmetic_check.json` records a separate check of saved vectors, all block sums and the 156 unchanged historical production files. It is not a PDE replay or human review. Original outcome records are unmodified.

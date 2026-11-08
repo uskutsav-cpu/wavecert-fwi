@@ -3,6 +3,17 @@
 This is a technical development record, not a competition research paper,
 student interpretation, mentor endorsement, or claim of a 10/10 project.
 
+## Subsequent ancestry correction and active research
+
+The [new metadata audit](ancestry_audit.md) shows that twelve SEAM model IDs
+share a single original model across train/validation/calibration/ID roles.
+Earlier model-ID isolation must not be read as independent-ancestor or real-site
+isolation. None of the saved values or historical receipts has been rewritten.
+New same-release slices are development/transfer, not fresh ancestors. The
+[full scientific continuation](continuing_research.md) remains active; matched-cost
+inversion success, broader realistic physics, novelty and student ownership are
+not declared achieved by the completed software pass.
+
 ## Latest controlled evidence: 2026-11-07
 
 The project now has a much stronger classical comparator and a useful small-grid
