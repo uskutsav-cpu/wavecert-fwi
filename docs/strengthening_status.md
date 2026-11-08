@@ -12,7 +12,7 @@ All five models and negative outcomes were retained.
 | Completed study | Result | Scope |
 |---|---|---|
 | Four FNO training candidates | Smoothing + JVP winner: validation cosine 0.161, true descent 5/8 | Train/validation selection only; ENOSPC restart, all histories and recovery receipts retained |
-| Eight classical POD candidates | State+tangent rank64: validation cosine 0.99876, descent 8/8 | Train-only snapshots; established classical baseline, selected on the same validation criterion |
+| Eight classical POD candidates | State+tangent rank 64: validation cosine 0.99876, descent 8/8 | Train-only snapshots; established classical baseline, selected on the same validation criterion |
 | Coarse certificate validation | Generic / oriented / corrected: 0/8, 2/8, 8/8 certified | Eight reused validation slices / four parents; not confirmation |
 | Fixed five-model comparison | 200 original model slots, 1,000 model-label aggregates, 4,000 model-block evaluations across 800 distinct physics blocks | Previously unused indices from two known generated batches; source and inputs unchanged |
 | Corrected certificate on those 200 slots | 168/200 certified, 0 observed false certifications, 32 abstentions | All frequency stability bounds available in all 200 model evaluations; exact fallback required on abstention but not executed in this gradient-only study |
@@ -27,11 +27,11 @@ classical gradient quality and useful abstaining certification, but does not sho
 that correction is needed for descent on this cohort or that the neural model is
 competitive. Cosines refer to summed gradient vectors, not averages of block cosines.
 
-All available block/aggregate errors were covered. Zero observed false
+All available deterministic/coarse bounds covered the measured block/aggregate errors. This does not describe the source-calibrated statistical gates, which retain false acceptances. Zero observed false
 certifications does not prove universal safety. Under each declared uniform
 100-index sample from its named 400-entry complement, the individual one-sided
 95% finite-population upper bound is 10/400 = 2.5%; it is not a simultaneous,
-independent-site, or future-inversion guarantee. The two source batches were
+independent-site, or future-inversion guarantee. Its event is a false certification per original model, including abstentions in the denominator; it does not bound error conditional on future acceptance. The two source batches were
 already known during development. No held-out selection was made among the five
 fixed models.
 
@@ -41,11 +41,33 @@ remain above 0.9997 there. Four OOD slices do not create four independent parent
 Other models in that study were not assigned a new certificate/calibration gate.
 
 The scalar corrected certificate performs zero online fine-grid LU/RHS work but
-is about 5.43 times slower than exact on this small grid. Its dense rank96 linear
+is about 5.43 times slower than exact on this small grid. Its dense rank 96 linear
 algebra, transforms, setup, and all current-model work are paid. This negative
 cost outcome is preserved. There is no inversion or equal-accuracy speedup claim.
-A separately frozen, validation-only batching/rank development study follows;
-its results must be reported separately from the earlier confirmation.
+The separately frozen batching/rank development study is now complete: all 288
+cold calls, all 6,912 block-quality rows, all 24 preflight comparisons, unchanged
+source/inputs and all integrity checks. All comparisons reuse the same eight
+validation slices/four parents, after earlier confirmation was already inspected.
+They are engineering development, not new confirmation.
+
+| Fixed control | Equal-parent mean of slice-median total cold time | Certificate outcome |
+|---|---:|---|
+| Best implemented exact objective/full gradient | 12.06 ms | Exact reference |
+| Raw POD64 scalar | 12.96 ms | No certificate assessed |
+| Raw POD64 batched | 4.54 ms | No certificate assessed |
+| Corrected POD64, scalar coarse 96 | 65.99 ms | 8/8 certified in every repetition |
+| Corrected POD64, batched coarse 96 | 42.51 ms | 8/8 certified in every repetition |
+| Corrected POD64, batched coarse 64 | 27.93 ms | 0/8 certified in every repetition; all 8 bounds available and covering |
+
+Batching gives a 1.55× total-cost improvement over the scalar corrected method at coarse rank 96 but remains
+3.52× slower than exact. Raw batched POD is 2.66× faster than exact for its
+approximate gradient task, with true descent on all 8 validation slices; no
+matched-accuracy or inversion advantage is established. Rank 64 fails the fixed
+all-case certification eligibility rule despite producing true descent, so it is
+retained as a negative outcome. The fixed rule recommends the batched method at coarse rank 96 for future
+development only; no default deployment or held-out reevaluation occurs.
+Repetitions do not add geological samples. All costs include setup and all
+current-model work; different dimensions/RHS/FFT dispatch units remain explicit.
 
 The residual-coded exact-gradient reference also strengthens the cost comparison:
 the implemented routes require the minimum of `2s`, `2r`, and (when complex
@@ -73,7 +95,8 @@ state/adjoint gradient bounds and coarse corrections predate this project; see
 - `results/gradient_confirmation`: complete five-model comparison.
 - `results/historical_transfer_freeze`, `historical_transfer`: separately frozen transfer.
 - `results/coarse_runtime_controls`: complete scalar cold costs including failures of the acceleration hypothesis.
-- `results/strengthening_audit`: separate saved-vector/source arithmetic checks.
+- `results/batched_pod_development`: six-control cost/parity study, including ineligible rank 64.
+- `results/strengthening_audit`: separate saved-vector/source arithmetic checks, including all 288 batch calls and 156 frozen source files.
 - `results/coarse_development_exploration`: exploratory discovery including negative controls.
 
 ## Completed implementation improvements

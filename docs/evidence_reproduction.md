@@ -29,6 +29,8 @@ python results/strengthening_figures/plot-strengthening-evidence.py \
   --repository . --output /tmp/wavecert-new-figures
 ```
 
+The separate batching audit is `results/strengthening_audit/independent_batched_pod_raw_audit_v2.py --repo . --output /tmp/new-batch-audit.json`; use a new receipt path.
+
 Choose a new plot output directory outside the repository. The audit reads all
 saved aggregate vectors and raw tables, checks arithmetic/cohorts/flags, and
 verifies the 144 recorded source files. It does not rerun the PDE, reconstruct
@@ -52,6 +54,7 @@ not a substitute for the real historical source audit.
 | Public coarse validation and fixed five-model comparison | `8b3c1f1854dc94ccdad1b3305a3bc83ee672c41c` | `docs/coarse_adjoint.md`, `docs/gradient_confirmation.md`, `docs/pod_confirmation.md` |
 | Separately frozen historical transfer | `3871987718777bcb453b7e090d6d5a62db9e6081` | `docs/historical_transfer.md`, `results/historical_transfer` |
 | Scalar cold-query costs | `312c65922f50cd0176c9f2096adbb64cd0b6e7b4` | `docs/coarse_runtime_controls.md`, `results/coarse_runtime_controls` |
+| Fixed batching/rank development | `3f569eb8d104e416dff04567b0195904818c76a6` | `docs/batched_pod_development.md`, `results/batched_pod_development` |
 
 Some output snapshots and preparation artifacts were published after the source
 commit that generated them. Keep a copy of the current archived evidence outside

@@ -1,0 +1,28 @@
+{
+  "source_commit": "3f569eb8d104e416dff04567b0195904818c76a6",
+  "source_sha256": "b403390e70e83b086c509fe3f43289008af689b6e28b5016a54d585bb985edec",
+  "local_full_suite": {
+    "status": "passed",
+    "tests_passed": 454,
+    "warnings": 2,
+    "log_sha256": "be84deec4a2ee76d9b9db7799ce38bfb34f6d4c72c90eb8b440baca3dc2c78b4"
+  },
+  "original_local_attempt": {
+    "status": "failed due disk exhaustion writing synthetic test NPY",
+    "tests_passed_before_failure": 273,
+    "log_sha256": "a043bab21e42b70c22e3c3c811a7261b31b1e4a90a92ad2eee8bb7ed37b8276e",
+    "recovery": "Only completed task scratch/worktree removed; pytest passing temporary files deleted via built-in retention policy. No tests or production code changed for recovery."
+  },
+  "linux_ci": {
+    "status": "all jobs terminal success",
+    "run_id": 42427317966,
+    "url": "https://github.com/uskutsav-cpu/wavecert-fwi/actions/runs/42427317966",
+    "jobs": [
+      "core Python3.10",
+      "core Python3.11",
+      "core Python3.12",
+      "learned/data plus physics and evidence smoke checks"
+    ]
+  },
+  "later_changes": "Only docs/results/plot/audit artifacts after this code verification; source manifest unchanged"
+}

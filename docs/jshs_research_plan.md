@@ -46,8 +46,13 @@ The scalar corrected certificate costs a median 68.30 ms including setup versus
 12.57 ms for exact objective/full gradient in the fixed small-grid study. Raw POD
 costs 13.66 ms. Different information tasks are being compared, and zero online
 fine solves is not a speedup. A separately frozen batching/rank development
-comparison is used to measure whether implementation overhead can be reduced;
-it cannot retroactively change the earlier confirmation protocol.
+comparison is complete. With setup included, the batched corrected method at coarse rank 96 costs 42.51 ms
+versus 65.99 ms scalar and 12.06 ms exact under the fixed equal-parent score:
+a 1.55× implementation gain, still 3.52× slower than exact. The cheaper coarse 64
+variant certifies 0/8 and fails the fixed eligibility rule. Raw batched POD costs
+4.54 ms (2.66× faster than exact for its approximate-gradient task). These are
+reused validation outcomes, not matched-accuracy inversion results or a change
+to the earlier confirmation protocol.
 
 The strongest current scientific direction is a careful comparison of classical
 reduced models and residual-certified physical directions, with neural methods

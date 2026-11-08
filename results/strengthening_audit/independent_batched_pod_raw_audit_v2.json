@@ -1,0 +1,187 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-08T00:08:58.410293+00:00",
+  "audit_script_sha256": "5528d5972aabc06bf6c71a8beaa9b035e931aa72876a2f35e0e909e1cb2d76d0",
+  "protocol_sha256": "a53600eff96f128193f813c077da29235d185fca473a24e060ca8fe75334ad1f",
+  "source": {
+    "recorded_git_revision": "3f569eb8d104e416dff04567b0195904818c76a6",
+    "source_sha256": "b403390e70e83b086c509fe3f43289008af689b6e28b5016a54d585bb985edec",
+    "recorded_files_verified": 156,
+    "all_recorded_blobs_match_git_and_current_files": true,
+    "later_unrecorded_source_additions": []
+  },
+  "raw_file_sha256": {
+    "protocol.json": "a53600eff96f128193f813c077da29235d185fca473a24e060ca8fe75334ad1f",
+    "summary.json": "7d79a0023cadbe8b610cf3ac9e09b6ddb0c5e2f02b0736cf4e0e845a72b0250b",
+    "status.json": "85a1581cc58b9e423421e59bc6f40ccacde3f48d79490e6dd7dbc5a76931ebac",
+    "input_provenance.json": "de9dda29151c59412a22453a48c38c1cab73bf68f8ae2217117e0e31b404de1b",
+    "cold_calls.csv": "b4068695240ddbc5e394406454d0e9025bc44e799c163ffa6c3d229dcc718636",
+    "block_quality.csv": "ce3d97e66f2ef87ed1f27e8da55046478730f66ef3d9c194923b0e1f188fc39f",
+    "paired_cold_calls.csv": "97e4618ea4ad1a882cfd0359105e7fc7fa84a49399b5008b78af7c1be0c93c0a",
+    "cost_receipts.json": "d325bcdec36c18a6f6b1214edd05da9ab18f21a12e97bfa859ac88541417741b",
+    "parity_checks.json": "706783bc77b60063c000a608c67c7f5d685d368d14c8950ce9daee036aac7170",
+    "parity_work_receipts.json": "58f43e523c6445fc74f2fec1b116581594942ea9b83f5e18cb695c6b6efd0654",
+    "offline_reference_work.json": "495955cbbc15c1af7a3236816c05ce93f7887679eb5b1c75d6271a8a2f0e6e77",
+    "aggregate_vectors.npz": "fd174b4935cda079a6614a28450554d9ef5c0c396b1520ee602033d9b358c6a0"
+  },
+  "input_file_sha256": {
+    "data/reference/coarse_adjoint_validation/validation_inverse_cases.npz": "be429def325b741d415546167b8e13b5d52a3304d79f36efd3945a58363177db",
+    "data/reference/coarse_adjoint_validation/provenance.json": "c0f32413bee5db2aa67e128d81f3a6523a87bd398dc68aa35b4fa0485212a941",
+    "results/pod_development/bases/state_tangent_rank64.npz": "f2ae08cbcb251802ba7be92d69e87c28f425c5b1dfeede02fd94d6720c484447",
+    "results/pod_development/input_provenance.json": "8e835f911df2525fd159ffceaa8213fd4bf647fc2c71a920af9baa95086a23ad",
+    "results/pod_development/summary.json": "872d7f557f4d1a2c18401ce86278132f24e8bfe37bef2536e872922f648603c6",
+    "src/wavecert/surrogates/pod.py": "b613dc2e62ba24f65a9c7587d40c3d1af4f7fc0d2e5fcab8daee649908bcd5ca"
+  },
+  "verified_counts": {
+    "cold_calls": 288,
+    "block_rows": 6912,
+    "paired_rows": 48,
+    "preflight_comparisons": 24,
+    "cost_receipts": 288,
+    "finite_vector_rows": 288,
+    "unique_slices": 8,
+    "parent_groups": 4
+  },
+  "maximum_arithmetic_discrepancies": {
+    "cosine_error": 4.440892098500626e-16,
+    "gradient_norm_error": 0.0,
+    "signed_derivative_error": 3.552713678800501e-14,
+    "block_signed_sum_error": 4.263256414560601e-14,
+    "timing_sum_error": 0.0,
+    "bound_sum_error": 5.684341886080802e-14
+  },
+  "maximum_saved_scalar_batch_gradient_absolute_difference": {
+    "raw": 1.4210854715202004e-14,
+    "rank96": 5.5788706987414116e-14
+  },
+  "timing": {
+    "best_exact": {
+      "equal_parent_mean_slice_median_total_cold_ms": 12.063940187090338,
+      "parent_means_ms": {
+        "gom_148": 12.02477100014221,
+        "gom_151": 12.017375000141328,
+        "seam_005": 12.139958249463234,
+        "seam_011": 12.073656498614582
+      },
+      "global_median_ms": 12.063646005117334
+    },
+    "raw_POD_scalar": {
+      "equal_parent_mean_slice_median_total_cold_ms": 12.959164187122951,
+      "parent_means_ms": {
+        "gom_148": 12.962655997398542,
+        "gom_151": 12.860635750257643,
+        "seam_005": 13.050666751951212,
+        "seam_011": 12.962698248884408
+      },
+      "global_median_ms": 12.971000498509966
+    },
+    "raw_POD_batch": {
+      "equal_parent_mean_slice_median_total_cold_ms": 4.541830750895315,
+      "parent_means_ms": {
+        "gom_148": 4.509573000177625,
+        "gom_151": 4.526624998106854,
+        "seam_005": 4.528593752183951,
+        "seam_011": 4.602531253112829
+      },
+      "global_median_ms": 4.559229000733467
+    },
+    "corrected_scalar96": {
+      "equal_parent_mean_slice_median_total_cold_ms": 65.9916613731184,
+      "parent_means_ms": {
+        "gom_148": 66.04007299756631,
+        "gom_151": 65.95881224893674,
+        "seam_005": 65.66345824830933,
+        "seam_011": 66.30430199766124
+      },
+      "global_median_ms": 65.97075000172481
+    },
+    "corrected_batch96": {
+      "equal_parent_mean_slice_median_total_cold_ms": 42.51339062511761,
+      "parent_means_ms": {
+        "gom_148": 42.99641650140984,
+        "gom_151": 41.66317725139379,
+        "seam_005": 42.52546899988374,
+        "seam_011": 42.86849974778306
+      },
+      "global_median_ms": 42.620812499080785
+    },
+    "corrected_batch64": {
+      "equal_parent_mean_slice_median_total_cold_ms": 27.932135500577715,
+      "parent_means_ms": {
+        "gom_148": 27.60438575023727,
+        "gom_151": 27.40174999962619,
+        "seam_005": 28.01254175210488,
+        "seam_011": 28.70986450034252
+      },
+      "global_median_ms": 27.78483300062362
+    }
+  },
+  "corrected_slice_counts": {
+    "corrected_scalar96": {
+      "certified_unique_slices": 8,
+      "available_unique_slices": 8,
+      "true_descent_unique_slices": 8,
+      "false_certifications": 0,
+      "uncertified_slice_ids": []
+    },
+    "corrected_batch96": {
+      "certified_unique_slices": 8,
+      "available_unique_slices": 8,
+      "true_descent_unique_slices": 8,
+      "false_certifications": 0,
+      "uncertified_slice_ids": []
+    },
+    "corrected_batch64": {
+      "certified_unique_slices": 0,
+      "available_unique_slices": 8,
+      "true_descent_unique_slices": 8,
+      "false_certifications": 0,
+      "uncertified_slice_ids": [
+        "gom_148_il_0236",
+        "gom_148_xl_0768",
+        "gom_151_il_0247",
+        "gom_151_xl_0857",
+        "seam_005_il_0596",
+        "seam_005_xl_0795",
+        "seam_011_il_0522",
+        "seam_011_xl_0866"
+      ]
+    }
+  },
+  "candidate_eligibility": {
+    "corrected_batch96": {
+      "eligible": true,
+      "score_seconds": 0.04251339062511761,
+      "parent_means_seconds": {
+        "gom_148": 0.04299641650140984,
+        "gom_151": 0.04166317725139379,
+        "seam_005": 0.04252546899988374,
+        "seam_011": 0.04286849974778306
+      }
+    },
+    "corrected_batch64": {
+      "eligible": false,
+      "score_seconds": 0.027932135500577715,
+      "parent_means_seconds": {
+        "gom_148": 0.02760438575023727,
+        "gom_151": 0.02740174999962619,
+        "seam_005": 0.02801254175210488,
+        "seam_011": 0.02870986450034252
+      }
+    }
+  },
+  "recomputed_development_recommendation": "corrected_batch96",
+  "ratios": {
+    "batch96_over_scalar96": 0.6442236752420264,
+    "batch96_over_exact": 3.5240054215961156,
+    "raw_batch_over_exact": 0.3764798797457188
+  },
+  "PDE_or_model_replays": 0,
+  "main_or_raw_artifact_mutations": 0,
+  "limitations": [
+    "Independent stored-artifact arithmetic/cohort/source/accounting audit, not a rerun of PDE/model values.",
+    "Saved aggregate vectors permit independent cosine/direction/derivative sums and repeat/scalar-batch checks. Full per-block gradient/state/adjoint fields are not saved; their preflight parity relies on recorded residual/error summaries and existing tests.",
+    "Raw approximate gradient, exact full gradient and certified physical proposal are different information tasks. No inversion/equal-accuracy/time-to-target or heldout promotion follows.",
+    "Eight reused development slices/four parent groups with six timing visits; descriptive timings, not IID geological inference or proof of OS idleness."
+  ]
+}

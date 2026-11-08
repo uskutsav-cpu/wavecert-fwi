@@ -1,0 +1,45 @@
+{
+  "script_sha256": "aebef7fa50f08a2d2aba4f969cabf7150d0fb04e571b5ed2465f33ec8398becf",
+  "inputs": {
+    "summary.json": "7d79a0023cadbe8b610cf3ac9e09b6ddb0c5e2f02b0736cf4e0e845a72b0250b",
+    "cold_calls.csv": "b4068695240ddbc5e394406454d0e9025bc44e799c163ffa6c3d229dcc718636",
+    "protocol.json": "a53600eff96f128193f813c077da29235d185fca473a24e060ca8fe75334ad1f"
+  },
+  "outputs": {
+    "batched_development_costs.png": "224c7437c4da1f0119dac1486a26b16b221bb1f45d01f110c4182a293385bec5",
+    "batched_development_costs.svg": "dfb30272bbe477666beeecc8272dcc3775ee99610086337e6a6be49758b58279"
+  },
+  "values": {
+    "best_exact": {
+      "equal_parent_mean_slice_median_total_cold_ms": 12.063940187090338,
+      "certified_slices": null,
+      "n_slices": 8
+    },
+    "raw_POD_scalar": {
+      "equal_parent_mean_slice_median_total_cold_ms": 12.959164187122951,
+      "certified_slices": null,
+      "n_slices": 8
+    },
+    "raw_POD_batch": {
+      "equal_parent_mean_slice_median_total_cold_ms": 4.541830750895315,
+      "certified_slices": null,
+      "n_slices": 8
+    },
+    "corrected_scalar96": {
+      "equal_parent_mean_slice_median_total_cold_ms": 65.9916613731184,
+      "certified_slices": 8,
+      "n_slices": 8
+    },
+    "corrected_batch96": {
+      "equal_parent_mean_slice_median_total_cold_ms": 42.51339062511761,
+      "certified_slices": 8,
+      "n_slices": 8
+    },
+    "corrected_batch64": {
+      "equal_parent_mean_slice_median_total_cold_ms": 27.932135500577715,
+      "certified_slices": 0,
+      "n_slices": 8
+    }
+  },
+  "caption": "Completed post-confirmation engineering study: all 288 balanced cold visits, eight existing validation slices/four parents, six fixed controls. Dots are per-slice medians of six visits and black bars are the fixed equal-parent mean of slice medians, not confidence intervals. All corrected96 cases certify; corrected64 certifies none despite finite available covering bounds. Uncertified raw controls were not assigned a certificate. The information tasks differ and ordinary-floating-point certificate limitations remain. No held-out rerun, automatic deployment, matched-accuracy or inversion speedup claim."
+}

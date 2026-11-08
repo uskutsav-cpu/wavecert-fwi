@@ -57,7 +57,12 @@ zero false certifications, and abstains on 32. Its guarantee is a pointwise,
 discrete, exact-arithmetic inequality evaluated in ordinary floating point;
 it is not a universal safety or trajectory claim. Its scalar implementation
 is **5.43× slower than exact** on the eight-slice small-grid cold-query study,
-including setup. Zero fine-grid solves does not establish acceleration.
+including setup. A later fixed development study cuts corrected cost by 1.55×
+through batching, but it remains 3.52× slower than exact. Raw batched POD costs
+4.54 ms versus 12.06 ms exact for a different approximate-gradient task; no
+inversion speedup is established. Lowering the coarse rank to 64 certifies 0/8
+validation cases and is ineligible. All outcomes remain in the
+[batching study](docs/batched_pod_development.md).
 
 See the [evidence ledger](docs/strengthening_status.md),
 [coarse certificate](docs/coarse_adjoint.md), [classical control](docs/pod_controls.md),

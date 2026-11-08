@@ -44,10 +44,11 @@ Historical phase reports describe older implementations and experimental designs
 - [x] Fixed-budget four-candidate augmentation/JVP development comparison, with retained failures and recovery evidence.
 - [x] Train-only classical POD rank/family comparison using the same validation criterion.
 - [x] Component coarse-stability and physical-adjoint directional certificate, including unavailable cases.
-- [x] Fixed five-model unused-index comparison: all 200 slots and 4,000 blocks retained.
+- [x] Fixed five-model unused-index comparison: all 200 slots and 4,000 model-block evaluations retained.
 - [x] Separately frozen historical transfer, all 20 slices and nine parents retained.
 - [x] Cold-query scalar cost study with optimized exact and raw-POD controls; unfavorable acceleration result retained.
 - [x] Separate vector/source arithmetic audits and direct primary-literature boundary check.
+- [x] Fixed six-control batched/rank development comparison with full preflight and 288 cold calls; rank 64 failure retained.
 
 The next scientific milestones, success criteria and subjective assessment are in
 [jshs_research_plan.md](jshs_research_plan.md). The bounded batching/rank comparison
