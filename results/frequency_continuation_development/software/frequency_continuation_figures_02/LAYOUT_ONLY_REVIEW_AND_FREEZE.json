@@ -1,0 +1,44 @@
+{
+  "created_utc": "2026-11-08T18:58:47.548088+00:00",
+  "previous_source_sha256": "56dff83ca707eda61c23eb75714762efb42e4cc03d1569f0ecfbdc0b97e3a475",
+  "new_source_sha256": "c99b7554c999d805d2fdca95945c55dcf6e6b47aec3e937e485d9d08097c4916",
+  "scope": "Post-outcome visual QA repair only; all original PNG/SVG/CSV/source/logs preserved.",
+  "nonplots_function_AST_equal": true,
+  "changes": [
+    "figsizeheight14\u219217",
+    "countlabels3lines/7.5pt",
+    "legendanchor/margins/footer/spacing"
+  ],
+  "metric_arrays_reductions_eligibility_cases_methods_reps_linear_axes_and_plotted_values_changed": false,
+  "Ruff_default": [
+    {
+      "command": [
+        "/opt/miniconda3/bin/python",
+        "-B",
+        "-I",
+        "-m",
+        "ruff",
+        "check",
+        "--config",
+        "work/wavecert-fwi/pyproject.toml",
+        "work/new-phase-staging/frequency_continuation_figures_02/plot_results.py"
+      ],
+      "exit": 0,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/miniconda3/bin/python",
+        "-B",
+        "-I",
+        "work/new-phase-staging/frequency_continuation_figures_02/plot_results.py"
+      ],
+      "exit": 0,
+      "stdout": "{\"status\": \"source_only_default_no_outcome_reads\", \"runs\": 96, \"cases\": 8, \"methods\": [\"joint8\", \"low4_then8\", \"restart8\", \"original4\"], \"repetitions\": 3, \"required_terminal_GO\": true, \"scope\": \"Eight reused development slices; nominal SEAM identities share ancestry, and repetitions are timing repetitions, not independent geology. Original 4 uses fewer observations. Descriptive engineering comparison; no physical acceptance, novelty, causal recovery or competition claim.\"}\n",
+      "stderr": ""
+    }
+  ],
+  "Python310_AST": "PASS",
+  "expected_complete_sha256": "261a3b0c6ce4c5a8533339ccee201a1ac6c23e74a60c6989897cda9f1251423b"
+}

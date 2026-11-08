@@ -1,0 +1,22 @@
+{
+  "created_utc": "2026-11-08T18:56:39.686044+00:00",
+  "role": "Pre-outcome style-only refreeze authorized byroot",
+  "result": "PASS_NO_NONIMPORT_LOGIC_CHANGE",
+  "old_source_sha256": "c3eb5384656306c3009813f340a440c3d4bbec61ae3fa5bbf53acfaa325b0ac0",
+  "new_source_sha256": "56dff83ca707eda61c23eb75714762efb42e4cc03d1569f0ecfbdc0b97e3a475",
+  "delta": "from pathlib import Path moved below import sys; only top-level import order",
+  "nonimport_AST_equal": true,
+  "Python310_AST": "PASS",
+  "Ruff": "PASS",
+  "default_CLI": "PASS metadata-only no outcome reads",
+  "logs_sha256": {
+    "COMMANDS_02.json": "1e1620349bbf9543828b0a08131c4a462bfb1d2e1854808953e309704d49cdbf",
+    "grammar_02.log": "54e6b7d9e4b025f0e3081111c0b02ab187420b278c697cd07ada051087d09ebd",
+    "ruff_02.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "default_02.log": "26d683bb3efdac8207c713279150ee6c5c01d369646662598662dee1879de689"
+  },
+  "outcome_reads_before_this_freeze": 0,
+  "root_terminal_observation_sha256": "742fe3b09e75217ace89167e838201fe7095f9ea112f72ff74ee45b756b95cfd",
+  "root_figure_execution_GO": true,
+  "expected_complete_sha256": "261a3b0c6ce4c5a8533339ccee201a1ac6c23e74a60c6989897cda9f1251423b"
+}

@@ -264,3 +264,14 @@ than relabeled convergence.
 
 These are open research outcomes. They cannot be completed by changing a status
 flag, adding documentation, or assigning a higher score.
+
+
+## Frequency-continuation development update
+
+The fresh four-arm comparison completed all 96 runs under the 8-second complete-return cap. Its separate scalar audit passes 41,398 checks and 1,632 numerical comparisons, with all 32 case/arm groups retaining 3/3 eligible repetitions. Continuation remains worse than initialization on 7/8 case medians (joint 8: 6/8; restart 8: 7/8; original 4: 5/8). It improves velocity error versus joint 8 on 5/8 cases, which is a different comparison and does not establish useful recovery. All 144 stages stop on their time budget, with no 2,048/4,096 callback-cap hit. Returned objective ratios are final-return diagnostics, not first-hit or target-stopping evidence.
+
+The interrupted predecessor remains 85 complete, one in flight and ten unattempted, with an unknown actual exit code and no complete receipt; cohorts are never pooled, resumed or replaced. The checker's first failed schema audit and one-field V2 correction remain visible, with identical numerical criteria. A chronology addendum distinguishes the actual 15-control protocol b982 from the later reviewed 2b49, which adds two descriptive statements only.
+
+Independent source/mathematics review establishes a conditional reciprocity ceiling: real Jacobian rank at most 1,680 over 2,401 unrestricted squared-slowness variables, hence an ambient linear kernel of dimension at least 721. This neither measures actual rank/conditioning nor proves a cause, nonlinear uniqueness failure at every model, or a remedy. Active bounds and priors can restrict feasible directions; an invertible coordinate change preserves rank. All original residual terms remain. A bounded Overthrust source quarantine contains a lossy float16 demo with unresolved extraction/smoothing history; no model-array decoding or physical validation occurred.
+
+All four scientific objectives remain open. Software/source/audit controls cannot substitute for practical recovery, accepted physics across independent geology, a specific useful contribution, or the student's own interpretation and defense. The [frequency-continuation report](frequency_continuation_development.md) retains all eight cases, 96 rows, raw sources, failed attempts and figures. The new local portable test reruns all 108 manufactured controls in an isolated checkout; cross-platform CI remains a separate observed check.

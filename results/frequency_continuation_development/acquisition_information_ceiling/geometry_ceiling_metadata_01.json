@@ -1,0 +1,989 @@
+{
+  "PDE_or_optimizer_calls": 0,
+  "all8_map": {
+    "frequencies_hz": [
+      0.25,
+      0.5,
+      1.0,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0
+    ],
+    "potentially_distinct_complex_slots": 840,
+    "raw_complex_slots": 960,
+    "raw_real_and_imaginary_slots": 1920,
+    "real_Jacobian_rank_upper_bound": 1680,
+    "real_linearized_nullity_lower_bound": 721,
+    "reciprocal_duplicate_complex_rows": 120,
+    "unrestricted_real_parameter_count": 2401
+  },
+  "conditional_domain": "At real positive m where every selected A(m,omega) is nonsingular, hence forward map is differentiable; ideal exact-arithmetic structural ceiling, not measured floating-point rank",
+  "derivative": "DF_f(m)[dm]_(r,s)=(omega^2/h^2)*e_r^T A^-1 diag(dm) A^-1 e_s; swapped source/receiver rows remain equal",
+  "discarded_or_reweighted_objective_terms": 0,
+  "mapping": "old(z,x) -> (2z+1,2x+1), C-order49; source-major20receiver rows within each frequency",
+  "native_m_units": "s^2/km^2",
+  "native_receiver_indices": [
+    250,
+    252,
+    254,
+    256,
+    258,
+    260,
+    262,
+    264,
+    266,
+    268,
+    270,
+    272,
+    274,
+    276,
+    278,
+    280,
+    282,
+    284,
+    286,
+    288
+  ],
+  "native_shape": [
+    49,
+    49
+  ],
+  "native_source_indices": [
+    250,
+    258,
+    266,
+    272,
+    280,
+    288
+  ],
+  "numerical_rank_conditioning_or_actual_array_equality_computed": false,
+  "operator": "A(m,omega)=K-omega^2 diag(m)+i omega diag(d), K^T=K, d fixed real diagonal",
+  "original4_submap": {
+    "frequencies_hz": [
+      2.5,
+      3.0,
+      3.5,
+      4.0
+    ],
+    "potentially_distinct_complex_slots": 420,
+    "raw_complex_slots": 480,
+    "raw_real_and_imaginary_slots": 960,
+    "real_Jacobian_rank_upper_bound": 840,
+    "real_linearized_nullity_lower_bound": 1561,
+    "reciprocal_duplicate_complex_rows": 60,
+    "unrestricted_real_parameter_count": 2401
+  },
+  "original_receiver_indices": [
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69
+  ],
+  "original_source_indices": [
+    50,
+    54,
+    58,
+    61,
+    65,
+    69
+  ],
+  "per_frequency_count_identity": "6*(20-6)+6*(6+1)/2=84+21=105;120-15=105",
+  "physical_acceptance": null,
+  "project_array_reads": 0,
+  "reciprocal_duplicate_rows_in_full8_vector": [
+    {
+      "frequency_hz": 0.25,
+      "row_pairs": [
+        [
+          4,
+          20
+        ],
+        [
+          8,
+          40
+        ],
+        [
+          11,
+          60
+        ],
+        [
+          15,
+          80
+        ],
+        [
+          19,
+          100
+        ],
+        [
+          28,
+          44
+        ],
+        [
+          31,
+          64
+        ],
+        [
+          35,
+          84
+        ],
+        [
+          39,
+          104
+        ],
+        [
+          51,
+          68
+        ],
+        [
+          55,
+          88
+        ],
+        [
+          59,
+          108
+        ],
+        [
+          75,
+          91
+        ],
+        [
+          79,
+          111
+        ],
+        [
+          99,
+          115
+        ]
+      ]
+    },
+    {
+      "frequency_hz": 0.5,
+      "row_pairs": [
+        [
+          124,
+          140
+        ],
+        [
+          128,
+          160
+        ],
+        [
+          131,
+          180
+        ],
+        [
+          135,
+          200
+        ],
+        [
+          139,
+          220
+        ],
+        [
+          148,
+          164
+        ],
+        [
+          151,
+          184
+        ],
+        [
+          155,
+          204
+        ],
+        [
+          159,
+          224
+        ],
+        [
+          171,
+          188
+        ],
+        [
+          175,
+          208
+        ],
+        [
+          179,
+          228
+        ],
+        [
+          195,
+          211
+        ],
+        [
+          199,
+          231
+        ],
+        [
+          219,
+          235
+        ]
+      ]
+    },
+    {
+      "frequency_hz": 1.0,
+      "row_pairs": [
+        [
+          244,
+          260
+        ],
+        [
+          248,
+          280
+        ],
+        [
+          251,
+          300
+        ],
+        [
+          255,
+          320
+        ],
+        [
+          259,
+          340
+        ],
+        [
+          268,
+          284
+        ],
+        [
+          271,
+          304
+        ],
+        [
+          275,
+          324
+        ],
+        [
+          279,
+          344
+        ],
+        [
+          291,
+          308
+        ],
+        [
+          295,
+          328
+        ],
+        [
+          299,
+          348
+        ],
+        [
+          315,
+          331
+        ],
+        [
+          319,
+          351
+        ],
+        [
+          339,
+          355
+        ]
+      ]
+    },
+    {
+      "frequency_hz": 2.0,
+      "row_pairs": [
+        [
+          364,
+          380
+        ],
+        [
+          368,
+          400
+        ],
+        [
+          371,
+          420
+        ],
+        [
+          375,
+          440
+        ],
+        [
+          379,
+          460
+        ],
+        [
+          388,
+          404
+        ],
+        [
+          391,
+          424
+        ],
+        [
+          395,
+          444
+        ],
+        [
+          399,
+          464
+        ],
+        [
+          411,
+          428
+        ],
+        [
+          415,
+          448
+        ],
+        [
+          419,
+          468
+        ],
+        [
+          435,
+          451
+        ],
+        [
+          439,
+          471
+        ],
+        [
+          459,
+          475
+        ]
+      ]
+    },
+    {
+      "frequency_hz": 2.5,
+      "row_pairs": [
+        [
+          484,
+          500
+        ],
+        [
+          488,
+          520
+        ],
+        [
+          491,
+          540
+        ],
+        [
+          495,
+          560
+        ],
+        [
+          499,
+          580
+        ],
+        [
+          508,
+          524
+        ],
+        [
+          511,
+          544
+        ],
+        [
+          515,
+          564
+        ],
+        [
+          519,
+          584
+        ],
+        [
+          531,
+          548
+        ],
+        [
+          535,
+          568
+        ],
+        [
+          539,
+          588
+        ],
+        [
+          555,
+          571
+        ],
+        [
+          559,
+          591
+        ],
+        [
+          579,
+          595
+        ]
+      ]
+    },
+    {
+      "frequency_hz": 3.0,
+      "row_pairs": [
+        [
+          604,
+          620
+        ],
+        [
+          608,
+          640
+        ],
+        [
+          611,
+          660
+        ],
+        [
+          615,
+          680
+        ],
+        [
+          619,
+          700
+        ],
+        [
+          628,
+          644
+        ],
+        [
+          631,
+          664
+        ],
+        [
+          635,
+          684
+        ],
+        [
+          639,
+          704
+        ],
+        [
+          651,
+          668
+        ],
+        [
+          655,
+          688
+        ],
+        [
+          659,
+          708
+        ],
+        [
+          675,
+          691
+        ],
+        [
+          679,
+          711
+        ],
+        [
+          699,
+          715
+        ]
+      ]
+    },
+    {
+      "frequency_hz": 3.5,
+      "row_pairs": [
+        [
+          724,
+          740
+        ],
+        [
+          728,
+          760
+        ],
+        [
+          731,
+          780
+        ],
+        [
+          735,
+          800
+        ],
+        [
+          739,
+          820
+        ],
+        [
+          748,
+          764
+        ],
+        [
+          751,
+          784
+        ],
+        [
+          755,
+          804
+        ],
+        [
+          759,
+          824
+        ],
+        [
+          771,
+          788
+        ],
+        [
+          775,
+          808
+        ],
+        [
+          779,
+          828
+        ],
+        [
+          795,
+          811
+        ],
+        [
+          799,
+          831
+        ],
+        [
+          819,
+          835
+        ]
+      ]
+    },
+    {
+      "frequency_hz": 4.0,
+      "row_pairs": [
+        [
+          844,
+          860
+        ],
+        [
+          848,
+          880
+        ],
+        [
+          851,
+          900
+        ],
+        [
+          855,
+          920
+        ],
+        [
+          859,
+          940
+        ],
+        [
+          868,
+          884
+        ],
+        [
+          871,
+          904
+        ],
+        [
+          875,
+          924
+        ],
+        [
+          879,
+          944
+        ],
+        [
+          891,
+          908
+        ],
+        [
+          895,
+          928
+        ],
+        [
+          899,
+          948
+        ],
+        [
+          915,
+          931
+        ],
+        [
+          919,
+          951
+        ],
+        [
+          939,
+          955
+        ]
+      ]
+    }
+  ],
+  "reciprocal_pairs": [
+    {
+      "duplicate_rows_within_one_frequency": [
+        4,
+        20
+      ],
+      "native_source_indices": [
+        250,
+        258
+      ],
+      "old_source_indices": [
+        50,
+        54
+      ],
+      "receiver_slots": [
+        4,
+        0
+      ],
+      "source_ordinals": [
+        0,
+        1
+      ]
+    },
+    {
+      "duplicate_rows_within_one_frequency": [
+        8,
+        40
+      ],
+      "native_source_indices": [
+        250,
+        266
+      ],
+      "old_source_indices": [
+        50,
+        58
+      ],
+      "receiver_slots": [
+        8,
+        0
+      ],
+      "source_ordinals": [
+        0,
+        2
+      ]
+    },
+    {
+      "duplicate_rows_within_one_frequency": [
+        11,
+        60
+      ],
+      "native_source_indices": [
+        250,
+        272
+      ],
+      "old_source_indices": [
+        50,
+        61
+      ],
+      "receiver_slots": [
+        11,
+        0
+      ],
+      "source_ordinals": [
+        0,
+        3
+      ]
+    },
+    {
+      "duplicate_rows_within_one_frequency": [
+        15,
+        80
+      ],
+      "native_source_indices": [
+        250,
+        280
+      ],
+      "old_source_indices": [
+        50,
+        65
+      ],
+      "receiver_slots": [
+        15,
+        0
+      ],
+      "source_ordinals": [
+        0,
+        4
+      ]
+    },
+    {
+      "duplicate_rows_within_one_frequency": [
+        19,
+        100
+      ],
+      "native_source_indices": [
+        250,
+        288
+      ],
+      "old_source_indices": [
+        50,
+        69
+      ],
+      "receiver_slots": [
+        19,
+        0
+      ],
+      "source_ordinals": [
+        0,
+        5
+      ]
+    },
+    {
+      "duplicate_rows_within_one_frequency": [
+        28,
+        44
+      ],
+      "native_source_indices": [
+        258,
+        266
+      ],
+      "old_source_indices": [
+        54,
+        58
+      ],
+      "receiver_slots": [
+        8,
+        4
+      ],
+      "source_ordinals": [
+        1,
+        2
+      ]
+    },
+    {
+      "duplicate_rows_within_one_frequency": [
+        31,
+        64
+      ],
+      "native_source_indices": [
+        258,
+        272
+      ],
+      "old_source_indices": [
+        54,
+        61
+      ],
+      "receiver_slots": [
+        11,
+        4
+      ],
+      "source_ordinals": [
+        1,
+        3
+      ]
+    },
+    {
+      "duplicate_rows_within_one_frequency": [
+        35,
+        84
+      ],
+      "native_source_indices": [
+        258,
+        280
+      ],
+      "old_source_indices": [
+        54,
+        65
+      ],
+      "receiver_slots": [
+        15,
+        4
+      ],
+      "source_ordinals": [
+        1,
+        4
+      ]
+    },
+    {
+      "duplicate_rows_within_one_frequency": [
+        39,
+        104
+      ],
+      "native_source_indices": [
+        258,
+        288
+      ],
+      "old_source_indices": [
+        54,
+        69
+      ],
+      "receiver_slots": [
+        19,
+        4
+      ],
+      "source_ordinals": [
+        1,
+        5
+      ]
+    },
+    {
+      "duplicate_rows_within_one_frequency": [
+        51,
+        68
+      ],
+      "native_source_indices": [
+        266,
+        272
+      ],
+      "old_source_indices": [
+        58,
+        61
+      ],
+      "receiver_slots": [
+        11,
+        8
+      ],
+      "source_ordinals": [
+        2,
+        3
+      ]
+    },
+    {
+      "duplicate_rows_within_one_frequency": [
+        55,
+        88
+      ],
+      "native_source_indices": [
+        266,
+        280
+      ],
+      "old_source_indices": [
+        58,
+        65
+      ],
+      "receiver_slots": [
+        15,
+        8
+      ],
+      "source_ordinals": [
+        2,
+        4
+      ]
+    },
+    {
+      "duplicate_rows_within_one_frequency": [
+        59,
+        108
+      ],
+      "native_source_indices": [
+        266,
+        288
+      ],
+      "old_source_indices": [
+        58,
+        69
+      ],
+      "receiver_slots": [
+        19,
+        8
+      ],
+      "source_ordinals": [
+        2,
+        5
+      ]
+    },
+    {
+      "duplicate_rows_within_one_frequency": [
+        75,
+        91
+      ],
+      "native_source_indices": [
+        272,
+        280
+      ],
+      "old_source_indices": [
+        61,
+        65
+      ],
+      "receiver_slots": [
+        15,
+        11
+      ],
+      "source_ordinals": [
+        3,
+        4
+      ]
+    },
+    {
+      "duplicate_rows_within_one_frequency": [
+        79,
+        111
+      ],
+      "native_source_indices": [
+        272,
+        288
+      ],
+      "old_source_indices": [
+        61,
+        69
+      ],
+      "receiver_slots": [
+        19,
+        11
+      ],
+      "source_ordinals": [
+        3,
+        5
+      ]
+    },
+    {
+      "duplicate_rows_within_one_frequency": [
+        99,
+        115
+      ],
+      "native_source_indices": [
+        280,
+        288
+      ],
+      "old_source_indices": [
+        65,
+        69
+      ],
+      "receiver_slots": [
+        19,
+        15
+      ],
+      "source_ordinals": [
+        4,
+        5
+      ]
+    }
+  ],
+  "reciprocity": "A^T=A -> (A^-1)^T=A^-1 -> e_r^T A^-1 e_s=e_s^T A^-1 e_r; transpose, not conjugate transpose",
+  "source_and_receiver": "q_s=e_s/h^2 with common nonzero amplitude; receiver e_r^T; h=.025km",
+  "source_manifest_before_after": {
+    "files": 161,
+    "sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da"
+  },
+  "source_pins": {
+    "work/new-phase-staging/frequency_continuation_benchmark_02/original_protocol.json": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c",
+    "work/new-phase-staging/frequency_continuation_benchmark_02/protocol.json": "5c2838eaa1142ae7497717d7a4dfc46c76df4fb5ff8b3e016d5479eb4b51af1e",
+    "work/new-phase-staging/frequency_continuation_benchmark_02/run_study.py": "a5f4a7bd38350ea1958160d0a5d24fb29b03e986b2601117c1bc7fd399394558",
+    "work/wavecert-fwi/results/provisional_software_benchmark/matched_cost_pilot/verification.py": "b7bee25257caf456d52932962ceba2fde00197f0a78b585cf90c138e795bba4c",
+    "work/wavecert-fwi/src/wavecert/physics/exact_merit.py": "0fec1f215b28e36017c1e28409d7f7e909a03cbf5b717de5d23eb8d52eb26810",
+    "work/wavecert-fwi/src/wavecert/physics/helmholtz.py": "caf51b58da24ed6d3633bda4eaaab804714f5c7932d9d5f343644763bc158131"
+  },
+  "source_positions_in_receiver_order": [
+    0,
+    4,
+    8,
+    11,
+    15,
+    19
+  ],
+  "status": "SOURCE_METADATA_ONLY_PENDING_INDEPENDENT_MATH_REVIEW",
+  "student_final_design_or_novelty_claim": false
+}

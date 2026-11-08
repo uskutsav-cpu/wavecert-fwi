@@ -94,6 +94,14 @@ now completes all 57 calls, with separate NumPy agreement on three probe traces
 and six directional derivatives. Substantial padding sensitivity remains;
 physical acceptance and broader independent geological validation remain open.
 
+
+The new [96-run frequency-continuation comparison](docs/frequency_continuation_development.md)
+completes all three repetitions under the full return cap and passes a separate
+41,398-check scalar audit. Continuation still worsens velocity recovery versus
+initialization on 7/8 case medians; lower data misfit is insufficient. The interrupted
+85/1/10 predecessor and the checker's failed first schema audit remain archived.
+All four scientific objectives remain open.
+
 ## Latest controlled comparison
 
 A train-only classical POD model substantially outperforms the tested FNOs on

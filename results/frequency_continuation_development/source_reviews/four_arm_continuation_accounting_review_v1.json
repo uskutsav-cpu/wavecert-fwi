@@ -1,0 +1,96 @@
+{
+  "status": "API_CONTRACT_REVIEW_COMPLETE_IMPLEMENTATION_REVIEW_PENDING",
+  "created_utc": "2026-11-08T17:11:53.359181+00:00",
+  "role": "AI source/API accounting review of a standard exact four-arm engineering workflow; not student final design, novelty or execution GO",
+  "input_sha256": {
+    "frequency_continuation_exact_baseline_advisory_v1.json": "f4748e502aad81d77e380fb2ec8c92e1c9d2947585b91aad6c81b0ff41e9a4c4",
+    "frequency_continuation_exact_baseline_restart_addendum_v1.json": "5afb0ebeadeefb4154d727ae987335118ac87d271e2e01ccac3c7b8dfff54c02",
+    "frequency_continuation_exact_baseline_accounting_addendum_v1.json": "690cc81bdc5661900be4f0731e9719acf09b8d5855330f0ee16c1c84c224cf00",
+    "src/wavecert/physics/exact_merit.py": "0fec1f215b28e36017c1e28409d7f7e909a03cbf5b717de5d23eb8d52eb26810",
+    "src/wavecert/optimization/paid_descent.py": "b863af87f03c2470fde8d72412b1c89e76e389a528cb7d8b08efe89ceeb3a12c"
+  },
+  "root_resolved_contract": {
+    "arms": [
+      "joint8",
+      "low4_then_all8",
+      "original4_reference",
+      "joint8_then_joint8_cold_restart"
+    ],
+    "cases": 8,
+    "repetitions": 3,
+    "runs": 96,
+    "native_coordinates": "direct common prepared native m, bitwise identical across arms; no velocity roundtrip",
+    "root_new_safety_caps": {
+      "single_stage": 4096,
+      "per_stage": 2048,
+      "scope": "caps may still bind; classify actual native terminations, do not call them nonbinding without observed evidence"
+    },
+    "absolute_global_deadlines_seconds": {
+      "stage1_ceiling": 3.75,
+      "optimizer_ceiling": 7.5,
+      "API_return_eligibility": 8
+    },
+    "early_termination": "Transition immediately; these are absolute ceilings, not equal actual stage durations. Unused iteration cap is not transferred.",
+    "stage_handoff": "Last chronological authentic paid within-budget checkpoint only. No best common objective/truth selection. Stage1 without a\u22643.75 paid point is invalid; no metric-owner fallback. Stage2 normal budget halt can retain the earlier valid stage1 model; any failed status invalidates the workflow.",
+    "full8_initial": "Joint/restart capture genuine cold engine initial receipt/checkpoint scalar; never prequery factories. Low4/original4 have a separate paid full8 metric owner before policy.",
+    "full8_final": "Publicevaluate of selected native-m through a genuine full8 final policy owner where available; original4 metric owner may query final within its metric role. Baseline metric owner is never coldstage2.",
+    "counter_aggregation": "Latest cumulative counters once per distinct owner; preparation separate; nested snapshots not additional work.",
+    "return_timing": "One actual start before preparation; anchored ledgers include prefix/stages; caller sees final return only after common final merit, hashes/provenance/cost payload. Offline truth/artifact work separate."
+  },
+  "API_findings": [
+    {
+      "name": "Late initial checkpoint edge",
+      "evidence": "paid_descent._Ledger.initialize installs an initial checkpoint with within_budget=False before guard(after=True) halts. _Ledger.commit separately rolls late trial promotion back.",
+      "needed": "Require actual eligible checkpoint flags/timestamps, validate wrapper current model against the selected eligible model, and test lateinitial/noeligible stage1/stage2 paths."
+    },
+    {
+      "name": "Cold owner and authentic cache rules",
+      "evidence": "ExactMeritOracle freezes ordered survey/data; receipt owner token and issuance membership are checked; evaluate cache hits still perform contract/model validation.",
+      "needed": "New policy owner per stage/arm/run. Transfer native model bytes only at restart. No receipt/LU/field/gradient or baselineowner transfer; unchanged immutable data inputs may be supplied anew."
+    },
+    {
+      "name": "Clock age versus duration",
+      "evidence": "Every anchored ledger.started uses the true global start; elapsed/setup/checkpoint stamps are global ages. finish captures total_online_seconds before _strict_metadata.",
+      "needed": "Never sum stage ages/setup fields or manually add prefix. Report local timestamp differences separately. Primarywall is caller return\u2212globalstart; after-return diagnostics are subsets outside it."
+    },
+    {
+      "name": "Full8 objective and information confounds",
+      "evidence": "Objective is survey-bound; four/eight-frequency stage objectives and local relative targets differ.",
+      "needed": "Same48 canonical data blocks prepared and hashed perrun, with exact ordered subsets. Common8 initial/final metric paid before return; no stage-local ratios as common targets. Original4 is contextual, not equal information used. Restart control reduces but does not prove isolation of order effects."
+    },
+    {
+      "name": "Dense engine finish is a blocker for large caps",
+      "evidence": "paid_descent._strict_metadata recursively ndarray.tolist()s all checkpoint model vectors then json.dumps; trajectory_to_dict repeats that conversion.",
+      "needed": "Use a newly staged faithful bounded recorder for ALL arms. Preserve native SciPy method/options/guard/acceptance/owner semantics and real finish cost, but bound stored scalar/hash/count metadata and retain only required native vectors. Old200 runs remain iteration-allocated history."
+    },
+    {
+      "name": "Native limits and error semantics",
+      "evidence": "Native solver nit/nfev/njev only exist after normal minimize return; budget halt can leave solver_result None. Equal callbacks are paid events but not strict-decrease endpoints.",
+      "needed": "Count observed callback/evaluation events and retain in-flight uncertainty/native maxiter/maxfun/maxls termination reasons. Do not equate accepted-checkpoint count with native iterations."
+    },
+    {
+      "name": "Counter and failure integrity",
+      "evidence": "Engine costs_complete means oracle/proxy construction exists, not that a multistage wrapper has all owners/final queries measured.",
+      "needed": "Use monotonic controller owner serials, not potentially reused Python id values. Snapshot all owners after final queries and best-effort on failure; distinguish partial/unknown constructors. Failed/late/unattempted96 rows stay in denominator."
+    },
+    {
+      "name": "Output resource bound",
+      "evidence": "Initial+final2401float64 vectors\u00d796=3687936bytes(~3.52MiB), before stagehandoff/metadata. Dense4096checkpoint vectors would violate24MiB.",
+      "needed": "Predeclare bounded trace schema\u226424MiB total, initial256MiB disk guard, perrun bounded progress instead of whole growing96history inside clock, exclusive outputs and no full fields/receipt objects. Record bytecap/failure without deleting previous attempts or claiming full intermediate-vector replay. Release all owners/results perrun; serial execution."
+    }
+  ],
+  "required_manufactured_controls_before_project_freeze": [
+    "Old/new faithful engine model-request/gradient/callback sequence and final native-m/objective/counter equivalence when time/caps do not bind.",
+    "Equal callbacks, native failures/nonfinite gradients, constructor failure, foreign receipt, cold restart owner and baseline-owner substitution rejection.",
+    "Abstract global clock: prefix beyondphase, lateinitial, latecommitrollback, earlytransition, stage2noeligiblepoint fallback and paid finalcommonquery/API tail beyond8.",
+    "Paid full8 coldengine baseline capture versus separate metric owner; same-initial/final legitimatepubliccachehit; zero initialPhi ratios remainnull ratherthan speedup credit.",
+    "Bounded trace/serialization/cleanup control at many manufactured callbacks, full96 schedule/prefix retention and no dense percheckpoint vector output."
+  ],
+  "claim_limits": "Standard baseline engineering only on reused development data. Better data fit can still worsen m/velocity recovery; compute both offline only afterreturn and retain negatives. No optimized split, cycle-skipping cause, method novelty, strongest-possible solver, independent confirmation or student final design.",
+  "actions": {
+    "project_arrays": 0,
+    "solves_PDE_optimizer_benchmark": 0,
+    "production_edits": 0,
+    "state": "Waiting for bounded_exact.py/controller.py source handoff; this receipt is not implementation clearance."
+  }
+}

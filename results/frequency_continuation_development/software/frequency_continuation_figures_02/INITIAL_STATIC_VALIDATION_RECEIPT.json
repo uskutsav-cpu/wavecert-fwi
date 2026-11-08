@@ -1,0 +1,28 @@
+{
+  "created_utc": "2026-11-08T18:55:34.250938+00:00",
+  "role": "Initial postterminal static/default-only validation; no outcome reads",
+  "source_sha256": "c3eb5384656306c3009813f340a440c3d4bbec61ae3fa5bbf53acfaa325b0ac0",
+  "source_unchanged": true,
+  "actual": {
+    "chunk": "506405",
+    "exit_code": 2,
+    "ruff_exit": 1,
+    "ruff_finding": "Single I001: move from pathlib import Path below import sys; no functional or numerical finding",
+    "Python310_AST": "PASS",
+    "default_metadata_CLI": "PASS"
+  },
+  "command_artifacts_sha256": {
+    "COMMANDS_01.json": "84cf425ce1e63b0654fd220d71271d3fca5a3f0ad6cfa21e1c7460622f9184ee",
+    "ruff_01.log": "620a0c55100043805b3a9a20c6a9b487bf20532295ccd0c4c31ec9b02881a540",
+    "default_01.log": "26d683bb3efdac8207c713279150ee6c5c01d369646662598662dee1879de689",
+    "grammar_01.log": "ff2bcb872cb0666d48a7de8d812acc794f63879ae6c2dea9f1dad5f3f201387c"
+  },
+  "activity": {
+    "outcome_reads": 0,
+    "run_execution": 0,
+    "rendering": 0,
+    "PDE_optimization": 0,
+    "source_edits": 0
+  },
+  "next_gate": "Root separate GO required before outcomes/render; style-only change not applied under initial checks-only scope"
+}

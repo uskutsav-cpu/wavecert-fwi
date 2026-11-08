@@ -1,0 +1,317 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-08T09:59:55.483386+00:00",
+  "role": "AI post-outcome SOFTWARE ENGINEERING four-arm exact frequency-schedule comparison; not student final design, preregistration or confirmation",
+  "student_final_research_design": false,
+  "competition_evidence": false,
+  "research_goal_complete": false,
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "original_candidate_relative_directory": "results/provisional_software_benchmark/matched_cost_pilot",
+  "original_protocol_sha256": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c",
+  "candidate_files_sha256": {
+    "__init__.py": "8f5dde1292081eedb460cc9752025c72350673a2bd705bd407a5e6fa531bf22b",
+    "adapter.py": "f793f4439551bf7614bd72421057d209f3cb353710fe06f8c13de85b44eecf61",
+    "verification.py": "b7bee25257caf456d52932962ceba2fde00197f0a78b585cf90c138e795bba4c",
+    "protocol.json": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c"
+  },
+  "local_dependency_sha256": {
+    "original_protocol.json": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c",
+    "independent_saved_models.py": "807f4f2f0e0aeea1d2f61b64ee5f64a99819c38d4f6164529e664f0a235edeae",
+    "controller.py": "167b2db184d525cbecc2637310c78c746dfb0a908858cfe12713d2ebe4dfd907",
+    "bounded_exact.py": "d5fb6326bcd252efc3a7672dba993311fb0ba724b90039e7fda317bcf8bb770c"
+  },
+  "controller_dependencies_pending_review": false,
+  "methods": [
+    "joint8",
+    "low4_then8",
+    "restart8",
+    "original4"
+  ],
+  "schedule": {
+    "cases": 8,
+    "repetitions": 3,
+    "total_runs": 96,
+    "seed": 2026110802,
+    "order": "repetition outer, original fixed case order, stdlib Random(seed).shuffle(four methods) within each case/repetition; all96 saved before input reads"
+  },
+  "identities": [
+    {
+      "array_index": 0,
+      "parent_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "source_file": "slices/slice_gom_148_il_0236.h5",
+      "source_sha256": "3a693c7aab525351aca671cc640afa4bed4ffb3be14b8039c40f59f2905209db"
+    },
+    {
+      "array_index": 24,
+      "parent_id": "gom_148",
+      "slice_id": "gom_148_xl_0768",
+      "source_file": "slices/slice_gom_148_xl_0768.h5",
+      "source_sha256": "6d1f16d527a9fed2e245f4d37254de75a2e430be7f4283cf65cfbfee7f1e84a1"
+    },
+    {
+      "array_index": 48,
+      "parent_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "source_file": "slices/slice_seam_011_il_0522.h5",
+      "source_sha256": "5f0982f2f87dbd40c40f758e40e14b5f898b6f8e92dde3b255433e6dfe1b958e"
+    },
+    {
+      "array_index": 72,
+      "parent_id": "seam_011",
+      "slice_id": "seam_011_xl_0866",
+      "source_file": "slices/slice_seam_011_xl_0866.h5",
+      "source_sha256": "2ac2600a3f37bda30bb9f336ebf0f82f7251d47f7ae55fa3b5810e0a616f16f8"
+    },
+    {
+      "array_index": 96,
+      "parent_id": "gom_151",
+      "slice_id": "gom_151_il_0247",
+      "source_file": "slices/slice_gom_151_il_0247.h5",
+      "source_sha256": "306380b97261c6812c45900fe6d47f4cb7b41b5851f3054f7881c2912a32c8c8"
+    },
+    {
+      "array_index": 120,
+      "parent_id": "gom_151",
+      "slice_id": "gom_151_xl_0857",
+      "source_file": "slices/slice_gom_151_xl_0857.h5",
+      "source_sha256": "157ad1e6e2bdab57496379fd54e49467816c0cd75cb4f7b3b9279a35c84da7b6"
+    },
+    {
+      "array_index": 144,
+      "parent_id": "seam_005",
+      "slice_id": "seam_005_il_0596",
+      "source_file": "slices/slice_seam_005_il_0596.h5",
+      "source_sha256": "be96babcb90440f814887f3dbe9955b3879181e92b13bc59d3da0b5beb6ac5ff"
+    },
+    {
+      "array_index": 168,
+      "parent_id": "seam_005",
+      "slice_id": "seam_005_xl_0795",
+      "source_file": "slices/slice_seam_005_xl_0795.h5",
+      "source_sha256": "ab1ebc7628336883cd518745ef117d1763e7b60e0bdcedfb35b5f94da5746204"
+    }
+  ],
+  "inputs_sha256": {
+    "data/reference/subsurfacegen_parent_split/validation.npz": "36d11aba94ae9093cac888e9b28a2d01edcef1aa3a54b12f8e10269b963db2fc",
+    "data/reference/subsurfacegen_parent_split/validation_metadata.csv": "d3ce8ab6a3474a6bc17595f26b68940e7c7ad9481d8c80fb89fe04833e6996e6",
+    "data/reference/subsurfacegen_parent_split/split_manifest.csv": "30fed6e30e07a1b54d17f3ae9511d06eac6f44c69fcb57b6ee588f2ade65ef14"
+  },
+  "physics": {
+    "shape": [
+      49,
+      49
+    ],
+    "spacing": 0.025,
+    "damping_width": 6,
+    "damping_strength": 2.0
+  },
+  "geometry": {
+    "original_shape": [
+      24,
+      24
+    ],
+    "original_spacing": 0.05,
+    "dirichlet_extent_km": 1.25,
+    "original_source_indices": [
+      50,
+      54,
+      58,
+      61,
+      65,
+      69
+    ],
+    "original_receiver_indices": [
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69
+    ],
+    "frequencies_hz": [
+      2.5,
+      3.0,
+      3.5,
+      4.0
+    ],
+    "mapping": "integer factor2: (old_coord+1)*2-1; C-order flatten on49 grid",
+    "blocks_per_model": 24
+  },
+  "available_frequencies_hz": [
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    2.5,
+    3.0,
+    3.5,
+    4.0
+  ],
+  "low_frequencies_hz": [
+    0.25,
+    0.5,
+    1.0,
+    2.0
+  ],
+  "original_frequencies_hz": [
+    2.5,
+    3.0,
+    3.5,
+    4.0
+  ],
+  "observation_block_count": 48,
+  "initial_model": "Direct native-m output of original prepared initial, repeated independently per arm; no VP roundtrip or old trajectory state",
+  "squared_slowness_bounds": [
+    0.027777777777777776,
+    1.0
+  ],
+  "lbfgsb": {
+    "maximum_corrections": 10,
+    "function_tolerance": 1e-12,
+    "gradient_tolerance": 1e-10
+  },
+  "controller_settings": {
+    "engine_deadline_seconds": 7.5,
+    "first_stage_deadline_seconds": 3.75,
+    "api_return_cap_seconds": 8.0,
+    "single_stage_maximum_steps": 4096,
+    "per_stage_maximum_steps": 2048,
+    "maximum_corrections": 10,
+    "maximum_line_search_trials": 12,
+    "function_tolerance": 1e-12,
+    "gradient_tolerance": 1e-10
+  },
+  "native_maxfun_default_in_inspected_installation": 15000,
+  "safety_cap_scope": "Large predeclared safety iteration caps; report each cap hit. Do not claim nonbinding until actual result. Raise old200 cap without dense-history serialization using reviewed faithful bounded-trace engine; this is instrumentation, not a new optimizer.",
+  "stages": {
+    "joint8": [
+      [
+        0.25,
+        0.5,
+        1.0,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0
+      ]
+    ],
+    "low4_then8": [
+      [
+        0.25,
+        0.5,
+        1.0,
+        2.0
+      ],
+      [
+        0.25,
+        0.5,
+        1.0,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0
+      ]
+    ],
+    "restart8": [
+      [
+        0.25,
+        0.5,
+        1.0,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0
+      ],
+      [
+        0.25,
+        0.5,
+        1.0,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0
+      ]
+    ],
+    "original4": [
+      [
+        2.5,
+        3.0,
+        3.5,
+        4.0
+      ]
+    ]
+  },
+  "clock_and_caps": "Single true global start precedes repeated input/source verification, refinement, all8 observation generation and cold owners. Each fresh anchored stage clock first returns global t0 to ledger only; later reads real clock. Absolute stage1 ceiling3.75, stage2/single7.5; early native stop transitions immediately. Unused iteration cap not transferred. Absolute ages/setup timestamps are not summed as local durations. Caller stamps actual complete API return; eligible only <=8. Fixed0.5 output reserve is not a guarantee.",
+  "ownership_and_common_metrics": "joint8/restart8 capture authentic cold first full8 engine initialization; low4/original4 pay separate full8 baseline owner before stage1. No queried baseline owner can become cold stage2. Transfer only last eligible native model, not fields/factors/receipts/history. Full8 final uses PUBLIC evaluate on actual final full8 policy owner with valid within-owner reuse; original4 uses its separate metric owner. Count each owner final counter snapshot exactly once plus separately paid observation preparation. Every validation/hash/strict payload and final query is timed.",
+  "endpoint_eligibility": "Require within_budget=True checkpoint and global elapsed<=its phase ceiling. A late initial checkpoint cannot seed handoff. Stage1 without eligible paid point is invalid, never rescued by baseline metric. Stage2 budget stop with no eligible point may retain prior stage1 paid model, but no late point is selected. Use last chronological eligible point only. Any method failed status invalidates primary quality; all raw diagnostics stay.",
+  "targets": {
+    "ratios": [
+      0.5,
+      0.25
+    ],
+    "scope": "Returned common all8 final/initial diagnostics only, never policy stopping/first-hit/time-to-target; reached event uses actual eligible API return or null."
+  },
+  "offline_audit": {
+    "source_sha256": "807f4f2f0e0aeea1d2f61b64ee5f64a99819c38d4f6164529e664f0a235edeae",
+    "linear_residual_maximum": 1e-09,
+    "objective_rtol": 2e-09,
+    "objective_atol_initial_scale": 2e-12,
+    "objective_atol_initial_floor": 1e-12,
+    "quality_rtol": 5e-11,
+    "quality_atol": 2e-13,
+    "definition": "Fresh IndependentCase per run AFTER actual return, own graph/half-cell bilinear refinement/math.fsum on all8 frequencies. Load raw inputs with unchanged original4 protocol; clone only preparation/independent geometry frequencies to8. No existing probe fields, cached baselines or truth directions enter policy. Shared NumPy/SciPy/SuperLU; no continuum or independent-geology proof.",
+    "observation_relative_L2_maximum": 1e-09
+  },
+  "disk": {
+    "initial_free_bytes": 268435456,
+    "per_run_reserve_bytes": 67108864,
+    "maximum_output_bytes": 25165824,
+    "final_receipt_reservation_bytes": 2097152
+  },
+  "storage": "Initial/final native vectors and small compact scalar/hash/counter histories; no full state/adjoint fields or intermediate model-vector replay claim. Retain both stages, equal callbacks and all96 rows.",
+  "failure_policy": "Full96 schedule and attempt/progress persist before calculations. Unexpected Python/infrastructure/stale source/input/disk errors stop after preserving current prefix; remaining rows unattempted, no retries. Returned method failures and numeric-audit mismatches retained/ineligible with full denominators. Interrupt immediately preserves known counters, unknown in-flight work explicit. No same-source auto-resume or best-case substitution.",
+  "threads": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "interpretation": "All8 slices are reused inspected development inputs; SEAM labels share ancestry and repetitions do not add samples. Common available data != same used data; original4 is contextual. Joint8 vs restart8 separates restart/history reset; low4->8 vs restart8 is the schedule contrast conditional on this implementation. Report true consumed wall and allocation caps separately; no practical advantage or completed goal is asserted by a shared8s cap alone.",
+  "execution_gate": "SOURCE/CONTROLS REVIEWED: 17 bounded-engine,24 controller and15 driver controls including manufactured49-grid160 checks pass; exact source/math/cost review CLEAR. Execute only with exact activated protocol/driver hashes, fresh outer output, unchanged production/input hashes and root resource freeze/GO. Default CLI metadata only.",
+  "timing_primary_return": "Primary actual wall is measured by run_study caller immediately after measure_controller_return returns, including its classification/measurement wrapper tail. Inner execute_timed return remains a separately reported subset; no tail is silently omitted. Artifact compression and independent truth/PDE audits occur afterward.",
+  "trace_retention": {
+    "head": 8,
+    "tail": 8,
+    "streams": [
+      "checkpoints",
+      "steps",
+      "per_step_library_evaluations"
+    ],
+    "all_records": "counts and ordered SHA256 digests, all native callback counts including equal/late, full final owner/preparation cost snapshots",
+    "scope": "Intermediate scalar records are sampled; no full intermediate scalar-event or vector replay claim. Source and manufactured equivalence support instrumentation; hashes are provenance, not independent proof of omitted work.",
+    "eligibility": "Authentic first and last chronological eligible checkpoint descriptors remain available; retained eligible count is distinct from all-record count."
+  },
+  "artifact_cap_scope": "Retained artifacts include duplicate failure prefixes and final status/complete receipt. Gzip/NPZ serialized in memory and size checked before writes;2MiB reserved while ordinary artifacts are written; final receipt size projected before commit. Temporary atomic status replacement bytes are protected by the physical disk reserve, not counted as retained artifacts.",
+  "callback_count_semantics": "Safety caps use all native_callback_invocations, including entry-guard halts; native_callback_point_records counts written records (including equal/late), and retained samples are separate. native_callback_count is an explicitly checked invocation alias.",
+  "safety_qualification": "Report every native maxiter/maxfun/maxls termination. Do not claim a nonbinding exact time-budget baseline if an iteration/function safety cap bound it; preserve those rows and state the limit."
+}

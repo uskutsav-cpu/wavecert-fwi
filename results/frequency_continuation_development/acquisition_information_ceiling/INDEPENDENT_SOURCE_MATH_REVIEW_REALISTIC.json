@@ -1,0 +1,27 @@
+{
+  "created_utc": "2026-11-08T19:19:10.191082+00:00",
+  "role": "Independent AI source/math/integer-metadata review, no numerical physics",
+  "result": "CLEAR_CONDITIONAL_EXACT_ARITHMETIC_CEILING",
+  "files_sha256": {
+    "enumerate_geometry.py": "2e81e4e5c8e56fd3350a76180e4d2838d3fdf3a6032dbf33b4b5c446f0bd027a",
+    "MATH_REVIEW.md": "54f101367b59fc58c27108d23bada3ab3e17522e9d549b3a3384c6f3b0962898",
+    "geometry_ceiling_metadata_01.json": "26768eda6b882228e783b85da2470334f0db945d83e673287eddba5933ed7c5d"
+  },
+  "proof_checks": [
+    "Pinned real symmetric Kronecker K plus complex diagonal givesA^T=A, generally notA^H=A. Common point-source strength1/h\u00b2 and point restriction preserve plain-transpose reciprocity ofA^-1 wherever nonsingular.",
+    "Derivative positive sign: dA=-omega\u00b2diag(dm), so dA^-1=A^-1 omega\u00b2diag(dm)A^-1; transpose symmetry preserves swapped-endpoint derivative equality, with no complex conjugation.",
+    "All6 sources lie in20 distinctreceivers. Six source selfslots remain;15 unordered offdiagonal pairs eachduplicateonecomplexrow. Perfrequency6*14+6*7/2=105 potentiallydistinctcomplexslots, not provenindependent.",
+    "All15 declared integerpairs and all8 frequency-offset lists independently reconstructed frommetadata and checked.",
+    "Realification givesrank\u22641680/nullity\u2265721 for8freq,rank\u2264840/nullity\u22651561 fororiginal4submap over2401 unrestrictedrealparameters.",
+    "Positive velocity reparameterization has invertible diagonalJacobian, so alone preserves ambientrank. Activeconstraints/restrictedpriors/differentacquisition qualify interpretation.",
+    "No attained numericalrank, nonlinearuniqueness, observedcausalrecoveryexplanation, feasiblekernel guarantee, reweightedlosspermission, methodnovelty or goalcompletion follows. Original4submap ceiling is not allinformationqueried byitscommon8 metricowners."
+  ],
+  "activity": {
+    "project_or_study_numeric_array_reads": 0,
+    "NumPy_or_project_imports": 0,
+    "PDE_or_optimizer": 0,
+    "numerical_rank_computation": 0,
+    "source_or_objective_mutations": 0,
+    "stdlib_integer_metadata_check": true
+  }
+}

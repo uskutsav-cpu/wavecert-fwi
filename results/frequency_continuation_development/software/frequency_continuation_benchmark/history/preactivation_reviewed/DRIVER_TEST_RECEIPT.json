@@ -1,0 +1,48 @@
+{
+  "created_utc": "2026-11-08T18:00:07.482720+00:00",
+  "role": "AI driver controls; no project study or student scientific claim",
+  "result": "15_DRIVER_CONTROLS_PASS",
+  "actual": {
+    "session": 50577,
+    "terminal_chunk": "6866d5",
+    "exit_code": 0,
+    "passed": 15,
+    "seconds": 12.48,
+    "warnings_as_errors": true
+  },
+  "manufactured49_grid": {
+    "project_input_reads": 0,
+    "optimizer_steps": 0,
+    "observation_RHS": 48,
+    "numerical_checks": 160,
+    "failures": 0,
+    "observation_relative_L2_maximum": 3.202633814147834e-15
+  },
+  "source_and_logs_sha256": {
+    "run_study.py": "a5f4a7bd38350ea1958160d0a5d24fb29b03e986b2601117c1bc7fd399394558",
+    "protocol.json": "2b49adf5a124f0bc3a4420d5cc83b5896d612bf96de2fe3f93197b054920ad02",
+    "test_driver.py": "cdda03af8adc7e44c2c19e259f8ef7ed557b7e8cb15f856d148763661e122d7f",
+    "controller.py": "167b2db184d525cbecc2637310c78c746dfb0a908858cfe12713d2ebe4dfd907",
+    "bounded_exact.py": "d5fb6326bcd252efc3a7672dba993311fb0ba724b90039e7fda317bcf8bb770c",
+    "independent_saved_models.py": "807f4f2f0e0aeea1d2f61b64ee5f64a99819c38d4f6164529e664f0a235edeae",
+    "original_protocol.json": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c",
+    "driver_full_controls_01.log": "e3cdacbb3368ba7b29f51ff1f5606b92dc52b88a10c99fe56adf0e71ba044b04",
+    "SCOPE.md": "bf9408359ecefaf295128871ca94b5ec9065bf44876c9c283e5b644caf0bc9f9"
+  },
+  "upstream_controls": {
+    "bounded_engine": {
+      "passed": 17,
+      "receipt_sha256": "5091bf01c11f1b2b0651fa96487b00ac9439b3da045d1d1caaef2320ee131a54"
+    },
+    "controller": {
+      "passed": 24,
+      "receipt_sha256": "709c2baab680be4f6e362abd4f46f5efe185b80fa736992278ad4190ae064b77"
+    }
+  },
+  "independent_source_review_sha256": "70e5a4f0b4f7822bf09aa43b6b0875883d42c0894e44c5d7705bb60d33f4885e",
+  "limitations": [
+    "Source-reviewed ownership assertions, not serialized independent native receipt reread for every stage.",
+    "Sampled middle scalar/vector events cannot be replayed.",
+    "No project optimization, usefulness, novelty or scientific-goal completion evidence."
+  ]
+}

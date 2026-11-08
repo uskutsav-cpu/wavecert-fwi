@@ -1,0 +1,105 @@
+{
+  "created_utc": "2026-11-08T19:02:29.613249+00:00",
+  "role": "AI postterminal descriptive figure/CSV and visualQA receipt",
+  "status": "ACTUAL_EXIT0_ALL96_PRESERVED_FINAL3PNG_VISUALLY_CLEAR",
+  "source_sha256": "c99b7554c999d805d2fdca95945c55dcf6e6b47aec3e937e485d9d08097c4916",
+  "source_refreeze_sha256": "f77b7a520fa4c720545c104c8a952bb6949896893b7f866ba2a97c2de30c456d",
+  "first_execution_receipt_sha256": "8b27a34a9905aa723c96ac9129fb786043608b4d43ef54e4a6aabe7b671adcb7",
+  "final_execution_receipt_sha256": "3d30b390c41a28c9786bc371f6e581c9f686ebed3ba5051f27fa89ecccb9e1a3",
+  "complete_producer_sha256": "261a3b0c6ce4c5a8533339ccee201a1ac6c23e74a60c6989897cda9f1251423b",
+  "final_figure_complete_sha256": "c2f48e2964182d1f7ed08be91b356f588f331ec64ac2654982ef6660b5f67cff",
+  "first_output_preserved": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_continuation_figures_run_02",
+  "final_output": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_continuation_figures_run_02_layout_02",
+  "csv_byte_identical_between_renders": {
+    "all96_runs.csv": true,
+    "all32_case_method_medians.csv": true
+  },
+  "CSV96_unique": true,
+  "groups32_all3eligible": true,
+  "scalar_postprocessor_issues": [],
+  "all144_stage_status": "budget_exhausted",
+  "native_callback_invocation_range": [
+    8,
+    121
+  ],
+  "actual_API_seconds_range": [
+    7.524792541997158,
+    7.713639624998905
+  ],
+  "summary_by_method": {
+    "joint8": {
+      "planned": 24,
+      "eligible": 24,
+      "late": 0,
+      "iteration_or_function_limit_flags": 0,
+      "case_medians_velocity_worse_than_initial": 6,
+      "case_medians_velocity_better_than_initial": 2,
+      "actual_return_range_seconds": [
+        7.524792541997158,
+        7.647339709001244
+      ]
+    },
+    "low4_then8": {
+      "planned": 24,
+      "eligible": 24,
+      "late": 0,
+      "iteration_or_function_limit_flags": 0,
+      "case_medians_velocity_worse_than_initial": 7,
+      "case_medians_velocity_better_than_initial": 1,
+      "actual_return_range_seconds": [
+        7.533048499994038,
+        7.634693625004729
+      ]
+    },
+    "restart8": {
+      "planned": 24,
+      "eligible": 24,
+      "late": 0,
+      "iteration_or_function_limit_flags": 0,
+      "case_medians_velocity_worse_than_initial": 7,
+      "case_medians_velocity_better_than_initial": 1,
+      "actual_return_range_seconds": [
+        7.529862082999898,
+        7.624834583999473
+      ]
+    },
+    "original4": {
+      "planned": 24,
+      "eligible": 24,
+      "late": 0,
+      "iteration_or_function_limit_flags": 0,
+      "case_medians_velocity_worse_than_initial": 5,
+      "case_medians_velocity_better_than_initial": 3,
+      "actual_return_range_seconds": [
+        7.596965125005227,
+        7.713639624998905
+      ]
+    }
+  },
+  "all3_final_PNG_visually_inspected": [
+    "velocity.png",
+    "common8_fit.png",
+    "actual_return.png"
+  ],
+  "artifact_sha256": {
+    "actual_return.png": "80b80958909ab290e07b48278811a3e3868a75f30944ee63975b095494c8d4ca",
+    "actual_return.svg": "1081bdc5e38b43f9842acea3254bf33f17b4f3d71d5cfda85e03c281ed16cbcc",
+    "all32_case_method_medians.csv": "211e941a8cabf59b7a8c4ca21b94886f17b08ca82490951e58acea8129b420f5",
+    "all96_runs.csv": "77930c2d383d6ecf12aad15e1f988f25f7f16ff5b44f0bbe91980cd53bfbd040",
+    "common8_fit.png": "27fb9af438dbf61808520b7115b50e970213841d9ba72a2256440269e9e30fb8",
+    "common8_fit.svg": "3a3f9742e012c7204930aa5c8b340fc9f42dae61efd55bcd43685f1a0dc17b90",
+    "complete_receipt.json": "c2f48e2964182d1f7ed08be91b356f588f331ec64ac2654982ef6660b5f67cff",
+    "scalar_report.json": "f1a28daf6e4aefddbcce538a6a04e98a3cd1b020f1e89852f2a332ca3c7a6bcf",
+    "status.json": "f3a5d8c3587aa684f6fe46df73304eede8c7c4da37c33086b4abe4beed9a79e2",
+    "velocity.png": "f21ccca4248d2e3055b964a2775516b5461195a46b59e9ddc5ac7b1c79dff3c6",
+    "velocity.svg": "589980da4d57538f1f50f0512f6bb21a3d63b60f7b1f03c304cffb438a21bae5"
+  },
+  "display_scope_sha256": "f5416de89cbbb4eeb76def8754959799e362af3cbb0ab1f5d95c436bc99ec94d",
+  "limitations": [
+    "Independent scalar auditor result is separate; no verifiedcredit claimed solely from figure code.",
+    "Post-outcome correction only fixes text/layout collision; metrics/eligibility/values/linearaxes/cases/arms/reps/selection unchanged.",
+    "Omitted middle scalar/vector history not replayed; no PDE or optimizer run by plotter.",
+    "Initial velocity baseline is offline diagnostic; paid positive common8 initial objective supports ratio1 baseline.",
+    "No scientific-goal completion or general recovery/novelty/competition claim."
+  ]
+}

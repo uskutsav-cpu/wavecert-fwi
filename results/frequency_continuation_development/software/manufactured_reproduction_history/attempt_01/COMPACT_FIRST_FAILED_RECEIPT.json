@@ -1,0 +1,92 @@
+{
+  "status": "failed_controls_retained",
+  "actual_observed": 108,
+  "actual_passed": 86,
+  "expected_total": 108,
+  "suites": [
+    {
+      "name": "bounded_engine",
+      "PID": 86388,
+      "actual_exit_code": 0,
+      "observed": 17,
+      "passed": 17,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "passed",
+      "log_sha256": "4f67c1c1e5c84529bda2ba52ba827204c5db477715b2c58d6353303357619f18",
+      "junit_sha256": "789496098b7fd52f47743f5ad2b8e9bd2fed6e81bbd81933dd91c0c6855209f3"
+    },
+    {
+      "name": "controller",
+      "PID": 86428,
+      "actual_exit_code": 0,
+      "observed": 24,
+      "passed": 24,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "passed",
+      "log_sha256": "698fc42343f2dbfc82cfa8e3a6366e8af820a816a77d75bddd253a30265d5541",
+      "junit_sha256": "17e586cb23588ecef2ad685422d01f7749c35347c7c4cd6d0f2b7b85cbf14892"
+    },
+    {
+      "name": "driver",
+      "PID": 86521,
+      "actual_exit_code": 1,
+      "observed": 15,
+      "passed": 9,
+      "failed": 0,
+      "errors": 6,
+      "skipped": 0,
+      "status": "failed_or_count_mismatch",
+      "log_sha256": "9b68573e120f3a197f40fc28fe98a573aa746bd9810e418e71c5f2e7fc32694a",
+      "junit_sha256": "aa877bce88a1548657b395f736f698965a7c2a1007f97d2eb9ed61a902147b48"
+    },
+    {
+      "name": "launcher",
+      "PID": 86523,
+      "actual_exit_code": 1,
+      "observed": 15,
+      "passed": 0,
+      "failed": 0,
+      "errors": 15,
+      "skipped": 0,
+      "status": "failed_or_count_mismatch",
+      "log_sha256": "d532e1445a099aaff6655fd2c4a3ba669a33bc50463b05a0d94c5d8d6bbd2595",
+      "junit_sha256": "3d204df9d785a0ae058e70d07e416c543a00c8004e8fca20bfc1ed6d1ce40059"
+    },
+    {
+      "name": "scalar_auditor_v2",
+      "PID": 86529,
+      "actual_exit_code": 1,
+      "observed": 37,
+      "passed": 36,
+      "failed": 0,
+      "errors": 1,
+      "skipped": 0,
+      "status": "failed_or_count_mismatch",
+      "log_sha256": "b4ce9f92a437e9acba256086014e9fb12c191fe54ba62bf779130904ff90f8dd",
+      "junit_sha256": "6c065684f73e30feaec8f62050a17ff2f7b0da1471a0887b1619fd2f98438cb8"
+    }
+  ],
+  "harness_sha256": "13a6bcff83424c9f8ae65877f486fd1efbcb4ecd72708e64d46930ed46a3ffe0",
+  "raw_receipt_sha256": "23f25b9916c526dc80d1912deb3db5c95cc95d76c7759173dc1f262114589e7c",
+  "first_local_workspace_preserved": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108",
+  "diagnosis_sha256": "5e495eb722640a927b08d74f2dbc13979f9da23ebf5055018e8b5612839b44f9",
+  "source_production_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "source_production_files": 161,
+  "logs_and_xml_sha256": {
+    "bounded_engine.log": "4f67c1c1e5c84529bda2ba52ba827204c5db477715b2c58d6353303357619f18",
+    "bounded_engine.xml": "789496098b7fd52f47743f5ad2b8e9bd2fed6e81bbd81933dd91c0c6855209f3",
+    "controller.log": "698fc42343f2dbfc82cfa8e3a6366e8af820a816a77d75bddd253a30265d5541",
+    "controller.xml": "17e586cb23588ecef2ad685422d01f7749c35347c7c4cd6d0f2b7b85cbf14892",
+    "driver.log": "9b68573e120f3a197f40fc28fe98a573aa746bd9810e418e71c5f2e7fc32694a",
+    "driver.xml": "aa877bce88a1548657b395f736f698965a7c2a1007f97d2eb9ed61a902147b48",
+    "launcher.log": "d532e1445a099aaff6655fd2c4a3ba669a33bc50463b05a0d94c5d8d6bbd2595",
+    "launcher.xml": "3d204df9d785a0ae058e70d07e416c543a00c8004e8fca20bfc1ed6d1ce40059",
+    "scalar_auditor_v2.log": "b4ce9f92a437e9acba256086014e9fb12c191fe54ba62bf779130904ff90f8dd",
+    "scalar_auditor_v2.xml": "6c065684f73e30feaec8f62050a17ff2f7b0da1471a0887b1619fd2f98438cb8"
+  },
+  "wrapper_bug": "Missing parent pytest_tmp caused22setup FileNotFoundError; no ignored test failures or numeric criterion change"
+}

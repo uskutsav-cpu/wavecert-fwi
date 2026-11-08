@@ -1,0 +1,51 @@
+[
+  {
+    "name": "puretests_03",
+    "command": [
+      "/opt/miniconda3/bin/python",
+      "-B",
+      "-I",
+      "-m",
+      "pytest",
+      "work/new-phase-staging/frequency_continuation_launcher/test_launcher.py",
+      "-q",
+      "-W",
+      "error",
+      "-p",
+      "no:cacheprovider"
+    ],
+    "exit_code": 0,
+    "stdout": "...............                                                          [100%]\n15 passed in 2.13s\n",
+    "stderr": ""
+  },
+  {
+    "name": "ruff_03",
+    "command": [
+      "/opt/miniconda3/bin/python",
+      "-B",
+      "-I",
+      "-m",
+      "ruff",
+      "check",
+      "--config",
+      "work/wavecert-fwi/pyproject.toml",
+      "work/new-phase-staging/frequency_continuation_launcher/launch_cohort.py",
+      "work/new-phase-staging/frequency_continuation_launcher/test_launcher.py"
+    ],
+    "exit_code": 0,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  {
+    "name": "default_03",
+    "command": [
+      "/opt/miniconda3/bin/python",
+      "-B",
+      "-I",
+      "work/new-phase-staging/frequency_continuation_launcher/launch_cohort.py"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"status\": \"metadata_only_no_launch\", \"detached_supervisor\": true, \"fixed_full_cohort\": 96, \"default_project_work\": false}\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-11-08T19:14:12.626126+00:00",
+  "role": "Historical protocol chronology correction; no runtime/numerical or archived byte changes",
+  "actual_15control_protocol_sha256": "b9826109dc8779b0bcd4537166c3089e5c0965a08838a70407aa0f6703a70e06",
+  "contemporaneous_precontrol_sha256": "b49a2bc4f4b12bd32d5c4d2a8967eb949a53511131ec26a7249e3f3675bb2218",
+  "later_reviewed_protocol_sha256": "2b49adf5a124f0bc3a4420d5cc83b5896d612bf96de2fe3f93197b054920ad02",
+  "descriptive_fields_added_after_15_controls": {
+    "safety_qualification": "Report every native maxiter/maxfun/maxls termination. Do not claim a nonbinding exact time-budget baseline if an iteration/function safety cap bound it; preserve those rows and state the limit.",
+    "callback_count_semantics": "Safety caps use all native_callback_invocations, including entry-guard halts; native_callback_point_records counts written records (including equal/late), and retained samples are separate. native_callback_count is an explicitly checked invocation alias."
+  },
+  "driver_receipt_inventory_at_filing_sha256": "422e0b1827fb30976b77c103ff376038686275e108f9872065e9f46986cb7e08",
+  "clarification": "DRIVER_TEST_RECEIPT source_and_logs_sha256 pins the current inventory at filing(2b49); actual fifteen controls ran on b982 as contemporaneous precontrol proves. Do not call later inventory exact pre-execution bytes. Portable reproduction uses actual b982 fixture. Both numerical settings and a5f4 driver/cdda tests/167 controller/d5fb engine are identical.",
+  "production_or_numeric_settings_changed": false
+}

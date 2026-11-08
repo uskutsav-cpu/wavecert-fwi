@@ -1,0 +1,62 @@
+{
+  "created_utc": "2026-11-08T19:17:30.647679+00:00",
+  "reviewer": "/root independent from author /root/candidate_final_review",
+  "status": "CLEAR_CONDITIONAL_EXACT_ARITHMETIC_MATH_AND_SOURCE_REVIEW",
+  "metadata_sha256": "26768eda6b882228e783b85da2470334f0db945d83e673287eddba5933ed7c5d",
+  "author_math_review_sha256": "54f101367b59fc58c27108d23bada3ab3e17522e9d549b3a3384c6f3b0962898",
+  "reviewed_source": {
+    "src/wavecert/physics/helmholtz.py": "caf51b58da24ed6d3633bda4eaaab804714f5c7932d9d5f343644763bc158131",
+    "results/provisional_software_benchmark/matched_cost_pilot/verification.py": "b7bee25257caf456d52932962ceba2fde00197f0a78b585cf90c138e795bba4c"
+  },
+  "independent_checks": {
+    "source_points": [
+      250,
+      258,
+      266,
+      272,
+      280,
+      288
+    ],
+    "receiver_points": [
+      250,
+      252,
+      254,
+      256,
+      258,
+      260,
+      262,
+      264,
+      266,
+      268,
+      270,
+      272,
+      274,
+      276,
+      278,
+      280,
+      282,
+      284,
+      286,
+      288
+    ],
+    "ordered_slots": 120,
+    "unordered_slots": 105,
+    "exact_duplicate_pairs": 15,
+    "full8_real_rank_upper_bound": 1680,
+    "full8_real_kernel_lower_bound": 721,
+    "original4_submap_real_rank_upper_bound": 840,
+    "original4_submap_real_kernel_lower_bound": 1561
+  },
+  "math": "Source has K^T=K and fixed diagonal mass/damping, therefore A^T=A; at nonsingular A, inverse is transpose symmetric. q=e_s/h^2 and receiver is e_r^T. Derivative of inverse yields +(omega^2/h^2)e_r^T A^-1 diag(dm) A^-1 e_s, also symmetric. Equal rows apply simultaneously to real+imag parts. Rank-nullity gives upper/lower bounds, without asserting attained rank.",
+  "caveats": [
+    "Only wherever every selected A is nonsingular/differentiable in exact arithmetic.",
+    "721 is an ambient real linear kernel lower bound; active bounds/prior restrictions can exclude those directions.",
+    "No finite-amplitude null direction/nonlinear uniqueness/cause/recovery/conditioning/numericalrank or novelty proof.",
+    "Invertible positive-velocity reparameterization preserves rank; restricted model prior/acquisition changes require their own analysis.",
+    "Original4 is a measurement submap, not all information accessed by common8 metric calls.",
+    "All original residual terms/weights retained. No noise treatment/dropping terms justified by this count."
+  ],
+  "project_array_reads": 0,
+  "PDE_or_optimizer_calls": 0,
+  "all_four_scientific_goals_complete": false
+}

@@ -1,0 +1,31 @@
+[
+  {
+    "name": "ruff_02",
+    "command": [
+      "/opt/miniconda3/bin/python",
+      "-B",
+      "-I",
+      "-m",
+      "ruff",
+      "check",
+      "--config",
+      "work/wavecert-fwi/pyproject.toml",
+      "work/new-phase-staging/frequency_continuation_figures_02/plot_results.py"
+    ],
+    "exit_code": 0,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  {
+    "name": "default_02",
+    "command": [
+      "/opt/miniconda3/bin/python",
+      "-B",
+      "-I",
+      "work/new-phase-staging/frequency_continuation_figures_02/plot_results.py"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"status\": \"source_only_default_no_outcome_reads\", \"runs\": 96, \"cases\": 8, \"methods\": [\"joint8\", \"low4_then8\", \"restart8\", \"original4\"], \"repetitions\": 3, \"required_terminal_GO\": true, \"scope\": \"Eight reused development slices; nominal SEAM identities share ancestry, and repetitions are timing repetitions, not independent geology. Original 4 uses fewer observations. Descriptive engineering comparison; no physical acceptance, novelty, causal recovery or competition claim.\"}\n",
+    "stderr": ""
+  }
+]

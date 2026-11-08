@@ -1,0 +1,97 @@
+{
+  "created_utc": "2026-11-08T17:46:10.193045+00:00",
+  "files_sha256": {
+    "BOUNDED_ENGINE_SCOPE.md": "4874363d581613e48b7974d5a68dc24dc4fd671cb46a42bd258e5e8d9855dfb3",
+    "bounded_controls_final.log": "15ab307e1e9679ae7ead3a75d771a12a4c795b7de8da3635eef3954edaab3ced",
+    "bounded_exact.py": "d5fb6326bcd252efc3a7672dba993311fb0ba724b90039e7fda317bcf8bb770c",
+    "bounded_ruff_final.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "test_bounded_exact.py": "2bc60d2a4671af8c9b8bcae99ecb0e1c303ad27046c3167e294fa060ec56247b"
+  },
+  "history": "First12PASS/dd5c preserved first_controls_01; first8+8 17PASS/62fa preserved retention_controls_02; firstcountsplit17PASS preserved count_split_controls_03; final metadata profile adds all23 fixed counter keys before any project outcomes.",
+  "limitations": [
+    "Omitted middle has ordered commitments, not full scalar/vector replay or independent validation.",
+    "Raw96x2stage metadata/vector profile exceeds24MiB. Gzip profile is not a rigorous compression/fullrunner bound; root review of format/overhead/fixed output guards is required before study freeze.",
+    "Pending prefix is diagnostic only; current counters unknown, unsealed records identified, no completed return.",
+    "No unbounded-iteration promise: configurable safety caps and unpassed SciPy maxfun default15000 remain explicit."
+  ],
+  "metadata_size_profile": {
+    "check": "bounded_exact_metadata_size_envelope",
+    "conservative96_two_stage_engine_metadata_and_two_native_vectors_gzip": 8324736,
+    "conservative96_two_stage_engine_metadata_and_two_native_vectors_raw": 123868224,
+    "gzip_JSON_bytes": 24150,
+    "optimizer_calls": 0,
+    "per_stage_profile": {
+      "callbacks": 4096,
+      "checkpoints": 4097,
+      "library_events": 98304,
+      "retained_checkpoints": 16,
+      "retained_library_per_step": 16,
+      "retained_steps": 16
+    },
+    "project_solves": 0,
+    "proposed_output_guard_bytes": 25165824,
+    "scope": "metadata-only conservative cardinality profile, not a reachable optimizer trajectory or rigorous compression bound; runner/header/source/artifact-copy overhead is separate",
+    "uncompressed_JSON_bytes": 625939
+  },
+  "original_paid_engine_sha256": "b863af87f03c2470fde8d72412b1c89e76e389a528cb7d8b08efe89ceeb3a12c",
+  "project_PDE_or_optimizer_trajectories": 0,
+  "project_array_reads": 0,
+  "retention": {
+    "all_streams": [
+      "checkpoints",
+      "steps",
+      "each step library evaluations"
+    ],
+    "head": 8,
+    "native_callback_count": "Labeled compatibility alias for invocation count",
+    "native_callback_invocations": "All entries, including entry-guard halt",
+    "native_callback_point_records": "All actual point dictionaries, including equal/late",
+    "ordered_SHA256_chain": true,
+    "tail": 8
+  },
+  "role": "AI bounded trace instrumentation of standard frozen exact L-BFGS-B; not new optimizer/student final design",
+  "runtime": {
+    "numpy": "2.4.3",
+    "scipy": "1.18.1"
+  },
+  "study_runs": 0,
+  "unchanged_AST_proof": {
+    "_counts": true,
+    "_delta": true,
+    "_digest": true,
+    "_immutable": true,
+    "_jsonable": true,
+    "_strict_metadata": true,
+    "_validate": true,
+    "callback_except_three_measurement_statements": true,
+    "native_minimize_call_and_options": true,
+    "nested_begin_event": true,
+    "nested_function": true,
+    "nested_jacobian": true
+  },
+  "validation": {
+    "command": "env PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/src OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest -q -s -W error -p no:cacheprovider test_bounded_exact.py",
+    "comparisons": "Paired exact requested hashes, receipt/accept/final states, oracle counters and clock-read sequences; independently calculated retained subsets/counts/chains; actual SciPy and tiny4x5 Helmholtz oracle with a nonzero accepted step.",
+    "edge_controls": [
+      "strict/equal callbacks",
+      "setup and exact/late initial boundary",
+      "late gradient",
+      "late commit rollback",
+      "ordinary gradient failure",
+      "zero-step paid initial",
+      "128checkpoints only2 top native vectors",
+      "interruption unknown pending prefix with identical clock sequence",
+      "mutable event finalized chain",
+      "entry-guard1invocation/0points",
+      "failed counter finalization no extra queries",
+      "O(n) nonfinite vector rejection",
+      "4096metadata-only cardinality and gzip profile"
+    ],
+    "first_run_session": 77337,
+    "pytest_passed": 17,
+    "python3_10_AST_grammar": "PASS",
+    "ruff": "PASS",
+    "terminal_chunk": "d4b6f6",
+    "warnings_as_errors": true
+  }
+}

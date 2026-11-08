@@ -1,0 +1,109 @@
+{
+  "created_utc": "2026-11-08T19:03:29.291774+00:00",
+  "reviewer": "/root/overthrust_source_preflight",
+  "status": "RAW_SOURCE_BYTE_VERIFIED_STATIC_REVIEW_PROVENANCE_PARTIAL",
+  "root_model_decode_GO": false,
+  "root_redistribution_GO": false,
+  "source": {
+    "repository": "DeepWave-KAUST/sweep",
+    "commit": "889fccd3891e3758052a4db9e39acc5350500236",
+    "path": "src/sweep/datasets/overthrust_2d.py",
+    "bytes": 128769,
+    "maximum_source_bytes": 131072,
+    "git_blob_sha1": "e5489b57c841ed9a40b36a1579d1aae7ff760f3c",
+    "sha256": "f2884b53f1d979e1044068dfefcd8c369143a1a5e54dffff11e27c58bc8d2e98"
+  },
+  "auxiliary_provenance_source_bytes": 48705,
+  "auxiliary_cap_bytes": 49152,
+  "static_constants": {
+    "GRID_SPACING_M": 25.0,
+    "UNITS": "m/s",
+    "_TRUE_SHAPE": [
+      187,
+      801
+    ],
+    "_TRUE_VMIN": 2356.947021484375,
+    "_TRUE_VMAX": 6000.0,
+    "_TRUE_B85": {
+      "literal_length": 40478
+    },
+    "_SMOOTH_SHAPE": [
+      187,
+      801
+    ],
+    "_SMOOTH_VMIN": 2575.120361328125,
+    "_SMOOTH_VMAX": 6000.0,
+    "_SMOOTH_B85": {
+      "literal_length": 76079
+    }
+  },
+  "static_decode": {
+    "pipeline": [
+      "base85decode",
+      "zlib.decompress",
+      "frombuffer native-endian float16",
+      "default C-order reshape declared shape",
+      "astype float32"
+    ],
+    "array_decode_executed": false,
+    "decoder_interpolation_or_normalization": false,
+    "pre_encoding_transforms_known": false,
+    "author_error_claim_independently_verified": false
+  },
+  "rights_evidence": {
+    "original_publisher": "https://wiki.seg.org/wiki/SEG/EAGE_Salt_and_Overthrust_Models",
+    "original_publisher_search_text_label": "CC BY 4.0",
+    "direct_page_fetch_status": 403,
+    "software_license": "MIT",
+    "derived_registry_label": "Derived demo (CC-BY-4.0 source)",
+    "original_citation": "Aminzadeh, Brac, Kunz (1997), SEG/EAGE 3-D Modeling Series No. 1",
+    "original_archive_license_acquired": false,
+    "software_license_not_used_to_infer_data_rights": true
+  },
+  "remaining_questions": [
+    "Exact original3D slice index/orientation/origin/checksum and derivation chain are not specified by module.",
+    "Referenced encoding script absent from complete1224entry pinnedtree; loss bound requires originalpreencodingarray.",
+    "Native float16 endianness unspecified; laterportabledecoder must state interpretation.",
+    "Embedded smooth generation not linked to supplied3D smoothing scripts/defaults.",
+    "Boundedlocalprioruse search is not a complete historicaluse proof.",
+    "Root must explicitly assign derived-demo role before any model decoding; no current native-original/confirmation role."
+  ],
+  "activity_by_this_task": {
+    "acquired_source_module_imports": 0,
+    "embedded_array_decodes": 0,
+    "model_arrays": 0,
+    "PDE_calls": 0,
+    "optimizer_calls": 0,
+    "package_installs": 0,
+    "full_archive_downloads": 0,
+    "human_contacts": 0,
+    "production_source_edits": 0
+  },
+  "local_ancestry_search": {
+    "scope": [
+      "repo src/scripts/docs/configs/resultsphase8 text",
+      "visible repo datafile names"
+    ],
+    "overthrust_hits": "ancestry notes only",
+    "visible_external_model": "data/external/marmousi/mar_big_117_567.bin",
+    "complete_prior_use_proof": false
+  },
+  "physical_acceptance": null,
+  "independent_sites_claim": false,
+  "scientific_goal_complete": false,
+  "artifact_sha256": {
+    "PRE_ACQUISITION_FREEZE.json": "c01d2a3cdcec6ac1aafc76f4b8b51c3b7b347ea429b864639fed1f8bb61d87fa",
+    "RAW_ACQUISITION_RECEIPT.json": "70221ae9ed03bf15da1a00f42859b18322126aa14e0af9b5ec235f112ff9c015",
+    "STATIC_MASKED_SOURCE.txt": "5611a769dfcc53bd550442012d0805f84287bb3a9946f87f8730b28aa27a6c39",
+    "STATIC_PROVENANCE_REVIEW.md": "cf38ad634e49bb9403b54eb9b994d3dcc40d3375ed4c3d123a669369aa2c88de",
+    "overthrust_2d.py": "f2884b53f1d979e1044068dfefcd8c369143a1a5e54dffff11e27c58bc8d2e98",
+    "provenance/AUXILIARY_ACQUISITION_RECEIPT.json": "37b99cd7afc53e5266e6632bd55aee53bd70f9e8aea09d5b5f76930d555d7ac6",
+    "provenance/PRE_AUXILIARY_FREEZE.json": "16a4e995d279a5192706d447a9e9b5aa6d2f0665f3ecaa413d46672f0c492bca",
+    "provenance/SWEEP_CATALOG.md": "8a3958181cdedcb95f6fa706132a59528deecb5fe5b21061a8ded46e1db3f8e3",
+    "provenance/SWEEP_LICENSE.txt": "5b20f565ab8e6721a859d747858260c45de3b0aa95233b9e358bf2f28efa0f47",
+    "provenance/SWEEP_benchmarks.source.txt": "847a45c7207518f9ec340bd394c0309fd23c12e6ef3d341d2d0e3cfc8716c887",
+    "provenance/SWEEP_datasets_init.source.txt": "23ce4c066a7807d295f94d1009437956a1672b844385d6c7e98b18fb9643dd7e",
+    "provenance/SWEEP_download3d.source.txt": "2f0d016b4e861e21a0ea313c038528d2127c9412b07537f09b37c532882bba56",
+    "provenance/SWEEP_smoothing.source.txt": "0e8e7ded9c623dd63de99c5e0eaad7f2099f7764c40dea9a0b13f889528e09a0"
+  }
+}

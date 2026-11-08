@@ -1,0 +1,44 @@
+{
+  "recorded_utc": "2026-11-08T18:42:58Z",
+  "status": "SOURCE_REVIEW_CLEAR_FINAL_MANUFACTURED_VALIDATION_DEFERRED_FOR_TIMED_COHORT",
+  "source_sha256": "f980f99749f93310d30092ccd0dbdbce653ac34daeab36a6a458215fdaf4b6a1",
+  "test_sha256": "9ae0337a4a7cbd81963cfd2375051caa3487399585d51b529b61719b48dc7157",
+  "criteria_sha256": "3f3f91aa283c56d42cdcd7947996e82d717e478f445db9092de193ea64dd9240",
+  "scope_sha256": "b6949235504abb8854b8c6947e6396ba2561ef9c326e3468f186d4c54f3dc758",
+  "partial_scope_addendum_sha256": "7a34d471deacf5d1cff371270b4ddfeea948093232ff641fc605ef05b4ea94c3",
+  "peer_source_receipt_sha256": "1ecabccf91f30635ff37de4bdfff183b3d45b0dda28af4c9e2e2660d870d7ab0",
+  "peer_role": "Independent AI source review only; no execution/imports/outcome reads by reviewer",
+  "actual_prior_validation": {
+    "source_sha256": "024241185d93051e6d9518b3d832558b6f967625cf236708f064a1985962ddc9",
+    "test_sha256": "36ea7647cd0692caaf0571282ed46f75bce2651c645f89b07f11bdb9497de483",
+    "history_directory": "history/first29_controls",
+    "pytest_command": "env PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest -q -Werror -p no:cacheprovider -o addopts='' work/new-phase-staging/frequency_continuation_post_audit/test_audit_scalar.py",
+    "pytest_tool_chunk": "d9671d",
+    "pytest_exit_code": 0,
+    "pytest_result": "29 passed in0.34s",
+    "pytest_log_sha256": "5142ad65e816d4f89eb3b281854f3d77199a5bcf1c8ab70ea575b3d0f95c365b",
+    "ruff_command": "env PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -m ruff check --config work/wavecert-fwi/pyproject.toml work/new-phase-staging/frequency_continuation_post_audit/audit_scalar.py work/new-phase-staging/frequency_continuation_post_audit/test_audit_scalar.py",
+    "ruff_tool_chunk": "a0601a",
+    "ruff_exit_code": 0,
+    "ruff_log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  },
+  "preserved_first_attempts": {
+    "first16_pure_tests": "16 passed in0.43s, -Werror; original source/logs retained history/first16_controls",
+    "first_ruff": "Failed solely unused defaultdict import; original log retained, import removed before actual29-pass controls",
+    "first_default_and_grammar": "Metadata-only default and Python3.10 grammar passed on earlier source76fc5397; not misreported as final-source validation",
+    "pre_incomplete_gate_fix": "Earlier unexecuted source/test bytes preserved history/pre_incomplete_gate_fix",
+    "pre_peer_prefix_fix": "Earlier source/test bytes preserved history/pre_peer_prefix_fix"
+  },
+  "pending_final_validation": [
+    "Run final34 pure/manufactured controls with-Werror after root confirms no timed producer",
+    "Run final Ruff, Python3.10 grammar and metadata-only default CLI after timing hold lifts",
+    "Pin final actual validation receipt before any authorized project numeric audit"
+  ],
+  "project_run_artifacts_or_outcomes_read_by_author": false,
+  "project_PDE_optimizer_or_numerical_audit_executed": false,
+  "numerical_criteria_changed": false,
+  "producer_controller_engine_source_changed": false,
+  "root_terminal_and_explicit_audit_GO_still_required": true,
+  "physical_acceptance": null,
+  "student_final_design_or_confirmation": false
+}

@@ -1,0 +1,31 @@
+[
+  {
+    "name": "ruff_01",
+    "command": [
+      "/opt/miniconda3/bin/python",
+      "-B",
+      "-I",
+      "-m",
+      "ruff",
+      "check",
+      "--config",
+      "work/wavecert-fwi/pyproject.toml",
+      "work/new-phase-staging/frequency_continuation_figures_02/plot_results.py"
+    ],
+    "exit_code": 1,
+    "stdout": "I001 [*] Import block is un-sorted or un-formatted\n  --> work/new-phase-staging/frequency_continuation_figures_02/plot_results.py:3:1\n   |\n 1 |   #!/usr/bin/env python3\n 2 |   \"\"\"Post-terminal descriptive plots. Default CLI reads no study outcomes.\"\"\"\n 3 | / from __future__ import annotations\n 4 | |\n 5 | | import argparse\n 6 | | import csv\n 7 | | import gzip\n 8 | | import hashlib\n 9 | | import json\n10 | | import math\n11 | | from pathlib import Path\n12 | | import statistics\n13 | | import sys\n   | |__________^\n14 |\n15 |   METHODS = (\"joint8\", \"low4_then8\", \"restart8\", \"original4\")\n   |\nhelp: Organize imports\n   |\n10 | import math\n   - from pathlib import Path\n11 | import statistics\n12 | import sys\n13 + from pathlib import Path\n14 |\n   |\n\nFound 1 error.\n[*] 1 fixable with the `--fix` option.\n",
+    "stderr": ""
+  },
+  {
+    "name": "default_01",
+    "command": [
+      "/opt/miniconda3/bin/python",
+      "-B",
+      "-I",
+      "work/new-phase-staging/frequency_continuation_figures_02/plot_results.py"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"status\": \"source_only_default_no_outcome_reads\", \"runs\": 96, \"cases\": 8, \"methods\": [\"joint8\", \"low4_then8\", \"restart8\", \"original4\"], \"repetitions\": 3, \"required_terminal_GO\": true, \"scope\": \"Eight reused development slices; nominal SEAM identities share ancestry, and repetitions are timing repetitions, not independent geology. Original 4 uses fewer observations. Descriptive engineering comparison; no physical acceptance, novelty, causal recovery or competition claim.\"}\n",
+    "stderr": ""
+  }
+]

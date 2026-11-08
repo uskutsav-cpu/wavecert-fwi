@@ -206,3 +206,14 @@ It added failure-only test diagnostics to expose saved comparison and model
 bindings; numerical criteria and the frozen replay were not changed at this
 stage. A same-version passing job prevents attributing the failure solely to
 Python or NumPy versions without further evidence.
+
+
+## Frequency-continuation engineering assistance
+
+AI agents authored the bounded-history instrumentation of standard exact L-BFGS-B, four-arm controller/driver, manufactured controls, source/accounting reviews, exact protocol freezes, detached process supervisor, scalar post-auditors, exports/plots and this documentation. Broad requests to strengthen the project do not establish the student's ownership of those components. No final student paper, abstract or submission was written.
+
+Actual engineering execution consists of separately retained cohorts: first 96 planned, 85 complete, one in flight and ten unattempted with an unknown process exit; then a fresh full 96 with an observed child exit of 0. Both use inspected development data and are never pooled. The first scalar checker used the wrong finalized-step export field and failed; its report, source and log remain. A one-key V2 correction with unchanged criteria passes 41,398 checks. An addendum corrects historical test-protocol chronology; no runtime or numerical setting changed. First plot overlaps and style failures remain retained; the layout repair preserves both CSV byte hashes.
+
+Separate AI source/math review derives the classical conditional reciprocity/rank-nullity ceiling. It is not claimed as novel theory or the student's scientific interpretation. AI also located and quarantined a bounded 128,769-byte encoded Overthrust source and inspected its lossy float16 transformation and provenance. No embedded model decoding, PDE evaluation, package installation or external human contact occurred. The candidate is not treated as native original or confirmation data.
+
+The new portable CI test passes locally: one parent test reruns all 108 manufactured controls in a physical isolated checkout, with zero failures, errors or skips. Its first wrapper run retained 86 passes and 22 fixture-setup errors caused by a missing temporary parent directory; a one-line directory fix precedes the successful fresh replay. The archived control sources and numerical criteria remain unchanged. Cross-platform CI results are recorded separately when observed. Separate AI/NumPy/SciPy checks remain distinct from substantive human criticism and the student's own understanding, experimental choices, interpretation, defense and final writing. All four scientific goals remain incomplete.

@@ -1,0 +1,70 @@
+{
+  "created_utc": "2026-11-08T17:13:56.482697+00:00",
+  "execution_scope": "Manufactured controls only. No projectGO/96-run/PDE study, no production source edits or production-module monkeypatches. Scripted solver substitutions affect staged and private validation-copy module bindings only.",
+  "files_sha256": {
+    "bounded_controls_01.log": "9d69a3a87b656eced3db2ca6263a385fe71bd9582f6db8de1576974678130c1c",
+    "bounded_exact.py": "dd5c1e1bf2745ba34d4e8fa165617037cb23602523d5d55419f76cd34999d8ad",
+    "bounded_ruff_01.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "test_bounded_exact.py": "5e0451fcc49d673ca16089229c5cb0804a6dbb920a0123af42539b43c62f0776"
+  },
+  "intended_representation_differences": [
+    "No model arrays in checkpoint/step history.",
+    "Separate immutable initial_model and final_model arrays; current model retained internally.",
+    "Strict JSON metadata validation excludes separately retained native model arrays.",
+    "Additional scalar callback/cap/maxfun metadata.",
+    "BaseException propagates with a paid bounded_exact_prefix attached when prefix finalization succeeds."
+  ],
+  "native_options": {
+    "maxfun": 15000,
+    "maxfun_argument_passed": false,
+    "maxfun_role": "Installed SciPy default verified in primary source; unchanged from old engine. Native maxfun/maxls termination is retained, not relabeled.",
+    "maximum_steps": "Configurable finite safety cap; parent/root will freeze4096single/2048stage. No promise of unlimited iterations."
+  },
+  "original_paid_engine_sha256": "b863af87f03c2470fde8d72412b1c89e76e389a528cb7d8b08efe89ceeb3a12c",
+  "role": "AI standard exact L-BFGS-B measurement instrumentation; not a new optimizer or student final design",
+  "runtime": {
+    "numpy": "2.4.3",
+    "scipy": "1.18.1"
+  },
+  "unchanged_AST_proof": {
+    "_counts": true,
+    "_delta": true,
+    "_digest": true,
+    "_immutable": true,
+    "_jsonable": true,
+    "_strict_metadata": true,
+    "_validate": true,
+    "nested_begin_event": true,
+    "nested_callback": true,
+    "nested_function": true,
+    "nested_jacobian": true
+  },
+  "validation": {
+    "actual_project_PDE_or_optimizer_trajectories": 0,
+    "actual_project_array_reads": 0,
+    "command": "env PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/src OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest -q -s -W error -p no:cacheprovider test_bounded_exact.py",
+    "edge_cases": [
+      "strict callbacks",
+      "equal paid callback",
+      "setup atbudget",
+      "initial atbudget",
+      "late initial",
+      "late gradient",
+      "late commit accept-and-rollback",
+      "gradient exception",
+      "zero steps with paid initial",
+      "128 accepted checkpoints retain only two top-level vectors",
+      "interrupt propagation with paid prefix"
+    ],
+    "paired_controls": "Exact old/new requested SHA/event sequences, accepts/receipt owners, oracle counters, normalized step/checkpoint metadata, accepted/final states and manual-clock statuses match.",
+    "pytest_passed": 12,
+    "python3_10_AST_grammar": "PASS",
+    "real_control": "Actual SciPy minimize + ExactMeritOracle on manufactured4x5 Helmholtz,2frequencies,2sources,4receiver slots with repetition; nonzero accepted step. Old/new events,counters,termination,final states match. No project arrays.",
+    "ruff": "PASS",
+    "ruff_chunk": "7a3ce4",
+    "study_runs": 0,
+    "terminal_chunk": "c8219e",
+    "test_log": "bounded_controls_01.log",
+    "warnings_as_errors": true
+  }
+}

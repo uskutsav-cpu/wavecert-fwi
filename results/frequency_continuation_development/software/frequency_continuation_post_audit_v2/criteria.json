@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "declared_utc": "2026-11-08T18:00:14.670699+00:00",
+  "role": "Independent AI scalar integrity/eligibility audit; no student final design or confirmation",
+  "scope": "Full96 schedule,24case/repetition quadruples,32case/method groups,3repetitions. No producer/engine/helper imports or PDE/optimizer calls. Only decode projectarrays after explicit rootterminalconfirmation+GO.",
+  "methods": [
+    "joint8",
+    "low4_then8",
+    "restart8",
+    "original4"
+  ],
+  "cases": 8,
+  "repetitions": 3,
+  "runs": 96,
+  "schedule_seed": 2026110802,
+  "frequencies_hz": [
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    2.5,
+    3.0,
+    3.5,
+    4.0
+  ],
+  "timing": {
+    "strict_outer_api_cap_seconds": 8.0,
+    "engine_absolute_ceiling_seconds": 7.5,
+    "first_stage_absolute_ceiling_seconds": 3.75,
+    "timestamp_consistency_atol_seconds": 1e-08,
+    "eligibility_cap_tolerance_seconds": 0.0,
+    "inner_invalid_cannot_be_rescued": true
+  },
+  "numeric": {
+    "quality_rtol": 5e-11,
+    "quality_atol": 2e-13,
+    "initial_model_rtol": 2e-12,
+    "initial_model_atol": 2e-14,
+    "objective_rtol": 2e-09,
+    "objective_atol_initial_scale": 2e-12,
+    "objective_atol_initial_floor": 1e-12,
+    "observation_relative_L2_maximum": 1e-09,
+    "linear_residual_maximum": 1e-09
+  },
+  "targets": [
+    0.5,
+    0.25
+  ],
+  "bounds_m": [
+    0.027777777777777776,
+    1.0
+  ],
+  "trace_retention": {
+    "head": 8,
+    "tail": 8,
+    "callback_safety_uses": "all invocations including entry-guard halts; point records and retained samples separate",
+    "omitted_middle_replay_claim": false,
+    "unsealed_prefix_can_earn_credit": false
+  },
+  "source_pins": {
+    "production": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "controller.py": "167b2db184d525cbecc2637310c78c746dfb0a908858cfe12713d2ebe4dfd907",
+    "bounded_exact.py": "d5fb6326bcd252efc3a7672dba993311fb0ba724b90039e7fda317bcf8bb770c",
+    "independent_saved_models.py": "807f4f2f0e0aeea1d2f61b64ee5f64a99819c38d4f6164529e664f0a235edeae",
+    "original_protocol.json": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c"
+  },
+  "cost_rule": "Each unique serialized owner registry label final snapshot once; prep separate; nested engine/setup snapshots are subsets; unknown aggregateNone withknownpartialcounts retained. Labels/coldstatus/sourceenforcement do not reveal opaque native owner tokens.",
+  "model_rule": "Last chronological within-budget descriptor, exact savedmodelSHA/handoff/common8headerbindings. Per-stage first/current native headers are not serialized; rely on pinnedsource enforcement and do notclaim independent rawreceipt replay.",
+  "quality_rule": "Independent manual half-index bilinear velocity refinement of raw24native-m, then truthm=1/v\u00b2; math.fsum+scalar sqrt for native-m andphysical-v errors. Generic SciPy reflect-Gaussian sigma3.2 may be shared for initial reference and is disclosed. Manualtruth hash neednot match production rounding bitwise.",
+  "credit_rule": "Recorded failed/late/missing rows remain all96 denominators. Returned-ratio diagnostics are not first-hit targets; event only for joint eligible complete audited row. Any independent audit inconsistency/source/manifest/incomplete-producer failure disables all verified study credit; retain recorded flags and raw negative outcomes. Method failures alone are outcomes, not hidden integrity failures.",
+  "summary_rule": "Only compute case/method medians with all3 verified eligible repetitions; keep all32 planned groups,8cases and24per-arm denominators; no successful-only winner, IID/pvalue/site count or physical acceptance.",
+  "physical_acceptance": null,
+  "student_final_research_design": false
+}

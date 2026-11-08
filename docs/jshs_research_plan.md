@@ -199,3 +199,10 @@ positive practical outcome or unusually informative negative finding, realistic
 operator evidence, meaningful independent confirmation, transparent limitations,
 and a student who can explain and defend every important decision. More tests,
 more features, or a higher self-assigned score cannot substitute for those results.
+
+
+## Updated recovery gate after the full comparison
+
+Frequency continuation is not promoted as the recovery remedy: it worsens the initial velocity model in 7/8 case medians, despite substantial common-eight data-fit reduction. The next work must establish a recovery-oriented assumption or acquisition with physically justified information content, compare strong classical controls at fully paid cost, and retain initialization and every adverse case. The conditional reciprocity/dimension ceiling is a source/math diagnostic, not a new method or proof of the observed cause.
+
+Physical acceptance remains open after substantial BP padding sensitivity; additional ancestors require verified source, geometry and transformation provenance. The newly quarantined Overthrust demo is lossy and has not been decoded or validated. A distinct useful contribution beyond prior certification and the student's own question, interpretation, defense and writing are still required. The historical 7.5 assessment is not an updated national-readiness score; no 10/10 or winning rank is established.

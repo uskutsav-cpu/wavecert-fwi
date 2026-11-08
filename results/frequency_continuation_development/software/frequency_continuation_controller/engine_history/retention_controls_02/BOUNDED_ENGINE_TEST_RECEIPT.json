@@ -1,0 +1,86 @@
+{
+  "created_utc": "2026-11-08T17:40:10.924647+00:00",
+  "files_sha256": {
+    "BOUNDED_ENGINE_SCOPE.md": "c70435141976b5f83602a5648df72313b20a575a9ae1088ace2f9993277eacff",
+    "bounded_controls_02.log": "7b2584979808c74c27aeb9b66751f290148a481afdc8bcc0390a9df20469cfa2",
+    "bounded_exact.py": "62fa3c7e61ba0162eb2409eab67fba160c55fdb754c2dbccb950b826f9ef9b81",
+    "bounded_ruff_02.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "test_bounded_exact.py": "73620c6a8c82464c8bf74d3a1b068229af5091c0975a0c15346501f1401b8bb9"
+  },
+  "history": "engine_history/first_controls_01 preserves dd5c first12PASS and receiptfc90; engine_history/retention_controls_02 preserves first17PASS/current sources. No tolerance or numerical setting changes after either first execution.",
+  "limits": [
+    "No full intermediate scalar/vector replay: omitted records have ordered commitments only.",
+    "Gzip size is a metadata-profile observation, not a rigorous compression or full runner storage bound. Raw envelope exceeds proposed24MiB. Root review/actual fixed output accounting required before freeze.",
+    "Pending prefix is diagnostic, unsealed/current counters unknown, and not a completed API return."
+  ],
+  "metadata_size_profile": {
+    "check": "bounded_exact_metadata_size_envelope",
+    "conservative96_two_stage_engine_metadata_and_two_native_vectors_gzip": 6869184,
+    "conservative96_two_stage_engine_metadata_and_two_native_vectors_raw": 96516480,
+    "gzip_JSON_bytes": 16569,
+    "optimizer_calls": 0,
+    "per_stage_profile": {
+      "callbacks": 4096,
+      "checkpoints": 4097,
+      "library_events": 98304,
+      "retained_checkpoints": 16,
+      "retained_library_per_step": 16,
+      "retained_steps": 16
+    },
+    "project_solves": 0,
+    "proposed_output_guard_bytes": 25165824,
+    "scope": "metadata-only conservative cardinality profile, not a reachable optimizer trajectory or rigorous compression bound; runner/header/source/artifact-copy overhead is separate",
+    "uncompressed_JSON_bytes": 483482
+  },
+  "original_paid_engine_sha256": "b863af87f03c2470fde8d72412b1c89e76e389a528cb7d8b08efe89ceeb3a12c",
+  "project_PDE_or_optimizer_trajectories": 0,
+  "project_array_reads": 0,
+  "retention_decision": "Root fixed head8+tail8 before any project outcomes",
+  "role": "AI bounded trace instrumentation of standard frozen exact L-BFGS-B, not new optimizer/student final design",
+  "runtime": {
+    "numpy": "2.4.3",
+    "scipy": "1.18.1"
+  },
+  "study_runs": 0,
+  "unchanged_AST_proof": {
+    "_counts": true,
+    "_delta": true,
+    "_digest": true,
+    "_immutable": true,
+    "_jsonable": true,
+    "_strict_metadata": true,
+    "_validate": true,
+    "callback_except_two_measurement_statements": true,
+    "native_minimize_call_and_options": true,
+    "nested_begin_event": true,
+    "nested_function": true,
+    "nested_jacobian": true
+  },
+  "validation": {
+    "command": "env PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/src OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest -q -s -W error -p no:cacheprovider test_bounded_exact.py",
+    "controls": [
+      "strict callbacks",
+      "equal paid callback",
+      "setup/exact-boundary/late initial",
+      "late gradient",
+      "late commit rollback",
+      "ordinary gradient failure",
+      "zero steps pays initial",
+      "128 accepted checkpoints only2 native vectors",
+      "interruption propagation and unknown pending prefix without new queries",
+      "mutable event finalization",
+      "entry-guard callback count",
+      "failed counter finalization unsealed prefix",
+      "O(n) nonfinite model rejection",
+      "4096 metadata-only cardinality/gzip profile",
+      "actual SciPy+tiny4x5 exact Helmholtz oracle with nonzero accepted step"
+    ],
+    "first_run_session": 71515,
+    "old_new_equivalence": "Exact requested/model SHA, receipt/accept state, oracle counter and clock-read sequences; independent expected retained subsets and finalized SHA chains; current/initial/final states and native termination.",
+    "pytest_passed": 17,
+    "python3_10_AST_grammar": "PASS",
+    "ruff": "PASS",
+    "terminal_chunk": "051448",
+    "warnings_as_errors": true
+  }
+}
