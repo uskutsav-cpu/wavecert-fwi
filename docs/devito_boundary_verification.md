@@ -47,6 +47,13 @@ the **full** reference trace norm. Neither the window split nor a mirror-path
 travel estimate establishes strict discrete causality. Ricker wavelets are not
 compactly supported. Actual sampled wavelets and time axes are saved.
 
+A subsequent [separate NumPy replay](numpy_boundary_replay.md) reproduces all
+seven implemented traces within 3.42e−14 relative L2 error. Its source-level
+audit also established the exact output convention: computation records indices
+1–1099; stored receiver samples 0 and 1100 remain initialized zero. All original
+metrics keep the unchanged 1,101 stored samples. Zero endpoints contribute no
+signal energy; they are not computed pressure observations at the final time.
+
 The separate `matched_exterior_contrasts` block in `metrics.json` compares each
 damped trace directly with its matched undamped control. Its denominators are
 those controls' full norms, 243.210246 and 204.832721; they are not the largest
@@ -71,7 +78,8 @@ recomputed all 72 reported metric numbers using raw arrays and `math.hypot`,
 checked 11 artifact hashes, the seven raw records, 119 recorded invariants and
 source/configuration pins. Another physical audit independently checked the raw
 metrics and interpretation limits. These are arithmetic/metadata audits, not a
-second PDE implementation or independent human reproduction.
+second PDE implementation or independent human reproduction. The later NumPy
+implementation replay is documented separately above.
 
 The largest recorded field has three 401×401 slices: 3,859,224 logical bytes.
 Its reported halo view is 4,014,744 bytes. These exclude model, compiler,

@@ -59,6 +59,8 @@ Student scientific ownership and final design decisions remain open; see the
 The new [boundary diagnostic](docs/devito_boundary_verification.md) also exposes
 substantial finite-record trace errors in a fixed homogeneous Devito fixture;
 passing gradient checks alone does not establish boundary fidelity.
+Its [separate NumPy replay](docs/numpy_boundary_replay.md) reproduces all seven
+implemented traces in the local run, including the substantial boundary effects.
 
 ## Latest controlled comparison
 

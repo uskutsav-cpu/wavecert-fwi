@@ -1,0 +1,49 @@
+{
+  "goal_status": "active; completion unproved",
+  "source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "requirements": [
+    {
+      "requirement": "Better reconstruction or time-to-target at matched total computational cost",
+      "status": "unproved",
+      "evidence": "Prior completed cost/trajectory studies are unfavorable. New paid-merit components are tested, but no new project-data matched-cost trajectory study has been executed.",
+      "sources": [
+        "docs/continuing_research.md",
+        "results/batched_pod_development/summary.json",
+        "results/provisional_software_benchmark/root_verification.json"
+      ]
+    },
+    {
+      "requirement": "Realistic wave physics and several independent geological environments",
+      "status": "incomplete; measured boundary limitation now quantified",
+      "evidence": "Seven frozen homogeneous Devito cases executed with all source/software invariants.20/40-cell padding retains0.56936/0.24949 relative receiver-trace differences; matchedexterior controls and a second enlarged reference retained. This is one geometry/band, not independentgeology or certificate transfer.",
+      "sources": [
+        "docs/devito_boundary_verification.md",
+        "results/devito_boundary_verification/run_01/complete_receipt.json",
+        "results/devito_boundary_verification/review/devito_boundary_post_audit.json",
+        "docs/ancestry_audit.md"
+      ]
+    },
+    {
+      "requirement": "Specific contribution beyond existing certification methods",
+      "status": "unproved",
+      "evidence": "Specific implementation/duality is documented; close directional, state/adjoint, spectral/POD and Krylov precedents remain. A new theorem or decisive practical contribution is not established.",
+      "sources": [
+        "docs/cached_merit_scope.md",
+        "results/primary_research_followup/coarse_dst_primary_research_matrix_20261108.json"
+      ]
+    },
+    {
+      "requirement": "Independent reproduction, personal scientific interpretation/defense and accurate assistance disclosure",
+      "status": "partly verified computationally; personal scientific interpretation/defense remains incomplete",
+      "evidence": "Reference-informed separate NumPy implementation reproduced all7 faithful Devito traces within3.42e-14 locally.14 variants retained, rational0/7at1e-9; an independent raw audit passed. Student contribution/understanding account remains pending; cross-environment CI not yet launched.",
+      "sources": [
+        "docs/numpy_boundary_replay.md",
+        "results/numpy_boundary_replay/run_01/complete_receipt.json",
+        "results/numpy_boundary_replay/review/numpy_boundary_post_audit.json",
+        "docs/assistance_record.md"
+      ]
+    }
+  ],
+  "recorded_utc": "2026-11-08T04:08:22.827947+00:00",
+  "preceding_audit": "results/provisional_software_benchmark/scientific_completion_audit.json"
+}

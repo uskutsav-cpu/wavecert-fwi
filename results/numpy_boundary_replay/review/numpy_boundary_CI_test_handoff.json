@@ -1,0 +1,23 @@
+{
+  "status": "staged_portable_CI_test_ready_for_root_review_integration",
+  "recorded_utc": "2026-11-08T03:45:48.840258+00:00",
+  "test_sha256": "e69d2beaa85de2d9eeca08a45e2040f2bf65f8cebc55735904f12f069b5f0603",
+  "scope_sha256": "0a1c232db665d2f53eac56b065cef21bec94db05b6c4603908020cd6a470ea54",
+  "checks": {
+    "ruff": "passed",
+    "Python3.10_grammar": "passed",
+    "pytest_collection": "one test collected",
+    "numerical_replays_executed_by_this_task": 0
+  },
+  "frozen_numpy_bundle_modified": false,
+  "main_files_modified": false,
+  "all_seven_own_traces_before_target_NPZ": true,
+  "fixed_gates": {
+    "trace_relative_L2": 1e-09,
+    "source_relative_L2": 1e-14,
+    "exact_times": true,
+    "source_bitwise": "diagnostic only"
+  },
+  "CI_console": "one capfd.disabled JSON after seven own solves and all comparisons; all case errors plus maxima and environment before final assertion",
+  "scope": "reference-informed numerical implementation reproduction, not independent human/student scientific work or completed goal4"
+}

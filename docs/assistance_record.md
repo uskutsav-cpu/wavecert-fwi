@@ -90,3 +90,13 @@ audited raw trace arithmetic, and generated the diagnostic figure/documentation.
 The substantial truncation errors remain recorded. These are AI contributions;
 they do not establish a student-authored study, personal analysis or independent
 human reproduction.
+
+Codex then derived a separate, reference-informed NumPy replay from the pinned
+discrete update, generated spatial constants, damping profile and time arguments.
+It fixed fourteen replay cases and two coefficient variants before running them,
+retained all seven rational-variant mismatches, audited raw arithmetic, and
+introduced a portable CI test using the same predeclared agreement tolerances.
+The replay was AI-coded and reference-informed, with the earlier outcomes already
+known; it is not a student's independently conceived investigation or personal
+analysis. The student scientific question, prediction, comparison and contribution
+account requested during this session remain pending.

@@ -1,0 +1,57 @@
+{
+  "status": "staged_frozen_ready_for_review_no_replay",
+  "recorded_utc": "2026-11-08T03:37:14.863297+00:00",
+  "full_numerical_replays_executed": 0,
+  "original_numeric_arrays_opened_by_replay": false,
+  "main_files_modified": false,
+  "student_final_research_design": false,
+  "tests": {
+    "count": 12,
+    "warnings": "error",
+    "result": "passed",
+    "ruff": "passed",
+    "scope": "exact moments, independent dense one-step algebra, damping/geometry/source definition, no-propagation/default, interruption/comparison-failure prefix and portable-source guards; declared cross-platform source and trace agreement criteria with fresh synthetic NPZs (no actual reference data)"
+  },
+  "metadata_guard": {
+    "native_production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "actual_copied_primary_sources_checked": 5,
+    "Devito_examples_or_wavecert_imported": false
+  },
+  "files": {
+    ".ruff_cache/.gitignore": "9e3a60f1e6ec4ae60215c11d54b171392745ec25e9dded433d5bd921363af316",
+    ".ruff_cache/0.16.6/1047770272162803680": "ce945850e39b9d836ff7ef0ea7b12696ba3c2f8fd29db5c7572c0219690bda34",
+    ".ruff_cache/0.16.6/9786811080173470458": "42292bd65e84cc6e23769c91cb7e1616b667af44a96505e6699e5e3565798a31",
+    ".ruff_cache/CACHEDIR.TAG": "5953156d7e0c564a427251316eaf26f8870e6483ae2197f916b630e4f93e31ae",
+    "README.md": "af0c267b51d326af72adfa85de27fe8d0dfe45144f67fb92ccb72edfa9e5c07a",
+    "history/protocol.json.ef6608bf.original": "ef6608bfabfb4bd172ff2673f813dda6524003ffaab96d1479a51d8136ef729c",
+    "history/replay_numpy.py.c2b5f327.original": "c2b5f32710fbb131056c40e1fc660e331db2e1b92b16e5a83803d38b7d5677e8",
+    "history/replay_numpy.py.cebb7b00.original": "cebb7b0098b2a83f50f4477f4f206b95c4ebab4d28d7a1757d0ba3c634d572f9",
+    "original_protocol.json": "a83f2de93543b16af428d1fbe562f4d7db8d9df982b203a04bb0d445e93306b8",
+    "primary/c8d7e91f8921d1891d0e307f5142a10b3c66f1a3.c": "0a6777367c0497ca008d76961ea989ad3ea99db41e7c965656dbf75a767d3c6b",
+    "primary/ffed801f4f0a40986b4fcc46fb263373afd68994.c": "82966d6bfcc7542535163804ac127bf01053808757e9f35fc4e363a01925da38",
+    "primary_metadata/forward_damped_primary.c": "0a6777367c0497ca008d76961ea989ad3ea99db41e7c965656dbf75a767d3c6b",
+    "primary_metadata/forward_undamped_primary.c": "82966d6bfcc7542535163804ac127bf01053808757e9f35fc4e363a01925da38",
+    "primary_metadata/generated_C_manifest.json": "5237855e73e2d6ccc5070cb97fdbf762313bec729acdd2572e4388221291ae8d",
+    "primary_metadata/initialize_damp20_primary.c": "93e22a33b49fc63b10418abd451b2dc2a91182a4973cb19f2b6812f0441e74d8",
+    "primary_metadata/initialize_damp40_primary.c": "e5e1a7c21e2ad6c56eeaf518ab26146fc8174bdf47b6862b641d825f9d3d1d9f",
+    "primary_metadata/metadata_query_damped_forward.c": "0a6777367c0497ca008d76961ea989ad3ea99db41e7c965656dbf75a767d3c6b",
+    "primary_metadata/metadata_query_undamped_forward.c": "82966d6bfcc7542535163804ac127bf01053808757e9f35fc4e363a01925da38",
+    "primary_metadata/operator_time_arguments.json": "8d654aaec79a040a683329abb82f4e35c1099b8c14828be3f1c2c5a4693cbcb5",
+    "primary_metadata/query_time_arguments.py": "14e2bd1da0ce486218affede8ef6832fa148b65a119b8a8ee7c50a92d063c2c4",
+    "primary_sources/model.py": "22faa9eafcb2ef7012ce5bbcd977418b5a8515c3f4f9d1c42fcb105f7854ebd4",
+    "primary_sources/operators.py": "1ab37a6f2e95b7ab7fdec58d141290880127da9705dfe8deb6045fc0590d6336",
+    "primary_sources/source.py": "f8c4bba77e982490a25e5924e654f482afd21f8f2ebae3274e87eb1b45c147ac",
+    "primary_sources/utils.py": "27532feafcaf32f760ffff0b7978cdfa4ee1f7920a9d3367d4d05016657eff19",
+    "primary_sources/wavesolver.py": "9e8cca80ac1fd1bb66abe3133a09ad0f2d23b2b55aba0e0c1003362c458b929e",
+    "protocol.json": "53fbdd57a119ec68dd07e8c3ce833857e281acce13c0ff9001456ec114b59550",
+    "replay_numpy.py": "4832612882cb7b484777e309fb14ccc291685ad1afb5efd030332d84df31375c",
+    "test_replay_numpy.py": "da7049cd5277cf8ff62164c62d8f71643dfa303508660216a227247cb32ca62d"
+  },
+  "pre_execution_agreement_criteria": {
+    "trace_relative_L2": 1e-09,
+    "source_relative_L2": 1e-14,
+    "exact_times": true,
+    "source_bitwise_equality": "diagnostic only",
+    "defined_before_actual_replays": true
+  }
+}

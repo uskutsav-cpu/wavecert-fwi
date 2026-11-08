@@ -14,6 +14,11 @@ from an enlarged reference. Matched-exterior undamped controls are worse;
 the two enlarged references agree to ordinary floating-point precision. These
 are conditional truncation diagnostics, not reflection coefficients or a
 physics-quality pass. This adds evidence about a limitation; goal 2 stays open.
+The [separate NumPy implementation](numpy_boundary_replay.md) reproduces all seven
+faithful traces within 3.42e−14 relative L2 error and retains all seven failed
+rational-coefficient comparisons at the fixed 1e−9 criterion. This advances
+numerical reproduction while student interpretation and the other scientific
+requirements remain unproved.
 
 The [current JSHS rules, Section IX](https://www.jshs.org/wp-content/uploads/2026/08/JSHS-Core-Rules-of-Competition-2026-27.pdf)
 require student ownership of the final scientific question, hypothesis, design

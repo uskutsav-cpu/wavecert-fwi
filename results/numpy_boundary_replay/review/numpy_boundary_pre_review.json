@@ -1,0 +1,84 @@
+{
+  "status": "CLEAR_for_fixed_reference_informed_NumPy_replays_before_outcomes",
+  "recorded_utc": "2026-11-08T03:39:32.368073+00:00",
+  "reviewer": "separate AI /root/candidate_final_review; analytic damping and recurrence/failure subreview /root/candidate_final_review/verification_helpers_review",
+  "reviewed_sha256": {
+    "replay_numpy.py": "4832612882cb7b484777e309fb14ccc291685ad1afb5efd030332d84df31375c",
+    "protocol.json": "53fbdd57a119ec68dd07e8c3ce833857e281acce13c0ff9001456ec114b59550",
+    "test_replay_numpy.py": "da7049cd5277cf8ff62164c62d8f71643dfa303508660216a227247cb32ca62d"
+  },
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "tests": {
+    "pure_tests_passed": 12,
+    "warnings": "error",
+    "terminal_exit_code": 0,
+    "command": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 python -m pytest -o addopts='' -q -s -W error -p no:cacheprovider -o tmp_path_retention_policy=failed test_replay_numpy.py",
+    "scope": "exact rational moment solve, independent dense one-step/layout/damping/prefix and mock failure/criteria guards; no full fixed replay"
+  },
+  "ruff": "passed with repository pyproject config",
+  "actual_source_guards": {
+    "current_production_digest_verified": true,
+    "copied_primary_assets_and_argument_evidence_pins_verified": true,
+    "forbidden_devito_examples_wavecert_modules_imported": false,
+    "local_input_source_files_bound": 21
+  },
+  "primary_metadata_authority": {
+    "path": "primary_metadata/operator_time_arguments.json",
+    "sha256": "8d654aaec79a040a683329abb82f4e35c1099b8c14828be3f1c2c5a4693cbcb5",
+    "query_source_sha256": "14e2bd1da0ce486218affede8ef6832fa148b65a119b8a8ee7c50a92d063c2c4",
+    "method": "actual pinned ForwardOperator.arguments on pure Grid/Function analytic model with every Operator.apply forbidden; no Model/initdamp or wave propagation",
+    "fresh_generated_C_byte_identical_to_cached_primary_in_both_modes": true,
+    "time_m": 1,
+    "time_M": 1099,
+    "sample_count": 1101,
+    "receiver_uncomputed_indices": [
+      0,
+      1100
+    ],
+    "source_unused_indices": [
+      0,
+      1100
+    ],
+    "final_computed_unrecorded_field_time": 1100
+  },
+  "verified_numerical_contract": [
+    "Centered u_tt but actual one-sided forward damping derivative d*(u_next-u_current)/dt, directly confirmed by primary symbolic API and generated C",
+    "Faithful C spatial literals pinned; separately declared exact-rational 5-node second derivative from polynomial moments; no third variant or coefficient selection",
+    "Analytic face damping includes exact layer offsets +1, innermost p=2/b, all-axis corner sums and b=0 branch; no Devito damping fields used",
+    "All logical boundary nodes updated; two immutable zero exterior ghost layers suffice for radius-two fourth-order stencil",
+    "Three cyclic buffers, update next then inject dt\u00b2/m Ricker[time] at aligned undamped source, then sample CURRENT field; fixed exact time bounds prevent fitted shifts",
+    "All fourteen independent source/time/receiver/analytic-damping outputs must complete and persist before first original numeric NPZ access",
+    "Attempts persisted before each solve; interrupted/error cases retained; comparison-started state persisted with reference access unknown before call, preventing false no-access claims after comparison failures",
+    "No installed Devito package requirement: runtime imports only standard library and NumPy; primary code/metadata are copied evidence assets, not imported execution dependencies"
+  ],
+  "fixed_preoutcome_agreement": {
+    "trace_relative_L2_max": 1e-09,
+    "source_relative_L2_max": 1e-14,
+    "exact_time_axis_required": true,
+    "source_bitwise_equality": "diagnostic only; cross-platform exp ULP motivation declared before outcomes",
+    "source_max_absolute_difference": "recorded diagnostic",
+    "rational_variant": "all seven errors/flags retained regardless of agreement; no outcome-based tolerance changes"
+  },
+  "bounded_memory": "Three (N+4)x(N+4) float64 states with halo2, analytic N\u00b2 damping and temporary stencil arrays; no full time history. Largest N401 state allocation3936600bytes, plus damping/temporaries/arrays, not a peak-process-memory claim.",
+  "resolved_preexecution_findings": [
+    "Actual forward damping differs from initially assumed centered damping; corrected from source before replays",
+    "Argument-evidence SHA and actual scalar-bound/code-identity checks now enforced",
+    "Installed Devito dependency removed from portable runner",
+    "Comparison-failure receipt now records comparison started and unknown/possible reference access instead of false no-access",
+    "Source bitwise diagnostic separated from the predeclared numeric input/trace tolerances before data comparison"
+  ],
+  "material_blockers": [],
+  "full_fixed_replays_executed_by_reviewer": false,
+  "original_numeric_trace_arrays_read_in_this_review": false,
+  "wave_PDE_executed_by_reviewer": false,
+  "main_files_modified": false,
+  "root_execution_decision_still_required": true,
+  "limits": [
+    "Reference-informed implementation verification, not blind derivation or independent human/student research",
+    "Same fourteen homogeneous/source/boundary fixtures do not establish continuum accuracy, independent geology, certificate transfer or matched-cost inversion advantage",
+    "A passing faithful port establishes stated numerical agreement only; exact-rational variant may differ and its failures must remain visible",
+    "Goal4 still requires independent human reproduction/student scientific interpretation and defense; no full scientific-goal completion claim"
+  ],
+  "student_final_research_design": false,
+  "goal4_completion_claim": false
+}

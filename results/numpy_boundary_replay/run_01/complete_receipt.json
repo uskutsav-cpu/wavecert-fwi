@@ -1,0 +1,1214 @@
+{
+  "status": "complete_independent_software_replay",
+  "started_utc": "2026-11-08T03:40:46.913080+00:00",
+  "source_before": {
+    "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "copied_primary_sha256": {
+      "primary_sources/model.py": "22faa9eafcb2ef7012ce5bbcd977418b5a8515c3f4f9d1c42fcb105f7854ebd4",
+      "primary_sources/operators.py": "1ab37a6f2e95b7ab7fdec58d141290880127da9705dfe8deb6045fc0590d6336",
+      "primary_sources/wavesolver.py": "9e8cca80ac1fd1bb66abe3133a09ad0f2d23b2b55aba0e0c1003362c458b929e",
+      "primary_sources/source.py": "f8c4bba77e982490a25e5924e654f482afd21f8f2ebae3274e87eb1b45c147ac",
+      "primary_sources/utils.py": "27532feafcaf32f760ffff0b7978cdfa4ee1f7920a9d3367d4d05016657eff19"
+    },
+    "local_input_source_sha256": {
+      "TEST_RECEIPT.json": "cd41993bb2741d851c8ac559d7b225034d814c0ab737a188fb3bba020ac4dd63",
+      "original_protocol.json": "a83f2de93543b16af428d1fbe562f4d7db8d9df982b203a04bb0d445e93306b8",
+      "primary/c8d7e91f8921d1891d0e307f5142a10b3c66f1a3.c": "0a6777367c0497ca008d76961ea989ad3ea99db41e7c965656dbf75a767d3c6b",
+      "primary/ffed801f4f0a40986b4fcc46fb263373afd68994.c": "82966d6bfcc7542535163804ac127bf01053808757e9f35fc4e363a01925da38",
+      "primary_metadata/forward_damped_primary.c": "0a6777367c0497ca008d76961ea989ad3ea99db41e7c965656dbf75a767d3c6b",
+      "primary_metadata/forward_undamped_primary.c": "82966d6bfcc7542535163804ac127bf01053808757e9f35fc4e363a01925da38",
+      "primary_metadata/generated_C_manifest.json": "5237855e73e2d6ccc5070cb97fdbf762313bec729acdd2572e4388221291ae8d",
+      "primary_metadata/initialize_damp20_primary.c": "93e22a33b49fc63b10418abd451b2dc2a91182a4973cb19f2b6812f0441e74d8",
+      "primary_metadata/initialize_damp40_primary.c": "e5e1a7c21e2ad6c56eeaf518ab26146fc8174bdf47b6862b641d825f9d3d1d9f",
+      "primary_metadata/metadata_query_damped_forward.c": "0a6777367c0497ca008d76961ea989ad3ea99db41e7c965656dbf75a767d3c6b",
+      "primary_metadata/metadata_query_undamped_forward.c": "82966d6bfcc7542535163804ac127bf01053808757e9f35fc4e363a01925da38",
+      "primary_metadata/operator_time_arguments.json": "8d654aaec79a040a683329abb82f4e35c1099b8c14828be3f1c2c5a4693cbcb5",
+      "primary_metadata/query_time_arguments.py": "14e2bd1da0ce486218affede8ef6832fa148b65a119b8a8ee7c50a92d063c2c4",
+      "primary_sources/model.py": "22faa9eafcb2ef7012ce5bbcd977418b5a8515c3f4f9d1c42fcb105f7854ebd4",
+      "primary_sources/operators.py": "1ab37a6f2e95b7ab7fdec58d141290880127da9705dfe8deb6045fc0590d6336",
+      "primary_sources/source.py": "f8c4bba77e982490a25e5924e654f482afd21f8f2ebae3274e87eb1b45c147ac",
+      "primary_sources/utils.py": "27532feafcaf32f760ffff0b7978cdfa4ee1f7920a9d3367d4d05016657eff19",
+      "primary_sources/wavesolver.py": "9e8cca80ac1fd1bb66abe3133a09ad0f2d23b2b55aba0e0c1003362c458b929e",
+      "protocol.json": "53fbdd57a119ec68dd07e8c3ce833857e281acce13c0ff9001456ec114b59550",
+      "replay_numpy.py": "4832612882cb7b484777e309fb14ccc291685ad1afb5efd030332d84df31375c",
+      "test_replay_numpy.py": "da7049cd5277cf8ff62164c62d8f71643dfa303508660216a227247cb32ca62d"
+    }
+  },
+  "source_sha256": "4832612882cb7b484777e309fb14ccc291685ad1afb5efd030332d84df31375c",
+  "protocol_sha256": "53fbdd57a119ec68dd07e8c3ce833857e281acce13c0ff9001456ec114b59550",
+  "records": [
+    {
+      "variant": "faithful_literals",
+      "case_id": "small_nbl0",
+      "status": "complete",
+      "started_utc": "2026-11-08T03:40:46.914339+00:00",
+      "record": {
+        "case": {
+          "id": "small_nbl0",
+          "shape_x_z": [
+            61,
+            61
+          ],
+          "nbl": 0,
+          "translation_m": [
+            0.0,
+            0.0
+          ]
+        },
+        "variant": "faithful_literals",
+        "geometry": {
+          "origin_m": [
+            0.0,
+            0.0
+          ],
+          "source_coordinates_m": [
+            300.0,
+            300.0
+          ],
+          "receiver_coordinates_m": [
+            350.0,
+            300.0
+          ],
+          "computational_source_index": [
+            30,
+            30
+          ],
+          "computational_receiver_index": [
+            35,
+            30
+          ]
+        },
+        "spatial_coefficients": {
+          "far_positive": 0.000833333333284827,
+          "near_positive": 0.0133333333325572,
+          "center_positive": 0.05
+        },
+        "mass": 0.25,
+        "time_bounds": {
+          "time_m": 1,
+          "time_M": 1099,
+          "nt": 1101,
+          "recorded_receiver_indices": "1..1099 inclusive; indices0 and1100 remain initialized zero",
+          "source_indices_used": "1..1099 inclusive; samples0 and1100 unused",
+          "final_computed_wavefield_time": 1100
+        },
+        "state_shape": [
+          3,
+          65,
+          65
+        ],
+        "state_bytes": 101400,
+        "logical_grid_shape": [
+          61,
+          61
+        ],
+        "halo_width_cells": 2,
+        "full_time_history_saved": false,
+        "final_cyclic_state_sha256": "3b4be27d8beb9df1f37273fee19d54d71fe1fd812cb10441a4679c49cd96f39f",
+        "damping_sha256": "14e61f09d403dcf1f6b177f533185409bba93851a62a7b03d9feed1daf2f383f",
+        "damping_min": 0.0,
+        "damping_max": 0.0,
+        "finite": true,
+        "original_receiver_or_source_arrays_used": false
+      },
+      "raw_artifact": "faithful_literals_small_nbl0_raw.npz",
+      "raw_sha256": "c6c3ef01e2bbbb51fae7370c964068526fb324a6caedb0aa91123453989d8abb",
+      "finished_utc": "2026-11-08T03:40:47.016877+00:00"
+    },
+    {
+      "variant": "faithful_literals",
+      "case_id": "small_nbl20",
+      "status": "complete",
+      "started_utc": "2026-11-08T03:40:47.017579+00:00",
+      "record": {
+        "case": {
+          "id": "small_nbl20",
+          "shape_x_z": [
+            61,
+            61
+          ],
+          "nbl": 20,
+          "translation_m": [
+            0.0,
+            0.0
+          ]
+        },
+        "variant": "faithful_literals",
+        "geometry": {
+          "origin_m": [
+            -200.0,
+            -200.0
+          ],
+          "source_coordinates_m": [
+            300.0,
+            300.0
+          ],
+          "receiver_coordinates_m": [
+            350.0,
+            300.0
+          ],
+          "computational_source_index": [
+            50,
+            50
+          ],
+          "computational_receiver_index": [
+            55,
+            50
+          ]
+        },
+        "spatial_coefficients": {
+          "far_positive": 0.000833333333284827,
+          "near_positive": 0.0133333333325572,
+          "center_positive": 0.05
+        },
+        "mass": 0.25,
+        "time_bounds": {
+          "time_m": 1,
+          "time_M": 1099,
+          "nt": 1101,
+          "recorded_receiver_indices": "1..1099 inclusive; indices0 and1100 remain initialized zero",
+          "source_indices_used": "1..1099 inclusive; samples0 and1100 unused",
+          "final_computed_wavefield_time": 1100
+        },
+        "state_shape": [
+          3,
+          105,
+          105
+        ],
+        "state_bytes": 264600,
+        "logical_grid_shape": [
+          101,
+          101
+        ],
+        "halo_width_cells": 2,
+        "full_time_history_saved": false,
+        "final_cyclic_state_sha256": "4490dde00a22b1b8f64f9b4ba1d29af38b4803eedf3387b42f71c18f819ba611",
+        "damping_sha256": "e04ca98072a6057e5e5c07c9950eeac3644b1c30a268969508c542e79dc6e440",
+        "damping_min": 0.0,
+        "damping_max": 0.1037011306376559,
+        "finite": true,
+        "original_receiver_or_source_arrays_used": false
+      },
+      "raw_artifact": "faithful_literals_small_nbl20_raw.npz",
+      "raw_sha256": "b148b7f6fa4379c44046cc7ada6528294ad9a41adf7624341acc11eeac81404e",
+      "finished_utc": "2026-11-08T03:40:47.244533+00:00"
+    },
+    {
+      "variant": "faithful_literals",
+      "case_id": "small_nbl40",
+      "status": "complete",
+      "started_utc": "2026-11-08T03:40:47.245147+00:00",
+      "record": {
+        "case": {
+          "id": "small_nbl40",
+          "shape_x_z": [
+            61,
+            61
+          ],
+          "nbl": 40,
+          "translation_m": [
+            0.0,
+            0.0
+          ]
+        },
+        "variant": "faithful_literals",
+        "geometry": {
+          "origin_m": [
+            -400.0,
+            -400.0
+          ],
+          "source_coordinates_m": [
+            300.0,
+            300.0
+          ],
+          "receiver_coordinates_m": [
+            350.0,
+            300.0
+          ],
+          "computational_source_index": [
+            70,
+            70
+          ],
+          "computational_receiver_index": [
+            75,
+            70
+          ]
+        },
+        "spatial_coefficients": {
+          "far_positive": 0.000833333333284827,
+          "near_positive": 0.0133333333325572,
+          "center_positive": 0.05
+        },
+        "mass": 0.25,
+        "time_bounds": {
+          "time_m": 1,
+          "time_M": 1099,
+          "nt": 1101,
+          "recorded_receiver_indices": "1..1099 inclusive; indices0 and1100 remain initialized zero",
+          "source_indices_used": "1..1099 inclusive; samples0 and1100 unused",
+          "final_computed_wavefield_time": 1100
+        },
+        "state_shape": [
+          3,
+          145,
+          145
+        ],
+        "state_bytes": 504600,
+        "logical_grid_shape": [
+          141,
+          141
+        ],
+        "halo_width_cells": 2,
+        "full_time_history_saved": false,
+        "final_cyclic_state_sha256": "6cbdd31face10ff087d185b1b2ca2f6ea366b5e77afce6368b998763f2532e65",
+        "damping_sha256": "25aa7f7c083b7d0dc983835372f19a82e2f2325a85202b42dd782f3c7ace8c96",
+        "damping_min": 0.0,
+        "damping_max": 0.051813484338579185,
+        "finite": true,
+        "original_receiver_or_source_arrays_used": false
+      },
+      "raw_artifact": "faithful_literals_small_nbl40_raw.npz",
+      "raw_sha256": "0e4408a776393d42c030d0bd9452e82fb704534ddcc99bccb6757bf24fc4c468",
+      "finished_utc": "2026-11-08T03:40:47.633284+00:00"
+    },
+    {
+      "variant": "faithful_literals",
+      "case_id": "matched_exterior_20_undamped",
+      "status": "complete",
+      "started_utc": "2026-11-08T03:40:47.634052+00:00",
+      "record": {
+        "case": {
+          "id": "matched_exterior_20_undamped",
+          "shape_x_z": [
+            101,
+            101
+          ],
+          "nbl": 0,
+          "translation_m": [
+            200.0,
+            200.0
+          ]
+        },
+        "variant": "faithful_literals",
+        "geometry": {
+          "origin_m": [
+            0.0,
+            0.0
+          ],
+          "source_coordinates_m": [
+            500.0,
+            500.0
+          ],
+          "receiver_coordinates_m": [
+            550.0,
+            500.0
+          ],
+          "computational_source_index": [
+            50,
+            50
+          ],
+          "computational_receiver_index": [
+            55,
+            50
+          ]
+        },
+        "spatial_coefficients": {
+          "far_positive": 0.000833333333284827,
+          "near_positive": 0.0133333333325572,
+          "center_positive": 0.05
+        },
+        "mass": 0.25,
+        "time_bounds": {
+          "time_m": 1,
+          "time_M": 1099,
+          "nt": 1101,
+          "recorded_receiver_indices": "1..1099 inclusive; indices0 and1100 remain initialized zero",
+          "source_indices_used": "1..1099 inclusive; samples0 and1100 unused",
+          "final_computed_wavefield_time": 1100
+        },
+        "state_shape": [
+          3,
+          105,
+          105
+        ],
+        "state_bytes": 264600,
+        "logical_grid_shape": [
+          101,
+          101
+        ],
+        "halo_width_cells": 2,
+        "full_time_history_saved": false,
+        "final_cyclic_state_sha256": "657a140deeb5a7b84dad79fc22a68bba91447667cb082986fca65b431840a3e2",
+        "damping_sha256": "22efd215dd286d0bed791b471307c3aea7f0d77cc6cd0f3abb74ef8c812ed693",
+        "damping_min": 0.0,
+        "damping_max": 0.0,
+        "finite": true,
+        "original_receiver_or_source_arrays_used": false
+      },
+      "raw_artifact": "faithful_literals_matched_exterior_20_undamped_raw.npz",
+      "raw_sha256": "58815e85d1b566553e4d8bb5c1126ef630f72f1e31feb2f33ec23caaebd4a07a",
+      "finished_utc": "2026-11-08T03:40:47.848554+00:00"
+    },
+    {
+      "variant": "faithful_literals",
+      "case_id": "matched_exterior_40_undamped",
+      "status": "complete",
+      "started_utc": "2026-11-08T03:40:47.849227+00:00",
+      "record": {
+        "case": {
+          "id": "matched_exterior_40_undamped",
+          "shape_x_z": [
+            141,
+            141
+          ],
+          "nbl": 0,
+          "translation_m": [
+            400.0,
+            400.0
+          ]
+        },
+        "variant": "faithful_literals",
+        "geometry": {
+          "origin_m": [
+            0.0,
+            0.0
+          ],
+          "source_coordinates_m": [
+            700.0,
+            700.0
+          ],
+          "receiver_coordinates_m": [
+            750.0,
+            700.0
+          ],
+          "computational_source_index": [
+            70,
+            70
+          ],
+          "computational_receiver_index": [
+            75,
+            70
+          ]
+        },
+        "spatial_coefficients": {
+          "far_positive": 0.000833333333284827,
+          "near_positive": 0.0133333333325572,
+          "center_positive": 0.05
+        },
+        "mass": 0.25,
+        "time_bounds": {
+          "time_m": 1,
+          "time_M": 1099,
+          "nt": 1101,
+          "recorded_receiver_indices": "1..1099 inclusive; indices0 and1100 remain initialized zero",
+          "source_indices_used": "1..1099 inclusive; samples0 and1100 unused",
+          "final_computed_wavefield_time": 1100
+        },
+        "state_shape": [
+          3,
+          145,
+          145
+        ],
+        "state_bytes": 504600,
+        "logical_grid_shape": [
+          141,
+          141
+        ],
+        "halo_width_cells": 2,
+        "full_time_history_saved": false,
+        "final_cyclic_state_sha256": "881ff72f2230ea29851a0eb14ed5f36c27cc485b89a0d7ae4b5c4b7f1153eed1",
+        "damping_sha256": "c4567d2552372a5c9404b48b9c48b0b2df2df151ce2188edbb13b467d02c340c",
+        "damping_min": 0.0,
+        "damping_max": 0.0,
+        "finite": true,
+        "original_receiver_or_source_arrays_used": false
+      },
+      "raw_artifact": "faithful_literals_matched_exterior_40_undamped_raw.npz",
+      "raw_sha256": "657ec340f366bfc2901b9c881f572aecc0853d0f902266310a63d69ae6f176b2",
+      "finished_utc": "2026-11-08T03:40:48.298734+00:00"
+    },
+    {
+      "variant": "faithful_literals",
+      "case_id": "reference_241",
+      "status": "complete",
+      "started_utc": "2026-11-08T03:40:48.299799+00:00",
+      "record": {
+        "case": {
+          "id": "reference_241",
+          "shape_x_z": [
+            241,
+            241
+          ],
+          "nbl": 40,
+          "translation_m": [
+            900.0,
+            900.0
+          ]
+        },
+        "variant": "faithful_literals",
+        "geometry": {
+          "origin_m": [
+            -400.0,
+            -400.0
+          ],
+          "source_coordinates_m": [
+            1200.0,
+            1200.0
+          ],
+          "receiver_coordinates_m": [
+            1250.0,
+            1200.0
+          ],
+          "computational_source_index": [
+            160,
+            160
+          ],
+          "computational_receiver_index": [
+            165,
+            160
+          ]
+        },
+        "spatial_coefficients": {
+          "far_positive": 0.000833333333284827,
+          "near_positive": 0.0133333333325572,
+          "center_positive": 0.05
+        },
+        "mass": 0.25,
+        "time_bounds": {
+          "time_m": 1,
+          "time_M": 1099,
+          "nt": 1101,
+          "recorded_receiver_indices": "1..1099 inclusive; indices0 and1100 remain initialized zero",
+          "source_indices_used": "1..1099 inclusive; samples0 and1100 unused",
+          "final_computed_wavefield_time": 1100
+        },
+        "state_shape": [
+          3,
+          325,
+          325
+        ],
+        "state_bytes": 2535000,
+        "logical_grid_shape": [
+          321,
+          321
+        ],
+        "halo_width_cells": 2,
+        "full_time_history_saved": false,
+        "final_cyclic_state_sha256": "d1294cd438be79d3a5ef8b002c6b2bb2c936da64612640d4dd810e6a16825420",
+        "damping_sha256": "9f52fc691639057af46dc4282bb6bf2c0a93e01cd756d10781155de38d0ee202",
+        "damping_min": 0.0,
+        "damping_max": 0.051813484338579185,
+        "finite": true,
+        "original_receiver_or_source_arrays_used": false
+      },
+      "raw_artifact": "faithful_literals_reference_241_raw.npz",
+      "raw_sha256": "a4c25e3cc32d7582e05b02f34c088f364507ef38561e4049a05e52bf1872c81b",
+      "finished_utc": "2026-11-08T03:40:50.427135+00:00"
+    },
+    {
+      "variant": "faithful_literals",
+      "case_id": "reference_321",
+      "status": "complete",
+      "started_utc": "2026-11-08T03:40:50.427858+00:00",
+      "record": {
+        "case": {
+          "id": "reference_321",
+          "shape_x_z": [
+            321,
+            321
+          ],
+          "nbl": 40,
+          "translation_m": [
+            1300.0,
+            1300.0
+          ]
+        },
+        "variant": "faithful_literals",
+        "geometry": {
+          "origin_m": [
+            -400.0,
+            -400.0
+          ],
+          "source_coordinates_m": [
+            1600.0,
+            1600.0
+          ],
+          "receiver_coordinates_m": [
+            1650.0,
+            1600.0
+          ],
+          "computational_source_index": [
+            200,
+            200
+          ],
+          "computational_receiver_index": [
+            205,
+            200
+          ]
+        },
+        "spatial_coefficients": {
+          "far_positive": 0.000833333333284827,
+          "near_positive": 0.0133333333325572,
+          "center_positive": 0.05
+        },
+        "mass": 0.25,
+        "time_bounds": {
+          "time_m": 1,
+          "time_M": 1099,
+          "nt": 1101,
+          "recorded_receiver_indices": "1..1099 inclusive; indices0 and1100 remain initialized zero",
+          "source_indices_used": "1..1099 inclusive; samples0 and1100 unused",
+          "final_computed_wavefield_time": 1100
+        },
+        "state_shape": [
+          3,
+          405,
+          405
+        ],
+        "state_bytes": 3936600,
+        "logical_grid_shape": [
+          401,
+          401
+        ],
+        "halo_width_cells": 2,
+        "full_time_history_saved": false,
+        "final_cyclic_state_sha256": "9064ec839b0f1474de88a22c504201fb59a710dc5acf50a3818d3a41ae504a85",
+        "damping_sha256": "7b1d5780f3ab79333e120200382a49c412a00d95f370a77abcb2737565b07d86",
+        "damping_min": 0.0,
+        "damping_max": 0.051813484338579185,
+        "finite": true,
+        "original_receiver_or_source_arrays_used": false
+      },
+      "raw_artifact": "faithful_literals_reference_321_raw.npz",
+      "raw_sha256": "e439041e6a9ee5372fd55691799c7484118ea7d0a3e89732974a8f0311a7923e",
+      "finished_utc": "2026-11-08T03:40:53.535524+00:00"
+    },
+    {
+      "variant": "rational_spatial",
+      "case_id": "small_nbl0",
+      "status": "complete",
+      "started_utc": "2026-11-08T03:40:53.536659+00:00",
+      "record": {
+        "case": {
+          "id": "small_nbl0",
+          "shape_x_z": [
+            61,
+            61
+          ],
+          "nbl": 0,
+          "translation_m": [
+            0.0,
+            0.0
+          ]
+        },
+        "variant": "rational_spatial",
+        "geometry": {
+          "origin_m": [
+            0.0,
+            0.0
+          ],
+          "source_coordinates_m": [
+            300.0,
+            300.0
+          ],
+          "receiver_coordinates_m": [
+            350.0,
+            300.0
+          ],
+          "computational_source_index": [
+            30,
+            30
+          ],
+          "computational_receiver_index": [
+            35,
+            30
+          ]
+        },
+        "spatial_coefficients": {
+          "far_positive": 0.0008333333333333334,
+          "near_positive": 0.013333333333333334,
+          "center_positive": 0.05
+        },
+        "mass": 0.25,
+        "time_bounds": {
+          "time_m": 1,
+          "time_M": 1099,
+          "nt": 1101,
+          "recorded_receiver_indices": "1..1099 inclusive; indices0 and1100 remain initialized zero",
+          "source_indices_used": "1..1099 inclusive; samples0 and1100 unused",
+          "final_computed_wavefield_time": 1100
+        },
+        "state_shape": [
+          3,
+          65,
+          65
+        ],
+        "state_bytes": 101400,
+        "logical_grid_shape": [
+          61,
+          61
+        ],
+        "halo_width_cells": 2,
+        "full_time_history_saved": false,
+        "final_cyclic_state_sha256": "02301c581f143b230f8337172881906d5ef324b7fd2118c71feaf382d4216a00",
+        "damping_sha256": "14e61f09d403dcf1f6b177f533185409bba93851a62a7b03d9feed1daf2f383f",
+        "damping_min": 0.0,
+        "damping_max": 0.0,
+        "finite": true,
+        "original_receiver_or_source_arrays_used": false
+      },
+      "raw_artifact": "rational_spatial_small_nbl0_raw.npz",
+      "raw_sha256": "e522acd5f42beaaad5af8ac4034aeedc708a321687413eb251bee998cc112b21",
+      "finished_utc": "2026-11-08T03:40:53.774194+00:00"
+    },
+    {
+      "variant": "rational_spatial",
+      "case_id": "small_nbl20",
+      "status": "complete",
+      "started_utc": "2026-11-08T03:40:53.775304+00:00",
+      "record": {
+        "case": {
+          "id": "small_nbl20",
+          "shape_x_z": [
+            61,
+            61
+          ],
+          "nbl": 20,
+          "translation_m": [
+            0.0,
+            0.0
+          ]
+        },
+        "variant": "rational_spatial",
+        "geometry": {
+          "origin_m": [
+            -200.0,
+            -200.0
+          ],
+          "source_coordinates_m": [
+            300.0,
+            300.0
+          ],
+          "receiver_coordinates_m": [
+            350.0,
+            300.0
+          ],
+          "computational_source_index": [
+            50,
+            50
+          ],
+          "computational_receiver_index": [
+            55,
+            50
+          ]
+        },
+        "spatial_coefficients": {
+          "far_positive": 0.0008333333333333334,
+          "near_positive": 0.013333333333333334,
+          "center_positive": 0.05
+        },
+        "mass": 0.25,
+        "time_bounds": {
+          "time_m": 1,
+          "time_M": 1099,
+          "nt": 1101,
+          "recorded_receiver_indices": "1..1099 inclusive; indices0 and1100 remain initialized zero",
+          "source_indices_used": "1..1099 inclusive; samples0 and1100 unused",
+          "final_computed_wavefield_time": 1100
+        },
+        "state_shape": [
+          3,
+          105,
+          105
+        ],
+        "state_bytes": 264600,
+        "logical_grid_shape": [
+          101,
+          101
+        ],
+        "halo_width_cells": 2,
+        "full_time_history_saved": false,
+        "final_cyclic_state_sha256": "3f0fe68f11c05734916b5d1850cfac29f0220a4eb2fb9954d450eeb1d91d7425",
+        "damping_sha256": "e04ca98072a6057e5e5c07c9950eeac3644b1c30a268969508c542e79dc6e440",
+        "damping_min": 0.0,
+        "damping_max": 0.1037011306376559,
+        "finite": true,
+        "original_receiver_or_source_arrays_used": false
+      },
+      "raw_artifact": "rational_spatial_small_nbl20_raw.npz",
+      "raw_sha256": "cf582c13576dbad390e47d2a7987bdd10c886bf29167933d5a7e3be53189d116",
+      "finished_utc": "2026-11-08T03:40:54.127825+00:00"
+    },
+    {
+      "variant": "rational_spatial",
+      "case_id": "small_nbl40",
+      "status": "complete",
+      "started_utc": "2026-11-08T03:40:54.129061+00:00",
+      "record": {
+        "case": {
+          "id": "small_nbl40",
+          "shape_x_z": [
+            61,
+            61
+          ],
+          "nbl": 40,
+          "translation_m": [
+            0.0,
+            0.0
+          ]
+        },
+        "variant": "rational_spatial",
+        "geometry": {
+          "origin_m": [
+            -400.0,
+            -400.0
+          ],
+          "source_coordinates_m": [
+            300.0,
+            300.0
+          ],
+          "receiver_coordinates_m": [
+            350.0,
+            300.0
+          ],
+          "computational_source_index": [
+            70,
+            70
+          ],
+          "computational_receiver_index": [
+            75,
+            70
+          ]
+        },
+        "spatial_coefficients": {
+          "far_positive": 0.0008333333333333334,
+          "near_positive": 0.013333333333333334,
+          "center_positive": 0.05
+        },
+        "mass": 0.25,
+        "time_bounds": {
+          "time_m": 1,
+          "time_M": 1099,
+          "nt": 1101,
+          "recorded_receiver_indices": "1..1099 inclusive; indices0 and1100 remain initialized zero",
+          "source_indices_used": "1..1099 inclusive; samples0 and1100 unused",
+          "final_computed_wavefield_time": 1100
+        },
+        "state_shape": [
+          3,
+          145,
+          145
+        ],
+        "state_bytes": 504600,
+        "logical_grid_shape": [
+          141,
+          141
+        ],
+        "halo_width_cells": 2,
+        "full_time_history_saved": false,
+        "final_cyclic_state_sha256": "4db425e0fdef33c89e88c8e385a0df474188c808b2b37d047ed604c276f6b983",
+        "damping_sha256": "25aa7f7c083b7d0dc983835372f19a82e2f2325a85202b42dd782f3c7ace8c96",
+        "damping_min": 0.0,
+        "damping_max": 0.051813484338579185,
+        "finite": true,
+        "original_receiver_or_source_arrays_used": false
+      },
+      "raw_artifact": "rational_spatial_small_nbl40_raw.npz",
+      "raw_sha256": "d2a8472870849415dc0033b4f8d0905532963beb191efb875d17e64c92c9ce96",
+      "finished_utc": "2026-11-08T03:40:55.021922+00:00"
+    },
+    {
+      "variant": "rational_spatial",
+      "case_id": "matched_exterior_20_undamped",
+      "status": "complete",
+      "started_utc": "2026-11-08T03:40:55.023343+00:00",
+      "record": {
+        "case": {
+          "id": "matched_exterior_20_undamped",
+          "shape_x_z": [
+            101,
+            101
+          ],
+          "nbl": 0,
+          "translation_m": [
+            200.0,
+            200.0
+          ]
+        },
+        "variant": "rational_spatial",
+        "geometry": {
+          "origin_m": [
+            0.0,
+            0.0
+          ],
+          "source_coordinates_m": [
+            500.0,
+            500.0
+          ],
+          "receiver_coordinates_m": [
+            550.0,
+            500.0
+          ],
+          "computational_source_index": [
+            50,
+            50
+          ],
+          "computational_receiver_index": [
+            55,
+            50
+          ]
+        },
+        "spatial_coefficients": {
+          "far_positive": 0.0008333333333333334,
+          "near_positive": 0.013333333333333334,
+          "center_positive": 0.05
+        },
+        "mass": 0.25,
+        "time_bounds": {
+          "time_m": 1,
+          "time_M": 1099,
+          "nt": 1101,
+          "recorded_receiver_indices": "1..1099 inclusive; indices0 and1100 remain initialized zero",
+          "source_indices_used": "1..1099 inclusive; samples0 and1100 unused",
+          "final_computed_wavefield_time": 1100
+        },
+        "state_shape": [
+          3,
+          105,
+          105
+        ],
+        "state_bytes": 264600,
+        "logical_grid_shape": [
+          101,
+          101
+        ],
+        "halo_width_cells": 2,
+        "full_time_history_saved": false,
+        "final_cyclic_state_sha256": "f2ed9b839b65a1a1f566a142e5988d54dd787b0ccaa8ce89f3e594b77290d9b1",
+        "damping_sha256": "22efd215dd286d0bed791b471307c3aea7f0d77cc6cd0f3abb74ef8c812ed693",
+        "damping_min": 0.0,
+        "damping_max": 0.0,
+        "finite": true,
+        "original_receiver_or_source_arrays_used": false
+      },
+      "raw_artifact": "rational_spatial_matched_exterior_20_undamped_raw.npz",
+      "raw_sha256": "517ef4da99a8679dfaa6de9628fc72f83a0505fbf89b573841a0b5bbc62b0d9a",
+      "finished_utc": "2026-11-08T03:40:55.329398+00:00"
+    },
+    {
+      "variant": "rational_spatial",
+      "case_id": "matched_exterior_40_undamped",
+      "status": "complete",
+      "started_utc": "2026-11-08T03:40:55.330431+00:00",
+      "record": {
+        "case": {
+          "id": "matched_exterior_40_undamped",
+          "shape_x_z": [
+            141,
+            141
+          ],
+          "nbl": 0,
+          "translation_m": [
+            400.0,
+            400.0
+          ]
+        },
+        "variant": "rational_spatial",
+        "geometry": {
+          "origin_m": [
+            0.0,
+            0.0
+          ],
+          "source_coordinates_m": [
+            700.0,
+            700.0
+          ],
+          "receiver_coordinates_m": [
+            750.0,
+            700.0
+          ],
+          "computational_source_index": [
+            70,
+            70
+          ],
+          "computational_receiver_index": [
+            75,
+            70
+          ]
+        },
+        "spatial_coefficients": {
+          "far_positive": 0.0008333333333333334,
+          "near_positive": 0.013333333333333334,
+          "center_positive": 0.05
+        },
+        "mass": 0.25,
+        "time_bounds": {
+          "time_m": 1,
+          "time_M": 1099,
+          "nt": 1101,
+          "recorded_receiver_indices": "1..1099 inclusive; indices0 and1100 remain initialized zero",
+          "source_indices_used": "1..1099 inclusive; samples0 and1100 unused",
+          "final_computed_wavefield_time": 1100
+        },
+        "state_shape": [
+          3,
+          145,
+          145
+        ],
+        "state_bytes": 504600,
+        "logical_grid_shape": [
+          141,
+          141
+        ],
+        "halo_width_cells": 2,
+        "full_time_history_saved": false,
+        "final_cyclic_state_sha256": "19f39fc3adfbbffcc8e693ced909d37bba7601ef3aa2c3a916ce5df24a4d7fdd",
+        "damping_sha256": "c4567d2552372a5c9404b48b9c48b0b2df2df151ce2188edbb13b467d02c340c",
+        "damping_min": 0.0,
+        "damping_max": 0.0,
+        "finite": true,
+        "original_receiver_or_source_arrays_used": false
+      },
+      "raw_artifact": "rational_spatial_matched_exterior_40_undamped_raw.npz",
+      "raw_sha256": "e668891f05198a57b5a20f34f229012f01350edb0b4901a8591d598fe354acf2",
+      "finished_utc": "2026-11-08T03:40:55.808421+00:00"
+    },
+    {
+      "variant": "rational_spatial",
+      "case_id": "reference_241",
+      "status": "complete",
+      "started_utc": "2026-11-08T03:40:55.809423+00:00",
+      "record": {
+        "case": {
+          "id": "reference_241",
+          "shape_x_z": [
+            241,
+            241
+          ],
+          "nbl": 40,
+          "translation_m": [
+            900.0,
+            900.0
+          ]
+        },
+        "variant": "rational_spatial",
+        "geometry": {
+          "origin_m": [
+            -400.0,
+            -400.0
+          ],
+          "source_coordinates_m": [
+            1200.0,
+            1200.0
+          ],
+          "receiver_coordinates_m": [
+            1250.0,
+            1200.0
+          ],
+          "computational_source_index": [
+            160,
+            160
+          ],
+          "computational_receiver_index": [
+            165,
+            160
+          ]
+        },
+        "spatial_coefficients": {
+          "far_positive": 0.0008333333333333334,
+          "near_positive": 0.013333333333333334,
+          "center_positive": 0.05
+        },
+        "mass": 0.25,
+        "time_bounds": {
+          "time_m": 1,
+          "time_M": 1099,
+          "nt": 1101,
+          "recorded_receiver_indices": "1..1099 inclusive; indices0 and1100 remain initialized zero",
+          "source_indices_used": "1..1099 inclusive; samples0 and1100 unused",
+          "final_computed_wavefield_time": 1100
+        },
+        "state_shape": [
+          3,
+          325,
+          325
+        ],
+        "state_bytes": 2535000,
+        "logical_grid_shape": [
+          321,
+          321
+        ],
+        "halo_width_cells": 2,
+        "full_time_history_saved": false,
+        "final_cyclic_state_sha256": "89ca2d7923aeff7b7d90d1b6c50e82315663d77eced852d560504575e6403e85",
+        "damping_sha256": "9f52fc691639057af46dc4282bb6bf2c0a93e01cd756d10781155de38d0ee202",
+        "damping_min": 0.0,
+        "damping_max": 0.051813484338579185,
+        "finite": true,
+        "original_receiver_or_source_arrays_used": false
+      },
+      "raw_artifact": "rational_spatial_reference_241_raw.npz",
+      "raw_sha256": "7c34c8f9d1126e0f8f92cb399f7bbd5053d702d49e74b84a2429c9ea654c9bd1",
+      "finished_utc": "2026-11-08T03:40:58.883123+00:00"
+    },
+    {
+      "variant": "rational_spatial",
+      "case_id": "reference_321",
+      "status": "complete",
+      "started_utc": "2026-11-08T03:40:58.884934+00:00",
+      "record": {
+        "case": {
+          "id": "reference_321",
+          "shape_x_z": [
+            321,
+            321
+          ],
+          "nbl": 40,
+          "translation_m": [
+            1300.0,
+            1300.0
+          ]
+        },
+        "variant": "rational_spatial",
+        "geometry": {
+          "origin_m": [
+            -400.0,
+            -400.0
+          ],
+          "source_coordinates_m": [
+            1600.0,
+            1600.0
+          ],
+          "receiver_coordinates_m": [
+            1650.0,
+            1600.0
+          ],
+          "computational_source_index": [
+            200,
+            200
+          ],
+          "computational_receiver_index": [
+            205,
+            200
+          ]
+        },
+        "spatial_coefficients": {
+          "far_positive": 0.0008333333333333334,
+          "near_positive": 0.013333333333333334,
+          "center_positive": 0.05
+        },
+        "mass": 0.25,
+        "time_bounds": {
+          "time_m": 1,
+          "time_M": 1099,
+          "nt": 1101,
+          "recorded_receiver_indices": "1..1099 inclusive; indices0 and1100 remain initialized zero",
+          "source_indices_used": "1..1099 inclusive; samples0 and1100 unused",
+          "final_computed_wavefield_time": 1100
+        },
+        "state_shape": [
+          3,
+          405,
+          405
+        ],
+        "state_bytes": 3936600,
+        "logical_grid_shape": [
+          401,
+          401
+        ],
+        "halo_width_cells": 2,
+        "full_time_history_saved": false,
+        "final_cyclic_state_sha256": "07610aec8f9e4f7e546f3a2a2645928890d56456da08210915a7ddbfa04b30b4",
+        "damping_sha256": "7b1d5780f3ab79333e120200382a49c412a00d95f370a77abcb2737565b07d86",
+        "damping_min": 0.0,
+        "damping_max": 0.051813484338579185,
+        "finite": true,
+        "original_receiver_or_source_arrays_used": false
+      },
+      "raw_artifact": "rational_spatial_reference_321_raw.npz",
+      "raw_sha256": "f6e4a4c0055c8a9aa6ea3c5f7ffa01166cbeb274c45efcfc5579d8e3394db969",
+      "finished_utc": "2026-11-08T03:41:03.172423+00:00"
+    }
+  ],
+  "reference_numeric_arrays_opened": true,
+  "comparison_started": true,
+  "propagation_dependencies": [
+    "stdlib",
+    "NumPy"
+  ],
+  "student_final_research_design": false,
+  "goal4_completion_claim": false,
+  "all_own_solves_complete_utc": "2026-11-08T03:41:03.232520+00:00",
+  "source_after": {
+    "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "copied_primary_sha256": {
+      "primary_sources/model.py": "22faa9eafcb2ef7012ce5bbcd977418b5a8515c3f4f9d1c42fcb105f7854ebd4",
+      "primary_sources/operators.py": "1ab37a6f2e95b7ab7fdec58d141290880127da9705dfe8deb6045fc0590d6336",
+      "primary_sources/wavesolver.py": "9e8cca80ac1fd1bb66abe3133a09ad0f2d23b2b55aba0e0c1003362c458b929e",
+      "primary_sources/source.py": "f8c4bba77e982490a25e5924e654f482afd21f8f2ebae3274e87eb1b45c147ac",
+      "primary_sources/utils.py": "27532feafcaf32f760ffff0b7978cdfa4ee1f7920a9d3367d4d05016657eff19"
+    },
+    "local_input_source_sha256": {
+      "TEST_RECEIPT.json": "cd41993bb2741d851c8ac559d7b225034d814c0ab737a188fb3bba020ac4dd63",
+      "original_protocol.json": "a83f2de93543b16af428d1fbe562f4d7db8d9df982b203a04bb0d445e93306b8",
+      "primary/c8d7e91f8921d1891d0e307f5142a10b3c66f1a3.c": "0a6777367c0497ca008d76961ea989ad3ea99db41e7c965656dbf75a767d3c6b",
+      "primary/ffed801f4f0a40986b4fcc46fb263373afd68994.c": "82966d6bfcc7542535163804ac127bf01053808757e9f35fc4e363a01925da38",
+      "primary_metadata/forward_damped_primary.c": "0a6777367c0497ca008d76961ea989ad3ea99db41e7c965656dbf75a767d3c6b",
+      "primary_metadata/forward_undamped_primary.c": "82966d6bfcc7542535163804ac127bf01053808757e9f35fc4e363a01925da38",
+      "primary_metadata/generated_C_manifest.json": "5237855e73e2d6ccc5070cb97fdbf762313bec729acdd2572e4388221291ae8d",
+      "primary_metadata/initialize_damp20_primary.c": "93e22a33b49fc63b10418abd451b2dc2a91182a4973cb19f2b6812f0441e74d8",
+      "primary_metadata/initialize_damp40_primary.c": "e5e1a7c21e2ad6c56eeaf518ab26146fc8174bdf47b6862b641d825f9d3d1d9f",
+      "primary_metadata/metadata_query_damped_forward.c": "0a6777367c0497ca008d76961ea989ad3ea99db41e7c965656dbf75a767d3c6b",
+      "primary_metadata/metadata_query_undamped_forward.c": "82966d6bfcc7542535163804ac127bf01053808757e9f35fc4e363a01925da38",
+      "primary_metadata/operator_time_arguments.json": "8d654aaec79a040a683329abb82f4e35c1099b8c14828be3f1c2c5a4693cbcb5",
+      "primary_metadata/query_time_arguments.py": "14e2bd1da0ce486218affede8ef6832fa148b65a119b8a8ee7c50a92d063c2c4",
+      "primary_sources/model.py": "22faa9eafcb2ef7012ce5bbcd977418b5a8515c3f4f9d1c42fcb105f7854ebd4",
+      "primary_sources/operators.py": "1ab37a6f2e95b7ab7fdec58d141290880127da9705dfe8deb6045fc0590d6336",
+      "primary_sources/source.py": "f8c4bba77e982490a25e5924e654f482afd21f8f2ebae3274e87eb1b45c147ac",
+      "primary_sources/utils.py": "27532feafcaf32f760ffff0b7978cdfa4ee1f7920a9d3367d4d05016657eff19",
+      "primary_sources/wavesolver.py": "9e8cca80ac1fd1bb66abe3133a09ad0f2d23b2b55aba0e0c1003362c458b929e",
+      "protocol.json": "53fbdd57a119ec68dd07e8c3ce833857e281acce13c0ff9001456ec114b59550",
+      "replay_numpy.py": "4832612882cb7b484777e309fb14ccc291685ad1afb5efd030332d84df31375c",
+      "test_replay_numpy.py": "da7049cd5277cf8ff62164c62d8f71643dfa303508660216a227247cb32ca62d"
+    }
+  },
+  "finished_utc": "2026-11-08T03:41:03.269004+00:00",
+  "all_errors_retained": true,
+  "agreement_by_variant": {
+    "faithful_literals": 7,
+    "rational_spatial": 0
+  },
+  "environment": {
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "numpy": "2.4.3",
+    "threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "artifacts": {
+    "agreement.json": "cb33ae8d01ef1aaf9fcac57008e1ab39d88dfb21e7fb83804361403133e74b71",
+    "rational_spatial_small_nbl0_raw.npz": "e522acd5f42beaaad5af8ac4034aeedc708a321687413eb251bee998cc112b21",
+    "faithful_literals_matched_exterior_40_undamped_raw.npz": "657ec340f366bfc2901b9c881f572aecc0853d0f902266310a63d69ae6f176b2",
+    "runner_source.py": "4832612882cb7b484777e309fb14ccc291685ad1afb5efd030332d84df31375c",
+    "rational_spatial_reference_241_raw.npz": "7c34c8f9d1126e0f8f92cb399f7bbd5053d702d49e74b84a2429c9ea654c9bd1",
+    "faithful_literals_matched_exterior_20_undamped_raw.npz": "58815e85d1b566553e4d8bb5c1126ef630f72f1e31feb2f33ec23caaebd4a07a",
+    "rational_spatial_reference_321_raw.npz": "f6e4a4c0055c8a9aa6ea3c5f7ffa01166cbeb274c45efcfc5579d8e3394db969",
+    "rational_spatial_small_nbl40_raw.npz": "d2a8472870849415dc0033b4f8d0905532963beb191efb875d17e64c92c9ce96",
+    "faithful_literals_small_nbl40_raw.npz": "0e4408a776393d42c030d0bd9452e82fb704534ddcc99bccb6757bf24fc4c468",
+    "rational_spatial_matched_exterior_40_undamped_raw.npz": "e668891f05198a57b5a20f34f229012f01350edb0b4901a8591d598fe354acf2",
+    "protocol.json": "53fbdd57a119ec68dd07e8c3ce833857e281acce13c0ff9001456ec114b59550",
+    "original_protocol.json": "a83f2de93543b16af428d1fbe562f4d7db8d9df982b203a04bb0d445e93306b8",
+    "rational_spatial_matched_exterior_20_undamped_raw.npz": "517ef4da99a8679dfaa6de9628fc72f83a0505fbf89b573841a0b5bbc62b0d9a",
+    "faithful_literals_reference_241_raw.npz": "a4c25e3cc32d7582e05b02f34c088f364507ef38561e4049a05e52bf1872c81b",
+    "status.json": "06946f7d7c86dae8f937ab0b53cff94cff85f1fcd065b565546a513dc108198d",
+    "rational_spatial_small_nbl20_raw.npz": "cf582c13576dbad390e47d2a7987bdd10c886bf29167933d5a7e3be53189d116",
+    "faithful_literals_small_nbl20_raw.npz": "b148b7f6fa4379c44046cc7ada6528294ad9a41adf7624341acc11eeac81404e",
+    "faithful_literals_small_nbl0_raw.npz": "c6c3ef01e2bbbb51fae7370c964068526fb324a6caedb0aa91123453989d8abb",
+    "faithful_literals_reference_321_raw.npz": "e439041e6a9ee5372fd55691799c7484118ea7d0a3e89732974a8f0311a7923e"
+  }
+}
