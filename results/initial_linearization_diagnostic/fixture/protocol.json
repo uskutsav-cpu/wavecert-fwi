@@ -1,0 +1,101 @@
+{
+  "bands": "Fixed four-frequency concatenations per case and across ALL8 only; no partial-subset aggregate, best-frequency selection, thresholded nonlinearity pass or recommendation from a preferred band.",
+  "bands_hz": {
+    "lowband": [
+      0.25,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "originalband": [
+      2.5,
+      3.0,
+      3.5,
+      4.0
+    ]
+  },
+  "case_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "competition_evidence": false,
+  "execution_gate": "Stage source/protocol and manufactured controls first. No project arrays or new-frequency solves before independent review/freeze/root GO. Explicit execute flag and exact runner/protocol SHA required; source9f and all old artifacts verified before/after; fresh outer output only.",
+  "failure_policy": "Prepopulate8cases/64frequencyrows/192stages/1152RHS denominator before numeric input loading. Persist each attempted stage and any available receiver prefix; unknown/zero denominators null. Preserve failures/unattempted rows; no tuning, retry or substitution.",
+  "frequencies_hz": [
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    2.5,
+    3.0,
+    3.5,
+    4.0
+  ],
+  "input_artifacts_sha256": {
+    "case_00_arrays.npz": "3fa9919f582746a82f8ec9d3d54258286b368861ef815dd88095fe3511fd9000",
+    "case_00_receipt.json": "64d4349da2ce1ed5cf8fe8d321ce2d9b231475f568bb7c533b02b3c15603dcd2",
+    "case_01_arrays.npz": "52c63cf162370684129c25ca3642b765efaebad0f2751e360ea5e02b3b0838f2",
+    "case_01_receipt.json": "7933f7aa20206a546333b6e092de8ca20d7d989862a6fea678d4d9d221435965",
+    "case_02_arrays.npz": "a3438a8ae508c51712b369f0326c40e69aa2cf176c05063f1a7a28c1da5fb942",
+    "case_02_receipt.json": "7ae1881b38638a58d5c5d0894e448d0905a721c2b99338072395f47d62cf0aa2",
+    "case_03_arrays.npz": "8d27e4fa1e88ba89bb1afe925dfa6d686e27677a2808f05628b62692532f535a",
+    "case_03_receipt.json": "4c6a38ff6a3efa28d7e62ccc17607ff62d4e50278b14d65d8ff52853ee851b5f",
+    "case_04_arrays.npz": "939d5214edb0f19d3a2d81b7a99af5fbfb8117d47914071ff94e6af4c72aa2fa",
+    "case_04_receipt.json": "c52911c86c768e834519cc085b3afc58176ddb61472fedd83d06dc5862def41a",
+    "case_05_arrays.npz": "560092abc78b79bb35e2cdea85aa3a20ef212e63a79c41730d689e31239720ef",
+    "case_05_receipt.json": "acf24961b917bc00013c15e1177c2cee8fcbcc25973890eaeff85669d6772e7b",
+    "case_06_arrays.npz": "e0f12f622360b31236e19f8e8998c9bcdaaf62e5601aa5e14de065d91c72f2e2",
+    "case_06_receipt.json": "8dcb3f3808e5ebc5d832d37d4440fa12e8fe76ae53101ab9351f62bcc0c897dd",
+    "case_07_arrays.npz": "9a80fb6b264294f520cd822b4008dd711992c39f33344ac1c4f1194087732d2b",
+    "case_07_receipt.json": "4819dd301bf6376242bf8df2e6c73b53e21c72edc8593008e06d3dcaccc63d5d",
+    "independent_assembly_source.py": "807f4f2f0e0aeea1d2f61b64ee5f64a99819c38d4f6164529e664f0a235edeae",
+    "original_protocol.json": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c",
+    "protocol.json": "e53db61db1a6c3d83a5fdf3cba195c357f37f54e125e793980a76e33d5923e46",
+    "runner_source.py": "52cdbb46e8337b955cbdec13a0b1ed96637c8c34da337e1f3269ad423ffe38f9"
+  },
+  "linear_true_residual_maximum": 1e-09,
+  "multiscale_context": "Frequency continuation is prior FWI work. This descriptive local mismatch diagnosis can motivate a later separately owned control; it establishes neither a remedy nor a cycle-skipping cause.",
+  "operator": "A(m,f)=K-(2pi*f)^2*diag(m)+i*(2pi*f)*diag(d); direct neighbor graph K diagonal4/h\u00b2 and in-grid axial neighbors-1/h\u00b2; exterior unknowns zero.",
+  "original_band_DD_relative_allowance": 1e-09,
+  "original_band_DD_scale": "max(abs(saved_g_dot_delta),abs(tangent_DD),norm(saved_g)*norm(delta),1e-12); ordinary consistency tolerance, not a verified enclosure",
+  "physics": {
+    "damping_strength": 2.0,
+    "damping_width": 6,
+    "receiver_count": 20,
+    "shape_z_x": [
+      49,
+      49
+    ],
+    "source_count": 6,
+    "spacing_km": 0.025
+  },
+  "planned_case_frequency_rows": 64,
+  "planned_factorizations": 128,
+  "planned_rhs_solves": 1152,
+  "post_outcome_development_diagnostic": true,
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "raw_initial_complete_receipt_sha256": "71b9de071e4d04557784805bf9bfc4ea55171c8b07e9c9625c866d8ab68aaba2",
+  "raw_initial_published_relative_path": "results/paid_merit_initial_direction_verification/run_01",
+  "receiver_diagnostics": {
+    "data_change": "d_truth-d_init",
+    "g_data_dot_delta": "Re<d_init-d_truth,Jdelta>",
+    "linearized_change": "J_init*(m_truth-m_init)",
+    "objectives": ".5 sum abs(sampled residual)^2, no extra frequency/dt/h weights",
+    "real_alignment": "Re<d_truth-d_init,Jdelta>/(norm(data_change)*norm(Jdelta)); null when either norm zero",
+    "remainder": "(d_truth-d_init)-Jdelta"
+  },
+  "registered_utc": "2026-11-08T08:48:43.109292+00:00",
+  "resource_scope": "Receiver-only truth/init/Jdelta outputs about0.4MB uncompressed across64 rows, no full state/adjoint field files, BP arrays or large saved fields. Three sets of6 RHS solves per frequency; tangent reuses initial LU, two factorizations/frequency. Attempts/completions/failed unknown work retained.",
+  "role": "AI post-outcome engineering initial-linearization diagnostic, not student final design or confirmation",
+  "schema_version": 1,
+  "scope": "ALL8 reused old49x49 initial/truth witnesses; shared SEAM ancestor and no independent-cohort claim. Fixed frequencies/bands and full failures retained. No optimization, method comparison, physical acceptance, certificate transfer or cycle-skipping causal inference.",
+  "student_final_research_design": false,
+  "student_preregistration": false,
+  "tangent": "A(m_init,f)*delta_u=(2pi*f)^2*diag(m_truth-m_init)*u_init; source forcing and damping fixed independently of m."
+}

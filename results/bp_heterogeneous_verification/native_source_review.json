@@ -1,0 +1,37 @@
+{
+  "API_and_math": "Actual held Source explicitly passed once to each forward; full source/time/coordinate snapshots and receiver sentinels retained. Shared adjoint helper explicitly zeroes3-slice v, queries actualbounds with sameu/v/rec/vp/dt and invokes nativegradient alias. Manufactured bounds1..nt-2 confirm source expectation; every project call will query again. Native OT2 gradient matches sampled .5sum residual\u00b2 without extra dt quadrature. Constant-edge selector commutes withm=v^-2; independent clamped-loopE^T folds every padded cell/corner, unlike naivecrop.",
+  "author_validation": {
+    "actual_manufactured_relative_DD_error": 3.909334356181824e-06,
+    "actual_manufactured_saved_bytes": 15302728,
+    "pytest": "15PASS -Werror:14pure/source/mock controls plus1actualmanufactured control (4shortforwards+1adjoint).",
+    "style_grammar": "Ruff/defaultmetadataCLI and12source/grammar/layout checks pass; logs and final source pins read.",
+    "warning_history": "First integration attempt stopped pre-wave on pinned third-party Grid/SubDomain deprecation; adverse log retained. Exact single-test warning filter added; no numerical-warning/criterion suppression or project threshold adjustment."
+  },
+  "checks": 35,
+  "created_utc": "2026-11-08T08:12:02.066862+00:00",
+  "failure_and_claim_scope": "All57planned calls/3workers/6FD rows percase retain failed/interrupted/unattempted states and in-flight unknowns. Process completion is distinct from all calls succeeding or gradient numerical gate passing. Fixed middle FDstep3e-4 criterion1e-3 uses both informative directions; allsteps retained and near-zero DD cannot yield an easy pass. Forward comparisons have no physical acceptance threshold; no largerdomain is declared truth/reflection coefficient.",
+  "final_sha256": {
+    "SCOPE.md": "7283f739d515d89304a36248b9d3840511c4c88cc33331c0b6409552523b86d2",
+    "TEST_RECEIPT.json": "6bfaa9b92626ad8d4784b14c8ebf98e7504171f9e657c3d4bfcf01f2a8a47514",
+    "guard_math.py": "ad3b808c53d9cd6b7d38a9a03f692615d8ff664db9515d31faf47c3482884d02",
+    "protocol.json": "63d8338f6a023f17365b8fa0d706f9f3a04e0b1e96006381e49309c3856444f0",
+    "run_guards.py": "73b617773c76a35e847add60d4b9f2200517d49d68a0f9af63b1098bc9d0137d",
+    "test_guard_math.py": "249873233df151ca35cf0f3d73deeb945de2db9b6d6343d84684c4bf596a5996"
+  },
+  "geometry_and_source": "Stored96x192 z,x m/s becomes192x96 x,z km/s via transpose/divide1000. Fine383x191 uses only endpoint-preserving bilinear retained coarse velocity; no extra original z samples. All10 receiver positions are inside physical grids and200..1000m from source; source/rx bothgrid-aligned on coarse/fine. Synthetic200m-deep localcrop line and globalorigin conversion do not claim original BP acquisition. FineSource4x andh\u00b2 scaling preserve156.25m\u00b2 pointstrength; no amplitude/time fitting.",
+  "issues": [],
+  "limitations": "All3 BP crops share one composite synthetic ancestor, including nearly homogeneous lower_right. No BP/project forward or adjoint has run under this candidate. No inverse recovery, independent geology, PML/free-surface/elastic/density proof, certificate transfer, novelty, final student question/design or completed scientific goal follows. Ordinary floating-point code-level and manufactured verification only.",
+  "memory": "Metadata824,732,160B savedu includes2001x280x184 float64 allocation; not a peak-RAM claim. Exact shape/bytes and available field+1GiB reserve checked before materialization, actual bytes checked afterward. Fine/largepad use3rolling slices. One savedfield/crop is neverwritten; worker process exit bounds final lifetime. Initial256MiB disk and per-case64MiB reserves remain; review does not relax guards or authorize execution when resources fail.",
+  "remaining_authority": "Root must freeze exact sources/protocol and explicitly authorize a fresh output only after unchanged disk/RAM/source guards are satisfied. This review itself executes no BP propagation or authorizes bypassing resource guards.",
+  "resolved_prefreeze_findings": [
+    "Completed per-call receipts and all6 FD rows nowpersist incrementally; rawgradient artifacts survivepullbackfailure. Bounded2D direction/probe/requested/trial witnesses and verifiedrestore hashes (including interruptedcalls) remain.",
+    "Parent ignoresSIGINT during kill/reap and restores handler afterward; repeatedinterrupt path has a mock control.",
+    "Real imported forward/adjoint wiring is now exercised by the same fixture helpers on constant21x21/nt161 data, separately from pure mocks; no BP input or project parameter changes."
+  ],
+  "result": "CLEAR_BOUNDED_BP_GUARD_SOURCE_ONLY",
+  "review_scope": "Independent source/math/API/resource/failure review and file/metadata arithmetic only. Reviewers did not import the fixture/Devito, load BP arrays, initialize models, run controls, propagate waves or mutate main source. Author executed the separately recorded manufactured controls.",
+  "reviewers": [
+    "/root/candidate_final_review",
+    "/root/candidate_final_review/verification_helpers_review"
+  ]
+}

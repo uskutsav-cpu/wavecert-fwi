@@ -1,0 +1,58 @@
+{
+  "created_utc": "2026-11-08T09:05:16.180480+00:00",
+  "decision": "ROOT_GO frozen native heterogeneous BP numerical implementation diagnostic",
+  "files_sha256": {
+    "run_guards.py": "73b617773c76a35e847add60d4b9f2200517d49d68a0f9af63b1098bc9d0137d",
+    "protocol.json": "63d8338f6a023f17365b8fa0d706f9f3a04e0b1e96006381e49309c3856444f0",
+    "guard_math.py": "ad3b808c53d9cd6b7d38a9a03f692615d8ff664db9515d31faf47c3482884d02",
+    "test_guard_math.py": "249873233df151ca35cf0f3d73deeb945de2db9b6d6343d84684c4bf596a5996",
+    "TEST_RECEIPT.json": "6bfaa9b92626ad8d4784b14c8ebf98e7504171f9e657c3d4bfcf01f2a8a47514",
+    "SCOPE.md": "7283f739d515d89304a36248b9d3840511c4c88cc33331c0b6409552523b86d2"
+  },
+  "review_sha256": "800def9225903559a42c0f25bf0262419b1b0d061e23d41c900703e89d32f959",
+  "source": {
+    "files": 161,
+    "sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da"
+  },
+  "resources_before": {
+    "free_disk_bytes": 458346496,
+    "available_RAM_bytes": 3342696448
+  },
+  "fixed_guards": {
+    "actual_saved_layout": [
+      2001,
+      280,
+      184
+    ],
+    "coarse160_rolling_allocated_bytes": 5291520,
+    "fine160_rolling_allocated_bytes": 8856216,
+    "minimum_available_RAM_before_saved_allocation_bytes": 1898473984,
+    "minimum_free_disk_bytes": 268435456,
+    "no_full_wavefield_disk": true,
+    "one_case_worker_process_at_a_time": true,
+    "per_artifact_uncompressed_array_byte_cap": 16777216,
+    "per_case_disk_reserve_bytes": 67108864,
+    "release": "Savedu used foroneadjointonly, neverwritten. Childprocess exit guaranteesrelease before nextcrop; fine andlargerpad forwards use3rolling slices only.",
+    "saved_allocated_bytes": 824732160,
+    "saved_byte_cap": 1073741824,
+    "saved_wavefield_only_one_coarse40_per_case": true
+  },
+  "output": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/bp_heterogeneous_guards_run_01",
+  "planned_calls": {
+    "forward": 54,
+    "adjoint": 3,
+    "total": 57,
+    "crops": 3,
+    "synthetic_ancestors": 1
+  },
+  "earlier_write_failures": {
+    "apply_patch_doc_write": true,
+    "shell_heredoc_ENOSPC": true,
+    "larger_free_space_recovery_cause": "not verified",
+    "own_cache_cleanup_reclaimed_approximately_bytes": 4894720
+  },
+  "source_scope": "primary root code/math/API/units/source/geometry/masks/padding/fixedFD/resource/failure review and twoAIreviewers CLEAR; no project BP waves before this GO",
+  "physical_acceptance": null,
+  "all_four_goals_complete": false,
+  "student_final_design": false
+}

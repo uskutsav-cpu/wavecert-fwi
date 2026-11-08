@@ -5,6 +5,46 @@ paper, abstract, presentation script, student conclusion, or eligibility ruling.
 Scores below are subjective project-readiness judgments, not official judging
 scores, national rankings, or probabilities of winning.
 
+## Current evidence and next work
+
+The newer [fixed-band diagnostic](initial_linearization_diagnostic.md) finds
+smaller linearization remainders at lower frequencies in seven of eight cases,
+with the exception retained. This motivates a future standard continuation
+control, not a demonstrated remedy or a new method. Its independent scalar
+audit passes 1,600 checks. The [BP numerical record](bp_heterogeneous_verification.md)
+adds 57 completed native calls, three separate NumPy probe forwards and six
+derivatives. Numerical agreement is strong, while padding sensitivity remains
+large and physical acceptance is null. The [simple anchor-reuse diagnostic](stability_anchor_feasibility.md)
+is negative at all 192 existing endpoints/frequencies. These development
+findings do not update the historical numeric rating.
+
+The additional [48-run coordinate comparison](coordinate_cost_engineering_comparison.md)
+passes its independent numerical audit and full return-time cap. Both coordinate
+methods still worsen reconstruction relative to initialization on the same five
+of eight reused cases. Together with the
+[initial-direction and analytical wave diagnostics](recovery_and_physics_diagnostics.md),
+this makes the remaining priorities concrete:
+
+1. Establish useful reconstruction against initialization and strong exact
+   controls, with every cost and failure retained. Parameterization alone did
+   not resolve this development fixture. Any final scientific explanation,
+   prior/acquisition choice and confirmation design must be the student's own.
+2. Validate heterogeneous forward/adjoint physics and physical sampling before
+   a larger inverse-method claim. The bounded BP cropped-domain check now
+   verifies its discrete forward/gradient implementation, while substantial
+   padding sensitivity leaves physical accuracy unresolved. All three crops
+   share one ancestor and do not reproduce the original surface survey.
+3. Delimit a contribution beyond the existing adjoint/coarse/POD/certification
+   literature, then test a falsifiable benefit. More standard components alone
+   do not establish novelty.
+4. Reproduce the decisive scientific result independently and demonstrate the
+   student's own interpretation, decisions and contribution account. Separate
+   AI audits and manufactured CI controls support verification but do not
+   establish those human requirements.
+
+All four requirements remain open. The older ratings below are preserved as
+historical assessments and should not be used as an updated readiness score.
+
 ## Historical assessment before the continuing scientific phase
 
 **About 7.5/10 for research readiness**, improved from the initial roughly 6.5/10

@@ -1,0 +1,57 @@
+{
+  "actual_BP_input_or_native_outcome_array_reads": 0,
+  "actual_wave_calls": 0,
+  "created_utc": "2026-11-08T08:32:23.947819+00:00",
+  "denominators": {
+    "direction_step_rows": 18,
+    "planned_calls": 57,
+    "workers": 3
+  },
+  "execution_hold": "Independent source review, root native-terminal confirmation and explicit source/criteria/terminal SHA flags required. Existing producer and all old data remain immutable.",
+  "files_sha256": {
+    "SCOPE.md": "dc1aff08559a5dc4229c627fb4f36809532344f817df0ef942a907b260195735",
+    "audit_guards.py": "8b8bb021ca292c9f56104c8929f183bab05434c8ece726c149cf9a352e1f329c",
+    "criteria.json": "9ab520f7e3c35a7c6619b5fddae6a3e750cecd80aaeb18e4ef6c70b4b3d30c6e",
+    "default_cli_final.log": "ddca211417789f3c82a8b6eea58d09078858f4882a2783c89f777a587fd4e6df",
+    "grammar_source_final.json": "af9f29c94d2ca4e16fa632cc5ae0e2cbc659c9ea5344f0052ea2a3dd0ac23c4c",
+    "puretests_final.log": "229e4533d1597c28d56b8b7c42e076151a9d019effe66ced40bfb2ba3347ae36",
+    "ruff_final.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "test_audit_guards.py": "964004d6a2cf8c80633434e6b515c76b0e9feac135662234d4bfbf48e507a34e"
+  },
+  "one_BP_ancestor": true,
+  "physical_acceptance": null,
+  "preserved_earlier_log": "ruff_01.log retains one style-only E731 failure; replaced lambda with def before final checks. No numerical protocol/outcome change.",
+  "producer_protocol_sha256": "63d8338f6a023f17365b8fa0d706f9f3a04e0b1e96006381e49309c3856444f0",
+  "producer_sha256": "73b617773c76a35e847add60d4b9f2200517d49d68a0f9af63b1098bc9d0137d",
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "role": "AI-authored source-only independent scalar audit staging validation; actual BP/native output audit not executed",
+  "validation": [
+    {
+      "command": "env PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -m pytest -q -W error -p no:cacheprovider work/new-phase-staging/bp_heterogeneous_guard_post_audit/test_audit_guards.py",
+      "exit_code": 0,
+      "log": "puretests_final.log",
+      "passed": 7,
+      "scope": "pure scalar/default CLI/fake missing and interrupted metadata directories; no real BP or native-output arrays",
+      "terminal_chunk": "a51fae"
+    },
+    {
+      "command": "/opt/miniconda3/bin/python -m ruff check --config work/wavecert-fwi/pyproject.toml work/new-phase-staging/bp_heterogeneous_guard_post_audit/audit_guards.py work/new-phase-staging/bp_heterogeneous_guard_post_audit/test_audit_guards.py",
+      "exit_code": 0,
+      "log": "ruff_final.log",
+      "terminal_chunk": "b59d75"
+    },
+    {
+      "command": "env PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python work/new-phase-staging/bp_heterogeneous_guard_post_audit/audit_guards.py",
+      "exit_code": 0,
+      "log": "default_cli_final.log",
+      "metadata_only": true,
+      "terminal_chunk": "33d1cc"
+    },
+    {
+      "artifact": "grammar_source_final.json",
+      "description": "Python3.10 AST grammar and independent source9f manifest hashing,161files",
+      "exit_code": 0,
+      "terminal_chunk": "645973"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+..............F                                                          [100%]
+=================================== FAILURES ===================================
+__________ test_real_manufactured_forward_adjoint_and_fd_integration ___________
+
+capsys = <_pytest.capture.CaptureFixture object at 0x1162596d0>
+
+    def test_real_manufactured_forward_adjoint_and_fd_integration(capsys):
+        """21x21 constant synthetic velocity; five short wave calls, no BP inputs."""
+        import copy
+    
+        p = copy.deepcopy(protocol())
+        runtime = driver.load_runtime(REPO, p)
+        backend, devito = runtime["backend"], runtime["devito"]
+        velocity = np.full((21, 21), 2., dtype=np.float64)
+        source = np.asarray([[125., 50.]])
+        receivers = np.column_stack((np.asarray([2, 3, 4, 5, 6, 14, 15, 16, 17, 18]) * 12.5, np.full(10, 50.)))
+>       adapter = backend.DevitoAcousticFWI(velocity, source_coordinates=source, receiver_coordinates=receivers,
+            config=backend.DevitoAcousticConfig(spacing=(12.5, 12.5), nbl=40, t0=0., tn=80., f0=.005,
+                                               dt=.5, max_velocity=2.1, space_order=4, dtype="float64"))
+
+work/new-phase-staging/bp_heterogeneous_guard_candidate/test_guard_math.py:306: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+work/wavecert-fwi/src/wavecert/physics/devito_backend.py:106: in __init__
+    self.model = Model(
+/opt/miniconda3/lib/python3.13/site-packages/examples/seismic/model.py:285: in __init__
+    super().__init__(origin, spacing, shape, space_order, nbl, dtype, subdomains,
+/opt/miniconda3/lib/python3.13/site-packages/examples/seismic/model.py:129: in __init__
+    self.grid = Grid(extent=extent, shape=shape_pml, origin=origin_pml,
+/opt/miniconda3/lib/python3.13/site-packages/devito/types/grid.py:231: in __init__
+    _ = deprecations.subdomain_warn
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/miniconda3/lib/python3.13/functools.py:1025: in __get__
+    val = self.func(instance)
+          ^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <devito.deprecations.DevitoDeprecation object at 0x1070cdbe0>
+
+    @cached_property
+    def subdomain_warn(self):
+>       warn("Passing `SubDomain`s to `Grid` on instantiation using `mygrid ="
+             " Grid(..., subdomains=(mydomain, ...))` is deprecated. The `Grid`"
+             " should instead be passed as a kwarg when instantiating a subdomain"
+             " `mydomain = MyDomain(grid=mygrid)`",
+             DeprecationWarning, stacklevel=2)
+E       DeprecationWarning: Passing `SubDomain`s to `Grid` on instantiation using `mygrid = Grid(..., subdomains=(mydomain, ...))` is deprecated. The `Grid` should instead be passed as a kwarg when instantiating a subdomain `mydomain = MyDomain(grid=mygrid)`
+
+/opt/miniconda3/lib/python3.13/site-packages/devito/deprecations.py:23: DeprecationWarning
+=========================== short test summary info ============================
+FAILED work/new-phase-staging/bp_heterogeneous_guard_candidate/test_guard_math.py::test_real_manufactured_forward_adjoint_and_fd_integration
+1 failed, 14 passed in 1.67s

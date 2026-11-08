@@ -1,0 +1,14 @@
+E731 Do not assign a `lambda` expression, use a `def`
+   --> work/new-phase-staging/bp_heterogeneous_guard_post_audit/audit_guards.py:247:5
+    |
+245 |             dict(direction=d, relative_step=s, audit_status="not_read") for d in ["interior", "edge"]
+246 |             for s in protocol["gradient"]["relative_steps"]]) for c in protocol["inputs"]], checks=audit.checks)
+247 |     snapshot = lambda: {p.relative_to(args.run).as_posix(): checksum(p) for p in sorted(args.run.rglob("*")) if p.is_file()}
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+248 |     before = snapshot()
+249 |     report["run_files_before"] = before
+    |
+help: Rewrite `snapshot` as a `def`
+
+Found 1 error.
+No fixes available (1 hidden fix can be enabled with the `--unsafe-fixes` option).

@@ -1,0 +1,68 @@
+{
+  "checks": [
+    {
+      "check": "Tangent sign: dA=-omega\u00b2diag(delta_m), hence A_initial delta_u=+omega\u00b2diag(delta_m)u_initial with fixed source and damping.",
+      "passed": true
+    },
+    {
+      "check": "real_dot computes Re(conj(a) dot b); residual directional contraction, alignment and linearized remainder signs are consistent.",
+      "passed": true
+    },
+    {
+      "check": "Independently assembled graph uses fixed4/h\u00b2 diagonals, in-grid axial neighbors-1/h\u00b2, zero exterior unknowns and model-independent damping.",
+      "passed": true
+    },
+    {
+      "check": "All8 cases,64 case-frequency rows,192 truth/initial/tangent stages,128 planned LU factorizations and1152 planned RHS columns are prepopulated before numerical input loading.",
+      "passed": true
+    },
+    {
+      "check": "Tangent reuses initial LU; no adjoint solve or optimizer is introduced.",
+      "passed": true
+    },
+    {
+      "check": "Attempts/completed counts, failures, unattempted stages and available receiver prefixes are retained; failed solves cannot yield a numerical-integrity pass.",
+      "passed": true
+    },
+    {
+      "check": "Each fixed band requires all4 constituent frequencies; all-eight aggregates require every case band. No favorable partial pooling or best-frequency selection.",
+      "passed": true
+    },
+    {
+      "check": "Zero data/tangent denominators remain null and flagged. No physical acceptance threshold is supplied.",
+      "passed": true
+    },
+    {
+      "check": "Original-band saved-gradient contraction uses the same truth correction and declared uncancelled numerical scale;1e-9 allowance and solve-residual limit are numerical consistency checks.",
+      "passed": true
+    },
+    {
+      "check": "Default CLI is metadata-only; explicit source/protocol hashes and fresh outer output are required for project execution.",
+      "passed": true
+    },
+    {
+      "check": "SCOPE limits this to reused development witnesses and one shared ancestor; no causal cycle-skipping diagnosis, demonstrated remedy, novelty, confirmation, method win, certificate transfer or student-final-design claim.",
+      "passed": true
+    }
+  ],
+  "created_utc": "2026-11-08T08:57:49.787767+00:00",
+  "executed_by_this_reviewer": {
+    "PDE_or_optimizer_calls": 0,
+    "project_array_or_outcome_reads": 0,
+    "project_or_witness_imports": 0,
+    "solves": 0,
+    "source_edits": 0,
+    "tests": 0
+  },
+  "files_sha256": {
+    "SCOPE.md": "5c3761719343021c649d307a09919902cc3493db48f97e72a2405f48b75b0575",
+    "protocol.json": "736d6136c97c84de9dccb240d492c788684e59887675e303fe69a1b2e0a92cf3",
+    "run_probe.py": "44e07c0a846847e396a8db9d213c3346cfa654724ae0f55862fb668d6dde62d5",
+    "test_probe.py": "7d8d42bca016f219db7408f07ee38d30fd530a9cfa860f5fafed2fff33ab24b1"
+  },
+  "limits": "Read only the four staged source/protocol/test/scope files and their hashes. This establishes source consistency, not runtime correctness, data-schema compatibility, numerical outcome or scientific validity. Reported manufactured tests belong to the owner, not this reviewer. Actual output audit remains held until terminal confirmation and separate root GO.",
+  "material_blockers": [],
+  "review_type": "AI independent narrow source-only review",
+  "reviewer": "/root/realistic_physics_gap",
+  "status": "CLEAR"
+}

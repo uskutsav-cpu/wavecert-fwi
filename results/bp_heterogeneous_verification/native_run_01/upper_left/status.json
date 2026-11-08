@@ -1,0 +1,5461 @@
+{
+  "calls": [
+    {
+      "call_id": "coarse40",
+      "case_id": "upper_left",
+      "kind": "forward",
+      "result": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "coarse40.npz",
+        "artifact_sha256": "28399544e3e166d45c7b5180ace825ad60e4c76de17b5d01e0d38e5dfe1c098a",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "4e21aa9ea5be6cb2c0b0b95be34e3be051f0f50d1a2d13ebbe9e43a5faccb37f",
+          "actual_physical_m_sha256": "131d349391b2b71502e7ab6e20694e05ff39bc649fa6c236282adc541c2ed31d",
+          "critical_dt_ms": 1.537,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.51,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "37eaf0df7d8fd8bb5f2772374bdb6423030d522d31e1d391f6bf037ad3e5ad0a",
+          "physical_velocity_sha256": "284610e171071b50480ce4fa97430b0168444ba3ad33902f8cbfc7e0223030c8",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "57c5a46f57b5f0c31b0489f19c508c9126e6fc00e3f67a9390c58b387dc08f9d",
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "status": "complete"
+    },
+    {
+      "call_id": "coarse80",
+      "case_id": "upper_left",
+      "kind": "forward",
+      "result": {
+        "allocated_wavefield_bytes": 2280960,
+        "allocated_wavefield_shape": [
+          3,
+          360,
+          264
+        ],
+        "artifact": "coarse80.npz",
+        "artifact_sha256": "e2e4ff423814153ab954c76f98ce000bfddaf943cd438f588049ff43865df85d",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            96.0,
+            96.0
+          ],
+          [
+            112.0,
+            96.0
+          ],
+          [
+            128.0,
+            96.0
+          ],
+          [
+            144.0,
+            96.0
+          ],
+          [
+            160.0,
+            96.0
+          ],
+          [
+            192.0,
+            96.0
+          ],
+          [
+            208.0,
+            96.0
+          ],
+          [
+            224.0,
+            96.0
+          ],
+          [
+            240.0,
+            96.0
+          ],
+          [
+            256.0,
+            96.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            176.0,
+            96.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 2280960,
+        "materialized_wavefield_shape": [
+          3,
+          360,
+          264
+        ],
+        "model": {
+          "actual_padded_m_sha256": "0724a156a59aed83de6f5a191e71d7dd4b1b014fb90dbf9b761dfd033d7becd6",
+          "actual_physical_m_sha256": "131d349391b2b71502e7ab6e20694e05ff39bc649fa6c236282adc541c2ed31d",
+          "critical_dt_ms": 1.537,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -1000.0,
+            -1000.0
+          ],
+          "maximum_velocity_kmps": 4.51,
+          "padded_shape": [
+            352,
+            256
+          ],
+          "padded_velocity_sha256": "6015d65d3af135d3b43d621125368caee267b619133b58caa0aabc7c100a7ee0",
+          "physical_velocity_sha256": "284610e171071b50480ce4fa97430b0168444ba3ad33902f8cbfc7e0223030c8",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "b320b0d79901394ba2a015f3ca975827f3c68cb72536b03eff55b7b2484eaf14",
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "status": "complete"
+    },
+    {
+      "call_id": "coarse160",
+      "case_id": "upper_left",
+      "kind": "forward",
+      "result": {
+        "allocated_wavefield_bytes": 5291520,
+        "allocated_wavefield_shape": [
+          3,
+          520,
+          424
+        ],
+        "artifact": "coarse160.npz",
+        "artifact_sha256": "7ef31b2736fb26c5a16206f2fe61f8321b14379082e99153b6e6bfe68357c3e2",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            176.0,
+            176.0
+          ],
+          [
+            192.0,
+            176.0
+          ],
+          [
+            208.0,
+            176.0
+          ],
+          [
+            224.0,
+            176.0
+          ],
+          [
+            240.0,
+            176.0
+          ],
+          [
+            272.0,
+            176.0
+          ],
+          [
+            288.0,
+            176.0
+          ],
+          [
+            304.0,
+            176.0
+          ],
+          [
+            320.0,
+            176.0
+          ],
+          [
+            336.0,
+            176.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            256.0,
+            176.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 5291520,
+        "materialized_wavefield_shape": [
+          3,
+          520,
+          424
+        ],
+        "model": {
+          "actual_padded_m_sha256": "d8a959785e27c2fc76d5acbebbfa5a23480bc38f5a335af634231bef5f251875",
+          "actual_physical_m_sha256": "131d349391b2b71502e7ab6e20694e05ff39bc649fa6c236282adc541c2ed31d",
+          "critical_dt_ms": 1.537,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -2000.0,
+            -2000.0
+          ],
+          "maximum_velocity_kmps": 4.51,
+          "padded_shape": [
+            512,
+            416
+          ],
+          "padded_velocity_sha256": "d9321d29b5b04f81e8350cdbe8b571fcb2c24acdf551ab3414c981b698dd8e95",
+          "physical_velocity_sha256": "284610e171071b50480ce4fa97430b0168444ba3ad33902f8cbfc7e0223030c8",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "f7734d1c99c50008be999fd98c945c21b5cf9b79f72233d3f06b57418f550656",
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "status": "complete"
+    },
+    {
+      "call_id": "fine160",
+      "case_id": "upper_left",
+      "kind": "forward",
+      "result": {
+        "allocated_wavefield_bytes": 8856216,
+        "allocated_wavefield_shape": [
+          3,
+          711,
+          519
+        ],
+        "artifact": "fine160.npz",
+        "artifact_sha256": "24f6505d23e7824842382d031a67220880acc3888a405ad3d413e2f621bb5fe3",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            192.0,
+            192.0
+          ],
+          [
+            224.0,
+            192.0
+          ],
+          [
+            256.0,
+            192.0
+          ],
+          [
+            288.0,
+            192.0
+          ],
+          [
+            320.0,
+            192.0
+          ],
+          [
+            384.0,
+            192.0
+          ],
+          [
+            416.0,
+            192.0
+          ],
+          [
+            448.0,
+            192.0
+          ],
+          [
+            480.0,
+            192.0
+          ],
+          [
+            512.0,
+            192.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            352.0,
+            192.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 8856216,
+        "materialized_wavefield_shape": [
+          3,
+          711,
+          519
+        ],
+        "model": {
+          "actual_padded_m_sha256": "98bb3e945a7690e7468a7e80f6b13c4d4f55721ab47f0d387e9c75fa5767a3ac",
+          "actual_physical_m_sha256": "52c33ab349b6d83d6e3b3b5c54a048ef5d5f8c8ab91d5a6253d6e7049b5855cb",
+          "critical_dt_ms": 0.7686,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -1000.0,
+            -1000.0
+          ],
+          "maximum_velocity_kmps": 4.51,
+          "padded_shape": [
+            703,
+            511
+          ],
+          "padded_velocity_sha256": "f435d93d4162885be688b12b86054d4c14a7e37b74dd9953dc025e1fe36b5ffa",
+          "physical_velocity_sha256": "a70722d56882b5321f8b3b5e6d4c64da4c520fc5c5dbb94341be9d068e22605e",
+          "shape_x_z": [
+            383,
+            191
+          ]
+        },
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "e68c5707663561b04d6b70dae9907dd03192be709bd674c549d959f600d0b467",
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 43.75983076188817,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 4.0,
+        "source_sha256": "e791564f3a8324cc8ca269808204bca074a82b681d3feeb23277589e7db8502f",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "status": "complete"
+    },
+    {
+      "call_id": "coarse80_halfdt",
+      "case_id": "upper_left",
+      "kind": "forward",
+      "result": {
+        "allocated_wavefield_bytes": 2280960,
+        "allocated_wavefield_shape": [
+          3,
+          360,
+          264
+        ],
+        "artifact": "coarse80_halfdt.npz",
+        "artifact_sha256": "e32ad72207b5614f02faf80f21a1ca6cd617bd9dc6d4cf5ea2eeeaa73207ffc4",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            96.0,
+            96.0
+          ],
+          [
+            112.0,
+            96.0
+          ],
+          [
+            128.0,
+            96.0
+          ],
+          [
+            144.0,
+            96.0
+          ],
+          [
+            160.0,
+            96.0
+          ],
+          [
+            192.0,
+            96.0
+          ],
+          [
+            208.0,
+            96.0
+          ],
+          [
+            224.0,
+            96.0
+          ],
+          [
+            240.0,
+            96.0
+          ],
+          [
+            256.0,
+            96.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            176.0,
+            96.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 2280960,
+        "materialized_wavefield_shape": [
+          3,
+          360,
+          264
+        ],
+        "model": {
+          "actual_padded_m_sha256": "0724a156a59aed83de6f5a191e71d7dd4b1b014fb90dbf9b761dfd033d7becd6",
+          "actual_physical_m_sha256": "131d349391b2b71502e7ab6e20694e05ff39bc649fa6c236282adc541c2ed31d",
+          "critical_dt_ms": 1.537,
+          "dt_ms": 0.25,
+          "grid_origin_m": [
+            -1000.0,
+            -1000.0
+          ],
+          "maximum_velocity_kmps": 4.51,
+          "padded_shape": [
+            352,
+            256
+          ],
+          "padded_velocity_sha256": "6015d65d3af135d3b43d621125368caee267b619133b58caa0aabc7c100a7ee0",
+          "physical_velocity_sha256": "284610e171071b50480ce4fa97430b0168444ba3ad33902f8cbfc7e0223030c8",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "37b380dbb53cb8814b10bed6ff8192f06fe0692594875ff183444119b0b5e714",
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 15.471436522807569,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "4bf01292477c809a0ca78ec825fae424942e470ab5de63eae9710e75f12aa293",
+        "source_time_after_sha256": "62e28efd6c6335f068cfcc8c76e86fd8d7c349391fd8605c2ebb609db7a02052",
+        "time_bounds": {
+          "time_M": 3999,
+          "time_m": 1
+        },
+        "time_sha256": "62e28efd6c6335f068cfcc8c76e86fd8d7c349391fd8605c2ebb609db7a02052"
+      },
+      "status": "complete"
+    },
+    {
+      "call_id": "probe_saved",
+      "case_id": "upper_left",
+      "kind": "forward_saved",
+      "result": {
+        "allocated_wavefield_bytes": 824732160,
+        "allocated_wavefield_shape": [
+          2001,
+          280,
+          184
+        ],
+        "artifact": "probe_saved_record.npz",
+        "artifact_sha256": "fe163315b10d0f5872bf9812ca33b180f2bcd95ea2a910a8e6a1cab594114319",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 824732160,
+        "materialized_wavefield_shape": [
+          2001,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "b7da0137834d4f20a618f8f306fea685c8ff7f2f379ff43f4f2093e1cd83e1ce",
+        "save_wavefield": true,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "status": "complete"
+    },
+    {
+      "actual_time_bounds": {
+        "time_M": 1999,
+        "time_m": 1
+      },
+      "call_id": "probe_adjoint",
+      "case_id": "upper_left",
+      "kind": "adjoint",
+      "result": {
+        "actual_time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "adjoint_rolling_allocated_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "gradient_arrays.npz",
+        "artifact_sha256": "afdda8c4104de66ebeb624578e90d9b329e29b96458eee078ca4831aa355c626",
+        "fold": {
+          "denominator": 12829.063735310663,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "padded_gradient_sha256": "66941c2c8d50a409ae1e07ce6437cabdcb80a4b2fab057a90c0f5f2b419621f3",
+        "pullback_numerical_agreement": true
+      },
+      "retained_gradient_record": {
+        "actual_time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "adjoint_rolling_allocated_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "gradient_arrays.npz",
+        "artifact_sha256": "afdda8c4104de66ebeb624578e90d9b329e29b96458eee078ca4831aa355c626",
+        "fold": {
+          "denominator": 12829.063735310663,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "padded_gradient_sha256": "66941c2c8d50a409ae1e07ce6437cabdcb80a4b2fab057a90c0f5f2b419621f3",
+        "pullback_numerical_agreement": true
+      },
+      "status": "complete"
+    },
+    {
+      "call_id": "fd_interior_0.001_plus",
+      "case_id": "upper_left",
+      "kind": "forward_fd",
+      "restoration": {
+        "model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "status": "restored"
+      },
+      "result": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_interior_0.001_plus.npz",
+        "artifact_sha256": "b77343a310ccc9fcc9098aa4c542cc0860431bf196d9a3473ac089c88752c7b3",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "ec07c8d6ef80bdc05429a0252b3dd6c8a160af2dc16aea2289d783da5075e4f0",
+          "actual_physical_m_sha256": "6debda6e74365198b43da22d770c1064de6aa1cd13e6e114523a841a95e1e2bc",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "9dd41bc4b1157ae180e60172c24d4f39223a4059a226de548cb9408610585b99",
+          "physical_velocity_sha256": "82a55441d60bf8516bec77e3dbff0146823228b5d4cbbc4c42510f5863d285e6",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1919.5826220856052,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "4d6071eeb32b66f262ce4110b97cfb9295548ffce2c824a2b19e6c77dbb4540d",
+        "requested_m_sha256": "440646d71957fd828f389eff0e32018498a3ee8853548c2f63879fac89c5c1b0",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "status": "complete"
+    },
+    {
+      "call_id": "fd_interior_0.001_minus",
+      "case_id": "upper_left",
+      "kind": "forward_fd",
+      "restoration": {
+        "model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "status": "restored"
+      },
+      "result": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_interior_0.001_minus.npz",
+        "artifact_sha256": "f6007a0392e8fb2d2557f3dd4a854de892387e4a351b2eaabe960e8ef54bf0f3",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "38ea3a333ae8a295180e8e46d5997a04db66e6ca67283c2c89b1d8d775ba3cdb",
+          "actual_physical_m_sha256": "0bced1c0a37da197b3623dd9ba48afd4813dfa2401a2a24216eec57009168da7",
+          "critical_dt_ms": 1.552,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.467134125734003,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "51c3c974cb29602e855aaaf0d8125c01f2eff126e3ee1276afa881a9916bd889",
+          "physical_velocity_sha256": "e112956636c998a232eb6cd767762a1c3865ef2ee4370f2c2dfeaaf220b3fa8d",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1557.406691093492,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "73e79504158befd48bf77f01d9d618988f15960545c5e6e91496e720753a6ecb",
+        "requested_m_sha256": "0cc0430881f342ba4b81f30fafd1293fcadcfd1e4dbee747bc9030498baf24fa",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "status": "complete"
+    },
+    {
+      "call_id": "fd_interior_0.0003_plus",
+      "case_id": "upper_left",
+      "kind": "forward_fd",
+      "restoration": {
+        "model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "status": "restored"
+      },
+      "result": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_interior_0.0003_plus.npz",
+        "artifact_sha256": "85ac315f0c778f1ffb6b91f1008b0ad78ce1a1a829e3bca7bd93f4c5e5da9bd7",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "0ca6386f24ad81522a079cd0b57480939184fcd3d8d7e774925c5f4bc94d858b",
+          "actual_physical_m_sha256": "c46441078fde33b215c79a4bdc28559536953a0fc18e79c9800eb624b6738c50",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "7239e6d0e63ba88256675860ea0f5edc51324f9dda1fc655a3b75b678746b17b",
+          "physical_velocity_sha256": "1315fdb3f918cc8b3d3eb8a19c31ded6f1d6bb3bca8d7fa54e7bdb39d62d4fac",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1788.5375934883996,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "d07c89bbf0efdd38b79c19a9ab8e1f91b6739c2658e78c61b21ac04ff7c08110",
+        "requested_m_sha256": "4088a86d29d0066387fac80420efc2f42952ea72fdbc252f97cf9e223b53120f",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "status": "complete"
+    },
+    {
+      "call_id": "fd_interior_0.0003_minus",
+      "case_id": "upper_left",
+      "kind": "forward_fd",
+      "restoration": {
+        "model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "status": "restored"
+      },
+      "result": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_interior_0.0003_minus.npz",
+        "artifact_sha256": "7cf59d3f89b9c527ba35e05376ec5447af819c6a112ae054df4259c7ace68f91",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "a39bfb563ab5bc0af6bd67c58a88fdbfed2b38fb6a14b388712f04ce1d516bf3",
+          "actual_physical_m_sha256": "a92e164ae974f87b89ce4f19a3ff902f81a7c93dffc3ea4e2e5c247d0a604f5b",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4655698857280575,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "989c98dfb3fade1daa67c91c4049f05923f1dd7b145a6e827f5fd50e74fc38bf",
+          "physical_velocity_sha256": "80ad5491bc13d44767adef112e85c40bad0a15a6df383918e56e810d9b94e737",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1679.8821315020004,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "6c22eaa7a8a845922b725b0a6c93480cb7ca131ec7d615f45ddc518d58e423f7",
+        "requested_m_sha256": "d542d6186e49ad2df60f411564e21fc141c0e7357c02ccf91b40be22adbbca26",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "status": "complete"
+    },
+    {
+      "call_id": "fd_interior_0.0001_plus",
+      "case_id": "upper_left",
+      "kind": "forward_fd",
+      "restoration": {
+        "model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "status": "restored"
+      },
+      "result": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_interior_0.0001_plus.npz",
+        "artifact_sha256": "07cbf19d614326dd1c79f59a74b1842cdb24a27047c8e8870863f70cc2a7704d",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "1f1a62539ce24b81a7fa9c1a778f141ba164d404a1f1200733b3eb8a284b6a98",
+          "actual_physical_m_sha256": "7762ebff4ef055b6dfa226087dedcb850257664f9dff3e3c574d05a3d4b2799e",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "643d6b8d9152410d432385fca49f051737ce93cbf7d51c822e4ebe01fa1ac1e0",
+          "physical_velocity_sha256": "14758c2d30e116c6d505e513586e36d48ba668705b5dcc1a90a95ffddf0d96c1",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1751.942458221571,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "9a4b1c767c3a6f41a48c80c27e7914d6d603bed05a89b29ec07658d3bb494c53",
+        "requested_m_sha256": "a9151798001355155c7d89056cf2a397e70f9f6bcbfc59daed00d2217d20359f",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "status": "complete"
+    },
+    {
+      "call_id": "fd_interior_0.0001_minus",
+      "case_id": "upper_left",
+      "kind": "forward_fd",
+      "restoration": {
+        "model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "status": "restored"
+      },
+      "result": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_interior_0.0001_minus.npz",
+        "artifact_sha256": "b49fc51fd6f83d238507ab159e7790b6927413cf282b92c937dc3bacb12f3c09",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "b1b11caccd6e4951014750d4a9f65ea71b7b4f27dcec5ac9f04c4b0fc2713de3",
+          "actual_physical_m_sha256": "8e442a2581d16dc695472611eece909016006b83d0015e8b63b89a1cfc47e6c7",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.46512326174477,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "ddbbab07f153e68c084ca9550c607af23ae4022c00fcb8d44226ba96ce7a2209",
+          "physical_velocity_sha256": "c7ba856d7c99d875dc668f3b235232c4431f12abcc38ddab282054842acb262a",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1715.7238922784575,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "d1271e6cb6d55a777dd213f0cbbdfc1fb5bbbaddf0153952d1c361d4a3df35b0",
+        "requested_m_sha256": "45d8e847e2f507847ab53c5af0c23e1c850459f8befa98a39ffe6cfb7698cfad",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "status": "complete"
+    },
+    {
+      "call_id": "fd_edge_0.001_plus",
+      "case_id": "upper_left",
+      "kind": "forward_fd",
+      "restoration": {
+        "model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "status": "restored"
+      },
+      "result": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_edge_0.001_plus.npz",
+        "artifact_sha256": "d11bff79369fac2f9b6fdd3e122d561dba371d79942fd523dde884746c345d58",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "44e640c16c43271515b58f12a15bbb8302d15fbe92225209cbf2578a5bddd8f8",
+          "actual_physical_m_sha256": "94a5cc3b3907e42bb55653c65a46b41aa2ae24ad99117ee4cf953b73f74f00ac",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "b3c277e1537635cf0d4a18a522a8b97947d9e63132b3e411c32b797b7658685e",
+          "physical_velocity_sha256": "67b7db9131acf52c36ec28949923a0359d9700520bbfb40e3577bb7e1aeafff5",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1724.9141546099065,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "3a2a1a8a152b8ff4448038bcbeb35c9424762a88e3c3d6cf4eb05bda3de8332f",
+        "requested_m_sha256": "c16f1857a141124dff512d3becd9ef224e841afaa3039fe9db0059137102acd6",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "status": "complete"
+    },
+    {
+      "call_id": "fd_edge_0.001_minus",
+      "case_id": "upper_left",
+      "kind": "forward_fd",
+      "restoration": {
+        "model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "status": "restored"
+      },
+      "result": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_edge_0.001_minus.npz",
+        "artifact_sha256": "a1eb6bf18dcda71945a92500e306f8d7981f0398033b620a5d84595c8285fbd2",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "0482c2fbd15e507b8e8ddc06facc02cf8fcdbd8eb8112cc058300438cd8e6869",
+          "actual_physical_m_sha256": "75c90381fe3d918f5e8a84d0c174f41217c8bd2fa8bf72f0449fc390c1ef2ef5",
+          "critical_dt_ms": 1.552,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.467134125734003,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "a0b291ee9ebf30da41fbedbc8c49eedb81328dea26e91ecc7ddab70e623ea82c",
+          "physical_velocity_sha256": "8b1a8ddcf38f190acb74a77b4906b81b473e80b6c9a2199a27e15574806e5f65",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1742.7775137458907,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "e687e3951d1e2545214a1b76f978ec9fbc24524a4174ea9e7e8a43ecbd748fde",
+        "requested_m_sha256": "08412f3de92a668a3c774e39bee4bd014992035b3e35917aaa9d919f53e3fff6",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "status": "complete"
+    },
+    {
+      "call_id": "fd_edge_0.0003_plus",
+      "case_id": "upper_left",
+      "kind": "forward_fd",
+      "restoration": {
+        "model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "status": "restored"
+      },
+      "result": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_edge_0.0003_plus.npz",
+        "artifact_sha256": "625ed8f612cf03bd7e78e79a221f762fc9e70bad7188eef628ace65386bc420e",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "1ce1e5ee48840f67bfda390a5412a29bc14fca2f6a7f8ee1208177dc2a3bcb6f",
+          "actual_physical_m_sha256": "058e086eb4983e83116c1b31f98c2a9852ec5722b8cf6d5b344981aa3ede3db3",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "de2a68f6f1873729939a6ae9f7e13a6dda398fd393fa698953e9e8954b5bb98d",
+          "physical_velocity_sha256": "787f77b942329dc1a285ec1afbc2b99269fcaa8b846d2b792774867f11f2ae0f",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1731.111994348747,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "3a61f2a02427acc5a00fae20afbbedc6f2931f93c644dc6e5182485498ca8c66",
+        "requested_m_sha256": "5424c95f258d694eb8cb04762c045d210ac01b2804cfe773fd7edebfb0680687",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "status": "complete"
+    },
+    {
+      "call_id": "fd_edge_0.0003_minus",
+      "case_id": "upper_left",
+      "kind": "forward_fd",
+      "restoration": {
+        "model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "status": "restored"
+      },
+      "result": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_edge_0.0003_minus.npz",
+        "artifact_sha256": "8d935367803b6700d497f2576a5c6e22dbe670dee434608fd93436cc7c2ad7fe",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "7392c1724b5631e78efe6283c43e2118f134b755da3ce451a406a5861ee678dd",
+          "actual_physical_m_sha256": "64e45006f06e07650a89cd45f7c3a5a2076974a0f6d0559df2885aebd19cbdf1",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4655698857280575,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "4ddf385b36f45f31e173b8c9cf4e2c724fbb992b5d0220298cdb9e8e68c1493d",
+          "physical_velocity_sha256": "880efb8e3adbe89a9745e3690dc5024878b93e0fce9090e576a8f507e397246e",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1736.4709383484048,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "0ad5f3626f63f18d79d01261014e3a4068b8b674a7fde1e1ddd4573af1966707",
+        "requested_m_sha256": "88224b08c1b2e5024751f155a8b1fed1d5eb2f88df17e4fead4a5e12dbebb967",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "status": "complete"
+    },
+    {
+      "call_id": "fd_edge_0.0001_plus",
+      "case_id": "upper_left",
+      "kind": "forward_fd",
+      "restoration": {
+        "model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "status": "restored"
+      },
+      "result": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_edge_0.0001_plus.npz",
+        "artifact_sha256": "aca436a247c72cc2cb4c7c9226f3e88debae348b4c9881d9d977bee9bacf5136",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "39e587e75540973790a78cb9f3e80dac6c3b9c8a5d76cb9a8d073590a1857b13",
+          "actual_physical_m_sha256": "017686a58cf2948d0c35503bead858c800618f89f15f1bb07d0ea5723fa0d2af",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "e31cade63e7833ba95694fe2dc8fac0220cce5fdedbce18ce9d74a4e866f47e8",
+          "physical_velocity_sha256": "2a289fd32316c9f20ab752c36b68502e149e32c09bbf203932b258260192997f",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1732.89353036923,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "32a4d15a92efb9bcf94d6f42d0e494b8d6b2ade7ba28893d8c4fc76c6a835970",
+        "requested_m_sha256": "ac1da8bde115c943dbc6ef0dd9f8267ba300f00738d98736007a1d37bc70955b",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "status": "complete"
+    },
+    {
+      "call_id": "fd_edge_0.0001_minus",
+      "case_id": "upper_left",
+      "kind": "forward_fd",
+      "restoration": {
+        "model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "status": "restored"
+      },
+      "result": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_edge_0.0001_minus.npz",
+        "artifact_sha256": "998f182dcd4d792ffc09ea5d4c5106e2e7a9685f4574da6acffb983d508311c4",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "5ec0602f2591eb64b6ea3c91cdfdfb7b2d6b3a14d4833c1bff9bd015eaaf4cfc",
+          "actual_physical_m_sha256": "23ff9d35d134350ddc1f42f24912135db9d4329bd4f8141b9b6d259e0fdefab8",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.46512326174477,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "08c33b314c8cae8deec8e8856519b18d6366286ab9ea14ac5c94b7fc9983a81b",
+          "physical_velocity_sha256": "e2508a772dd48cc23d9131cd34b64e9eab7b34b5a6401979e6b4d3e8c9a625d9",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1734.679843167711,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "9709de81b53b935030f016d3aa838e606ca99ef80da43f32b8b83ab7db999175",
+        "requested_m_sha256": "3478d1a8f5bf0c0e64b72a66f342cae7ddcf863d618eabe169ea58cf48ef9434",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "status": "complete"
+    }
+  ],
+  "case": {
+    "file": "upper_left_stride2z_velocity_mps.npy",
+    "global_origin_z_x_m": [
+      2387.5,
+      12287.5
+    ],
+    "id": "upper_left",
+    "maximum_mps": 4510.0,
+    "minimum_mps": 1785.5283203125,
+    "sha256": "76c3c7db6a9546d59a79991a9a5c72b6129227ad100dac53fba61603287165e3"
+  },
+  "derivative_checks": [
+    {
+      "absolute_error": 0.2235394165818434,
+      "adjoint_derivative": 8239.057328834053,
+      "direction": "interior",
+      "epsilon": 0.02197980565267119,
+      "finite_difference": 8238.833789417471,
+      "informative": true,
+      "minus": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_interior_0.001_minus.npz",
+        "artifact_sha256": "f6007a0392e8fb2d2557f3dd4a854de892387e4a351b2eaabe960e8ef54bf0f3",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "38ea3a333ae8a295180e8e46d5997a04db66e6ca67283c2c89b1d8d775ba3cdb",
+          "actual_physical_m_sha256": "0bced1c0a37da197b3623dd9ba48afd4813dfa2401a2a24216eec57009168da7",
+          "critical_dt_ms": 1.552,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.467134125734003,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "51c3c974cb29602e855aaaf0d8125c01f2eff126e3ee1276afa881a9916bd889",
+          "physical_velocity_sha256": "e112956636c998a232eb6cd767762a1c3865ef2ee4370f2c2dfeaaf220b3fa8d",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1557.406691093492,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "73e79504158befd48bf77f01d9d618988f15960545c5e6e91496e720753a6ecb",
+        "requested_m_sha256": "0cc0430881f342ba4b81f30fafd1293fcadcfd1e4dbee747bc9030498baf24fa",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "naive_crop_derivative": 8239.057328834053,
+      "normalized_absolute_error": 1.7424452882447867e-05,
+      "plus": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_interior_0.001_plus.npz",
+        "artifact_sha256": "b77343a310ccc9fcc9098aa4c542cc0860431bf196d9a3473ac089c88752c7b3",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "ec07c8d6ef80bdc05429a0252b3dd6c8a160af2dc16aea2289d783da5075e4f0",
+          "actual_physical_m_sha256": "6debda6e74365198b43da22d770c1064de6aa1cd13e6e114523a841a95e1e2bc",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "9dd41bc4b1157ae180e60172c24d4f39223a4059a226de548cb9408610585b99",
+          "physical_velocity_sha256": "82a55441d60bf8516bec77e3dbff0146823228b5d4cbbc4c42510f5863d285e6",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1919.5826220856052,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "4d6071eeb32b66f262ce4110b97cfb9295548ffce2c824a2b19e6c77dbb4540d",
+        "requested_m_sha256": "440646d71957fd828f389eff0e32018498a3ee8853548c2f63879fac89c5c1b0",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "relative_error": 2.7131673886953945e-05,
+      "relative_step": 0.001,
+      "scope": "near-zero directional derivative is uninformative, never a zero-error pass",
+      "status": "complete"
+    },
+    {
+      "absolute_error": 0.020118694274060545,
+      "adjoint_derivative": 8239.057328834053,
+      "direction": "interior",
+      "epsilon": 0.0065939416958013565,
+      "finite_difference": 8239.037210139779,
+      "informative": true,
+      "minus": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_interior_0.0003_minus.npz",
+        "artifact_sha256": "7cf59d3f89b9c527ba35e05376ec5447af819c6a112ae054df4259c7ace68f91",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "a39bfb563ab5bc0af6bd67c58a88fdbfed2b38fb6a14b388712f04ce1d516bf3",
+          "actual_physical_m_sha256": "a92e164ae974f87b89ce4f19a3ff902f81a7c93dffc3ea4e2e5c247d0a604f5b",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4655698857280575,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "989c98dfb3fade1daa67c91c4049f05923f1dd7b145a6e827f5fd50e74fc38bf",
+          "physical_velocity_sha256": "80ad5491bc13d44767adef112e85c40bad0a15a6df383918e56e810d9b94e737",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1679.8821315020004,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "6c22eaa7a8a845922b725b0a6c93480cb7ca131ec7d615f45ddc518d58e423f7",
+        "requested_m_sha256": "d542d6186e49ad2df60f411564e21fc141c0e7357c02ccf91b40be22adbbca26",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "naive_crop_derivative": 8239.057328834053,
+      "normalized_absolute_error": 1.568212200761443e-06,
+      "plus": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_interior_0.0003_plus.npz",
+        "artifact_sha256": "85ac315f0c778f1ffb6b91f1008b0ad78ce1a1a829e3bca7bd93f4c5e5da9bd7",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "0ca6386f24ad81522a079cd0b57480939184fcd3d8d7e774925c5f4bc94d858b",
+          "actual_physical_m_sha256": "c46441078fde33b215c79a4bdc28559536953a0fc18e79c9800eb624b6738c50",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "7239e6d0e63ba88256675860ea0f5edc51324f9dda1fc655a3b75b678746b17b",
+          "physical_velocity_sha256": "1315fdb3f918cc8b3d3eb8a19c31ded6f1d6bb3bca8d7fa54e7bdb39d62d4fac",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1788.5375934883996,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "d07c89bbf0efdd38b79c19a9ab8e1f91b6739c2658e78c61b21ac04ff7c08110",
+        "requested_m_sha256": "4088a86d29d0066387fac80420efc2f42952ea72fdbc252f97cf9e223b53120f",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "relative_error": 2.44186846517642e-06,
+      "relative_step": 0.0003,
+      "scope": "near-zero directional derivative is uninformative, never a zero-error pass",
+      "status": "complete"
+    },
+    {
+      "absolute_error": 0.002235389221823425,
+      "adjoint_derivative": 8239.057328834053,
+      "direction": "interior",
+      "epsilon": 0.002197980565267119,
+      "finite_difference": 8239.055093444831,
+      "informative": true,
+      "minus": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_interior_0.0001_minus.npz",
+        "artifact_sha256": "b49fc51fd6f83d238507ab159e7790b6927413cf282b92c937dc3bacb12f3c09",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "b1b11caccd6e4951014750d4a9f65ea71b7b4f27dcec5ac9f04c4b0fc2713de3",
+          "actual_physical_m_sha256": "8e442a2581d16dc695472611eece909016006b83d0015e8b63b89a1cfc47e6c7",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.46512326174477,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "ddbbab07f153e68c084ca9550c607af23ae4022c00fcb8d44226ba96ce7a2209",
+          "physical_velocity_sha256": "c7ba856d7c99d875dc668f3b235232c4431f12abcc38ddab282054842acb262a",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1715.7238922784575,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "d1271e6cb6d55a777dd213f0cbbdfc1fb5bbbaddf0153952d1c361d4a3df35b0",
+        "requested_m_sha256": "45d8e847e2f507847ab53c5af0c23e1c850459f8befa98a39ffe6cfb7698cfad",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "naive_crop_derivative": 8239.057328834053,
+      "normalized_absolute_error": 1.7424414344990176e-07,
+      "plus": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_interior_0.0001_plus.npz",
+        "artifact_sha256": "07cbf19d614326dd1c79f59a74b1842cdb24a27047c8e8870863f70cc2a7704d",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "1f1a62539ce24b81a7fa9c1a778f141ba164d404a1f1200733b3eb8a284b6a98",
+          "actual_physical_m_sha256": "7762ebff4ef055b6dfa226087dedcb850257664f9dff3e3c574d05a3d4b2799e",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "643d6b8d9152410d432385fca49f051737ce93cbf7d51c822e4ebe01fa1ac1e0",
+          "physical_velocity_sha256": "14758c2d30e116c6d505e513586e36d48ba668705b5dcc1a90a95ffddf0d96c1",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1751.942458221571,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "9a4b1c767c3a6f41a48c80c27e7914d6d603bed05a89b29ec07658d3bb494c53",
+        "requested_m_sha256": "a9151798001355155c7d89056cf2a397e70f9f6bcbfc59daed00d2217d20359f",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "relative_error": 2.713161388014963e-07,
+      "relative_step": 0.0001,
+      "scope": "near-zero directional derivative is uninformative, never a zero-error pass",
+      "status": "complete"
+    },
+    {
+      "absolute_error": 0.023528596541382285,
+      "adjoint_derivative": -1800.1046844383043,
+      "direction": "edge",
+      "epsilon": 0.004961690785865816,
+      "finite_difference": -1800.1282130348457,
+      "informative": true,
+      "minus": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_edge_0.001_minus.npz",
+        "artifact_sha256": "a1eb6bf18dcda71945a92500e306f8d7981f0398033b620a5d84595c8285fbd2",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "0482c2fbd15e507b8e8ddc06facc02cf8fcdbd8eb8112cc058300438cd8e6869",
+          "actual_physical_m_sha256": "75c90381fe3d918f5e8a84d0c174f41217c8bd2fa8bf72f0449fc390c1ef2ef5",
+          "critical_dt_ms": 1.552,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.467134125734003,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "a0b291ee9ebf30da41fbedbc8c49eedb81328dea26e91ecc7ddab70e623ea82c",
+          "physical_velocity_sha256": "8b1a8ddcf38f190acb74a77b4906b81b473e80b6c9a2199a27e15574806e5f65",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1742.7775137458907,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "e687e3951d1e2545214a1b76f978ec9fbc24524a4174ea9e7e8a43ecbd748fde",
+        "requested_m_sha256": "08412f3de92a668a3c774e39bee4bd014992035b3e35917aaa9d919f53e3fff6",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "naive_crop_derivative": -101.31356345547023,
+      "normalized_absolute_error": 1.834007299895336e-06,
+      "plus": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_edge_0.001_plus.npz",
+        "artifact_sha256": "d11bff79369fac2f9b6fdd3e122d561dba371d79942fd523dde884746c345d58",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "44e640c16c43271515b58f12a15bbb8302d15fbe92225209cbf2578a5bddd8f8",
+          "actual_physical_m_sha256": "94a5cc3b3907e42bb55653c65a46b41aa2ae24ad99117ee4cf953b73f74f00ac",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "b3c277e1537635cf0d4a18a522a8b97947d9e63132b3e411c32b797b7658685e",
+          "physical_velocity_sha256": "67b7db9131acf52c36ec28949923a0359d9700520bbfb40e3577bb7e1aeafff5",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1724.9141546099065,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "3a2a1a8a152b8ff4448038bcbeb35c9424762a88e3c3d6cf4eb05bda3de8332f",
+        "requested_m_sha256": "c16f1857a141124dff512d3becd9ef224e841afaa3039fe9db0059137102acd6",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "relative_error": 1.3070511517463137e-05,
+      "relative_step": 0.001,
+      "scope": "near-zero directional derivative is uninformative, never a zero-error pass",
+      "status": "complete"
+    },
+    {
+      "absolute_error": 0.002117502307328323,
+      "adjoint_derivative": -1800.1046844383043,
+      "direction": "edge",
+      "epsilon": 0.0014885072357597447,
+      "finite_difference": -1800.1068019406116,
+      "informative": true,
+      "minus": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_edge_0.0003_minus.npz",
+        "artifact_sha256": "8d935367803b6700d497f2576a5c6e22dbe670dee434608fd93436cc7c2ad7fe",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "7392c1724b5631e78efe6283c43e2118f134b755da3ce451a406a5861ee678dd",
+          "actual_physical_m_sha256": "64e45006f06e07650a89cd45f7c3a5a2076974a0f6d0559df2885aebd19cbdf1",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4655698857280575,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "4ddf385b36f45f31e173b8c9cf4e2c724fbb992b5d0220298cdb9e8e68c1493d",
+          "physical_velocity_sha256": "880efb8e3adbe89a9745e3690dc5024878b93e0fce9090e576a8f507e397246e",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1736.4709383484048,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "0ad5f3626f63f18d79d01261014e3a4068b8b674a7fde1e1ddd4573af1966707",
+        "requested_m_sha256": "88224b08c1b2e5024751f155a8b1fed1d5eb2f88df17e4fead4a5e12dbebb967",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "naive_crop_derivative": -101.31356345547023,
+      "normalized_absolute_error": 1.6505509295273965e-07,
+      "plus": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_edge_0.0003_plus.npz",
+        "artifact_sha256": "625ed8f612cf03bd7e78e79a221f762fc9e70bad7188eef628ace65386bc420e",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "1ce1e5ee48840f67bfda390a5412a29bc14fca2f6a7f8ee1208177dc2a3bcb6f",
+          "actual_physical_m_sha256": "058e086eb4983e83116c1b31f98c2a9852ec5722b8cf6d5b344981aa3ede3db3",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "de2a68f6f1873729939a6ae9f7e13a6dda398fd393fa698953e9e8954b5bb98d",
+          "physical_velocity_sha256": "787f77b942329dc1a285ec1afbc2b99269fcaa8b846d2b792774867f11f2ae0f",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1731.111994348747,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "3a61f2a02427acc5a00fae20afbbedc6f2931f93c644dc6e5182485498ca8c66",
+        "requested_m_sha256": "5424c95f258d694eb8cb04762c045d210ac01b2804cfe773fd7edebfb0680687",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "relative_error": 1.1763203744608607e-06,
+      "relative_step": 0.0003,
+      "scope": "near-zero directional derivative is uninformative, never a zero-error pass",
+      "status": "complete"
+    },
+    {
+      "absolute_error": 0.0002350073527850327,
+      "adjoint_derivative": -1800.1046844383043,
+      "direction": "edge",
+      "epsilon": 0.0004961690785865817,
+      "finite_difference": -1800.104919445657,
+      "informative": true,
+      "minus": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_edge_0.0001_minus.npz",
+        "artifact_sha256": "998f182dcd4d792ffc09ea5d4c5106e2e7a9685f4574da6acffb983d508311c4",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "5ec0602f2591eb64b6ea3c91cdfdfb7b2d6b3a14d4833c1bff9bd015eaaf4cfc",
+          "actual_physical_m_sha256": "23ff9d35d134350ddc1f42f24912135db9d4329bd4f8141b9b6d259e0fdefab8",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.46512326174477,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "08c33b314c8cae8deec8e8856519b18d6366286ab9ea14ac5c94b7fc9983a81b",
+          "physical_velocity_sha256": "e2508a772dd48cc23d9131cd34b64e9eab7b34b5a6401979e6b4d3e8c9a625d9",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1734.679843167711,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "9709de81b53b935030f016d3aa838e606ca99ef80da43f32b8b83ab7db999175",
+        "requested_m_sha256": "3478d1a8f5bf0c0e64b72a66f342cae7ddcf863d618eabe169ea58cf48ef9434",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "naive_crop_derivative": -101.31356345547023,
+      "normalized_absolute_error": 1.8318355698724873e-08,
+      "plus": {
+        "allocated_wavefield_bytes": 1236480,
+        "allocated_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "artifact": "fd_edge_0.0001_plus.npz",
+        "artifact_sha256": "aca436a247c72cc2cb4c7c9226f3e88debae348b4c9881d9d977bee9bacf5136",
+        "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+        "computational_receiver_indices": [
+          [
+            56.0,
+            56.0
+          ],
+          [
+            72.0,
+            56.0
+          ],
+          [
+            88.0,
+            56.0
+          ],
+          [
+            104.0,
+            56.0
+          ],
+          [
+            120.0,
+            56.0
+          ],
+          [
+            152.0,
+            56.0
+          ],
+          [
+            168.0,
+            56.0
+          ],
+          [
+            184.0,
+            56.0
+          ],
+          [
+            200.0,
+            56.0
+          ],
+          [
+            216.0,
+            56.0
+          ]
+        ],
+        "computational_source_indices": [
+          [
+            136.0,
+            56.0
+          ]
+        ],
+        "materialized_wavefield_bytes": 1236480,
+        "materialized_wavefield_shape": [
+          3,
+          280,
+          184
+        ],
+        "model": {
+          "actual_padded_m_sha256": "39e587e75540973790a78cb9f3e80dac6c3b9c8a5d76cb9a8d073590a1857b13",
+          "actual_physical_m_sha256": "017686a58cf2948d0c35503bead858c800618f89f15f1bb07d0ea5723fa0d2af",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "e31cade63e7833ba95694fe2dc8fac0220cce5fdedbce18ce9d74a4e866f47e8",
+          "physical_velocity_sha256": "2a289fd32316c9f20ab752c36b68502e149e32c09bbf203932b258260192997f",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "objective": 1732.89353036923,
+        "physical_point_strength_m2": 156.25,
+        "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+        "receiver_sha256": "32a4d15a92efb9bcf94d6f42d0e494b8d6b2ade7ba28893d8c4fc76c6a835970",
+        "requested_m_sha256": "ac1da8bde115c943dbc6ef0dd9f8267ba300f00738d98736007a1d37bc70955b",
+        "restored_probe_model": {
+          "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+          "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+          "critical_dt_ms": 1.553,
+          "dt_ms": 0.5,
+          "grid_origin_m": [
+            -500.0,
+            -500.0
+          ],
+          "maximum_velocity_kmps": 4.4649,
+          "padded_shape": [
+            272,
+            176
+          ],
+          "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+          "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+          "shape_x_z": [
+            192,
+            96
+          ]
+        },
+        "save_wavefield": false,
+        "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+        "source_relative_error": {
+          "denominator": 10.939957690472042,
+          "finite": true,
+          "numerator": 0.0,
+          "ratio": 0.0,
+          "zero_denominator": false
+        },
+        "source_scale": 1.0,
+        "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+        "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+        "time_bounds": {
+          "time_M": 1999,
+          "time_m": 1
+        },
+        "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+      },
+      "relative_error": 1.3055203074352093e-07,
+      "relative_step": 0.0001,
+      "scope": "near-zero directional derivative is uninformative, never a zero-error pass",
+      "status": "complete"
+    }
+  ],
+  "direction_witnesses": {
+    "edge": {
+      "artifact": "edge_direction.npz",
+      "artifact_sha256": "5d87022e6e9c73e7b3bbeb0e0135ecbc970ba524174d99f5d8ff456dc1ec69bd",
+      "direction_sha256": "e49f80fa08ac937f645e37465c51102edb6ef67296f4c6a4a96be36a161533e3",
+      "norm_scale": 4.961690785865816,
+      "probe_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a"
+    },
+    "interior": {
+      "artifact": "interior_direction.npz",
+      "artifact_sha256": "05ba4393b0de8b059a8b91ea04b40dbf5d897f4db828f37e3192961c58e2ee7f",
+      "direction_sha256": "5974608be8f25d0db63342e66633f8de70392bdefc171b7a9a6ea42f7ec06b8d",
+      "norm_scale": 21.97980565267119,
+      "probe_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a"
+    }
+  },
+  "forward_comparisons": {
+    "coarse40__coarse80": {
+      "aggregate": {
+        "denominator": 517.7217329290436,
+        "finite": true,
+        "numerator": 72.20024342522971,
+        "ratio": 0.13945762527053338,
+        "zero_denominator": false
+      },
+      "exact_common_samples": 1999,
+      "first_time_ms": 0.5,
+      "last_time_ms": 999.5,
+      "per_receiver": [
+        {
+          "denominator": 144.5252601057737,
+          "finite": true,
+          "numerator": 26.93337933595926,
+          "ratio": 0.1863575911660531,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 164.28638293108898,
+          "finite": true,
+          "numerator": 27.503682030740702,
+          "ratio": 0.16741303533523716,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 158.7491207275781,
+          "finite": true,
+          "numerator": 17.645461971556376,
+          "ratio": 0.11115313200277137,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 128.1975265011256,
+          "finite": true,
+          "numerator": 15.115223061249466,
+          "ratio": 0.11790573089658443,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 202.07037781491542,
+          "finite": true,
+          "numerator": 23.675338356769,
+          "ratio": 0.11716382486528638,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 188.00995986321496,
+          "finite": true,
+          "numerator": 15.541852727379899,
+          "ratio": 0.08266504997228466,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 122.55595379481778,
+          "finite": true,
+          "numerator": 17.828830816902762,
+          "ratio": 0.14547502805740187,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 165.83300012123718,
+          "finite": true,
+          "numerator": 21.479596936232372,
+          "ratio": 0.12952546791367864,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 212.507445742026,
+          "finite": true,
+          "numerator": 27.527312490603094,
+          "ratio": 0.1295357552978165,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 121.08754830884129,
+          "finite": true,
+          "numerator": 29.191083369336745,
+          "ratio": 0.24107419612529504,
+          "zero_denominator": false
+        }
+      ],
+      "physical_acceptance": null
+    },
+    "coarse80__coarse160": {
+      "aggregate": {
+        "denominator": 517.9262883736144,
+        "finite": true,
+        "numerator": 30.16952477364541,
+        "ratio": 0.0582506149058071,
+        "zero_denominator": false
+      },
+      "exact_common_samples": 1999,
+      "first_time_ms": 0.5,
+      "last_time_ms": 999.5,
+      "per_receiver": [
+        {
+          "denominator": 144.59817325102694,
+          "finite": true,
+          "numerator": 9.923095447838655,
+          "ratio": 0.06862531679851759,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 164.4348570291867,
+          "finite": true,
+          "numerator": 13.321962113644316,
+          "ratio": 0.0810166551930027,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 158.62848578909382,
+          "finite": true,
+          "numerator": 8.241814246439057,
+          "ratio": 0.05195671007915343,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 128.38296776236984,
+          "finite": true,
+          "numerator": 6.6244811233542915,
+          "ratio": 0.05159937676168898,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 201.9492387229248,
+          "finite": true,
+          "numerator": 9.273183198267795,
+          "ratio": 0.04591838650598055,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 187.95216007316873,
+          "finite": true,
+          "numerator": 6.9525127955449095,
+          "ratio": 0.036990864020069444,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 122.81569573884782,
+          "finite": true,
+          "numerator": 8.003105998433805,
+          "ratio": 0.06516354404286734,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 165.3127374508647,
+          "finite": true,
+          "numerator": 10.444659251459987,
+          "ratio": 0.06318121284855267,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 213.32262695940284,
+          "finite": true,
+          "numerator": 11.77022929521848,
+          "ratio": 0.0551757188770156,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 120.94194643049042,
+          "finite": true,
+          "numerator": 8.742894489394422,
+          "ratio": 0.0722900097727406,
+          "zero_denominator": false
+        }
+      ],
+      "physical_acceptance": null
+    },
+    "coarse80__coarse80_halfdt": {
+      "aggregate": {
+        "denominator": 517.7170964631624,
+        "finite": true,
+        "numerator": 0.09222347616651559,
+        "ratio": 0.00017813488640137587,
+        "zero_denominator": false
+      },
+      "exact_common_samples": 1999,
+      "first_time_ms": 0.5,
+      "last_time_ms": 999.5,
+      "per_receiver": [
+        {
+          "denominator": 144.5194471916447,
+          "finite": true,
+          "numerator": 0.029787318285490392,
+          "ratio": 0.0002061128717575978,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 164.285231472277,
+          "finite": true,
+          "numerator": 0.04193002123953671,
+          "ratio": 0.0002552269663181037,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 158.74788002564594,
+          "finite": true,
+          "numerator": 0.02165751038286992,
+          "ratio": 0.00013642708412465803,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 128.1978175881992,
+          "finite": true,
+          "numerator": 0.02061968845402622,
+          "ratio": 0.00016084274164683045,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 202.0698731616695,
+          "finite": true,
+          "numerator": 0.026762815287554833,
+          "ratio": 0.00013244337153684843,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 188.01053406927676,
+          "finite": true,
+          "numerator": 0.018853114052295786,
+          "ratio": 0.00010027690281092934,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 122.55545006983672,
+          "finite": true,
+          "numerator": 0.021099042152281016,
+          "ratio": 0.00017215915032956907,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 165.83137130048416,
+          "finite": true,
+          "numerator": 0.026010208429584576,
+          "ratio": 0.00015684733368365167,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 212.50672739546658,
+          "finite": true,
+          "numerator": 0.04452415810139256,
+          "ratio": 0.0002095188168727236,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 121.08149498836292,
+          "finite": true,
+          "numerator": 0.028102488644334015,
+          "ratio": 0.00023209565299003727,
+          "zero_denominator": false
+        }
+      ],
+      "physical_acceptance": null
+    },
+    "coarse80__fine160": {
+      "aggregate": {
+        "denominator": 518.1830602263345,
+        "finite": true,
+        "numerator": 14.335825328458471,
+        "ratio": 0.027665561514490265,
+        "zero_denominator": false
+      },
+      "exact_common_samples": 1999,
+      "first_time_ms": 0.5,
+      "last_time_ms": 999.5,
+      "per_receiver": [
+        {
+          "denominator": 143.17986284181464,
+          "finite": true,
+          "numerator": 3.129745062157797,
+          "ratio": 0.02185883545380641,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 164.72495555536733,
+          "finite": true,
+          "numerator": 3.5743352051633757,
+          "ratio": 0.021698808132092472,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 160.89976502789094,
+          "finite": true,
+          "numerator": 3.6698697464313783,
+          "ratio": 0.022808422037131192,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 128.71666361172748,
+          "finite": true,
+          "numerator": 6.131483058595231,
+          "ratio": 0.04763550333382465,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 201.60071031513647,
+          "finite": true,
+          "numerator": 5.604447237582446,
+          "ratio": 0.027799739538723518,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 187.36296003815224,
+          "finite": true,
+          "numerator": 3.4197266361413035,
+          "ratio": 0.01825188199121616,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 122.53227348638295,
+          "finite": true,
+          "numerator": 3.8952148241135105,
+          "ratio": 0.03178929691977344,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 168.32582604107427,
+          "finite": true,
+          "numerator": 5.689332443647495,
+          "ratio": 0.033799521900217525,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 212.7151692050133,
+          "finite": true,
+          "numerator": 5.361218636948415,
+          "ratio": 0.025203743846689712,
+          "zero_denominator": false
+        },
+        {
+          "denominator": 118.65485982525335,
+          "finite": true,
+          "numerator": 3.534608397433971,
+          "ratio": 0.029788989702061064,
+          "zero_denominator": false
+        }
+      ],
+      "physical_acceptance": null
+    }
+  },
+  "forward_records": {
+    "coarse160": {
+      "allocated_wavefield_bytes": 5291520,
+      "allocated_wavefield_shape": [
+        3,
+        520,
+        424
+      ],
+      "artifact": "coarse160.npz",
+      "artifact_sha256": "7ef31b2736fb26c5a16206f2fe61f8321b14379082e99153b6e6bfe68357c3e2",
+      "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+      "computational_receiver_indices": [
+        [
+          176.0,
+          176.0
+        ],
+        [
+          192.0,
+          176.0
+        ],
+        [
+          208.0,
+          176.0
+        ],
+        [
+          224.0,
+          176.0
+        ],
+        [
+          240.0,
+          176.0
+        ],
+        [
+          272.0,
+          176.0
+        ],
+        [
+          288.0,
+          176.0
+        ],
+        [
+          304.0,
+          176.0
+        ],
+        [
+          320.0,
+          176.0
+        ],
+        [
+          336.0,
+          176.0
+        ]
+      ],
+      "computational_source_indices": [
+        [
+          256.0,
+          176.0
+        ]
+      ],
+      "materialized_wavefield_bytes": 5291520,
+      "materialized_wavefield_shape": [
+        3,
+        520,
+        424
+      ],
+      "model": {
+        "actual_padded_m_sha256": "d8a959785e27c2fc76d5acbebbfa5a23480bc38f5a335af634231bef5f251875",
+        "actual_physical_m_sha256": "131d349391b2b71502e7ab6e20694e05ff39bc649fa6c236282adc541c2ed31d",
+        "critical_dt_ms": 1.537,
+        "dt_ms": 0.5,
+        "grid_origin_m": [
+          -2000.0,
+          -2000.0
+        ],
+        "maximum_velocity_kmps": 4.51,
+        "padded_shape": [
+          512,
+          416
+        ],
+        "padded_velocity_sha256": "d9321d29b5b04f81e8350cdbe8b571fcb2c24acdf551ab3414c981b698dd8e95",
+        "physical_velocity_sha256": "284610e171071b50480ce4fa97430b0168444ba3ad33902f8cbfc7e0223030c8",
+        "shape_x_z": [
+          192,
+          96
+        ]
+      },
+      "physical_point_strength_m2": 156.25,
+      "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+      "receiver_sha256": "f7734d1c99c50008be999fd98c945c21b5cf9b79f72233d3f06b57418f550656",
+      "save_wavefield": false,
+      "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+      "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+      "source_relative_error": {
+        "denominator": 10.939957690472042,
+        "finite": true,
+        "numerator": 0.0,
+        "ratio": 0.0,
+        "zero_denominator": false
+      },
+      "source_scale": 1.0,
+      "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+      "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+      "time_bounds": {
+        "time_M": 1999,
+        "time_m": 1
+      },
+      "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+    },
+    "coarse40": {
+      "allocated_wavefield_bytes": 1236480,
+      "allocated_wavefield_shape": [
+        3,
+        280,
+        184
+      ],
+      "artifact": "coarse40.npz",
+      "artifact_sha256": "28399544e3e166d45c7b5180ace825ad60e4c76de17b5d01e0d38e5dfe1c098a",
+      "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+      "computational_receiver_indices": [
+        [
+          56.0,
+          56.0
+        ],
+        [
+          72.0,
+          56.0
+        ],
+        [
+          88.0,
+          56.0
+        ],
+        [
+          104.0,
+          56.0
+        ],
+        [
+          120.0,
+          56.0
+        ],
+        [
+          152.0,
+          56.0
+        ],
+        [
+          168.0,
+          56.0
+        ],
+        [
+          184.0,
+          56.0
+        ],
+        [
+          200.0,
+          56.0
+        ],
+        [
+          216.0,
+          56.0
+        ]
+      ],
+      "computational_source_indices": [
+        [
+          136.0,
+          56.0
+        ]
+      ],
+      "materialized_wavefield_bytes": 1236480,
+      "materialized_wavefield_shape": [
+        3,
+        280,
+        184
+      ],
+      "model": {
+        "actual_padded_m_sha256": "4e21aa9ea5be6cb2c0b0b95be34e3be051f0f50d1a2d13ebbe9e43a5faccb37f",
+        "actual_physical_m_sha256": "131d349391b2b71502e7ab6e20694e05ff39bc649fa6c236282adc541c2ed31d",
+        "critical_dt_ms": 1.537,
+        "dt_ms": 0.5,
+        "grid_origin_m": [
+          -500.0,
+          -500.0
+        ],
+        "maximum_velocity_kmps": 4.51,
+        "padded_shape": [
+          272,
+          176
+        ],
+        "padded_velocity_sha256": "37eaf0df7d8fd8bb5f2772374bdb6423030d522d31e1d391f6bf037ad3e5ad0a",
+        "physical_velocity_sha256": "284610e171071b50480ce4fa97430b0168444ba3ad33902f8cbfc7e0223030c8",
+        "shape_x_z": [
+          192,
+          96
+        ]
+      },
+      "physical_point_strength_m2": 156.25,
+      "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+      "receiver_sha256": "57c5a46f57b5f0c31b0489f19c508c9126e6fc00e3f67a9390c58b387dc08f9d",
+      "save_wavefield": false,
+      "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+      "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+      "source_relative_error": {
+        "denominator": 10.939957690472042,
+        "finite": true,
+        "numerator": 0.0,
+        "ratio": 0.0,
+        "zero_denominator": false
+      },
+      "source_scale": 1.0,
+      "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+      "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+      "time_bounds": {
+        "time_M": 1999,
+        "time_m": 1
+      },
+      "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+    },
+    "coarse80": {
+      "allocated_wavefield_bytes": 2280960,
+      "allocated_wavefield_shape": [
+        3,
+        360,
+        264
+      ],
+      "artifact": "coarse80.npz",
+      "artifact_sha256": "e2e4ff423814153ab954c76f98ce000bfddaf943cd438f588049ff43865df85d",
+      "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+      "computational_receiver_indices": [
+        [
+          96.0,
+          96.0
+        ],
+        [
+          112.0,
+          96.0
+        ],
+        [
+          128.0,
+          96.0
+        ],
+        [
+          144.0,
+          96.0
+        ],
+        [
+          160.0,
+          96.0
+        ],
+        [
+          192.0,
+          96.0
+        ],
+        [
+          208.0,
+          96.0
+        ],
+        [
+          224.0,
+          96.0
+        ],
+        [
+          240.0,
+          96.0
+        ],
+        [
+          256.0,
+          96.0
+        ]
+      ],
+      "computational_source_indices": [
+        [
+          176.0,
+          96.0
+        ]
+      ],
+      "materialized_wavefield_bytes": 2280960,
+      "materialized_wavefield_shape": [
+        3,
+        360,
+        264
+      ],
+      "model": {
+        "actual_padded_m_sha256": "0724a156a59aed83de6f5a191e71d7dd4b1b014fb90dbf9b761dfd033d7becd6",
+        "actual_physical_m_sha256": "131d349391b2b71502e7ab6e20694e05ff39bc649fa6c236282adc541c2ed31d",
+        "critical_dt_ms": 1.537,
+        "dt_ms": 0.5,
+        "grid_origin_m": [
+          -1000.0,
+          -1000.0
+        ],
+        "maximum_velocity_kmps": 4.51,
+        "padded_shape": [
+          352,
+          256
+        ],
+        "padded_velocity_sha256": "6015d65d3af135d3b43d621125368caee267b619133b58caa0aabc7c100a7ee0",
+        "physical_velocity_sha256": "284610e171071b50480ce4fa97430b0168444ba3ad33902f8cbfc7e0223030c8",
+        "shape_x_z": [
+          192,
+          96
+        ]
+      },
+      "physical_point_strength_m2": 156.25,
+      "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+      "receiver_sha256": "b320b0d79901394ba2a015f3ca975827f3c68cb72536b03eff55b7b2484eaf14",
+      "save_wavefield": false,
+      "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+      "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+      "source_relative_error": {
+        "denominator": 10.939957690472042,
+        "finite": true,
+        "numerator": 0.0,
+        "ratio": 0.0,
+        "zero_denominator": false
+      },
+      "source_scale": 1.0,
+      "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+      "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+      "time_bounds": {
+        "time_M": 1999,
+        "time_m": 1
+      },
+      "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+    },
+    "coarse80_halfdt": {
+      "allocated_wavefield_bytes": 2280960,
+      "allocated_wavefield_shape": [
+        3,
+        360,
+        264
+      ],
+      "artifact": "coarse80_halfdt.npz",
+      "artifact_sha256": "e32ad72207b5614f02faf80f21a1ca6cd617bd9dc6d4cf5ea2eeeaa73207ffc4",
+      "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+      "computational_receiver_indices": [
+        [
+          96.0,
+          96.0
+        ],
+        [
+          112.0,
+          96.0
+        ],
+        [
+          128.0,
+          96.0
+        ],
+        [
+          144.0,
+          96.0
+        ],
+        [
+          160.0,
+          96.0
+        ],
+        [
+          192.0,
+          96.0
+        ],
+        [
+          208.0,
+          96.0
+        ],
+        [
+          224.0,
+          96.0
+        ],
+        [
+          240.0,
+          96.0
+        ],
+        [
+          256.0,
+          96.0
+        ]
+      ],
+      "computational_source_indices": [
+        [
+          176.0,
+          96.0
+        ]
+      ],
+      "materialized_wavefield_bytes": 2280960,
+      "materialized_wavefield_shape": [
+        3,
+        360,
+        264
+      ],
+      "model": {
+        "actual_padded_m_sha256": "0724a156a59aed83de6f5a191e71d7dd4b1b014fb90dbf9b761dfd033d7becd6",
+        "actual_physical_m_sha256": "131d349391b2b71502e7ab6e20694e05ff39bc649fa6c236282adc541c2ed31d",
+        "critical_dt_ms": 1.537,
+        "dt_ms": 0.25,
+        "grid_origin_m": [
+          -1000.0,
+          -1000.0
+        ],
+        "maximum_velocity_kmps": 4.51,
+        "padded_shape": [
+          352,
+          256
+        ],
+        "padded_velocity_sha256": "6015d65d3af135d3b43d621125368caee267b619133b58caa0aabc7c100a7ee0",
+        "physical_velocity_sha256": "284610e171071b50480ce4fa97430b0168444ba3ad33902f8cbfc7e0223030c8",
+        "shape_x_z": [
+          192,
+          96
+        ]
+      },
+      "physical_point_strength_m2": 156.25,
+      "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+      "receiver_sha256": "37b380dbb53cb8814b10bed6ff8192f06fe0692594875ff183444119b0b5e714",
+      "save_wavefield": false,
+      "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+      "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+      "source_relative_error": {
+        "denominator": 15.471436522807569,
+        "finite": true,
+        "numerator": 0.0,
+        "ratio": 0.0,
+        "zero_denominator": false
+      },
+      "source_scale": 1.0,
+      "source_sha256": "4bf01292477c809a0ca78ec825fae424942e470ab5de63eae9710e75f12aa293",
+      "source_time_after_sha256": "62e28efd6c6335f068cfcc8c76e86fd8d7c349391fd8605c2ebb609db7a02052",
+      "time_bounds": {
+        "time_M": 3999,
+        "time_m": 1
+      },
+      "time_sha256": "62e28efd6c6335f068cfcc8c76e86fd8d7c349391fd8605c2ebb609db7a02052"
+    },
+    "fine160": {
+      "allocated_wavefield_bytes": 8856216,
+      "allocated_wavefield_shape": [
+        3,
+        711,
+        519
+      ],
+      "artifact": "fine160.npz",
+      "artifact_sha256": "24f6505d23e7824842382d031a67220880acc3888a405ad3d413e2f621bb5fe3",
+      "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+      "computational_receiver_indices": [
+        [
+          192.0,
+          192.0
+        ],
+        [
+          224.0,
+          192.0
+        ],
+        [
+          256.0,
+          192.0
+        ],
+        [
+          288.0,
+          192.0
+        ],
+        [
+          320.0,
+          192.0
+        ],
+        [
+          384.0,
+          192.0
+        ],
+        [
+          416.0,
+          192.0
+        ],
+        [
+          448.0,
+          192.0
+        ],
+        [
+          480.0,
+          192.0
+        ],
+        [
+          512.0,
+          192.0
+        ]
+      ],
+      "computational_source_indices": [
+        [
+          352.0,
+          192.0
+        ]
+      ],
+      "materialized_wavefield_bytes": 8856216,
+      "materialized_wavefield_shape": [
+        3,
+        711,
+        519
+      ],
+      "model": {
+        "actual_padded_m_sha256": "98bb3e945a7690e7468a7e80f6b13c4d4f55721ab47f0d387e9c75fa5767a3ac",
+        "actual_physical_m_sha256": "52c33ab349b6d83d6e3b3b5c54a048ef5d5f8c8ab91d5a6253d6e7049b5855cb",
+        "critical_dt_ms": 0.7686,
+        "dt_ms": 0.5,
+        "grid_origin_m": [
+          -1000.0,
+          -1000.0
+        ],
+        "maximum_velocity_kmps": 4.51,
+        "padded_shape": [
+          703,
+          511
+        ],
+        "padded_velocity_sha256": "f435d93d4162885be688b12b86054d4c14a7e37b74dd9953dc025e1fe36b5ffa",
+        "physical_velocity_sha256": "a70722d56882b5321f8b3b5e6d4c64da4c520fc5c5dbb94341be9d068e22605e",
+        "shape_x_z": [
+          383,
+          191
+        ]
+      },
+      "physical_point_strength_m2": 156.25,
+      "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+      "receiver_sha256": "e68c5707663561b04d6b70dae9907dd03192be709bd674c549d959f600d0b467",
+      "save_wavefield": false,
+      "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+      "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+      "source_relative_error": {
+        "denominator": 43.75983076188817,
+        "finite": true,
+        "numerator": 0.0,
+        "ratio": 0.0,
+        "zero_denominator": false
+      },
+      "source_scale": 4.0,
+      "source_sha256": "e791564f3a8324cc8ca269808204bca074a82b681d3feeb23277589e7db8502f",
+      "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+      "time_bounds": {
+        "time_M": 1999,
+        "time_m": 1
+      },
+      "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+    }
+  },
+  "geometry": {
+    "global_crop_origin_x_z_m": [
+      12287.5,
+      2387.5
+    ],
+    "global_receivers_x_z_m": [
+      [
+        12487.5,
+        2587.5
+      ],
+      [
+        12687.5,
+        2587.5
+      ],
+      [
+        12887.5,
+        2587.5
+      ],
+      [
+        13087.5,
+        2587.5
+      ],
+      [
+        13287.5,
+        2587.5
+      ],
+      [
+        13687.5,
+        2587.5
+      ],
+      [
+        13887.5,
+        2587.5
+      ],
+      [
+        14087.5,
+        2587.5
+      ],
+      [
+        14287.5,
+        2587.5
+      ],
+      [
+        14487.5,
+        2587.5
+      ]
+    ],
+    "global_source_x_z_m": [
+      [
+        13487.5,
+        2587.5
+      ]
+    ],
+    "local_receivers_x_z_m": [
+      [
+        200.0,
+        200.0
+      ],
+      [
+        400.0,
+        200.0
+      ],
+      [
+        600.0,
+        200.0
+      ],
+      [
+        800.0,
+        200.0
+      ],
+      [
+        1000.0,
+        200.0
+      ],
+      [
+        1400.0,
+        200.0
+      ],
+      [
+        1600.0,
+        200.0
+      ],
+      [
+        1800.0,
+        200.0
+      ],
+      [
+        2000.0,
+        200.0
+      ],
+      [
+        2200.0,
+        200.0
+      ]
+    ],
+    "local_source_x_z_m": [
+      [
+        1200.0,
+        200.0
+      ]
+    ],
+    "role": "Synthetic local subdomain stress line at200m below artificialcrop top. AbsoluteBP positions recorded by adding globalorigin; no originalsurface claim."
+  },
+  "gradient_numerical_gate": true,
+  "maxrss_native_units": 1020526592,
+  "no_physical_acceptance_claim": true,
+  "one_ancestor": true,
+  "padding_pullback_comparison": {
+    "denominator": 12829.063735310663,
+    "finite": true,
+    "numerator": 0.0,
+    "ratio": 0.0,
+    "zero_denominator": false
+  },
+  "physical_acceptance": null,
+  "probe_forward": {
+    "allocated_wavefield_bytes": 824732160,
+    "allocated_wavefield_shape": [
+      2001,
+      280,
+      184
+    ],
+    "artifact": "probe_saved_record.npz",
+    "artifact_sha256": "fe163315b10d0f5872bf9812ca33b180f2bcd95ea2a910a8e6a1cab594114319",
+    "call": "solver.forward(src=held_source,rec=held_receiver,u=explicit_u,save=fixed,dt=fixed,vp=model.vp)",
+    "computational_receiver_indices": [
+      [
+        56.0,
+        56.0
+      ],
+      [
+        72.0,
+        56.0
+      ],
+      [
+        88.0,
+        56.0
+      ],
+      [
+        104.0,
+        56.0
+      ],
+      [
+        120.0,
+        56.0
+      ],
+      [
+        152.0,
+        56.0
+      ],
+      [
+        168.0,
+        56.0
+      ],
+      [
+        184.0,
+        56.0
+      ],
+      [
+        200.0,
+        56.0
+      ],
+      [
+        216.0,
+        56.0
+      ]
+    ],
+    "computational_source_indices": [
+      [
+        136.0,
+        56.0
+      ]
+    ],
+    "materialized_wavefield_bytes": 824732160,
+    "materialized_wavefield_shape": [
+      2001,
+      280,
+      184
+    ],
+    "model": {
+      "actual_padded_m_sha256": "05562d6d048266ca572edbff3b8f8be2144bb908c3b6ce76fa9587bfd2026dee",
+      "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+      "critical_dt_ms": 1.553,
+      "dt_ms": 0.5,
+      "grid_origin_m": [
+        -500.0,
+        -500.0
+      ],
+      "maximum_velocity_kmps": 4.4649,
+      "padded_shape": [
+        272,
+        176
+      ],
+      "padded_velocity_sha256": "c207e30fa69f7c351d5fe6f3c8325f51943aed45bb14af7d4e53cd8975774ffc",
+      "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+      "shape_x_z": [
+        192,
+        96
+      ]
+    },
+    "physical_point_strength_m2": 156.25,
+    "receiver_coordinates_sha256": "bd95fcb14f7bd84bce09015a17038c31cfdf90c8599ef5f3ab98ab78af23cc00",
+    "receiver_sha256": "b7da0137834d4f20a618f8f306fea685c8ff7f2f379ff43f4f2093e1cd83e1ce",
+    "save_wavefield": true,
+    "source_coordinates_after_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+    "source_coordinates_sha256": "a14c53a4ea43d8731412ae169416894fb874f18250c157d6bc0894f7c7dcb719",
+    "source_relative_error": {
+      "denominator": 10.939957690472042,
+      "finite": true,
+      "numerator": 0.0,
+      "ratio": 0.0,
+      "zero_denominator": false
+    },
+    "source_scale": 1.0,
+    "source_sha256": "e8114b701ff3e3da7713c49cffa905fe434f85604c95612a967a97932e14f8a6",
+    "source_time_after_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d",
+    "time_bounds": {
+      "time_M": 1999,
+      "time_m": 1
+    },
+    "time_sha256": "6584b4b36b0fb69aa582458e4a8df349987e636a9fbdb5da813129a709c51a5d"
+  },
+  "source_after": {
+    "driver_sha256": "73b617773c76a35e847add60d4b9f2200517d49d68a0f9af63b1098bc9d0137d",
+    "helper_sha256": "ad3b808c53d9cd6b7d38a9a03f692615d8ff664db9515d31faf47c3482884d02",
+    "input_sha256": "76c3c7db6a9546d59a79991a9a5c72b6129227ad100dac53fba61603287165e3",
+    "installed": {
+      "devito_backend.py": "67b91aa2f7ed8c653c1f92b99e4c6e48591b8e47d31588d9e2b19445d6b6060a",
+      "model.py": "22faa9eafcb2ef7012ce5bbcd977418b5a8515c3f4f9d1c42fcb105f7854ebd4",
+      "operators.py": "1ab37a6f2e95b7ab7fdec58d141290880127da9705dfe8deb6045fc0590d6336",
+      "source.py": "f8c4bba77e982490a25e5924e654f482afd21f8f2ebae3274e87eb1b45c147ac",
+      "utils.py": "27532feafcaf32f760ffff0b7978cdfa4ee1f7920a9d3367d4d05016657eff19",
+      "wavesolver.py": "9e8cca80ac1fd1bb66abe3133a09ad0f2d23b2b55aba0e0c1003362c458b929e"
+    },
+    "production": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "protocol_sha256": "63d8338f6a023f17365b8fa0d706f9f3a04e0b1e96006381e49309c3856444f0"
+  },
+  "source_before": {
+    "driver_sha256": "73b617773c76a35e847add60d4b9f2200517d49d68a0f9af63b1098bc9d0137d",
+    "helper_sha256": "ad3b808c53d9cd6b7d38a9a03f692615d8ff664db9515d31faf47c3482884d02",
+    "input_sha256": "76c3c7db6a9546d59a79991a9a5c72b6129227ad100dac53fba61603287165e3",
+    "installed": {
+      "devito_backend.py": "67b91aa2f7ed8c653c1f92b99e4c6e48591b8e47d31588d9e2b19445d6b6060a",
+      "model.py": "22faa9eafcb2ef7012ce5bbcd977418b5a8515c3f4f9d1c42fcb105f7854ebd4",
+      "operators.py": "1ab37a6f2e95b7ab7fdec58d141290880127da9705dfe8deb6045fc0590d6336",
+      "source.py": "f8c4bba77e982490a25e5924e654f482afd21f8f2ebae3274e87eb1b45c147ac",
+      "utils.py": "27532feafcaf32f760ffff0b7978cdfa4ee1f7920a9d3367d4d05016657eff19",
+      "wavesolver.py": "9e8cca80ac1fd1bb66abe3133a09ad0f2d23b2b55aba0e0c1003362c458b929e"
+    },
+    "production": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "protocol_sha256": "63d8338f6a023f17365b8fa0d706f9f3a04e0b1e96006381e49309c3856444f0"
+  },
+  "status": "complete_technical_diagnostics"
+}

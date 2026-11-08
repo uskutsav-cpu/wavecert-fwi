@@ -1,0 +1,76 @@
+{
+  "status": "metadata_only_no_operator_apply_no_wavefield_data_allocation",
+  "records": [
+    {
+      "label": "coarse40_gradient_forward",
+      "physical_shape_x_z": [
+        192,
+        96
+      ],
+      "nbl": 40,
+      "spacing_m": 12.5,
+      "logical_shape": [
+        2001,
+        272,
+        176
+      ],
+      "allocated_shape": [
+        2001,
+        280,
+        184
+      ],
+      "allocated_nbytes_if_materialized": 824732160,
+      "data_remained_unallocated": true,
+      "saved_samples": 2001,
+      "dtype": "float64"
+    },
+    {
+      "label": "coarse160_forward_only",
+      "physical_shape_x_z": [
+        192,
+        96
+      ],
+      "nbl": 160,
+      "spacing_m": 12.5,
+      "logical_shape": [
+        3,
+        512,
+        416
+      ],
+      "allocated_shape": [
+        3,
+        520,
+        424
+      ],
+      "allocated_nbytes_if_materialized": 5291520,
+      "data_remained_unallocated": true,
+      "saved_samples": null,
+      "dtype": "float64"
+    },
+    {
+      "label": "fine160_forward_only",
+      "physical_shape_x_z": [
+        383,
+        191
+      ],
+      "nbl": 160,
+      "spacing_m": 6.25,
+      "logical_shape": [
+        3,
+        703,
+        511
+      ],
+      "allocated_shape": [
+        3,
+        711,
+        519
+      ],
+      "allocated_nbytes_if_materialized": 8856216,
+      "data_remained_unallocated": true,
+      "saved_samples": null,
+      "dtype": "float64"
+    }
+  ],
+  "no_BP_arrays_or_wavefields_read": true,
+  "no_Model_constructor": true
+}

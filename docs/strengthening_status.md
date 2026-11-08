@@ -14,6 +14,24 @@ New same-release slices are development/transfer, not fresh ancestors. The
 inversion success, broader realistic physics, novelty and student ownership are
 not declared achieved by the completed software pass.
 
+## Latest diagnostics: 8 November 2026
+
+The [fixed frequency diagnostic](initial_linearization_diagnostic.md) completed
+all eight reused cases, 64 frequency rows and 1,152 small RHS solves. Lower-band
+relative remainders were smaller in seven cases; case 2 remained the exception.
+A separate receiver-only audit passed 1,600 checks. No optimization or recovery
+remedy was tested. The [standard anchor-reuse check](stability_anchor_feasibility.md)
+returned zero sufficient bounds at all 192 existing endpoint/frequency instances;
+this does not imply actual singularity or establish a new method.
+
+The [heterogeneous BP verification](bp_heterogeneous_verification.md) completed
+all 57 native calls and passed a 2,618-check scalar audit. A separate NumPy
+implementation reproduced all three probe traces and six directional derivatives,
+with maximum relative differences about 4.88e-14 and 6.48e-14. A further stored-
+record review passed 132 checks. Padding differences remain substantial, so
+physical acceptance is null. Three crops remain one BP ancestor. These results
+strengthen numerical verification; all four scientific requirements remain open.
+
 ## Latest controlled evidence: 2026-11-07
 
 The project now has a much stronger classical comparator and a useful small-grid

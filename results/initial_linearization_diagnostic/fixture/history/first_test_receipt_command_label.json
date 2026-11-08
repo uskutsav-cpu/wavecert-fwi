@@ -1,0 +1,80 @@
+{
+  "BP_array_reads": 0,
+  "Devito_calls": 0,
+  "created_utc": "2026-11-08T08:51:01.814636+00:00",
+  "files_sha256": {
+    "SCOPE.md": "5c3761719343021c649d307a09919902cc3493db48f97e72a2405f48b75b0575",
+    "manufactured_01.log": "aba27e9eda976c42b4875c0ea8c409422adc3234f95cc1fa86bae7b38263190a",
+    "manufactured_final.log": "c6243b439672f84af501cac079c1ed3854e68e0ac3f61a252d9eccefe670122d",
+    "protocol.json": "736d6136c97c84de9dccb240d492c788684e59887675e303fe69a1b2e0a92cf3",
+    "ruff_01.log": "416a5ebd0368b240613840f7173d9cf1fb9232509fbf3fdd85367e63eb7cc48c",
+    "ruff_final.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "run_probe.py": "44e07c0a846847e396a8db9d213c3346cfa654724ae0f55862fb668d6dde62d5",
+    "test_probe.py": "7d8d42bca016f219db7408f07ee38d30fd530a9cfa860f5fafed2fff33ab24b1"
+  },
+  "history": "history/first_manufactured retains first6PASS executed source/protocol/test and first Ruff E731/B023 log; only declaration/binding style corrections followed, no numerical setting/tolerance changes.",
+  "new_frequency_project_solves": 0,
+  "old_witness_NPZ_files_opened": 0,
+  "optimizer_calls": 0,
+  "planned_project_scope": {
+    "LU_factorizations": 128,
+    "RHS_solves": 1152,
+    "case_frequency_rows": 64,
+    "cases": 8,
+    "frequencies": 8
+  },
+  "production_source": {
+    "files": 161,
+    "sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da"
+  },
+  "project_execution": "HELD: independent source review/freeze and separate root GO required. No actual project result or scientific conclusion exists.",
+  "role": "AI engineering initial-linearization staging verification, no project execution",
+  "runtime": {
+    "numpy": "2.4.3",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]",
+    "scipy": "1.18.1"
+  },
+  "validation": {
+    "commands": [
+      "env PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest -q -s -W error -p no:cacheprovider test_probe.py",
+      "/opt/miniconda3/bin/python -m ruff check --config ../wavecert-fwi/pyproject.toml run_probe.py test_probe.py"
+    ],
+    "final_manufactured_tests": 6,
+    "finite_difference_errors_by_frequency": {
+      ".5": [
+        6.150479977968049e-09,
+        5.426267111858176e-11,
+        3.3341131045846417e-10
+      ],
+      "2": [
+        4.481901202718379e-07,
+        4.482325422984853e-09,
+        6.62871427896327e-11
+      ]
+    },
+    "first_manufactured_tests": 6,
+    "fixed_central_FD_epsilons": [
+      0.01,
+      0.001,
+      0.0001
+    ],
+    "manufactured_frequencies_hz": [
+      0.5,
+      2.0
+    ],
+    "manufactured_matrix_shapes": [
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "python_3_10_AST_grammar": "PASS",
+    "ruff": "PASS",
+    "warnings_as_errors": true
+  }
+}

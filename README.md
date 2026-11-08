@@ -82,6 +82,18 @@ post-audit. Physical-velocity coordinates reduce error relative to native m on
 five cases, but both methods remain worse than initialization on those same five.
 Changing coordinates alone does not resolve this fixture's recovery problem.
 
+The [fixed initial-linearization diagnostic](docs/initial_linearization_diagnostic.md)
+now evaluates all eight cases at eight frequencies. Lower frequencies reduce
+the relative remainder in seven cases, with case 2 retained as the exception.
+This is a diagnostic rather than an inversion remedy. A separate
+[anchor-reuse feasibility check](docs/stability_anchor_feasibility.md) returns
+zero sufficient bounds at all 192 old endpoint/frequency instances. Neither
+finding establishes a new method or completes the scientific phase. The
+[BP heterogeneous numerical verification](docs/bp_heterogeneous_verification.md)
+now completes all 57 calls, with separate NumPy agreement on three probe traces
+and six directional derivatives. Substantial padding sensitivity remains;
+physical acceptance and broader independent geological validation remain open.
+
 ## Latest controlled comparison
 
 A train-only classical POD model substantially outperforms the tested FNOs on

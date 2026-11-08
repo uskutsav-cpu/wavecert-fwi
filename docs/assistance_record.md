@@ -166,3 +166,36 @@ comparison figures and added a portable regression for the import boundary.
 The adverse results, original review and corrective addendum remain. All are AI
 development/analysis contributions; the student has not supplied their own
 scientific interpretation or final design through this work.
+
+## Further numerical diagnostics and BP verification
+
+Codex authored the standard anchor perturbation calculation, examined all 192
+old endpoint/frequency instances, checked primary stability-estimation literature
+and independently recomputed the negative margins in Decimal arithmetic. It
+authored and executed the fixed initial-linearization diagnostic at eight
+frequencies, six manufactured controls, independent receiver-only audit and
+all-eight figure. These are post-outcome AI development analyses, not a new
+method or student scientific interpretation. The case 2 exception remains.
+
+Codex designed, reviewed and executed the heterogeneous BP numerical fixture:
+54 forwards and three adjoints, all crops, padding/refinement/half-step controls,
+two fixed directions and three finite-difference steps each. It also authored
+the separate scalar auditor and NumPy variable-model forward/tangent port,
+including the quotient/source derivative, constant-edge pullback checks and
+manufactured controls. The port completed its three own calculations before
+opening native numeric witnesses. A further AI stored-record review recomputed
+the trace and directional comparisons without solving the PDE again.
+
+Disk guards initially held the native run, and actual filesystem writes briefly
+failed. Codex reclaimed only verified duplicate task copies and untracked
+regenerable task caches, and compacted Git objects with all refs/objects retained.
+The larger observed free-space recovery had no verified cause. Fixed disk/RAM
+guards passed before one native execution; none was lowered. Initial warning,
+style, review and figure-layout failures remain in the record.
+
+Codex proposed a future source/API continuation-baseline comparison and a matched
+optimizer-restart control. It has not implemented or executed that new comparison.
+Known-fixture regression support does not add geological samples or establish
+human reproduction, physical accuracy, useful recovery, novelty or student
+ownership. The student's own question, decisions, interpretation, contribution
+account and competition submission remain theirs and remain pending here.

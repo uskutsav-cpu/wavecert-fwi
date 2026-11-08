@@ -1,0 +1,43 @@
+{
+  "created_utc": "2026-11-08T08:44:19.724243+00:00",
+  "role": "Primary-literature and implementation-scope advisory authored after the explicitly exploratory old-endpoint diagnostic; not final student design or a priority finding",
+  "source_observation": {
+    "path": "src/wavecert/physics/coarse_stability.py",
+    "sha256": "53e6ab1754966f63b97c62da6c3996b7babbd59648808df6f9412295e46c658a",
+    "description": "Current model cache reuses identical model bytes. New-model evaluation assembles moments and evaluates reduced singular/eigenvalue quantities. This is a concrete cost target, not an automatically novel research question."
+  },
+  "standard_perturbation_proof": "For any unit x, ||A(m)x|| >= ||A(m0)x||-||(A(m)-A(m0))x|| >= beta0-omega\u00b2||m-m0||infinity. Infimum over x and nonnegativity give the registered candidate. Damping must be model-independent and the initial beta0 must be a genuine lower bound. This elementary exact-arithmetic result is not a new theorem; ordinary-FP stored anchors remain unverified enclosures.",
+  "old_endpoint_diagnostic": {
+    "report_sha256": "04e634ea7aa58ea2c7adbb585774a904ea83679fa05b9dd6d9e274a5287134d5",
+    "actual_execution": "c0b4d6 terminal0",
+    "endpoints": 48,
+    "frequency_endpoint_instances": 192,
+    "positive_candidates": 0,
+    "zero_candidates": 192,
+    "unavailable_anchor_instances": 0,
+    "new_PDE_solves": 0,
+    "scope": "All final states from the already inspected coordinate development cohort, not new independent samples. Zero sufficient lower bound does not imply singularity. No intermediate reuse duration, controller cost, recovery or performance comparison is inferred."
+  },
+  "primary_references": [
+    {
+      "title": "Huynh et al. (2010), A natural-norm Successive Constraint Method for inf-sup lower bounds",
+      "url": "https://doi.org/10.1016/j.cma.2010.02.011",
+      "checked_source": "Publisher abstract/introduction search rendering; direct full-page fetch403, author PDF redirect inaccessible. No full-text formula claim from inaccessible source.",
+      "supported_scope": "Parameter-dependent stability bounds with offline/online decomposition and local parameter-domain construction already predate this project, including Helmholtz examples. Generic rapid stability estimation or anchor reuse cannot be presented as a new general idea."
+    },
+    {
+      "title": "Chen (2015 arXiv v1), A Certified Natural-Norm Successive Constraint Method for Parametric Inf-Sup Lower Bounds",
+      "url": "https://arxiv.org/pdf/1503.04760",
+      "checked_sections": "Abstract and introduction (PDF pp.1-3); no claim of full algorithm reproduction",
+      "supported_scope": "The paper adds upper-bound information to control the lower-bound quality in the natural-norm SCM family. Reusing a safe but highly pessimistic lower bound is not equivalent to obtaining a useful tight certificate. Its certification terminology is not evidence for this repository's floating-point allowance."
+    },
+    {
+      "title": "Hain, Ohlberger, Radic and Urban (2018 arXiv v1), A Hierarchical A-Posteriori Error Estimator for the Reduced Basis Method",
+      "url": "https://arxiv.org/pdf/1802.03298",
+      "checked_sections": "Section3.1 assumption3.2 and proposition3.1/estimate3.3; abstract/introduction",
+      "supported_scope": "Differences between two reduced approximations can yield error estimates under a saturation condition. The upper estimate depends on a factor below one over the relevant parameter set. Replacing the current bound by a two-level discrepancy without establishing that condition would add an assumption rather than prove guaranteed descent."
+    }
+  ],
+  "research_implication": "Before implementing a cached stability controller, measure refresh/coverage and total cost against the existing paid cached exact baseline. Sharper local information or refresh may be needed; the endpoint result alone does not choose a strategy. The contribution must be distinguished from SCM, hierarchical estimation and existing certified descent. Useful reconstruction and an independently verified distinct contribution remain unestablished.",
+  "limits": "Targeted primary-source check, not an exhaustive priority search, method benchmark or new scientific confirmation. Does not affect the separately frozen BP physics plan. Student scientific question, interpretation, comparison decisions and contribution account remain pending."
+}

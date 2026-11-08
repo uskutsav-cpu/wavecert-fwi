@@ -1,0 +1,25 @@
+E731 Do not assign a `lambda` expression, use a `def`
+   --> run_probe.py:204:5
+    |
+202 |         planned_rhs_solves=1152, planned_frequencies=64, planned_cases=8, optimizer_calls=0,
+203 |         original_complete_sha256=p["raw_initial_complete_receipt_sha256"])
+204 |     persist = lambda: atomic(output/"status.json", status)
+    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+205 |     persist()
+206 |     try:
+    |
+help: Rewrite `persist` as a `def`
+
+B023 Function definition does not bind loop variable `retained`
+   --> run_probe.py:243:25
+    |
+241 |                     retained = {}
+242 |                     def retain(name, receiver):
+243 |                         retained[name+"_receiver"] = receiver
+    |                         ^^^^^^^^
+244 |                     persist()
+245 |                     try:
+    |
+
+Found 2 errors.
+No fixes available (1 hidden fix can be enabled with the `--unsafe-fixes` option).

@@ -1,0 +1,113 @@
+{
+  "created_utc": "2026-11-08T08:08:27.737805+00:00",
+  "files_sha256": {
+    "SCOPE.md": "7283f739d515d89304a36248b9d3840511c4c88cc33331c0b6409552523b86d2",
+    "default_cli_final.log": "bb1e65e5d90cf56dcf3db320b0c33ef8c1e6c2f907bafab13d52778687c1782d",
+    "guard_math.py": "ad3b808c53d9cd6b7d38a9a03f692615d8ff664db9515d31faf47c3482884d02",
+    "inspect_saved_layout.py": "9a7c911ad3ff2066dfb36a00e91fdb5b5c1957897ce1fcde76957a80106a882c",
+    "protocol.json": "63d8338f6a023f17365b8fa0d706f9f3a04e0b1e96006381e49309c3856444f0",
+    "pure_and_manufactured_tests_04.log": "6c54d61a568e90fd80105cf6ac5d4d0f4598dc64affa70af7affcd20552d82b7",
+    "pure_and_manufactured_tests_05.log": "d817eb962506de5a71bac8f93f9f2e6fe6c76c59966f957a4ccb90f6ea1023f9",
+    "ruff_final.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "run_guards.py": "73b617773c76a35e847add60d4b9f2200517d49d68a0f9af63b1098bc9d0137d",
+    "saved_layout_metadata.json": "4c42f48f6b65c96ec60da49712210dc346fd71da693f6c1d2e91cf5c7949829e",
+    "source_grammar_layout_checks_final.json": "585b72418e844e33243149a748766a124fd6bf60d0f0a9e7270817517ae0b33f",
+    "test_guard_math.py": "249873233df151ca35cf0f3d73deeb945de2db9b6d6343d84684c4bf596a5996"
+  },
+  "limits": [
+    "No physical acceptance tolerance or reflection coefficient",
+    "No inversion/certificate transfer or geological independence",
+    "One synthetic ancestor across all three crops",
+    "Student final research question/design/contribution pending",
+    "Actual BP execution requires independent review, freeze and separate root GO"
+  ],
+  "manufactured_result": {
+    "adjoint_bounds": {
+      "time_M": 159,
+      "time_m": 1
+    },
+    "derivative": {
+      "absolute_error": 1.4358130047131823e-06,
+      "adjoint_derivative": 0.36727812816592,
+      "finite_difference": 0.36727669235291527,
+      "informative": true,
+      "normalized_absolute_error": 1.517351679247629e-06,
+      "relative_error": 3.909334356181824e-06,
+      "scope": "near-zero directional derivative is uninformative, never a zero-error pass"
+    },
+    "forward_bounds": {
+      "time_M": 159,
+      "time_m": 1
+    },
+    "gradient_norm": 0.946262507466379,
+    "manufactured_only": true,
+    "nt": 161,
+    "observed_norm": 8.282507766330246,
+    "residual_norm": 0.19964524542939024,
+    "saved_bytes": 15302728,
+    "shape": [
+      21,
+      21
+    ]
+  },
+  "manufactured_scope": "Constant2km/s21x21grid,80ms,dt.5ms,nbl40; actual fixture forward and extracted adjoint helper, four forwards+oneadjoint. Only a deep-copied test layout reserve changes. Project protocol remains unchanged. No BP arrays used.",
+  "preserved_adverse_setup_attempt": {
+    "correction": "Test-local exact-message DeprecationWarning filter only; no numerical settings/algorithm change",
+    "exit_code": 1,
+    "log": "pure_and_manufactured_tests_04.log",
+    "result": "14passed; manufactured test stopped before wave execution on pinned Devito Model/Grid SubDomain DeprecationWarning promoted by -Werror",
+    "session": 66674,
+    "terminal_chunk": "4a0d34"
+  },
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "project_protocol_wave_calls": {
+    "adjoint": 3,
+    "executed": 0,
+    "forward": 54,
+    "total": 57
+  },
+  "role": "AI-authored candidate validation receipt; no BP/project propagation executed",
+  "validation": {
+    "default_cli": {
+      "command": "env PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python work/new-phase-staging/bp_heterogeneous_guard_candidate/run_guards.py",
+      "exit_code": 0,
+      "log": "default_cli_final.log",
+      "metadata_only_no_runtime_BP_or_PDE": true,
+      "terminal_chunk": "435ddf"
+    },
+    "metadata_layout_query": {
+      "Operator_apply_forbidden": true,
+      "artifact": "saved_layout_metadata.json",
+      "exit_code": 0,
+      "script": "inspect_saved_layout.py",
+      "session": 63513,
+      "terminal_chunk": "a9772b",
+      "wavefield_data_remained_unallocated": true
+    },
+    "pytest": {
+      "actual_manufactured_integration_controls": 1,
+      "command": "env PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 OMP_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest -q -W error -p no:cacheprovider work/new-phase-staging/bp_heterogeneous_guard_candidate/test_guard_math.py",
+      "exec_session": 19621,
+      "exit_code": 0,
+      "initial_chunk": "aedbd5",
+      "log": "pure_and_manufactured_tests_05.log",
+      "passed": 15,
+      "pure_source_mock_controls": 14,
+      "terminal_chunk": "f9f75f"
+    },
+    "ruff": {
+      "command": "/opt/miniconda3/bin/python -m ruff check --config work/wavecert-fwi/pyproject.toml work/new-phase-staging/bp_heterogeneous_guard_candidate/run_guards.py work/new-phase-staging/bp_heterogeneous_guard_candidate/guard_math.py work/new-phase-staging/bp_heterogeneous_guard_candidate/test_guard_math.py work/new-phase-staging/bp_heterogeneous_guard_candidate/inspect_saved_layout.py",
+      "exit_code": 0,
+      "log": "ruff_final.log",
+      "output": "All checks passed!",
+      "terminal_chunk": "364e8b"
+    },
+    "source_grammar_layout": {
+      "all_pass": true,
+      "artifact": "source_grammar_layout_checks_final.json",
+      "checks": 12,
+      "exit_code": 0,
+      "terminal_chunk": "1a1f0f"
+    }
+  }
+}

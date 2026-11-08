@@ -1,0 +1,215 @@
+{
+  "CFL": "Pinnedmodelcoef0.554632479665589; finesth6.25/maxv5 givescriticaldt\u2248.69329ms (before3digitrounding). Common.5 andhalf.25 are selected beforeoutcomes; actualmodelcriticaldt/maxv/updatebounds rechecked. Alltarget/probeFDvelocities\u22645. No automatic dt changes.",
+  "call_count": {
+    "adjoint_total": 3,
+    "forward_total": 54,
+    "per_crop": {
+      "adjoint": 1,
+      "base_forward": 5,
+      "central_FD_forward": 12,
+      "probe_saved_forward": 1
+    }
+  },
+  "conversion": "Stored z,x96x192 m/s -> contiguous float64 x,z192x96 km/s by transpose then /1000. No clipping/interpolation forcoarse. Physical extent of retained view2387.5x1187.5m; stride omitted original odd terminal z sample, not full native192z extent.",
+  "execution": "SOURCE-ONLY candidate. All57 wave calls/FD steps/resource guards fixed before wave outcomes; retained BP arrays were previously inspected for shape/extrema/CFL/memory planning only. Explicit hash-gated new output; per-case subprocess isolation and complete planned denominators; all failures retained. No auto-tuning or restart. Independent review/freeze/root GO required.",
+  "fixture_helper_sha256": "ad3b808c53d9cd6b7d38a9a03f692615d8ff664db9515d31faf47c3482884d02",
+  "forward_calls": [
+    {
+      "dt_ms": 0.5,
+      "id": "coarse40",
+      "nbl": 40,
+      "source_scale": 1.0,
+      "spacing_m": 12.5
+    },
+    {
+      "dt_ms": 0.5,
+      "id": "coarse80",
+      "nbl": 80,
+      "source_scale": 1.0,
+      "spacing_m": 12.5
+    },
+    {
+      "dt_ms": 0.5,
+      "id": "coarse160",
+      "nbl": 160,
+      "source_scale": 1.0,
+      "spacing_m": 12.5
+    },
+    {
+      "dt_ms": 0.5,
+      "id": "fine160",
+      "nbl": 160,
+      "source_scale": 4.0,
+      "spacing_m": 6.25
+    },
+    {
+      "dt_ms": 0.25,
+      "id": "coarse80_halfdt",
+      "nbl": 80,
+      "source_scale": 1.0,
+      "spacing_m": 12.5
+    }
+  ],
+  "forward_comparisons": {
+    "boundary": [
+      [
+        "coarse40",
+        "coarse80"
+      ],
+      [
+        "coarse80",
+        "coarse160"
+      ]
+    ],
+    "metrics": "Full common-computed-mask relativeL2 (candidate-reference)/reference, perreceiver and aggregate; retain numerator/denominator/nullzero policy. No physical pass threshold or selected width/window.",
+    "space": [
+      "coarse80",
+      "fine160"
+    ],
+    "space_scope": "The fine383x191 grid samples the same piecewise-bilinear velocity field defined ONLY by the retained192x96 coarse stride crop. Exact2387.5x1187.5m extent, endpoints and coarse nodes are preserved; no extra native-z samples or geology. Same physical1km absorber; native damping index sampling differs. Conditional spatial-sensitivity diagnostic, not new native higher-resolution BP or isolated continuum error.",
+    "time": [
+      "coarse80",
+      "coarse80_halfdt"
+    ],
+    "time_scope": "Compare exact matching .5ms indices against everysecond .25ms sample, intersect actually computed masks. No interpolation, lag or amplitudefit."
+  },
+  "geometry": {
+    "maximum_source_receiver_distance_m": 1000.0,
+    "minimum_source_receiver_distance_m": 200.0,
+    "receiver_coarse_x_nodes": [
+      16,
+      32,
+      48,
+      64,
+      80,
+      112,
+      128,
+      144,
+      160,
+      176
+    ],
+    "receiver_z_node": 16,
+    "role": "Synthetic local subdomain stress line at200m below artificialcrop top. AbsoluteBP positions recorded by adding globalorigin; no originalsurface claim.",
+    "source_coarse_node_x_z": [
+      96,
+      16
+    ],
+    "source_local_x_z_m": [
+      1200.0,
+      200.0
+    ]
+  },
+  "gradient": {
+    "direction_definition": "d=m_probe*mask/||m_probe*mask||2; epsilon=relative_step*||m_probe*mask||2, so every active parameter changes by at most0.1percent and positivity is known. No direction chosen from gradient/outcomes.",
+    "directions": [
+      "interior_m_weighted_positive_mask_excluding4physicaledgecells",
+      "edge_only_m_weighted_positive_mask_on4physicalboundaries"
+    ],
+    "near_zero": "abs(adjointDD)<=1e-8*||g||2||d||2 is uninformative, never an easyrelativepass; retain absolute error and normscale.",
+    "numerical_assessment": "Fixed middle step3e-4 relativeDD error<=1e-3 for each informative direction; report all3steps and no best-of-step pass. This is ordinary numerical implementation check, not physical acceptability.",
+    "observation_reuse": "RawBPcoarse40 forward serves both fixed boundary baseline and gradient observed record. This declared reuse is not a matched-cost study.",
+    "only_configuration": "coarse40 dt.5ms",
+    "probe_velocity": "0.99*rawBPvelocity; observed rawBPcoarse40 trace from fixed forward call, same exactsource/time/geometry",
+    "pullbacks": "Retain paddednativegradient; compare productionE^T fold to independentexplicitnestededgeindexaccumulation and naivecrop. FD evaluates same summed sampled misfit; allplus/minus/restore models/hashes/traces retained.",
+    "relative_steps": [
+      0.001,
+      0.0003,
+      0.0001
+    ]
+  },
+  "input_role": "All3 already retained BP2004 stride crops, ONE composite synthetic ancestor. Artificial local subdomain source/receivers, not original surface acquisition or shots.",
+  "inputs": [
+    {
+      "file": "upper_left_stride2z_velocity_mps.npy",
+      "global_origin_z_x_m": [
+        2387.5,
+        12287.5
+      ],
+      "id": "upper_left",
+      "maximum_mps": 4510.0,
+      "minimum_mps": 1785.5283203125,
+      "sha256": "76c3c7db6a9546d59a79991a9a5c72b6129227ad100dac53fba61603287165e3"
+    },
+    {
+      "file": "middle_center_stride2z_velocity_mps.npy",
+      "global_origin_z_x_m": [
+        5368.75,
+        32512.5
+      ],
+      "id": "middle_center",
+      "maximum_mps": 4790.0,
+      "minimum_mps": 3232.3330078125,
+      "sha256": "5958bba85f6091ed9ff1f59014768ea0dfb1ed2807d2bb4e74f27f254e84a24e"
+    },
+    {
+      "file": "lower_right_stride2z_velocity_mps.npy",
+      "global_origin_z_x_m": [
+        8356.25,
+        52737.5
+      ],
+      "id": "lower_right",
+      "maximum_mps": 4427.328125,
+      "minimum_mps": 4354.0859375,
+      "sha256": "a36597892307ebdfec4e6a80ce97e32b3524c301692a719006d394792bd2a593"
+    }
+  ],
+  "limits": [
+    "All3crops remain1ancestor; lower_right is nearlyhomogeneous and isnotexcluded.",
+    "Largerpad constant-edgeexterior changesdamping/path/spreading; neither pad160 noragreement isphysicaltruth/reflectioncoefficient.",
+    "No inverse recovery, PML/freesurface/elasticity/density validation, certificate transfer or prior/novelty claim.",
+    "Old7Devito+14NumPy+Green andallcoordinate data remainimmutable."
+  ],
+  "memory": {
+    "actual_saved_layout": [
+      2001,
+      280,
+      184
+    ],
+    "coarse160_rolling_allocated_bytes": 5291520,
+    "fine160_rolling_allocated_bytes": 8856216,
+    "minimum_available_RAM_before_saved_allocation_bytes": 1898473984,
+    "minimum_free_disk_bytes": 268435456,
+    "no_full_wavefield_disk": true,
+    "one_case_worker_process_at_a_time": true,
+    "per_artifact_uncompressed_array_byte_cap": 16777216,
+    "per_case_disk_reserve_bytes": 67108864,
+    "release": "Savedu used foroneadjointonly, neverwritten. Childprocess exit guaranteesrelease before nextcrop; fine andlargerpad forwards use3rolling slices only.",
+    "saved_allocated_bytes": 824732160,
+    "saved_byte_cap": 1073741824,
+    "saved_wavefield_only_one_coarse40_per_case": true
+  },
+  "nontriviality": "No source-receivercoincidence; farthestdirect peak geometricupperestimate200+1000/1.7855\u2248760ms lies within1000msrecord. Ricker tails/discretefasttails prohibit strictcleanwindows. Finite trace/residual norms must be nonzero; otherwise retainunusablefailure, no adaptive duration/amplitude/model change.",
+  "physics": {
+    "backend": "pinned Devito4.8.23 acoustic OT2, spaceorder4,float64,constantdensity,fsFalse,bcsdamp,constant-edgevelocityextension",
+    "coarse_shape_x_z": [
+      192,
+      96
+    ],
+    "declared_max_velocity_kmps": 5.0,
+    "dt_ms": 0.5,
+    "f0_per_ms": 0.005,
+    "fine_shape_x_z": [
+      383,
+      191
+    ],
+    "half_dt_ms": 0.25,
+    "ricker_delay_ms": 200.0,
+    "spacing_coarse_m": 12.5,
+    "spacing_fine_m": 6.25,
+    "t0_ms": 0.0,
+    "tn_ms": 1000.0
+  },
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "role": "AI prospective bounded SOFTWARE PHYSICS VERIFICATION; not student final question/design, inversion or field-data study",
+  "sampling": "Record actual operator scalar timebounds and expected computed indices1..nt-2. Full receiver/source arrays, raw0/last sentinels and actualmask retained; comparisons use intersections only. Expectednt2001 or4001. No startup/endpointshift fitting.",
+  "schema_version": 1,
+  "source_normalization": "Explicit retained Source object passed src= to every solver.forward. Source property may recreateobjects. Coarse qscale1,h\u00b2156.25m\u00b2; fine qscale4,h\u00b239.0625m\u00b2 gives same pointstrength156.25m\u00b2. Timehalf uses same physical forcing/amplitude, no dt rescaling. Save full actual source/time/coordinate arrays before/after.",
+  "source_pins": {
+    "devito_backend.py": "67b91aa2f7ed8c653c1f92b99e4c6e48591b8e47d31588d9e2b19445d6b6060a",
+    "model.py": "22faa9eafcb2ef7012ce5bbcd977418b5a8515c3f4f9d1c42fcb105f7854ebd4",
+    "operators.py": "1ab37a6f2e95b7ab7fdec58d141290880127da9705dfe8deb6045fc0590d6336",
+    "source.py": "f8c4bba77e982490a25e5924e654f482afd21f8f2ebae3274e87eb1b45c147ac",
+    "utils.py": "27532feafcaf32f760ffff0b7978cdfa4ee1f7920a9d3367d4d05016657eff19",
+    "wavesolver.py": "9e8cca80ac1fd1bb66abe3133a09ad0f2d23b2b55aba0e0c1003362c458b929e"
+  }
+}

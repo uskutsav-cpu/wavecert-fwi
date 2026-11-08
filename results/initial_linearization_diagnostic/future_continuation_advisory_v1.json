@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-08T09:10:04.324806+00:00",
+  "role": "AI source/API feasibility advisory after inspected diagnostic outcomes; not student final research design, preregistration, novelty claim, implementation or execution authorization",
+  "status": "FEASIBLE_WITH_NEW_STAGED_CONTROLLER_AND_REVIEW; no project optimization or new PDE executed for this advisory",
+  "input_pins": {
+    "exact_merit.py": "0fec1f215b28e36017c1e28409d7f7e909a03cbf5b717de5d23eb8d52eb26810",
+    "paid_descent.py": "b863af87f03c2470fde8d72412b1c89e76e389a528cb7d8b08efe89ceeb3a12c",
+    "probe_protocol.json": "736d6136c97c84de9dccb240d492c788684e59887675e303fe69a1b2e0a92cf3",
+    "probe_complete_receipt.json": "6d7189953db68a59e3be220c81d86115f100d8f57442ef0ee8357c9b3d112563"
+  },
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "decision": "Next legitimate engineering action is a small manufactured controller/cost/receipt integration control, then independent source review of a separate proposed contract. Existing APIs support the constituent solves, not a complete multistage paid-return comparison automatically.",
+  "probe_limit": "Lower-band remainder is smaller in 7/8 initial truth-direction probes, but case2 is worse and pooled low-band remainder remains 1.1433. This is one initial linearization along an offline known truth correction, not evidence of successful continuation, a cycle-skipping cause, or permission to choose favorable cases/frequencies. Retain all8 and the existing fixed4+4 grouping.",
+  "primary_literature": [
+    {
+      "citation": "Brenders and Pratt (2007), Full waveform tomography for lithospheric imaging: results from a blind test in a realistic crustal model",
+      "url": "https://academic.oup.com/gji/article/168/1/133/578382",
+      "section": "Waveform tomography strategy; Table4",
+      "verified_support": "Explicit low-to-high multiscale inversion is established FWI practice; their workflow also uses gradient filtering, weighting and adaptive grids. Those additional interventions and successful recovery do not transfer to this fixture.",
+      "access": "Publisher-indexed primary fulltext excerpt retrieved; no claim of independently reproducing that study."
+    },
+    {
+      "citation": "Brenders and Pratt (2007), Efficient waveform tomography for lithospheric imaging: implications for realistic, two-dimensional acquisition geometries and low-frequency data",
+      "doi": "10.1111/j.1365-246X.2006.03096.x",
+      "url": "https://academic.oup.com/gji/article/168/1/152/578748",
+      "section": "Efficient Waveform Tomography / Frequency selection strategy, equations1–5",
+      "verified_support": "Frequency selection trades cost against geometry-dependent wavenumber coverage. Its idealized frequency-spacing argument assumes a homogeneous background and strong reflections over the offset range; it does not establish an optimal band for WaveCert.",
+      "access": "Publisher-indexed primary fulltext retrieved; direct open redirected to inaccessible CDN. No secondary review used as method evidence."
+    }
+  ],
+  "candidate_arms_for_root_contract_review": [
+    {
+      "name": "joint8_exact_m",
+      "optimization_frequencies_hz": [
+        0.25,
+        0.5,
+        1,
+        2,
+        2.5,
+        3,
+        3.5,
+        4
+      ],
+      "meaning": "Single native exact L-BFGS-B call; same final objective as continuation."
+    },
+    {
+      "name": "low4_then_cumulative8_exact_m",
+      "optimization_stages_hz": [
+        [
+          0.25,
+          0.5,
+          1,
+          2
+        ],
+        [
+          0.25,
+          0.5,
+          1,
+          2,
+          2.5,
+          3,
+          3.5,
+          4
+        ]
+      ],
+      "meaning": "Standard cumulative continuation candidate; transfer accepted model only, reset history and own new survey at transition."
+    },
+    {
+      "name": "original4_exact_m_reference",
+      "optimization_frequencies_hz": [
+        2.5,
+        3,
+        3.5,
+        4
+      ],
+      "meaning": "Rerun reference with identical available8-data preparation. Existing published4-only timing is not a matched comparator. This arm deliberately optimizes fewer observations, so its contrast includes information/objective differences."
+    }
+  ],
+  "invariants": "All arms receive the same independently generated8-frequency observation bytes, fixed source normalization/geometry, old49x49 native-m initial bytes and bounds[1/36,1]. Use existing unit frequency weights; no VP transform, regularization, source fitting, grid change or data-dependent band selection. Saved probe fields, truth corrections and gradients cannot enter policy.",
+  "api_and_accounting": [
+    "ExactMeritOracle freezes ordered survey/data and owner-binds authentic receipts. Never mutate frequencies or transfer receipts/LU/fields across owners. Stage2 constructs a new cold oracle at the accepted stage1 model and pays evaluation/gradient anew; legitimate within-owner accepted/trial reuse remains enabled.",
+    "One actual global start precedes input hashes/loading, refinement, all8 synthetic observation construction and every cold constructor. Stage calls use anchored clocks with absolute deadlines; ordinary independent calls would reset their budgets. Charge transition/model hashes, strict metadata, common final-objective work and caller-observed API return tail; never add prefix seconds twice.",
+    "Measure each returned model on common all8 data before the timed wrapper returns, using a genuinely owned valid full8 receipt where available; original4 needs a paid full8 audit owner. Cache hits still call public validation. Pay the common initial all8 baseline too. Native per-stage objective ratios are not comparable common targets.",
+    "Truth quality is computed afterward and unavailable for switches, targets or endpoint selection. Record stage-local and global counters separately; nested snapshots are subsets, not additive new solves. Final credit requires completed artifacts/integrity and actual full API return<=8s. Late, failed, missing and unattempted rows remain in denominators."
+  ],
+  "bounded_resource_proposal_NOT_frozen_protocol": {
+    "envelope": "At most8cases x3arms x3repetitions=72 trajectories at8s API eligibility; at most576 eligible timed seconds plus honest overshoot and separate offline audits. One serial process, fixed thread environment, no concurrent heavy work, no BP or saved wavefields.",
+    "candidate_allocation": "For root review only: retain an absolute7.5s optimizer ceiling and8s API gate; continuation stage1 absolute deadline3.75s, stage2 absolute deadline7.5s. Preparation consumes those deadlines. This fixed equal split is conventional engineering allocation, not inferred optimum. The0.5s nominal tail reserve is no guarantee; common-objective/return overruns are censored, not retimed.",
+    "iteration_caps": "Candidate global ceiling200: joint/reference max200, continuation max100 per stage (unused first-stage cap not transferred). Preserve all native callbacks, equal callbacks, failures and in-flight uncertainty; accepted-checkpoint counts alone are not iteration counts.",
+    "storage": "Retain initial/final native vectors, small compact checkpoint/cost metadata and all72 schedule/attempt rows. No full solver fields. Keep the existing256MiB initial disk floor and resource checks; source review is not evidence this envelope can launch.",
+    "controls_before_any_project_GO": "Manufactured two-stage real-oracle control, immutable-survey/foreign-receipt rejection, stage-prefix exhaustion, late common-audit/return, failed transition, repeated callback counting and complete failure-prefix retention. Freeze source/settings after those controls and review; do not tune allocation from project outcomes."
+  },
+  "unresolved_differentiators": [
+    "Continuation also restarts L-BFGS history and divides its iteration/time allocation. The minimal3-arm comparison cannot assign an effect solely to frequency order; a matched-restart joint8 control would be needed for that attribution.",
+    "Same available data are not same used data. Joint8 versus continuation has a common final objective; original4 is contextual. No claim of equal information used or causal algorithm superiority against4.",
+    "Will common all8 objective and physical recovery improve together across all8 cases, including case2? Neither the certificate nor low-band local probe guarantees that. Noise, sparse geometry, ancestor correlation and model/prior ambiguity remain outside this candidate."
+  ],
+  "allowed_claim": "Standard-baseline software feasibility and, only after a separately reviewed actual run, narrow paid-return engineering evidence on these reused synthetic cases. No established practical win, new FWI technique, continuum guarantee, certificate-to-recovery guarantee, independent-site count or completed scientific goal."
+}
