@@ -1,0 +1,53 @@
+{
+  "recorded_utc": "2026-11-08T07:05:48.500188+00:00",
+  "decision": "ROOT_GO for first fixed48-run AI-authored provisional engineering execution only",
+  "basis": "User active goal requests continuing all research strengthening; complete source review and pure controls; separate engineering GO preserves original project_execution_authorized=false metadata and student_final_design=false",
+  "bundle": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/coordinate_cost_engineering_benchmark",
+  "output": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/coordinate_cost_run_01",
+  "source_sha256": {
+    "run_coordinate_comparison.py": "fb146673f57f98095ab0239fdc543da9f3b2276362175277617a5b21356c06c8",
+    "protocol.json": "f0306803ed34c03318e9a64d2848a8ce57900a6b4e5998c05d88d2bcbfa523f4",
+    "test_coordinate_comparison.py": "05121dca5ee7cf1b4c694d40a70c2e7311d958385c423402653aad29478bb725",
+    "SCOPE.md": "0f4c05233e6c0c3fc35dd61dacb11b61ea8026a27714765a9fd9db9f18d48c27"
+  },
+  "dependencies": {
+    "independent_saved_models.py": "807f4f2f0e0aeea1d2f61b64ee5f64a99819c38d4f6164529e664f0a235edeae",
+    "original_protocol.json": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c",
+    "velocity_oracle.py": "61dc9b2c80f7adba64154a92e4e63d716c127b81cdfb161c8267e43a08734d5c"
+  },
+  "test_receipt_sha256": "2845f57f3d0d7dd1dfb7e32dc0fd3b36f6af3d2407072123eb73bd85222bdb4e",
+  "source_review_sha256": "39f10f2f95254cba7f40d1187c1592d057e63047e36869644a1dd2b97f368a7d",
+  "production": {
+    "sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "files": 161
+  },
+  "planned_runs": 48,
+  "cap_seconds": 8,
+  "engine_budget_seconds": 7.5,
+  "no_project_array_read_by_this_preflight": true,
+  "input_hashes_to_be_checked_in_actual_timed_runs": {
+    "data/reference/subsurfacegen_parent_split/split_manifest.csv": "30fed6e30e07a1b54d17f3ae9511d06eac6f44c69fcb57b6ee588f2ade65ef14",
+    "data/reference/subsurfacegen_parent_split/validation.npz": "36d11aba94ae9093cac888e9b28a2d01edcef1aa3a54b12f8e10269b963db2fc",
+    "data/reference/subsurfacegen_parent_split/validation_metadata.csv": "d3ce8ab6a3474a6bc17595f26b68940e7c7ad9481d8c80fb89fe04833e6996e6"
+  },
+  "environment": {
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]",
+    "python_executable": "/opt/miniconda3/bin/python",
+    "numpy": "2.4.3",
+    "scipy": "1.18.1",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "hardware": "hw.memsize: 8589934592\nhw.ncpu: 8\nmachdep.cpu.brand_string: Apple M1\n",
+    "single_thread_settings": {
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    },
+    "free_bytes": 571342848
+  },
+  "timing_limits": "Local M1 observed wallclock; no CPU affinity, exclusive machine or OS filesystem-cold-cache claim. No concurrent local project tests/PDE, plots, git compression or source edits during timing. Background OS/app activity is not eliminated. Shared bootstrap explicitly outside per-call windows.",
+  "research_completion": false,
+  "student_final_research_design": false,
+  "retry_policy": "No auto-resume/retry/source or reserve adjustment from outcomes; preserve all48 failures/late/unattempted rows."
+}

@@ -1,0 +1,27 @@
+--- v1/run_coordinate_comparison.py
++++ v2/run_coordinate_comparison.py
+@@ -119,6 +119,14 @@
+     return module
+ 
+ 
++def initialize_independent_runtime(audit):
++    """Match the pinned807 CLI's numerical globals when using its imported API."""
++    for alias, module in [("np", "numpy"), ("scipy", "scipy"), ("sp", "scipy.sparse"),
++                          ("spla", "scipy.sparse.linalg"), ("ndi", "scipy.ndimage")]:
++        setattr(audit, alias, importlib.import_module(module))
++    return audit
++
++
+ def load_runtime(root, protocol, bundle):
+     directory = root / protocol["original_candidate_relative_directory"]
+     for name, expected in protocol["candidate_files_sha256"].items():
+@@ -140,7 +148,8 @@
+     physics = importlib.import_module("wavecert.physics.helmholtz")
+     native = importlib.import_module("wavecert.physics.exact_merit")
+     vp = import_file("_coordinate_cost_frozen_velocity", bundle / "velocity_oracle.py")
+-    audit = import_file("_coordinate_cost_independent_saved_models", bundle / "independent_saved_models.py")
++    audit = initialize_independent_runtime(
++        import_file("_coordinate_cost_independent_saved_models", bundle / "independent_saved_models.py"))
+     return SimpleNamespace(helpers=helpers, engine=engine, physics=physics, native=native, vp=vp, audit=audit,
+                            np=importlib.import_module("numpy"))
+ 

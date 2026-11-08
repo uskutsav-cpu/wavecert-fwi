@@ -153,3 +153,16 @@ AI source reviews. Codex is preparing a separate paired-coordinate total-cost
 engineering protocol; no project-data result or final scientific design exists
 for that candidate. The student's question, interpretation,
 comparison decisions and actual contribution account remain pending.
+
+Codex subsequently designed the fixed paired-coordinate engineering protocol,
+implemented/reviewed the driver and executed it. An imported offline checker's
+CLI-only numerical imports were missed by both implementation and initial AI
+review. Codex stopped the defective first attempt, retained all 48 planned rows
+(14 failed, 1 interrupted, 33 unattempted), and gave it zero primary credit.
+A new version changed only dependency initialization, added a real manufactured
+API integration control and passed 11 controls before a new freeze. Codex then
+executed all 48 fresh runs, authored a separate scalar post-audit, prepared the
+comparison figures and added a portable regression for the import boundary.
+The adverse results, original review and corrective addendum remain. All are AI
+development/analysis contributions; the student has not supplied their own
+scientific interpretation or final design through this work.

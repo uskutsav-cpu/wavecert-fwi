@@ -1,0 +1,36 @@
+{
+  "status": "complete_plot_export_and_visual_QA",
+  "created_utc": "2026-11-08T07:36:51.536579+00:00",
+  "role": "AI engineering publication support, not student paper or scientific-goal completion",
+  "command": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/miniconda3/bin/python work/coordinate_cost_publication_02/plot_coordinate_cost.py",
+  "working_directory": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi",
+  "final_render_exit_code": 0,
+  "root_visual_QA_confirmation": "Root independently inspected final sparse-tick PNG and confirmed no overlap; no subsequent layout/source changes",
+  "self_visual_QA": "view_image final PNG inspected; readable8caseIDs, shared initial baseline and both panels;2772x1980pixels",
+  "new_PDE_solves": 0,
+  "new_benchmark_runs": 0,
+  "numeric_rows": 48,
+  "case_count": 8,
+  "summary_rows": 24,
+  "repetitions_per_case_method": 3,
+  "input_hashes_checked_before_and_after": 52,
+  "numeric_CSVs_unchanged_across_layout_revisions": true,
+  "first_render_png_reconstructed_byte_identically": true,
+  "first_render_provenance_timestamp_not_recovered": true,
+  "final_files_sha256": {
+    "all_48_returned_states.csv": "8341cc3a5f55bbf777de91f738bb9a9e6217f9237ee37718b845ebdbb1197d1b",
+    "all_8_case_summaries.csv": "79e004c786733a7a1ad658f8bf07b9109991c3d3ef773b4ef81454f89ed8694e",
+    "coordinate_cost_returned_diagnostics.caption.txt": "476659ebc01947ea78f69966f19b23adcdff6a0d5a5e46b72e98ba6d509d98ae",
+    "coordinate_cost_returned_diagnostics.png": "177b670d6f27522c708249df3019e4b5ec98fefa495a927acfbdc617f64f8f1e",
+    "coordinate_cost_returned_diagnostics.svg": "928cc74ed68a2afe00f4e0524ae2c77d1cfeb9650969a84183c6125cc30415b3",
+    "layout_history.json": "8f13eb7345bcc78069673ce1e46cbec1786b530cb0d0b1a6fe956a445bf085f0",
+    "plot_coordinate_cost.py": "d48af601aacbf06e9770a1ce8439abbed78d8073d636d875e33a7f3a72a4b97a",
+    "provenance.json": "eaeffc6e57c652d0676f7c19d18cb2ac23f5d8759eeb699470113b8f3dc16b93"
+  },
+  "history_directories": [
+    "layout_intermediate_02",
+    "layout_v1_reconstructed"
+  ],
+  "production_source_sha256_unchanged": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "scope": "Only NEW outer publication02 directory and this separate execution receipt written; no main or frozen study bundle edits."
+}

@@ -76,6 +76,12 @@ homogeneous timedomain reference agrees with an analytical Green solution to
 Both are independently audited, scoped diagnostics, not a recovery win or a
 completion of realistic geological validation.
 
+The [48-run paired coordinate comparison](docs/coordinate_cost_engineering_comparison.md)
+also completes within its full API-return cap, with an independent 4,523-check
+post-audit. Physical-velocity coordinates reduce error relative to native m on
+five cases, but both methods remain worse than initialization on those same five.
+Changing coordinates alone does not resolve this fixture's recovery problem.
+
 ## Latest controlled comparison
 
 A train-only classical POD model substantially outperforms the tested FNOs on

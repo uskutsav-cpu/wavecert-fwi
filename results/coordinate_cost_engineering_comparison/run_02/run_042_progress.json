@@ -1,0 +1,41 @@
+{
+  "case_index": 5,
+  "common_binding": {
+    "actual_common_m_sha256": "86b6bb3369f898936c47f88ac68a934e6947b4571ed66239b75a10190344690b",
+    "initial_velocity_sha256": "c0b062dcf7d5ecb6a9260bbbfe8f4a29d0cabf307795b2e169f8cbe33e6ad29c",
+    "observations_sha256": "eb7c2a21afa0d1fcbb05196a939c60475b70313faf8b72b4ebdc3dfb2bb3a810",
+    "raw_model_sha256": "5114577dbd24c1fa8e061de4bb78b0065f95034337939807ed549ec75beeca1b",
+    "requested_m_sha256": "cb9d143fd5439b85e44254471b5921f88c1a9eb489d7418b777efdc73d5950cd",
+    "truth_sha256": "cc36539dbc39d03ade3d98dce39d249dbf11b470cc0d3b18ffee20dda98f21d5"
+  },
+  "common_start_record": {
+    "actual_native_model_sha256": "86b6bb3369f898936c47f88ac68a934e6947b4571ed66239b75a10190344690b",
+    "convention": "v=1/sqrt(requested_m), actual_m=np.power(v,-2); no ULP search, replacement or cached-receipt borrowing",
+    "native_roundtrip_bitwise_equal": false,
+    "native_roundtrip_max_abs_difference": 1.1102230246251565e-16,
+    "requested_native_model_sha256": "cb9d143fd5439b85e44254471b5921f88c1a9eb489d7418b777efdc73d5950cd",
+    "velocity_model_sha256": "c0b062dcf7d5ecb6a9260bbbfe8f4a29d0cabf307795b2e169f8cbe33e6ad29c"
+  },
+  "finished_utc": "2026-11-08T07:21:10.746011+00:00",
+  "global_started_perf_counter": 19013.806038208,
+  "method": "native_m_lbfgsb",
+  "optimizer_coordinates": "squared_slowness",
+  "order_position": 0,
+  "phase": "finished",
+  "preparation_physics_costs": {
+    "adjoint_rhs": 0,
+    "analytic_bound_evaluations": 0,
+    "cache_hits": 0,
+    "dense_inverse_rhs": 0,
+    "factorizations": 4,
+    "forward_rhs": 24,
+    "stability_rhs": 0,
+    "svd_evaluations": 0,
+    "tangent_rhs": 0
+  },
+  "repetition": 2,
+  "run_index": 42,
+  "scope": "bounded current-run metadata only; no growing cohort or trajectory arrays",
+  "started_utc": "2026-11-08T07:21:02.839966+00:00",
+  "status": "complete"
+}

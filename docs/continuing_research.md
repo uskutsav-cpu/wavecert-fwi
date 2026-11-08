@@ -35,6 +35,16 @@ reference discrepancy and 24.9504% for the small 40-cell-padding case. It suppli
 an analytical forward reference but leaves the broader physical/geological goal
 open. Neither diagnostic executes new PDE solves or inversion trajectories.
 
+The subsequent [48-run coordinate comparison](coordinate_cost_engineering_comparison.md)
+does execute fully paid trajectories. All 48 return within the fixed 8-second
+cap and pass the separate post-audit. Physical-v coordinates reduce error
+relative to native m on five cases, but both remain worse than initialization
+on those same five. Native m meets the two returned objective ratios in 24/24
+runs each, versus 21/24 and 18/24 for physical v. These are returned-final
+diagnostics, not target-stopped time-to-target measurements. The failed first
+attempt and minimal import-interface correction remain separately retained.
+This provides another stronger control and limitation, not completion of goal 1.
+
 The new [seven-case Devito boundary diagnostic](devito_boundary_verification.md)
 has executed and been audited. In its fixed homogeneous fixture, 20/40 damping
 cells still give 56.9%/24.9% full-record relative receiver-trace differences

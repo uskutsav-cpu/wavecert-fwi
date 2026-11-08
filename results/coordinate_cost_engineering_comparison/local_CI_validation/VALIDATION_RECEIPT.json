@@ -1,0 +1,44 @@
+{
+  "utc": "2026-11-08T07:30:36.446206+00:00",
+  "tests": 1,
+  "warnings": "error",
+  "actual_executor_session": 87743,
+  "terminal_exit_code": 0,
+  "scope": "Real imported checker API on manufactured constant data, known0.01m/1-1/sqrt1.01velocityerrors; no project arrays/benchmark trajectories/confirmation",
+  "test_source_sha256": "9d9f7291585b1c4951b0860199e3ffcbcccc9eb932346079be5815e02f1a6b72",
+  "commands": [
+    "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest -q -W error tests/test_coordinate_offline_import_integration.py",
+    "/opt/miniconda3/bin/python -m ruff check src tests scripts"
+  ],
+  "reports": [
+    {
+      "check": "coordinate_offline_import_integration",
+      "python": "3.13.13",
+      "numpy": "2.4.3",
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "synthetic_shape": [
+        24,
+        24
+      ],
+      "refined_shape": [
+        49,
+        49
+      ],
+      "frequencies": 1,
+      "sources": 1,
+      "receivers": 2,
+      "checks": 9,
+      "numeric_comparisons": 6,
+      "initial_error": {
+        "relative_squared_slowness_L2": 6.938893903907252e-16,
+        "relative_physical_velocity_L2": 1.9860273225978183e-16
+      },
+      "final_error": {
+        "relative_squared_slowness_L2": 0.009999999999999344,
+        "relative_physical_velocity_L2": 0.004962809790010594
+      },
+      "maximum_relative_linear_residual": 1.5493066954702167e-14,
+      "scope": "Manufactured API regression; no project arrays, benchmark trajectories or scientific confirmation"
+    }
+  ]
+}

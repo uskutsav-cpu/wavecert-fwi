@@ -122,9 +122,11 @@ synthetic example cannot be borrowed as deployable information for this project.
 A standard [velocity-parameterized exact baseline component](../results/velocity_parameterized_baseline_candidate/README.md)
 has passed 31 manufactured controls and independent AI source review as
 software support, motivated by these already inspected development outcomes.
-It has no project-data performance/recovery result. A future paired comparison
-needs explicit coordinate/initial-state conversion and fully paid costs; the
-existing slowness helper must not mistake velocity vectors for slowness models.
+Its subsequent [paired 48-run comparison](coordinate_cost_engineering_comparison.md)
+retains explicit coordinate/initial-state conversion and fully paid costs.
+Both coordinate arms still worsen physical-velocity error relative to their
+common initialization on the same five cases. The existing slowness helper
+must not mistake velocity vectors for slowness models.
 The student must still determine and defend their own scientific question,
 interpretation, comparison choices and actual contributions. No new national
 rank or 10/10 assessment follows from these diagnostics.
