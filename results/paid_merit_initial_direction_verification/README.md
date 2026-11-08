@@ -75,3 +75,12 @@ the SEAM ancestry correction are inherited from the original
 The [engineering comparison](../../docs/paid_merit_engineering_benchmark.md)
 still shows no useful certificate advantage. Independent human review, student
 ownership and personal scientific interpretation are separate requirements.
+
+All four jobs in [CI run 42451566612](https://github.com/uskutsav-cpu/wavecert-fwi/actions/runs/42451566612)
+passed at source/test commit `9dcce6a`. Actual per-case JSON reports are retained
+in [`ci_reports_9dcce6a.json`](ci_reports_9dcce6a.json): Linux Python 3.10.22,
+3.11.18 and 3.12.16 with NumPy 2.2.6, 2.4.6 and 2.5.4. Each job repeats all eight
+raw witnesses (all literal bounds cover, zero false certifications) and the
+seven known homogeneous traces. The maximum raw independent-gradient
+reconstruction discrepancy across those jobs is `1.1815e-16` relative L2.
+These are repeated known fixtures, not 32 new directions or geological samples.

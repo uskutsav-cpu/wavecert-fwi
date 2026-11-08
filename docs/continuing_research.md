@@ -21,6 +21,9 @@ also pass independent gradient/direction/field arithmetic replay, with all eight
 bounds covering literally and no false certifications. This advances a specific
 numerical-reproduction subrequirement, not all-trajectory replay or the four
 scientific goals as a whole.
+The same eight witnesses pass all four Linux CI jobs on Python 3.10/3.11/3.12;
+their actual numerical reports are archived. These are software reproductions
+of known fixtures, not additional independent geological observations.
 
 The new [seven-case Devito boundary diagnostic](devito_boundary_verification.md)
 has executed and been audited. In its fixed homogeneous fixture, 20/40 damping

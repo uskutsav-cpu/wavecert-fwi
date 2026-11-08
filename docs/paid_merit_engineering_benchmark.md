@@ -128,6 +128,10 @@ with zero observed false certifications. Its copied NumPy raw replay passed
 1,289 checks and a second checker passed 728; neither reruns a PDE. These
 initial-state witnesses must not be represented as replaying all queries or
 independently validating coarse stability constants/formal roundoff.
+All four Linux CI jobs also replay those same eight witnesses successfully on
+Python 3.10/3.11/3.12 and NumPy 2.2.6/2.4.6/2.5.4. The actual
+[per-case reports](../results/paid_merit_initial_direction_verification/ci_reports_9dcce6a.json)
+are archived; repeated fixtures add no independent geological samples.
 
 The original 156 production files remain unchanged. Five additive modules give
 the current 161-file production-source digest
