@@ -1,0 +1,26 @@
+{
+  "role": "pre-post-export-pins source snapshot after 23 manufactured controls; 20-control original source was not separately snapshotted",
+  "sources_sha256": {
+    "test_canonical_inputs_manufactured.py": "d0352d3f1166321a8f257e0711bac8c1433622354ef165b3f67cec5e55c2e14f",
+    "run_replay.py": "d5b52597052e66658675a59c652989f874dc701320fd1df8696090ee353b43be",
+    "canonical_inputs.py": "2a2e430a616d70a421b69fb5a76723844f10231b2ac5490852963917a51ea768",
+    "protocol.json": "173873ed81968927c6a43edc3f37bdd7986aaa457582225e5df35d70948a938c"
+  },
+  "actual_executions": [
+    {
+      "tool_chunk": "819edc",
+      "exit_code": 0,
+      "passed": 20,
+      "warning": 1,
+      "junit": "manufactured_controls_01.xml"
+    },
+    {
+      "tool_chunk": "66d3ef",
+      "exit_code": 0,
+      "passed": 23,
+      "warning": 1,
+      "junit": "manufactured_controls_02.xml"
+    }
+  ],
+  "project_PDE_calls": 0
+}

@@ -52,3 +52,18 @@ source/core/protocol and numerical tolerances are unchanged. Therefore the four
 passing jobs do not identify or repair the original c197 failure. That anomaly
 remains unresolved and both outcomes remain visible. No native57-call study,
 new recovery cohort or physical acceptance test was repeated by CI.
+
+
+## Separately versioned exact-input replay
+
+The original `numpy_replay` and failed CI42515747409 remain historical evidence. The live regression now uses `numpy_replay_v2` with `canonical_inputs_v2_01`: exact native-derived velocity/context/direction inputs, with no native solution outputs decoded until all three own solves finish. The numerical kernel and tolerances are unchanged. The actual local V2 replay and public parent test pass all three traces/six informative derivatives; Linux V2 verification remains pending. See the [V2 report](../../docs/bp_heterogeneous_verification.md#v2-exact-shared-numerical-inputs), source/control receipt, root review and terminal observation. This is shared-input, source-informed AI reproduction, not blind input generation or accepted physical accuracy.
+
+From the repository root:
+
+```bash
+PYTHONPATH=src python -m pytest -q -s -W error tests/test_bp_numpy_tangent_reproduction.py
+```
+
+The native 57-call study is not rerun. Source/history/control failures, exact canonical input provenance and the original public parent test are preserved in the V2 archive.
+
+Inventory scope: `archive_manifest.json` is the preserved236-entry pre-V2 snapshot. Its original README is retained under `history_manifest_97f8905`, with a scope addendum; the other235 listed artifacts remain byte-identical. The current V2 publication inventory is `archive_manifest_v2_publication.json`, which includes current README and all additive assets and excludes itself and generated runtime cache/bytecode files.

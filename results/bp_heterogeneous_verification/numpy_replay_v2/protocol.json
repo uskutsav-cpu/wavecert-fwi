@@ -1,0 +1,144 @@
+{
+  "canonical_input_source_sha256": "2a2e430a616d70a421b69fb5a76723844f10231b2ac5490852963917a51ea768",
+  "copied_primary_python_sha256": {
+    "DEVITO_LICENSE.md": "58856cf65c559659ca66af9166f0bbf4559f26a2c785392ea33f697a8f444d75",
+    "primary_python/devito_backend.py": "67b91aa2f7ed8c653c1f92b99e4c6e48591b8e47d31588d9e2b19445d6b6060a",
+    "primary_python/model.py": "22faa9eafcb2ef7012ce5bbcd977418b5a8515c3f4f9d1c42fcb105f7854ebd4",
+    "primary_python/operators.py": "1ab37a6f2e95b7ab7fdec58d141290880127da9705dfe8deb6045fc0590d6336",
+    "primary_python/source.py": "f8c4bba77e982490a25e5924e654f482afd21f8f2ebae3274e87eb1b45c147ac",
+    "primary_python/utils.py": "27532feafcaf32f760ffff0b7978cdfa4ee1f7920a9d3367d4d05016657eff19",
+    "primary_python/wavesolver.py": "9e8cca80ac1fd1bb66abe3133a09ad0f2d23b2b55aba0e0c1003362c458b929e"
+  },
+  "core_sha256": "b217dd6d2850f8c264f5910933cb1f4687bed8a7b3e780f7712c750d149328ce",
+  "criteria": {
+    "direction_relative_L2": 1e-14,
+    "fold_relative_L2": 1e-13,
+    "gradient_relative_error": 0.001,
+    "near_zero_relative_normscale": 1e-08,
+    "source_relative_L2": 1e-14,
+    "trace_relative_L2": 1e-09
+  },
+  "direction_checks": 6,
+  "directions": [
+    "interior",
+    "edge"
+  ],
+  "execution_held": "No actual BP replay until independent V2 source/control review, exact canonical input manifest freeze, and separate root GO. All numerical criteria and frozen core bytes remain unchanged.",
+  "export_source_plan_sha256": "bca57fc2fd89585b4b10176361f5ad9a0bd376bcb8d05c79b16937868eb39d48",
+  "inputs": [
+    {
+      "file": "upper_left_stride2z_velocity_mps.npy",
+      "global_origin_z_x_m": [
+        2387.5,
+        12287.5
+      ],
+      "id": "upper_left",
+      "maximum_mps": 4510.0,
+      "minimum_mps": 1785.5283203125,
+      "sha256": "76c3c7db6a9546d59a79991a9a5c72b6129227ad100dac53fba61603287165e3"
+    },
+    {
+      "file": "middle_center_stride2z_velocity_mps.npy",
+      "global_origin_z_x_m": [
+        5368.75,
+        32512.5
+      ],
+      "id": "middle_center",
+      "maximum_mps": 4790.0,
+      "minimum_mps": 3232.3330078125,
+      "sha256": "5958bba85f6091ed9ff1f59014768ea0dfb1ed2807d2bb4e74f27f254e84a24e"
+    },
+    {
+      "file": "lower_right_stride2z_velocity_mps.npy",
+      "global_origin_z_x_m": [
+        8356.25,
+        52737.5
+      ],
+      "id": "lower_right",
+      "maximum_mps": 4427.328125,
+      "minimum_mps": 4354.0859375,
+      "sha256": "a36597892307ebdfec4e6a80ce97e32b3524c301692a719006d394792bd2a593"
+    }
+  ],
+  "memory": "Three primal and two-by-three tangent rolling slices only; no full time-by-grid arrays saved. Receiver/tangent traces and physical 2D inputs are small artifacts. Source order mirrors C vp*vp; derivative is ordinary real arithmetic, not verified floating-point AD.",
+  "metadata_query_source_sha256": "e5c22147bd37a5d28c29d227dc8fc6ecdaa1bab6a0e947144c5814b7fa3745c2",
+  "metadata_sha256": "072bb4156bd455ca9b8afe08b90993663b6bb6bdac138fff5af6d582e38275a7",
+  "native_complete_sha256": "ae2ca931876b6c1159af151394bfb0e9c0352ea0c384e879ac398e5bca019206",
+  "native_producer_sha256": "73b617773c76a35e847add60d4b9f2200517d49d68a0f9af63b1098bc9d0137d",
+  "native_witness_use": "Exact prescribed native-derived numeric INPUTS are shared; native SOLUTION OUTPUTS are used only after all3 own solves for comparison/objective contractions. Not blind validation or independent input generation.",
+  "original_native_protocol_sha256": "63d8338f6a023f17365b8fa0d706f9f3a04e0b1e96006381e49309c3856444f0",
+  "own_forward_solves": 3,
+  "parameters": {
+    "dt": 0.5,
+    "nt": 2001,
+    "receiver_nodes": [
+      [
+        16,
+        16
+      ],
+      [
+        32,
+        16
+      ],
+      [
+        48,
+        16
+      ],
+      [
+        64,
+        16
+      ],
+      [
+        80,
+        16
+      ],
+      [
+        112,
+        16
+      ],
+      [
+        128,
+        16
+      ],
+      [
+        144,
+        16
+      ],
+      [
+        160,
+        16
+      ],
+      [
+        176,
+        16
+      ]
+    ],
+    "source_node": [
+      96,
+      16
+    ],
+    "width": 40
+  },
+  "phase_separation": "V2 loads exact native-derived canonical numeric INPUTS (probe velocity, physical-m context, two directions); all3 own primal/two-tangent solves finish before any native receiver/residual/gradient SOLUTION OUTPUT arrays are decoded. Source, damping and solver remain independently implemented. No direction regeneration claim.",
+  "physical_acceptance": null,
+  "physical_shape_x_z": [
+    192,
+    96
+  ],
+  "primary_C_sha256": {
+    "gradient.c": "a88c47726b2900ce13a43a25fa47b0b70343db88ac97c1089bbc368936b3e35f",
+    "rolling_forward.c": "e26af052bba5b5557e087ccbb160f551188ee38eae8af41cf3f48f046758ec65",
+    "saved_forward.c": "b187920749f98c8789fa7d32b6b67ae76f48c86277d7cebba5cd65f0caf5d7be"
+  },
+  "probe_scale": 0.99,
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "role": "AI source-informed NumPy V2 shared-input verification of frozen coarse40 probe/two physical-m derivatives; not blind/human/student authorship or scientific confirmation",
+  "schema_version": 2,
+  "scope": "All3 reused BP crops have one synthetic ancestor. This tests a discrete implementation/derivative, not continuum/field accuracy, original survey, inverse recovery, certificate transfer, new method, student design or research-goal completion.",
+  "source_authority": "Fresh primary-generated C is byte-identical to retained cache sources, proving generated-source identity rather than cached-file actual-run ancestry. Variable material and source injection derivatives are analytical; no coefficient/shift/amplitude/window fitting.",
+  "weights_h12_5": [
+    0.000533333333302289,
+    0.00853333333283663,
+    0.032
+  ]
+}

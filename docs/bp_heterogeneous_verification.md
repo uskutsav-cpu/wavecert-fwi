@@ -37,7 +37,7 @@ This is AI-authored engineering verification on a previously acquired synthetic 
 
 Traceability: native complete receipt ae2ca931876b6c1159af151394bfb0e9c0352ea0c384e879ac398e5bca019206; independent scalar receipt d84b72d45ca5361bd9b9db0a883c0d444a459c4c17e31c436707cc64d67203d1. Producer73b617773c76a35e847add60d4b9f2200517d49d68a0f9af63b1098bc9d0137d; protocol63d8338f6a023f17365b8fa0d706f9f3a04e0b1e96006381e49309c3856444f0; auditor8b8bb021ca292c9f56104c8929f183bab05434c8ece726c149cf9a352e1f329c; criteria9ab520f7e3c35a7c6619b5fddae6a3e750cecd80aaeb18e4ef6c70b4b3d30c6e. Production source9f remains unchanged.
 
-## Separate NumPy forward and tangent replay
+## Original NumPy forward and tangent replay
 
 All three independent rolling forward/tangent calculations completed before the reader opened native numeric witnesses. The implementation uses Python and NumPy, with no Devito or production import at replay time. Its recurrence is informed by pinned primary source and fresh generated C. There was no coefficient, amplitude, shift, mask or tolerance fit. It is a second implementation, not a blind derivation or human reproduction.
 
@@ -67,3 +67,21 @@ repetitions, maximum trace/DD relative differences are4.4091e-14/6.8235e-14.
 These are three unique inputs repeated across jobs, not new geological samples.
 The replay, success criteria and tolerances were unchanged; these passing jobs
 do not establish the cause of the earlier failure. Its anomaly remains open.
+
+## V2: exact shared numerical inputs
+
+The later [97f8905 CI run](https://github.com/uskutsav-cpu/wavecert-fwi/actions/runs/42515747409) fails the original replay's input-direction guard. Its Python 3.11 and learned/data jobs fail; the cancelled 3.10 log also records this failure, while 3.12 has no completed result. All three trace comparisons agree, but the upper-left interior input-direction guard prevents both upper-left derivative comparisons. The archived witness context masses and the CI's saved mass hashes agree exactly, which excludes the mass branch of this particular guard. The failing direction norm/vector was not retained remotely, so a specific CPU/BLAS reduction mechanism is unproved. All four [original job logs](../results/bp_heterogeneous_verification/CI_history_97f8905/summary.json) remain intact. The new 108-control frequency test was not reached before failfast.
+
+The separately versioned [V2 replay](../results/bp_heterogeneous_verification/numpy_replay_v2/protocol.json) uses exact recorded probe velocity, physical-m context and two direction arrays as shared numerical **inputs**. The exporter selectively decodes those four allowed members per crop, binding the original aggregate, worker status/completion, probe call/container, all six witnesses and actual array hashes. It exports no receiver, residual, gradient or wavefield outputs. No direction normalization, velocity roundtrip, clipping or fitted adjustment occurs. All three independent primal/two-tangent calculations finish before native **solution outputs** are decoded. This is source-informed reproduction with shared inputs; it no longer claims independent numerical input generation.
+
+The numerical kernel remains byte-identical (`b217dd6d…`), and every numerical criterion remains unchanged. All 27 manufactured corruption/provenance/phase controls pass. The actual V2 replay returns exit 0: all three traces and all six informative derivatives agree, with maximum relative differences **4.8713e-14** and **6.4759e-14**. All six prescribed-direction input differences are exactly zero. See the [root source review](../results/bp_heterogeneous_verification/bp_numpy_canonical_v2_root_source_review_01.json), [actual terminal observation](../results/bp_heterogeneous_verification/bp_numpy_canonical_v2_terminal_observation_01.json) and [canonical input manifest](../results/bp_heterogeneous_verification/canonical_inputs_v2_01/manifest.json).
+
+A separate [saved-result audit](../results/bp_heterogeneous_verification/numpy_replay_v2_independent_scalar_audit/report_02.json) passes 305 checks, 87 scalar numerical comparisons and 36 Boolean comparisons with zero issues. It rechecks all three traces/six contractions, exact input bindings and unchanged V1/kernel/criteria pins without propagating again. Source order and recorded phase flags agree; the audit does not independently prove runtime I/O chronology.
+
+The revised public parent regression also passes locally with warnings treated as errors. Its first invocation failed during conftest import because an editable installation resolved another checkout; setting `PYTHONPATH=src` selected this checkout, with no source or numerical change. The earlier fixture, all failed CI/control attempts, and the current kernel remain archived. A passing local V2 test does not retroactively pass 97f8905 or establish Linux V2 success; that requires an actual new CI run.
+
+```bash
+PYTHONPATH=src python -m pytest -q -s -W error tests/test_bp_numpy_tangent_reproduction.py
+```
+
+Physical acceptance remains null. These repeated known BP crops add no geological ancestor, recovery result, new certification contribution, human reproduction or student-owned interpretation.

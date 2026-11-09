@@ -1,0 +1,63 @@
+{
+  "actual_execution": {
+    "final": {
+      "exit_code": 0,
+      "report_sha256": "873f39a2799148eb7305bce62200fa195a3e08a1dbff9682a64ddbb406224522",
+      "session_id": 98675,
+      "terminal_tool_chunk": "c4a526"
+    },
+    "first": {
+      "exit_code": 0,
+      "report_sha256": "7d3bf594fa265bea448dee59d840f285622e96b62d7ac2e39ff05a540ca85036",
+      "tool_chunk": "dd33c9"
+    }
+  },
+  "auditor_source_sha256": "70c13385781759a35d7e78643fa391e61c9fa0a1baaeee199ac421a6ee838703",
+  "checks": 305,
+  "exact_boolean_comparisons": 36,
+  "exact_numerical_scalar_comparisons": 87,
+  "files": {
+    "README.md": {
+      "bytes": 2439,
+      "sha256": "062015dc649174204353a7690626226bad0cf5adc7989b632e60483b013ad4fc"
+    },
+    "actual_execution_01.log": {
+      "bytes": 165,
+      "sha256": "45fd2dee0cba150335fc148d9864f4c4eed587ba54be35207754536616f7c577"
+    },
+    "actual_execution_02.log": {
+      "bytes": 197,
+      "sha256": "bd2797a10def50e4bb8869cb80e85a914ce1a406f09e3ec1dee482b004a66ff6"
+    },
+    "audit_saved.py": {
+      "bytes": 18097,
+      "sha256": "70c13385781759a35d7e78643fa391e61c9fa0a1baaeee199ac421a6ee838703"
+    },
+    "history_attempt_01/audit_saved.py": {
+      "bytes": 17387,
+      "sha256": "ca2416fe459f5cfe41f9d5085779f1d5a361d0d18bb41664ccd9c721b6c9dd64"
+    },
+    "report_01.json": {
+      "bytes": 41535,
+      "sha256": "7d3bf594fa265bea448dee59d840f285622e96b62d7ac2e39ff05a540ca85036"
+    },
+    "report_02.json": {
+      "bytes": 42183,
+      "sha256": "873f39a2799148eb7305bce62200fa195a3e08a1dbff9682a64ddbb406224522"
+    }
+  },
+  "independence_limits": "Shares NumPy decoding and actual native-derived prescribed inputs; scalar sqrt is not needed here. Scalar fsum/hypot arithmetic is independently written; not blind human reproduction, realistic physics acceptance, inverse recovery, new geology, or novelty.",
+  "issues": [],
+  "phase_order_evidence": "Read reviewed runner/exporter source directly: four native-derived input arrays are loaded before propagation; target comparisons follow the all-three-complete gate. Saved flags agree. This audit alone does not prove runtime I/O chronology.",
+  "physical_acceptance": null,
+  "project_PDE_calls_by_auditor": 0,
+  "python": "3.13.13",
+  "python_3_10_grammar_pass": true,
+  "replay_complete_sha256": "286cfc45594415a7138d363ec18d913946d5c373a8fcc6a23922298145f2a846",
+  "ruff": {
+    "exit_code": 0,
+    "tool_chunk": "610487"
+  },
+  "scope": "Saved-array/source-and-scalar audit only; no producer numeric imports, PDE/adjoint/tangent rerun, full-state-hash reconstruction, or independent operating-system I/O trace.",
+  "status": "Independent saved-array/source-and-scalar audit passes; no numerical PDE rerun"
+}
