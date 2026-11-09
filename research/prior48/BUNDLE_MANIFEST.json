@@ -1,0 +1,48 @@
+{
+  "artifact_scope": "Control phase logs/XML/metadata only; study phase24MiB producer cap plus small logs,32MiB total content budget; seven-day upload retention. No numerical outcomes interpreted.",
+  "baseline_commit": "1983664d5e033dab1b131b80d9aaf2358fc6c5de",
+  "criteria_sha256": "b06e9618b4d980ed0aa08c05a0da136d0ba3e37ecc422be4df411a5f3b96edf6",
+  "files": {
+    ".github/workflows/ci.yml": "c91907a03aaf79b481fdfb581d2565175e64f31c72471cde3f68dda988c18eda",
+    "research/prior48/controls/adapter/bounded_exact.py": "d5fb6326bcd252efc3a7672dba993311fb0ba724b90039e7fda317bcf8bb770c",
+    "research/prior48/controls/adapter/composed_exact_adapter.py": "28f8bc9e6e71fd8c28165a8eddcb56e605cd7323286578180fabdf351e75a637",
+    "research/prior48/controls/adapter/fractional_velocity_prior.py": "4aa248fd3862533390ad918f4ad3f70d02fcdebcdc8d784494d375c935536163",
+    "research/prior48/controls/adapter/test_composed_exact_adapter.py": "c0691f896e2f31ad2b03cfdd4f8653ad3a0d8f11b42b430ec3baa2fe1b36a365",
+    "research/prior48/controls/prior/fractional_velocity_prior.py": "4aa248fd3862533390ad918f4ad3f70d02fcdebcdc8d784494d375c935536163",
+    "research/prior48/controls/prior/test_fractional_velocity_prior.py": "83060f28fe274f98c3b7486bc6b5c529ce640ca1cf94154742e55eb41c7a24db",
+    "research/prior48/criteria.json": "b06e9618b4d980ed0aa08c05a0da136d0ba3e37ecc422be4df411a5f3b96edf6",
+    "research/prior48/driver/FROZEN48_SCHEDULE.json": "930e8ecf6bdbb78901b2330c0e1e71a470c7b914067feaf3c0ba3316442be150",
+    "research/prior48/driver/bounded_exact.py": "d5fb6326bcd252efc3a7672dba993311fb0ba724b90039e7fda317bcf8bb770c",
+    "research/prior48/driver/composed_exact_adapter.py": "28f8bc9e6e71fd8c28165a8eddcb56e605cd7323286578180fabdf351e75a637",
+    "research/prior48/driver/fractional_velocity_prior.py": "4aa248fd3862533390ad918f4ad3f70d02fcdebcdc8d784494d375c935536163",
+    "research/prior48/driver/independent_saved_models.py": "807f4f2f0e0aeea1d2f61b64ee5f64a99819c38d4f6164529e664f0a235edeae",
+    "research/prior48/driver/original_prior_proposal.json": "48c26556658f5736b3191af03fa8eb858fdec162acdd35f2a9ad5d0ecfb786f5",
+    "research/prior48/driver/original_protocol.json": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c",
+    "research/prior48/driver/protocol.json": "92433c9d7b9d2990799f3a81707f6d04f63784a1820d3f109804a83b484ccfa6",
+    "research/prior48/driver/run_prior48.py": "7c7fc525894dbd38899ad6ee46bff8a0a0d996ea2ef61d5da2e6ce8b4320d882",
+    "research/prior48/driver/test_driver_manufactured.py": "d39be065207750d5863f0c618120b1f2404ff7be9405357ed060c0733e88c0e4",
+    "research/prior48/launcher/REFERENCE_launch_cohort.py": "c85b88216a8a1d8ea1f62e07e0e18195d94a93112614712404011603898d9882",
+    "research/prior48/launcher/REFERENCE_test_launcher.py": "506829eb96efeb380bf0e6bfaf9dd5a8ab9608bd547ce3187406ea9d0dd5d0da",
+    "research/prior48/launcher/launch_prior48.py": "16dbe8e3f533cf3fa2768269479c00e9c9e342e4405f4336c8cd20f5cf3ca8d2",
+    "research/prior48/launcher/test_prior48_launcher.py": "42c1c2add4445eee5cf8f82db357d8d68cbb2ebeb364d887328dc702bb2c5f8c",
+    "research/prior48/orchestrate.py": "6c5867b922b9312f27a266e5affe4c3ff5c29277560f120d3df7c2c3612b36ec",
+    "research/prior48/test_orchestrator_gates.py": "e26317990d26413a1c00627cc691eea172b6108b02ef1e1e6f729bf541fb6391"
+  },
+  "metadata_gate_controls": {
+    "scope": "Stdlib-only synthetic admission, hash, XML and artifact/PID-handoff metadata. No project arrays, network or study launch.",
+    "source": "research/prior48/test_orchestrator_gates.py",
+    "tests": 22
+  },
+  "production_file_count": 161,
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "registration_excluded_from_hash_map": true,
+  "root_action_pin_evidence_sha256": "7d4b0f9f398618fe28fc944762815b42f02d63c0934de2116d1732ef75f84282",
+  "runtime": {
+    "driver_sha256": "7c7fc525894dbd38899ad6ee46bff8a0a0d996ea2ef61d5da2e6ce8b4320d882",
+    "launcher_sha256": "16dbe8e3f533cf3fa2768269479c00e9c9e342e4405f4336c8cd20f5cf3ca8d2",
+    "protocol_sha256": "92433c9d7b9d2990799f3a81707f6d04f63784a1820d3f109804a83b484ccfa6",
+    "schedule_sha256": "930e8ecf6bdbb78901b2330c0e1e71a470c7b914067feaf3c0ba3316442be150"
+  },
+  "schema_version": 1,
+  "workflow_infrastructure_timeout_minutes": 20
+}
