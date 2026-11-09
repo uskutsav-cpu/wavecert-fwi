@@ -1,0 +1,13 @@
+# Held import probe V2: alias-class and method-source binding
+
+This separate version preserves probe19649, its17-control record and handoff604ad unchanged. It resolves independent review R1: writable module labels and identity to a placeholder do not establish genuine checkpoint class identity.
+
+The V2 probe requires genuine class objects and exact exported aliases to the already selected checkpoint/PyRevolve modules, verifies the expected class MRO, and retrieves descriptors statically without invoking properties or constructing instances. It binds20 methods/property getters used by worker319 and the checkpoint data helper to the selected primary source files: DevitoCheckpoint initialization/data/dtype/size and inherited nbytes; CheckpointOperator initialization/argument preparation/apply; MemoryRevolver's three initialization levels and its forward/reverse/storage-copy path; get_symbol_data.
+
+For each callable, it checks function type, defining module globals, method owner and canonical code identity. Expected code is compiled from the already hash-bound source bytes with `dont_inherit=True,optimize=0`, without executing that source. The code fingerprint includes bytecode, recursively encoded constants/nested code, argument/local/free-variable names, flags, canonical filename and line/exception tables. These checks reject a foreign function even when its module, filename, globals and method labels have been forged to match. They do not attest every mutable global dependency or native ABI.
+
+The accepted preparation-only CLI/GO projection is unchanged. Main control files remain protocol27e5/pinsbfbc and the c8f6 runtime bundle is untouched. Default main imports no target package and writes no files. Future execution still requires the exact externally supplied root preparation GO, four V2 distribution versions, isolated Linuxx86_64/Python3.11.18, controlled environment and13 source hashes before imports. The environment receipt remains `native_use_review_clear:false`.
+
+The25 stdlib controls retain the original17 cases and add eight narrow alias/type/property/foreign-method rejection cases. Their positive fixture defines tiny self-authored classes and never calls their methods or imports actual runtime packages. Test callers may set the loaded test module's `V2` variable to the route bundle's exact `frozen_v2` directory before building the unittest suite; the test source bytes remain unchanged.
+
+No actual import probe, package installation, download, model/PDE, cloud job or GO occurred. Exact source review of V2 and the complete environment route remain required. Selected callable identity is an engineering admission check, not numerical agreement, a security sandbox or whole-runtime attestation.

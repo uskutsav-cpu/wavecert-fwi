@@ -189,3 +189,11 @@ The relocated stdlib recipe reproduces the frozen 887/108/0/14 result without ne
 
 
 The next-step artifacts remain held: an [18-control partial driver API](../results/trf_matched_cost_driver_candidate/DRIVER_API_SCOPE.json), an independently checked [initializer/input plan](../results/trf_project_integration_design_candidate/PROJECT_INPUTS_AND_WORKER_PLAN_01.json), and the [corrected checkpoint runtime contract](../results/checkpoint_pilot23_runtime_contract_v2_candidate/FINAL_HANDOFF.json). Their [source reviews](../results/held_component_reviews/PUBLICATION_COPY_RECEIPT.json) are retained. Source agreement and compatible direct package bounds do not authorize a project reconstruction or establish a working complete physics environment.
+
+## Latest archive for repository consolidation
+
+The [continuing-work archive](../results/continuing_work_archive/README.md) preserves completed evidence and unfinished drafts. Its [current status](../results/continuing_work_archive/CURRENT_STATUS.json) supersedes older nested snapshot statuses.
+
+The worker passed10 manufactured controls and the supervisor passed11; its source review and metadata are finalized. No project reconstruction has run. The current auditor and import-guard candidate remain untested/unvalidated. Environment02 built four source libraries, installed19 runtime distributions and passed dependency/source checks, then failed its import guard; the17-origin/callable check and native environment approval remain incomplete. Both failures and all original source histories are preserved.
+
+All four scientific goals remain open. This consolidation archives AI-assisted technical development; it does not establish a final student design, useful recovery, accepted independent-geology physics, novelty or student-owned reproduction/defense. Root production source and live workflows are unchanged.

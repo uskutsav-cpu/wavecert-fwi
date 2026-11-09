@@ -1,0 +1,30 @@
+{
+  "call_guard": {
+    "blocked_calls": [
+      {
+        "method": "__init__",
+        "module": "sympy.core.function",
+        "qualname": "FunctionClass.__init__",
+        "related_classes": [
+          "devito.types.dense.TimeFunction"
+        ]
+      }
+    ],
+    "python_call_events_observed": 262226,
+    "scope": "Python constructor/apply call events, including inherited cls/self MRO; not all native calls or allocations. Import initializers/BLAS/compiled scheduler loading are expected and are not PDE evidence.",
+    "tracked_forbidden_python_calls_attempted": 1
+  },
+  "entry_through_failure_seconds": 2.3412869219999948,
+  "exception_type": "RuntimeError",
+  "explicit_PDE_calls_by_probe": 0,
+  "message": "import-only probe forbids tracked constructor/apply call: sympy.core.function.FunctionClass.__init__",
+  "native_use_review_clear": false,
+  "process_cost": {
+    "process_peak_RSS_bytes": 92381184,
+    "scope": "Own process cumulative peak and CPU, including admission/import/hash instrumentation. Full external wall/actual wait belongs to the controller.",
+    "system_CPU_seconds": 0.160124,
+    "user_CPU_seconds": 2.142668
+  },
+  "status": "IMPORT_ONLY_PROBE_FAILED_NO_APPROVAL",
+  "unknown_partial_import_initialization_work": true
+}

@@ -1,0 +1,209 @@
+{
+  "bound_v2_bundle_sha256": "c8f6cd4a69301df8a04f014746a960eb925cb6acb5346fdfc5a7d5e87901ff3c",
+  "bound_v2_protocol_sha256": "27e5a331d6bd9eff0dd6b4fa0ca1bc666c6014ed70ffb3da01821c62f83fdcbc",
+  "budgets": {
+    "all_logs_bytes": 8388608,
+    "individual_archive_bytes": 67108864,
+    "individual_metadata_bytes": 1048576,
+    "live_workspace_bytes": 8589934592,
+    "max_archive_members": 100000,
+    "metadata_artifact_bytes": 16777216,
+    "minimum_free_disk_bytes": 4294967296,
+    "no_budget_expansion": true,
+    "per_archive_expanded_bytes": 1073741824,
+    "per_child_log_bytes": 1048576,
+    "reserved_python_archive_bytes": 134217728,
+    "retained_artifacts_total_bytes": 419430400,
+    "runtime_wheelhouse_bytes": 201326592,
+    "scope": "Admission/declaredsizes + sampled actualworkspace/logsize + bounded explicitdownloads/extraction; sampled overshoots retained. Not OSwholefilesystem/RSS guarantees. Pip resolution transportbytes remain unknown.400MiBretainedartifacts cap includesunused128MiBpythonreserve; noPythonarchive download is planned automatically.",
+    "source_build_input_bytes": 67108864,
+    "stage_timeout_seconds": 600,
+    "total_installed_plus_build_expanded_bytes": 4294967296,
+    "workflow_timeout_minutes": 30
+  },
+  "build_permissions": {
+    "allowed_native_compilation": "PyRevolvecrevolve Cython/C++ extension only; noDevitoOperator/JIT/model/PDE. Nativebuildtools/theirimports andcompiler machinecode are expected environment preparation.",
+    "bootstrap": "ExactPython3.11.18 via reviewedsetup-python; copiedfreshvenvs; boundedvalidatedpip26.2wheel bootstrap; record ensurepip/baseinstaller effects. Noapt/sudo packageinstall/systemupgrade.",
+    "build_network": "Required disabled network namespace foractual source-backend commands; exactwrapper/privilege/groupcleanup needs Linuxdummycontrols before approval. PIP_NO_INDEX alone is insufficient against arbitrary setup.py networkcalls.",
+    "buildtools": "Readdeclaredbuild-system.requires withoutimportingfromhashedvalidatedsdists BEFORE any resolver sees them. Merge reviewedseed buildrequirements; resolvewheelsONLY, freezeactualmanifest+hashlockbeforeofflinebuildenvinstall. Missingdynamicsetup_requires/backenddependenciesduringbuildfail,no repair/fetch/retry.",
+    "candidate_wrapper_for_review": [
+      "sudo",
+      "-n",
+      "unshare",
+      "--net",
+      "--",
+      "/usr/bin/setpriv",
+      "--reuid=<actualrunnerUID>",
+      "--regid=<actualrunnerGID>",
+      "--clear-groups",
+      "--no-new-privs",
+      "--bounding-set=-all",
+      "--inh-caps=-all",
+      "--ambient-caps=-all",
+      "--",
+      "<buildprefix>/bin/python",
+      "-B",
+      "-I",
+      "-m",
+      "pip",
+      "wheel",
+      "--no-index",
+      "--no-deps",
+      "--no-build-isolation",
+      "<exactsourceartifact>"
+    ],
+    "execute_only4_registered_source_artifacts": true,
+    "wrapper_gate": "OneactualLinuxstdlibdummygate BEFOREanypackageacquisition/build: differentnetns, emptyroutetable, expectednonrootreal/effectiveUID/GID, supplementarygroupsempty, NoNewPrivs1, CapInh/CapPrm/CapEff/CapBnd/CapAmb0, failedsudoprivilegeregain/directnetworkattempt, actualsignal/groupcleanup/waitreceipts. SamewrappedpreconditionsforEVERYsourcebuild. Failurestops,no unisolatedfallback. Purposepreventimplicitdependencyfetch/provenance; notgeneralmaliciouscodesandbox."
+  },
+  "execution_authorized": false,
+  "identity_receipt_flags": {
+    "PDE_calls": 0,
+    "ephemeral": true,
+    "execution_authorized": false,
+    "native_checkpoint_children": 0,
+    "native_use_review_clear": false
+  },
+  "material_preimplementation_checks": [
+    "Confirmofflinebuildwrapper privilege+signal/cleanup design withactualLinuxdummytest later; noinstallrequiredforthattest",
+    "Inspectselectedsourceartifactdeclaredbackends duringapprovedfutureacquisition; unknownbackend fails",
+    "Finalizecompletecode+manufacturedcontrols/sourcefreeze+rootreview beforepublish",
+    "Artifactquota/budgetreview beforeactualpreparationGO"
+  ],
+  "native_execution_authorized": false,
+  "native_route_not_included": true,
+  "native_use_review_clear": false,
+  "no_scientific_success_claim": true,
+  "phases": [
+    {
+      "id": "01_admit",
+      "purpose": "Exactpublicbranch/eventSHA/attempt1/registration/preparation-onlyGO/sourcehash gates, Linuxx86/Python3.11.18 metadata, no actualworker/sourceimports. False/default executes stdlibcontrols only."
+    },
+    {
+      "id": "02_bootstrap_and_buildclosure",
+      "purpose": "Beforepackages, runactualLinuxstdlibnamespace/signal/privilegeevidencegate. Then acquirefixed4sourceURLs withknownhashes/caps andstaticallyinspectbuildrequires; noonlinepip seesanysdist. Bootstrapexactpip26.2 andresolvebinaryonlydeclaredbuildtoolclosure;freezehashlockbeforeinstall."
+    },
+    {
+      "id": "03_build_once",
+      "purpose": "Boundedvalidate4registered sdists/paths/links/members/expansions, inspectdeclaredbackends, installbuildclosureoffline, executesourcebuildonce networkdisabled; recordactualPID/group/wait/CPU/RSS/wholewall/compiler/buildlogs; no retry/repair/strip."
+    },
+    {
+      "id": "04_runtime_resolve_acquire",
+      "purpose": "Ordinary clean dependencyresolution using3exactpublishedruntimewheels+4exactbuiltwheels+pip26.2; remaining packagesbinaryonly. Freeze actualruntimewheelmanifestandcompletehashlock; failunsatisfiedgraph. Boundedexplicitdownloads, no duplicate/replacement."
+    },
+    {
+      "id": "05_clean_install_check",
+      "purpose": "Freshcandidateprefix; installall exactruntimewheelbytes offline/no-deps/require-hashes/no-bytecompile, pipcheck, pipinspect/installreport/fullinstalledfileinventory; compare13sourcepinsBEFORE anytargetpackageimport."
+    },
+    {
+      "id": "06_import_only_identity",
+      "purpose": "DedicatedfreshOS child importsactual17selectedmodules andchecksclassalias/origins; noModel/Grid/TimeFunction/Operator/Revolver construction orPDE. Itwillloadnativeextensions/BLAS andmayprobeCPU/compiler/cache; capture actualimports/costs. Receipt native_use_review_clear:false."
+    },
+    {
+      "id": "07_external_wait_inventory",
+      "purpose": "Allknownchildrenactualwait+ownedgroupcleanup, closeallstdout beforecopy/hash; metadataonlyartifact<=16MiB andseparatewheelartifact, actualcopiedtargethashes. Failureunknownterminal retainscontrollerownedreceiptswithunknownprefix, no stablechildfileclaim."
+    }
+  ],
+  "planned_source_files": [
+    "prepare_environment.py",
+    "preparation_stage.py",
+    "import_identity_probe.py",
+    "test_environment_route_controls.py",
+    ".github/workflows/checkpoint23-environment-01.yml",
+    "ROUTE_MANIFEST.json",
+    "HELD_REGISTRATION.json"
+  ],
+  "prefix_admission": "All task-specific roots absent before creation; no clear/delete/reuse. Do not repurposeHOME/CODEX_HOME. Capture basePython actualcanonicaltoolcachepath; no assumed interpreter relocatability.",
+  "required_actual_metadata": [
+    "fullselectedruntime/builddependencygraphandhashlocks",
+    "allwheel/sourceinputnames/sizes/SHA256/metadata/licenses",
+    "exactbuiltPyRevolvewheelhashandcompiler/source/buildprovenance",
+    "fullinstalledfilemetadataandhashinventory",
+    "actual17canonicalmoduleorigin/hashmapand13primarysourcecomparison",
+    "Pythonexecutable/realpath/binaryhash/baseprefix/stdlib/sysconfig/pyvenv/sys.path",
+    "runnerOSimage/systempackageinventory/compiler/linkerpathsversionshashes/ELFlinkage",
+    "allphaseactualPIDs/groups/waits/exits/signals/fullwalls/cpu/rss/caps/failureprefixes",
+    "actualcopiedartifactinventories/wheelartifactdigestsandIDsafteruploadavailableexternalobservation"
+  ],
+  "root_GO": null,
+  "schema": "checkpoint23_environment_route_design_v1",
+  "selection": {
+    "build_file": "build_requirements.in",
+    "extra_index_allowed": false,
+    "matplotlib_required": false,
+    "missing_wheel_or_backend": "Fail withprefix,no automaticbuild or versionfallback; declaredsourceallowlist fixed4only.",
+    "plotting_evidence": "Pinnedsource/source.py andplotting.py catchmissingmatplotlib; no plotcall permitted. No devito[extras],MPI,GPU,compression,tests dependencies.",
+    "postselection": "Only approved PyPI release artifact URLs atfiles.pythonhosted.org matching recordedreleasefilename/SHA/size, or exactcanonical local built-wheel path/hash alreadybound tosuccessfullywaited sourcebuildreceipt. Nootherfile/VCS/URL origins. Freezecompletehashlocks beforeinstall.",
+    "prereleases_allowed": false,
+    "resolver": "Only afterregistered4sdistsarefixedURL/SHA/capacquiredandstaticallyinspected, binaryonlybuildtoolclosureisresolved/frozen/installedoffline, and4sourcesbuiltunderverifiedofflinenamespace. Finalruntimepip26.2 dryrun/report takesEXACTbuiltwheelpaths plusfixedpublishedwheeltargets andonlybinaryall forremainingdependencies, --retries0. Noonline sourcepreparation/metadatahooks.",
+    "runtime_extras": [],
+    "source_build_allowlist_sha256": "8b47bdd024bbec8f31b25019f5cfba4195172e1a9f90665bbcd981941646086a",
+    "target_packages": {
+      "cgen": "2025.1",
+      "codepy": "2023.1",
+      "contexttimer": "0.3.3",
+      "devito": "4.8.23",
+      "numpy": "2.4.3",
+      "pip": "26.2",
+      "pyrevolve": "2.2.8",
+      "scipy": "1.17.1"
+    },
+    "top_file": "runtime_top_constraints.in",
+    "unknown_transitives": "Firstjob explores current compatible stable dependency closure through pip26.2, PyPIonly. This is not reproducible until the successful selected wheel bytes and full locks are reviewed.",
+    "vcs_editable_local_unregistered_sources_allowed": false,
+    "yanked_allowed": false
+  },
+  "signal_safe_reference": {
+    "path": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/cached_j_native_linux_route_candidate/experiment/experiments/cached_j_native_01/run_route.py",
+    "reuse": "deferred_interruptions/knownPopenhandle/newsession/groupownership/actualwait/closedlog patterns; no import or execution of that route.",
+    "sha256": "3f5ca85195a08cc08ceb55dd0f75b00655a11de819fe8039bd0616c2fff414b1"
+  },
+  "stable_fresh_paths": {
+    "TMPDIR": "/opt/wavecert/checkpoint23_environment_01/tmp",
+    "build_prefix": "/opt/wavecert/checkpoint23_environment_01/build_env",
+    "candidate_prefix": "/opt/wavecert/checkpoint23/env_01",
+    "metadata_artifact": "/opt/wavecert/checkpoint23_environment_01/metadata_artifact",
+    "root": "/opt/wavecert/checkpoint23_environment_01",
+    "source_build_root": "/opt/wavecert/checkpoint23_environment_01/build_sources",
+    "wheel_artifact": "/opt/wavecert/checkpoint23_environment_01/wheel_artifact",
+    "wheelhouse": "/opt/wavecert/checkpoint23_environment_01/runtime_wheels"
+  },
+  "status": "PHASE1_SOURCE_CAPS_SELECTION_PERMISSIONS_PLAN_REQUIRES_ROOT_REVIEW_BEFORE_IMPLEMENTATION_FREEZE",
+  "v2_independent_review_sha256": "6b7c2c5ce0ca558da1a263ddda1a8acd3404ec3f602cb2506769d2846e278bf5",
+  "work_executed_by_this_stage": {
+    "GO_created": false,
+    "PDE_calls": 0,
+    "cloud_jobs": 0,
+    "installs": 0,
+    "package_binary_downloads": 0,
+    "runtime_package_imports": 0,
+    "workflows_published": 0
+  },
+  "workflow_design": {
+    "activation_event_parent": "Exactsuccessfulsource/controlcommit; registration-only child andattempt1, no rerun/scheduledretry. Fieldsnulluntilrootregistration.",
+    "explicit_root_preparation_authorization_required_for_download_install_build_import": true,
+    "future_branch": "research-checkpoint23-environment-01",
+    "future_root_preparation_authorization_label": "GO_CHECKPOINT23_ENVIRONMENT_PREPARATION_V1",
+    "known_action_pins": {
+      "checkout": "11d5960a326750d5838078e36cf38b85af677262",
+      "setup-python": "a26af69be951a213d495a4c3e4e4022e16d87065",
+      "upload-artifact": "cf430e030ddbb5b0abf93d22962f4752f3646cd9"
+    },
+    "metadata_and_wheels_uploaded_separately": true,
+    "metadata_artifact": "checkpoint23-environment-metadata-<runid>",
+    "no_runner_git_push": true,
+    "only_registration_path_trigger": "research/checkpoint23_environment/RUN_REGISTRATION_01.json",
+    "permissions": {
+      "contents": "read"
+    },
+    "preparation_GO_is_not_native_GO": true,
+    "python": "3.11.18",
+    "retention_days": 7,
+    "root_GO_created": false,
+    "root_download_scope": "Smallmetadataonly; no localwheelhouse/package/environmentcopy.",
+    "runner": "ubuntu-24.04",
+    "single_threads": true,
+    "source_controls_default": true,
+    "upload_on_failure": true,
+    "wheelhouse_artifact": "checkpoint23-environment-wheels-<runid>"
+  }
+}

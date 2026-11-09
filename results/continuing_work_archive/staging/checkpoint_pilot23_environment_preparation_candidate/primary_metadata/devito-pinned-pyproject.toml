@@ -1,0 +1,158 @@
+[build-system]
+requires = [
+  "setuptools>=62.6",
+  "wheel",
+  "setuptools-scm"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "devito"
+description = "Finite Difference DSL for symbolic computation."
+license = { file = "LICENSE.md" }
+readme = "README.md"
+keywords = ["finite-difference", "DSL", "symbolic", "jit", "devito"]
+requires-python = ">=3.10,<3.15"
+authors = [
+  { name = "Imperial College London", email = "g.gorman@imperial.ac.uk" },
+  { name = "Fabio Luporini",  email = "fabio@devitocodes.com" },
+  { name = "Mathias Louboutin",  email = "mathias@devitocodes.com" },
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Education",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: MacOS",
+  "Operating System :: POSIX :: Linux",
+  "Operating System :: Unix",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Scientific/Engineering :: Mathematics",
+  "Topic :: Scientific/Engineering :: Physics",
+  "Topic :: Software Development :: Code Generators",
+  "Topic :: Software Development :: Compilers"
+]
+maintainers = [
+  { name = "Fabio Luporini",  email = "fabio@devitocodes.com" },
+  { name = "Mathias Louboutin",  email = "mathias@devitocodes.com" },
+  { name = "Gerard Gorman", email = "gerard@devitocodes.com" },
+]
+dynamic = ["version", "dependencies", "optional-dependencies"]
+
+[project.urls]
+Documentation = "https://www.devitoproject.org/devito/index.html"
+Repository   = "https://github.com/devitocodes/devito"
+Issues = "https://github.com/devitocodes/devito/issues"
+
+[tool.setuptools.dynamic]
+# Read install_requires from requirements.txt
+dependencies = { file = ["requirements.txt"] }
+
+[tool.setuptools.dynamic.optional-dependencies]
+# Map each extra to its requirements-*.txt
+mpi    = { file = ["requirements-mpi.txt"] }
+nvidia = { file = ["requirements-nvidia.txt"] }
+tests  = { file = ["requirements-testing.txt"] }
+extras = { file = ["requirements-optional.txt"] }
+
+[tool.setuptools.packages.find]
+where   = ["."]
+exclude = ["binder", "docker", "docs", "tests", "examples"]
+
+[tool.setuptools_scm]
+fallback_version = "0+untagged"
+
+[tool.pytest.ini_options]
+python_files = ["test_*.py", "*_example.py", "example_*.py"]
+addopts = "--durations=20 --maxfail=5"
+filterwarnings = ["ignore::pytest.PytestCacheWarning"]
+
+[tool.ruff]
+line-length = 90
+
+[tool.ruff.lint]
+# Add the following rule sets
+select = ["E", "W", "F", "B", "UP", "SIM", "RUF022"]
+# But ignore these inconvenient rules
+ignore = ["F403", "E226", "E731", "E275", "F405", "E722", "E741", "W605"]
+
+[tool.isort]
+line_length = 90
+known_first_party = ["devito", "examples"]
+multi_line_output = "VERTICAL_GRID_GROUPED"
+# We should really do some work to eliminate this (circular imports):
+skip = ["__init__.py"]
+
+[tool.typos]
+# For identifiers (variables, functions, classes and the like):
+# Ignore words 2 characters or fewer followed by zero or more digits
+# Also ignore collections of 20 or more "word character"s
+default.extend-ignore-identifiers-re = ["\\b[[:alpha:]]{1,2}\\d*\\b", "\\b\\w{20,}\\b"]
+# For words:
+# Ignore words 2 characters or fewer followed by one or more digits
+# Also ignore collections of 20 or more "word character"s
+default.extend-ignore-words-re = ["\\b[[:alpha:]]{1,2}\\d?\\b", "\\b\\w{20,}\\b"]
+
+# Only for known words common abbreviations
+# IMPORTANT: Add a comment with the meaning!
+[tool.typos.default.extend-identifiers]
+# arange - numpy.arange
+arange = "arange"
+# dorder - derivative order
+dorder = "dorder"
+# simpify - function in Devito for creating Sympy expressions
+simpify = "simpify"
+# vas - plural of va
+# Used in tests/test_gpu_common.py::TestStreaming::test_streaming_complete (TODO: FIX)
+vas = "vas"
+# tpe - Thread Pool Executor
+tpe = "tpe"
+
+[tool.typos.default.extend-words]
+# datas - plural of data?
+# optionss - plural of options?
+# Horrendous use in builtins/initializers (TODO: FIX)
+datas = "datas"
+optionss = "optionss"
+# HPE - Well known company name
+HPE = "HPE"
+# Sur - OS name: MacOS Big Sur
+Sur = "Sur"
+# pointss - plural of points?
+# Horrendous use in operator/profiling (TODO: FIX)
+pointss = "pointss"
+# numer - common abbreviation of numerator
+numer = "numer"
+# Yto - Very unfortunately appears in a short random binary string in a notebook
+Yto = "Yto"
+# ges - Random HTML identifier in examples/seismic/tutorials/17_fourier_mode
+ges = "ges"
+
+
+[tool.flake8]
+max-line-length = 90
+ignore = [
+  "F403","E226","E731","E275",
+  "W503","F405","E722","E741",
+  "W504","W605"
+]
+exclude = [ ".github" ]
+
+[tool.flake8.nb]
+max-line-length = 90
+ignore = [
+  "F403","E226","E731","E275",
+  "W503","F405","E722","E741",
+  "W504","W605"
+]
+exclude = [ ".github" ]
+

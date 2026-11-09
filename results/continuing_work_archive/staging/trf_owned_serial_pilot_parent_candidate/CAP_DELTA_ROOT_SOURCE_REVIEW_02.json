@@ -1,0 +1,56 @@
+{
+  "bound_source": {
+    "PILOT_PLAN.json": "ebded996fc6d0fd01eccd4b2e9a6523753f3eab35f66af596c367aebe897211d",
+    "serial_pilot.py": "7eaa78f8a4f3b1108378e89f4792a13089b0b9bace37555836f3144c72586382",
+    "test_parent.py": "cfc3edafc47eb0eb35e35ffcc49e26201a66b5af97c3b79553a0cc559d7ef5cc"
+  },
+  "changed_functions": [
+    "observe_child_caps",
+    "stable_inventory",
+    "run_owned"
+  ],
+  "closed_findings": [
+    {
+      "id": "R1",
+      "resolution": "Independent log cap is observed during polling and rechecked after actual wait/owned cleanup/logclose; cap_violation makes unknown_work true and slot ineligible while preserving actual return code."
+    },
+    {
+      "id": "R2",
+      "resolution": "Worker output is the separate slotdir/worker tree; unused log allowance cannot subsidize payload; postwait check closes fast-exit boundary."
+    },
+    {
+      "id": "closed_log_inventory_wording",
+      "resolution": "Attempted known-child rows with unclosed logs yield explicit UNSTABLE prefix and no stable child inventory."
+    }
+  ],
+  "controls": {
+    "author_actual_exit": 0,
+    "author_actual_terminal_tool": "66f75e",
+    "log_sha256": "5c2c9685f2f9945eb39d5712db7cb3f90b2dc8d192a49a2e5a0221f63ac329a9",
+    "new_fast_exit_groups": 2,
+    "old_test_and_setup_AST_exact": 10,
+    "original_tests": 9,
+    "result_sha256": "13fd7730de9c550873e65ffc1456746f88e1daadef4102725f6ef9294121a9ea",
+    "retained_tests": 11,
+    "root_reruns": 0
+  },
+  "material_findings": [],
+  "plan_delta_fields": [
+    "failure_policy",
+    "manufactured_controls_scope",
+    "required_controls"
+  ],
+  "read_only_tools": [
+    "444563",
+    "1d8f2e"
+  ],
+  "remaining": [
+    "Current top-level scope/receipt/inventory still describe OLD9 and are not a final current11 freeze; finish metadata after storage recovery.",
+    "Full independent auditor, Linux route/runtime/control binding and root pilotGO remain unfinished.",
+    "No real project worker/recovery claim or full48 authorization."
+  ],
+  "result": "CLEAR_SOURCE_DELTA_ONLY_FINAL_METADATA_FREEZE_PENDING",
+  "schema": "trf_case0_parent_cap_delta_root_independent_source_review",
+  "source_review_grants_execution": false,
+  "unchanged_run_slot": true
+}

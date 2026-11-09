@@ -1,0 +1,200 @@
+{
+  "actual_children": [
+    {
+      "actual_pid": 2289,
+      "actual_wait_returncode": 0,
+      "label": "01_namespace_dummy",
+      "owned_process_group_alive_after_cleanup": false,
+      "wall_seconds": 0.5178982279999929
+    },
+    {
+      "actual_pid": 2292,
+      "actual_wait_returncode": 0,
+      "label": "02_create_task_roots",
+      "owned_process_group_alive_after_cleanup": false,
+      "wall_seconds": 0.017620360000009327
+    },
+    {
+      "actual_pid": 2294,
+      "actual_wait_returncode": 0,
+      "label": "03_build_venv",
+      "owned_process_group_alive_after_cleanup": false,
+      "wall_seconds": 0.12270664199999715
+    },
+    {
+      "actual_pid": 2295,
+      "actual_wait_returncode": 0,
+      "label": "04_build_pip",
+      "owned_process_group_alive_after_cleanup": false,
+      "wall_seconds": 1.3430189169999949
+    },
+    {
+      "actual_pid": 2318,
+      "actual_wait_returncode": 0,
+      "label": "05_resolve_build",
+      "owned_process_group_alive_after_cleanup": false,
+      "wall_seconds": 1.1125958610000026
+    },
+    {
+      "actual_pid": 2342,
+      "actual_wait_returncode": 0,
+      "label": "06_install_build",
+      "owned_process_group_alive_after_cleanup": false,
+      "wall_seconds": 0.9968943420000045
+    },
+    {
+      "actual_pid": 2366,
+      "actual_wait_returncode": 0,
+      "label": "07_build_pip_check",
+      "owned_process_group_alive_after_cleanup": false,
+      "wall_seconds": 0.40317456700000776
+    },
+    {
+      "actual_pid": 2367,
+      "actual_wait_returncode": 0,
+      "label": "08_build_pip_inspect",
+      "owned_process_group_alive_after_cleanup": false,
+      "wall_seconds": 0.4163023109999955
+    },
+    {
+      "actual_pid": 2368,
+      "actual_wait_returncode": 0,
+      "label": "09_build_pyrevolve",
+      "owned_process_group_alive_after_cleanup": false,
+      "wall_seconds": 7.173999984000005
+    },
+    {
+      "actual_pid": 2402,
+      "actual_wait_returncode": 0,
+      "label": "10_build_contexttimer",
+      "owned_process_group_alive_after_cleanup": false,
+      "wall_seconds": 1.054244061999995
+    },
+    {
+      "actual_pid": 2422,
+      "actual_wait_returncode": 0,
+      "label": "11_build_cgen",
+      "owned_process_group_alive_after_cleanup": false,
+      "wall_seconds": 0.8566971520000095
+    },
+    {
+      "actual_pid": 2442,
+      "actual_wait_returncode": 0,
+      "label": "12_build_codepy",
+      "owned_process_group_alive_after_cleanup": false,
+      "wall_seconds": 1.0546100460000076
+    },
+    {
+      "actual_pid": 2462,
+      "actual_wait_returncode": 0,
+      "label": "13_resolve_runtime",
+      "owned_process_group_alive_after_cleanup": false,
+      "wall_seconds": 1.4548537440000047
+    },
+    {
+      "actual_pid": 2488,
+      "actual_wait_returncode": 0,
+      "label": "14_candidate_venv",
+      "owned_process_group_alive_after_cleanup": false,
+      "wall_seconds": 0.0480016979999931
+    },
+    {
+      "actual_pid": 2489,
+      "actual_wait_returncode": 0,
+      "label": "15_candidate_pip",
+      "owned_process_group_alive_after_cleanup": false,
+      "wall_seconds": 1.1826911630000012
+    },
+    {
+      "actual_pid": 2512,
+      "actual_wait_returncode": 0,
+      "label": "16_install_candidate",
+      "owned_process_group_alive_after_cleanup": false,
+      "wall_seconds": 2.3118501669999887
+    },
+    {
+      "actual_pid": 2536,
+      "actual_wait_returncode": 0,
+      "label": "17_pip_check",
+      "owned_process_group_alive_after_cleanup": false,
+      "wall_seconds": 0.40667650400000355
+    },
+    {
+      "actual_pid": 2537,
+      "actual_wait_returncode": 0,
+      "label": "18_pip_inspect",
+      "owned_process_group_alive_after_cleanup": false,
+      "wall_seconds": 0.4083298740000032
+    },
+    {
+      "actual_pid": 2538,
+      "actual_wait_returncode": 1,
+      "label": "19_import_identity",
+      "owned_process_group_alive_after_cleanup": false,
+      "wall_seconds": 2.5273572299999927
+    }
+  ],
+  "actual_import_probe_exit": 1,
+  "actual_namespace_pass": true,
+  "artifact_id": 13655272565,
+  "attempt": 1,
+  "candidate_environment_complete": false,
+  "commit": "26fd8153972d2c6b07b0363596b262967c78ca27",
+  "exact_built_wheels_not_retrievable_from_this_failed_run": true,
+  "expanded_bytes": 2051186,
+  "explicit_remote_body_bytes": 103677971,
+  "import17_and_21callable_identity_pass": false,
+  "inventory_exact": true,
+  "issues": 0,
+  "job_id": 129025140917,
+  "limitation": "Wheels were packaged only after successful import probe, so this failure retained metadata but no exact wheel bytes. Any future build is a separate cohort, not reuse of these failed-run binaries.",
+  "native_instructions_unmeasured": true,
+  "native_use_review_clear": false,
+  "no_explicit_PDE_or_checkpoint_children": true,
+  "pip_check_pass": true,
+  "pip_resolver_transfer_bytes": "UNKNOWN_NOT_INSTRUMENTED",
+  "primary13_preimport_hashcheck_reached_and_passed": true,
+  "probe_failure": {
+    "call_guard": {
+      "blocked_calls": [
+        {
+          "method": "__init__",
+          "module": "sympy.core.function",
+          "qualname": "FunctionClass.__init__",
+          "related_classes": [
+            "devito.types.dense.TimeFunction"
+          ]
+        }
+      ],
+      "python_call_events_observed": 262226,
+      "scope": "Python constructor/apply call events, including inherited cls/self MRO; not all native calls or allocations. Import initializers/BLAS/compiled scheduler loading are expected and are not PDE evidence.",
+      "tracked_forbidden_python_calls_attempted": 1
+    },
+    "entry_through_failure_seconds": 2.3412869219999948,
+    "exception_type": "RuntimeError",
+    "explicit_PDE_calls_by_probe": 0,
+    "message": "import-only probe forbids tracked constructor/apply call: sympy.core.function.FunctionClass.__init__",
+    "native_use_review_clear": false,
+    "process_cost": {
+      "process_peak_RSS_bytes": 92381184,
+      "scope": "Own process cumulative peak and CPU, including admission/import/hash instrumentation. Full external wall/actual wait belongs to the controller.",
+      "system_CPU_seconds": 0.160124,
+      "user_CPU_seconds": 2.142668
+    },
+    "status": "IMPORT_ONLY_PROBE_FAILED_NO_APPROVAL",
+    "unknown_partial_import_initialization_work": true
+  },
+  "readonly_checks": 218,
+  "remaining": "Correct metaclass class-definition false positive without permitting tracked instance constructors/apply. Retain exact wheels before risky import probe; source/controls/independent review and fresh one-shot preparation authorization required. No unchanged rerun.",
+  "remote_controls": 55,
+  "retained_files": 139,
+  "run_id": 42576446840,
+  "runtime_packages_installed": 19,
+  "schema": "checkpoint23_environment_second_attempt_root_review",
+  "scientific_goals_complete": false,
+  "source_builds_completed": 4,
+  "status": "FOUR_BUILDS_AND_INSTALL_PASS_IMPORT_GUARD_CLASS_DEFINITION_FALSE_POSITIVE_NO_NATIVE_APPROVAL",
+  "wheel_artifact_uploaded": false,
+  "zip_bytes": 590331,
+  "zip_sha256": "ee1a9108679fbb6da039c4b35a5274199d2c23c7c6c15786573df6d8bd3b4e8a"
+}

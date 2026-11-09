@@ -299,4 +299,8 @@ and disclose assistance. No mentor approval or JSHS outcome is claimed.
 Code: MIT. Bundled SubsurfaceGen-derived data: CC BY 4.0, with separate attribution
 in the fixture README.
 
-The [Overthrust partial-acquisition record](docs/overthrust_partial_acquisition.md) adds a fixed raw model cross-section for future physics checks. No wave/inversion validation has been run on it. A classical prior component is staged with manufactured checks; its proposed recovery study remains unexecuted.
+The [Overthrust partial-acquisition record](docs/overthrust_partial_acquisition.md) adds a fixed raw model cross-section for future physics checks. No wave/inversion validation has been run on it. The completed48-return classical-prior study met0/8 fixed recovery targets; see [the retained study](docs/fractional_velocity_prior_development.md).
+
+## Latest technical work archive
+
+The [continuing-work archive](results/continuing_work_archive/README.md) includes the latest worker/supervisor, unfinished auditor and import-guard drafts, both failed cloud environment attempts, and retained CI/replay evidence. The supervisor passed11 manufactured controls; the new reconstruction pilot has not run. These are archived development materials, with no new production activation or claim of scientific completion.

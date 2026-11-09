@@ -1,0 +1,196 @@
+{
+  "updated_utc": "2026-11-09T03:57:16.470598+00:00",
+  "published_head": "2918a47c68ac8bee3d33e532c21a96d335d1718a",
+  "main_unmerged": true,
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "production_files": 161,
+  "actual_study": {
+    "run_id": 42549962037,
+    "job_id": 128943091873,
+    "source_commit": "e8c144c69e5a5d7b71668329427bd3c88cba26b1",
+    "source_bundle_commit": "9778fd3e998c8eb7dde8915789f5ea612ab71422",
+    "run_attempt": 1,
+    "status": "completed",
+    "conclusion": "success",
+    "actual_child_exit": 0,
+    "planned_runs": 48,
+    "completed_runs": 48,
+    "all_eligible": true,
+    "return_min_seconds": 7.520710139000016,
+    "return_max_seconds": 7.581680227999982,
+    "successful_cases": 0,
+    "required_cases": 6,
+    "harm_gate_cases_pass": 8,
+    "prior_beats_baseline_cases": 5,
+    "both_arms_worse_than_initial_cases": 5,
+    "best_prior_case_median_improvement_percent": 4.098555231407475,
+    "continuation_gate_pass": false,
+    "complete_receipt_sha256": "ca69e5e36b2c18727af9d45de84a9d2c37310ceb4d8e1c7069898f4c2b04de85",
+    "retained_audit_report_sha256": "c3b528d942cba432b38be6bd2f46139402b058687e9e220781e10d57a4161baa",
+    "retained_audit": {
+      "actual_exit": 0,
+      "checks": 51613,
+      "numeric_comparisons": 1040,
+      "issues": 0
+    },
+    "independent_actual_reproduction": {
+      "checks": 3902,
+      "numeric_comparisons": 1298,
+      "issues": 0,
+      "receipt_sha256": "1cf74abb40f1ef849d350372219bbe9082f1509f8408f6ea6e2025303e545e17"
+    },
+    "archive_manifest_sha256": "d7eabd189147a06d3ee12d2a95a48cfc44db3f36b066310fed0db49c0698657f",
+    "archive_files": 321,
+    "archive_content_bytes": 9449337,
+    "actual_consumed_costs_distinct": true,
+    "old_platform_timings_pooled": false,
+    "scientific_goals_complete": false
+  },
+  "held_components": {
+    "cached_J_TRF": {
+      "status": "SOURCE_REVIEW_CLEAR_NATIVE_INTEGRATION_UNEXECUTED",
+      "manufactured_controls": 44,
+      "source_sha256": "f613370617d7e0bd7815cf441dd8ba5f41816ad4791275e86f33de228657c79b",
+      "builder_sha256": "622a624f54b17d9d882da9d88af547c516b26ee42c87d80ec68d5fe99a687ec1",
+      "review_sha256": "ad8bbd253716e3ebdf94445c7a066ee2aa3ef1c412521537a6167af1e3981e76",
+      "native_PDE_calls": 0,
+      "full_project_driver": false,
+      "deadline_memory_envelope": false,
+      "expected_added_receiver_map_work": "8freshLU+112receiverRHS perpoint; no borrowednativeLU",
+      "public_manifest_sha256": "adfd1299dcb90745c4853ccce93a1a80f07bf8b11c5154a73d9d90d70701f883"
+    },
+    "checkpoint": {
+      "status": "SOURCE_REVIEW_CLEAR_ENVIRONMENT_AND_ACTUAL_NATIVE_COMPARISON_UNEXECUTED",
+      "manufactured_controls": 15,
+      "worker_sha256": "31969bd3e072dcbf554e0cd98f022b0e35dd5438ef12566f9c23fa98eee76e9b",
+      "protocol_sha256": "08f262f638da9a72b262d252ba8e3eaab4452d772d8c80606bc44e7137fba866",
+      "review_sha256": "75853a3850ed1b53d0e4f63c5a673c358e7032870b32199e95c1d31bb5f2756f",
+      "native_PDE_calls": 0,
+      "external_23child_controller": false,
+      "local_pyrevolve_installed": false,
+      "public_manifest_sha256": "83220f343ee1023ef2fb5116e6a8bc101ce3bd402854830f4bf98e2e45f03579"
+    }
+  },
+  "current_CI": [
+    {
+      "run_id": 42555129599,
+      "event": "push",
+      "commit": "2918a47c68ac8bee3d33e532c21a96d335d1718a",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "jobs": [
+        128959023997,
+        128959024317,
+        128959024451,
+        128959024520
+      ],
+      "actual_reports": 32,
+      "new75_all_jobs_pass": true,
+      "old108_all_jobs_pass": true,
+      "BPV2_expected_manifest_all_jobs": true
+    },
+    {
+      "run_id": 42555136742,
+      "event": "pull_request",
+      "commit": "2918a47c68ac8bee3d33e532c21a96d335d1718a",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "jobs": [
+        128959047372,
+        128959047414,
+        128959047476,
+        128959047540
+      ],
+      "actual_reports": 32,
+      "new75_all_jobs_pass": true,
+      "old108_all_jobs_pass": true,
+      "BPV2_expected_manifest_all_jobs": true
+    }
+  ],
+  "all_four_scientific_goals_complete": false,
+  "current_publication_CI": [
+    {
+      "run_id": 42555129599,
+      "event": "push",
+      "commit": "2918a47c68ac8bee3d33e532c21a96d335d1718a",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "jobs": [
+        128959023997,
+        128959024317,
+        128959024451,
+        128959024520
+      ],
+      "actual_reports": 32,
+      "new75_all_jobs_pass": true,
+      "old108_all_jobs_pass": true,
+      "BPV2_expected_manifest_all_jobs": true
+    },
+    {
+      "run_id": 42555136742,
+      "event": "pull_request",
+      "commit": "2918a47c68ac8bee3d33e532c21a96d335d1718a",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "jobs": [
+        128959047372,
+        128959047414,
+        128959047476,
+        128959047540
+      ],
+      "actual_reports": 32,
+      "new75_all_jobs_pass": true,
+      "old108_all_jobs_pass": true,
+      "BPV2_expected_manifest_all_jobs": true
+    }
+  ],
+  "active_external_jobs": [],
+  "current_CI_reports_sha256": "fae4ad0699bd09f8c450cdfa581f17534b460d75b626fec9844fd32960440d1c",
+  "current_CI_reports_count": 64,
+  "current_next_actions": [
+    "Stage/review smallest native integration verification for cached-J/TRF against frozen9f public physics APIs; no actualnativePDE until exact prospective source/protocol/criteria/GO.",
+    "Stage/review explicit23child checkpoint controller/comparison with fullcost/resource/actualexit evidence, then separately prepare ephemeralLinuxruntime and smallnativeagreement.",
+    "After nativecomponent checks, review fullypaid pairedTRF/L-BFGS-B driver/criteria/sourcefreeze beforeanynewrecovery study; do not infer missinginformation or novelty from optimizerchoice.",
+    "Resolve Marmousi exactfile amplitude-unit assumptions; physically admit differentmodel families with source/license/transform and boundary/grid/time acceptance gates.",
+    "Establish specific useful contribution against strong existing baselines and obtain student-owned scientificinterpretation/defense with accurate assistance disclosure."
+  ],
+  "all_four_requirements_proved": false,
+  "previous_goal_turn_classification": "PROGRESS: actual48priorstudy/audit/independent3902/standalonereplay published291; fixedrecoverygate0/8,all48eligible; new75parentall8CIjobs/all64reportsverified; nextnativeGN/checkpointsourcepreparation active.",
+  "cached_J_native_verification": {
+    "status": "HELD_SOURCE_AND14_STDLIB_CONTROLS_CLEAR_NATIVE_UNEXECUTED",
+    "stage": "work/new-phase-staging/cached_jacobian_native_verification_candidate",
+    "verifier_sha256": "c660a025badbebd5e9d9a4d6ddbfc684c95193c6111f2de349f25112976d1d6b",
+    "protocol_sha256": "3b608f942f3d08f40705e8203375fc7e24763592bd27d7cc70bac12b351391e6",
+    "review_sha256": "f551a8bf61ad118bb6a839cd35b3ce19d55adbe0c95528ec33a79e7f2f0ed478",
+    "manufactured_controls": 14,
+    "numerical_imports": 0,
+    "native_PDE_calls": 0,
+    "registered_constant_model_grid": [
+      49,
+      49
+    ],
+    "fixed_real_data_terms": 1920,
+    "expected_disjoint_LU": 96,
+    "expected_disjoint_forward_RHS": 480,
+    "expected_disjoint_tangent_RHS": 48,
+    "expected_disjoint_adjoint_RHS": 48,
+    "expected_disjoint_stability_RHS": 272,
+    "runtime": "LinuxPython3.11.18/NumPy2.4.6/SciPy1.17.1",
+    "external_runner_source_in_progress": true,
+    "execution_authorized": false,
+    "root_GO_created": false
+  },
+  "checkpoint23_controller": {
+    "status": "SOURCE_ONLY_CONTROLLER_AND_COMPARATOR_STAGING",
+    "stage": "work/new-phase-staging/checkpoint_pilot23_controller_candidate",
+    "native_worker_unchanged": true,
+    "native_execution_authorized": false,
+    "PDE_calls": 0,
+    "combined_final_review_pending": true
+  },
+  "next_execution_gate": "Independent externalnative-runner/workflow review + exactsource/protocol/criteria/rootGO beforeanynativeverification; firstremote58manufacturedcontrols mandatory. No mandatorysecondremotecontrolphase inferred."
+}

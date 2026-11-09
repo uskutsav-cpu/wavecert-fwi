@@ -1,0 +1,36 @@
+{
+  "actual_GO_created": false,
+  "actual_pushes": 0,
+  "candidate_contains_runtime_worker_code": false,
+  "prospective_base_commit": "83b17ef08acf63fcbc19a0c354fe82ca395c350a",
+  "publication_sequence": "After exact local source/control and independent/root review, create a single-parent83b source/workflow/registration commit unreferenced, then create the fresh dedicated branch at that finalSHA once. Root may include a preparation-only GO conditionally on this FIRST-created push; remote55 controls then the actualLinuxnamespace gate must pass before packages. A held first push is controls-only and consumes this branch; it cannot later activate via registration update.",
+  "registration_can_be_active_only_after_reviews_on_first_created_push": true,
+  "source_only_review_files_not_published": [
+    "history",
+    "planning_metadata",
+    "planning_sources",
+    "README.md"
+  ],
+  "source_revision": 3,
+  "status": "HELD_MAPPING_NO_PUBLICATION",
+  "target_branch": "research-checkpoint23-environment-02",
+  "targets": {
+    ".github/workflows/checkpoint23-environment-02.yml": "workflow_environment.yml",
+    ".github/workflows/ci.yml": "legacy_ci_branch_exclusion.yml",
+    "research/checkpoint23_environment/ROUTE_MANIFEST.json": "ROUTE_MANIFEST.json",
+    "research/checkpoint23_environment/RUN_REGISTRATION_01.json": "RUN_REGISTRATION_01.json",
+    "research/checkpoint23_environment/SOURCE_BUILD_ALLOWLIST.json": "SOURCE_BUILD_ALLOWLIST.json",
+    "research/checkpoint23_environment/build_requirements.in": "build_requirements.in",
+    "research/checkpoint23_environment/environment_steps.py": "environment_steps.py",
+    "research/checkpoint23_environment/frozen_v2/worker/RUNTIME_SOURCE_PINS.json": "frozen_v2/worker/RUNTIME_SOURCE_PINS.json",
+    "research/checkpoint23_environment/frozen_v2/worker/protocol.json": "frozen_v2/worker/protocol.json",
+    "research/checkpoint23_environment/import_identity_probe.py": "import_identity_probe.py",
+    "research/checkpoint23_environment/namespace_gate.py": "namespace_gate.py",
+    "research/checkpoint23_environment/prepare_environment.py": "prepare_environment.py",
+    "research/checkpoint23_environment/process_supervision.py": "process_supervision.py",
+    "research/checkpoint23_environment/run_probe_controls.py": "run_probe_controls.py",
+    "research/checkpoint23_environment/runtime_top_constraints.in": "runtime_top_constraints.in",
+    "research/checkpoint23_environment/test_environment_route.py": "test_environment_route.py",
+    "research/checkpoint23_environment/test_import_identity_probe.py": "test_import_identity_probe.py"
+  }
+}

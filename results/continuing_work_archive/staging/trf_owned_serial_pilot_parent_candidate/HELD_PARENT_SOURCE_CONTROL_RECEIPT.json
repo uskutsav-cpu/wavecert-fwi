@@ -1,0 +1,65 @@
+{
+  "GO_created": false,
+  "actual_controls": {
+    "actual_exit_code": 0,
+    "errors": 0,
+    "execution_attribution": "Originalsource author observed tool66f75e; root verified retained prehashed source/result/log. Metadatafinalization does not rerun controls.",
+    "failures": 0,
+    "log_sha256": "5c2c9685f2f9945eb39d5712db7cb3f90b2dc8d192a49a2e5a0221f63ac329a9",
+    "preexecution_identity_sha256": "ec3144287ba49a8adef21cfcbdc5921aa33a4e4deea0aba06cf29e59188aae04",
+    "result_sha256": "13fd7730de9c550873e65ffc1456746f88e1daadef4102725f6ef9294121a9ea",
+    "skipped": 0,
+    "terminal_chunk": "66f75e",
+    "tests": 11,
+    "unique_test_ids": 11,
+    "wall_test_seconds": 0.818
+  },
+  "controls_runtime_proposed": {
+    "numpy": "2.4.6",
+    "platform": "Linux",
+    "pytest": "9.1.1",
+    "python": "3.11.18",
+    "scipy": "1.17.1"
+  },
+  "criteria_sha256": "a13f07f86b34d4a6f8f39da7f7b9ef288d97b31fe17ea3dd3634a29de5049e56",
+  "environment": {
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]",
+    "targetLinux_runtime_checks_executed": false
+  },
+  "immutable_worker": {
+    "contract10_exact": true,
+    "initial_npz_sha256": "73d3e5b42ee3df6d40c0a9d8dc872c7603ad65d25ccbb459e0c0bbd40cdb4fc1",
+    "inventory_sha256": "3174d872c4426a27ce5b70fc8ae91dcc5e1973dc302a0928051ed5e8ac499b32",
+    "oldAPI_protocol_sha256": "e967fdf4096ab820b3fa68b37ce711b99dbfd752b3fe5a88e100589a9a30a41e",
+    "worker_review_sha256": "77514be4084170c3d098dad784af5c03a01f370a87361d9d3654391778792395"
+  },
+  "independent_parent_review_pending": false,
+  "metadata_only_clarification": "Current11 source/control evidence and reviewed cap fixes finalized after intermittent ENOSPC. Old9 history/control evidence preserved; no executable changes, tests, native work, GO or publication during this finalization.",
+  "project_PDE_calls": 0,
+  "realworker_executed": false,
+  "scientific_goals_complete": false,
+  "scope_sha256": "ac5684169a9058df33b3c076e4ed1b77d7b606307fc87e432d33cda7126c8d40",
+  "source_review": {
+    "closed_findings": [
+      "R1 terminal log cap",
+      "R2 independent worker-output cap",
+      "knownterminal unclosed-log inventory wording"
+    ],
+    "current_root_delta_file": "CAP_DELTA_ROOT_SOURCE_REVIEW_02.json",
+    "current_root_delta_sha256": "97132a430fdf996ba77cc13f411d80f93b199fa808250e932f3242bbcec54a11",
+    "no_execution_granted": true,
+    "prior_independent_full_source_review_tool": "c6f86c",
+    "prior_reviewed_source_sha256": "09dd8da81961d03d6f5d18370e556b826f0c6696336e541a45191224080c980e"
+  },
+  "source_sha256": {
+    "PILOT_PLAN.json": "ebded996fc6d0fd01eccd4b2e9a6523753f3eab35f66af596c367aebe897211d",
+    "serial_pilot.py": "7eaa78f8a4f3b1108378e89f4792a13089b0b9bace37555836f3144c72586382",
+    "test_parent.py": "cfc3edafc47eb0eb35e35ffcc49e26201a66b5af97c3b79553a0cc559d7ef5cc"
+  },
+  "static_checks": {
+    "python310grammar": "Author actualPASS165ca0 before11controls",
+    "ruff": "Author actualPASS8031d1 before11controls"
+  },
+  "status": "HELD_PARENT_SOURCE11_STDLIB_MANUFACTURED_PASS_SOURCE_REVIEW_CLEAR_NO_NATIVE_EXECUTION"
+}

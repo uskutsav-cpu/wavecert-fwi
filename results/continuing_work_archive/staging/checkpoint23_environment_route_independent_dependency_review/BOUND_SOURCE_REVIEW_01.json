@@ -1,0 +1,100 @@
+{
+  "controls_reviewed_not_rerun": {
+    "author_probe_passes": 25,
+    "author_route_passes": 18,
+    "distinct_total": 43,
+    "probe_actual_tool_chunk": "106c8f",
+    "route_actual_tool_chunk": "d924ff",
+    "scope": "Read source and retained logs/terminal receipts only; stdlib/synthetic/dummy processes. No actual namespace, resolver, install, build or target-import probe has run. First six missing-platform control errors and earlier probe fixture failure remain retained."
+  },
+  "created_utc": "2026-11-09T06:21:06.549902+00:00",
+  "material_findings": [
+    {
+      "allowlist_file": "SOURCE_BUILD_ALLOWLIST.json",
+      "file": "environment_steps.py",
+      "finding": "The allowlist explicitly requires rejecting ELF/PE/DYLIB outputs for contexttimer,cgen,codepy. wheel() inspects METADATA/archive names/sizes/symlink mode; pipeline checks only the none-any.whl filename for these projects. No member native-extension or binary-header check exists. A mislabeled pure-tag wheel can therefore pass this explicit output-audit contract.",
+      "id": "R1",
+      "line": 216,
+      "narrow_resolution": "Preserve current15-source/43-control history; add bounded wheel-member native-extension/header rejection for the three pure projects only, with manufactured ELF/PE/Mach-O and benign-pure examples. Leave PyRevolve compiled-wheel permission and all scientific/runtime versions unchanged. No broader malware/sandbox guarantee is requested.",
+      "root_disposition": "Root independently agreed the explicit contract requires the narrow check and will coordinate author fix; no review-author source edits."
+    }
+  ],
+  "probe_v2_conclusion": {
+    "limits": "Bindings do not attest mutable global/default/dependency behavior, native ABI, entire runtime or zero native import instructions. Probe still emits native_use_review_clear=false; separate real environment/root review and native GO remain necessary.",
+    "preserved": "V1 source19649/17controls/handoff604ad and all c8f6 runtime files remain hash-exact.",
+    "prior_blocker_receipt_sha256": "b4e40f9b8eceddefa530359ec245a3abfd644cd853603120eebe55bd40d94aef",
+    "resolved": "Genuine class types, exact pinned-module exported identities, expected MRO, static descriptors/properties, defining function globals/module/qualname and canonical code fingerprints bind20methods plus get_symbol_data to the two selected primary files. Source compilation uses dont_inherit=True/optimize=0 and no execution; inspection constructs no target instances. Placeholder, wrong genuine alias, foreign/forged-code, property and inherited-method negatives are present.",
+    "status": "CLEAR_FOR_SOURCE_SCOPE_REVIEW_ONLY"
+  },
+  "probe_v2_pins": {
+    "FINAL_HANDOFF.json": "a3a3b9b03c9e0b89ac1bc99761ff1e5b2a3c959d6d3011497a2c49cdd802253c",
+    "SOURCE_CONTROL_RECEIPT.json": "7cbee640467faaa486d55240df74d59e30b0e345a4f6d4b415babe1f996ce228",
+    "STAGED_FILE_MANIFEST.json": "0e4002afeeb02f7dfb630d308b939a0f2a224a0dd382823109be767cd014cb99",
+    "import_identity_probe.py": "f9d2209c296338b1ed7a631aa292fb6cd79fb98d0c4a23e013636c40bd57fe51",
+    "test_import_identity_probe.py": "6748459142471e6aeda82f936383681eb22ecc11e6d2b2844e3735900b0cbdc1"
+  },
+  "readonly_binding_inspection": {
+    "AST_control_denominators": {
+      "probe": 25,
+      "route": 18
+    },
+    "actual_tool_chunk": "6bd92c",
+    "exit_code": 0,
+    "issues": 0,
+    "probe_v1_manifest_files": 11,
+    "probe_v2_manifest_files": 7,
+    "publication_targets_including_manifest_false_registration": 17,
+    "route_manifest_files": 56,
+    "route_source_workflow_manifest": 15,
+    "scope": "All listed file bytes/counts/JSON bindings read and hashed; no candidate/test execution.",
+    "unchanged_runtime_v2_c8f6_files": 10,
+    "v1_handoff_sha256": "604ad5788e338b704efc9ce73fc2d7e6952c6e5441b0ad5a77f1c10169a647b6"
+  },
+  "remaining_dependency_dataflow_read_clear": [
+    "Exactly four fixed URL/SHA/size sdists are registered; all other resolver inputs must be wheels. Safe source extraction rejects traversal/duplicates/links and statically reads supported pyproject build requirements before package source execution.",
+    "Build requirements resolve with pip dry-run ignore-installed and only-binary under shared fixed runtime constraints. Resolved local wheels must bind successful exact builds; remote selections bind official release filename/URL/SHA/size. Actual complete closure remains to be resolved and recorded by a separately authorized run.",
+    "Build closure installs offline with no-deps, require-hashes and only-binary, followed by pip check/inspect/inventory before registered builds. Registered build commands use no-index/no-deps/no-build-isolation in a separately checked fresh network namespace; actual namespace/privilege/signal success must precede package acquisition. Missing implicit/setup/backend dependency has no online fallback.",
+    "Successful built-wheel file identities feed the final wheel-only runtime resolution, fixed target projection and clean hash-locked offline installation. Runtime pip check/inspect precede13primary source checks and the separately GO-bound17-origin/callable import probe.",
+    "Protocol/source13pins/NumPy2.4.3 version contract unchanged; candidate receipt and route result remain native_use_review_clear=false/native_execution_authorized=false. False registration contains no GO and no preparation authority.",
+    "Installed/source/wheel/compiler/linkage evidence is proposed collection, not proof already available. Exact wheel bytes and actual runtime/build locks need later review before reuse; no native approval is manufactured."
+  ],
+  "review_scope": "Dependency acquisition/resolution/offline build/install/source admission and V2 import-identity correction only. Separate reviewer owns process/workflow/resource/artifact review.",
+  "reviewer_actions": {
+    "GO": 0,
+    "PDE": 0,
+    "candidate_edits": 0,
+    "candidate_or_test_imports": 0,
+    "downloads": 0,
+    "installs": 0,
+    "jobs": 0,
+    "models_decoded": 0,
+    "retests": 0,
+    "runtime_imports": 0
+  },
+  "route_pins": {
+    "FINAL_HANDOFF.json": "7227b5fbeef61a39f100469836c747c5b22c2273383f2813ed6c41b3e421ac4d",
+    "PUBLISH_LAYOUT.json": "db514ce6be127f91a3ddc904b6b8df62a977d9ffea8806b9b65647f4248bc95c",
+    "ROUTE_MANIFEST.json": "ec947037bf3accd356a444e3bf966a85752d78c42e7729472f46800f61630fc4",
+    "RUN_REGISTRATION_01.json": "ecb5ef4acb9a8e23cc27a0ad3c83ba36ec0e5dbfa92b1cdf6ff7d727c5cab26e",
+    "SOURCE_BUILD_ALLOWLIST.json": "8b47bdd024bbec8f31b25019f5cfba4195172e1a9f90665bbcd981941646086a",
+    "SOURCE_CONTROL_RECEIPT.json": "df396ed1f7869257ab3b5116a89e40c56e41af4fe7139f65c74b0805f19d26a2",
+    "STAGED_FILE_MANIFEST.json": "0c234dd4c5044c86897be84530b8c162ccaa3def82a70de26e90638a8fdb0197",
+    "build_requirements.in": "899e8fcc56e117f45511e632d864d5f37ab80813eeb1776a337a117e913e5725",
+    "environment_steps.py": "74436e9dfcc9aacb1a3c8c2821be0e84b7d860f1c47192f2717a2f55f5083e87",
+    "import_identity_probe.py": "f9d2209c296338b1ed7a631aa292fb6cd79fb98d0c4a23e013636c40bd57fe51",
+    "namespace_gate.py": "c8afaee908efdc0e5dfac0f76649936d0cec84ecc383bbf49834ef0befe600a0",
+    "prepare_environment.py": "c37110b647249714a3c303e6f576f4081cfd8f1b7094f2ddb86c81b7ab9fa61f",
+    "runtime_top_constraints.in": "0bf0e2a6cc93a167a7acd8121bfaddf2d937d82d0c74b7ccb7cfeceac4678614",
+    "test_environment_route.py": "93827b37e8a9e59edd6fd691a2b80196706f2e32fe2011c05781bc081dfd4251",
+    "test_import_identity_probe.py": "6748459142471e6aeda82f936383681eb22ecc11e6d2b2844e3735900b0cbdc1"
+  },
+  "status": "BLOCKED_ONE_EXPLICIT_PURE_BUILD_OUTPUT_AUDIT_GAP_PROBE_V2_CLEAR",
+  "unproved_limits": [
+    "Actual Linux namespace/offline behavior and real dependency/build success",
+    "Full transitive/build lock and compiled scheduler loadability",
+    "Actual17 module origins and13 primary matches from installed packages",
+    "Whole-runtime, whole-system/native binary closure or general sandbox properties",
+    "Native numerical agreement/physics/novelty/student-goal completion"
+  ],
+  "write_scope": "One new small atomic/fsynced outer review JSON; frozen probe/route/V1 stages untouched."
+}

@@ -1,0 +1,59 @@
+{
+  "verified_utc": "2026-11-08T09:43:02.522684+00:00",
+  "head": "c9101dfa145eab03e209a245b6c365a947380307",
+  "worktree_clean": true,
+  "production_source": {
+    "files": 161,
+    "sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "original156_sha256": "b403390e70e83b086c509fe3f43289008af689b6e28b5016a54d585bb985edec",
+    "original156_byte_identity": true
+  },
+  "archives": [
+    {
+      "name": "stability_anchor_feasibility",
+      "files_checked": 15,
+      "manifest_sha256": "a016e58cb99179698e0dd5bb84f7b1bb595253e321180382b0610cd91f206e50"
+    },
+    {
+      "name": "initial_linearization_diagnostic",
+      "files_checked": 120,
+      "manifest_sha256": "4f841278114d6ec73dc581da1d44d0e42e9da1fa3cef36a805e1437daea4bbfb"
+    },
+    {
+      "name": "bp_heterogeneous_verification",
+      "files_checked": 236,
+      "manifest_sha256": "650d0170d7df0fa36819f217c59124265fa91813364404e74fff0aff518d6ee1"
+    }
+  ],
+  "critical_receipt_sha256": {
+    "results/bp_heterogeneous_verification/native_run_01/complete_receipt.json": "ae2ca931876b6c1159af151394bfb0e9c0352ea0c384e879ac398e5bca019206",
+    "results/bp_heterogeneous_verification/numpy_run_01/complete_receipt.json": "207bc209e59e6e07d8a1da1d26afd15ab1a92fcb01feef7793bd29d66438e89a",
+    "results/initial_linearization_diagnostic/run_01/complete_receipt.json": "6d7189953db68a59e3be220c81d86115f100d8f57442ef0ee8357c9b3d112563",
+    "results/stability_anchor_feasibility/run_01/report.json": "04e634ea7aa58ea2c7adbb585774a904ea83679fa05b9dd6d9e274a5287134d5"
+  },
+  "native_calls_complete": 57,
+  "NumPy_probe_traces": 3,
+  "NumPy_directional_comparisons": 6,
+  "initial_linearization_frequency_rows": 64,
+  "local_link_errors": [],
+  "test_sha256": "0cb4641e4e17fb79444a6c7b721e8badd0c4d69b587695da1771aa43c82346ba",
+  "source_test_CI": {
+    "commit": "d2c34fcf8028507b8f13111bd56bfcf8e5515837",
+    "run": 42467661756,
+    "all4jobs_success": true
+  },
+  "final_archive_CI": {
+    "run": 42468070561,
+    "all4jobs_success": true,
+    "job_ids": [
+      128692118360,
+      128692118453,
+      128692118469,
+      128692118512
+    ]
+  },
+  "source_and_tests_identical_to_d2": true,
+  "physical_acceptance": null,
+  "prior_CI_anomaly_cause": "unresolved, not repaired by diagnostics-only change",
+  "all_four_scientific_requirements_complete": false
+}

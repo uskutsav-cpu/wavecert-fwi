@@ -225,3 +225,11 @@ The [48-run classical-prior study](fractional_velocity_prior_development.md) is 
 ### Completed Linux V2/control validation
 
 [CI42540137515](https://github.com/uskutsav-cpu/wavecert-fwi/actions/runs/42540137515) at 8d7b7fc passes all four jobs; all four full logs retain seven numerical reports, including BP V2's3traces/6 informative derivatives and108/108 frequency controls. Numerical tolerances,161 production files and the 108-control parent test remain unchanged. The original 97f failure stays retained. This completes that software portability check; useful paid-cost recovery, accepted independent-model physics, a specific contribution and student-owned interpretation/defense remain open.
+
+## Latest archive for repository consolidation
+
+The [continuing-work archive](../results/continuing_work_archive/README.md) preserves completed evidence and unfinished drafts. Its [current status](../results/continuing_work_archive/CURRENT_STATUS.json) supersedes older nested snapshot statuses.
+
+The worker passed10 manufactured controls and the supervisor passed11; its source review and metadata are finalized. No project reconstruction has run. The current auditor and import-guard candidate remain untested/unvalidated. Environment02 built four source libraries, installed19 runtime distributions and passed dependency/source checks, then failed its import guard; the17-origin/callable check and native environment approval remain incomplete. Both failures and all original source histories are preserved.
+
+All four scientific goals remain open. This consolidation archives AI-assisted technical development; it does not establish a final student design, useful recovery, accepted independent-geology physics, novelty or student-owned reproduction/defense. Root production source and live workflows are unchanged.

@@ -1,0 +1,82 @@
+{
+  "GO_created": false,
+  "actual_controls": {
+    "XML_sha256": "d71c2e104836c206d6dba435be8f6a9096aced6a08b27c158ab89c5431dbfa28",
+    "actual_exit_code": 0,
+    "errors": 0,
+    "failures": 0,
+    "log_sha256": "16a5f7d18d06b2c295e6feca1eb83169daf2aec31d90b3c6870475350d644594",
+    "preexecution_identity_sha256": "43b7d92bc8707650f9c48aec90b97ff70d48c1fabf15b25dbacc478c85cf2e47",
+    "session": 33922,
+    "skipped": 0,
+    "terminal_chunk": "04f287",
+    "tests": 10,
+    "wall_test_seconds": 1.28
+  },
+  "actual_native_imports": 0,
+  "copied_immutable_bindings": {
+    "API_files_exact": 38,
+    "API_manifest_sha256": "b6514a9060bc1688329b59161546031cb790c0892c594e383f0dfc2c7618f526",
+    "API_protocol_sha256": "e967fdf4096ab820b3fa68b37ce711b99dbfd752b3fe5a88e100589a9a30a41e",
+    "initial_input_sha256": "73d3e5b42ee3df6d40c0a9d8dc872c7603ad65d25ccbb459e0c0bbd40cdb4fc1",
+    "newproject_protocol_sha256": "537cb3914c2e47e5d9afa327607bbfacd992ecec8f2020b8128a5005c9b59272"
+  },
+  "environment": {
+    "packages": {
+      "numpy": "2.4.3",
+      "pytest": "9.1.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]",
+    "target_runtime_checks_not_executed": true
+  },
+  "independent_finding_fix": {
+    "all13old_test_class_helper_AST_definitions_exact": true,
+    "finding_count": 1,
+    "finding_sha256": "6316f1f46de4bbb92e2889d040ac889975023be90ed32f1d72109cc72df6ea50",
+    "first_fix_receipt_preserved_sha256": "41d09a8952d5b55d66ca7398dac6f8b290d1b0723654789c2d78a0979e6b9b90",
+    "first_fix_source_not_final": true,
+    "fix": "Originalobservationcause retainedbeforediagnostics; completedarraychunks nowonlyworkercontext, JSONsafeidentities/IDs inAPIprefix; secondarydiagnostic/savefailure separatelyrecorded; bare-raiseoriginal.",
+    "math_protocol_or_API_changes": false,
+    "new_targeted_control_count": 1,
+    "old_manifest_sha256": "539760793f4318f8911de9ad65bb6a82efae0bd3343fff28668f0468400a7d60",
+    "old_receipt_sha256": "b9e7367c484c6e4cb29722262518575b87fb50d01227d08611c40f1f46f296a0",
+    "original_control_count": 8
+  },
+  "independent_review_pending": true,
+  "project_PDE_calls": 0,
+  "scientific_goals_complete": false,
+  "scope_sha256": "c5dee7a3db7d91d769e97cec4f8ceeb27a20deff1bf621f19185e7f38aaba2be",
+  "second_independent_finding_fix": {
+    "actual_native_factory_calls": 0,
+    "finding_sha256": "fa13f2ca0c3b14d0e04917a74f6a5c5fc921e6e06a4b834a4f650fa3c5eb7eb2",
+    "math_protocol_or_API_changes": false,
+    "new_control": "Real0558execute_one/sourceadmission/defaultJSONencoder, fakepublicobservationthirdfailure+partialsaveOSError, failedJSONenvelopeoriginalcause/secondaryerror/prefix/unknown/noNativeFactory.",
+    "old_76_manifest_sha256": "b06b12cd06dea14373234abaeb574b4bcc39f39414dfe443265157e593cbcd6d",
+    "old_9_receipt_sha256": "41d09a8952d5b55d66ca7398dac6f8b290d1b0723654789c2d78a0979e6b9b90",
+    "optimizer_calls": 0,
+    "original8_control_and_helper_AST_definitions_exact": 13
+  },
+  "source_sha256": {
+    "case_runtime.py": "7e8bcf12df49fffac27bb0011570550b67bb9cd6382d844503f8a24ba299c38f",
+    "project_protocol.json": "537cb3914c2e47e5d9afa327607bbfacd992ecec8f2020b8128a5005c9b59272",
+    "realcase_worker.py": "9a7a5199b00d9ae28ac000a3998215a9b85d13bee209e2ec6ca2f1f7c50f7f12",
+    "test_worker.py": "35ad9287e58d2b0f0e5e0eb12d3886093df8552b67db9bf279178fbdf345c4cf"
+  },
+  "static_checks": {
+    "python310grammar": "ActualPASS3abb8d before10controls",
+    "ruff": "ActualPASS2dbdf3 onthreecurrentPythonfiles"
+  },
+  "status": "HELD_WORKER_SOURCE10_MANUFACTURED_PASS_NATIVE_EXECUTION_UNEXECUTED",
+  "storage_scope": {
+    "all_stage_bytes_before_final_metadata_including_fixture_tmp": 2029496,
+    "atomic_edits_and_snapshots": true,
+    "fixture_temp_archives_compressed": true,
+    "latest_disposable_manufactured_fixture_directory_outside_inventory": "../trf_realcase_worker_controls_03_tmp",
+    "latest_external_disposable_manufactured_fixture_bytes": 521332,
+    "limit_bytes": 2097152,
+    "limit_scope": "Currentcandidate source/control/evidence directory includingoldfixturetmp stays<=2MiB; latest521332B disposablemanufacturedtestfixtures areoutsidecandidate andexcludedfromartifactinventory. No source/evidencecleanup.",
+    "no_evidence_cleanup": true
+  }
+}

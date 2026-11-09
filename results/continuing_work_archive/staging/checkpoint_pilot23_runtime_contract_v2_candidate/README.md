@@ -1,0 +1,15 @@
+# Held checkpoint23 runtime contract V2
+
+This separate candidate changes NumPy2.4.6 to2.4.3 to satisfy the published Devito4.8.23 requirement `numpy<=2.4.3,>=1.26`. SciPy1.17.1's selected cp311 Linux wheel requires `numpy<2.7,>=1.26.4`, so2.4.3 satisfies both direct bounds. NumPy2.4.3 and SciPy1.17.1 require Python>=3.11; the retained Python3.11.18 is within the declared ranges. The exact published wheel METADATA sidecars match their PyPI-advertised SHA256s. No package archives or binaries were acquired.
+
+`DIRECT_METADATA_COMPATIBILITY.json` records the direct-bound evidence. This does not establish the full transitive/build closure, actual installation, compiled scheduler loadability or numerical compatibility. PyRevolve2.2.8 still needs its separately reviewed build-once environment route. No installer or workflow is included.
+
+`V1_TO_V2_POINTER_DIFF.patch` is the complete runtime/template/registration diff. The protocol has exactly one changed JSON leaf: `/runtime/numpy`. Updated protocol byte/canonical-object hashes flow through common/comparator identity constants, the plan, bundle manifest and false registration. All structural schemas and authorization labels are unchanged; V2 is identified by this directory and new source hashes. The held cohort template remains unchanged and has never authorized a cohort.
+
+Worker319, accounting1b, controller ef0, entry045, resource policy4e5, source13 pins bfbc, all23 slots, grid/medium/source/dual/time/FD/math and tolerances remain byte- or object-identical. The common and comparison code have only protocol-identity constant substitutions. The original V1 worker/protocol/controller and environment feasibility600c were preserved.
+
+Four existing, unchanged metadata admission controls passed: exact23 plan/order, inferredK rejection, false-registration rejection before environment/Popen, and inherited Devito override removal. Runtime-package imports and Popen were prohibited by an audit hook; neither was attempted. Original `verify_bundle` also rehashed all10 V2 runtime files against the held registration. This is not a rerun of the earlier16+35 controls and provides no native result. See `METADATA_ADMISSION_CONTROLS_V2.json`.
+
+The environment template remains invalid/unapproved, registration and protocol remain `execution_authorized:false`, and no rootGO exists. Root and independent review of this exact V2 contract must precede a separately reviewed environment preparation job. Any later native pilot still requires actual17 import identities, selected13 source matches, complete dependency/build/binary evidence and a fresh exact source/environment/criteria GO. No installs, runtime imports, PDE, model decoding, cloud jobs, pushes or production edits occurred.
+
+Primary sources: [Devito4.8.23 metadata](https://pypi.org/pypi/devito/4.8.23/json), [NumPy2.4.3 metadata](https://pypi.org/pypi/numpy/2.4.3/json), [SciPy1.17.1 metadata](https://pypi.org/pypi/scipy/1.17.1/json). Exact wheel-sidecar URLs and saved hashes are in `PRIMARY_METADATA_RECEIPT.json`; source and evidence hashes are in `FINAL_HANDOFF.json`.

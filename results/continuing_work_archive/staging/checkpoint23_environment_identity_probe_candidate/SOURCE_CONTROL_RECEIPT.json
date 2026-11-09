@@ -1,0 +1,86 @@
+{
+  "actual_test_execution": {
+    "errors": 0,
+    "exit_code": 0,
+    "failures": 0,
+    "log": "CONTROLS_LOG_02.txt",
+    "log_sha256": "6fbdb1609e69404f4384b323c48dc93774e3d99425f2815776a5128d306ca4f6",
+    "skips": 0,
+    "test_names": [
+      "test_default_main_creates_no_evidence_or_target_import",
+      "test_exact17_synthetic_origin_set_is_returned_without_real_imports",
+      "test_false_authorization_stops_before_metadata_imports_and_output",
+      "test_grid_constructor_body_is_blocked",
+      "test_inherited_constructor_self_mro_is_blocked",
+      "test_inherited_new_cls_mro_is_blocked_in_foreign_helper",
+      "test_late_import_mutation_of_earlier_file_is_rejected",
+      "test_late_import_repointing_earlier_origin_is_rejected",
+      "test_missing_primary_denominator_rejects_before_any_import",
+      "test_nondict_go_has_clean_rejection_before_imports",
+      "test_nondict_nested_go_has_clean_rejection_before_imports",
+      "test_operator_apply_body_is_blocked_through_self_mro",
+      "test_preexisting_profile_hook_is_not_overwritten",
+      "test_revolver_subclass_name_is_blocked",
+      "test_unrelated_classes_and_foreign_grid_remain_usable",
+      "test_wrong_go_hash_stops_before_imports",
+      "test_wrong_protocol_bytes_stop_before_imports"
+    ],
+    "tool_chunk": "fe5b78",
+    "unique_tests": 17
+  },
+  "bound_pins_sha256": "bfbc2e31cd4ff7ae2a0f0342dc3633c5e4dc0189daea0d06eaeb12de1040350f",
+  "bound_protocol_sha256": "27e5a331d6bd9eff0dd6b4fa0ca1bc666c6014ed70ffb3da01821c62f83fdcbc",
+  "changed_functions_only": [
+    "authorize",
+    "imported_origins"
+  ],
+  "created_utc": "2026-11-09T05:34:24.725920+00:00",
+  "first_control_failure": {
+    "actual_exit": 1,
+    "cause": "Noncanonical manufactured macOS temp prefix",
+    "errors": 1,
+    "failures": 2,
+    "history": "history_control01_noncanonical_manufactured_prefix",
+    "test_fixture_correction": "Resolve four tiny manufactured fixture roots, without probe source changes",
+    "tests": 17,
+    "tool_chunk": "346db9"
+  },
+  "interface": {
+    "authorization": "GO_CHECKPOINT23_ENVIRONMENT_PREPARATION_V1",
+    "candidate_receipt": "candidate_environment.json",
+    "cli": "--execute --root-preparation-go --root-preparation-go-sha256 --protocol --pins --prefix --output",
+    "evidence": "identity_evidence.json",
+    "failure": "failure.json after import admission",
+    "native_use_review_clear": false,
+    "nested_projection": "import_identity_probe:{prefix:canonicalprefix,source_files:{import_identity_probe.py:selfSHA,protocol.json:27e5...,RUNTIME_SOURCE_PINS.json:bfbc...}}",
+    "required_flags": {
+      "execution_authorized": true,
+      "import_only_identity_probe_authorized": true,
+      "native_execution_authorized": false
+    }
+  },
+  "preserved_pre_fix_source_sha256": "06f82611c22ddc29c0149afff5b6fc39fd83f53e8c4d0a26563ec03ce88c9420",
+  "requested_source_corrections": [
+    "Reject non-object root preparation GO or nested import projection cleanly before target metadata/imports",
+    "Recheck all17 origins and hashes after all imports to reject late mutation/repointing"
+  ],
+  "scope": {
+    "GO_created": false,
+    "PDE_calls": 0,
+    "actual_import_probe_executed": false,
+    "actual_runtime_imports": 0,
+    "approved_environment_receipts_created": 0,
+    "independent_source_review_complete": false,
+    "jobs": 0,
+    "models_decoded": 0,
+    "native_workers": 0,
+    "package_binary_downloads": 0,
+    "runtime_installs": 0
+  },
+  "source_files": {
+    "import_identity_probe.py": "19649c1e0d923859d4db86bfc00c669555b7a54db7996c216247cce2b160fe0b",
+    "test_import_identity_probe.py": "7b05bb265390d97f83ca91faef0759c60d4908ce67b78c211ca7b8a18e93b23c"
+  },
+  "status": "SOURCE_ONLY_17_SYNTHETIC_STDLIB_CONTROLS_PASS_NOT_ACTUAL_IMPORT_PROBE",
+  "test_fixture_dependency": "Sibling checkpoint_pilot23_runtime_contract_v2_candidate/worker/protocol.json and RUNTIME_SOURCE_PINS.json, exact frozen hashes checked by rejection controls; probe runtime CLI accepts explicit paths."
+}

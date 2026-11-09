@@ -1,0 +1,32 @@
+{
+  "RSS_scope": "Cumulative RUSAGE_CHILDREN peak includes earlier control/nested children; never assigned solely to native. No phase-specific peak is inferred; the import probe records its own process peak separately.",
+  "actual_pid": 2294,
+  "actual_wait_returncode": 0,
+  "argv": [
+    "/opt/hostedtoolcache/Python/3.11.18/x64/bin/python3",
+    "-B",
+    "-I",
+    "-m",
+    "venv",
+    "--copies",
+    "--without-pip",
+    "/opt/wavecert/checkpoint23_environment_01/build_env"
+  ],
+  "child_CPU_delta_system_seconds": 0.013054000000000003,
+  "child_CPU_delta_user_seconds": 0.027041000000000003,
+  "cwd": "/home/runner/work/_temp/checkpoint23_environment_raw",
+  "deferred_parent_signals": [],
+  "external_spawn_through_wait_wall_seconds": 0.12270664199999715,
+  "label": "03_build_venv",
+  "launch_state": "HANDLE_ASSIGNED",
+  "observed_pgid": 2294,
+  "owned_process_group_alive_after_cleanup": false,
+  "parent_cumulative_children_peak_RSS_after_bytes": 27430912,
+  "parent_cumulative_children_peak_RSS_before_bytes": 24363008,
+  "requested_new_session": true,
+  "signal_scope": "Nonraising handlers through Popen handle handoff, owned cleanup, closed log and actual-wait receipt; no blocked child signal mask.",
+  "signals": [],
+  "terminal_state_known": true,
+  "timeout_seconds": 600,
+  "wait_observed": true
+}

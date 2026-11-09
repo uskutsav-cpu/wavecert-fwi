@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "status": "HELD_SOURCE_CANDIDATE_REQUIRES_ROOT_AND_INDEPENDENT_REVIEW",
+  "execution_authorized": false,
+  "authorization": "GO_CONSTANT_MEDIUM_CHECKPOINT_PILOT",
+  "purpose": "Engineering agreement of standard OT2 saved-history and explicit-K PyRevolve adjoints; enable later memory-bounded realistic-model validation. No new checkpoint method, field accuracy, scientific success or student final design claim.",
+  "runtime": {
+    "platform": "Linux",
+    "python": "3.11.18",
+    "devito": "4.8.23",
+    "pyrevolve": "2.2.8",
+    "numpy": "2.4.3",
+    "scipy": "1.17.1",
+    "threads": 1,
+    "installation": "Unexecuted. Ephemeral Linux installation and its dependency/build effects require a separate root-reviewed environment step. This driver never installs or downloads."
+  },
+  "constant_control": {
+    "shape": [41, 33],
+    "spacing_m": [10.0, 10.0],
+    "origin_m": [0.0, 0.0],
+    "nbl": 10,
+    "space_order": 4,
+    "time_order": 2,
+    "kernel": "OT2",
+    "dtype": "float64",
+    "velocity_m_per_ms": 2.0,
+    "m_units": "ms^2/m^2, numerically equal to s^2/km^2; m=1/vp^2",
+    "dt_ms": 1.0,
+    "nt": 257,
+    "t0_ms": 0.0,
+    "tn_ms": 256.0,
+    "free_surface": false,
+    "boundary": "Pinned Model bcs=damp, fixed across all perturbations; native model initialization may execute setup operators and is paid setup work.",
+    "source_position_m": [[200.0, 120.0]],
+    "receiver_positions_m": [[80.0, 80.0], [120.0, 80.0], [160.0, 80.0], [200.0, 80.0], [240.0, 80.0], [280.0, 80.0], [320.0, 80.0]],
+    "source_samples": "q(t)=exp(-((t-40)/8)^2)-0.6*exp(-((t-160)/8)^2), t in ms; full retained explicit PointSource, no per-segment source recreation or resampling.",
+    "receiver_dual": "r[t,j]=sin(0.037*t)*cos(0.29*(j+1)); first and last sample rows zero; fixed independently of F(m).",
+    "objective": "L(m)=sum(r*F(m)); compare native J(m)^T r with centered differences of L. This is an adjoint engineering control, not an FWI reconstruction experiment or data-merit optimizer.",
+    "native_time_bounds": "Set explicit forward and reverse native time_m=1,time_M=nt-2. Record each CheckpointOperator's independently prepared start_offset and complete scheduled/native ranges; reject disagreement with these bounds. Schedule nt-2 half-open steps, as the pinned official helper does.",
+    "extension": "Model initializes vp by replicated physical edge values; m=1/vp^2 commutes with this replication. Verify actual padded vp equals numpy edge padding for each base/FD model, then apply E^T to the full padded m gradient. No crop-only boundary gradient.",
+    "directions": ["interior", "left_edge"],
+    "direction_definition": "dm=m0*d/max(abs(d)); interior d=exp(-((i-20)/5)^2-((j-16)/4)^2), then d=0 outside i in[8,32],j in[8,24]; left_edge d=exp(-(i/3)^2-((j-16)/5)^2), then d=0 for i>10 or j outside[6,26]. No random direction or outcome tuning."
+  },
+  "variants": [
+    {"name": "saved", "checkpoints": null, "full_history": true},
+    {"name": "checkpoint2", "checkpoints": 2, "full_history": false},
+    {"name": "checkpoint4", "checkpoints": 4, "full_history": false}
+  ],
+  "finite_difference": {
+    "epsilon": [0.01, 0.003, 0.001, 0.0003, 0.0001],
+    "required_middle_epsilon": [0.003, 0.001, 0.0003],
+    "signs": [-1, 1],
+    "number_of_forward_children": 20,
+    "method": "Fresh rolling-memory forward child for every direction/epsilon/sign; m=m0+sign*epsilon*dm, vp=1/sqrt(m). Fixed dt, source samples, geometry, damping, time mask and objective. Retain every registered step; no best-step selection."
+  },
+  "candidate_criteria_pending_review": {
+    "receiver_relative_L2": 1e-10,
+    "padded_gradient_relative_L2": 1e-9,
+    "physical_gradient_relative_L2": 1e-9,
+    "fd_middle_relative_error": 0.0001,
+    "nontrivial_direction_cosine_minimum": 0.0001,
+    "policy": "All values must be finite; reference trace and both gradients must have nonzero norm. Every checkpoint variant must pass every vector comparison and each middle FD step for both directions. Retain all endpoints too. These are proposed ordinary float64 implementation tolerances, unvalidated and not yet frozen for execution; review must precede any outcome."
+  },
+  "memory": {
+    "checkpoint_capacity_cap_bytes": 16777216,
+    "whole_child_peak_RSS_review_cap_bytes": 2147483648,
+    "whole_child_cap_policy": "Record observed Linux ru_maxrss bytes and /proc sampled RSS. Exceedance fails the control after preserving evidence; this is not an OS allocation guarantee. Record compiler-child peak RSS separately without adding nonconcurrent peaks.",
+    "accounting": "Actual cp.size is elements, Bcp=cp.size*numpy.dtype(cp.dtype).itemsize; require cp.nbytes equality, exactly two live temporal planes and NumpyStorage shape(K,cp.size), actual allocation bytes K*Bcp. Inventory actual allocated u/v/grad/vp/damp/source/coordinates/receiver scratch/fixed dual buffers including halos, ring levels, padding and alignment. Saved child contains nt u planes; checkpoint child contains three rolling u planes and never constructs a saved history. No compression, disk storage, inferred K, fallback or automatic retry."
+  },
+  "timing_and_work": "Fresh serial OS process per saved/checkpoint/FD child. Record external actual wait status and whole launch-to-return wall time in a separately reviewed caller; worker records entry-through-pre-result-record wall time, CPU, setup/compile/propagation/checks/export spans, actual native attempts/returns/steps, replay forward work, reverse work and actual checkpoint save/load bytes. All instrumentation and hashing is paid. PyRevolve ratio is diagnostic only. Default CLI launches nothing and imports no Devito/PyRevolve/NumPy.",
+  "JIT_cache_policy": "Fresh OS processes do not clear the shared Devito/codepy compiled cache. The fixed saved then K2 then K4 then FD order may warm later variants; caches are not cleared by this driver. Retain actual worker/Devito compiler console logs, generated C bytes/hash, loaded library path/stat and available native compiler/timer metadata. A timer alone does not establish a cache hit or cold compile. The pilot tests memory/storage and gradient agreement and supports no fair-speed or matched-cost superiority claim.",
+  "future_execution_order": ["saved", "checkpoint2", "checkpoint4", "20 fixed FD children", "compare all retained results"],
+  "failure_policy": "Fresh output only, actual failure/interrupt prefix preserved, no retry, no larger K, no source/geometry/time modification and no default fallback. This stage creates no workflow or job and does not authorize any runtime install or launch."
+}

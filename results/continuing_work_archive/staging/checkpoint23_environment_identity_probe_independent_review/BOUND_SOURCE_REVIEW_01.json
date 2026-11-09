@@ -1,0 +1,70 @@
+{
+  "bounded_write": "New outer review only, fsynced temporary regular file atomically renamed; no candidate-stage writes.",
+  "created_utc": "2026-11-09T05:54:53.014759+00:00",
+  "manufactured_controls": {
+    "actual_log_summary": "Ran17 tests in0.019s, OK",
+    "author_actual_passes": 17,
+    "author_tool_chunk": "fe5b78",
+    "reviewer_reruns": 0,
+    "scope": "Stdlib fake module/class/temporary-file and guard controls; not real installed runtime, compiled scheduler loadability or actual17 origins. First noncanonical macOS fixture failure and pre-origin-rehash source are retained."
+  },
+  "material_findings": [
+    {
+      "finding": "DevitoCheckpoint and CheckpointOperator are admitted via writable __module__ strings only; class type, exact alias identity and method code-file/source bindings are not checked. The existing synthetic successful-origin fixture deliberately passes two SimpleNamespace placeholders, proving the admission predicate does not establish class identity. Revolver has exact exported MemoryRevolver identity but neither a class-type check nor method-source binding.",
+      "id": "R1",
+      "narrow_resolution": "Before target import GO, verify type and exact exported identities against the already pinned checkpoint and pyrevolve modules, and bind the relevant Python methods to expected pinned code origins without constructing instances. Add manufactured wrong-alias/foreign-method rejection controls, preserving this source and17-pass record. Alternatively explicitly remove the unimplemented gate from scope and defer it to a separately reviewed identity step; do not claim it was established.",
+      "source_line": 223,
+      "test_line": 59,
+      "why_material": "Parent requested actual alias-class/method-source evidence before import-only readiness. Seventeen module file hashes plus labels do not themselves bind callable objects/methods to those bytes; the import probe must not report this gate established."
+    }
+  ],
+  "read_hash_inspection": {
+    "actual_tool_chunk": "9f459d",
+    "control_names_from_AST": 17,
+    "exit_code": 0,
+    "issues": [],
+    "manifest_files_exact": 11,
+    "scope": "Read/hash/JSON/AST only; no execution or import of candidate or tests.",
+    "v2_c8f6_runtime_files_unchanged": 10
+  },
+  "reviewed_stage": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/checkpoint23_environment_identity_probe_candidate",
+  "reviewer_actions": {
+    "GO": 0,
+    "PDE": 0,
+    "candidate_imports": 0,
+    "downloads": 0,
+    "installs": 0,
+    "jobs": 0,
+    "models_decoded": 0,
+    "runtime_package_imports": 0,
+    "source_edits": 0,
+    "tests": 0
+  },
+  "source_areas_clear": [
+    "Default main returns metadata before input reads or target imports.",
+    "authorize requires exact external GO byte hash, exact probe/protocol/pins source map, proper dict projections, explicit environment-preparation-only flags and registered canonical prefix; no native approval flag is emitted.",
+    "preimport requires fresh target-free isolated Linux x86_64/Python3.11.18, prefix/controlled environment and exact four distribution versions, then hashes all13 located primary sources under prefix before target imports.",
+    "imported_origins records13primary+4actual package-root/compiled-scheduler origins, requires all17 under canonical prefix and primary byte matches, then rechecks each origin/hash after all selected imports.",
+    "Probe explicit operations contain no Grid/Model/TimeFunction/Operator/checkpoint/revolver construction or solver execution. Python profile guard covers known constructor/apply calls and inherited cls/self MRO; limitations regarding C code/native instructions/subprocess/allocations are clearly stated.",
+    "Candidate environment stays native_use_review_clear=false, so existing approved native controller gate remains unavailable. Own CPU/RSS/import timing is labelled cumulative/partial; full external launch/wait/cost remains future controller responsibility."
+  ],
+  "source_pins": {
+    "CONTROLS_LOG_01.txt": "c1d8584c8d3cd43a0e2d271b033f5a2ebb31f8f005ab7b038b642396d7f968ad",
+    "CONTROLS_LOG_02.txt": "6fbdb1609e69404f4384b323c48dc93774e3d99425f2815776a5128d306ca4f6",
+    "FINAL_HANDOFF.json": "604ad5788e338b704efc9ce73fc2d7e6952c6e5441b0ad5a77f1c10169a647b6",
+    "README.md": "43efe360b4a8267fa8fd1e37a8e2f841948fabd0e6fa9497dbd693339fec416b",
+    "SOURCE_CONTROL_RECEIPT.json": "26689db8d3610f1085fa48959357216834ea86bbd4d0931cbc89cd971da84645",
+    "STAGED_FILE_MANIFEST.json": "618c4c7b523d882f48926b77ec6a03d92b936a6b0c0ec8875adb6ea79abe1b2b",
+    "history_before_origin_rehash_and_go_type_fix/import_identity_probe.py": "06f82611c22ddc29c0149afff5b6fc39fd83f53e8c4d0a26563ec03ce88c9420",
+    "history_control01_noncanonical_manufactured_prefix/FAILURE_RECEIPT.json": "b1f4342544165cc7cdc5abaa7c0a9628ef480fd5f28a89d8d6985cc2083f592d",
+    "import_identity_probe.py": "19649c1e0d923859d4db86bfc00c669555b7a54db7996c216247cce2b160fe0b",
+    "test_import_identity_probe.py": "7b05bb265390d97f83ca91faef0759c60d4908ce67b78c211ca7b8a18e93b23c"
+  },
+  "status": "BLOCKED_REQUESTED_ALIAS_CLASS_AND_METHOD_SOURCE_GATE_MISSING",
+  "unreviewed_future_gates": [
+    "Main geometry controller/helper/workflow route is unfrozen/unwritten and is not reviewed or approved here.",
+    "Probe checks selected distribution versions and files, not wheel RECORD/whole-wheel provenance, complete transitive/build closure, compiled ABI/system linkage or all native code; future complete environment route/root review must establish those separately.",
+    "Root GO authenticity originates in a separately reviewed external workflow/operator process. This probe enforces a caller-provided hash/content contract and creates no independent GO authority.",
+    "Import initializers can execute native extensions and cache/compiler/CPU probes; import-only is not zero native instructions, a security sandbox or numerical/PDE validation."
+  ]
+}

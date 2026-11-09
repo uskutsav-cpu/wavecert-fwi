@@ -1,0 +1,88 @@
+{
+  "budget_authorized": false,
+  "cloud_job_authorized": false,
+  "execution_authorized": false,
+  "fair_speed_claim": false,
+  "first_future_job": {
+    "PDE_calls": 0,
+    "native_worker_calls": 0,
+    "project_data_decoding": false,
+    "purpose": "Build once and retain exact wheels plus original native_use_review_clear:false preparation receipt for root review",
+    "required_evidence": [
+      "actual argv/env/PID/wait/exit/build/download/installation costs",
+      "full exact runtime/build dependency locks and artifact sizes/hashes/source URLs",
+      "all wheel METADATA/WHEEL/RECORD + installed inventories",
+      "PyRevolve build source/inputs/compiler/linker logs and exact successful wheel",
+      "pip check/inspect/install report and actual package versions",
+      "13 selected primary source matches and17 actual imported canonical paths/hashes",
+      "base Python artifact/binary/stdlib/pyvenv/sys.path/sysconfig identities",
+      "ELF dependencies/RPATH/RUNPATH and actual loaded shared library identities",
+      "OS/runner image/compiler/system package identity and resource accounting",
+      "license files and failure evidence/artifact inventory"
+    ],
+    "selected_import_probe": "Separate explicit authorization required; loads native extensions and may probe CPU/compiler/cache, but no Grid/Model/Operator/PDE construction"
+  },
+  "frozen_bundle_manifest_sha256": "0a73d9c6f2a536698129712a19adf191b5ad6c0b548404d55850d09870e05237",
+  "frozen_protocol_sha256": "08f262f638da9a72b262d252ba8e3eaab4452d772d8c80606bc44e7137fba866",
+  "frozen_runtime_pins_sha256": "bfbc2e31cd4ff7ae2a0f0342dc3633c5e4dc0189daea0d06eaeb12de1040350f",
+  "frozen_worker_sha256": "31969bd3e072dcbf554e0cd98f022b0e35dd5438ef12566f9c23fa98eee76e9b",
+  "full_dependency_lock": null,
+  "installs_authorized": false,
+  "later_future_native_job": {
+    "allow_interpreter_or_path_fallback": false,
+    "allow_new_package_download": false,
+    "allow_rebuild": false,
+    "allow_repair_or_strip": false,
+    "allow_resolution": false,
+    "before_controller": "All environment admission succeeds, root separately freezes approved environment receipt and exactGO; no job selfapproval.",
+    "consume_exact_reviewed_artifact_id_run_id_digest_and_manifest": true,
+    "offline_complete_wheel_lock": true,
+    "require_base_binary_and_system_linkage_review": true,
+    "require_exact_selected17_and_primary13": true,
+    "require_pip_check": true,
+    "same_absolute_prefix": true,
+    "separately_authorized": false
+  },
+  "material_conflict": {
+    "declared_requirement": "numpy<=2.4.3,>=1.26",
+    "frozen_required_numpy": "2.4.6",
+    "no_metadata_bypass": true,
+    "primary_source": "https://github.com/devitocodes/devito/blob/110463bd57ade6001fcbabf4883c3ab498041a61/requirements.txt",
+    "resolution_chosen": null,
+    "wheel_metadata_sha256": "099b9b6cad7ae7181e52d5ecf13c842b77ad017cdbf34a21b06e3f1bddcba5d0"
+  },
+  "native_use_review_clear": false,
+  "proposed_paths": {
+    "base_python_prefix": "ACTUAL_REVIEWED_OFFICIAL_INSTALLATION_PATH_NOT_ASSUMED",
+    "build_prefix": "/opt/wavecert/checkpoint23/build_01",
+    "prefix": "/opt/wavecert/checkpoint23/env_01",
+    "wheelhouse": "/opt/wavecert/checkpoint23/wheelhouse_01"
+  },
+  "prospective_ceilings_bytes": {
+    "final_runtime_wheels": 201326592,
+    "free_disk_headroom": 4294967296,
+    "live_workspace": 8589934592,
+    "python_archive": 134217728,
+    "retained_evidence": 16777216,
+    "retained_total": 419430400,
+    "source_and_build_inputs": 67108864
+  },
+  "remaining_gates": [
+    "Resolve dependency conflict by separately versioned contract, preserve current source freezes",
+    "Review full metadata-selected runtime/build lock and prospective budgets",
+    "Review and control actual preparation source/workflow and import scope",
+    "Explicit first environment-job authorization",
+    "Review real preparation evidence and exact artifact bytes before native",
+    "Exact second-job install/import revalidation plus separate nativeGO"
+  ],
+  "reproducible_rebuild_claim": false,
+  "required_versions": {
+    "devito": "4.8.23",
+    "numpy": "2.4.6",
+    "pyrevolve": "2.2.8",
+    "python": "3.11.18",
+    "scipy": "1.17.1"
+  },
+  "schema": "checkpoint23_environment_preparation_feasibility_v1",
+  "status": "DEPENDENCY_CONFLICT_REQUIRES_SEPARATELY_VERSIONED_RUNTIME_CONTRACT"
+}

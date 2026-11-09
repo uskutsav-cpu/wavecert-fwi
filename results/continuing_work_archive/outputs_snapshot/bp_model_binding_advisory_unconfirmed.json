@@ -1,0 +1,95 @@
+{
+  "status": "HYPOTHETICAL_UNCONFIRMED_NOT_AUTHORIZATION",
+  "created_utc": "2026-11-08T09:38:36.040000+00:00",
+  "role": "AI source-only conditional design note for a possible versioned comparison-contract correction; no implementation or research design",
+  "condition": "Consider only IF diagnostic CI42467661756 actually establishes a proxy-mass-only ULP mismatch with exact physical-velocity C inputs and intact native/own artifacts. This agent has not queried or read that run. Same Python/NumPy/Linux labels alone do not identify the cause.",
+  "source_pins": {
+    "runner": "c51e570934071eade9e59989cd57daddd064252cd930e410573db0365944d9e0",
+    "protocol": "f0b9db69a434116f212182897f4fa34ffd714782cf0e8dd30adb0410cc139e8c",
+    "core": "b217dd6d2850f8c264f5910933cb1f4687bed8a7b3e780f7712c750d149328ce",
+    "rolling_primary_C": "e26af052bba5b5557e087ccbb160f551188ee38eae8af41cf3f48f046758ec65",
+    "native_producer": "73b617773c76a35e847add60d4b9f2200517d49d68a0f9af63b1098bc9d0137d",
+    "native_helper": "ad3b808c53d9cd6b7d38a9a03f692615d8ff664db9515d31faf47c3482884d02"
+  },
+  "production_source_sha256_checked": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "source_file_count": 161,
+  "primary_source_evidence": [
+    {
+      "path": "results/bp_heterogeneous_verification/numpy_replay/primary_metadata/rolling_forward.c",
+      "line": 53,
+      "fact": "Native generated C mass is1.0/(vp*vp); source injection line72 also uses vp*vp."
+    },
+    {
+      "path": "results/bp_heterogeneous_verification/numpy_replay/numpy_bp_tangent.py",
+      "line": 131,
+      "fact": "Own material hash is computed from1/(velocity*velocity); core propagation uses product-derived padded mass."
+    },
+    {
+      "path": "work/new-phase-staging/bp_heterogeneous_guard_candidate/run_guards.py",
+      "line": 112,
+      "fact": "Native historical metadata hash uses NumPy1/physical**2; physical is a strided slice of the model data view."
+    },
+    {
+      "path": "work/new-phase-staging/bp_heterogeneous_guard_candidate/run_guards.py",
+      "line": 338,
+      "fact": "Historical direction/probe witness uses NumPy1/probe_velocity**2 on the physical array."
+    },
+    {
+      "path": "results/bp_heterogeneous_verification/numpy_replay/run_replay.py",
+      "line": 158,
+      "fact": "Current v1 gate requires own material SHA to equal that historical native NumPy-power metadata SHA."
+    },
+    {
+      "path": "results/bp_heterogeneous_verification/numpy_replay/run_replay.py",
+      "line": 184,
+      "fact": "A second v1 gate requires exact own product-mass array equality with the archived power-derived direction probe_m."
+    }
+  ],
+  "required_diagnostic_evidence_before_any_correction": [
+    "All three own solves completed before any native numeric arrays opened; preserve every case and all six direction statuses/errors, including unavailable comparisons.",
+    "Identify the exact exception/gate per case. A numeric trace/source/direction/fold/DD failure must not be reclassified as proxy-only.",
+    "Compare canonical little-endian float64 physical-velocity bytes/shape with the archived native physical velocity. Any actual velocity mismatch fails the proposed binding.",
+    "Check complete/worker/source/protocol/input/artifact hashes and historical proxy-array bindings; changed files or incoherent native witnesses are failures.",
+    "Retain maximum absolute, relativeL2 and ULP differences plus mismatch counts for both material evaluation routes and array layouts. Record Python/NumPy/build/CPU-dispatch information; do not infer CPU causality merely from coarse version labels.",
+    "The mismatch must be shown to originate in derived metadata evaluation, not a changed unit convention, transposition, physical input, coefficient, damping, source, time axis, normalization or solver recurrence."
+  ],
+  "hypothetical_versioned_binding_contract": [
+    "Keep v1 source/protocol/results and all failed CI attempts immutable and failed under v1. A future v2 needs a new runner/protocol SHA and explicit prospective freeze before fresh reruns; never overwrite or retroactively relabel them.",
+    "Keep the frozen core/primary C, equations, coefficients, grid, source, timing, all three inputs and all existing numerical tolerances unchanged. The proposal changes a comparison invariant, not propagation or a numerical pass threshold.",
+    "Exactly bind the physical velocity supplied as the C material input: canonical raw native physical-vp bytes must match its native descriptor and the independently reconstructed own physical-vp bytes. Reconstruct constant-edge padded velocity by copies and check its historical native padded-vp descriptor. Fail any real vp mismatch, including a one-ULP change.",
+    "Preserve and exactly validate historical power-derived metadata as historical data: native actual_physical_m raw bytes must hash to the recorded native physical-m descriptor; direction witness probe_m must bind to that same historical proxy. Padded proxy descriptors may be checked by exact edge-copy extension where the recorded artifacts support it. If historical witnesses are internally inconsistent, fail rather than waive the inconsistency.",
+    "Do not demand that regenerating a nonlinear NumPy-power proxy on a different CPU reproduce its original bits. Distinguish historical_proxy_m identity from own_C_expression_mass, with separate mappings and hashes. Report their differences rather than claiming bitwise equivalence.",
+    "Do not replace the own product-derived propagation mass or independent directions with native numeric witnesses. Complete all three own solves first, exactly as v1. The native witnesses become comparison data only afterward.",
+    "Replace only the two cross-route derived-mass equality gates with the documented exact-vp/source-expression binding plus historical proxy integrity checks. Keep direction comparison at1e-14, source at1e-14, trace at1e-9, folded-gradient at1e-13, directional agreement at1e-3 and near-zero classification at1e-8 unchanged.",
+    "Continue every case comparison and preserve all3/6 denominators and missing/uninformative outcomes. Metadata correction alone never gives numerical agreement; all unchanged source/direction/trace/fold/DD checks still have to pass.",
+    "Generated C expression identity and identical input bytes do not prove bitwise identity of compiled native and NumPy coefficient arithmetic across hardware/compiler flags. No such stronger claim should be added."
+  ],
+  "counterexamples_and_new_controls_required_before_v2_execution": [
+    "Change one physical-vp element by one ULP while leaving tolerable trace changes possible: exact material-input binding must still fail.",
+    "Use an independently justified manufactured example where the same vp has different rounded historical-proxy and C-product route values: it may reach numerical comparisons under v2 only with correct fixture-specific historical hashes. Do not fabricate acceptance by corrupting a pinned native artifact.",
+    "Corrupt a native proxy/direction file by one ULP or alter a descriptor without its registered root chain: artifact/hash or historical self-consistency checks must fail.",
+    "Check contiguous and padded/strided views, powers of two and adjacent representable values using fixed manufactured arrays. These are numerical implementation controls, not project-data searches for a passing field.",
+    "Alter units, transpose material, change a boundary-copy value, use a wrong source scale/time mask or change a direction mask/normalization beyond its existing criterion: retain the corresponding failure; the proxy hypothesis grants no exemption.",
+    "Perturb trace or tangent outputs beyond their existing thresholds, and include zero/near-zero directional derivatives and an unavailable case: numerical failure/uninformative status and full denominators must remain visible.",
+    "Exercise both exact-agreement and genuine-mismatch historical witness sets; a fake comparison-only control should prove that all three cases and all six directions remain in the final result.",
+    "Rerun the unchanged numerical problem on the relevant distinct CI hosts only after diagnostics and a separately reviewed v2 freeze. Log CPU/build dispatch details. A single fresh pass does not erase previous failures or prove their cause."
+  ],
+  "protocol_and_claim_delta": {
+    "would_change": "A named version of the material comparison contract and comparison provenance fields; source/protocol hashes must change explicitly. The existing exact physical-vp binding remains authoritative and is checked directly against retained raw arrays/padded descriptors; historical derived-proxy identities are validated separately. Replacing the two cross-route proxy-bit gates changes v1 acceptance semantics and must be disclosed, without pretending that v1 lacked an exact-vp gate.",
+    "would_not_change": "PDE/core/primary literals/source/absorber/dt/grid/inputs/directions/numerical tolerances/three-case and six-direction schedule/old results.",
+    "permissible_claim_if_v2_passes": "Source-informed numerical reproduction of the same fixed problem with identical physical-velocity inputs and unchanged engineering criteria; historical derived proxy identities remain validated separately.",
+    "forbidden_claims": [
+      "All platforms now have bitwise identical derived m.",
+      "The old failed v1 CI run passed.",
+      "The CI cause was CPU dispatch without direct diagnostic evidence.",
+      "Physical/continuum accuracy, new geology, formal floating-point enclosure, certificate transfer, method novelty or completed student research."
+    ]
+  },
+  "actions_performed": {
+    "driver_core_protocol_test_edits": 0,
+    "project_or_native_array_reads": 0,
+    "solves_PDE_optimizer_calls": 0,
+    "new_CI_execution_or_partial_log_reads": 0,
+    "writes": "this outer JSON advisory only"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "actual_final_controls": {
+    "XML_sha256": "478491fa095229b4b51d0bf4d85be9853114545ba8d1159ca16707e058590cac",
+    "actual_exit_code": 0,
+    "errors": 0,
+    "failures": 0,
+    "log_sha256": "afce95472c348fc7db5f9b1ac9c923e05497173bfcbfd6c27d874c8f7d249b6f",
+    "prehashed_source_identity_sha256": "03cf5cbc7e608da9ed1e8ea17b6bbf042eb960331293c315a417c452daceac9a",
+    "seconds": 1.06,
+    "session_id": 31781,
+    "skipped": 0,
+    "terminal_chunk": "b524db",
+    "tests": 18
+  },
+  "earlier_controls": {
+    "actual_exit_code": 0,
+    "receipt_sha256": "d60db7a8719576d5cac9e26fe43b204a662ca0f4e0a3c7cbd82f2c7292fcd4d6",
+    "scope": "InitialAPI beforemandatory admission/preentrytightening; exactexecutedsources preserved.",
+    "terminal_chunk": "864eb0",
+    "tests": 16
+  },
+  "local_control_runtime": {
+    "packages": {
+      "numpy": "2.4.3",
+      "pytest": "9.1.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]",
+    "target_runtime_controls_not_performed_in_thisstage": true
+  },
+  "review": {
+    "fullOSprocess_eligibility_implemented": false,
+    "independent_driver_review_pending": true,
+    "nativeV2separatelypassed_oneconstantmodel_only": true,
+    "project_GO_created": false,
+    "source_informed_AI_author_work": true
+  },
+  "scientific_goals_complete": false,
+  "scope_sha256": "79dfd0b8dbec70d7d31898720b550788a5e64953e74bd0e9c04ee64e68248026",
+  "source_sha256": {
+    "FROZEN48_SCHEDULE.json": "3c21717474a32de5ae660812210c5b1993c32d3f2953a2da639886d6bbd49f89",
+    "bounded_exact.py": "d5fb6326bcd252efc3a7672dba993311fb0ba724b90039e7fda317bcf8bb770c",
+    "cached_jacobian.py": "f613370617d7e0bd7815cf441dd8ba5f41816ad4791275e86f33de228657c79b",
+    "component_controls.py": "e5dfc6db6dde088000064cd8d5c5eaae6668749746f4523f692349032999407e",
+    "matched_driver.py": "0558a0e08e3994b78a77800c79416c51fe56eb3cb3be6d90a62daaad62918497",
+    "normalized_exact.py": "d8896442411113189fe7507fc45520e412f4cc75d8780ac05bcbff75ef8b351c",
+    "protocol.json": "e967fdf4096ab820b3fa68b37ce711b99dbfd752b3fe5a88e100589a9a30a41e",
+    "public_map_builder.py": "7e1c79f99df6e68dda185552f0ff6f480b5fd4823061e7581952cafbd759cb11",
+    "test_driver.py": "2e105f64a62cfa505436cc08e8496f3142daee2f36b4b6038b79be4be07573e3"
+  },
+  "static_checks": {
+    "default_metadata_actual_exit_code": 0,
+    "default_metadata_sha256": "12921a8a710a371c4556c1815ec0792388aaac7ae1c0898540f71229b9efa34b",
+    "default_metadata_terminal_chunk": "2cebac",
+    "python310grammar": "ActualPASS1d3137 for allsevenstagedPythonfiles.",
+    "ruff": "ActualPASS0f8a6e for three new maintainedsources; explicitlocal firstpartyconfiguration; no wholehistory/projectpass claim."
+  },
+  "status": "HELD_API_SOURCE18_MANUFACTURED_PASS_NO_PROJECT_EXECUTION_ROUTE"
+}

@@ -1,0 +1,72 @@
+{
+  "actual_children": [
+    {
+      "actual_wait": 0,
+      "group_alive_after_cleanup": false,
+      "label": "01_namespace_dummy",
+      "pid": 2263,
+      "wall_seconds": 0.5122650299999982
+    },
+    {
+      "actual_wait": 0,
+      "group_alive_after_cleanup": false,
+      "label": "02_create_task_roots",
+      "pid": 2266,
+      "wall_seconds": 0.010230319000001487
+    },
+    {
+      "actual_wait": 0,
+      "group_alive_after_cleanup": false,
+      "label": "03_build_venv",
+      "pid": 2268,
+      "wall_seconds": 0.17035768499999904
+    },
+    {
+      "actual_wait": 0,
+      "group_alive_after_cleanup": false,
+      "label": "04_build_pip",
+      "pid": 2270,
+      "wall_seconds": 1.1813285130000004
+    },
+    {
+      "actual_wait": 0,
+      "group_alive_after_cleanup": false,
+      "label": "05_resolve_build",
+      "pid": 2293,
+      "wall_seconds": 1.5618484909999957
+    }
+  ],
+  "actual_namespace_gate_pass": true,
+  "actual_remote_controls": 51,
+  "attempt": 1,
+  "commit": "d8a2d4e818127b060aca94c62036fa952b29c651",
+  "complete_environment": false,
+  "controller_exit_evidence": "Shell step full fetchedlog and primary GitHub terminal job failure, not a fabricated root Popen wait",
+  "controller_step_exit_code": 2,
+  "explicit_PDE_or_checkpoint_children": 0,
+  "explicit_remote_body_bytes": 7183949,
+  "failure": {
+    "exception_type": "ValueError",
+    "message": "one wheel METADATA required",
+    "native_execution_authorized": false,
+    "native_use_review_clear": false,
+    "status": "ENVIRONMENT_PREPARATION_FAILED_OR_INTERRUPTED_NO_RETRY"
+  },
+  "failure_cause_inference": "All suffix-matching nested vendor dist-info METADATA entries were treated as top-level wheel metadata. Last completed wheel was setuptools84.2.1; upstream tagged source contains nested vendor metadata. Exact remote archive entries were not retained or independently inspected.",
+  "inventory_complete": true,
+  "inventory_payload_files": 44,
+  "issues": 0,
+  "job_id": 129020686732,
+  "metadata_artifact_id": 13654957408,
+  "native_use_review_clear": false,
+  "next_action": "Separate reviewed source correction and fresh one-shot environment02; preserve originalfirstattempt and no unchanged rerun.",
+  "pip_resolver_transfer_bytes": "UNKNOWN_NOT_INSTRUMENTED",
+  "read_only_checks": 76,
+  "run_id": 42575024250,
+  "schema": "checkpoint23_environment_first_attempt_root_review",
+  "scientific_goals_complete": false,
+  "status": "FAILED_BUILD_WHEEL_METADATA_INSPECTION_NO_RETRY_OR_NATIVE_APPROVAL",
+  "target_runtime_import_probe_executed": false,
+  "zip_bytes": 104300,
+  "zip_sha256": "81eca1b90ebc3108fbf310a5b46564c47f4380fa9b55d7e67657099967d50f3a"
+}
