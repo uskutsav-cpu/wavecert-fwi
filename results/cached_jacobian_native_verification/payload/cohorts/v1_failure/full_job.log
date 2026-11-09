@@ -1,0 +1,409 @@
+﻿2026-11-09T04:24:11.5196389Z Current runner version: '2.338.2'
+2026-11-09T04:24:11.5216325Z ##[group]Runner Image Provisioner
+2026-11-09T04:24:11.5217079Z Hosted Compute Agent
+2026-11-09T04:24:11.5217722Z Version: 20261028.624
+2026-11-09T04:24:11.5218306Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-09T04:24:11.5218899Z Build Date: 2026-10-28T21:51:42Z
+2026-11-09T04:24:11.5219516Z Worker ID: {c22e71f7-dc25-4275-a2ed-c9acee63b82f}
+2026-11-09T04:24:11.5220130Z Region: westcentralus
+2026-11-09T04:24:11.5220603Z Cloud: Azure
+2026-11-09T04:24:11.5221386Z ##[endgroup]
+2026-11-09T04:24:11.5222740Z ##[group]Operating System
+2026-11-09T04:24:11.5223266Z Ubuntu
+2026-11-09T04:24:11.5223801Z 26.04.1
+2026-11-09T04:24:11.5224221Z LTS
+2026-11-09T04:24:11.5224696Z ##[endgroup]
+2026-11-09T04:24:11.5225157Z ##[group]Runner Image
+2026-11-09T04:24:11.5225676Z Image: ubuntu-26.04
+2026-11-09T04:24:11.5226206Z Version: 20261101.186.1
+2026-11-09T04:24:11.5227220Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261101.186/images/ubuntu/Ubuntu2604-Readme.md
+2026-11-09T04:24:11.5228813Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261101.186
+2026-11-09T04:24:11.5229619Z ##[endgroup]
+2026-11-09T04:24:11.5230594Z ##[group]GITHUB_TOKEN Permissions
+2026-11-09T04:24:11.5232318Z Contents: read
+2026-11-09T04:24:11.5232888Z Metadata: read
+2026-11-09T04:24:11.5233378Z ##[endgroup]
+2026-11-09T04:24:11.5235125Z Secret source: Actions
+2026-11-09T04:24:11.5235912Z Cache mode: write
+2026-11-09T04:24:11.5236497Z Prepare workflow directory
+2026-11-09T04:24:11.5556652Z Prepare all required actions
+2026-11-09T04:24:11.5596059Z Getting action download info
+2026-11-09T04:24:11.8039759Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-09T04:24:11.8886936Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-09T04:24:11.9752719Z Download action repository 'actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9' (SHA:cf430e030ddbb5b0abf93d22962f4752f3646cd9)
+2026-11-09T04:24:12.1344411Z Complete job name: one-verification
+2026-11-09T04:24:12.2022274Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-11-09T04:24:12.2023135Z with:
+2026-11-09T04:24:12.2023513Z   ref: 9fd2372a391f9dc23355a1139b818588448627d2
+2026-11-09T04:24:12.2023992Z   path: experiment
+2026-11-09T04:24:12.2024346Z   fetch-depth: 2
+2026-11-09T04:24:12.2024710Z   persist-credentials: false
+2026-11-09T04:24:12.2025136Z   repository: uskutsav-cpu/wavecert-fwi
+2026-11-09T04:24:12.2028238Z   token: ***
+2026-11-09T04:24:12.2028589Z   ssh-strict: true
+2026-11-09T04:24:12.2028939Z   ssh-user: git
+2026-11-09T04:24:12.2029276Z   clean: true
+2026-11-09T04:24:12.2029633Z   sparse-checkout-cone-mode: true
+2026-11-09T04:24:12.2030053Z   fetch-tags: false
+2026-11-09T04:24:12.2030419Z   show-progress: true
+2026-11-09T04:24:12.2030767Z   lfs: false
+2026-11-09T04:24:12.2031129Z   submodules: false
+2026-11-09T04:24:12.2031493Z   set-safe-directory: true
+2026-11-09T04:24:12.2031900Z   allow-unsafe-pr-checkout: false
+2026-11-09T04:24:12.2032470Z env:
+2026-11-09T04:24:12.2032853Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T04:24:12.2033255Z   PYTHONUNBUFFERED: 1
+2026-11-09T04:24:12.2033634Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-09T04:24:12.2034049Z   OMP_NUM_THREADS: 1
+2026-11-09T04:24:12.2034417Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T04:24:12.2034792Z   MKL_NUM_THREADS: 1
+2026-11-09T04:24:12.2035147Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T04:24:12.2035545Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T04:24:12.2035914Z ##[endgroup]
+2026-11-09T04:24:12.4038663Z Syncing repository: uskutsav-cpu/wavecert-fwi
+2026-11-09T04:24:12.4040657Z ##[group]Getting Git version info
+2026-11-09T04:24:12.4041469Z Working directory is '/home/runner/work/wavecert-fwi/wavecert-fwi/experiment'
+2026-11-09T04:24:12.4042361Z [command]/usr/bin/git version
+2026-11-09T04:24:12.4048197Z git version 2.56.0
+2026-11-09T04:24:12.4069564Z ##[endgroup]
+2026-11-09T04:24:12.4075756Z Temporarily overriding HOME='/home/runner/work/_temp/331f949f-945c-4644-822e-4f47580e2a76' before making global git config changes
+2026-11-09T04:24:12.4077824Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-09T04:24:12.4079827Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/wavecert-fwi/wavecert-fwi/experiment
+2026-11-09T04:24:12.4129430Z ##[group]Initializing the repository
+2026-11-09T04:24:12.4132750Z [command]/usr/bin/git init /home/runner/work/wavecert-fwi/wavecert-fwi/experiment
+2026-11-09T04:24:12.4208458Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-09T04:24:12.4209813Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-09T04:24:12.4211107Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-09T04:24:12.4212148Z hint: call:
+2026-11-09T04:24:12.4213041Z hint:
+2026-11-09T04:24:12.4213591Z hint: 	git config --global init.defaultBranch <name>
+2026-11-09T04:24:12.4214257Z hint:
+2026-11-09T04:24:12.4214860Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-09T04:24:12.4216067Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-09T04:24:12.4217044Z hint:
+2026-11-09T04:24:12.4217828Z hint: 	git branch -m <name>
+2026-11-09T04:24:12.4218439Z hint:
+2026-11-09T04:24:12.4219151Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-09T04:24:12.4220498Z Initialized empty Git repository in /home/runner/work/wavecert-fwi/wavecert-fwi/experiment/.git/
+2026-11-09T04:24:12.4227114Z [command]/usr/bin/git remote add origin https://github.com/uskutsav-cpu/wavecert-fwi
+2026-11-09T04:24:12.4268822Z ##[endgroup]
+2026-11-09T04:24:12.4269761Z ##[group]Disabling automatic garbage collection
+2026-11-09T04:24:12.4272133Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-09T04:24:12.4301550Z ##[endgroup]
+2026-11-09T04:24:12.4302461Z ##[group]Setting up auth
+2026-11-09T04:24:12.4307964Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T04:24:12.4336514Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T04:24:12.4720802Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T04:24:12.4751840Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T04:24:12.5001228Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T04:24:12.5031875Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T04:24:12.5261603Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-09T04:24:12.5295641Z ##[endgroup]
+2026-11-09T04:24:12.5296322Z ##[group]Fetching the repository
+2026-11-09T04:24:12.5302509Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=2 origin 9fd2372a391f9dc23355a1139b818588448627d2
+2026-11-09T04:24:17.5421318Z From https://github.com/uskutsav-cpu/wavecert-fwi
+2026-11-09T04:24:17.5422694Z  * branch            9fd2372a391f9dc23355a1139b818588448627d2 -> FETCH_HEAD
+2026-11-09T04:24:17.5425206Z ##[endgroup]
+2026-11-09T04:24:17.5426162Z ##[group]Determining the checkout info
+2026-11-09T04:24:17.5427554Z ##[endgroup]
+2026-11-09T04:24:17.5432594Z [command]/usr/bin/git sparse-checkout disable
+2026-11-09T04:24:17.5481410Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-09T04:24:17.5512539Z ##[group]Checking out the ref
+2026-11-09T04:24:17.5514771Z [command]/usr/bin/git checkout --progress --force 9fd2372a391f9dc23355a1139b818588448627d2
+2026-11-09T04:24:18.5562432Z Note: switching to '9fd2372a391f9dc23355a1139b818588448627d2'.
+2026-11-09T04:24:18.5564026Z 
+2026-11-09T04:24:18.5564387Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-09T04:24:18.5565137Z changes and commit them, and you can discard any commits you make in this
+2026-11-09T04:24:18.5565886Z state without impacting any branches by switching back to a branch.
+2026-11-09T04:24:18.5566285Z 
+2026-11-09T04:24:18.5566525Z If you want to create a new branch to retain commits you create, you may
+2026-11-09T04:24:18.5567021Z do so (now or later) by using -c with the switch command. Example:
+2026-11-09T04:24:18.5567263Z 
+2026-11-09T04:24:18.5567613Z   git switch -c <new-branch-name>
+2026-11-09T04:24:18.5567911Z 
+2026-11-09T04:24:18.5568100Z Or undo this operation with:
+2026-11-09T04:24:18.5568363Z 
+2026-11-09T04:24:18.5568481Z   git switch -
+2026-11-09T04:24:18.5568711Z 
+2026-11-09T04:24:18.5568935Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-09T04:24:18.5569255Z 
+2026-11-09T04:24:18.5569503Z HEAD is now at 9fd2372 Run one source-frozen cached-J native derivative verification
+2026-11-09T04:24:18.5619898Z ##[endgroup]
+2026-11-09T04:24:18.5656902Z [command]/usr/bin/git log -1 --format=%H
+2026-11-09T04:24:18.5680733Z 9fd2372a391f9dc23355a1139b818588448627d2
+2026-11-09T04:24:18.5689081Z ##[group]Removing auth
+2026-11-09T04:24:18.5692455Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T04:24:18.5719801Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T04:24:18.5964496Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T04:24:18.5985934Z http.https://github.com/.extraheader
+2026-11-09T04:24:18.5990995Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-09T04:24:18.6019652Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T04:24:18.6250295Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T04:24:18.6276743Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T04:24:18.6507048Z ##[endgroup]
+2026-11-09T04:24:18.6803837Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-11-09T04:24:18.6804237Z with:
+2026-11-09T04:24:18.6804499Z   ref: 2918a47c68ac8bee3d33e532c21a96d335d1718a
+2026-11-09T04:24:18.6804813Z   path: baseline
+2026-11-09T04:24:18.6805065Z   fetch-depth: 1
+2026-11-09T04:24:18.6805335Z   persist-credentials: false
+2026-11-09T04:24:18.6805630Z   repository: uskutsav-cpu/wavecert-fwi
+2026-11-09T04:24:18.6807935Z   token: ***
+2026-11-09T04:24:18.6808171Z   ssh-strict: true
+2026-11-09T04:24:18.6808411Z   ssh-user: git
+2026-11-09T04:24:18.6808644Z   clean: true
+2026-11-09T04:24:18.6808906Z   sparse-checkout-cone-mode: true
+2026-11-09T04:24:18.6809191Z   fetch-tags: false
+2026-11-09T04:24:18.6809434Z   show-progress: true
+2026-11-09T04:24:18.6809680Z   lfs: false
+2026-11-09T04:24:18.6809907Z   submodules: false
+2026-11-09T04:24:18.6810162Z   set-safe-directory: true
+2026-11-09T04:24:18.6810440Z   allow-unsafe-pr-checkout: false
+2026-11-09T04:24:18.6810716Z env:
+2026-11-09T04:24:18.6811002Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T04:24:18.6811277Z   PYTHONUNBUFFERED: 1
+2026-11-09T04:24:18.6811547Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-09T04:24:18.6811825Z   OMP_NUM_THREADS: 1
+2026-11-09T04:24:18.6812077Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T04:24:18.6812337Z   MKL_NUM_THREADS: 1
+2026-11-09T04:24:18.6812752Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T04:24:18.6813025Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T04:24:18.6813293Z ##[endgroup]
+2026-11-09T04:24:18.7487126Z Syncing repository: uskutsav-cpu/wavecert-fwi
+2026-11-09T04:24:18.7490424Z ##[group]Getting Git version info
+2026-11-09T04:24:18.7491398Z Working directory is '/home/runner/work/wavecert-fwi/wavecert-fwi/baseline'
+2026-11-09T04:24:18.7518104Z [command]/usr/bin/git version
+2026-11-09T04:24:18.7556288Z git version 2.56.0
+2026-11-09T04:24:18.7571746Z ##[endgroup]
+2026-11-09T04:24:18.7583418Z Temporarily overriding HOME='/home/runner/work/_temp/b26eb579-20d6-4004-a44d-8b0994909fa9' before making global git config changes
+2026-11-09T04:24:18.7584807Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-09T04:24:18.7587910Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/wavecert-fwi/wavecert-fwi/baseline
+2026-11-09T04:24:18.7619083Z ##[group]Initializing the repository
+2026-11-09T04:24:18.7622308Z [command]/usr/bin/git init /home/runner/work/wavecert-fwi/wavecert-fwi/baseline
+2026-11-09T04:24:18.7671048Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-09T04:24:18.7672659Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-09T04:24:18.7674227Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-09T04:24:18.7675210Z hint: call:
+2026-11-09T04:24:18.7675946Z hint:
+2026-11-09T04:24:18.7676684Z hint: 	git config --global init.defaultBranch <name>
+2026-11-09T04:24:18.7677560Z hint:
+2026-11-09T04:24:18.7678403Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-09T04:24:18.7679480Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-09T04:24:18.7680453Z hint:
+2026-11-09T04:24:18.7681136Z hint: 	git branch -m <name>
+2026-11-09T04:24:18.7681790Z hint:
+2026-11-09T04:24:18.7682617Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-09T04:24:18.7683829Z Initialized empty Git repository in /home/runner/work/wavecert-fwi/wavecert-fwi/baseline/.git/
+2026-11-09T04:24:18.7686228Z [command]/usr/bin/git remote add origin https://github.com/uskutsav-cpu/wavecert-fwi
+2026-11-09T04:24:18.7720914Z ##[endgroup]
+2026-11-09T04:24:18.7721694Z ##[group]Disabling automatic garbage collection
+2026-11-09T04:24:18.7724649Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-09T04:24:18.7754595Z ##[endgroup]
+2026-11-09T04:24:18.7755267Z ##[group]Setting up auth
+2026-11-09T04:24:18.7760558Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T04:24:18.7800929Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T04:24:18.8062732Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T04:24:18.8095271Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T04:24:18.8378904Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T04:24:18.8409224Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T04:24:18.8650461Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-09T04:24:18.8687759Z ##[endgroup]
+2026-11-09T04:24:18.8688367Z ##[group]Fetching the repository
+2026-11-09T04:24:18.8696280Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin 2918a47c68ac8bee3d33e532c21a96d335d1718a
+2026-11-09T04:24:23.7921562Z From https://github.com/uskutsav-cpu/wavecert-fwi
+2026-11-09T04:24:23.7922749Z  * branch            2918a47c68ac8bee3d33e532c21a96d335d1718a -> FETCH_HEAD
+2026-11-09T04:24:23.7925033Z ##[endgroup]
+2026-11-09T04:24:23.7925569Z ##[group]Determining the checkout info
+2026-11-09T04:24:23.7927105Z ##[endgroup]
+2026-11-09T04:24:23.7932591Z [command]/usr/bin/git sparse-checkout disable
+2026-11-09T04:24:23.7970183Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-09T04:24:23.8020794Z ##[group]Checking out the ref
+2026-11-09T04:24:23.8023811Z [command]/usr/bin/git checkout --progress --force 2918a47c68ac8bee3d33e532c21a96d335d1718a
+2026-11-09T04:24:24.8069531Z Note: switching to '2918a47c68ac8bee3d33e532c21a96d335d1718a'.
+2026-11-09T04:24:24.8070108Z 
+2026-11-09T04:24:24.8070406Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-09T04:24:24.8071011Z changes and commit them, and you can discard any commits you make in this
+2026-11-09T04:24:24.8071590Z state without impacting any branches by switching back to a branch.
+2026-11-09T04:24:24.8071994Z 
+2026-11-09T04:24:24.8072245Z If you want to create a new branch to retain commits you create, you may
+2026-11-09T04:24:24.8072795Z do so (now or later) by using -c with the switch command. Example:
+2026-11-09T04:24:24.8073114Z 
+2026-11-09T04:24:24.8073263Z   git switch -c <new-branch-name>
+2026-11-09T04:24:24.8073479Z 
+2026-11-09T04:24:24.8073721Z Or undo this operation with:
+2026-11-09T04:24:24.8073906Z 
+2026-11-09T04:24:24.8074015Z   git switch -
+2026-11-09T04:24:24.8074202Z 
+2026-11-09T04:24:24.8074457Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-09T04:24:24.8074822Z 
+2026-11-09T04:24:24.8075123Z HEAD is now at 2918a47 Archive audited prior48 recovery failure and reproducible controls
+2026-11-09T04:24:24.8132440Z ##[endgroup]
+2026-11-09T04:24:24.8176911Z [command]/usr/bin/git log -1 --format=%H
+2026-11-09T04:24:24.8203460Z 2918a47c68ac8bee3d33e532c21a96d335d1718a
+2026-11-09T04:24:24.8213117Z ##[group]Removing auth
+2026-11-09T04:24:24.8216954Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T04:24:24.8247003Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T04:24:24.8495186Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T04:24:24.8515155Z http.https://github.com/.extraheader
+2026-11-09T04:24:24.8522009Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-09T04:24:24.8552030Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T04:24:24.8798002Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T04:24:24.8828990Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T04:24:24.9068093Z ##[endgroup]
+2026-11-09T04:24:24.9236916Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+2026-11-09T04:24:24.9237229Z with:
+2026-11-09T04:24:24.9237634Z   python-version: 3.11.18
+2026-11-09T04:24:24.9237826Z   architecture: x64
+2026-11-09T04:24:24.9238001Z   check-latest: false
+2026-11-09T04:24:24.9239902Z   token: ***
+2026-11-09T04:24:24.9240080Z   update-environment: true
+2026-11-09T04:24:24.9240277Z   allow-prereleases: false
+2026-11-09T04:24:24.9240458Z   freethreaded: false
+2026-11-09T04:24:24.9240625Z env:
+2026-11-09T04:24:24.9240795Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T04:24:24.9240995Z   PYTHONUNBUFFERED: 1
+2026-11-09T04:24:24.9241183Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-09T04:24:24.9241394Z   OMP_NUM_THREADS: 1
+2026-11-09T04:24:24.9241568Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T04:24:24.9241747Z   MKL_NUM_THREADS: 1
+2026-11-09T04:24:24.9242097Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T04:24:24.9242285Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T04:24:24.9242464Z ##[endgroup]
+2026-11-09T04:24:25.0335239Z ##[group]Installed versions
+2026-11-09T04:24:25.0368292Z (node:2557) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-09T04:24:25.0368839Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-09T04:24:25.0369524Z Successfully set up CPython (3.11.18)
+2026-11-09T04:24:25.0371052Z ##[endgroup]
+2026-11-09T04:24:25.0485480Z ##[group]Run python -m pip install --no-input -r experiment/experiments/cached_j_native_01/requirements.txt
+2026-11-09T04:24:25.0486152Z [36;1mpython -m pip install --no-input -r experiment/experiments/cached_j_native_01/requirements.txt[0m
+2026-11-09T04:24:25.0544286Z shell: /usr/bin/bash -e {0}
+2026-11-09T04:24:25.0544502Z env:
+2026-11-09T04:24:25.0544685Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T04:24:25.0544896Z   PYTHONUNBUFFERED: 1
+2026-11-09T04:24:25.0545108Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-09T04:24:25.0545315Z   OMP_NUM_THREADS: 1
+2026-11-09T04:24:25.0545504Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T04:24:25.0545694Z   MKL_NUM_THREADS: 1
+2026-11-09T04:24:25.0545864Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T04:24:25.0546057Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T04:24:25.0546296Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T04:24:25.0546646Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-09T04:24:25.0547019Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T04:24:25.0547487Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T04:24:25.0547853Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T04:24:25.0548142Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-09T04:24:25.0548396Z ##[endgroup]
+2026-11-09T04:24:25.9709248Z Collecting numpy==2.4.6 (from -r experiment/experiments/cached_j_native_01/requirements.txt (line 1))
+2026-11-09T04:24:26.0392008Z   Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+2026-11-09T04:24:26.1431707Z Collecting scipy==1.17.1 (from -r experiment/experiments/cached_j_native_01/requirements.txt (line 2))
+2026-11-09T04:24:26.1644601Z   Downloading scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+2026-11-09T04:24:26.2266690Z Collecting pytest==9.1.1 (from -r experiment/experiments/cached_j_native_01/requirements.txt (line 3))
+2026-11-09T04:24:26.2463454Z   Downloading pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)
+2026-11-09T04:24:26.2730273Z Collecting iniconfig>=1.0.1 (from pytest==9.1.1->-r experiment/experiments/cached_j_native_01/requirements.txt (line 3))
+2026-11-09T04:24:26.2924978Z   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+2026-11-09T04:24:26.3231424Z Collecting packaging>=22 (from pytest==9.1.1->-r experiment/experiments/cached_j_native_01/requirements.txt (line 3))
+2026-11-09T04:24:26.3430931Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+2026-11-09T04:24:26.3720468Z Collecting pluggy<2,>=1.5 (from pytest==9.1.1->-r experiment/experiments/cached_j_native_01/requirements.txt (line 3))
+2026-11-09T04:24:26.3913821Z   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+2026-11-09T04:24:26.4211847Z Collecting pygments>=2.7.2 (from pytest==9.1.1->-r experiment/experiments/cached_j_native_01/requirements.txt (line 3))
+2026-11-09T04:24:26.4438124Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+2026-11-09T04:24:26.4663726Z Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+2026-11-09T04:24:26.6841814Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 87.6 MB/s  0:00:00
+2026-11-09T04:24:26.7039264Z Downloading scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+2026-11-09T04:24:27.1376726Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 81.3 MB/s  0:00:00
+2026-11-09T04:24:27.1579388Z Downloading pytest-9.1.1-py3-none-any.whl (386 kB)
+2026-11-09T04:24:27.1826455Z Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+2026-11-09T04:24:27.2047738Z Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+2026-11-09T04:24:27.2259115Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+2026-11-09T04:24:27.2478522Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+2026-11-09T04:24:27.2615622Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 85.0 MB/s  0:00:00
+2026-11-09T04:24:27.3822711Z Installing collected packages: pygments, pluggy, packaging, numpy, iniconfig, scipy, pytest
+2026-11-09T04:24:32.6722662Z 
+2026-11-09T04:24:32.6730983Z Successfully installed iniconfig-2.3.1 numpy-2.4.6 packaging-26.3 pluggy-1.7.0 pygments-2.21.0 pytest-9.1.1 scipy-1.17.1
+2026-11-09T04:24:32.6737455Z 
+2026-11-09T04:24:32.6737747Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+2026-11-09T04:24:32.6738239Z [notice] To update, run: pip install --upgrade pip
+2026-11-09T04:24:32.7309447Z ##[group]Run python -B -I experiment/experiments/cached_j_native_01/run_route.py --baseline baseline --output run-artifacts/cached-j-native-01
+2026-11-09T04:24:32.7310213Z [36;1mpython -B -I experiment/experiments/cached_j_native_01/run_route.py --baseline baseline --output run-artifacts/cached-j-native-01[0m
+2026-11-09T04:24:32.7357278Z shell: /usr/bin/bash -e {0}
+2026-11-09T04:24:32.7357651Z env:
+2026-11-09T04:24:32.7357833Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T04:24:32.7358057Z   PYTHONUNBUFFERED: 1
+2026-11-09T04:24:32.7358259Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-09T04:24:32.7358468Z   OMP_NUM_THREADS: 1
+2026-11-09T04:24:32.7358644Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T04:24:32.7358833Z   MKL_NUM_THREADS: 1
+2026-11-09T04:24:32.7359010Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T04:24:32.7359195Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T04:24:32.7359430Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T04:24:32.7359808Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-09T04:24:32.7360169Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T04:24:32.7360477Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T04:24:32.7360770Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T04:24:32.7361066Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-09T04:24:32.7361322Z ##[endgroup]
+2026-11-09T04:24:35.7549574Z ##[error]Process completed with exit code 2.
+2026-11-09T04:24:35.7623532Z ##[group]Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+2026-11-09T04:24:35.7623880Z with:
+2026-11-09T04:24:35.7624072Z   name: cached-j-native-42561616207-1
+2026-11-09T04:24:35.7624328Z   path: run-artifacts/cached-j-native-01/artifact
+2026-11-09T04:24:35.7624581Z   retention-days: 7
+2026-11-09T04:24:35.7624765Z   if-no-files-found: warn
+2026-11-09T04:24:35.7624959Z   compression-level: 6
+2026-11-09T04:24:35.7625152Z   overwrite: false
+2026-11-09T04:24:35.7625359Z   include-hidden-files: false
+2026-11-09T04:24:35.7625557Z   archive: true
+2026-11-09T04:24:35.7625725Z env:
+2026-11-09T04:24:35.7625899Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T04:24:35.7626105Z   PYTHONUNBUFFERED: 1
+2026-11-09T04:24:35.7626308Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-09T04:24:35.7626519Z   OMP_NUM_THREADS: 1
+2026-11-09T04:24:35.7626698Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T04:24:35.7626885Z   MKL_NUM_THREADS: 1
+2026-11-09T04:24:35.7627062Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T04:24:35.7627289Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T04:24:35.7627745Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T04:24:35.7628099Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-09T04:24:35.7628448Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T04:24:35.7628761Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T04:24:35.7629061Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T04:24:35.7629569Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-09T04:24:35.7629832Z ##[endgroup]
+2026-11-09T04:24:35.8891508Z With the provided path, there will be 26 files uploaded
+2026-11-09T04:24:35.8895639Z Artifact name is valid!
+2026-11-09T04:24:35.8895970Z Root directory input is valid!
+2026-11-09T04:24:36.2236465Z Uploading artifact: cached-j-native-42561616207-1.zip
+2026-11-09T04:24:36.2268319Z Beginning upload of artifact content to blob storage
+2026-11-09T04:24:36.5233430Z Uploaded bytes 33437
+2026-11-09T04:24:36.6005356Z Finished uploading artifact content to blob storage!
+2026-11-09T04:24:36.6006122Z SHA256 digest of uploaded artifact is e6b9c1b4a9ef45afa8e07870e9a82566b467e0953d30332dc5bef64d6aa6f657
+2026-11-09T04:24:36.6006531Z Finalizing artifact upload
+2026-11-09T04:24:37.1625076Z Artifact cached-j-native-42561616207-1 successfully finalized. Artifact ID 13649397605
+2026-11-09T04:24:37.1626019Z Artifact cached-j-native-42561616207-1 has been successfully uploaded! Final size is 33437 bytes. Artifact ID is 13649397605
+2026-11-09T04:24:37.1630265Z Artifact download URL: https://github.com/uskutsav-cpu/wavecert-fwi/actions/runs/42561616207/artifacts/13649397605
+2026-11-09T04:24:37.1800194Z Post job cleanup.
+2026-11-09T04:24:37.2481232Z [command]/usr/bin/git version
+2026-11-09T04:24:37.2522787Z git version 2.56.0
+2026-11-09T04:24:37.2553359Z Temporarily overriding HOME='/home/runner/work/_temp/8da266f9-9f2b-49fe-812d-05165794038a' before making global git config changes
+2026-11-09T04:24:37.2554457Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-09T04:24:37.2557151Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/wavecert-fwi/wavecert-fwi/baseline
+2026-11-09T04:24:37.2589453Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T04:24:37.2619521Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T04:24:37.2935145Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T04:24:37.2968751Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T04:24:37.3231327Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T04:24:37.3262693Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T04:24:37.3636412Z Post job cleanup.
+2026-11-09T04:24:37.4331786Z [command]/usr/bin/git version
+2026-11-09T04:24:37.4372051Z git version 2.56.0
+2026-11-09T04:24:37.4403978Z Temporarily overriding HOME='/home/runner/work/_temp/00b525ac-bb6f-40eb-b34f-4a80394ee70d' before making global git config changes
+2026-11-09T04:24:37.4405205Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-09T04:24:37.4408761Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/wavecert-fwi/wavecert-fwi/experiment
+2026-11-09T04:24:37.4449131Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T04:24:37.4482442Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T04:24:37.4768883Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T04:24:37.4804711Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T04:24:37.5087158Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T04:24:37.5119982Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T04:24:37.5511412Z Cleaning up orphan processes
+2026-11-09T04:24:37.5828473Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -14,7 +14,13 @@ New same-release slices are development/transfer, not fresh ancestors. The
 inversion success, broader realistic physics, novelty and student ownership are
 not declared achieved by the completed software pass.
 
-## Latest diagnostics: 8 November 2026
+## Current component verification: 9 November 2026
+
+The [cached-field native control](../results/cached_jacobian_native_verification/README.md) now passes at one fixed constant-model pair. The actual Linux child exits 0 after all 60 prerequisites; all 154 native checks pass. The separate stdlib auditor recomputes 108 numerical comparisons in 887 checks with no issues, and the relocated retained-data recipe reproduces the result. The first attempt failed on unhashable native-owner bookkeeping before its first receiver-map dispatch; its source, actual exit 2 and known 16-LU/96-forward-RHS prefix remain intact. The fix changes ownership bookkeeping and source-hash provenance; numerical settings and tolerances are unchanged.
+
+This validates a shared-backend derivative component, including both fixed finite-difference steps and disjoint work counts. It is not a project inversion, an independent PDE implementation, physical acceptance, a speedup or a new method. The [partial TRF/LSMR API](../results/trf_matched_cost_driver_candidate/DRIVER_API_SCOPE.json) passes 18 manufactured controls and scoped source review, but its complete project driver is still incomplete. The [checkpoint runtime contract](../results/checkpoint_pilot23_runtime_contract_v2_candidate/FINAL_HANDOFF.json) passes direct dependency metadata review; the full environment and native pilot remain unexecuted. All four scientific requirements remain open; the completed prior recovery study still meets its target on 0/8 cases.
+
+## Earlier diagnostics: 8 November 2026
 
 The [fixed frequency diagnostic](initial_linearization_diagnostic.md) completed
 all eight reused cases, 64 frequency rows and 1,152 small RHS solves. Lower-band

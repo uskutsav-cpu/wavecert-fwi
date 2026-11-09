@@ -1,0 +1,100 @@
+{
+  "actions": {
+    "GO_created": false,
+    "NumPy_SciPy_or_producer_imports": 0,
+    "PDE_or_native_jobs": 0,
+    "candidate_source_protocol_input_edits": 0,
+    "downloads": 0,
+    "installs": 0,
+    "new_truth_or_initializer_derivations": 0,
+    "own_review_metadata_only": true,
+    "tests_rerun": 0
+  },
+  "author_operations": {
+    "receipt": [
+      {
+        "actual_exit": 0,
+        "kind": "ValidationNPZschema/ancestry/rawcasehash/localnonPDEinitializerinspection",
+        "log_sha256": "62b094b39dc6936914e719d35d1037eddf80c4d2bea2fd578444a3ca4421eceb",
+        "report_sha256": "80df79e5d2240553e26b713e884096716897caf598268b105746a511fa1ec699",
+        "session": 72071,
+        "terminal_chunk": "d7ab47"
+      },
+      {
+        "actual_exit": 0,
+        "kind": "Retainedoldinitialnumericdifferencecomparison",
+        "log_sha256": "91338fe2784a56c0d6275e3705cb15282c907322e54e43662de1641a4dda3ab5",
+        "report_sha256": "38f463fe2da6068a043cba868a089960d58631f58d7188953ac9afe0975f4e99",
+        "session": 28484,
+        "terminal_chunk": "5327f3"
+      },
+      {
+        "actual_exit": 0,
+        "kind": "Exactretainedinitialinputextractionandroundtriphashverification",
+        "log_sha256": "1b518d71c259ca29d341510e153f941ccad6503c94bf241c116ea6999abce306",
+        "npz_sha256": "73d3e5b42ee3df6d40c0a9d8dc872c7603ad65d25ccbb459e0c0bbd40cdb4fc1",
+        "report_sha256": "96b9eb330ffbf79a7623116cb842639ed501a814f0774f9c674016ee60244572",
+        "terminal_chunk": "53cba3",
+        "tool_wait_wall_seconds": 0.24543175
+      }
+    ],
+    "scope": "Existing three author inspection/comparison/extraction actual0 receipts and report/log hashes were bound. This reviewer did not rerun those author scripts or tests."
+  },
+  "bound_design": {
+    "bytes": 214823,
+    "files": 12,
+    "initial_differences_sha256": "38f463fe2da6068a043cba868a089960d58631f58d7188953ac9afe0975f4e99",
+    "initial_input_receipt_sha256": "96b9eb330ffbf79a7623116cb842639ed501a814f0774f9c674016ee60244572",
+    "inspection_receipt_sha256": "8d1feca15c8d3b0df45a64d54c7a74482ac33d694aabd9c5a9cf3386320ebbab",
+    "inventory_sha256": "180c997bf982679f3dcfdc49d98395a85c348e1b4670f99b45936bdc39d0bc59",
+    "plan_sha256": "fa71c76631cc23ccfbac74bcc50a267d2b240a96f4115bf9eb9c5e0e7fd9d918",
+    "retained_inputs_sha256": "80df79e5d2240553e26b713e884096716897caf598268b105746a511fa1ec699"
+  },
+  "conclusion": "No material input/provenance/interface-design blocker found. The source implementation can proceed under the explicitly new initializer semantics; this receipt authorizes no project or native execution and establishes no reconstruction, physical-acceptance, novelty or competition result.",
+  "full48_worker_controller_or_auditor_implemented_by_this_plan": false,
+  "independent_input_reproduction": {
+    "NPY_members": 10,
+    "actual_exec_chunk": "26b9dc",
+    "actual_exit_code": 0,
+    "all48_retained_initial_vectors_compared": 48,
+    "checks": 395,
+    "containers": 2,
+    "issues": [],
+    "method": "Bounded actual ZIP inflation, literal-only bounded NPY headers, exact finite dtype/shape/body+EOF, independent struct float packing, hash/provenance/basic metadata/byte equality. Stdlib only; no producer/NumPy/SciPy import.",
+    "report": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/trf_project_integration_independent_review/READONLY_INPUT_BINDING_01.json",
+    "report_sha256": "81bcc4a1f71a118541bbd568442f883d1e1e70d1f7f9c3f82347a09efc0f50a3",
+    "same_frozen_rows": 8,
+    "script": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/trf_project_integration_independent_review/review_inputs.py",
+    "script_sha256": "b3c4b413e3e1297f50afcab60860887c0fc3c4935944c74efae959707c4717aa"
+  },
+  "input_findings": [
+    "Exact frozen_initials.npz142426B/73d3e5b4 contains only initial_m float64[8,2401], case_indices int64[8]=0..7 and shape int64[2]=49,49. All payload and row identities agree with96b9 receipt and original complete receipt.",
+    "All48 old returned initial vectors, six per case, equal the appropriate frozen row byte-for-byte. Eight chosen extraction return gzip hashes/identities agree with the exact old Linux provenance, so this is an explicit retained-input copy, not a Mac reconstruction or invented native receipt.",
+    "Pinned raw validation36d11/842712B has exactly7 safe numeric members. All schema/payload/NPY hashes, finite values,192 metadata rows,8 cases with24 identical model repeats and full6x4 original geometry agree. Source H5 hashes/revision/license remain retained provenance, not independently reread original H5 payloads.",
+    "Four nominal IDs map to three known base-ancestor labels, including shared original SEAM volume; GoM within-setting draw independence remains unverified. Neither three labels nor three timing repetitions establish independent geology.",
+    "The107-entry old artifact map has no NPY/NPZ. Bound old driver retains initial/final model vectors and truth SHA provenance. This review does not turn old truth SHA values into recoverable truth arrays or assume arrays found elsewhere are actual old Linux truth.",
+    "Local-vs-old initializer difference report is source/log/hash bound and correctly descriptive: max reported3.3306690738754696e-16, zero byte-identical local initial/truth hashes, cause unisolated. This review did not rerun SciPy Gaussian/interpolation or numerically reproduce that local difference report."
+  ],
+  "material_issues": [],
+  "plan_findings": [
+    "Initializer-as-input semantics are prospectively explicit: optimistic truth-smoothed precomputed vectors with generation/extraction prehistory separately reported; every new run pays actual load/hash/decode/copy. This is not fresh Gaussian construction paid inside each new run.",
+    "New project protocol/version must freeze that amendment before execution. Historical e967/API0558/wrapperd889/schedule3c217 remain unchanged and all38 archived API files were verified. The future worker must bind an additional amended project protocol: passing unchanged historical source_admission alone cannot admit the new initializer contract.",
+    "Within each new case, both arms and all three repetitions must have identical newly derived target-runtime truth, exact frozen initial row and all8 freshly generated observation hashes. Old Linux truth/observation SHA comparisons are provenance only; no old-byte hard guard is imposed on new derivations.",
+    "Raw24 stored wavefields are container-hash-bound but are not new49-grid observations or guesses. Future preparation must regenerate all8 frequencies/48 blocks/1920 real terms using paid public six-RHS solves, preserving before-dispatch failure prefixes.",
+    "No old timing pooling or cross-study speed advantage is claimed. New t0 precedes request/source/input admission, serialization/fsync and Popen; child imports/setup, observation preparation, optimizer, persistence and parent wait/validation/serialization remain charged through observed complete parent return<=8.",
+    "The API preserves its absolute7.5 selection rule and earlier origin; late/rejected/equal/result.x endpoints remain excluded. Native/preparation/map costs and overlapping snapshots must remain distinct, unknown work never converted to zero.",
+    "Truth/raw values are proposed as worker-private observation-generation context, absent from PolicyInput/native factory/optimizer. This boundary, runtime/function origin binding, resource and signal-safe child supervision require concrete implementation review; the design text is not execution evidence.",
+    "Every fixed48 slot must remain recorded, including failures/unknowns/cap violations, with no retry/resume/replacement. Actual target runtime controls, new independent data-only saved-model auditor, exact source/input/runtime freeze and separate root GO are still mandatory."
+  ],
+  "preserved_API": {
+    "files_verified_unchanged": 38,
+    "independent_partial_review_sha256": "b0f22ef22be237094ecab05d851c7f179e0392ed39fc9520c487dc31ec97fc8f",
+    "inventory_sha256": "b6514a9060bc1688329b59161546031cb790c0892c594e383f0dfc2c7618f526",
+    "old_timing_pooling_allowed": false
+  },
+  "reviewer": "Separate source-aware AI reviewer /root/prior48_auditor_review; not human proof or student design/ownership attestation.",
+  "schema": "wavecert_independent_project_input_and_interface_plan_review_v1",
+  "scientific_goals_complete": false,
+  "status": "CLEAR_FOR_SOURCE_IMPLEMENTATION_ONLY_NO_PROJECT_EXECUTION_GO",
+  "student_final_design": false
+}

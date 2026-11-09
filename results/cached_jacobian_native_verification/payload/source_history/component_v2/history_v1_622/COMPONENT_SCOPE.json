@@ -1,0 +1,100 @@
+{
+  "status": "HELD_SOURCE_AND_MANUFACTURED_COMPONENT_ONLY",
+  "role": "AI-authored classical baseline software support, source-informed by prior48 development; not a student final design, new optimizer/certificate, scientific result, production integration or launch authorization",
+  "scope": {
+    "project_driver_present": false,
+    "project_arrays_loaded": false,
+    "production_modules_imported_by_controls": false,
+    "native_physics_owners_constructed": 0,
+    "native_PDE_solves": 0,
+    "dataset_downloads": 0,
+    "installs": 0,
+    "production_edits": 0,
+    "student_final_design": false,
+    "new_regularizer": false,
+    "scientific_goals_complete": false
+  },
+  "maintained_sources_sha256": {
+    "cached_jacobian.py": "f613370617d7e0bd7815cf441dd8ba5f41816ad4791275e86f33de228657c79b",
+    "public_map_builder.py": "622a624f54b17d9d882da9d88af547c516b26ee42c87d80ec68d5fe99a687ec1",
+    "test_manufactured.py": "c7d7d9d9e152b4b0c037b5cd2efc411356d2c1206b5ce3824ed8a351acda3104"
+  },
+  "intended_native_layout": {
+    "shape": [
+      49,
+      49
+    ],
+    "spacing": 0.025,
+    "damping_width": 6,
+    "damping_strength": 2.0,
+    "frequencies_hz": [
+      0.25,
+      0.5,
+      1.0,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0
+    ],
+    "source_indices": [
+      250,
+      258,
+      266,
+      272,
+      280,
+      288
+    ],
+    "receiver_indices": [
+      250,
+      252,
+      254,
+      256,
+      258,
+      260,
+      262,
+      264,
+      266,
+      268,
+      270,
+      272,
+      274,
+      276,
+      278,
+      280,
+      282,
+      284,
+      286,
+      288
+    ],
+    "observation_blocks": 48,
+    "complex_residual_terms": 960,
+    "real_residual_terms": 1920,
+    "model_variables": 2401,
+    "ordering": "global observation block, then every ordered receiver slot; all real terms followed by all imaginary terms"
+  },
+  "residual_and_J": "f=[Re r,Im r]/sqrt(Phi0), hence0.5*||f||^2=Phi/Phi0. Bp is the same real stack of omega^2*E*C*(U elementwise p). Real adjoint uses SUM accumulation for repeated receiver slots and omega^2*Re sum_s[U_s elementwise(C.T*conj(y_unique))_s]. Native m coordinates, no truth/quality input, no prior.",
+  "normalization": "Phi0 is the actual positive paid native merit at the exact supplied initial model. Public property has no setter; each LinearOperator captures and checks fixed normalization. Zero Phi0 fails rather than inventing a scale.",
+  "general_point_source_scope": "Copied forward U columns correspond to nonzero finite scalar or per-column complex amplitudes. Checked transpose symmetry permits C_row=U_column.T/a_column with no conjugation. Without symmetry every receiver row is built. Actual frozen native integration separately enforces its real a=1/h^2=1600. Receiver_map cache routes are rejected because this held component has no legal paid U there.",
+  "native_public_API_integration": "SOURCE ONLY: frozen_native_binding checks actual frozen module paths/hashes, exact native class/public methods, full registered survey and physics. It constructs no dataset/observations. Missing rows use a separate new Helmholtz2D(factorization_cache_size=0) and only public receiver_resolvent_matrix(model,f,missing). No inverse, native private attribute, receipt record, borrowed LU, source-state recomputation or free factor reuse. Runtime native integration has NOT been exercised.",
+  "current_geometry_source_derived_added_map_cost": {
+    "per_new_jacobian_point_fresh_factorizations": 8,
+    "per_new_jacobian_point_receiver_rhs": 112,
+    "public_counter_category": "stability_rhs (adjoint systems), not adjoint_rhs",
+    "reason": "6 source locations occur among20 unique receivers;14 missing rows per8frequencies. Existing paid U is reused algebraically. Actual counters are checked, not replaced with these expected numbers."
+  },
+  "fixed_point_and_lifetime": "Every FieldPoint owns immutable byte-backed copies of model/U/residual/observed arrays plus immutable ordered metadata and provenance. It retains its genuine native receipt and issued snapshot. A LinearOperator closes over that point and immutable copied C rows, not mutable latest_trial. Native public validation remains active on every product. An old issued operator remains fixed and legal after a new trial while its receipt lives; contract changes or tampering fail closed. Identical latest Jacobian identity reuses its existing map/operator. A native owner or builder cannot be shared by two live policies.",
+  "work_accounting": "Native public evaluate/export/validate calls always dispatch and capture actual cumulative cost snapshots; only the latest cumulative prefix is reported, never summed. Failed native dispatch work remains explicitly unknown even after later successful queries. Each map batch has a distinct verified cold owner, before/final actual physics prefixes, dispatch/completion flags, elapsed time and failure/unknown fields. Interrupted solves may exceed counters incremented only after numerical completion. Algebra records product calls, logical dot/elementwise terms, receiver accumulations, explicit copy/hash bytes and known allocated/temporary array bytes. NumPy/SciPy/native internal allocation bytes and actual FLOPs are not independently instrumented; they are timed and explicitly unmeasured, never zero.",
+  "optimizer_and_deadline_scope": "No project optimizer, complete-return wrapper, cap enforcement, checkpoint selector or serialization driver is implemented. The only optimizer invocation is a tiny manufactured bounded quadratic TRF+LSMR fit. A future driver must independently pay all setup/observation/initialization/C/export/Krylov/query/rejection/final-metric/serialization work, preserve failure prefixes and enforce absolute7.5s/8s eligibility. SciPy callbacks alone are not complete deadline control. Old rawPhi/F composed controllers/auditors are not reused.",
+  "held_gates": [
+    "Independent final source/control review of these hashes; native integration remains source-only.",
+    "No project data/native PDE use under this component authorization. A separately reviewed exact frozen driver, paid accounting/deadline audit and root GO are required before any project run.",
+    "No arbitrary prior-weight tuning, hidden truth-based damping or best-truth checkpoint selection. Any later benefit must beat initialization and paired optimized exact L-BFGS-B under meaningful fixed recovery and complete-cost gates."
+  ],
+  "primary_links": [
+    "https://academic.oup.com/gji/article/133/2/341/578128",
+    "https://web.stanford.edu/group/SOL/software/lsqr/lsqr-toms82b.pdf",
+    "https://arxiv.org/abs/1006.0758v2",
+    "https://docs.scipy.org/doc/scipy-1.17.0/reference/generated/scipy.optimize.least_squares.html"
+  ]
+}

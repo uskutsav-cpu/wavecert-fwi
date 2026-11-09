@@ -1,0 +1,87 @@
+{
+  "recorded_utc": "2026-11-09T04:35:47Z",
+  "result": "V2_PROVENANCE_ONLY_SOURCE_AND19_STDLIB_CONTROLS_FROZEN_BEFORE_V2_OUTCOME_ACCESS",
+  "v1_preserved": {
+    "directory": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/cached_j_native_independent_array_audit",
+    "source_sha256": "404627514a29b24ed9ce8831e5894dfa52fe6231441e517633eba8c876629c3d",
+    "criteria_sha256": "9fef9500462baaebd39475ac37029f74e072a2a2605a8d8599a2222d59b65a9a",
+    "validation_receipt_sha256": "152d6e6d3e9fd4840043d786054de7df3704a90218c3cf0f396a716845df27b0",
+    "actual_native_failure": "Root reported actualexit2 before firstmapdispatch on WeakSet/unhashableHelmholtz2D. V1rawpacket not opened by this auditor; no successful V1audit or automaticretry claim."
+  },
+  "v2_pins_before_after_controls": {
+    "auditor_source": "ffdc8e89b13fbaaf08239c4b5b4accf8b61c86c678eabac41091d72609edf1e1",
+    "criteria": "e18f1554cc99e2c71d9acfbb3a884fc5e4fa5d6608d1208adddac651902474c5",
+    "controls": "4afd49fe7cd4b67e54b3e5f7d19528492a0354fa84043ffae9e4376b13a0f983",
+    "native_protocol": "d1b6986d23d9840a1e66aa48a766a2cc624d2ee18a92f327d259067423fb8e85",
+    "unchanged_verifier": "c660a025badbebd5e9d9a4d6ddbfc684c95193c6111f2de349f25112976d1d6b",
+    "unchanged_callback": "f613370617d7e0bd7815cf441dd8ba5f41816ad4791275e86f33de228657c79b",
+    "new_builder": "7e1c79f99df6e68dda185552f0ff6f480b5fd4823061e7581952cafbd759cb11",
+    "component46_control_source": "e5dfc6db6dde088000064cd8d5c5eaae6668749746f4523f692349032999407e",
+    "caller": "bf4c9d82c5af61e63b161c9a3073a783c0c028bc99123589c81a678caea1a0a6",
+    "route_manifest": "58bbd9646313954d46ebbc3676a007a1c1938c5b48d9bf4e85ab0341d9b42368"
+  },
+  "provenance_delta": {
+    "protocol": "Copied d1b bytes equal original3b bytes with the single complete622builderSHA string replaced by7e1; every other byte unchanged.",
+    "controls": "Remote mandatory14lifecycle+44component=58 becomes14+46=60. Raw filename mandatory58_controls.json intentionally remains legacy; its content and component46.xml/log/wait names are strict.",
+    "context": "experiments/cached_j_native_02, branch research-cached-j-native-02, workflow cached-j-native-02.yml; baseline291 unchanged. Exactbf4/58bbpins embedded and independently expected40hex experiment commit required by CLI.",
+    "historical_review": "f551V1review is labeled historical, not misrepresented as V2review.",
+    "numerical_delta": false
+  },
+  "actual_migration_proof": {
+    "tool_chunk": "e6319c",
+    "actual_exit_code": 0,
+    "log_sha256": "0657e5c64a43f8233e346cfdbf90e07d1f5c4b69aac2fe8c124d1da1bcb0270d",
+    "identical_AST_functions": ["decode_npy","decode_npz","norm","real_dot","relative","check_vector","centered_fd","fd_objective","check_counts","expected_dispatch_labels","numerical_audit"],
+    "native_numeric_criteria_and_audit_numeric_criteria_identical": true
+  },
+  "actual_controls": [
+    {
+      "label": "19stdlib_manufactured",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -B -I -W error work/new-phase-staging/cached_j_native_independent_array_audit_v2/test_audit_retained.py > work/new-phase-staging/cached_j_native_independent_array_audit_v2/manufactured_controls_01.log 2>&1",
+      "tool_chunk": "5a2a80",
+      "actual_exit_code": 0,
+      "result": "19tests,0failures,0errors in0.435s",
+      "log_sha256": "fbedc08b5cc5ff29cb34deea0f5039fe7aeafbd335754f7afa83ef12295500f7"
+    },
+    {
+      "label": "ruff",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -m ruff check --config work/wavecert-fwi/pyproject.toml work/new-phase-staging/cached_j_native_independent_array_audit_v2/audit_retained.py work/new-phase-staging/cached_j_native_independent_array_audit_v2/test_audit_retained.py > work/new-phase-staging/cached_j_native_independent_array_audit_v2/ruff_01.log 2>&1",
+      "tool_chunk": "7f1228",
+      "actual_exit_code": 0,
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "label": "python310_grammar",
+      "tool_chunk": "b5192c",
+      "actual_exit_code": 0,
+      "method": "stdlib ast.parse feature_version=(3,10), auditor and tests; no native imports",
+      "log_sha256": "9c2944d32c658dafb1ade23c1ee546209533e7d660eaa8cb80218ccbff29e371"
+    },
+    {
+      "label": "isolated_metadata_default",
+      "command": "env PYTHONDONTWRITECODE=1 /opt/miniconda3/bin/python -B -I -W error work/new-phase-staging/cached_j_native_independent_array_audit_v2/audit_retained.py > work/new-phase-staging/cached_j_native_independent_array_audit_v2/default_metadata_01.log 2>&1",
+      "tool_chunk": "eea134",
+      "actual_exit_code": 0,
+      "note": "Literal command retained; misspelled redundant environment variable is inert. Explicit-Bstill disablesbytecode, and default reads no packet.",
+      "log_sha256": "7f22e55e5cb3ca0298a798ee9f8e343d1df2a99d877a256ceda00a945f4be92d"
+    }
+  ],
+  "schema_and_math_unchanged": {
+    "array_members": 14,
+    "real_residual_terms": 1920,
+    "native_and_complex_source_covered_rows": [48,48],
+    "FD_steps": [0.0001,0.00005],
+    "public_dispatches_including_expected_guard_raises": 160,
+    "expected_guard_raises": 2,
+    "complete_disjoint_counts": {"factorizations":96,"forward_rhs":480,"tangent_rhs":48,"adjoint_rhs":48,"stability_rhs":272}
+  },
+  "no_new_unnecessary_control_tests_added": true,
+  "V2_actual_native_outcomes_or_packet_read": false,
+  "V1_actual_packet_read": false,
+  "independent_native_array_audit_executed": false,
+  "native_owners_PDE_optimizer_install_fetch_or_GO_actions": 0,
+  "peer_or_root_source_CLEAR_claim": false,
+  "physical_acceptance": null,
+  "scientific_goals_complete": false,
+  "student_final_design": false
+}

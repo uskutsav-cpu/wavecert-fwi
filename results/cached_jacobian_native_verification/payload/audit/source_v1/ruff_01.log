@@ -1,0 +1,19 @@
+F401 [*] `io` imported but unused
+ --> work/new-phase-staging/cached_j_native_independent_array_audit/test_audit_retained.py:4:8
+  |
+2 | import argparse
+3 | import importlib.util
+4 | import io
+  |        ^^
+5 | import json
+6 | import math
+  |
+help: Remove unused import: `io`
+  |
+3 | import importlib.util
+  - import io
+4 | import json
+  |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

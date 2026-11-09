@@ -1,0 +1,1594 @@
+{
+  "array_scope": "Stdlib bounded read of exact pinned initial/raw containers, basic finite/schema/hash and byte equality only. No PDE, interpolation, Gaussian filter, native imports, producer imports or test execution.",
+  "check_count": 395,
+  "checks": [
+    {
+      "name": "exact design inventory pin",
+      "pass": true
+    },
+    {
+      "name": "12 files 214823 bytes",
+      "pass": true
+    },
+    {
+      "name": "design inventory: ACTUAL_INSPECTION_AND_DESIGN_RECEIPT.json",
+      "pass": true
+    },
+    {
+      "name": "design inventory: FROZEN_INITIAL_INPUT_RECEIPT.json",
+      "pass": true
+    },
+    {
+      "name": "design inventory: INITIAL_DIFFERENCES_01.json",
+      "pass": true
+    },
+    {
+      "name": "design inventory: PROJECT_INPUTS_AND_WORKER_PLAN_01.json",
+      "pass": true
+    },
+    {
+      "name": "design inventory: RETAINED_INPUTS_01.json",
+      "pass": true
+    },
+    {
+      "name": "design inventory: compare_retained_initials.py",
+      "pass": true
+    },
+    {
+      "name": "design inventory: freeze_initials_01.log",
+      "pass": true
+    },
+    {
+      "name": "design inventory: freeze_retained_initials.py",
+      "pass": true
+    },
+    {
+      "name": "design inventory: frozen_initials.npz",
+      "pass": true
+    },
+    {
+      "name": "design inventory: initial_differences_01.log",
+      "pass": true
+    },
+    {
+      "name": "design inventory: inspect_retained_inputs.py",
+      "pass": true
+    },
+    {
+      "name": "design inventory: inspection_01.log",
+      "pass": true
+    },
+    {
+      "name": "bound retained source: work/new-phase-staging/trf_matched_cost_driver_candidate/FROZEN48_SCHEDULE.json",
+      "pass": true
+    },
+    {
+      "name": "bound retained source: work/new-phase-staging/trf_matched_cost_driver_candidate/protocol.json",
+      "pass": true
+    },
+    {
+      "name": "bound retained source: work/prior48_remote_study_01/extracted/study/complete_receipt.json",
+      "pass": true
+    },
+    {
+      "name": "bound retained source: work/prior48_remote_study_01/extracted/study/driver_source.py",
+      "pass": true
+    },
+    {
+      "name": "bound retained source: work/prior48_remote_study_01/extracted/study/protocol.json",
+      "pass": true
+    },
+    {
+      "name": "bound retained source: work/prior48_remote_study_01/extracted/study/root_go.json",
+      "pass": true
+    },
+    {
+      "name": "bound retained source: work/wavecert-fwi/data/reference/subsurfacegen_parent_split/dataset_manifest.json",
+      "pass": true
+    },
+    {
+      "name": "bound retained source: work/wavecert-fwi/data/reference/subsurfacegen_parent_split/source_selection.json",
+      "pass": true
+    },
+    {
+      "name": "bound retained source: work/wavecert-fwi/docs/ancestry_audit.md",
+      "pass": true
+    },
+    {
+      "name": "bound retained source: work/wavecert-fwi/results/new_ancestry_audit/parent_ancestry.csv",
+      "pass": true
+    },
+    {
+      "name": "bound retained source: work/wavecert-fwi/results/provisional_software_benchmark/matched_cost_pilot/verification.py",
+      "pass": true
+    },
+    {
+      "name": "bound project input: data/reference/subsurfacegen_parent_split/split_manifest.csv",
+      "pass": true
+    },
+    {
+      "name": "bound project input: data/reference/subsurfacegen_parent_split/validation.npz",
+      "pass": true
+    },
+    {
+      "name": "bound project input: data/reference/subsurfacegen_parent_split/validation_metadata.csv",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: exact container",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: exact unique members",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: bounded member initial_m",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: bounded actual inflation initial_m",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: NPY magic initial_m",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: NPY version initial_m",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: bounded NPY header initial_m",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: exact header extent initial_m",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: exact safe NPY schema initial_m",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: exact payload and EOF initial_m",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: finite payload initial_m",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: bounded member case_indices",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: bounded actual inflation case_indices",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: NPY magic case_indices",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: NPY version case_indices",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: bounded NPY header case_indices",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: exact header extent case_indices",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: exact safe NPY schema case_indices",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: exact payload and EOF case_indices",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: finite payload case_indices",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: bounded member shape",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: bounded actual inflation shape",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: NPY magic shape",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: NPY version shape",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: bounded NPY header shape",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: exact header extent shape",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: exact safe NPY schema shape",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: exact payload and EOF shape",
+      "pass": true
+    },
+    {
+      "name": "frozen_initials.npz: finite payload shape",
+      "pass": true
+    },
+    {
+      "name": "initializer payload identity: initial_m",
+      "pass": true
+    },
+    {
+      "name": "initializer payload identity: case_indices",
+      "pass": true
+    },
+    {
+      "name": "initializer payload identity: shape",
+      "pass": true
+    },
+    {
+      "name": "initializer case indices",
+      "pass": true
+    },
+    {
+      "name": "initializer physical shape",
+      "pass": true
+    },
+    {
+      "name": "initializer interior common box",
+      "pass": true
+    },
+    {
+      "name": "exact8 provenance cases",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_000_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_000_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_000_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_000_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "chosen extraction provenance: 0",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_001_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_001_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_001_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_001_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_002_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_002_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_002_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_002_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "chosen extraction provenance: 1",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_003_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_003_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_003_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_003_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_004_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_004_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_004_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_004_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "chosen extraction provenance: 2",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_005_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_005_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_005_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_005_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_006_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_006_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_006_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_006_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "chosen extraction provenance: 3",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_007_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_007_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_007_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_007_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_008_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_008_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_008_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_008_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "chosen extraction provenance: 4",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_009_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_009_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_009_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_009_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_010_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_010_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_010_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_010_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "chosen extraction provenance: 5",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_011_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_011_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_011_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_011_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_012_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_012_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_012_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_012_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "chosen extraction provenance: 6",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_013_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_013_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_013_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_013_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_014_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_014_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_014_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_014_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "chosen extraction provenance: 7",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_015_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_015_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_015_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_015_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_016_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_016_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_016_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_016_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_017_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_017_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_017_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_017_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_018_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_018_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_018_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_018_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_019_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_019_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_019_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_019_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_020_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_020_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_020_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_020_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_021_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_021_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_021_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_021_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_022_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_022_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_022_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_022_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_023_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_023_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_023_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_023_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_024_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_024_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_024_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_024_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_025_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_025_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_025_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_025_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_026_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_026_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_026_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_026_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_027_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_027_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_027_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_027_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_028_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_028_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_028_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_028_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_029_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_029_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_029_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_029_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_030_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_030_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_030_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_030_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_031_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_031_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_031_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_031_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_032_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_032_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_032_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_032_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_033_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_033_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_033_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_033_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_034_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_034_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_034_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_034_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_035_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_035_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_035_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_035_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_036_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_036_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_036_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_036_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_037_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_037_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_037_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_037_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_038_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_038_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_038_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_038_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_039_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_039_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_039_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_039_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_040_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_040_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_040_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_040_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_041_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_041_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_041_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_041_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_042_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_042_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_042_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_042_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_043_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_043_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_043_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_043_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_044_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_044_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_044_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_044_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_045_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_045_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_045_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_045_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_046_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_046_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_046_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_046_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained return hash: run_047_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "bounded retained return: run_047_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "retained initializer schema: run_047_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "all6 old initials exact: run_047_return.json.gz",
+      "pass": true
+    },
+    {
+      "name": "old exact artifact denominator",
+      "pass": true
+    },
+    {
+      "name": "no old NPY NPZ artifact",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact container",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact unique members",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded member models",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded actual inflation models",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: NPY magic models",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: NPY version models",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded NPY header models",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact header extent models",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact safe NPY schema models",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact payload and EOF models",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: finite payload models",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded member source_indices",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded actual inflation source_indices",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: NPY magic source_indices",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: NPY version source_indices",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded NPY header source_indices",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact header extent source_indices",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact safe NPY schema source_indices",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact payload and EOF source_indices",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: finite payload source_indices",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded member frequencies_hz",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded actual inflation frequencies_hz",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: NPY magic frequencies_hz",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: NPY version frequencies_hz",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded NPY header frequencies_hz",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact header extent frequencies_hz",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact safe NPY schema frequencies_hz",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact payload and EOF frequencies_hz",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: finite payload frequencies_hz",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded member wavefields",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded actual inflation wavefields",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: NPY magic wavefields",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: NPY version wavefields",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded NPY header wavefields",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact header extent wavefields",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact safe NPY schema wavefields",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact payload and EOF wavefields",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: finite payload wavefields",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded member receiver_indices",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded actual inflation receiver_indices",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: NPY magic receiver_indices",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: NPY version receiver_indices",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded NPY header receiver_indices",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact header extent receiver_indices",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact safe NPY schema receiver_indices",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact payload and EOF receiver_indices",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: finite payload receiver_indices",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded member shape",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded actual inflation shape",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: NPY magic shape",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: NPY version shape",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded NPY header shape",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact header extent shape",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact safe NPY schema shape",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact payload and EOF shape",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: finite payload shape",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded member spacing",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded actual inflation spacing",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: NPY magic spacing",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: NPY version spacing",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: bounded NPY header spacing",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact header extent spacing",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact safe NPY schema spacing",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: exact payload and EOF spacing",
+      "pass": true
+    },
+    {
+      "name": "validation.npz: finite payload spacing",
+      "pass": true
+    },
+    {
+      "name": "raw exact array payload: models",
+      "pass": true
+    },
+    {
+      "name": "raw exact NPY member: models",
+      "pass": true
+    },
+    {
+      "name": "raw exact array payload: source_indices",
+      "pass": true
+    },
+    {
+      "name": "raw exact NPY member: source_indices",
+      "pass": true
+    },
+    {
+      "name": "raw exact array payload: frequencies_hz",
+      "pass": true
+    },
+    {
+      "name": "raw exact NPY member: frequencies_hz",
+      "pass": true
+    },
+    {
+      "name": "raw exact array payload: wavefields",
+      "pass": true
+    },
+    {
+      "name": "raw exact NPY member: wavefields",
+      "pass": true
+    },
+    {
+      "name": "raw exact array payload: receiver_indices",
+      "pass": true
+    },
+    {
+      "name": "raw exact NPY member: receiver_indices",
+      "pass": true
+    },
+    {
+      "name": "raw exact array payload: shape",
+      "pass": true
+    },
+    {
+      "name": "raw exact NPY member: shape",
+      "pass": true
+    },
+    {
+      "name": "raw exact array payload: spacing",
+      "pass": true
+    },
+    {
+      "name": "raw exact NPY member: spacing",
+      "pass": true
+    },
+    {
+      "name": "raw24 shape",
+      "pass": true
+    },
+    {
+      "name": "raw24 spacing",
+      "pass": true
+    },
+    {
+      "name": "raw20 receiver slots",
+      "pass": true
+    },
+    {
+      "name": "raw 192 metadata rows",
+      "pass": true
+    },
+    {
+      "name": "24 repeats and metadata: 0",
+      "pass": true
+    },
+    {
+      "name": "6x4 geometry: 0",
+      "pass": true
+    },
+    {
+      "name": "24 identical raw models: 0",
+      "pass": true
+    },
+    {
+      "name": "raw f32/f64 old binding: 0",
+      "pass": true
+    },
+    {
+      "name": "24 repeats and metadata: 1",
+      "pass": true
+    },
+    {
+      "name": "6x4 geometry: 1",
+      "pass": true
+    },
+    {
+      "name": "24 identical raw models: 1",
+      "pass": true
+    },
+    {
+      "name": "raw f32/f64 old binding: 1",
+      "pass": true
+    },
+    {
+      "name": "24 repeats and metadata: 2",
+      "pass": true
+    },
+    {
+      "name": "6x4 geometry: 2",
+      "pass": true
+    },
+    {
+      "name": "24 identical raw models: 2",
+      "pass": true
+    },
+    {
+      "name": "raw f32/f64 old binding: 2",
+      "pass": true
+    },
+    {
+      "name": "24 repeats and metadata: 3",
+      "pass": true
+    },
+    {
+      "name": "6x4 geometry: 3",
+      "pass": true
+    },
+    {
+      "name": "24 identical raw models: 3",
+      "pass": true
+    },
+    {
+      "name": "raw f32/f64 old binding: 3",
+      "pass": true
+    },
+    {
+      "name": "24 repeats and metadata: 4",
+      "pass": true
+    },
+    {
+      "name": "6x4 geometry: 4",
+      "pass": true
+    },
+    {
+      "name": "24 identical raw models: 4",
+      "pass": true
+    },
+    {
+      "name": "raw f32/f64 old binding: 4",
+      "pass": true
+    },
+    {
+      "name": "24 repeats and metadata: 5",
+      "pass": true
+    },
+    {
+      "name": "6x4 geometry: 5",
+      "pass": true
+    },
+    {
+      "name": "24 identical raw models: 5",
+      "pass": true
+    },
+    {
+      "name": "raw f32/f64 old binding: 5",
+      "pass": true
+    },
+    {
+      "name": "24 repeats and metadata: 6",
+      "pass": true
+    },
+    {
+      "name": "6x4 geometry: 6",
+      "pass": true
+    },
+    {
+      "name": "24 identical raw models: 6",
+      "pass": true
+    },
+    {
+      "name": "raw f32/f64 old binding: 6",
+      "pass": true
+    },
+    {
+      "name": "24 repeats and metadata: 7",
+      "pass": true
+    },
+    {
+      "name": "6x4 geometry: 7",
+      "pass": true
+    },
+    {
+      "name": "24 identical raw models: 7",
+      "pass": true
+    },
+    {
+      "name": "raw f32/f64 old binding: 7",
+      "pass": true
+    },
+    {
+      "name": "three declared ancestry clusters",
+      "pass": true
+    },
+    {
+      "name": "four nominal parent labels",
+      "pass": true
+    },
+    {
+      "name": "unchanged after read-only review: ACTUAL_INSPECTION_AND_DESIGN_RECEIPT.json",
+      "pass": true
+    },
+    {
+      "name": "unchanged after read-only review: FROZEN_INITIAL_INPUT_RECEIPT.json",
+      "pass": true
+    },
+    {
+      "name": "unchanged after read-only review: INITIAL_DIFFERENCES_01.json",
+      "pass": true
+    },
+    {
+      "name": "unchanged after read-only review: PROJECT_INPUTS_AND_WORKER_PLAN_01.json",
+      "pass": true
+    },
+    {
+      "name": "unchanged after read-only review: RETAINED_INPUTS_01.json",
+      "pass": true
+    },
+    {
+      "name": "unchanged after read-only review: compare_retained_initials.py",
+      "pass": true
+    },
+    {
+      "name": "unchanged after read-only review: freeze_initials_01.log",
+      "pass": true
+    },
+    {
+      "name": "unchanged after read-only review: freeze_retained_initials.py",
+      "pass": true
+    },
+    {
+      "name": "unchanged after read-only review: frozen_initials.npz",
+      "pass": true
+    },
+    {
+      "name": "unchanged after read-only review: initial_differences_01.log",
+      "pass": true
+    },
+    {
+      "name": "unchanged after read-only review: inspect_retained_inputs.py",
+      "pass": true
+    },
+    {
+      "name": "unchanged after read-only review: inspection_01.log",
+      "pass": true
+    }
+  ],
+  "decoded_NPZ_members": 10,
+  "issues": [],
+  "recomputed_truth_or_gaussian_initializers": 0,
+  "retained_initials_compared": 48,
+  "review_script_sha256": "b3c4b413e3e1297f50afcab60860887c0fc3c4935944c74efae959707c4717aa",
+  "scientific_goals_complete": false,
+  "source_inventory_sha256": "180c997bf982679f3dcfdc49d98395a85c348e1b4670f99b45936bdc39d0bc59",
+  "status": "PINNED_INPUT_STD_LIB_PROVENANCE_SCHEMA_REVIEW_CLEAR_NO_PDE"
+}

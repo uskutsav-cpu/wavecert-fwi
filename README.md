@@ -13,6 +13,8 @@ reliability on measured seismic data remain unestablished.
 
 The latest [48-run classical-prior recovery study](docs/fractional_velocity_prior_development.md) completes all returns within the cap, but meets the fixed recovery target on **0/8 reused cases**. Raw evidence, separate scalar reproduction, all-return CSVs and the figure are retained. Useful reconstruction at fully paid cost remains open. These additions are in the draft `research-strengthening` branch; main remains unmerged.
 
+A later [cached-field derivative control](results/cached_jacobian_native_verification/README.md) passes at one constant-model pair: 60 remote controls, 154 native checks and a separate 887-check/108-comparison retained-array audit. Its stdlib replay also passes from the relocated archive. The first failed ownership attempt is preserved. This supports a stronger classical solver comparison; it establishes no reconstruction, speedup, realistic-physics or novelty result.
+
 ## Start here
 
 ```bash

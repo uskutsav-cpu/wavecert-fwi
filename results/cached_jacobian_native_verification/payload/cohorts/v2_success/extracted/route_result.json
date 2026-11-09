@@ -1,0 +1,42 @@
+{
+  "actual_native_wait": {
+    "RSS_scope": "Cumulative RUSAGE_CHILDREN peak includes earlier control/nested children; never assigned solely to native. Native self peak is in its own report, before final serialization.",
+    "actual_pid": 2870,
+    "actual_wait_returncode": 0,
+    "argv": [
+      "/opt/hostedtoolcache/Python/3.11.18/x64/bin/python",
+      "-B",
+      "-I",
+      "/home/runner/work/wavecert-fwi/wavecert-fwi/experiment/experiments/cached_j_native_02/runtime/verify_native_fields.py",
+      "--execute",
+      "--repo",
+      "/home/runner/work/wavecert-fwi/wavecert-fwi/baseline",
+      "--root-go",
+      "/home/runner/work/wavecert-fwi/wavecert-fwi/run-artifacts/cached-j-native-01/raw/supplied_root_go.json",
+      "--output",
+      "/home/runner/work/wavecert-fwi/wavecert-fwi/run-artifacts/cached-j-native-01/raw/native"
+    ],
+    "child_CPU_delta_system_seconds": 0.14530899999999997,
+    "child_CPU_delta_user_seconds": 1.2896159999999997,
+    "cwd": "/home/runner/work/wavecert-fwi/wavecert-fwi/experiment/experiments/cached_j_native_02/runtime",
+    "deferred_parent_signals": [],
+    "external_spawn_through_wait_wall_seconds": 1.5657673820000042,
+    "label": "native",
+    "launch_state": "HANDLE_ASSIGNED",
+    "observed_pgid": 2870,
+    "owned_process_group_alive_after_cleanup": false,
+    "parent_cumulative_children_peak_RSS_after_bytes": 204009472,
+    "parent_cumulative_children_peak_RSS_before_bytes": 108761088,
+    "requested_new_session": true,
+    "signal_scope": "Nonraising handlers through Popen handle handoff, owned cleanup, closed log and actual-wait receipt; no blocked child signal mask.",
+    "signals": [],
+    "terminal_state_known": true,
+    "timeout_seconds": 240,
+    "wait_observed": true
+  },
+  "independent_numerical_audit_required": true,
+  "mandatory_controls": 60,
+  "native_child_attempted": true,
+  "scientific_goals_complete": false,
+  "status": "NATIVE_CHILD_ACTUAL_EXIT0_SELF_REPORT_PRESENT_AUDIT_PENDING"
+}

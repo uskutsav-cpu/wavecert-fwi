@@ -1,0 +1,139 @@
+{
+  "bound_metadata_sha256": {
+    "HELD_SOURCE_CONTROL_RECEIPT.json": "42e5b76093043701278ea7de626025ab436c4b002ae4a67af688fa489041e695",
+    "SOURCE_SCOPE.json": "a6ea4f6df6fe5beb242b64a6c28ff2d97a995bdcbb0face3d195be6bfd6cbc66",
+    "STAGED_FILE_MANIFEST.json": "8aa079b82c9cf2bcc9340d59924d2d7fc52936bbeaacbab517bea05eee38f248",
+    "controls_attempt_03.log": "8f088f1634c5db8f33779c8dec3e520f877e9a6aa42f010d4f724444e425ab49"
+  },
+  "control_source_sha256": "2526a76b539af952a9a9707f6723493ad571723012ed48c8e3738b8432a80414",
+  "copied_components_match_previous_reviewed_f613_and622": true,
+  "created_utc": "2026-11-09T03:48:57.009916+00:00",
+  "criteria_changed_by_review": false,
+  "exact_reviewed_source_files": {
+    "FROZEN_PRODUCTION_SOURCE.json": "e7ba5deef7a651f42d02b9f8e0bcbee9624291b8217ab378bdde7586c57cd4de",
+    "cached_jacobian.py": "f613370617d7e0bd7815cf441dd8ba5f41816ad4791275e86f33de228657c79b",
+    "protocol.json": "3b608f942f3d08f40705e8203375fc7e24763592bd27d7cc70bac12b351391e6",
+    "public_map_builder.py": "622a624f54b17d9d882da9d88af547c516b26ee42c87d80ec68d5fe99a687ec1",
+    "verify_native_fields.py": "c660a025badbebd5e9d9a4d6ddbfc684c95193c6111f2de349f25112976d1d6b"
+  },
+  "existing_control_evidence": {
+    "actual_log_tail_and_source_receipt_agree": true,
+    "all_history_logs_source_identites_and_executed_files_match": true,
+    "author_actual_exit": 0,
+    "author_actual_terminal_chunk": "9f1408",
+    "errors": 0,
+    "failures": 0,
+    "final_tests": 14,
+    "history_test_counts": [
+      12,
+      13,
+      14
+    ],
+    "numerical_imports_in_recorded_controls": 0,
+    "real_OS_limits_not_exercised_by_controls": true,
+    "reviewer_retests": 0
+  },
+  "expected_disjoint_work_reconciliation": {
+    "cache_hits_and_dispatch_counts_not_equated_to_RHS": true,
+    "map_batches_separate_from_native_owner": true,
+    "native_final_cumulative_snapshot_counted_once": true,
+    "phases": [
+      {
+        "factorizations": 8,
+        "forward_rhs": 48,
+        "phase": "observation_generation"
+      },
+      {
+        "factorizations": 16,
+        "forward_rhs": 96,
+        "phase": "actual_native_policy_initial_and_trial"
+      },
+      {
+        "factorizations": 8,
+        "phase": "component_cold_map_batches",
+        "stability_rhs": 112
+      },
+      {
+        "factorizations": 8,
+        "forward_rhs": 48,
+        "phase": "public_jvp_redo_U_and_tangent",
+        "tangent_rhs": 48
+      },
+      {
+        "adjoint_rhs": 48,
+        "factorizations": 8,
+        "forward_rhs": 48,
+        "phase": "public_vjp_redo_U_and_adjoint"
+      },
+      {
+        "factorizations": 8,
+        "forward_rhs": 48,
+        "phase": "complex_source_validation"
+      },
+      {
+        "factorizations": 8,
+        "phase": "full_receiver_map_validation",
+        "stability_rhs": 160
+      },
+      {
+        "factorizations": 32,
+        "forward_rhs": 192,
+        "phase": "four_separate_centered_FD_sign_batches"
+      }
+    ],
+    "source_derived_not_live_measured": true,
+    "templates_and_foreign_validation_are_separate_actual_zero_physics_prefixes": true,
+    "total": {
+      "adjoint_rhs": 48,
+      "factorizations": 96,
+      "forward_rhs": 480,
+      "stability_rhs": 272,
+      "tangent_rhs": 48
+    }
+  },
+  "lifecycle_and_resources": {
+    "before_import_sequence": "Main default uses stdlib metadata only. Explicit execute admits exact GO/source/runtime reservation, creates fresh output, fsyncs complete plan/admission and event, then invokes runtime/kernel limiter, then numerical imports/owners/PDE worker. No valid GO is staged.",
+    "bounded_outputs": "Fixed256top-levelpublic-dispatch maximum;8MiB retained finitearray payload and16MiB output checks before/after result serialization.1GiB peakRSS review sampled before result serialization; final complete-process resource observation remains external.",
+    "complete_runtime_acceptance_held": "Worker result deliberately says pending_external_wait and actual_external_wait_required. It is not a detached supervisor or complete-return runtime observer; root must separately freeze, authorize, foreground-wait and retain actual exit/signal/log/complete resource evidence before accepting any native result.",
+    "limits": "Fixed LinuxPython3.11.18/NumPy2.4.6/SciPy1.17.1, five thread envs1, RLIMIT_AS2GiB/RLIMIT_CPU180s and explicit SIGALRM default+180s are source-only.14stdlibcontrols mock kernel-limit APIs; no actual caps exercised.",
+    "prefixes": "Top-level admitted public dispatch attempts are fsynced before call. Returned/raised snapshots and immutable earlier records preserve actual last prefixes. Caught failure writes existing evidence without native re-query. A hard OS termination may leave only an attempted outer phase and unknown internal tail; it must never be interpreted as zero extra work or completion."
+  },
+  "manifest_verification": {
+    "all_actual_hashes_lengths_and_cache_excluding_membership_match": true,
+    "bytes": 235191,
+    "files": 25
+  },
+  "material_blockers": [],
+  "mathematical_and_API_findings": {
+    "complex_covered_rows": "Native U has source amplitude a=1/h^2=1600. Under actual exported transpose symmetry, U_column/a transposes to the corresponding C row without conjugation. Independently generated complex source columns use q=alpha/h^2 and are divided by the same complex alpha/h^2, then transposed. Public fullC rows come from(A^-H E)^H and are separately paid for all20unique receivers at8frequencies.48covered native/complex row vectors plus references retained.",
+    "genuine_source_origin": "Before imports, admission compares all5contract hashes to a separately authorized source-bound GO and all161productionfiles to frozen9f. Loaded component modules cannot be preloaded and are loaded from exact candidate paths. NumPy/SciPy loaded distribution versions/origins and actual native class-method source paths are checked. Unchanged622 binding also checks native exact class/public method ownership and both actual native file hashes. No production patch, private LU/receipt-record access, borrowed factor, synthetic oracle or hidden U solve occurs in verifier source.",
+    "native_reference_packing": "Frozen public signatures are data_jvp(m,q,receivers,frequency,p) and data_vjp(m,q,receivers,frequency,complex_dual). Reference JVP is realified then divided bysqrtPhi0; VJP receives (z_real+i*z_imag)/sqrtPhi0 per global observation block. All48 source/frequency blocks and20ordered receiver slots remain. Separate JVP/VJP owners have cache8 and each pay8LU+48repeatedU forwardRHS plus48tangent/adjointRHS.",
+    "normalization": "Actual native initial Phi0 is positively required by unchanged callbackf613. Initial f=[Re r;Im r]/sqrtPhi0 has0.5||f||^2=Phi/Phi0. Both FD signs at both preset epsilons reuse that exact paid initial Phi0; none recompute a trial-dependent denominator. Direction and all1920-term real dual are fixed before observation data and independent of them.",
+    "old_point_ownership": "A genuine initial receipt is retained and issued-snapshot validation remains active. Initial nativephysics8LU48FWD remains unchanged through map construction and products. A separately paid policy trial is followed by bitwise old-operator repeat. Unissued model Jacobian and foreign-owner export rejection must produce no additional physics work.",
+    "real_adjoint_and_FD": "Real inner-product identity uses z@Jp and p@Jstar(z). Normalized objective directional derivative is f0@Jp. Directional derivative cosine and nonzero floors make the two centered FD comparisons informative; both1e-4 and5e-5 must pass unchanged tolerances. AllFD vectors retained. These are ordinary floating-point controls, not verified enclosures."
+  },
+  "metadata_verification_tool_chunk": "500986",
+  "production_manifest": {
+    "all161_current_paths_and_file_hashes_match": true,
+    "sha256": "e7ba5deef7a651f42d02b9f8e0bcbee9624291b8217ab378bdde7586c57cd4de",
+    "source_digest_independently_recomputed": true,
+    "source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da"
+  },
+  "prospective_criteria_sha256": "3b608f942f3d08f40705e8203375fc7e24763592bd27d7cc70bac12b351391e6",
+  "reviewer": "/root/canonical_input_controls",
+  "reviewer_actions": {
+    "PDE_solves": 0,
+    "author_source_edits": 0,
+    "launches": 0,
+    "native_owners_constructed": 0,
+    "numerical_imports": 0,
+    "production_imports": 0,
+    "project_arrays_read": 0,
+    "source_imports": 0,
+    "tests_rerun": 0
+  },
+  "schema_version": 1,
+  "science_scope": "No native agreement is established yet. Future shared-backend field verification is not independent solver reproduction, accepted physical modeling, reconstruction/time benefit, a new optimizer/certificate, student final design, or completion of four scientific goals.",
+  "scope": "Independent readonly source/control-evidence review. Exact prospective criteria may be frozen by root; no native execution is authorized or validated by this review.",
+  "status": "CLEAR_FOR_HELD_SOURCE_AND_STDLIB_CONTROL_EVIDENCE_ONLY"
+}

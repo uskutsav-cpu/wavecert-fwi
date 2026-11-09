@@ -1,0 +1,57 @@
+{
+  "actions": {
+    "GO_created": 0,
+    "PDE_solves": 0,
+    "dependency_installs": 0,
+    "imports": 0,
+    "native_calls": 0,
+    "pushes": 0,
+    "source_edits": 0,
+    "tests_rerun": 0
+  },
+  "created_utc": "2026-11-09T04:15:18.482686+00:00",
+  "false_registration_sha256": "4466c19029329a9b3df9b67bf4b9f836c325c6a986aa08767e145689da4e86fd",
+  "full_stage_manifest_sha256": "edfd84802b0532e7f2ae33827fe97914767e29d5133b93e91debd77918400c19",
+  "material_findings": [
+    {
+      "file": "experiments/cached_j_native_01/run_route.py",
+      "issue": "CLI SIGTERM/SIGINT handler raises immediately. If a signal arrives after Popen returns but before the process local is assigned, a real child can exist while process remains None. Finally skips reap, then actual_wait can be persisted with actual_pid None. Artifact admission currently permits such a row as if no child exists, so a still-running child log can receive stable hashes. Repeated parent signals can also raise during reap and abort known-owned-child cleanup.",
+      "lines": [
+        159,
+        177,
+        218,
+        296
+      ],
+      "priority": 1,
+      "required_scope": "Make spawn-to-known-PID/PGID/receipt handoff and owned-child reap/evidence persistence signal-safe through deferral or recovery. Distinguish confirmed constructor/no-child failure from ambiguous launch/wait unknown; unknown state cannot allow stable child-file inventory. Preserve original executed7001/d1 source/results. Add meaningful tiny controls injecting a parent signal immediately after real Popen returns before caller assignment and another during real owned-child cleanup; require actual wait, group-gone and closed logs before stable inventory. No numerical test or PDE is needed."
+    }
+  ],
+  "other_source_checks": {
+    "actual_child_wait_and_timeout_metadata_scoped_truthfully_except_identified_handoff_gap": true,
+    "actual_public_first_nonforced_push_attempt1_and_parent291_context_guard_present": true,
+    "all12_public_route_manifest_hashes_and_sizes_match": true,
+    "all28_stage_manifest_hashes_and_sizes_match": true,
+    "all7_runtime_copies_match_reviewed_c660_3b_f613_622_e7_2526_c7d": true,
+    "both_workflows_manifest_bound": true,
+    "cumulative_RUSAGE_CHILDREN_peak_not_assigned_to_native": true,
+    "existing12_stdlib_dummy_PID_controls_only_not_native_execution": true,
+    "fresh_tmp_parent_and_isolated_python_import_paths_consistent": true,
+    "lowercase_ci_yml_exactly_one_branch_ignore_line_delta_from291": true,
+    "mandatory_actual14_plus44_before_conditional_native_present": true,
+    "no_native_outcome_acceptance_from_exit0_only": true,
+    "no_other_material_blocker_identified": true,
+    "no_uppercase_workflow_manifest_entry": true,
+    "registered_false_null_GO": true,
+    "separate_baseline291_checkout_and_native9f_source_checks_present": true,
+    "stable_artifact_cap_and_omission_failure_scope_present": true
+  },
+  "receipt_sha256": "ea965af374ab8f7a03fde5d49fc6ac3b2f9d75a8977da2f99c0699531cd84f9b",
+  "reviewed_control_source_sha256": "d1fc97c438438dd820969ed544d42f6d58d4f12eaf9b13145fce6ee9520e2e7f",
+  "reviewed_source_sha256": "7001b7089f64782ad4f273fcf671a68790a1cb13460446b7487827dca7253f90",
+  "reviewer": "/root/canonical_input_controls",
+  "route_manifest_sha256": "00afd00ba969332c753b0453d51c5099b9cf2f083d64c4355b6820731c474e4c",
+  "schema_version": 1,
+  "science_scope": "Route/source only; no numerical agreement, independent physics, reconstruction benefit, student final design or goal completion.",
+  "source_verification_tool_chunk": "0ec9ba",
+  "status": "BLOCKED_PENDING_OWNED_CHILD_HANDOFF_AND_CLEANUP_FIX"
+}

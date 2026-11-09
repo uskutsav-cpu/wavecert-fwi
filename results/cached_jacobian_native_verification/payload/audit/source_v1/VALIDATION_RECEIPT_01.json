@@ -1,0 +1,70 @@
+{
+  "recorded_utc": "2026-11-09T04:30:19Z",
+  "result": "V1_SOURCE_READY_19_STDLIB_MANUFACTURED_CONTROLS_PASS_NATIVE_PACKET_NOT_AUDITED",
+  "source_sha256": "404627514a29b24ed9ce8831e5894dfa52fe6231441e517633eba8c876629c3d",
+  "criteria_sha256": "9fef9500462baaebd39475ac37029f74e072a2a2605a8d8599a2222d59b65a9a",
+  "final_control_source_sha256": "c2a99638a37d8b629c2a5898d5886b2c3e2a8f7f0376f3067ac6a07cd4b83de1",
+  "native_protocol_sha256": "3b608f942f3d08f40705e8203375fc7e24763592bd27d7cc70bac12b351391e6",
+  "verifier_sha256": "c660a025badbebd5e9d9a4d6ddbfc684c95193c6111f2de349f25112976d1d6b",
+  "callback_sha256": "f613370617d7e0bd7815cf441dd8ba5f41816ad4791275e86f33de228657c79b",
+  "builder_v1_sha256": "622a624f54b17d9d882da9d88af547c516b26ee42c87d80ec68d5fe99a687ec1",
+  "native_independent_source_review_sha256": "f551a8bf61ad118bb6a839cd35b3ce19d55adbe0c95528ec33a79e7f2f0ed478",
+  "executions": [
+    {
+      "label": "final_stdlib_controls",
+      "cwd": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -B -I -W error work/new-phase-staging/cached_j_native_independent_array_audit/test_audit_retained.py > work/new-phase-staging/cached_j_native_independent_array_audit/manufactured_controls_02.log 2>&1",
+      "actual_tool_chunk": "c21307",
+      "actual_exit_code": 0,
+      "result": "19 tests,0 failures,0 errors in0.398s; no NumPy/SciPy/production/native import or call",
+      "log_sha256": "564d8b13e75b1c8b9bbefccbc6a2e5bc972f0b5da6f5ddbcbae7833923fd7468"
+    },
+    {
+      "label": "final_ruff",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -m ruff check --config work/wavecert-fwi/pyproject.toml work/new-phase-staging/cached_j_native_independent_array_audit/audit_retained.py work/new-phase-staging/cached_j_native_independent_array_audit/test_audit_retained.py > work/new-phase-staging/cached_j_native_independent_array_audit/ruff_02.log 2>&1",
+      "actual_tool_chunk": "9cf133",
+      "actual_exit_code": 0,
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "label": "python310_grammar",
+      "method": "stdlib ast.parse feature_version=(3,10) on auditor/control sources; no native imports",
+      "actual_tool_chunk": "446761",
+      "actual_exit_code": 0,
+      "log_sha256": "9c2944d32c658dafb1ade23c1ee546209533e7d660eaa8cb80218ccbff29e371"
+    },
+    {
+      "label": "isolated_metadata_default",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -B -I -W error work/new-phase-staging/cached_j_native_independent_array_audit/audit_retained.py > work/new-phase-staging/cached_j_native_independent_array_audit/default_metadata_02.log 2>&1",
+      "actual_tool_chunk": "e828d4",
+      "actual_exit_code": 0,
+      "log_sha256": "ddb477050eb777ec0ec2d4bc25648503d41fb8f9a0bb8aa38804254362eacb3d"
+    }
+  ],
+  "first_attempts_preserved": {
+    "first19_tests": "Actuale46e40 exit0,19passed in0.391s on source4046/testf304; files and all logs retained history/first19_before_test_import_cleanup",
+    "first_ruff": "Actual3d2193 exit1 solely unusedio import in tests. Test-only removal preserved original; final source4046 and all numerical criteria unchanged.",
+    "first_grammar_and_default": "Actual45cfa5/3e3659 exit0 on source4046; retained"
+  },
+  "fixed_prospective_coverage": {
+    "native_packet_arrays": 14,
+    "real_residual_terms": 1920,
+    "parameters": 2401,
+    "both_centered_FD_steps": [0.0001, 0.00005],
+    "native_covered_rows": 48,
+    "complex_source_covered_rows": 48,
+    "actual_public_dispatches": 160,
+    "expected_source_owner_guard_rejections": 2,
+    "mandatory_remote_controls": "14lifecycle+44component=58; distinct from19localauditor controls",
+    "disjoint_physics_totals": {"factorizations":96,"forward_rhs":480,"tangent_rhs":48,"adjoint_rhs":48,"stability_rhs":272}
+  },
+  "actual_native_or_remote_packet_read_by_auditor": false,
+  "actual_independent_array_audit_executed": false,
+  "native_owners_PDE_optimizer_install_or_network_calls": 0,
+  "GO_set_or_producer_modified": false,
+  "positive_runtime_acceptance_or_peer_CLEAR_claim": false,
+  "first_native_failure_known_only_from_root_message": "First run exit2 before firstmapdispatch on unhashableHelmholtz2D/WeakSet; no arrays/result. V1positive audit is held/noncredit and never executed against it. Version2provenance/control-count updates must be separate.",
+  "physical_acceptance": null,
+  "scientific_goals_complete": false,
+  "student_final_design": false
+}

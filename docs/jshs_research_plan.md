@@ -7,11 +7,13 @@ scores, national rankings, or probabilities of winning.
 
 ## Current evidence and next work
 
-The newer [fixed-band diagnostic](initial_linearization_diagnostic.md) finds
+The completed [48-run prior comparison](fractional_velocity_prior_development.md) remains the decisive recovery result: all returns are eligible, but **0/8 cases meet the fixed target**. Keeping a model close to its initializer or beating a badly worsened baseline does not satisfy that target. The later [cached-field native verification](../results/cached_jacobian_native_verification/README.md) passes its 60 remote controls, 154 native checks and separate 887-check/108-comparison array audit. Its relocated stdlib recipe also reproduces the retained result. This validates a derivative component; it does not change the negative recovery result or the four open requirements.
+
+The next technical comparison is a fully paid standard TRF/LSMR baseline against exact L-BFGS-B. The [partial API](../results/trf_matched_cost_driver_candidate/DRIVER_API_SCOPE.json) passes 18 manufactured controls and scoped source review; project input loading, complete-process accounting and the independent saved-model auditor remain prerequisites. The [input/worker plan](../results/trf_project_integration_design_candidate/PROJECT_INPUTS_AND_WORKER_PLAN_01.json) preserves the exact eight old Linux initializers. A 395-check stdlib review matches all 48 old returned initial vectors to those eight rows. Their optimistic, precomputed initialization and generation prehistory must be explicit in a new project protocol. Optimizer choice alone is not a novel contribution. The [checkpoint runtime contract](../results/checkpoint_pilot23_runtime_contract_v2_candidate/FINAL_HANDOFF.json) has compatible published direct dependency bounds after the NumPy correction; full build/runtime compatibility, installation and native execution remain untested.
+
+The [fixed-band diagnostic](initial_linearization_diagnostic.md) finds
 smaller linearization remainders at lower frequencies in seven of eight cases,
-with the exception retained. This motivates a future standard continuation
-control, not a demonstrated remedy or a new method. Its independent scalar
-audit passes 1,600 checks. The [BP numerical record](bp_heterogeneous_verification.md)
+with the exception retained. This motivated the completed [continuation comparison](frequency_continuation_development.md), which still worsens reconstruction relative to initialization on seven of eight reused cases. It is not a demonstrated remedy or a new method. The fixed-band diagnostic's separate scalar audit passes 1,600 checks. The [BP numerical record](bp_heterogeneous_verification.md)
 adds 57 completed native calls, three separate NumPy probe forwards and six
 derivatives. Numerical agreement is strong, while padding sensitivity remains
 large and physical acceptance is null. The [simple anchor-reuse diagnostic](stability_anchor_feasibility.md)

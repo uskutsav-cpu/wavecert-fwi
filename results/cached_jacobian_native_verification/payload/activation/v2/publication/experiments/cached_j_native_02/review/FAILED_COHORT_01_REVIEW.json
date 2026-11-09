@@ -1,0 +1,110 @@
+{
+  "actual_native_wait_returncode": 2,
+  "actual_wait_observed": true,
+  "actual_wait_sha256": "945a6cd3329c186704205ff60ebde6681296e429a651dea1d6bed4924cb731fb",
+  "actual_workflow_conclusion": "failure",
+  "attempt": 1,
+  "created_utc": "2026-11-09T04:36:13.321846+00:00",
+  "failure_json_sha256": "5c0f0a6fa23cb71238515e86025b2466d8045549701602a5a65ac9b8b8de01f3",
+  "head_sha": "9fd2372a391f9dc23355a1139b818588448627d2",
+  "interpretation": "Actual integration/software ownership failure before derivative-agreement checks; no mathematical tolerance failure, reconstruction/runtime benefit, physical acceptance or scientific completion claim. Old one-shot GO consumed; no automatic retry/resume/pooling.",
+  "job_id": 128979062258,
+  "known_completed_disjoint_physics_prefix": {
+    "native_initial_merit": {
+      "factorizations": 8,
+      "forward_rhs": 48
+    },
+    "not_full_expected96LU480FWD_counts": true,
+    "observation_generation": {
+      "factorizations": 8,
+      "forward_rhs": 48
+    },
+    "sum_only_these_two_cumulative_prefixes_once": {
+      "factorizations": 16,
+      "forward_rhs": 96
+    },
+    "zero_map_counter_prefix_does_not_clear_unknown_flag_or_assert_zero_factory_work": true
+  },
+  "launch_state": "HANDLE_ASSIGNED",
+  "mandatory_controls": {
+    "component44_actual_exit": 0,
+    "component_XML_unique_testcases": 44,
+    "errors": 0,
+    "failures": 0,
+    "lifecycle14_actual_exit": 0,
+    "lifecycle14_ok_lines": 14,
+    "mandatory_receipt_sha256": "f3755ccfb0e407a99394fb5b4869fcc7e79d08dc03ccc87c12b8beadc5b2e083",
+    "skips": 0,
+    "total": 58
+  },
+  "native_PID": 2655,
+  "native_external_spawn_through_wait_wall_seconds": 0.4656350479999958,
+  "owned_process_group_alive_after_cleanup": false,
+  "packet": {
+    "ZIP_bytes": 33437,
+    "ZIP_sha256": "e6b9c1b4a9ef45afa8e07870e9a82566b467e0953d30332dc5bef64d6aa6f657",
+    "all_actual_hashes_sizes_exact_and_no_omissions": true,
+    "exact_inventory_membership_excluding_self_verified": true,
+    "inventory_files": 25,
+    "inventory_member_content_bytes": 118102,
+    "inventory_sha256": "f3637f18175e7d85dbd1c8fc67965779cb5e171291c1568a8fed66703b3dfa6e"
+  },
+  "provenance": {
+    "admission_GO_failure_lifecycle_source_contracts_match": true,
+    "no_result_json_or_arrays_npz": true,
+    "plan_JSON_semantically_exact_original_protocol3b": true,
+    "plan_bytes_correctly_not_required_to_equal_original_protocol_source_bytes": true,
+    "plan_reserialization_hash": "cfe1f7606cd5e8fd5e097d2184c0c72a42d82575987d67f313e9545d14eebb15",
+    "source_after_receipt_absent_disclosed": true
+  },
+  "reached_phases": {
+    "builder_unknown_work_present_preserved": true,
+    "checks_before_failure_passed": 16,
+    "events": 22,
+    "first_map_completed": false,
+    "first_map_dispatch_attempted": false,
+    "first_map_factory_completed": true,
+    "first_map_unknown_work_flag_preserved": true,
+    "global_native_tail_unknown_if_dispatch_did_not_return_preserved": true,
+    "initial_policy_merit_returned": true,
+    "last_observed_map_physics_prefix_all_zero": true,
+    "observation_generation_returned_batches": 8,
+    "policy_Jacobian_raised": true,
+    "public_attempt_rows": 10
+  },
+  "reviewer": "/root/canonical_input_controls",
+  "reviewer_actions": {
+    "jobs_or_GO": 0,
+    "source_edits": 0,
+    "source_imports": 0,
+    "tests_or_PDE_rerun": 0
+  },
+  "reviewer_metadata_check_note": "An initial review-only assertion incorrectly equated sorted reserialized plan bytes with original protocol bytes; corrected semantic comparison passed. This was a reviewer assumption, not a packet/source defect. No control/PDE was rerun.",
+  "root_cause": {
+    "builder_sha256": "622a624f54b17d9d882da9d88af547c516b26ee42c87d80ec68d5fe99a687ec1",
+    "earlier_source_review_missed_native_class_hashability": true,
+    "exception_type": "TypeError",
+    "manufactured_coverage_gap": "Original DenseToyMapPhysics was hashable; all44 controls could pass while actual native ownership failed.",
+    "message": "unhashable type: 'Helmholtz2D'",
+    "native_class_source_sha256": "caf51b58da24ed6d3633bda4eaaab804714f5c7932d9d5f343644763bc158131",
+    "source_derived_cause": "Actual frozen Helmholtz2D is a normal dataclass with generated value equality and no hash. Builder622 uses WeakSet membership immediately after factory return. WeakSet hashes the referent; the unhashable native class fails before ownership add/validation/cold-map dispatch. No retained traceback is claimed; scalar failure signature and exact before/after flags constrain this source location."
+  },
+  "root_receipt_sha256": "60f2005ede0a4e65dccc2fd183691fd58b5a329b49c8a8c563d2eab0165bfe4f",
+  "run_id": 42561616207,
+  "schema_version": 1,
+  "status": "FAILED_COHORT_PACKET_AND_SOURCE_ROOT_CAUSE_VERIFIED",
+  "terminal_state_known": true,
+  "unreached": [
+    "cached_JVP_Jstar",
+    "public_JVP_VJP_references",
+    "fullC_complex_row_checks",
+    "both_FD_steps",
+    "policy_trial_old_operator_repeat",
+    "retained_array_payload",
+    "native_result"
+  ],
+  "verification_chunks": [
+    "e5f3ec",
+    "9e193f"
+  ]
+}
