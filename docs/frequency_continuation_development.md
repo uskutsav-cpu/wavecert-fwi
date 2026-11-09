@@ -59,7 +59,7 @@ On the `research-strengthening` checkout, the new public regression test reprodu
 python -m pytest -q -s tests/test_frequency_continuation_manufactured_reproduction.py
 ```
 
-The local parent test passes in 56.61 seconds, with all 108 child controls passing. Its first wrapper run retained 86 passes and 22 setup errors because a temporary parent directory was absent; a one-line wrapper directory fix is versioned with both actual attempts. This is portable software validation, not independent repetition of the inversion study or additional geology. The checkout's pinned source guard deliberately refuses another source version; unmerged `main` is not the tested 9f/161 checkout. Cross-platform CI is reported only after its actual jobs complete.
+The local parent test passes in 56.61 seconds, with all 108 child controls passing. Its first wrapper run retained 86 passes and 22 setup errors because a temporary parent directory was absent; a one-line wrapper directory fix is versioned with both actual attempts. This is portable software validation, not independent repetition of the inversion study or additional geology. The checkout's pinned source guard deliberately refuses another source version; unmerged `main` is not the tested 9f/161 checkout. Cross-platform CI is reported only after its actual jobs complete. At `8d7b7fc`, [CI42540137515](https://github.com/uskutsav-cpu/wavecert-fwi/actions/runs/42540137515) completes all four jobs: each full log contains the actual 108/108 child-control report with all five child exits0 and zero child failures/errors/skips. The original 97f run did not reach this test before its BP failfast. These are repeated software controls, not additional inversion runs or geology.
 
 ## Interpretation and next work
 

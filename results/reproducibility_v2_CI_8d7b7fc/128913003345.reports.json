@@ -1,0 +1,700 @@
+{
+  "error_lines": [],
+  "job_id": 128913003345,
+  "job_name": "test (3.12)",
+  "log_bytes": 73116,
+  "log_sha256": "3db949e435e4628ddcb9bb872a5429aaeede290e39ea92f946207046136ee2b8",
+  "pytest_summary_lines": [
+    "513 passed, 34 skipped in 106.46s (0:01:46)"
+  ],
+  "report_validation_issues": [],
+  "reports": [
+    {
+      "line_number": 457,
+      "raw_JSON_sha256": "413dc29c0acf7445a2489120ea2b3ae59a42d0622321e16d32f25ce57b621273",
+      "report": {
+        "all_own_solves_before_native_solution_outputs": true,
+        "canonical_input_manifest_sha256": "2d878a87d947e8b4f1e9e69a5e487ab772e3de1156511a714a0a3b012fad3b35",
+        "cases": [
+          {
+            "case_id": "upper_left",
+            "informative_direction_relative_errors": {
+              "edge": 1.2125890805823517e-14,
+              "interior": 3.5324223749335565e-15
+            },
+            "source_relative_L2": 1.62587949505648e-17,
+            "trace_relative_L2": 4.409051766940796e-14
+          },
+          {
+            "case_id": "middle_center",
+            "informative_direction_relative_errors": {
+              "edge": 6.823473661506754e-14,
+              "interior": 2.5854634199180642e-14
+            },
+            "source_relative_L2": 1.62587949505648e-17,
+            "trace_relative_L2": 2.8179763010522686e-14
+          },
+          {
+            "case_id": "lower_right",
+            "informative_direction_relative_errors": {
+              "edge": 5.740452111941409e-14,
+              "interior": 3.0482421670577655e-14
+            },
+            "source_relative_L2": 1.62587949505648e-17,
+            "trace_relative_L2": 2.2499482562358158e-14
+          }
+        ],
+        "check": "bp_numpy_tangent_reproduction",
+        "directional_tolerance": 0.001,
+        "independent_numeric_input_generation": false,
+        "informative_directions": 6,
+        "installed_devito_required": false,
+        "maximum_directional_relative_error": 6.823473661506754e-14,
+        "maximum_trace_relative_L2": 4.409051766940796e-14,
+        "native_derived_numeric_inputs_used": true,
+        "native_solution_outputs_used_during_own_solves": false,
+        "numpy": "2.5.4",
+        "physical_acceptance": null,
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16",
+        "scope": "known source-informed discrete fixture regression; no new physics, independent sites or student conclusions",
+        "trace_tolerance": 1e-09,
+        "traces": 3
+      }
+    },
+    {
+      "line_number": 460,
+      "raw_JSON_sha256": "897c4b74f4ee8f49d364cb9d1774b3fc06ba735fe85348b6f967537c62926d36",
+      "report": {
+        "check": "coordinate_offline_import_integration",
+        "checks": 9,
+        "final_error": {
+          "relative_physical_velocity_L2": 0.004962809790010597,
+          "relative_squared_slowness_L2": 0.009999999999999306
+        },
+        "frequencies": 1,
+        "initial_error": {
+          "relative_physical_velocity_L2": 1.9860273225978183e-16,
+          "relative_squared_slowness_L2": 6.938893903907226e-16
+        },
+        "maximum_relative_linear_residual": 1.5550711758641287e-14,
+        "numeric_comparisons": 6,
+        "numpy": "2.5.4",
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16",
+        "receivers": 2,
+        "refined_shape": [
+          49,
+          49
+        ],
+        "scope": "Manufactured API regression; no project arrays, benchmark trajectories or scientific confirmation",
+        "sources": 1,
+        "synthetic_shape": [
+          24,
+          24
+        ]
+      }
+    },
+    {
+      "line_number": 462,
+      "raw_JSON_sha256": "6644956f978eb13aec72de20c7a8e09a2b4067c6942aa926984cfcd64aeb353d",
+      "report": {
+        "actual_observed": 108,
+        "actual_passed": 108,
+        "check": "frequency_continuation_archival_manufactured_reproduction",
+        "environment": {
+          "packages": {
+            "numpy": "2.5.4",
+            "pytest": "9.2.0",
+            "scipy": "1.18.1"
+          },
+          "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+          "python": "3.12.16 (main, Oct 26 2026, 02:48:44) [GCC 15.2.0]"
+        },
+        "expected_total": 108,
+        "production_files": 161,
+        "production_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+        "scientific_claim": false,
+        "scope": "archival manufactured controls only; tiny synthetic API physics, no corpus/project96run/training",
+        "status": "pass_all108",
+        "suites": [
+          {
+            "PID": 3649,
+            "actual_exit_code": 0,
+            "errors": 0,
+            "expected_passed": 17,
+            "failed": 0,
+            "name": "bounded_engine",
+            "observed": 17,
+            "passed": 17,
+            "skipped": 0,
+            "status": "passed"
+          },
+          {
+            "PID": 3651,
+            "actual_exit_code": 0,
+            "errors": 0,
+            "expected_passed": 24,
+            "failed": 0,
+            "name": "controller",
+            "observed": 24,
+            "passed": 24,
+            "skipped": 0,
+            "status": "passed"
+          },
+          {
+            "PID": 3652,
+            "actual_exit_code": 0,
+            "errors": 0,
+            "expected_passed": 15,
+            "failed": 0,
+            "name": "driver",
+            "observed": 15,
+            "passed": 15,
+            "skipped": 0,
+            "status": "passed"
+          },
+          {
+            "PID": 3653,
+            "actual_exit_code": 0,
+            "errors": 0,
+            "expected_passed": 15,
+            "failed": 0,
+            "name": "launcher",
+            "observed": 15,
+            "passed": 15,
+            "skipped": 0,
+            "status": "passed"
+          },
+          {
+            "PID": 3680,
+            "actual_exit_code": 0,
+            "errors": 0,
+            "expected_passed": 37,
+            "failed": 0,
+            "name": "scalar_auditor_v2",
+            "observed": 37,
+            "passed": 37,
+            "skipped": 0,
+            "status": "passed"
+          }
+        ],
+        "workspace": "/tmp/pytest-of-runner/pytest-0/test_archived_frequency_manufa0/archival108"
+      }
+    },
+    {
+      "line_number": 464,
+      "raw_JSON_sha256": "574dbb27e1f37320e9072ddaefa733675f49db166e406ca2d803a6358d4b7466",
+      "report": {
+        "all_own_traces_computed_before_targets": true,
+        "cases": [
+          {
+            "agreement": true,
+            "case_id": "small_nbl0",
+            "exact_time_axis": true,
+            "source_bitwise_diagnostic": false,
+            "source_relative_L2": 1.469898057381263e-17,
+            "trace_relative_L2": 3.2374644645246667e-15
+          },
+          {
+            "agreement": true,
+            "case_id": "small_nbl20",
+            "exact_time_axis": true,
+            "source_bitwise_diagnostic": false,
+            "source_relative_L2": 1.469898057381263e-17,
+            "trace_relative_L2": 3.4224399127646405e-14
+          },
+          {
+            "agreement": true,
+            "case_id": "small_nbl40",
+            "exact_time_axis": true,
+            "source_bitwise_diagnostic": false,
+            "source_relative_L2": 1.469898057381263e-17,
+            "trace_relative_L2": 2.972303882487438e-14
+          },
+          {
+            "agreement": true,
+            "case_id": "matched_exterior_20_undamped",
+            "exact_time_axis": true,
+            "source_bitwise_diagnostic": false,
+            "source_relative_L2": 1.469898057381263e-17,
+            "trace_relative_L2": 8.709894946992662e-15
+          },
+          {
+            "agreement": true,
+            "case_id": "matched_exterior_40_undamped",
+            "exact_time_axis": true,
+            "source_bitwise_diagnostic": false,
+            "source_relative_L2": 1.469898057381263e-17,
+            "trace_relative_L2": 5.896848603680235e-15
+          },
+          {
+            "agreement": true,
+            "case_id": "reference_241",
+            "exact_time_axis": true,
+            "source_bitwise_diagnostic": false,
+            "source_relative_L2": 1.469898057381263e-17,
+            "trace_relative_L2": 1.5723613173652312e-14
+          },
+          {
+            "agreement": true,
+            "case_id": "reference_321",
+            "exact_time_axis": true,
+            "source_bitwise_diagnostic": false,
+            "source_relative_L2": 1.469898057381263e-17,
+            "trace_relative_L2": 1.5665024824587113e-14
+          }
+        ],
+        "check": "seven_faithful_NumPy_traces",
+        "excitation_tolerance": 1e-14,
+        "installed_devito_required": false,
+        "maximum_source_relative_L2": 1.469898057381263e-17,
+        "maximum_trace_relative_L2": 3.4224399127646405e-14,
+        "numpy": "2.5.4",
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16",
+        "scope": "reference-informed independent implementation replay; no continuum, student-ownership or goal-completion claim",
+        "trace_tolerance": 1e-09
+      }
+    },
+    {
+      "line_number": 466,
+      "raw_JSON_sha256": "f386778d421a00bde5103e139a43378fcbc5ef657515aa3d490f7c9c4d8b4af4",
+      "report": {
+        "cases": [
+          {
+            "approximate_center": -26.355058534281316,
+            "approximate_gradient_relative_error": 0.0,
+            "bound": 0.0034542543287551975,
+            "bound_covers_with_historical_helper_allowance": true,
+            "bound_covers_without_extra_allowance": true,
+            "case_index": 0,
+            "certified": true,
+            "false_certification": false,
+            "independent_gradient_relative_error": 1.0130431392570112e-16,
+            "true_directional_derivative": -26.35505854723491
+          },
+          {
+            "approximate_center": -149.06950031138948,
+            "approximate_gradient_relative_error": 0.0,
+            "bound": 0.02498710518075192,
+            "bound_covers_with_historical_helper_allowance": true,
+            "bound_covers_without_extra_allowance": true,
+            "case_index": 1,
+            "certified": true,
+            "false_certification": false,
+            "independent_gradient_relative_error": 8.921894647291444e-17,
+            "true_directional_derivative": -149.0688041852611
+          },
+          {
+            "approximate_center": -23.19613034175022,
+            "approximate_gradient_relative_error": 0.0,
+            "bound": 0.0014703325482143099,
+            "bound_covers_with_historical_helper_allowance": true,
+            "bound_covers_without_extra_allowance": true,
+            "case_index": 2,
+            "certified": true,
+            "false_certification": false,
+            "independent_gradient_relative_error": 7.599170850903604e-17,
+            "true_directional_derivative": -23.196135467904366
+          },
+          {
+            "approximate_center": -45.98575494827409,
+            "approximate_gradient_relative_error": 0.0,
+            "bound": 0.0009343388135817514,
+            "bound_covers_with_historical_helper_allowance": true,
+            "bound_covers_without_extra_allowance": true,
+            "case_index": 3,
+            "certified": true,
+            "false_certification": false,
+            "independent_gradient_relative_error": 7.44315152716693e-17,
+            "true_directional_derivative": -45.98573945091478
+          },
+          {
+            "approximate_center": -100.76551114677878,
+            "approximate_gradient_relative_error": 0.0,
+            "bound": 0.004008482080259255,
+            "bound_covers_with_historical_helper_allowance": true,
+            "bound_covers_without_extra_allowance": true,
+            "case_index": 4,
+            "certified": true,
+            "false_certification": false,
+            "independent_gradient_relative_error": 7.927923368369585e-17,
+            "true_directional_derivative": -100.76549784016395
+          },
+          {
+            "approximate_center": -63.142580454479734,
+            "approximate_gradient_relative_error": 0.0,
+            "bound": 0.06587485632817046,
+            "bound_covers_with_historical_helper_allowance": true,
+            "bound_covers_without_extra_allowance": true,
+            "case_index": 5,
+            "certified": true,
+            "false_certification": false,
+            "independent_gradient_relative_error": 1.1814638006052468e-16,
+            "true_directional_derivative": -63.14229462812927
+          },
+          {
+            "approximate_center": -60.95162549996801,
+            "approximate_gradient_relative_error": 0.0,
+            "bound": 0.0014522402746306915,
+            "bound_covers_with_historical_helper_allowance": true,
+            "bound_covers_without_extra_allowance": true,
+            "case_index": 6,
+            "certified": true,
+            "false_certification": false,
+            "independent_gradient_relative_error": 7.516537525779892e-17,
+            "true_directional_derivative": -60.951517299598486
+          },
+          {
+            "approximate_center": -61.71098287014516,
+            "approximate_gradient_relative_error": 0.0,
+            "bound": 0.0014541723133349633,
+            "bound_covers_with_historical_helper_allowance": true,
+            "bound_covers_without_extra_allowance": true,
+            "case_index": 7,
+            "certified": true,
+            "false_certification": false,
+            "independent_gradient_relative_error": 7.481209616881895e-17,
+            "true_directional_derivative": -61.71087514699512
+          }
+        ],
+        "check": "eight_initial_raw_direction_witnesses",
+        "checks": 1289,
+        "directions": 8,
+        "false_certifications": 0,
+        "literal_bound_misses": 0,
+        "numpy": "2.5.4",
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16",
+        "result": "clear_raw_witness_replay"
+      }
+    },
+    {
+      "line_number": 468,
+      "raw_JSON_sha256": "07d684161bf5436f16c80be64ce1437fc6c3398f12ea01ff387ab713abc757f9",
+      "report": {
+        "cases": [
+          {
+            "case_index": 0,
+            "directions": {
+              "actual_raw_proposal": {
+                "dataDD": -26.35505854723491,
+                "m_error_slope": 0.003174310526271428,
+                "velocity_error_slope": 0.0013481606867589738
+              },
+              "exact_normalized_negative_data_gradient": {
+                "dataDD": -26.355058547621468,
+                "m_error_slope": 0.003174276424304105,
+                "velocity_error_slope": 0.0013481575877381357
+              }
+            },
+            "toward_truth_dataDD": 8.869163244451265
+          },
+          {
+            "case_index": 1,
+            "directions": {
+              "actual_raw_proposal": {
+                "dataDD": -149.0688041852611,
+                "m_error_slope": 0.005345504955525595,
+                "velocity_error_slope": -0.0016922798751124147
+              },
+              "exact_normalized_negative_data_gradient": {
+                "dataDD": -149.06880420086458,
+                "m_error_slope": 0.00534535605826068,
+                "velocity_error_slope": -0.0016922779559415677
+              }
+            },
+            "toward_truth_dataDD": 74.39907535896981
+          },
+          {
+            "case_index": 2,
+            "directions": {
+              "actual_raw_proposal": {
+                "dataDD": -23.196135467904366,
+                "m_error_slope": 0.0036945101736813794,
+                "velocity_error_slope": 0.00020128476497920206
+              },
+              "exact_normalized_negative_data_gradient": {
+                "dataDD": -23.196135468087153,
+                "m_error_slope": 0.0036945103283161176,
+                "velocity_error_slope": 0.000201282680639173
+              }
+            },
+            "toward_truth_dataDD": 13.82531092336782
+          },
+          {
+            "case_index": 3,
+            "directions": {
+              "actual_raw_proposal": {
+                "dataDD": -45.98573945091478,
+                "m_error_slope": -0.0006858325192146376,
+                "velocity_error_slope": -1.8928933366218562e-05
+              },
+              "exact_normalized_negative_data_gradient": {
+                "dataDD": -45.985739452279844,
+                "m_error_slope": -0.0006858353716428853,
+                "velocity_error_slope": -1.8929073011058792e-05
+              }
+            },
+            "toward_truth_dataDD": -6.280821906051082
+          },
+          {
+            "case_index": 4,
+            "directions": {
+              "actual_raw_proposal": {
+                "dataDD": -100.76549784016395,
+                "m_error_slope": -0.0034767830370115486,
+                "velocity_error_slope": -5.10034022308376e-05
+              },
+              "exact_normalized_negative_data_gradient": {
+                "dataDD": -100.76549784109027,
+                "m_error_slope": -0.0034768232532238976,
+                "velocity_error_slope": -5.0991436886678575e-05
+              }
+            },
+            "toward_truth_dataDD": -40.92853237343162
+          },
+          {
+            "case_index": 5,
+            "directions": {
+              "actual_raw_proposal": {
+                "dataDD": -63.14229462812927,
+                "m_error_slope": -0.00498336009631636,
+                "velocity_error_slope": 0.0030420153337812664
+              },
+              "exact_normalized_negative_data_gradient": {
+                "dataDD": -63.142294644339856,
+                "m_error_slope": -0.004983527739006507,
+                "velocity_error_slope": 0.0030419821046441457
+              }
+            },
+            "toward_truth_dataDD": -35.6150831555589
+          },
+          {
+            "case_index": 6,
+            "directions": {
+              "actual_raw_proposal": {
+                "dataDD": -60.951517299598486,
+                "m_error_slope": -0.0007184803438637124,
+                "velocity_error_slope": 0.0002550543140406411
+              },
+              "exact_normalized_negative_data_gradient": {
+                "dataDD": -60.95151730098167,
+                "m_error_slope": -0.0007184821359600017,
+                "velocity_error_slope": 0.0002550535095846527
+              }
+            },
+            "toward_truth_dataDD": -8.5566319856103
+          },
+          {
+            "case_index": 7,
+            "directions": {
+              "actual_raw_proposal": {
+                "dataDD": -61.71087514699512,
+                "m_error_slope": -0.0007203411718621349,
+                "velocity_error_slope": 0.00020861575197330008
+              },
+              "exact_normalized_negative_data_gradient": {
+                "dataDD": -61.710875148511455,
+                "m_error_slope": -0.0007203429816912941,
+                "velocity_error_slope": 0.00020861499568812017
+              }
+            },
+            "toward_truth_dataDD": -8.679105798359366
+          }
+        ],
+        "check": "recovery_metric_initial_slopes",
+        "checks": 4483,
+        "directions": {
+          "actual_raw_proposal": {
+            "available_directions": 8,
+            "full_case_denominator": 8,
+            "metrics": {
+              "half_relative_squared_m_error": {
+                "literal_local_opposition_cases": 3,
+                "metric_derivative_literal_sign_counts": {
+                  "negative": 5,
+                  "positive": 3
+                },
+                "metric_derivative_numerical_sign_counts": {
+                  "negative": 5,
+                  "positive": 3
+                },
+                "numerically_classified_local_opposition_cases": 3
+              },
+              "half_relative_squared_velocity_error": {
+                "literal_local_opposition_cases": 5,
+                "metric_derivative_literal_sign_counts": {
+                  "negative": 3,
+                  "positive": 5
+                },
+                "metric_derivative_numerical_sign_counts": {
+                  "negative": 3,
+                  "positive": 5
+                },
+                "numerically_classified_local_opposition_cases": 5
+              }
+            },
+            "unavailable_cases_retained": 0
+          },
+          "exact_normalized_negative_data_gradient": {
+            "available_directions": 8,
+            "full_case_denominator": 8,
+            "metrics": {
+              "half_relative_squared_m_error": {
+                "literal_local_opposition_cases": 3,
+                "metric_derivative_literal_sign_counts": {
+                  "negative": 5,
+                  "positive": 3
+                },
+                "metric_derivative_numerical_sign_counts": {
+                  "negative": 5,
+                  "positive": 3
+                },
+                "numerically_classified_local_opposition_cases": 3
+              },
+              "half_relative_squared_velocity_error": {
+                "literal_local_opposition_cases": 5,
+                "metric_derivative_literal_sign_counts": {
+                  "negative": 3,
+                  "positive": 5
+                },
+                "metric_derivative_numerical_sign_counts": {
+                  "negative": 3,
+                  "positive": 5
+                },
+                "numerically_classified_local_opposition_cases": 5
+              }
+            },
+            "unavailable_cases_retained": 0
+          }
+        },
+        "endpoint_instances": 1440,
+        "initial_feasible": 8,
+        "numpy": "2.5.4",
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16",
+        "result": "clear_software_diagnostic",
+        "toward_truth_data_slope": {
+          "negative": 5,
+          "positive": 3
+        },
+        "truth_feasible": 8
+      }
+    },
+    {
+      "line_number": 469,
+      "raw_JSON_sha256": "ca8b57fbc5488a49c04259d7e4e28f2209b3ab6eeb4dcf2054bdff7de0773c2d",
+      "report": {
+        "cases": [
+          {
+            "case_id": "small_nbl0",
+            "early_relative_L2": 0.0003274335755548312,
+            "full_relative_L2": 2.4072154510015293,
+            "sample_counts": {
+              "early": 250,
+              "full": 1099,
+              "late": 849
+            },
+            "status": "complete"
+          },
+          {
+            "case_id": "small_nbl20",
+            "early_relative_L2": 0.0003274337399236351,
+            "full_relative_L2": 0.5693972854748873,
+            "sample_counts": {
+              "early": 250,
+              "full": 1099,
+              "late": 849
+            },
+            "status": "complete"
+          },
+          {
+            "case_id": "small_nbl40",
+            "early_relative_L2": 0.00032743374032882897,
+            "full_relative_L2": 0.24950424068601443,
+            "sample_counts": {
+              "early": 250,
+              "full": 1099,
+              "late": 849
+            },
+            "status": "complete"
+          },
+          {
+            "case_id": "matched_exterior_20_undamped",
+            "early_relative_L2": 0.00032743374036090395,
+            "full_relative_L2": 1.0372783411897348,
+            "sample_counts": {
+              "early": 250,
+              "full": 1099,
+              "late": 849
+            },
+            "status": "complete"
+          },
+          {
+            "case_id": "matched_exterior_40_undamped",
+            "early_relative_L2": 0.00032743374036090395,
+            "full_relative_L2": 0.6866430597700494,
+            "sample_counts": {
+              "early": 250,
+              "full": 1099,
+              "late": 849
+            },
+            "status": "complete"
+          },
+          {
+            "case_id": "reference_241",
+            "early_relative_L2": 0.0003274337403563026,
+            "full_relative_L2": 0.00030514170250237765,
+            "sample_counts": {
+              "early": 250,
+              "full": 1099,
+              "late": 849
+            },
+            "status": "complete"
+          },
+          {
+            "case_id": "reference_321",
+            "early_relative_L2": 0.0003274337403563026,
+            "full_relative_L2": 0.000305141702502378,
+            "sample_counts": {
+              "early": 250,
+              "full": 1099,
+              "late": 849
+            },
+            "status": "complete"
+          }
+        ],
+        "check": "analytic_homogeneous_wave_reference",
+        "internal_numeric_gates": true,
+        "numpy": "2.5.4",
+        "physical_quality_pass": null,
+        "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+        "python": "3.12.16",
+        "quadrature_convergence": [
+          {
+            "denominator": 168.86346491309584,
+            "gate": true,
+            "lower_order": 128,
+            "numerator": 2.367314247362773e-13,
+            "upper_order": 256,
+            "value": 1.4019102643553428e-15,
+            "zero_denominator": false
+          },
+          {
+            "denominator": 168.8634649130957,
+            "gate": true,
+            "lower_order": 256,
+            "numerator": 1.6021317170375894e-13,
+            "upper_order": 512,
+            "value": 9.487734471527718e-16,
+            "zero_denominator": false
+          }
+        ],
+        "status": "complete_analytical_diagnostic"
+      }
+    }
+  ],
+  "reports_count": 7
+}

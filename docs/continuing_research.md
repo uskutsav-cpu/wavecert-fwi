@@ -164,7 +164,7 @@ All four scientific objectives remain open. Software/source/audit controls canno
 
 ### Exact-input BP replay portability repair
 
-The 97f8905 CI run fails the old BP input-direction guard before the new108-control test is reached; all four logs remain preserved. A separately versioned replay shares exact recorded numerical inputs, keeps the independent propagation kernel and all thresholds unchanged, and opens native solution outputs only after all three own solves finish. Its27 manufactured controls, actual local3-trace/6-derivative replay and revised parent regression pass. Linux V2 verification remains pending. See the [BP report](bp_heterogeneous_verification.md#v2-exact-shared-numerical-inputs). This repairs the software reproduction contract; it adds no geological ancestor or recovery/physics/novelty/student-ownership claim.
+The 97f8905 CI run fails the old BP input-direction guard before the new 108-control test is reached; all four logs remain preserved. A separately versioned replay shares exact recorded numerical inputs, keeps the independent propagation kernel and all thresholds unchanged, and opens native solution outputs only after all three own solves finish. Its27 manufactured controls, actual local3-trace/6-derivative replay and revised parent regression pass. Linux V2 verification remains pending. See the [BP report](bp_heterogeneous_verification.md#v2-exact-shared-numerical-inputs). This repairs the software reproduction contract; it adds no geological ancestor or recovery/physics/novelty/student-ownership claim.
 
 
 ### Independent-model input acquisition and classical recovery candidate
@@ -172,3 +172,8 @@ The 97f8905 CI run fails the old BP input-direction guard before the new108-cont
 A fixed Overthrust stored-data cross-section is acquired:207 rows,663,228 model bytes, no conversion/row removal/PDE. An independent saved-byte audit passes3,186 integrity checks, with a precise record-ETag/file-ETag disclosure correction. The qualified JUDI/HDF5.jl interpretation and unresolved file-identity/water-provenance limits are explicit in the [acquisition report](overthrust_partial_acquisition.md). It is a candidate different synthetic ancestor, not accepted physics or an independent field site.
 
 The [classical fractional-velocity prior candidate](../results/fractional_velocity_prior_candidate/README.md) has39 author controls and39 independent scalar/math checks. Its48-run development comparison is still unimplemented/unexecuted, with fixed gates requiring useful recovery beyond both initialization and a paired exact baseline. The prior is zero-gradient at initialization and is not a new regularization method. All four scientific objectives remain open.
+
+
+### Completed Linux V2/control validation
+
+[CI42540137515](https://github.com/uskutsav-cpu/wavecert-fwi/actions/runs/42540137515) at 8d7b7fc passes all four jobs; all four full logs retain seven numerical reports, including BP V2's3traces/6 informative derivatives and108/108 frequency controls. Numerical tolerances,161 production files and the 108-control parent test remain unchanged. The original 97f failure stays retained. This completes that software portability check; useful paid-cost recovery, accepted independent-model physics, a specific contribution and student-owned interpretation/defense remain open.

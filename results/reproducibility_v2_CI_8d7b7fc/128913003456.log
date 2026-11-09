@@ -1,0 +1,1556 @@
+﻿2026-11-09T00:25:56.8381186Z Current runner version: '2.338.2'
+2026-11-09T00:25:56.8407883Z ##[group]Runner Image Provisioner
+2026-11-09T00:25:56.8408775Z Hosted Compute Agent
+2026-11-09T00:25:56.8409467Z Version: 20261028.624
+2026-11-09T00:25:56.8410183Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-09T00:25:56.8410918Z Build Date: 2026-10-28T21:51:42Z
+2026-11-09T00:25:56.8411722Z Worker ID: {8159a573-1744-41d5-bd8b-2faed5d2418f}
+2026-11-09T00:25:56.8412467Z Region: northcentralus
+2026-11-09T00:25:56.8413097Z Cloud: Azure
+2026-11-09T00:25:56.8413930Z ##[endgroup]
+2026-11-09T00:25:56.8415542Z ##[group]Operating System
+2026-11-09T00:25:56.8416354Z Ubuntu
+2026-11-09T00:25:56.8416900Z 26.04.1
+2026-11-09T00:25:56.8417416Z LTS
+2026-11-09T00:25:56.8418075Z ##[endgroup]
+2026-11-09T00:25:56.8418674Z ##[group]Runner Image
+2026-11-09T00:25:56.8419363Z Image: ubuntu-26.04
+2026-11-09T00:25:56.8419963Z Version: 20261101.186.1
+2026-11-09T00:25:56.8421407Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261101.186/images/ubuntu/Ubuntu2604-Readme.md
+2026-11-09T00:25:56.8422998Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261101.186
+2026-11-09T00:25:56.8424263Z ##[endgroup]
+2026-11-09T00:25:56.8425505Z ##[group]GITHUB_TOKEN Permissions
+2026-11-09T00:25:56.8427685Z Contents: read
+2026-11-09T00:25:56.8428358Z Metadata: read
+2026-11-09T00:25:56.8428944Z Packages: read
+2026-11-09T00:25:56.8429645Z ##[endgroup]
+2026-11-09T00:25:56.8432378Z Secret source: Actions
+2026-11-09T00:25:56.8433712Z Cache mode: write
+2026-11-09T00:25:56.8434720Z Prepare workflow directory
+2026-11-09T00:25:56.8799851Z Prepare all required actions
+2026-11-09T00:25:56.8850106Z Getting action download info
+2026-11-09T00:25:57.0875186Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-09T00:25:57.2304658Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-09T00:25:57.4095424Z Complete job name: learned-and-data
+2026-11-09T00:25:57.5100563Z ##[group]Run actions/checkout@v4
+2026-11-09T00:25:57.5101517Z with:
+2026-11-09T00:25:57.5102024Z   repository: uskutsav-cpu/wavecert-fwi
+2026-11-09T00:25:57.5106077Z   token: ***
+2026-11-09T00:25:57.5106554Z   ssh-strict: true
+2026-11-09T00:25:57.5107018Z   ssh-user: git
+2026-11-09T00:25:57.5107483Z   persist-credentials: true
+2026-11-09T00:25:57.5107993Z   clean: true
+2026-11-09T00:25:57.5108461Z   sparse-checkout-cone-mode: true
+2026-11-09T00:25:57.5109009Z   fetch-depth: 1
+2026-11-09T00:25:57.5109467Z   fetch-tags: false
+2026-11-09T00:25:57.5109943Z   show-progress: true
+2026-11-09T00:25:57.5110411Z   lfs: false
+2026-11-09T00:25:57.5110842Z   submodules: false
+2026-11-09T00:25:57.5111316Z   set-safe-directory: true
+2026-11-09T00:25:57.5111847Z   allow-unsafe-pr-checkout: false
+2026-11-09T00:25:57.5112659Z ##[endgroup]
+2026-11-09T00:25:57.7829901Z Syncing repository: uskutsav-cpu/wavecert-fwi
+2026-11-09T00:25:57.7832981Z ##[group]Getting Git version info
+2026-11-09T00:25:57.7835033Z Working directory is '/home/runner/work/wavecert-fwi/wavecert-fwi'
+2026-11-09T00:25:57.7837472Z [command]/usr/bin/git version
+2026-11-09T00:25:57.7844982Z git version 2.56.0
+2026-11-09T00:25:57.7869998Z ##[endgroup]
+2026-11-09T00:25:57.7887106Z Temporarily overriding HOME='/home/runner/work/_temp/fd234711-1d46-4aec-8b07-659b94bd19bf' before making global git config changes
+2026-11-09T00:25:57.7889740Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-09T00:25:57.7892462Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/wavecert-fwi/wavecert-fwi
+2026-11-09T00:25:57.7966197Z Deleting the contents of '/home/runner/work/wavecert-fwi/wavecert-fwi'
+2026-11-09T00:25:57.7969708Z ##[group]Initializing the repository
+2026-11-09T00:25:57.7976194Z [command]/usr/bin/git init /home/runner/work/wavecert-fwi/wavecert-fwi
+2026-11-09T00:25:57.8124594Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-09T00:25:57.8127588Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-09T00:25:57.8129517Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-09T00:25:57.8131505Z hint: call:
+2026-11-09T00:25:57.8132881Z hint:
+2026-11-09T00:25:57.8140121Z hint: 	git config --global init.defaultBranch <name>
+2026-11-09T00:25:57.8141792Z hint:
+2026-11-09T00:25:57.8144654Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-09T00:25:57.8147369Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-09T00:25:57.8150642Z hint:
+2026-11-09T00:25:57.8151942Z hint: 	git branch -m <name>
+2026-11-09T00:25:57.8153703Z hint:
+2026-11-09T00:25:57.8155657Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-09T00:25:57.8158775Z Initialized empty Git repository in /home/runner/work/wavecert-fwi/wavecert-fwi/.git/
+2026-11-09T00:25:57.8163227Z [command]/usr/bin/git remote add origin https://github.com/uskutsav-cpu/wavecert-fwi
+2026-11-09T00:25:57.8219552Z ##[endgroup]
+2026-11-09T00:25:57.8221175Z ##[group]Disabling automatic garbage collection
+2026-11-09T00:25:57.8224397Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-09T00:25:57.8266789Z ##[endgroup]
+2026-11-09T00:25:57.8268395Z ##[group]Setting up auth
+2026-11-09T00:25:57.8275663Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T00:25:57.8318237Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T00:25:57.8855550Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T00:25:57.8897429Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T00:25:57.9227076Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T00:25:57.9269160Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T00:25:57.9563107Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-09T00:25:57.9607176Z ##[endgroup]
+2026-11-09T00:25:57.9608963Z ##[group]Fetching the repository
+2026-11-09T00:25:57.9618633Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +affed15c048a3ef4e0131f0ae553379ff7d10f9c:refs/remotes/pull/5/merge
+2026-11-09T00:26:01.4492233Z From https://github.com/uskutsav-cpu/wavecert-fwi
+2026-11-09T00:26:01.4495323Z  * [new ref]         affed15c048a3ef4e0131f0ae553379ff7d10f9c -> pull/5/merge
+2026-11-09T00:26:01.4500291Z ##[endgroup]
+2026-11-09T00:26:01.4502203Z ##[group]Determining the checkout info
+2026-11-09T00:26:01.4503988Z ##[endgroup]
+2026-11-09T00:26:01.4512214Z [command]/usr/bin/git sparse-checkout disable
+2026-11-09T00:26:01.4561330Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-09T00:26:01.4591281Z ##[group]Checking out the ref
+2026-11-09T00:26:01.4594246Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/5/merge
+2026-11-09T00:26:02.4747798Z Updating files:  86% (4408/5114)
+2026-11-09T00:26:02.4886244Z Updating files:  87% (4450/5114)
+2026-11-09T00:26:02.5011932Z Updating files:  88% (4501/5114)
+2026-11-09T00:26:02.5130667Z Updating files:  89% (4552/5114)
+2026-11-09T00:26:02.5241991Z Updating files:  90% (4603/5114)
+2026-11-09T00:26:02.5318642Z Updating files:  91% (4654/5114)
+2026-11-09T00:26:02.5725244Z Updating files:  92% (4705/5114)
+2026-11-09T00:26:02.5829962Z Updating files:  93% (4757/5114)
+2026-11-09T00:26:02.6009866Z Updating files:  94% (4808/5114)
+2026-11-09T00:26:02.6078102Z Updating files:  95% (4859/5114)
+2026-11-09T00:26:02.6104426Z Updating files:  96% (4910/5114)
+2026-11-09T00:26:02.6150044Z Updating files:  97% (4961/5114)
+2026-11-09T00:26:02.6185551Z Updating files:  98% (5012/5114)
+2026-11-09T00:26:02.6216642Z Updating files:  99% (5063/5114)
+2026-11-09T00:26:02.6217264Z Updating files: 100% (5114/5114)
+2026-11-09T00:26:02.6217764Z Updating files: 100% (5114/5114), done.
+2026-11-09T00:26:02.6267233Z Note: switching to 'refs/remotes/pull/5/merge'.
+2026-11-09T00:26:02.6267771Z 
+2026-11-09T00:26:02.6268037Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-09T00:26:02.6268688Z changes and commit them, and you can discard any commits you make in this
+2026-11-09T00:26:02.6269389Z state without impacting any branches by switching back to a branch.
+2026-11-09T00:26:02.6269802Z 
+2026-11-09T00:26:02.6270048Z If you want to create a new branch to retain commits you create, you may
+2026-11-09T00:26:02.6270679Z do so (now or later) by using -c with the switch command. Example:
+2026-11-09T00:26:02.6271137Z 
+2026-11-09T00:26:02.6271355Z   git switch -c <new-branch-name>
+2026-11-09T00:26:02.6271661Z 
+2026-11-09T00:26:02.6271821Z Or undo this operation with:
+2026-11-09T00:26:02.6272088Z 
+2026-11-09T00:26:02.6272216Z   git switch -
+2026-11-09T00:26:02.6272469Z 
+2026-11-09T00:26:02.6272726Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-09T00:26:02.6273132Z 
+2026-11-09T00:26:02.6273885Z HEAD is now at affed15 Merge 8d7b7fce53d61234ef542522dd98604fbc0c7e33 into 7ee700f08609e13c1224a18b75db85fac7b01e82
+2026-11-09T00:26:02.6340180Z ##[endgroup]
+2026-11-09T00:26:02.6389629Z [command]/usr/bin/git log -1 --format=%H
+2026-11-09T00:26:02.6415422Z affed15c048a3ef4e0131f0ae553379ff7d10f9c
+2026-11-09T00:26:02.6790161Z ##[group]Run actions/setup-python@v5
+2026-11-09T00:26:02.6790488Z with:
+2026-11-09T00:26:02.6790712Z   python-version: 3.12
+2026-11-09T00:26:02.6790945Z   check-latest: false
+2026-11-09T00:26:02.6793635Z   token: ***
+2026-11-09T00:26:02.6793883Z   update-environment: true
+2026-11-09T00:26:02.6794163Z   allow-prereleases: false
+2026-11-09T00:26:02.6794396Z   freethreaded: false
+2026-11-09T00:26:02.6794621Z ##[endgroup]
+2026-11-09T00:26:02.8235504Z ##[group]Installed versions
+2026-11-09T00:26:02.8347405Z (node:2376) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-09T00:26:02.8348723Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-09T00:26:02.8349517Z Successfully set up CPython (3.12.16)
+2026-11-09T00:26:02.8350319Z ##[endgroup]
+2026-11-09T00:26:02.8560110Z ##[group]Run pip install -e '.[dev,torch,data]'
+2026-11-09T00:26:02.8560599Z [36;1mpip install -e '.[dev,torch,data]'[0m
+2026-11-09T00:26:02.8633746Z shell: /usr/bin/bash -e {0}
+2026-11-09T00:26:02.8634057Z env:
+2026-11-09T00:26:02.8634408Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-09T00:26:02.8635005Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-09T00:26:02.8635798Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-09T00:26:02.8636556Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-09T00:26:02.8637278Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-09T00:26:02.8637999Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-09T00:26:02.8638610Z ##[endgroup]
+2026-11-09T00:26:03.6143202Z Obtaining file:///home/runner/work/wavecert-fwi/wavecert-fwi
+2026-11-09T00:26:03.6163240Z   Installing build dependencies: started
+2026-11-09T00:26:04.3891640Z   Installing build dependencies: finished with status 'done'
+2026-11-09T00:26:04.3897913Z   Checking if build backend supports build_editable: started
+2026-11-09T00:26:04.7242300Z   Checking if build backend supports build_editable: finished with status 'done'
+2026-11-09T00:26:04.7250387Z   Getting requirements to build editable: started
+2026-11-09T00:26:05.0765047Z   Getting requirements to build editable: finished with status 'done'
+2026-11-09T00:26:05.0774230Z   Preparing editable metadata (pyproject.toml): started
+2026-11-09T00:26:05.2898032Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+2026-11-09T00:26:05.5286279Z Collecting numpy>=1.26 (from wavecert-fwi==0.6.0)
+2026-11-09T00:26:05.5509860Z   Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+2026-11-09T00:26:05.6780917Z Collecting scipy>=1.11 (from wavecert-fwi==0.6.0)
+2026-11-09T00:26:05.6821799Z   Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+2026-11-09T00:26:05.8234129Z Collecting matplotlib>=3.8 (from wavecert-fwi==0.6.0)
+2026-11-09T00:26:05.8276972Z   Downloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+2026-11-09T00:26:05.8697299Z Collecting pytest>=8 (from wavecert-fwi==0.6.0)
+2026-11-09T00:26:05.8732890Z   Downloading pytest-9.2.0-py3-none-any.whl.metadata (7.9 kB)
+2026-11-09T00:26:05.8889628Z Collecting pytest-cov>=5 (from wavecert-fwi==0.6.0)
+2026-11-09T00:26:05.8925186Z   Downloading pytest_cov-7.1.0-py3-none-any.whl.metadata (32 kB)
+2026-11-09T00:26:06.2387571Z Collecting ruff>=0.6 (from wavecert-fwi==0.6.0)
+2026-11-09T00:26:06.2437710Z   Downloading ruff-0.17.4-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (20 kB)
+2026-11-09T00:26:06.3502656Z Collecting mypy>=1.10 (from wavecert-fwi==0.6.0)
+2026-11-09T00:26:06.3543959Z   Downloading mypy-2.4.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-11-09T00:26:06.3806234Z Collecting pre-commit>=3.7 (from wavecert-fwi==0.6.0)
+2026-11-09T00:26:06.3852403Z   Downloading pre_commit-4.7.0-py2.py3-none-any.whl.metadata (1.2 kB)
+2026-11-09T00:26:06.4349386Z Collecting torch>=2.3 (from wavecert-fwi==0.6.0)
+2026-11-09T00:26:06.4386119Z   Downloading torch-2.15.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (36 kB)
+2026-11-09T00:26:06.4851214Z Collecting h5py>=3.10 (from wavecert-fwi==0.6.0)
+2026-11-09T00:26:06.4916258Z   Downloading h5py-3.16.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+2026-11-09T00:26:06.6114566Z Collecting pandas>=2.2 (from wavecert-fwi==0.6.0)
+2026-11-09T00:26:06.6153150Z   Downloading pandas-3.1.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (16 kB)
+2026-11-09T00:26:06.7068422Z Collecting pyarrow>=15 (from wavecert-fwi==0.6.0)
+2026-11-09T00:26:06.7112167Z   Downloading pyarrow-26.0.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+2026-11-09T00:26:06.7779382Z Collecting contourpy>=1.0.1 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T00:26:06.7814868Z   Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+2026-11-09T00:26:06.7935795Z Collecting cycler>=0.10 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T00:26:06.7970780Z   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+2026-11-09T00:26:06.9725465Z Collecting fonttools>=4.28.2 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T00:26:06.9775970Z   Downloading fonttools-4.68.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (139 kB)
+2026-11-09T00:26:07.0540087Z Collecting kiwisolver>=1.3.1 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T00:26:07.0586905Z   Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+2026-11-09T00:26:07.0756476Z Collecting packaging>=20.0 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T00:26:07.0769944Z   Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+2026-11-09T00:26:07.2356881Z Collecting pillow>=9 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T00:26:07.2429582Z   Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+2026-11-09T00:26:07.2672052Z Collecting pyparsing>=3 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T00:26:07.2708198Z   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+2026-11-09T00:26:07.2840047Z Collecting python-dateutil>=2.7 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T00:26:07.2881147Z   Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+2026-11-09T00:26:07.3179199Z Collecting typing_extensions>=4.6.0 (from mypy>=1.10->wavecert-fwi==0.6.0)
+2026-11-09T00:26:07.3222672Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-11-09T00:26:07.3328953Z Collecting mypy_extensions>=1.0.0 (from mypy>=1.10->wavecert-fwi==0.6.0)
+2026-11-09T00:26:07.3362798Z   Downloading mypy_extensions-1.2.0-py3-none-any.whl.metadata (1.1 kB)
+2026-11-09T00:26:07.3474992Z Collecting pathspec>=1.0.0 (from mypy>=1.10->wavecert-fwi==0.6.0)
+2026-11-09T00:26:07.3509321Z   Downloading pathspec-1.1.1-py3-none-any.whl.metadata (14 kB)
+2026-11-09T00:26:07.4776580Z Collecting librt>=0.16.0 (from mypy>=1.10->wavecert-fwi==0.6.0)
+2026-11-09T00:26:07.4814186Z   Downloading librt-0.16.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (1.3 kB)
+2026-11-09T00:26:07.5353135Z Collecting ast-serialize<1.0.0,>=0.12.1 (from mypy>=1.10->wavecert-fwi==0.6.0)
+2026-11-09T00:26:07.5390489Z   Downloading ast_serialize-0.13.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.4 kB)
+2026-11-09T00:26:07.5584138Z Collecting cfgv>=2.0.0 (from pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T00:26:07.5622298Z   Downloading cfgv-3.5.0-py2.py3-none-any.whl.metadata (8.9 kB)
+2026-11-09T00:26:07.5963005Z Collecting identify>=1.0.0 (from pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T00:26:07.6019135Z   Downloading identify-2.6.20-py2.py3-none-any.whl.metadata (4.4 kB)
+2026-11-09T00:26:07.6162191Z Collecting nodeenv>=0.11.1 (from pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T00:26:07.6201414Z   Downloading nodeenv-1.12.0-py3-none-any.whl.metadata (49 kB)
+2026-11-09T00:26:07.6608048Z Collecting pyyaml>=5.1 (from pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T00:26:07.6651378Z   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-11-09T00:26:07.7064170Z Collecting virtualenv>=20.10.0 (from pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T00:26:07.7100826Z   Downloading virtualenv-21.15.6-py3-none-any.whl.metadata (4.1 kB)
+2026-11-09T00:26:07.7256025Z Collecting iniconfig>=2 (from pytest>=8->wavecert-fwi==0.6.0)
+2026-11-09T00:26:07.7291728Z   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+2026-11-09T00:26:07.7424612Z Collecting pluggy<2,>=1.6 (from pytest>=8->wavecert-fwi==0.6.0)
+2026-11-09T00:26:07.7462182Z   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+2026-11-09T00:26:07.7633898Z Collecting pygments>=2.15 (from pytest>=8->wavecert-fwi==0.6.0)
+2026-11-09T00:26:07.7698291Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+2026-11-09T00:26:08.2194632Z Collecting coverage>=7.10.6 (from coverage[toml]>=7.10.6->pytest-cov>=5->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.2235468Z   Downloading coverage-7.17.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (8.1 kB)
+2026-11-09T00:26:08.2434787Z Collecting tzdata (from python-dateutil>=2.7->matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.2469514Z   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+2026-11-09T00:26:08.2764289Z Collecting filelock (from torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.2809459Z   Downloading filelock-4.2.9-py3-none-any.whl.metadata (2.3 kB)
+2026-11-09T00:26:08.3454662Z Collecting setuptools>=77.0.3 (from torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.3469196Z   Using cached setuptools-84.2.1-py3-none-any.whl.metadata (6.6 kB)
+2026-11-09T00:26:08.3656060Z Collecting sympy>=1.13.3 (from torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.3692880Z   Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+2026-11-09T00:26:08.3917667Z Collecting networkx>=2.5.1 (from torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.3965541Z   Downloading networkx-3.7-py3-none-any.whl.metadata (6.7 kB)
+2026-11-09T00:26:08.4166464Z Collecting jinja2 (from torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.4208802Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+2026-11-09T00:26:08.4409448Z Collecting fsspec>=0.8.5 (from torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.4447329Z   Downloading fsspec-2026.9.0-py3-none-any.whl.metadata (10 kB)
+2026-11-09T00:26:08.4748694Z Collecting cuda-toolkit==13.2.2 (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.4796664Z   Downloading cuda_toolkit-13.2.2-py2.py3-none-any.whl.metadata (20 kB)
+2026-11-09T00:26:08.5408256Z Collecting cuda-bindings<14,>=13.0.3 (from torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.5447203Z   Downloading cuda_bindings-13.5.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (2.5 kB)
+2026-11-09T00:26:08.5610988Z Collecting nvidia-cudnn-cu13==9.26.0.51 (from torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.5649028Z   Downloading nvidia_cudnn_cu13-9.26.0.51-py3-none-manylinux_2_27_x86_64.whl.metadata (1.9 kB)
+2026-11-09T00:26:08.5768597Z Collecting nvidia-cusparselt-cu13==0.8.1 (from torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.5804730Z   Downloading nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_x86_64.whl.metadata (12 kB)
+2026-11-09T00:26:08.5928446Z Collecting nvidia-nccl-cu13==2.30.7 (from torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.5968478Z   Downloading nvidia_nccl_cu13-2.30.7-py3-none-manylinux_2_18_x86_64.whl.metadata (2.1 kB)
+2026-11-09T00:26:08.6077380Z Collecting nvidia-nvshmem-cu13==3.7.2 (from torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.6111117Z   Downloading nvidia_nvshmem_cu13-3.7.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.2 kB)
+2026-11-09T00:26:08.6315431Z Collecting triton~=3.9.0 (from torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.6351824Z   Downloading triton-3.9.0-cp312-abi3-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (978 bytes)
+2026-11-09T00:26:08.6544564Z Collecting nvidia-cublas==13.4.1.3.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.6581201Z   Downloading nvidia_cublas-13.4.1.3-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+2026-11-09T00:26:08.6715107Z Collecting nvidia-cuda-nvrtc==13.2.86.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.6803469Z   Downloading nvidia_cuda_nvrtc-13.2.86-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.8 kB)
+2026-11-09T00:26:08.6937425Z Collecting nvidia-cuda-runtime==13.2.86.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.6972351Z   Downloading nvidia_cuda_runtime-13.2.86-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+2026-11-09T00:26:08.7128700Z Collecting nvidia-cufft==12.2.0.57.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.7164856Z   Downloading nvidia_cufft-12.2.0.57-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+2026-11-09T00:26:08.7314037Z Collecting nvidia-nvjitlink<14,>=13.2.86 (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.7349107Z   Downloading nvidia_nvjitlink-13.5.37-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.8 kB)
+2026-11-09T00:26:08.7473737Z Collecting nvidia-cufile==1.17.1.22.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.7508987Z   Downloading nvidia_cufile-1.17.1.22-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+2026-11-09T00:26:08.7645660Z Collecting nvidia-cuda-cupti==13.2.86.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.7681155Z   Downloading nvidia_cuda_cupti-13.2.86-py3-none-manylinux_2_25_x86_64.whl.metadata (1.8 kB)
+2026-11-09T00:26:08.7833152Z Collecting nvidia-cusolver==12.2.0.11.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.7872446Z   Downloading nvidia_cusolver-12.2.0.11-py3-none-manylinux_2_27_x86_64.whl.metadata (1.9 kB)
+2026-11-09T00:26:08.8010145Z Collecting nvidia-cusparse==12.7.10.12.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.8046515Z   Downloading nvidia_cusparse-12.7.10.12-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+2026-11-09T00:26:08.8218352Z Collecting nvidia-nvtx==13.2.86.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.2.2; platform_system == "Linux"->torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.8255505Z   Downloading nvidia_nvtx-13.2.86-py3-none-manylinux1_x86_64.manylinux_2_5_x86_64.whl.metadata (1.9 kB)
+2026-11-09T00:26:08.8443112Z Collecting nvidia-cuda-cccl (from nvidia-nvshmem-cu13==3.7.2->torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.8481042Z   Downloading nvidia_cuda_cccl-13.3.5.0.6-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+2026-11-09T00:26:08.9136707Z Collecting cuda-pathfinder>=1.4.2 (from cuda-bindings<14,>=13.0.3->torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.9175965Z   Downloading cuda_pathfinder-1.8.6-py3-none-any.whl.metadata (1.9 kB)
+2026-11-09T00:26:08.9437965Z Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.9527296Z   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+2026-11-09T00:26:08.9687094Z Collecting distlib<1,>=0.4.3 (from virtualenv>=20.10.0->pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T00:26:08.9726817Z   Downloading distlib-0.4.4-py2.py3-none-any.whl.metadata (5.3 kB)
+2026-11-09T00:26:08.9977569Z Collecting platformdirs<5,>=4.4 (from virtualenv>=20.10.0->pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T00:26:09.0015418Z   Downloading platformdirs-4.14.5-py3-none-any.whl.metadata (5.7 kB)
+2026-11-09T00:26:09.0155732Z Collecting python-discovery>=1.6.1 (from virtualenv>=20.10.0->pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T00:26:09.0192451Z   Downloading python_discovery-1.9.5-py3-none-any.whl.metadata (4.2 kB)
+2026-11-09T00:26:09.0819197Z Collecting MarkupSafe>=2.0 (from jinja2->torch>=2.3->wavecert-fwi==0.6.0)
+2026-11-09T00:26:09.0857592Z   Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+2026-11-09T00:26:09.0964358Z Downloading h5py-3.16.0-cp312-cp312-manylinux_2_28_x86_64.whl (5.4 MB)
+2026-11-09T00:26:09.1233564Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 214.8 MB/s  0:00:00
+2026-11-09T00:26:09.1270629Z Downloading matplotlib-3.11.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+2026-11-09T00:26:09.1594703Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 323.1 MB/s  0:00:00
+2026-11-09T00:26:09.1632756Z Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (383 kB)
+2026-11-09T00:26:09.1862784Z Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+2026-11-09T00:26:09.1932658Z Downloading fonttools-4.68.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+2026-11-09T00:26:09.2128205Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 303.9 MB/s  0:00:00
+2026-11-09T00:26:09.2187475Z Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+2026-11-09T00:26:09.2266250Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 245.7 MB/s  0:00:00
+2026-11-09T00:26:09.2311294Z Downloading mypy-2.4.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (15.6 MB)
+2026-11-09T00:26:09.2779165Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.6/15.6 MB 346.4 MB/s  0:00:00
+2026-11-09T00:26:09.2845608Z Downloading ast_serialize-0.13.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
+2026-11-09T00:26:09.2917518Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 224.8 MB/s  0:00:00
+2026-11-09T00:26:09.2956305Z Downloading librt-0.16.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (531 kB)
+2026-11-09T00:26:09.3007041Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 532.0/532.0 kB 94.3 MB/s  0:00:00
+2026-11-09T00:26:09.3083143Z Downloading mypy_extensions-1.2.0-py3-none-any.whl (5.1 kB)
+2026-11-09T00:26:09.3154559Z Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+2026-11-09T00:26:09.3660772Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 343.1 MB/s  0:00:00
+2026-11-09T00:26:09.3676358Z Using cached packaging-26.3-py3-none-any.whl (129 kB)
+2026-11-09T00:26:09.3713729Z Downloading pandas-3.1.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.0 MB)
+2026-11-09T00:26:09.4086939Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 340.8 MB/s  0:00:00
+2026-11-09T00:26:09.4128232Z Downloading pathspec-1.1.1-py3-none-any.whl (57 kB)
+2026-11-09T00:26:09.4190190Z Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+2026-11-09T00:26:09.4422822Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 331.9 MB/s  0:00:00
+2026-11-09T00:26:09.4464415Z Downloading pre_commit-4.7.0-py2.py3-none-any.whl (226 kB)
+2026-11-09T00:26:09.4534480Z Downloading cfgv-3.5.0-py2.py3-none-any.whl (7.4 kB)
+2026-11-09T00:26:09.4596021Z Downloading identify-2.6.20-py2.py3-none-any.whl (99 kB)
+2026-11-09T00:26:09.4653117Z Downloading nodeenv-1.12.0-py3-none-any.whl (39 kB)
+2026-11-09T00:26:09.4710686Z Downloading pyarrow-26.0.1-cp312-cp312-manylinux_2_28_x86_64.whl (55.0 MB)
+2026-11-09T00:26:09.6309040Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.0/55.0 MB 348.4 MB/s  0:00:00
+2026-11-09T00:26:09.6346236Z Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+2026-11-09T00:26:09.6410758Z Downloading pytest-9.2.0-py3-none-any.whl (411 kB)
+2026-11-09T00:26:09.6476849Z Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+2026-11-09T00:26:09.6531082Z Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+2026-11-09T00:26:09.6587964Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+2026-11-09T00:26:09.6664257Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 216.9 MB/s  0:00:00
+2026-11-09T00:26:09.6700455Z Downloading pytest_cov-7.1.0-py3-none-any.whl (22 kB)
+2026-11-09T00:26:09.6760767Z Downloading coverage-7.17.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (263 kB)
+2026-11-09T00:26:09.6819989Z Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+2026-11-09T00:26:09.6879885Z Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+2026-11-09T00:26:09.6938299Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 163.5 MB/s  0:00:00
+2026-11-09T00:26:09.6977494Z Downloading ruff-0.17.4-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (10.6 MB)
+2026-11-09T00:26:09.7398382Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.6/10.6 MB 260.4 MB/s  0:00:00
+2026-11-09T00:26:09.7436795Z Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+2026-11-09T00:26:09.8567085Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 317.6 MB/s  0:00:00
+2026-11-09T00:26:09.8604115Z Downloading torch-2.15.0-cp312-cp312-manylinux_2_28_x86_64.whl (539.2 MB)
+2026-11-09T00:26:15.4181723Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 539.2/539.2 MB 65.2 MB/s  0:00:05
+2026-11-09T00:26:15.4227408Z Downloading cuda_toolkit-13.2.2-py2.py3-none-any.whl (2.6 kB)
+2026-11-09T00:26:15.4293692Z Downloading nvidia_cudnn_cu13-9.26.0.51-py3-none-manylinux_2_27_x86_64.whl (519.2 MB)
+2026-11-09T00:26:18.7674074Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 519.2/519.2 MB 98.2 MB/s  0:00:03
+2026-11-09T00:26:18.7717275Z Downloading nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_x86_64.whl (170.1 MB)
+2026-11-09T00:26:19.4164895Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 170.1/170.1 MB 264.6 MB/s  0:00:00
+2026-11-09T00:26:19.4215415Z Downloading nvidia_nccl_cu13-2.30.7-py3-none-manylinux_2_18_x86_64.whl (216.0 MB)
+2026-11-09T00:26:20.3150009Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 216.0/216.0 MB 242.4 MB/s  0:00:00
+2026-11-09T00:26:20.3192226Z Downloading nvidia_nvshmem_cu13-3.7.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (135.4 MB)
+2026-11-09T00:26:20.7716996Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.4/135.4 MB 301.0 MB/s  0:00:00
+2026-11-09T00:26:20.7757290Z Downloading cuda_bindings-13.5.0-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (8.4 MB)
+2026-11-09T00:26:20.8150287Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.4/8.4 MB 220.4 MB/s  0:00:00
+2026-11-09T00:26:20.8188917Z Downloading nvidia_cublas-13.4.1.3-py3-none-manylinux_2_27_x86_64.whl (404.9 MB)
+2026-11-09T00:26:24.1201765Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 404.9/404.9 MB 88.3 MB/s  0:00:03
+2026-11-09T00:26:24.1243817Z Downloading nvidia_cuda_cupti-13.2.86-py3-none-manylinux_2_25_x86_64.whl (12.0 MB)
+2026-11-09T00:26:24.1685403Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.0/12.0 MB 281.1 MB/s  0:00:00
+2026-11-09T00:26:24.1726278Z Downloading nvidia_cuda_nvrtc-13.2.86-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (47.0 MB)
+2026-11-09T00:26:24.3239782Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 47.0/47.0 MB 314.1 MB/s  0:00:00
+2026-11-09T00:26:24.3320392Z Downloading nvidia_cuda_runtime-13.2.86-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+2026-11-09T00:26:24.3432151Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 239.0 MB/s  0:00:00
+2026-11-09T00:26:24.3486139Z Downloading nvidia_cufft-12.2.0.57-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (218.3 MB)
+2026-11-09T00:26:25.9541561Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 218.3/218.3 MB 136.0 MB/s  0:00:01
+2026-11-09T00:26:25.9581922Z Downloading nvidia_cufile-1.17.1.22-py3-none-manylinux_2_27_x86_64.whl (1.4 MB)
+2026-11-09T00:26:25.9652987Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 230.8 MB/s  0:00:00
+2026-11-09T00:26:25.9690500Z Downloading nvidia_cusolver-12.2.0.11-py3-none-manylinux_2_27_x86_64.whl (227.9 MB)
+2026-11-09T00:26:27.1072897Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 227.9/227.9 MB 200.5 MB/s  0:00:01
+2026-11-09T00:26:27.1124351Z Downloading nvidia_cusparse-12.7.10.12-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (151.0 MB)
+2026-11-09T00:26:27.8126028Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 151.0/151.0 MB 216.1 MB/s  0:00:00
+2026-11-09T00:26:27.8167546Z Downloading nvidia_nvjitlink-13.5.37-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (46.6 MB)
+2026-11-09T00:26:27.9594317Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.6/46.6 MB 332.1 MB/s  0:00:00
+2026-11-09T00:26:27.9635552Z Downloading nvidia_nvtx-13.2.86-py3-none-manylinux1_x86_64.manylinux_2_5_x86_64.whl (153 kB)
+2026-11-09T00:26:27.9739789Z Downloading triton-3.9.0-cp312-abi3-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (285.7 MB)
+2026-11-09T00:26:30.4043092Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 285.7/285.7 MB 110.5 MB/s  0:00:02
+2026-11-09T00:26:30.4085716Z Downloading cuda_pathfinder-1.8.6-py3-none-any.whl (62 kB)
+2026-11-09T00:26:30.4149250Z Downloading fsspec-2026.9.0-py3-none-any.whl (221 kB)
+2026-11-09T00:26:30.4214181Z Downloading networkx-3.7-py3-none-any.whl (2.1 MB)
+2026-11-09T00:26:30.4315877Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 247.7 MB/s  0:00:00
+2026-11-09T00:26:30.4328205Z Using cached setuptools-84.2.1-py3-none-any.whl (876 kB)
+2026-11-09T00:26:30.4394905Z Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+2026-11-09T00:26:30.4673716Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 242.5 MB/s  0:00:00
+2026-11-09T00:26:30.4713679Z Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+2026-11-09T00:26:30.4764704Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 94.3 MB/s  0:00:00
+2026-11-09T00:26:30.4812990Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-11-09T00:26:30.4875598Z Downloading virtualenv-21.15.6-py3-none-any.whl (5.7 MB)
+2026-11-09T00:26:30.5085888Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.7/5.7 MB 296.7 MB/s  0:00:00
+2026-11-09T00:26:30.5136153Z Downloading distlib-0.4.4-py2.py3-none-any.whl (472 kB)
+2026-11-09T00:26:30.5205429Z Downloading filelock-4.2.9-py3-none-any.whl (164 kB)
+2026-11-09T00:26:30.5267679Z Downloading platformdirs-4.14.5-py3-none-any.whl (35 kB)
+2026-11-09T00:26:30.5342361Z Downloading python_discovery-1.9.5-py3-none-any.whl (44 kB)
+2026-11-09T00:26:30.5402616Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2026-11-09T00:26:30.5461762Z Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+2026-11-09T00:26:30.5516700Z Downloading nvidia_cuda_cccl-13.3.5.0.6-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.1 MB)
+2026-11-09T00:26:30.5716234Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.1/4.1 MB 229.1 MB/s  0:00:00
+2026-11-09T00:26:30.5755530Z Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+2026-11-09T00:26:33.1220737Z Building wheels for collected packages: wavecert-fwi
+2026-11-09T00:26:33.1229715Z   Building editable for wavecert-fwi (pyproject.toml): started
+2026-11-09T00:26:33.3471390Z   Building editable for wavecert-fwi (pyproject.toml): finished with status 'done'
+2026-11-09T00:26:33.3477774Z   Created wheel for wavecert-fwi: filename=wavecert_fwi-0.6.0-0.editable-py3-none-any.whl size=9840 sha256=8a75e82a78c51b9ccea14c4612c66e644663c4348378196bf36f8575738405fd
+2026-11-09T00:26:33.3480349Z   Stored in directory: /tmp/pip-ephem-wheel-cache-6gjxqu94/wheels/89/8d/d7/e9ad8128c9ff5e894cee31fcf78f3159e887a6ed31dd3f055d
+2026-11-09T00:26:33.3503910Z Successfully built wavecert-fwi
+2026-11-09T00:26:33.6082346Z Installing collected packages: nvidia-cusparselt-cu13, mpmath, distlib, cuda-toolkit, tzdata, typing_extensions, triton, sympy, setuptools, ruff, pyyaml, pyparsing, pygments, pyarrow, pluggy, platformdirs, pillow, pathspec, packaging, nvidia-nvtx, nvidia-nvjitlink, nvidia-nccl-cu13, nvidia-cufile, nvidia-cuda-runtime, nvidia-cuda-nvrtc, nvidia-cuda-cupti, nvidia-cuda-cccl, numpy, nodeenv, networkx, mypy_extensions, MarkupSafe, librt, kiwisolver, iniconfig, identify, fsspec, fonttools, filelock, cycler, cuda-pathfinder, coverage, cfgv, ast-serialize, scipy, python-discovery, python-dateutil, pytest, nvidia-nvshmem-cu13, nvidia-cusparse, nvidia-cufft, nvidia-cublas, mypy, jinja2, h5py, cuda-bindings, contourpy, virtualenv, pytest-cov, pandas, nvidia-cusolver, nvidia-cudnn-cu13, matplotlib, wavecert-fwi, pre-commit, torch
+2026-11-09T00:27:30.0855999Z 
+2026-11-09T00:27:30.0912940Z Successfully installed MarkupSafe-3.0.4 ast-serialize-0.13.1 cfgv-3.5.0 contourpy-1.4.0 coverage-7.17.2 cuda-bindings-13.5.0 cuda-pathfinder-1.8.6 cuda-toolkit-13.2.2 cycler-0.12.1 distlib-0.4.4 filelock-4.2.9 fonttools-4.68.0 fsspec-2026.9.0 h5py-3.16.0 identify-2.6.20 iniconfig-2.3.1 jinja2-3.1.6 kiwisolver-1.5.1 librt-0.16.0 matplotlib-3.11.2 mpmath-1.3.0 mypy-2.4.1 mypy_extensions-1.2.0 networkx-3.7 nodeenv-1.12.0 numpy-2.5.4 nvidia-cublas-13.4.1.3 nvidia-cuda-cccl-13.3.5.0.6 nvidia-cuda-cupti-13.2.86 nvidia-cuda-nvrtc-13.2.86 nvidia-cuda-runtime-13.2.86 nvidia-cudnn-cu13-9.26.0.51 nvidia-cufft-12.2.0.57 nvidia-cufile-1.17.1.22 nvidia-cusolver-12.2.0.11 nvidia-cusparse-12.7.10.12 nvidia-cusparselt-cu13-0.8.1 nvidia-nccl-cu13-2.30.7 nvidia-nvjitlink-13.5.37 nvidia-nvshmem-cu13-3.7.2 nvidia-nvtx-13.2.86 packaging-26.3 pandas-3.1.1 pathspec-1.1.1 pillow-13.0.0 platformdirs-4.14.5 pluggy-1.7.0 pre-commit-4.7.0 pyarrow-26.0.1 pygments-2.21.0 pyparsing-3.3.3 pytest-9.2.0 pytest-cov-7.1.0 python-dateutil-4.0.0 python-discovery-1.9.5 pyyaml-6.0.3 ruff-0.17.4 scipy-1.18.1 setuptools-84.2.1 sympy-1.14.0 torch-2.15.0 triton-3.9.0 typing_extensions-4.16.0 tzdata-2026.6 virtualenv-21.15.6 wavecert-fwi-0.6.0
+2026-11-09T00:27:30.0919936Z 
+2026-11-09T00:27:30.0920173Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+2026-11-09T00:27:30.0921197Z [notice] To update, run: pip install --upgrade pip
+2026-11-09T00:27:30.4914552Z ##[group]Run pytest -ra
+2026-11-09T00:27:30.4914878Z [36;1mpytest -ra[0m
+2026-11-09T00:27:30.4967259Z shell: /usr/bin/bash -e {0}
+2026-11-09T00:27:30.4967516Z env:
+2026-11-09T00:27:30.4967804Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-09T00:27:30.4968245Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-09T00:27:30.4968683Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-09T00:27:30.4969060Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-09T00:27:30.4969470Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-09T00:27:30.4969861Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-09T00:27:30.4970175Z ##[endgroup]
+2026-11-09T00:28:06.6347023Z ...................................................................{"all_own_solves_before_native_solution_outputs": true, "canonical_input_manifest_sha256": "2d878a87d947e8b4f1e9e69a5e487ab772e3de1156511a714a0a3b012fad3b35", "cases": [{"case_id": "upper_left", "informative_direction_relative_errors": {"edge": 1.2125890805823517e-14, "interior": 3.5324223749335565e-15}, "source_relative_L2": 7.176173766499885e-18, "trace_relative_L2": 4.409051766940796e-14}, {"case_id": "middle_center", "informative_direction_relative_errors": {"edge": 6.823473661506754e-14, "interior": 2.7029844844597944e-14}, "source_relative_L2": 7.176173766499885e-18, "trace_relative_L2": 2.8179763010522686e-14}, {"case_id": "lower_right", "informative_direction_relative_errors": {"edge": 5.740452111941409e-14, "interior": 3.185662920490698e-14}, "source_relative_L2": 7.176173766499885e-18, "trace_relative_L2": 2.2499482562358158e-14}], "check": "bp_numpy_tangent_reproduction", "directional_tolerance": 0.001, "independent_numeric_input_generation": false, "informative_directions": 6, "installed_devito_required": false, "maximum_directional_relative_error": 6.823473661506754e-14, "maximum_trace_relative_L2": 4.409051766940796e-14, "native_derived_numeric_inputs_used": true, "native_solution_outputs_used_during_own_solves": false, "numpy": "2.5.4", "physical_acceptance": null, "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43", "python": "3.12.16", "scope": "known source-informed discrete fixture regression; no new physics, independent sites or student conclusions", "trace_tolerance": 1e-09, "traces": 3}
+2026-11-09T00:28:06.7004206Z ..... [ 12%]
+2026-11-09T00:28:07.6499493Z ........................................................................ [ 25%]
+2026-11-09T00:28:18.8620995Z .................................................{"check": "coordinate_offline_import_integration", "python": "3.12.16", "numpy": "2.5.4", "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43", "synthetic_shape": [24, 24], "refined_shape": [49, 49], "frequencies": 1, "sources": 1, "receivers": 2, "checks": 9, "numeric_comparisons": 6, "initial_error": {"relative_squared_slowness_L2": 6.938893903907225e-16, "relative_physical_velocity_L2": 1.9860273225978183e-16}, "final_error": {"relative_squared_slowness_L2": 0.009999999999999305, "relative_physical_velocity_L2": 0.004962809790010602}, "maximum_relative_linear_residual": 1.5670236829112766e-14, "scope": "Manufactured API regression; no project arrays, benchmark trajectories or scientific confirmation"}
+2026-11-09T00:28:19.1464432Z ....................... [ 38%]
+2026-11-09T00:28:41.6824174Z .......ssss..................................................{"actual_observed": 108, "actual_passed": 108, "check": "frequency_continuation_archival_manufactured_reproduction", "environment": {"packages": {"numpy": "2.5.4", "pytest": "9.2.0", "scipy": "1.18.1"}, "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43", "python": "3.12.16 (main, Oct 26 2026, 02:48:44) [GCC 15.2.0]"}, "expected_total": 108, "production_files": 161, "production_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da", "scientific_claim": false, "scope": "archival manufactured controls only; tiny synthetic API physics, no corpus/project96run/training", "status": "pass_all108", "suites": [{"PID": 3669, "actual_exit_code": 0, "errors": 0, "expected_passed": 17, "failed": 0, "name": "bounded_engine", "observed": 17, "passed": 17, "skipped": 0, "status": "passed"}, {"PID": 3672, "actual_exit_code": 0, "errors": 0, "expected_passed": 24, "failed": 0, "name": "controller", "observed": 24, "passed": 24, "skipped": 0, "status": "passed"}, {"PID": 3674, "actual_exit_code": 0, "errors": 0, "expected_passed": 15, "failed": 0, "name": "driver", "observed": 15, "passed": 15, "skipped": 0, "status": "passed"}, {"PID": 3677, "actual_exit_code": 0, "errors": 0, "expected_passed": 15, "failed": 0, "name": "launcher", "observed": 15, "passed": 15, "skipped": 0, "status": "passed"}, {"PID": 3704, "actual_exit_code": 0, "errors": 0, "expected_passed": 37, "failed": 0, "name": "scalar_auditor_v2", "observed": 37, "passed": 37, "skipped": 0, "status": "passed"}], "workspace": "/tmp/pytest-of-runner/pytest-0/test_archived_frequency_manufa0/archival108"}
+2026-11-09T00:28:46.4523916Z ........... [ 50%]
+2026-11-09T00:29:09.8708186Z ...............................................{"all_own_traces_computed_before_targets": true, "cases": [{"agreement": true, "case_id": "small_nbl0", "exact_time_axis": true, "source_bitwise_diagnostic": false, "source_relative_L2": 1.0148330130283737e-17, "trace_relative_L2": 5.448833918413471e-15}, {"agreement": true, "case_id": "small_nbl20", "exact_time_axis": true, "source_bitwise_diagnostic": false, "source_relative_L2": 1.0148330130283737e-17, "trace_relative_L2": 3.4109284772974624e-14}, {"agreement": true, "case_id": "small_nbl40", "exact_time_axis": true, "source_bitwise_diagnostic": false, "source_relative_L2": 1.0148330130283737e-17, "trace_relative_L2": 3.039911421037064e-14}, {"agreement": true, "case_id": "matched_exterior_20_undamped", "exact_time_axis": true, "source_bitwise_diagnostic": false, "source_relative_L2": 1.0148330130283737e-17, "trace_relative_L2": 9.283217221694979e-15}, {"agreement": true, "case_id": "matched_exterior_40_undamped", "exact_time_axis": true, "source_bitwise_diagnostic": false, "source_relative_L2": 1.0148330130283737e-17, "trace_relative_L2": 6.813417902450612e-15}, {"agreement": true, "case_id": "reference_241", "exact_time_axis": true, "source_bitwise_diagnostic": false, "source_relative_L2": 1.0148330130283737e-17, "trace_relative_L2": 1.5529595943181932e-14}, {"agreement": true, "case_id": "reference_321", "exact_time_axis": true, "source_bitwise_diagnostic": false, "source_relative_L2": 1.0148330130283737e-17, "trace_relative_L2": 1.546935618227695e-14}], "check": "seven_faithful_NumPy_traces", "excitation_tolerance": 1e-14, "installed_devito_required": false, "maximum_source_relative_L2": 1.0148330130283737e-17, "maximum_trace_relative_L2": 3.4109284772974624e-14, "numpy": "2.5.4", "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43", "python": "3.12.16", "scope": "reference-informed independent implementation replay; no continuum, student-ownership or goal-completion claim", "trace_tolerance": 1e-09}
+2026-11-09T00:29:10.1276506Z ......................... [ 63%]
+2026-11-09T00:29:10.6708452Z ........................................................................ [ 76%]
+2026-11-09T00:29:12.5532310Z {"check": "eight_initial_raw_direction_witnesses", "python": "3.12.16", "numpy": "2.5.4", "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43", "result": "clear_raw_witness_replay", "checks": 1289, "directions": 8, "false_certifications": 0, "literal_bound_misses": 0, "cases": [{"case_index": 0, "independent_gradient_relative_error": 1.0130431392570112e-16, "approximate_gradient_relative_error": 0.0, "true_directional_derivative": -26.35505854723491, "approximate_center": -26.355058534281316, "bound": 0.0034542543287551975, "certified": true, "false_certification": false, "bound_covers_without_extra_allowance": true, "bound_covers_with_historical_helper_allowance": true}, {"case_index": 1, "independent_gradient_relative_error": 8.921894647291444e-17, "approximate_gradient_relative_error": 0.0, "true_directional_derivative": -149.0688041852611, "approximate_center": -149.06950031138948, "bound": 0.02498710518075192, "certified": true, "false_certification": false, "bound_covers_without_extra_allowance": true, "bound_covers_with_historical_helper_allowance": true}, {"case_index": 2, "independent_gradient_relative_error": 7.599170850903604e-17, "approximate_gradient_relative_error": 0.0, "true_directional_derivative": -23.196135467904366, "approximate_center": -23.19613034175022, "bound": 0.0014703325482143099, "certified": true, "false_certification": false, "bound_covers_without_extra_allowance": true, "bound_covers_with_historical_helper_allowance": true}, {"case_index": 3, "independent_gradient_relative_error": 7.44315152716693e-17, "approximate_gradient_relative_error": 0.0, "true_directional_derivative": -45.98573945091478, "approximate_center": -45.98575494827409, "bound": 0.0009343388135817514, "certified": true, "false_certification": false, "bound_covers_without_extra_allowance": true, "bound_covers_with_historical_helper_allowance": true}, {"case_index": 4, "independent_gradient_relative_error": 7.927923368369585e-17, "approximate_gradient_relative_error": 0.0, "true_directional_derivative": -100.76549784016395, "approximate_center": -100.76551114677878, "bound": 0.004008482080259255, "certified": true, "false_certification": false, "bound_covers_without_extra_allowance": true, "bound_covers_with_historical_helper_allowance": true}, {"case_index": 5, "independent_gradient_relative_error": 1.1814638006052468e-16, "approximate_gradient_relative_error": 0.0, "true_directional_derivative": -63.14229462812927, "approximate_center": -63.142580454479734, "bound": 0.06587485632817046, "certified": true, "false_certification": false, "bound_covers_without_extra_allowance": true, "bound_covers_with_historical_helper_allowance": true}, {"case_index": 6, "independent_gradient_relative_error": 7.516537525779892e-17, "approximate_gradient_relative_error": 0.0, "true_directional_derivative": -60.951517299598486, "approximate_center": -60.95162549996801, "bound": 0.0014522402746306915, "certified": true, "false_certification": false, "bound_covers_without_extra_allowance": true, "bound_covers_with_historical_helper_allowance": true}, {"case_index": 7, "independent_gradient_relative_error": 7.481209616881895e-17, "approximate_gradient_relative_error": 0.0, "true_directional_derivative": -61.71087514699512, "approximate_center": -61.71098287014516, "bound": 0.0014541723133349633, "certified": true, "false_certification": false, "bound_covers_without_extra_allowance": true, "bound_covers_with_historical_helper_allowance": true}]}
+2026-11-09T00:29:18.0826395Z ........................................................................ [ 88%]
+2026-11-09T00:29:28.2376721Z .......{"check": "recovery_metric_initial_slopes", "python": "3.12.16", "numpy": "2.5.4", "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43", "result": "clear_software_diagnostic", "checks": 4483, "truth_feasible": 8, "initial_feasible": 8, "directions": {"actual_raw_proposal": {"available_directions": 8, "full_case_denominator": 8, "metrics": {"half_relative_squared_m_error": {"literal_local_opposition_cases": 3, "metric_derivative_literal_sign_counts": {"negative": 5, "positive": 3}, "metric_derivative_numerical_sign_counts": {"negative": 5, "positive": 3}, "numerically_classified_local_opposition_cases": 3}, "half_relative_squared_velocity_error": {"literal_local_opposition_cases": 5, "metric_derivative_literal_sign_counts": {"negative": 3, "positive": 5}, "metric_derivative_numerical_sign_counts": {"negative": 3, "positive": 5}, "numerically_classified_local_opposition_cases": 5}}, "unavailable_cases_retained": 0}, "exact_normalized_negative_data_gradient": {"available_directions": 8, "full_case_denominator": 8, "metrics": {"half_relative_squared_m_error": {"literal_local_opposition_cases": 3, "metric_derivative_literal_sign_counts": {"negative": 5, "positive": 3}, "metric_derivative_numerical_sign_counts": {"negative": 5, "positive": 3}, "numerically_classified_local_opposition_cases": 3}, "half_relative_squared_velocity_error": {"literal_local_opposition_cases": 5, "metric_derivative_literal_sign_counts": {"negative": 3, "positive": 5}, "metric_derivative_numerical_sign_counts": {"negative": 3, "positive": 5}, "numerically_classified_local_opposition_cases": 5}}, "unavailable_cases_retained": 0}}, "toward_truth_data_slope": {"negative": 5, "positive": 3}, "endpoint_instances": 1440, "cases": [{"case_index": 0, "toward_truth_dataDD": 8.869163244451265, "directions": {"actual_raw_proposal": {"dataDD": -26.35505854723491, "m_error_slope": 0.003174310526271428, "velocity_error_slope": 0.0013481606867589738}, "exact_normalized_negative_data_gradient": {"dataDD": -26.355058547621468, "m_error_slope": 0.003174276424304105, "velocity_error_slope": 0.0013481575877381357}}}, {"case_index": 1, "toward_truth_dataDD": 74.39907535896981, "directions": {"actual_raw_proposal": {"dataDD": -149.0688041852611, "m_error_slope": 0.005345504955525595, "velocity_error_slope": -0.0016922798751124147}, "exact_normalized_negative_data_gradient": {"dataDD": -149.06880420086458, "m_error_slope": 0.00534535605826068, "velocity_error_slope": -0.0016922779559415677}}}, {"case_index": 2, "toward_truth_dataDD": 13.82531092336782, "directions": {"actual_raw_proposal": {"dataDD": -23.196135467904366, "m_error_slope": 0.0036945101736813794, "velocity_error_slope": 0.00020128476497920206}, "exact_normalized_negative_data_gradient": {"dataDD": -23.196135468087153, "m_error_slope": 0.0036945103283161176, "velocity_error_slope": 0.000201282680639173}}}, {"case_index": 3, "toward_truth_dataDD": -6.280821906051082, "directions": {"actual_raw_proposal": {"dataDD": -45.98573945091478, "m_error_slope": -0.0006858325192146376, "velocity_error_slope": -1.8928933366218562e-05}, "exact_normalized_negative_data_gradient": {"dataDD": -45.985739452279844, "m_error_slope": -0.0006858353716428853, "velocity_error_slope": -1.8929073011058792e-05}}}, {"case_index": 4, "toward_truth_dataDD": -40.92853237343162, "directions": {"actual_raw_proposal": {"dataDD": -100.76549784016395, "m_error_slope": -0.0034767830370115486, "velocity_error_slope": -5.10034022308376e-05}, "exact_normalized_negative_data_gradient": {"dataDD": -100.76549784109027, "m_error_slope": -0.0034768232532238976, "velocity_error_slope": -5.0991436886678575e-05}}}, {"case_index": 5, "toward_truth_dataDD": -35.6150831555589, "directions": {"actual_raw_proposal": {"dataDD": -63.14229462812927, "m_error_slope": -0.00498336009631636, "velocity_error_slope": 0.0030420153337812664}, "exact_normalized_negative_data_gradient": {"dataDD": -63.142294644339856, "m_error_slope": -0.004983527739006507, "velocity_error_slope": 0.0030419821046441457}}}, {"case_index": 6, "toward_truth_dataDD": -8.5566319856103, "directions": {"actual_raw_proposal": {"dataDD": -60.951517299598486, "m_error_slope": -0.0007184803438637124, "velocity_error_slope": 0.0002550543140406411}, "exact_normalized_negative_data_gradient": {"dataDD": -60.95151730098167, "m_error_slope": -0.0007184821359600017, "velocity_error_slope": 0.0002550535095846527}}}, {"case_index": 7, "toward_truth_dataDD": -8.679105798359366, "directions": {"actual_raw_proposal": {"dataDD": -61.71087514699512, "m_error_slope": -0.0007203411718621349, "velocity_error_slope": 0.00020861575197330008}, "exact_normalized_negative_data_gradient": {"dataDD": -61.710875148511455, "m_error_slope": -0.0007203429816912941, "velocity_error_slope": 0.00020861499568812017}}}]}
+2026-11-09T00:29:28.5782734Z .{"check": "analytic_homogeneous_wave_reference", "python": "3.12.16", "numpy": "2.5.4", "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43", "status": "complete_analytical_diagnostic", "internal_numeric_gates": true, "physical_quality_pass": null, "quadrature_convergence": [{"denominator": 168.8634649130958, "gate": true, "lower_order": 128, "numerator": 2.353231238989857e-13, "upper_order": 256, "value": 1.3935703855188143e-15, "zero_denominator": false}, {"denominator": 168.8634649130957, "gate": true, "lower_order": 256, "numerator": 1.5934811128566122e-13, "upper_order": 512, "value": 9.436506077123818e-16, "zero_denominator": false}], "cases": [{"case_id": "small_nbl0", "status": "complete", "full_relative_L2": 2.4072154510015293, "early_relative_L2": 0.0003274335755548353, "sample_counts": {"early": 250, "full": 1099, "late": 849}}, {"case_id": "small_nbl20", "status": "complete", "full_relative_L2": 0.5693972854748873, "early_relative_L2": 0.00032743373992363914, "sample_counts": {"early": 250, "full": 1099, "late": 849}}, {"case_id": "small_nbl40", "status": "complete", "full_relative_L2": 0.24950424068601443, "early_relative_L2": 0.00032743374032883304, "sample_counts": {"early": 250, "full": 1099, "late": 849}}, {"case_id": "matched_exterior_20_undamped", "status": "complete", "full_relative_L2": 1.0372783411897348, "early_relative_L2": 0.00032743374036090796, "sample_counts": {"early": 250, "full": 1099, "late": 849}}, {"case_id": "matched_exterior_40_undamped", "status": "complete", "full_relative_L2": 0.6866430597700494, "early_relative_L2": 0.00032743374036090796, "sample_counts": {"early": 250, "full": 1099, "late": 849}}, {"case_id": "reference_241", "status": "complete", "full_relative_L2": 0.00030514170250239126, "early_relative_L2": 0.00032743374035630656, "sample_counts": {"early": 250, "full": 1099, "late": 849}}, {"case_id": "reference_321", "status": "complete", "full_relative_L2": 0.0003051417025023915, "early_relative_L2": 0.00032743374035630656, "sample_counts": {"early": 250, "full": 1099, "late": 849}}]}
+2026-11-09T00:29:29.4065493Z ........................................................         [100%]
+2026-11-09T00:29:29.4066315Z =========================== short test summary info ============================
+2026-11-09T00:29:29.4067454Z SKIPPED [1] tests/test_devito_sampling.py:45: could not import 'devito': No module named 'devito'
+2026-11-09T00:29:29.4068928Z SKIPPED [1] tests/test_devito_sampling.py:58: could not import 'devito': No module named 'devito'
+2026-11-09T00:29:29.4070121Z SKIPPED [1] tests/test_devito_sampling.py:68: could not import 'devito': No module named 'devito'
+2026-11-09T00:29:29.4071263Z SKIPPED [1] tests/test_devito_sampling.py:79: could not import 'devito': No module named 'devito'
+2026-11-09T00:29:29.4072057Z 564 passed, 4 skipped, 1 warning in 114.78s (0:01:54)
+2026-11-09T00:29:30.3023181Z ##[group]Run wavecert verify-physics --output /tmp/wavecert-independent
+2026-11-09T00:29:30.3024052Z [36;1mwavecert verify-physics --output /tmp/wavecert-independent[0m
+2026-11-09T00:29:30.3075565Z shell: /usr/bin/bash -e {0}
+2026-11-09T00:29:30.3075821Z env:
+2026-11-09T00:29:30.3076100Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-09T00:29:30.3076561Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-09T00:29:30.3077011Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-09T00:29:30.3077407Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-09T00:29:30.3077803Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-09T00:29:30.3078200Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-09T00:29:30.3078537Z ##[endgroup]
+2026-11-09T00:29:32.5324272Z {
+2026-11-09T00:29:32.5354286Z   "scope": "undamped constant-coefficient Dirichlet discrete/continuous Helmholtz verification",
+2026-11-09T00:29:32.5403672Z   "boundary_fidelity_or_field_validation": false,
+2026-11-09T00:29:32.5404164Z   "rows": [
+2026-11-09T00:29:32.5433947Z     {
+2026-11-09T00:29:32.5434251Z       "shape": [
+2026-11-09T00:29:32.5434542Z         15,
+2026-11-09T00:29:32.5434792Z         15
+2026-11-09T00:29:32.5435050Z       ],
+2026-11-09T00:29:32.5435315Z       "spacing": 0.0625,
+2026-11-09T00:29:32.5435710Z       "spectral_relative_error": 1.5982050925655598e-15,
+2026-11-09T00:29:32.5436221Z       "continuum_relative_error": 0.01119300303719732
+2026-11-09T00:29:32.5436630Z     },
+2026-11-09T00:29:32.5436870Z     {
+2026-11-09T00:29:32.5437123Z       "shape": [
+2026-11-09T00:29:32.5437393Z         31,
+2026-11-09T00:29:32.5437646Z         31
+2026-11-09T00:29:32.5437903Z       ],
+2026-11-09T00:29:32.5438166Z       "spacing": 0.03125,
+2026-11-09T00:29:32.5438558Z       "spectral_relative_error": 6.0590290377200606e-15,
+2026-11-09T00:29:32.5439058Z       "continuum_relative_error": 0.002785226015199546
+2026-11-09T00:29:32.5439489Z     },
+2026-11-09T00:29:32.5439747Z     {
+2026-11-09T00:29:32.5439990Z       "shape": [
+2026-11-09T00:29:32.5440273Z         63,
+2026-11-09T00:29:32.5440526Z         63
+2026-11-09T00:29:32.5440773Z       ],
+2026-11-09T00:29:32.5441033Z       "spacing": 0.015625,
+2026-11-09T00:29:32.5441422Z       "spectral_relative_error": 1.812224832865532e-14,
+2026-11-09T00:29:32.5441922Z       "continuum_relative_error": 0.00069549586946235
+2026-11-09T00:29:32.5442325Z     }
+2026-11-09T00:29:32.5442569Z   ],
+2026-11-09T00:29:32.5442820Z   "observed_orders": [
+2026-11-09T00:29:32.5443149Z     2.006730848381643,
+2026-11-09T00:29:32.5443610Z     2.001680552201158
+2026-11-09T00:29:32.5443887Z   ],
+2026-11-09T00:29:32.5444135Z   "passed": true,
+2026-11-09T00:29:32.5444441Z   "provenance": {
+2026-11-09T00:29:32.5444840Z     "git_revision": "affed15c048a3ef4e0131f0ae553379ff7d10f9c",
+2026-11-09T00:29:32.5445333Z     "working_tree_dirty": false,
+2026-11-09T00:29:32.5445930Z     "source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+2026-11-09T00:29:32.5446682Z     "source_hash_schema": "sha256-of-path-and-file-sha256-v2",
+2026-11-09T00:29:32.5447625Z     "source_files": {
+2026-11-09T00:29:32.5448229Z       ".github/workflows/ci.yml": "416a6055e3e7983ba76b3720f30a17c78833d52005eccf9368fbe53a4181c6bf",
+2026-11-09T00:29:32.5449308Z       ".github/workflows/research-evidence.yml": "5a5a84a3a115006aaa2a24a3ff3ceaf79b0ef4652e98f4df7dc7c7d937c535ca",
+2026-11-09T00:29:32.5450530Z       "configs/batched_pod_development_protocol.json": "a53600eff96f128193f813c077da29235d185fca473a24e060ca8fe75334ad1f",
+2026-11-09T00:29:32.5451751Z       "configs/coarse_adjoint_validation_protocol.json": "3731d5ee7585c7af43193b8c4c4495c05785444d1533487e1e4578442ae52b96",
+2026-11-09T00:29:32.5453049Z       "configs/coarse_corrected_pod_confirmation_addendum.json": "af6331f38a9f8eac987314dda92fc778ff9c0d0d6011fba2bebb99d5f1c8724b",
+2026-11-09T00:29:32.5454745Z       "configs/coarse_runtime_controls.json": "a4a31e5736601033965db1e40e81aa9270428b003123b8d1353b500a72870741",
+2026-11-09T00:29:32.5455778Z       "configs/demo.yaml": "fdc2afa3a4f023c0b1b058b8fd3dac9624b4346ae87cfccd3456375f2c51913a",
+2026-11-09T00:29:32.5456826Z       "configs/final_subsurfacegen_protocol.json": "67aca3b512c5dc6f5c0ab2a844722b638dd97744c0050c59dd312c0859b7309b",
+2026-11-09T00:29:32.5457988Z       "configs/final_subsurfacegen_split.csv": "c4c1cb9a46bac7473f31792e2c468f94f4c613247f06641614593b18983ad25c",
+2026-11-09T00:29:32.5459127Z       "configs/gradient_confirmation_plan.json": "8330f33ee38255dbb14f54e2ddcd6f154bbe7d5f4a40b11f2560b652f563eb41",
+2026-11-09T00:29:32.5460317Z       "configs/gradient_development_protocol.json": "9262ab19fc87c3d04f4bad1bcc2da5b6978babc10c55ee2e461c981c8fdefe82",
+2026-11-09T00:29:32.5461515Z       "configs/grouped_subsurfacegen_manifest.csv": "95cb3c030f1b38f0cfeb5e920d5c8746a58a0c35bd61aa18c55323772c86a027",
+2026-11-09T00:29:32.5462697Z       "configs/historical_transfer_protocol.json": "b5ecc87c5d90e19a39040e4f57a2d88ac9da0d1b54991e574fdb0839ffaf2f1d",
+2026-11-09T00:29:32.5464040Z       "configs/marmousi2d.yaml": "757ad04fafc3ba76ba9abbd0f88ff705348efdebbe07b72a49e8225e44c26f51",
+2026-11-09T00:29:32.5465181Z       "configs/openfwi_external_stress.json": "6578df1b931b9fe472192fd69c9f5050531f7214c0d1777e832296b55a3ecc77",
+2026-11-09T00:29:32.5466416Z       "configs/openfwi_external_stress_analysis_addendum.json": "f4370f1a0cd0a9b1a3b3a0dab513fac99bca143c30cdbf27560d222d211bb736",
+2026-11-09T00:29:32.5467696Z       "configs/phase7_end_to_end.yaml": "560a69540296cbbb0b2ccb1f227d24154e9bb414d2940ae421be8af1f5cbe2af",
+2026-11-09T00:29:32.5468717Z       "configs/phase9_ood.yaml": "917f1f8ba3c71531e184a9e5e33d370f7f33dc0f481975054331bfbfde1c08d8",
+2026-11-09T00:29:32.5469777Z       "configs/pod_confirmation_addendum.json": "4022fabf898c8865e9d36849c144a0cecc08e26b1910b97f9b40e09f35a2751c",
+2026-11-09T00:29:32.5470929Z       "configs/pod_development_protocol.json": "55df03ceea558b477b12a22a7e7c43dbf494590b022e3e852f90d9ad85c07f92",
+2026-11-09T00:29:32.5472044Z       "configs/remote_evidence_run.json": "a09c0ce648112e5bab1d9716e9fc01117438e6b37050494411dd2236083fbbcc",
+2026-11-09T00:29:32.5473171Z       "configs/strengthening_protocol.json": "9ceda571a1b46e77c0c17d51e84af4618ce658711cbc3465d14811991e785888",
+2026-11-09T00:29:32.5475376Z       "configs/subsurfacegen.yaml": "f9a799da5b16971deda2a2c0987408adefc1a3746ae37d9773c52683b26711f2",
+2026-11-09T00:29:32.5476499Z       "pyproject.toml": "81e00bf085f2054bb992fdb22706a37a1970e9dce3fdece67a4de284897092e5",
+2026-11-09T00:29:32.5477524Z       "requirements-reproduction.txt": "7b87ebf39610d946659a1f59aa98872cd24712730df75d7d18df9289ee8566dc",
+2026-11-09T00:29:32.5478645Z       "scripts/audit_evidence_study.py": "2a9ab6b87032eb623f7f7b936b5ea3e1eff8a84904a3b387ba3b0988e7f41d88",
+2026-11-09T00:29:32.5479775Z       "scripts/benchmark_batched_neural.py": "73d07c8988563f3a0e4c825a1869b60c6c45b0c1a0fd9f4c48d04d85edfab5be",
+2026-11-09T00:29:32.5480910Z       "scripts/benchmark_coarse_runtime.py": "ef4b4497c7277f70c67a43033914d8b8b4f706e2a8c9a79b040ec1ec1f562f0f",
+2026-11-09T00:29:32.5482224Z       "scripts/benchmark_reference_cache.py": "ffce9fa1f1bf2f0e6e19e3ec03a8dddc0720f6147e48785a18a8fe19f3d7a6bf",
+2026-11-09T00:29:32.5483495Z       "scripts/benchmark_residual_coded.py": "6b61359c1502d6308ce4d8a2f8e00b483f6682c73268166aba4df4cad80b9ea0",
+2026-11-09T00:29:32.5484648Z       "scripts/build_subsurfacegen_wavecert.py": "880e3659672e50cd3d85186b491c410761ac59ceebf8b45d97828f60e6d7d237",
+2026-11-09T00:29:32.5485675Z       "scripts/check_repo.sh": "48838e71d5a920ff9d453319640772897c22a709943f3b288c8ce36bef5a1a3c",
+2026-11-09T00:29:32.5486725Z       "scripts/coarse_pod_confirmation.py": "eca413d0f2ab85a657a230ddb0949cbc799d7e9b600a607b0bc45ac9a7e36d9d",
+2026-11-09T00:29:32.5487940Z       "scripts/diagnose_development_generalization.py": "11898494cacce97689f8374b0a2be2e89ffe73b14a1c5e150591b5cf52ff883c",
+2026-11-09T00:29:32.5489439Z       "scripts/diagnose_tolerance_calibration.py": "9c49a1ffed7ac547d33ffa6b3592617ff5be672d55043a61d09756c2426fcee5",
+2026-11-09T00:29:32.5490612Z       "scripts/download_marmousi_public.sh": "23f1a7412e4e7507adb2970d1b5c64a4aba2b3f0f1209796b62a0e54f151c85e",
+2026-11-09T00:29:32.5491709Z       "scripts/evaluate_openfwi_stress.py": "318627c883ac54da52158e05aa742b3f1fd01f9165d5068274928ff44f28241b",
+2026-11-09T00:29:32.5492799Z       "scripts/gradient_confirmation.py": "41b333aa12f8e4f1e4a08eda7ee6a679edd68ec78776cf245fff8e160449537f",
+2026-11-09T00:29:32.5494087Z       "scripts/make_grouped_split.py": "c759ce122e3c41d639f8a0e00dbc6cf1edaa55bd8d71a0e73aa669110e74d2f0",
+2026-11-09T00:29:32.5495117Z       "scripts/pod_confirmation.py": "814aca67b3c1bf774c59e112623524933ae2374ffe1098ba75361e6b9f7a609c",
+2026-11-09T00:29:32.5496230Z       "scripts/prepare_grouped_subsurfacegen.py": "40f07f3e6c44c7bcdf5aad67393f39a411aff4b6bbf30552664c38d94c360b21",
+2026-11-09T00:29:32.5497357Z       "scripts/prepare_openfwi_stress.py": "3eed3bb6c797644edc979dc3f49252d93c052461c710c6f9536f9247f4a99b63",
+2026-11-09T00:29:32.5498452Z       "scripts/reproduce_strengthening.sh": "48dbb98e9fb95b46936dc2db27befb2d27781b937ad8151bd44ddd5b5534cfb0",
+2026-11-09T00:29:32.5499505Z       "scripts/run_baseline_study.py": "76dd43504632c230286b0b8c99286a3fe44d7a517af73efbcb3da1a851834ff2",
+2026-11-09T00:29:32.5500549Z       "scripts/run_batched_pod_development.py": "2a813e5b95ab761a65f82183cebad943951102c9fbbbd6c3934add090d5dfe6b",
+2026-11-09T00:29:32.5501672Z       "scripts/run_coarse_adjoint_validation.py": "92c80a1195f6d974cd87d4569d93e7af3287402cb98ed2a03e0159c7c6a69013",
+2026-11-09T00:29:32.5502728Z       "scripts/run_cost_break_even.py": "a03e88003da29ced2af4ed2376e179b5ffcbf13e772196ed5311c21bdaba82a3",
+2026-11-09T00:29:32.5503902Z       "scripts/run_demo.sh": "de363dde3a78278a8c14900a63ebfe6974b8d12c567f6e7a192be047a8a110d0",
+2026-11-09T00:29:32.5504876Z       "scripts/run_devito_real.py": "e899961a9c61d50c0efbd7c5287fe9a96b7d47829d5bd4e929daa67a9aa3f182",
+2026-11-09T00:29:32.5505956Z       "scripts/run_gradient_development.py": "0e3d4456fe62e4ee9571599258ba27b6b813f7ce30a64b79678421e3669bd33a",
+2026-11-09T00:29:32.5507035Z       "scripts/run_heuristic_baselines.py": "987424ddfde41152b6f907e82a19ee58418b79c8b2512b80d9790320d5e4cad6",
+2026-11-09T00:29:32.5508104Z       "scripts/run_historical_transfer.py": "e8a8cd30f98387e4142d7985ab6816550d13705a34aaf9379ce21bdb3d1ebd0c",
+2026-11-09T00:29:32.5509143Z       "scripts/run_openfwi_study.py": "590d432c9b1e05ec8a3168203444a4bef407a357584e56425dca46f120a75fad",
+2026-11-09T00:29:32.5510174Z       "scripts/run_phase1_verification.py": "8aabcd0d0e9272c7eb8ec646c333522ea297f54970e55f61cdff079a61f69acb",
+2026-11-09T00:29:32.5511228Z       "scripts/run_phase2_train_fno.py": "e10fb0dcacb0c83f92c40a74061a0037aa141b6381684e8403a02ee84f433242",
+2026-11-09T00:29:32.5512253Z       "scripts/run_phase2_validate.py": "6ccabc08f8d37048183466af1e87a922d5754ae7071b06c867466dd9f0935b33",
+2026-11-09T00:29:32.5513505Z       "scripts/run_phase3_failure_study.py": "71df1d686dc41bf5946fc5adab4d7a21bcf352a76c7bdd521231dbad35727fac",
+2026-11-09T00:29:32.5514654Z       "scripts/run_phase4_certificate_study.py": "a7012a525af132322d317c2448205c189c55bbb8b6798407e5d421baff60b6cc",
+2026-11-09T00:29:32.5515958Z       "scripts/run_phase5_calibration.py": "f240b218b7dc9bb948e1e3830daee30cc0da199ec012a5d02738c065817b7169",
+2026-11-09T00:29:32.5517070Z       "scripts/run_phase6_adaptive_study.py": "a263f389ceedd7f186f84354cfec74e6644d8cdede687dcd96007de42f517b8e",
+2026-11-09T00:29:32.5518145Z       "scripts/run_phase7_end_to_end.py": "b04016425edd864466b0f1348b71f4d593047af79cd3e26b934054c3c3ec6e8e",
+2026-11-09T00:29:32.5519196Z       "scripts/run_phase8_production_study.py": "c0aefe51b490c9af020f4c2be1bf77c43111384373d98569c1d769caace64501",
+2026-11-09T00:29:32.5520288Z       "scripts/run_phase9_ood_study.py": "f09b1f3d48de72cbe43e838d723080a7e3e8630fee1e36b6af60d9b41fe03254",
+2026-11-09T00:29:32.5521560Z       "scripts/run_pod_development.py": "6bddb7613646f9fe3bd275cba0abe19c2a49848047ab9de6b73945acb6eb1f8b",
+2026-11-09T00:29:32.5522681Z       "scripts/run_real_adaptive_matched_mc.py": "79a7e2291180ca9bc01d65cfc14f3c4bf3266363ab9caa1bac44dddd2c64857b",
+2026-11-09T00:29:32.5524001Z       "scripts/run_real_adaptive_pathwise.py": "4373997e04d3a4c8642b750bf8aca4ecb0158ac6575f0c9fdb3ffcdd60a50ef5",
+2026-11-09T00:29:32.5525100Z       "scripts/run_real_geology_training.py": "43142b67006c77840490cf075e8a36ac9e6e280a91e168e8cbb63aae5512654b",
+2026-11-09T00:29:32.5526186Z       "scripts/run_real_wavecert.py": "caff9e9387bdbabc0aa912faf1ec198b50540e46e74adcf2ec0a94026b11a751",
+2026-11-09T00:29:32.5527268Z       "scripts/run_receiver_controls.py": "ea07011cdea457a785d8bddbcb1f3e3c46caf0fbd42117084dfdb2fc299d6276",
+2026-11-09T00:29:32.5528400Z       "scripts/run_research_audit.py": "c580c1371747e0b81d9cf6c7613241bef7aceb664d0910fa6cefcea380d1b4e8",
+2026-11-09T00:29:32.5529453Z       "scripts/run_stability_benchmark.py": "03928837cd54cde745257769165750e43ee70f8f9c25f58d082a62fd965c9a33",
+2026-11-09T00:29:32.5530593Z       "scripts/select_subsurfacegen_slices.py": "a2e2e658273e9fac723c815bcb5f4269136569c00e87f28a3a129b7f826006ae",
+2026-11-09T00:29:32.5531673Z       "src/wavecert/__init__.py": "de0bb59120c27a66e8c3914a3fda8a53de1b89a30fb2db9e8bcf0052af0df054",
+2026-11-09T00:29:32.5532618Z       "src/wavecert/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+2026-11-09T00:29:32.5533792Z       "src/wavecert/_version.py": "7080f58cb9c2fef8f8f0680c37a61bd4503726c43de73366087991604f131616",
+2026-11-09T00:29:32.5534863Z       "src/wavecert/benchmarks/__init__.py": "3315b356ba8f46b155886b93c79e8c34c293dd65b900cb229ca23d48f6d3b78c",
+2026-11-09T00:29:32.5535974Z       "src/wavecert/benchmarks/marmousi.py": "4e574b062a0cd24bf4f18a2579a26bbb89cb662dfdb58c1e9c1a85624f461822",
+2026-11-09T00:29:32.5537095Z       "src/wavecert/benchmarks/openfwi.py": "e4c83e6075404a79fe3a12ad97e6fd9eafcef9f63ad1ad48e95fa3a5a0e598e0",
+2026-11-09T00:29:32.5538224Z       "src/wavecert/benchmarks/procedural.py": "696666b77bf70f38bc109c9a2fec21e48931b00b14171b8d238f96e79bbef4d0",
+2026-11-09T00:29:32.5539366Z       "src/wavecert/benchmarks/subsurfacegen.py": "1a3e9f754a387a957a467cd19d76446f98c0e845f65044f9a6557c7c9a51d5be",
+2026-11-09T00:29:32.5540486Z       "src/wavecert/certificates/__init__.py": "58f29c2df2190b203a67eeb5f831bc500262c7571763b9caf046c1dbcc893df4",
+2026-11-09T00:29:32.5541660Z       "src/wavecert/certificates/cached_merit_certificate.py": "00ae473b116841804f66164ad97a8e10fd679d4b5ca68430d6947c8c2eb72985",
+2026-11-09T00:29:32.5542929Z       "src/wavecert/certificates/coarse_adjoint.py": "3d4f2d89c37116312f4f80c967ff4bd20d4be474efe60fe65461d758880ee565",
+2026-11-09T00:29:32.5544288Z       "src/wavecert/certificates/coarse_adjoint_batch.py": "786e5d48653b13e6e8d73ba38e9dab8c2860ffd0e943b81e58a39d66f389dce8",
+2026-11-09T00:29:32.5545528Z       "src/wavecert/certificates/deflated_direction.py": "260d8fc691b5029d8d5f54e859bcf020f2d8e2c2c8402614a685a65166a37198",
+2026-11-09T00:29:32.5546723Z       "src/wavecert/certificates/directional.py": "fec69f8a712c1108782449047e8f366d3c562546ebde55be75a26d843d5987b2",
+2026-11-09T00:29:32.5547965Z       "src/wavecert/cli.py": "7b02e01dbb7507345199d97a227d1d90637324ac3da5a6ed6d762545caa74223",
+2026-11-09T00:29:32.5548924Z       "src/wavecert/data/__init__.py": "fca09028afa34083f1b92b0c09b4ad98058417f72f0671c930a201146ff7c981",
+2026-11-09T00:29:32.5550001Z       "src/wavecert/data/real_geology.py": "ceb7ef296f5d6f46ad344b22bde38d4c0919b9849b3d440d4d70af11e8d943d1",
+2026-11-09T00:29:32.5551045Z       "src/wavecert/data/splits.py": "e255e4b329f28169d4ab762fbf45218318487db72fe14adee63bf48f73152a62",
+2026-11-09T00:29:32.5552162Z       "src/wavecert/data/subsurfacegen_selection.py": "934a7bab3712bd5d1462f73bac34cecd46a8da90bf95d4d40b706a3caeceed65",
+2026-11-09T00:29:32.5553451Z       "src/wavecert/data/wavefields.py": "44a023b8062144c572233e12acb72bb8149a6566880adc50179902312e0e112a",
+2026-11-09T00:29:32.5554701Z       "src/wavecert/experiments/__init__.py": "cc6d3a87568c3d6f4890e39f076d861ce60158fbd1405447f3160211dbcec895",
+2026-11-09T00:29:32.5555790Z       "src/wavecert/experiments/ablation.py": "dd49f3a3e489d69823681a488daaa14332628a2f4765b445a9d06957f46f81b5",
+2026-11-09T00:29:32.5556929Z       "src/wavecert/experiments/adaptive_study.py": "3ee233e8cf38bedee5b3d638cd2858715f08246e4b8f6a066197699029fe4320",
+2026-11-09T00:29:32.5558118Z       "src/wavecert/experiments/baseline_study.py": "77bda36229ba2e04e969b3dd02151f2c83dd380514a6eedb10918fb6ca3bbc06",
+2026-11-09T00:29:32.5559311Z       "src/wavecert/experiments/batched_neural_controls.py": "259327cf368937b95d8537b07b97bf49d55d70f85975f41d7059a42c81d1cd72",
+2026-11-09T00:29:32.5560568Z       "src/wavecert/experiments/batched_pod_development.py": "7f62947ed6e111384d5e16bc0727a6bb34dd9ebd8c490caadb13b3bc4ce9ce0a",
+2026-11-09T00:29:32.5561881Z       "src/wavecert/experiments/certificate_calibration.py": "e0ba7288d33d8e7dad8dc7e0c429a8361a085fdfa7b3e0d71caa3206f4f8af2d",
+2026-11-09T00:29:32.5563128Z       "src/wavecert/experiments/certificate_study.py": "55f1f52d0ce77069454c005c17b1f9a28ca807b80f7528328a50fdc82bb24072",
+2026-11-09T00:29:32.5564533Z       "src/wavecert/experiments/coarse_adjoint_validation.py": "d5efcd5c77069047d0cc7d73fdc6d56a32ebb62bc13e92e22a777e50468125f6",
+2026-11-09T00:29:32.5565823Z       "src/wavecert/experiments/coarse_pod_confirmation.py": "0de95cd769d7de30ba32e9f492778b1d73f00c03b9319e8386a0cf41de686187",
+2026-11-09T00:29:32.5567137Z       "src/wavecert/experiments/coarse_runtime_controls.py": "f26ea16014e7924aca622e098e03805d9a3c5b228c0697e994435985ea453448",
+2026-11-09T00:29:32.5568343Z       "src/wavecert/experiments/cost_break_even.py": "fd6f3a1bac36eb7a04691bda5c2139e54ac695f08b0dd85e495513f1da4c1da0",
+2026-11-09T00:29:32.5569706Z       "src/wavecert/experiments/derivative_training.py": "c82c7e32a27e5cf4dcfa9814fe5b4c8438ad1023331e0ae3a24b0c3d0cc45522",
+2026-11-09T00:29:32.5570936Z       "src/wavecert/experiments/devito_study.py": "ad5ae5123607ba92fe573bf6c56616509e6055d28750ab12c237de84a5d5f4b8",
+2026-11-09T00:29:32.5572062Z       "src/wavecert/experiments/end_to_end.py": "b2e37b6f96671be11ec7125a35a1c5dfeeaf0e9e005bdde9403def3f5ed6ded1",
+2026-11-09T00:29:32.5573213Z       "src/wavecert/experiments/evidence_study.py": "e14f9013bd71a11b454a4a8f5e84e8df79c5c449da440adbe173b18b5701629f",
+2026-11-09T00:29:32.5574553Z       "src/wavecert/experiments/failure_study.py": "bc59a3ff119473f142f8d6dcd7e98595713ac21ba22c6656af56fd1b083c14b1",
+2026-11-09T00:29:32.5575755Z       "src/wavecert/experiments/gradient_confirmation.py": "6e3ed63ca3b966560820f0826bdba6ba027e8b4042b5838e506a89750df31149",
+2026-11-09T00:29:32.5576991Z       "src/wavecert/experiments/gradient_development.py": "993670de7902a2ae0b867344803bc950ddbd0c627440c83ce8f74e42f17dcf1b",
+2026-11-09T00:29:32.5578370Z       "src/wavecert/experiments/heuristic_baselines.py": "677ea77c09f7d645c2a4f403e49dedd236f2da216f3d84c95631239b37a82d61",
+2026-11-09T00:29:32.5579693Z       "src/wavecert/experiments/historical_transfer.py": "020eb674e5d193e025acb2919dd20ad75e8b53218c38f8eebdd6491558be618f",
+2026-11-09T00:29:32.5580901Z       "src/wavecert/experiments/ood_study.py": "396fbc2ca081ccee5a9759c325b128cd411bd20a06faa310551251bddcd1d4b8",
+2026-11-09T00:29:32.5582253Z       "src/wavecert/experiments/openfwi_stress.py": "03711c5f6757b59008c5a9d51c65ab684ac7fadc104df5e6b4a71997d849b97a",
+2026-11-09T00:29:32.5583620Z       "src/wavecert/experiments/openfwi_study.py": "124c61847c03ae4a3df61c41598888301a1fbe9b2eae86df1aacee98d596e70a",
+2026-11-09T00:29:32.5584865Z       "src/wavecert/experiments/pod_confirmation.py": "be8116a1124a5a8f5fa1ae006422431c0f021edfe2d7f5c954c047b9c68c8f07",
+2026-11-09T00:29:32.5586135Z       "src/wavecert/experiments/pod_development.py": "d418adbc112886efe9b4f0abce6eb2840aaaca3a3ee0b3dea5fd54f7164f38d3",
+2026-11-09T00:29:32.5587341Z       "src/wavecert/experiments/production_study.py": "5f64317e2ed89ab52630564af195531cd3c2f5769a4324faa1e34afcad8a801c",
+2026-11-09T00:29:32.5588784Z       "src/wavecert/experiments/real_geology_training.py": "b48dd5ac253478bb6e898a45eb88d3e029708f314d875eef1744624cf201d2c7",
+2026-11-09T00:29:32.5590075Z       "src/wavecert/experiments/real_wavecert.py": "5fa2baa9e1364230b57f3f8e2ea31befea2ea538de86425f512f8c701705625f",
+2026-11-09T00:29:32.5591367Z       "src/wavecert/experiments/receiver_controls.py": "b5d47bfe30fc4cf566563db5fb0a86f6df4bbc86635ecd863f417da0cced4df1",
+2026-11-09T00:29:32.5592644Z       "src/wavecert/experiments/residual_coded_controls.py": "0fee0de99d5c535d92985ef23322f9a43af26ca2ca74615e80d09eb0288f88f5",
+2026-11-09T00:29:32.5593978Z       "src/wavecert/experiments/runner.py": "c10ed7ce2b93db806a05d284c04dc09e8618073fad5d9ee59e6d425563151dff",
+2026-11-09T00:29:32.5595126Z       "src/wavecert/experiments/synthetic.py": "1cc5746f72649daf5ee744123de8dc6d754fca78f3a5ff98ed6bfcbf7ac5974a",
+2026-11-09T00:29:32.5596285Z       "src/wavecert/experiments/train_fno.py": "283d473b7420904170bac939be96e6dfb3014367fc38bb1b52ee397bf7c4bf4a",
+2026-11-09T00:29:32.5597353Z       "src/wavecert/metrics.py": "aff3cceddf52c634e39a31a864e4705e8389acba4d79d09badbedd9ca04f6382",
+2026-11-09T00:29:32.5598426Z       "src/wavecert/optimization/__init__.py": "e3a133b64f85ed832fff5967a81ad0d5cf74de8106a1e48ec46e6a90ae7ed506",
+2026-11-09T00:29:32.5599552Z       "src/wavecert/optimization/fwi.py": "a4ccc550aa597d8e8ba630ecde82cd338bc64dbc5538936998ffafff4e618756",
+2026-11-09T00:29:32.5600674Z       "src/wavecert/optimization/paid_descent.py": "b863af87f03c2470fde8d72412b1c89e76e389a528cb7d8b08efe89ceeb3a12c",
+2026-11-09T00:29:32.5601772Z       "src/wavecert/physics/__init__.py": "68248d95659de7888efbf10dc8f410e3ecf21c609e93407bbdfa82f93ec3f592",
+2026-11-09T00:29:32.5602903Z       "src/wavecert/physics/certified_stability.py": "350db67a2d24cbfcf1258e68ec0c8c6521df6114c975298e9dd672bef88a8ce3",
+2026-11-09T00:29:32.5604216Z       "src/wavecert/physics/coarse_batch.py": "6adf41b5b836a1331661a598c4e9b6e5e24ebd35ec659b7d86db95134e22a7be",
+2026-11-09T00:29:32.5605394Z       "src/wavecert/physics/coarse_dst_reference.py": "b62e9dd0845c4b0e57a8ef52927a01d7f3b289b9d3c8d290e3d4f124a46b400f",
+2026-11-09T00:29:32.5606577Z       "src/wavecert/physics/coarse_stability.py": "53e6ab1754966f63b97c62da6c3996b7babbd59648808df6f9412295e46c658a",
+2026-11-09T00:29:32.5607736Z       "src/wavecert/physics/devito_backend.py": "67b91aa2f7ed8c653c1f92b99e4c6e48591b8e47d31588d9e2b19445d6b6060a",
+2026-11-09T00:29:32.5608850Z       "src/wavecert/physics/exact_merit.py": "0fec1f215b28e36017c1e28409d7f7e909a03cbf5b717de5d23eb8d52eb26810",
+2026-11-09T00:29:32.5609948Z       "src/wavecert/physics/helmholtz.py": "caf51b58da24ed6d3633bda4eaaab804714f5c7932d9d5f343644763bc158131",
+2026-11-09T00:29:32.5611126Z       "src/wavecert/physics/independent_verification.py": "a56d932aff9acd9ffb3391e55e73fe9e7407a306e07f37c52522b82794d9db28",
+2026-11-09T00:29:32.5612322Z       "src/wavecert/physics/production.py": "f0eb2854a4d07a0d82ac41b2c28fe04052826f5b4ced3b71548df9151c6fa138",
+2026-11-09T00:29:32.5613944Z       "src/wavecert/physics/receiver_oracle.py": "918ceaf5596fa8452b1e29357c8e694e7ea83b0e9a162f86f6a03f28714c3e6b",
+2026-11-09T00:29:32.5615137Z       "src/wavecert/physics/residual_coded.py": "5606d1cdcf30937df9a82e2819992105826bef04e60b28f9989137a076ceb70b",
+2026-11-09T00:29:32.5616618Z       "src/wavecert/physics/verification.py": "518c3b249957f23a9754b9482437309fda96a50548726a577e4486aad17cafb2",
+2026-11-09T00:29:32.5617622Z       "src/wavecert/provenance.py": "9e54e51a311aa9adab6a4572c45456695bc7f228149495779e556a101345e63c",
+2026-11-09T00:29:32.5618589Z       "src/wavecert/repair/__init__.py": "a60d11f7e6d9b180193b542c62bce2aad0c6e87f9f2eeffcc570e8e5afbe4401",
+2026-11-09T00:29:32.5619583Z       "src/wavecert/repair/adaptive.py": "39ccc9fa14610558aeca2d3bd4020511fd9a59ab65984ce29b51867b6ed4c405",
+2026-11-09T00:29:32.5620554Z       "src/wavecert/repair/policies.py": "ae59f2e9e290c3795aa81bef4198510e894d40ee8a02764524e96b213e24bc2d",
+2026-11-09T00:29:32.5621542Z       "src/wavecert/statistics/__init__.py": "c28a5e0deb7a2808b35b8f54e2f7f401c11424be8f8955ab263b9a78f6738364",
+2026-11-09T00:29:32.5622698Z       "src/wavecert/statistics/audit.py": "fe2751439a2b9554daaeebd075072e39b727fbf094c5b722370da34b7a6175bb",
+2026-11-09T00:29:32.5623922Z       "src/wavecert/statistics/conformal.py": "50a983a6f5560e12374ddd7461605f3600f18852f6d19abd6093f1cfae8a2fdb",
+2026-11-09T00:29:32.5624968Z       "src/wavecert/statistics/finite_population.py": "590c7f9d61dffdf4e3308516854f2f6e718e05e22870be274393db7559ab44a1",
+2026-11-09T00:29:32.5625984Z       "src/wavecert/statistics/inference.py": "75bd6e9a82dc2d0802097710b1161cb1799b22692fb41de1eb088d7d7040d608",
+2026-11-09T00:29:32.5626958Z       "src/wavecert/statistics/pathwise.py": "87181a6e818a29fcbd30ecda30f40985edd300b1590b5badb418396e2b6c0863",
+2026-11-09T00:29:32.5627924Z       "src/wavecert/statistics/tolerance.py": "e67c7274a4949a5bb1b724844d811e3da948278600b98a81d40d83eeaeb1c2c2",
+2026-11-09T00:29:32.5628876Z       "src/wavecert/surrogates/__init__.py": "fc6e735e3c35edfa11fe9faa5b19fc13a6691778856c0ae12123f6c03f418c3b",
+2026-11-09T00:29:32.5629814Z       "src/wavecert/surrogates/base.py": "6a128b568254bda4e4c384547f6ccdcc8795d689925c507ebdcb4db29785307e",
+2026-11-09T00:29:32.5630743Z       "src/wavecert/surrogates/fno.py": "56760590e3ac351180643f7bbd2f5decfe91cb21265775ee61cbd8721020f8cc",
+2026-11-09T00:29:32.5631702Z       "src/wavecert/surrogates/low_fidelity.py": "b766ec44d7667c4a4bbc9f8837d586e7f391ffb91e97533917aeb68bba8b5f5c",
+2026-11-09T00:29:32.5632674Z       "src/wavecert/surrogates/pod.py": "b613dc2e62ba24f65a9c7587d40c3d1af4f7fc0d2e5fcab8daee649908bcd5ca",
+2026-11-09T00:29:32.5633849Z       "src/wavecert/surrogates/pod_batch.py": "c45b15f557e414bb62f53ee18a49d18526a158410e5b39bc324c6ac19623a923",
+2026-11-09T00:29:32.5634701Z       "src/wavecert/surrogates/torch_adapter.py": "e8274a119af40ea3aa7962f235be777eaacc6d4e7cc81aeffd1ce9c7d35caf46"
+2026-11-09T00:29:32.5635201Z     },
+2026-11-09T00:29:32.5635398Z     "python": "3.12.16",
+2026-11-09T00:29:32.5635709Z     "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+2026-11-09T00:29:32.5636059Z     "machine": "x86_64",
+2026-11-09T00:29:32.5636275Z     "packages": {
+2026-11-09T00:29:32.5636473Z       "numpy": "2.5.4",
+2026-11-09T00:29:32.5636679Z       "scipy": "1.18.1",
+2026-11-09T00:29:32.5636886Z       "torch": "2.15.0",
+2026-11-09T00:29:32.5637107Z       "matplotlib": "3.11.2",
+2026-11-09T00:29:32.5637334Z       "pandas": "3.1.1",
+2026-11-09T00:29:32.5637537Z       "pytest": "9.2.0",
+2026-11-09T00:29:32.5637738Z       "h5py": "3.16.0",
+2026-11-09T00:29:32.5637946Z       "hdf5plugin": null,
+2026-11-09T00:29:32.5638170Z       "pyarrow": "26.0.1",
+2026-11-09T00:29:32.5638383Z       "devito": null
+2026-11-09T00:29:32.5638576Z     },
+2026-11-09T00:29:32.5638762Z     "thread_environment": {
+2026-11-09T00:29:32.5638991Z       "OMP_NUM_THREADS": null,
+2026-11-09T00:29:32.5639220Z       "MKL_NUM_THREADS": null,
+2026-11-09T00:29:32.5639457Z       "OPENBLAS_NUM_THREADS": null,
+2026-11-09T00:29:32.5639718Z       "VECLIB_MAXIMUM_THREADS": null,
+2026-11-09T00:29:32.5639980Z       "NUMEXPR_NUM_THREADS": null
+2026-11-09T00:29:32.5640211Z     },
+2026-11-09T00:29:32.5640390Z     "torch_threads": 2
+2026-11-09T00:29:32.5640591Z   }
+2026-11-09T00:29:32.5640902Z }
+2026-11-09T00:29:32.9276037Z ##[group]Run wavecert evidence-study --seeds 731 --cases-per-seed 1 --iterations 1 --calibration-cases 10 --alpha 0.2 --scenarios clean --output /tmp/wavecert-evidence
+2026-11-09T00:29:32.9277249Z [36;1mwavecert evidence-study --seeds 731 --cases-per-seed 1 --iterations 1 --calibration-cases 10 --alpha 0.2 --scenarios clean --output /tmp/wavecert-evidence[0m
+2026-11-09T00:29:32.9328046Z shell: /usr/bin/bash -e {0}
+2026-11-09T00:29:32.9328303Z env:
+2026-11-09T00:29:32.9328573Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-09T00:29:32.9329028Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-09T00:29:32.9329452Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-09T00:29:32.9329830Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-09T00:29:32.9330210Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-09T00:29:32.9330620Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-09T00:29:32.9330960Z ##[endgroup]
+2026-11-09T00:29:35.5057982Z /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+2026-11-09T00:29:35.5059161Z   warnings.warn(
+2026-11-09T00:29:37.1948579Z calibration 1/10
+2026-11-09T00:29:37.3420652Z calibration 2/10
+2026-11-09T00:29:37.4904281Z calibration 3/10
+2026-11-09T00:29:37.6371409Z calibration 4/10
+2026-11-09T00:29:37.7836383Z calibration 5/10
+2026-11-09T00:29:37.9303680Z calibration 6/10
+2026-11-09T00:29:38.0774922Z calibration 7/10
+2026-11-09T00:29:38.2247762Z calibration 8/10
+2026-11-09T00:29:38.3713905Z calibration 9/10
+2026-11-09T00:29:38.5181442Z calibration 10/10
+2026-11-09T00:29:38.6964406Z seed=731 case=0 clean random-repair objective_ratio=0.7492 time=0.021s
+2026-11-09T00:29:38.7293525Z seed=731 case=0 clean residual-repair objective_ratio=0.7645 time=0.023s
+2026-11-09T00:29:38.7507354Z seed=731 case=0 clean periodic-exact objective_ratio=0.7161 time=0.011s
+2026-11-09T00:29:38.8320972Z seed=731 case=0 clean conformal-selective objective_ratio=0.7924 time=0.071s
+2026-11-09T00:29:38.9137788Z seed=731 case=0 clean conformal-selective-guarded objective_ratio=0.7924 time=0.071s
+2026-11-09T00:29:39.0690437Z seed=731 case=0 clean deterministic-selective objective_ratio=0.7161 time=0.145s
+2026-11-09T00:29:39.2214206Z seed=731 case=0 clean analytic-selective objective_ratio=0.7161 time=0.142s
+2026-11-09T00:29:39.2355947Z seed=731 case=0 clean exact objective_ratio=0.7161 time=0.004s
+2026-11-09T00:29:39.2673915Z seed=731 case=0 clean neural-only objective_ratio=0.7924 time=0.022s
+2026-11-09T00:29:39.7608764Z {
+2026-11-09T00:29:39.7609220Z   "configuration": {
+2026-11-09T00:29:39.7609608Z     "seeds": [
+2026-11-09T00:29:39.7609925Z       731
+2026-11-09T00:29:39.7610219Z     ],
+2026-11-09T00:29:39.7610511Z     "cases_per_seed": 1,
+2026-11-09T00:29:39.7610842Z     "iterations": 1,
+2026-11-09T00:29:39.7611231Z     "calibration_cases": 10,
+2026-11-09T00:29:39.7611610Z     "calibration_seed": 2026110701,
+2026-11-09T00:29:39.7611973Z     "alpha": 0.2,
+2026-11-09T00:29:39.7612293Z     "scenarios": [
+2026-11-09T00:29:39.7612607Z       "clean"
+2026-11-09T00:29:39.7612904Z     ],
+2026-11-09T00:29:39.7613201Z     "policies": [
+2026-11-09T00:29:39.7613766Z       "exact",
+2026-11-09T00:29:39.7614086Z       "neural-only",
+2026-11-09T00:29:39.7614431Z       "random-repair",
+2026-11-09T00:29:39.7614778Z       "residual-repair",
+2026-11-09T00:29:39.7615139Z       "periodic-exact",
+2026-11-09T00:29:39.7615501Z       "conformal-selective",
+2026-11-09T00:29:39.7615909Z       "conformal-selective-guarded",
+2026-11-09T00:29:39.7616367Z       "deterministic-selective",
+2026-11-09T00:29:39.7616776Z       "analytic-selective"
+2026-11-09T00:29:39.7617124Z     ],
+2026-11-09T00:29:39.7617450Z     "step_acceptance": "exact-decrease",
+2026-11-09T00:29:39.7617891Z     "repair_blocks": 2,
+2026-11-09T00:29:39.7618249Z     "periodic_interval": 2,
+2026-11-09T00:29:39.7619412Z     "torch_threads": 1,
+2026-11-09T00:29:39.7619857Z     "checkpoint": "checkpoints/fno_phase2.pt",
+2026-11-09T00:29:39.7620627Z     "checkpoint_sha256": "70920f1e3b72eaf9cac635547713d45ab6e6d7b7ec713eb2044e04b23f50ddee",
+2026-11-09T00:29:39.7621355Z     "shape": [
+2026-11-09T00:29:39.7621648Z       16,
+2026-11-09T00:29:39.7621921Z       16
+2026-11-09T00:29:39.7622198Z     ],
+2026-11-09T00:29:39.7622568Z     "study_status": "development; not preregistered",
+2026-11-09T00:29:39.7623588Z     "scope": "synthetic 2-D discrete Helmholtz inversion; not field-scale or measured seismic data",
+2026-11-09T00:29:39.7624849Z     "timing_protocol": "warm FNO state/VJP/JVP; fresh policy solver cache; rotated policy order across model/scenario cases; CPU",
+2026-11-09T00:29:39.7625753Z     "calibration_acquisition_domain": {
+2026-11-09T00:29:39.7626178Z       "frequencies_hz": [
+2026-11-09T00:29:39.7626531Z         3.0,
+2026-11-09T00:29:39.7626800Z         4.0
+2026-11-09T00:29:39.7627081Z       ],
+2026-11-09T00:29:39.7627390Z       "source_indices": [
+2026-11-09T00:29:39.7627732Z         36,
+2026-11-09T00:29:39.7628001Z         43
+2026-11-09T00:29:39.7628274Z       ],
+2026-11-09T00:29:39.7628574Z       "receiver_indices": [
+2026-11-09T00:29:39.7628921Z         34,
+2026-11-09T00:29:39.7629186Z         35,
+2026-11-09T00:29:39.7629453Z         36,
+2026-11-09T00:29:39.7629715Z         37,
+2026-11-09T00:29:39.7629978Z         38,
+2026-11-09T00:29:39.7630221Z         39,
+2026-11-09T00:29:39.7630463Z         40,
+2026-11-09T00:29:39.7630705Z         41,
+2026-11-09T00:29:39.7630948Z         42,
+2026-11-09T00:29:39.7631199Z         43,
+2026-11-09T00:29:39.7631452Z         44,
+2026-11-09T00:29:39.7631701Z         45
+2026-11-09T00:29:39.7631953Z       ]
+2026-11-09T00:29:39.7632199Z     },
+2026-11-09T00:29:39.7632464Z     "provenance": {
+2026-11-09T00:29:39.7632885Z       "git_revision": "affed15c048a3ef4e0131f0ae553379ff7d10f9c",
+2026-11-09T00:29:39.7633615Z       "working_tree_dirty": false,
+2026-11-09T00:29:39.7634251Z       "source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+2026-11-09T00:29:39.7635005Z       "source_hash_schema": "sha256-of-path-and-file-sha256-v2",
+2026-11-09T00:29:39.7635503Z       "source_files": {
+2026-11-09T00:29:39.7636119Z         ".github/workflows/ci.yml": "416a6055e3e7983ba76b3720f30a17c78833d52005eccf9368fbe53a4181c6bf",
+2026-11-09T00:29:39.7637198Z         ".github/workflows/research-evidence.yml": "5a5a84a3a115006aaa2a24a3ff3ceaf79b0ef4652e98f4df7dc7c7d937c535ca",
+2026-11-09T00:29:39.7638410Z         "configs/batched_pod_development_protocol.json": "a53600eff96f128193f813c077da29235d185fca473a24e060ca8fe75334ad1f",
+2026-11-09T00:29:39.7639636Z         "configs/coarse_adjoint_validation_protocol.json": "3731d5ee7585c7af43193b8c4c4495c05785444d1533487e1e4578442ae52b96",
+2026-11-09T00:29:39.7640940Z         "configs/coarse_corrected_pod_confirmation_addendum.json": "af6331f38a9f8eac987314dda92fc778ff9c0d0d6011fba2bebb99d5f1c8724b",
+2026-11-09T00:29:39.7642180Z         "configs/coarse_runtime_controls.json": "a4a31e5736601033965db1e40e81aa9270428b003123b8d1353b500a72870741",
+2026-11-09T00:29:39.7643206Z         "configs/demo.yaml": "fdc2afa3a4f023c0b1b058b8fd3dac9624b4346ae87cfccd3456375f2c51913a",
+2026-11-09T00:29:39.7644462Z         "configs/final_subsurfacegen_protocol.json": "67aca3b512c5dc6f5c0ab2a844722b638dd97744c0050c59dd312c0859b7309b",
+2026-11-09T00:29:39.7645623Z         "configs/final_subsurfacegen_split.csv": "c4c1cb9a46bac7473f31792e2c468f94f4c613247f06641614593b18983ad25c",
+2026-11-09T00:29:39.7646774Z         "configs/gradient_confirmation_plan.json": "8330f33ee38255dbb14f54e2ddcd6f154bbe7d5f4a40b11f2560b652f563eb41",
+2026-11-09T00:29:39.7647974Z         "configs/gradient_development_protocol.json": "9262ab19fc87c3d04f4bad1bcc2da5b6978babc10c55ee2e461c981c8fdefe82",
+2026-11-09T00:29:39.7649205Z         "configs/grouped_subsurfacegen_manifest.csv": "95cb3c030f1b38f0cfeb5e920d5c8746a58a0c35bd61aa18c55323772c86a027",
+2026-11-09T00:29:39.7650833Z         "configs/historical_transfer_protocol.json": "b5ecc87c5d90e19a39040e4f57a2d88ac9da0d1b54991e574fdb0839ffaf2f1d",
+2026-11-09T00:29:39.7651949Z         "configs/marmousi2d.yaml": "757ad04fafc3ba76ba9abbd0f88ff705348efdebbe07b72a49e8225e44c26f51",
+2026-11-09T00:29:39.7653012Z         "configs/openfwi_external_stress.json": "6578df1b931b9fe472192fd69c9f5050531f7214c0d1777e832296b55a3ecc77",
+2026-11-09T00:29:39.7654533Z         "configs/openfwi_external_stress_analysis_addendum.json": "f4370f1a0cd0a9b1a3b3a0dab513fac99bca143c30cdbf27560d222d211bb736",
+2026-11-09T00:29:39.7655866Z         "configs/phase7_end_to_end.yaml": "560a69540296cbbb0b2ccb1f227d24154e9bb414d2940ae421be8af1f5cbe2af",
+2026-11-09T00:29:39.7656997Z         "configs/phase9_ood.yaml": "917f1f8ba3c71531e184a9e5e33d370f7f33dc0f481975054331bfbfde1c08d8",
+2026-11-09T00:29:39.7658197Z         "configs/pod_confirmation_addendum.json": "4022fabf898c8865e9d36849c144a0cecc08e26b1910b97f9b40e09f35a2751c",
+2026-11-09T00:29:39.7659498Z         "configs/pod_development_protocol.json": "55df03ceea558b477b12a22a7e7c43dbf494590b022e3e852f90d9ad85c07f92",
+2026-11-09T00:29:39.7660744Z         "configs/remote_evidence_run.json": "a09c0ce648112e5bab1d9716e9fc01117438e6b37050494411dd2236083fbbcc",
+2026-11-09T00:29:39.7661968Z         "configs/strengthening_protocol.json": "9ceda571a1b46e77c0c17d51e84af4618ce658711cbc3465d14811991e785888",
+2026-11-09T00:29:39.7663201Z         "configs/subsurfacegen.yaml": "f9a799da5b16971deda2a2c0987408adefc1a3746ae37d9773c52683b26711f2",
+2026-11-09T00:29:39.7664465Z         "pyproject.toml": "81e00bf085f2054bb992fdb22706a37a1970e9dce3fdece67a4de284897092e5",
+2026-11-09T00:29:39.7665579Z         "requirements-reproduction.txt": "7b87ebf39610d946659a1f59aa98872cd24712730df75d7d18df9289ee8566dc",
+2026-11-09T00:29:39.7666785Z         "scripts/audit_evidence_study.py": "2a9ab6b87032eb623f7f7b936b5ea3e1eff8a84904a3b387ba3b0988e7f41d88",
+2026-11-09T00:29:39.7668009Z         "scripts/benchmark_batched_neural.py": "73d07c8988563f3a0e4c825a1869b60c6c45b0c1a0fd9f4c48d04d85edfab5be",
+2026-11-09T00:29:39.7669269Z         "scripts/benchmark_coarse_runtime.py": "ef4b4497c7277f70c67a43033914d8b8b4f706e2a8c9a79b040ec1ec1f562f0f",
+2026-11-09T00:29:39.7670528Z         "scripts/benchmark_reference_cache.py": "ffce9fa1f1bf2f0e6e19e3ec03a8dddc0720f6147e48785a18a8fe19f3d7a6bf",
+2026-11-09T00:29:39.7671782Z         "scripts/benchmark_residual_coded.py": "6b61359c1502d6308ce4d8a2f8e00b483f6682c73268166aba4df4cad80b9ea0",
+2026-11-09T00:29:39.7673051Z         "scripts/build_subsurfacegen_wavecert.py": "880e3659672e50cd3d85186b491c410761ac59ceebf8b45d97828f60e6d7d237",
+2026-11-09T00:29:39.7674395Z         "scripts/check_repo.sh": "48838e71d5a920ff9d453319640772897c22a709943f3b288c8ce36bef5a1a3c",
+2026-11-09T00:29:39.7675535Z         "scripts/coarse_pod_confirmation.py": "eca413d0f2ab85a657a230ddb0949cbc799d7e9b600a607b0bc45ac9a7e36d9d",
+2026-11-09T00:29:39.7676949Z         "scripts/diagnose_development_generalization.py": "11898494cacce97689f8374b0a2be2e89ffe73b14a1c5e150591b5cf52ff883c",
+2026-11-09T00:29:39.7678345Z         "scripts/diagnose_tolerance_calibration.py": "9c49a1ffed7ac547d33ffa6b3592617ff5be672d55043a61d09756c2426fcee5",
+2026-11-09T00:29:39.7679631Z         "scripts/download_marmousi_public.sh": "23f1a7412e4e7507adb2970d1b5c64a4aba2b3f0f1209796b62a0e54f151c85e",
+2026-11-09T00:29:39.7680854Z         "scripts/evaluate_openfwi_stress.py": "318627c883ac54da52158e05aa742b3f1fd01f9165d5068274928ff44f28241b",
+2026-11-09T00:29:39.7682075Z         "scripts/gradient_confirmation.py": "41b333aa12f8e4f1e4a08eda7ee6a679edd68ec78776cf245fff8e160449537f",
+2026-11-09T00:29:39.7683485Z         "scripts/make_grouped_split.py": "c759ce122e3c41d639f8a0e00dbc6cf1edaa55bd8d71a0e73aa669110e74d2f0",
+2026-11-09T00:29:39.7684696Z         "scripts/pod_confirmation.py": "814aca67b3c1bf774c59e112623524933ae2374ffe1098ba75361e6b9f7a609c",
+2026-11-09T00:29:39.7686169Z         "scripts/prepare_grouped_subsurfacegen.py": "40f07f3e6c44c7bcdf5aad67393f39a411aff4b6bbf30552664c38d94c360b21",
+2026-11-09T00:29:39.7687675Z         "scripts/prepare_openfwi_stress.py": "3eed3bb6c797644edc979dc3f49252d93c052461c710c6f9536f9247f4a99b63",
+2026-11-09T00:29:39.7688926Z         "scripts/reproduce_strengthening.sh": "48dbb98e9fb95b46936dc2db27befb2d27781b937ad8151bd44ddd5b5534cfb0",
+2026-11-09T00:29:39.7690314Z         "scripts/run_baseline_study.py": "76dd43504632c230286b0b8c99286a3fe44d7a517af73efbcb3da1a851834ff2",
+2026-11-09T00:29:39.7691531Z         "scripts/run_batched_pod_development.py": "2a813e5b95ab761a65f82183cebad943951102c9fbbbd6c3934add090d5dfe6b",
+2026-11-09T00:29:39.7692820Z         "scripts/run_coarse_adjoint_validation.py": "92c80a1195f6d974cd87d4569d93e7af3287402cb98ed2a03e0159c7c6a69013",
+2026-11-09T00:29:39.7694265Z         "scripts/run_cost_break_even.py": "a03e88003da29ced2af4ed2376e179b5ffcbf13e772196ed5311c21bdaba82a3",
+2026-11-09T00:29:39.7695370Z         "scripts/run_demo.sh": "de363dde3a78278a8c14900a63ebfe6974b8d12c567f6e7a192be047a8a110d0",
+2026-11-09T00:29:39.7696503Z         "scripts/run_devito_real.py": "e899961a9c61d50c0efbd7c5287fe9a96b7d47829d5bd4e929daa67a9aa3f182",
+2026-11-09T00:29:39.7697672Z         "scripts/run_gradient_development.py": "0e3d4456fe62e4ee9571599258ba27b6b813f7ce30a64b79678421e3669bd33a",
+2026-11-09T00:29:39.7698866Z         "scripts/run_heuristic_baselines.py": "987424ddfde41152b6f907e82a19ee58418b79c8b2512b80d9790320d5e4cad6",
+2026-11-09T00:29:39.7700096Z         "scripts/run_historical_transfer.py": "e8a8cd30f98387e4142d7985ab6816550d13705a34aaf9379ce21bdb3d1ebd0c",
+2026-11-09T00:29:39.7701217Z         "scripts/run_openfwi_study.py": "590d432c9b1e05ec8a3168203444a4bef407a357584e56425dca46f120a75fad",
+2026-11-09T00:29:39.7702431Z         "scripts/run_phase1_verification.py": "8aabcd0d0e9272c7eb8ec646c333522ea297f54970e55f61cdff079a61f69acb",
+2026-11-09T00:29:39.7703847Z         "scripts/run_phase2_train_fno.py": "e10fb0dcacb0c83f92c40a74061a0037aa141b6381684e8403a02ee84f433242",
+2026-11-09T00:29:39.7704979Z         "scripts/run_phase2_validate.py": "6ccabc08f8d37048183466af1e87a922d5754ae7071b06c867466dd9f0935b33",
+2026-11-09T00:29:39.7706128Z         "scripts/run_phase3_failure_study.py": "71df1d686dc41bf5946fc5adab4d7a21bcf352a76c7bdd521231dbad35727fac",
+2026-11-09T00:29:39.7707283Z         "scripts/run_phase4_certificate_study.py": "a7012a525af132322d317c2448205c189c55bbb8b6798407e5d421baff60b6cc",
+2026-11-09T00:29:39.7708433Z         "scripts/run_phase5_calibration.py": "f240b218b7dc9bb948e1e3830daee30cc0da199ec012a5d02738c065817b7169",
+2026-11-09T00:29:39.7709601Z         "scripts/run_phase6_adaptive_study.py": "a263f389ceedd7f186f84354cfec74e6644d8cdede687dcd96007de42f517b8e",
+2026-11-09T00:29:39.7710735Z         "scripts/run_phase7_end_to_end.py": "b04016425edd864466b0f1348b71f4d593047af79cd3e26b934054c3c3ec6e8e",
+2026-11-09T00:29:39.7711846Z         "scripts/run_phase8_production_study.py": "c0aefe51b490c9af020f4c2be1bf77c43111384373d98569c1d769caace64501",
+2026-11-09T00:29:39.7713024Z         "scripts/run_phase9_ood_study.py": "f09b1f3d48de72cbe43e838d723080a7e3e8630fee1e36b6af60d9b41fe03254",
+2026-11-09T00:29:39.7714277Z         "scripts/run_pod_development.py": "6bddb7613646f9fe3bd275cba0abe19c2a49848047ab9de6b73945acb6eb1f8b",
+2026-11-09T00:29:39.7715418Z         "scripts/run_real_adaptive_matched_mc.py": "79a7e2291180ca9bc01d65cfc14f3c4bf3266363ab9caa1bac44dddd2c64857b",
+2026-11-09T00:29:39.7716588Z         "scripts/run_real_adaptive_pathwise.py": "4373997e04d3a4c8642b750bf8aca4ecb0158ac6575f0c9fdb3ffcdd60a50ef5",
+2026-11-09T00:29:39.7717740Z         "scripts/run_real_geology_training.py": "43142b67006c77840490cf075e8a36ac9e6e280a91e168e8cbb63aae5512654b",
+2026-11-09T00:29:39.7718837Z         "scripts/run_real_wavecert.py": "caff9e9387bdbabc0aa912faf1ec198b50540e46e74adcf2ec0a94026b11a751",
+2026-11-09T00:29:39.7719992Z         "scripts/run_receiver_controls.py": "ea07011cdea457a785d8bddbcb1f3e3c46caf0fbd42117084dfdb2fc299d6276",
+2026-11-09T00:29:39.7721328Z         "scripts/run_research_audit.py": "c580c1371747e0b81d9cf6c7613241bef7aceb664d0910fa6cefcea380d1b4e8",
+2026-11-09T00:29:39.7722610Z         "scripts/run_stability_benchmark.py": "03928837cd54cde745257769165750e43ee70f8f9c25f58d082a62fd965c9a33",
+2026-11-09T00:29:39.7723964Z         "scripts/select_subsurfacegen_slices.py": "a2e2e658273e9fac723c815bcb5f4269136569c00e87f28a3a129b7f826006ae",
+2026-11-09T00:29:39.7725061Z         "src/wavecert/__init__.py": "de0bb59120c27a66e8c3914a3fda8a53de1b89a30fb2db9e8bcf0052af0df054",
+2026-11-09T00:29:39.7726066Z         "src/wavecert/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+2026-11-09T00:29:39.7727044Z         "src/wavecert/_version.py": "7080f58cb9c2fef8f8f0680c37a61bd4503726c43de73366087991604f131616",
+2026-11-09T00:29:39.7728092Z         "src/wavecert/benchmarks/__init__.py": "3315b356ba8f46b155886b93c79e8c34c293dd65b900cb229ca23d48f6d3b78c",
+2026-11-09T00:29:39.7729211Z         "src/wavecert/benchmarks/marmousi.py": "4e574b062a0cd24bf4f18a2579a26bbb89cb662dfdb58c1e9c1a85624f461822",
+2026-11-09T00:29:39.7730394Z         "src/wavecert/benchmarks/openfwi.py": "e4c83e6075404a79fe3a12ad97e6fd9eafcef9f63ad1ad48e95fa3a5a0e598e0",
+2026-11-09T00:29:39.7731677Z         "src/wavecert/benchmarks/procedural.py": "696666b77bf70f38bc109c9a2fec21e48931b00b14171b8d238f96e79bbef4d0",
+2026-11-09T00:29:39.7732859Z         "src/wavecert/benchmarks/subsurfacegen.py": "1a3e9f754a387a957a467cd19d76446f98c0e845f65044f9a6557c7c9a51d5be",
+2026-11-09T00:29:39.7734277Z         "src/wavecert/certificates/__init__.py": "58f29c2df2190b203a67eeb5f831bc500262c7571763b9caf046c1dbcc893df4",
+2026-11-09T00:29:39.7735501Z         "src/wavecert/certificates/cached_merit_certificate.py": "00ae473b116841804f66164ad97a8e10fd679d4b5ca68430d6947c8c2eb72985",
+2026-11-09T00:29:39.7736786Z         "src/wavecert/certificates/coarse_adjoint.py": "3d4f2d89c37116312f4f80c967ff4bd20d4be474efe60fe65461d758880ee565",
+2026-11-09T00:29:39.7738056Z         "src/wavecert/certificates/coarse_adjoint_batch.py": "786e5d48653b13e6e8d73ba38e9dab8c2860ffd0e943b81e58a39d66f389dce8",
+2026-11-09T00:29:39.7739761Z         "src/wavecert/certificates/deflated_direction.py": "260d8fc691b5029d8d5f54e859bcf020f2d8e2c2c8402614a685a65166a37198",
+2026-11-09T00:29:39.7741180Z         "src/wavecert/certificates/directional.py": "fec69f8a712c1108782449047e8f366d3c562546ebde55be75a26d843d5987b2",
+2026-11-09T00:29:39.7742564Z         "src/wavecert/cli.py": "7b02e01dbb7507345199d97a227d1d90637324ac3da5a6ed6d762545caa74223",
+2026-11-09T00:29:39.7743930Z         "src/wavecert/data/__init__.py": "fca09028afa34083f1b92b0c09b4ad98058417f72f0671c930a201146ff7c981",
+2026-11-09T00:29:39.7745135Z         "src/wavecert/data/real_geology.py": "ceb7ef296f5d6f46ad344b22bde38d4c0919b9849b3d440d4d70af11e8d943d1",
+2026-11-09T00:29:39.7746473Z         "src/wavecert/data/splits.py": "e255e4b329f28169d4ab762fbf45218318487db72fe14adee63bf48f73152a62",
+2026-11-09T00:29:39.7814859Z         "src/wavecert/data/subsurfacegen_selection.py": "934a7bab3712bd5d1462f73bac34cecd46a8da90bf95d4d40b706a3caeceed65",
+2026-11-09T00:29:39.7816197Z         "src/wavecert/data/wavefields.py": "44a023b8062144c572233e12acb72bb8149a6566880adc50179902312e0e112a",
+2026-11-09T00:29:39.7817326Z         "src/wavecert/experiments/__init__.py": "cc6d3a87568c3d6f4890e39f076d861ce60158fbd1405447f3160211dbcec895",
+2026-11-09T00:29:39.7818522Z         "src/wavecert/experiments/ablation.py": "dd49f3a3e489d69823681a488daaa14332628a2f4765b445a9d06957f46f81b5",
+2026-11-09T00:29:39.7819724Z         "src/wavecert/experiments/adaptive_study.py": "3ee233e8cf38bedee5b3d638cd2858715f08246e4b8f6a066197699029fe4320",
+2026-11-09T00:29:39.7820893Z         "src/wavecert/experiments/baseline_study.py": "77bda36229ba2e04e969b3dd02151f2c83dd380514a6eedb10918fb6ca3bbc06",
+2026-11-09T00:29:39.7822157Z         "src/wavecert/experiments/batched_neural_controls.py": "259327cf368937b95d8537b07b97bf49d55d70f85975f41d7059a42c81d1cd72",
+2026-11-09T00:29:39.7823997Z         "src/wavecert/experiments/batched_pod_development.py": "7f62947ed6e111384d5e16bc0727a6bb34dd9ebd8c490caadb13b3bc4ce9ce0a",
+2026-11-09T00:29:39.7825560Z         "src/wavecert/experiments/certificate_calibration.py": "e0ba7288d33d8e7dad8dc7e0c429a8361a085fdfa7b3e0d71caa3206f4f8af2d",
+2026-11-09T00:29:39.7826846Z         "src/wavecert/experiments/certificate_study.py": "55f1f52d0ce77069454c005c17b1f9a28ca807b80f7528328a50fdc82bb24072",
+2026-11-09T00:29:39.7828189Z         "src/wavecert/experiments/coarse_adjoint_validation.py": "d5efcd5c77069047d0cc7d73fdc6d56a32ebb62bc13e92e22a777e50468125f6",
+2026-11-09T00:29:39.7829526Z         "src/wavecert/experiments/coarse_pod_confirmation.py": "0de95cd769d7de30ba32e9f492778b1d73f00c03b9319e8386a0cf41de686187",
+2026-11-09T00:29:39.7830831Z         "src/wavecert/experiments/coarse_runtime_controls.py": "f26ea16014e7924aca622e098e03805d9a3c5b228c0697e994435985ea453448",
+2026-11-09T00:29:39.7832062Z         "src/wavecert/experiments/cost_break_even.py": "fd6f3a1bac36eb7a04691bda5c2139e54ac695f08b0dd85e495513f1da4c1da0",
+2026-11-09T00:29:39.7833493Z         "src/wavecert/experiments/derivative_training.py": "c82c7e32a27e5cf4dcfa9814fe5b4c8438ad1023331e0ae3a24b0c3d0cc45522",
+2026-11-09T00:29:39.7834736Z         "src/wavecert/experiments/devito_study.py": "ad5ae5123607ba92fe573bf6c56616509e6055d28750ab12c237de84a5d5f4b8",
+2026-11-09T00:29:39.7835902Z         "src/wavecert/experiments/end_to_end.py": "b2e37b6f96671be11ec7125a35a1c5dfeeaf0e9e005bdde9403def3f5ed6ded1",
+2026-11-09T00:29:39.7837103Z         "src/wavecert/experiments/evidence_study.py": "e14f9013bd71a11b454a4a8f5e84e8df79c5c449da440adbe173b18b5701629f",
+2026-11-09T00:29:39.7838308Z         "src/wavecert/experiments/failure_study.py": "bc59a3ff119473f142f8d6dcd7e98595713ac21ba22c6656af56fd1b083c14b1",
+2026-11-09T00:29:39.7839537Z         "src/wavecert/experiments/gradient_confirmation.py": "6e3ed63ca3b966560820f0826bdba6ba027e8b4042b5838e506a89750df31149",
+2026-11-09T00:29:39.7840818Z         "src/wavecert/experiments/gradient_development.py": "993670de7902a2ae0b867344803bc950ddbd0c627440c83ce8f74e42f17dcf1b",
+2026-11-09T00:29:39.7842150Z         "src/wavecert/experiments/heuristic_baselines.py": "677ea77c09f7d645c2a4f403e49dedd236f2da216f3d84c95631239b37a82d61",
+2026-11-09T00:29:39.7843609Z         "src/wavecert/experiments/historical_transfer.py": "020eb674e5d193e025acb2919dd20ad75e8b53218c38f8eebdd6491558be618f",
+2026-11-09T00:29:39.7844857Z         "src/wavecert/experiments/ood_study.py": "396fbc2ca081ccee5a9759c325b128cd411bd20a06faa310551251bddcd1d4b8",
+2026-11-09T00:29:39.7846061Z         "src/wavecert/experiments/openfwi_stress.py": "03711c5f6757b59008c5a9d51c65ab684ac7fadc104df5e6b4a71997d849b97a",
+2026-11-09T00:29:39.7847270Z         "src/wavecert/experiments/openfwi_study.py": "124c61847c03ae4a3df61c41598888301a1fbe9b2eae86df1aacee98d596e70a",
+2026-11-09T00:29:39.7848528Z         "src/wavecert/experiments/pod_confirmation.py": "be8116a1124a5a8f5fa1ae006422431c0f021edfe2d7f5c954c047b9c68c8f07",
+2026-11-09T00:29:39.7849811Z         "src/wavecert/experiments/pod_development.py": "d418adbc112886efe9b4f0abce6eb2840aaaca3a3ee0b3dea5fd54f7164f38d3",
+2026-11-09T00:29:39.7851057Z         "src/wavecert/experiments/production_study.py": "5f64317e2ed89ab52630564af195531cd3c2f5769a4324faa1e34afcad8a801c",
+2026-11-09T00:29:39.7852303Z         "src/wavecert/experiments/real_geology_training.py": "b48dd5ac253478bb6e898a45eb88d3e029708f314d875eef1744624cf201d2c7",
+2026-11-09T00:29:39.7853701Z         "src/wavecert/experiments/real_wavecert.py": "5fa2baa9e1364230b57f3f8e2ea31befea2ea538de86425f512f8c701705625f",
+2026-11-09T00:29:39.7854973Z         "src/wavecert/experiments/receiver_controls.py": "b5d47bfe30fc4cf566563db5fb0a86f6df4bbc86635ecd863f417da0cced4df1",
+2026-11-09T00:29:39.7856267Z         "src/wavecert/experiments/residual_coded_controls.py": "0fee0de99d5c535d92985ef23322f9a43af26ca2ca74615e80d09eb0288f88f5",
+2026-11-09T00:29:39.7857479Z         "src/wavecert/experiments/runner.py": "c10ed7ce2b93db806a05d284c04dc09e8618073fad5d9ee59e6d425563151dff",
+2026-11-09T00:29:39.7858863Z         "src/wavecert/experiments/synthetic.py": "1cc5746f72649daf5ee744123de8dc6d754fca78f3a5ff98ed6bfcbf7ac5974a",
+2026-11-09T00:29:39.7860179Z         "src/wavecert/experiments/train_fno.py": "283d473b7420904170bac939be96e6dfb3014367fc38bb1b52ee397bf7c4bf4a",
+2026-11-09T00:29:39.7861247Z         "src/wavecert/metrics.py": "aff3cceddf52c634e39a31a864e4705e8389acba4d79d09badbedd9ca04f6382",
+2026-11-09T00:29:39.7862388Z         "src/wavecert/optimization/__init__.py": "e3a133b64f85ed832fff5967a81ad0d5cf74de8106a1e48ec46e6a90ae7ed506",
+2026-11-09T00:29:39.7863703Z         "src/wavecert/optimization/fwi.py": "a4ccc550aa597d8e8ba630ecde82cd338bc64dbc5538936998ffafff4e618756",
+2026-11-09T00:29:39.7864856Z         "src/wavecert/optimization/paid_descent.py": "b863af87f03c2470fde8d72412b1c89e76e389a528cb7d8b08efe89ceeb3a12c",
+2026-11-09T00:29:39.7866023Z         "src/wavecert/physics/__init__.py": "68248d95659de7888efbf10dc8f410e3ecf21c609e93407bbdfa82f93ec3f592",
+2026-11-09T00:29:39.7867289Z         "src/wavecert/physics/certified_stability.py": "350db67a2d24cbfcf1258e68ec0c8c6521df6114c975298e9dd672bef88a8ce3",
+2026-11-09T00:29:39.7868515Z         "src/wavecert/physics/coarse_batch.py": "6adf41b5b836a1331661a598c4e9b6e5e24ebd35ec659b7d86db95134e22a7be",
+2026-11-09T00:29:39.7869727Z         "src/wavecert/physics/coarse_dst_reference.py": "b62e9dd0845c4b0e57a8ef52927a01d7f3b289b9d3c8d290e3d4f124a46b400f",
+2026-11-09T00:29:39.7870927Z         "src/wavecert/physics/coarse_stability.py": "53e6ab1754966f63b97c62da6c3996b7babbd59648808df6f9412295e46c658a",
+2026-11-09T00:29:39.7872071Z         "src/wavecert/physics/devito_backend.py": "67b91aa2f7ed8c653c1f92b99e4c6e48591b8e47d31588d9e2b19445d6b6060a",
+2026-11-09T00:29:39.7873188Z         "src/wavecert/physics/exact_merit.py": "0fec1f215b28e36017c1e28409d7f7e909a03cbf5b717de5d23eb8d52eb26810",
+2026-11-09T00:29:39.7874450Z         "src/wavecert/physics/helmholtz.py": "caf51b58da24ed6d3633bda4eaaab804714f5c7932d9d5f343644763bc158131",
+2026-11-09T00:29:39.7875693Z         "src/wavecert/physics/independent_verification.py": "a56d932aff9acd9ffb3391e55e73fe9e7407a306e07f37c52522b82794d9db28",
+2026-11-09T00:29:39.7877005Z         "src/wavecert/physics/production.py": "f0eb2854a4d07a0d82ac41b2c28fe04052826f5b4ced3b71548df9151c6fa138",
+2026-11-09T00:29:39.7878131Z         "src/wavecert/physics/receiver_oracle.py": "918ceaf5596fa8452b1e29357c8e694e7ea83b0e9a162f86f6a03f28714c3e6b",
+2026-11-09T00:29:39.7879266Z         "src/wavecert/physics/residual_coded.py": "5606d1cdcf30937df9a82e2819992105826bef04e60b28f9989137a076ceb70b",
+2026-11-09T00:29:39.7880403Z         "src/wavecert/physics/verification.py": "518c3b249957f23a9754b9482437309fda96a50548726a577e4486aad17cafb2",
+2026-11-09T00:29:39.7881461Z         "src/wavecert/provenance.py": "9e54e51a311aa9adab6a4572c45456695bc7f228149495779e556a101345e63c",
+2026-11-09T00:29:39.7882532Z         "src/wavecert/repair/__init__.py": "a60d11f7e6d9b180193b542c62bce2aad0c6e87f9f2eeffcc570e8e5afbe4401",
+2026-11-09T00:29:39.7883877Z         "src/wavecert/repair/adaptive.py": "39ccc9fa14610558aeca2d3bd4020511fd9a59ab65984ce29b51867b6ed4c405",
+2026-11-09T00:29:39.7885026Z         "src/wavecert/repair/policies.py": "ae59f2e9e290c3795aa81bef4198510e894d40ee8a02764524e96b213e24bc2d",
+2026-11-09T00:29:39.7886173Z         "src/wavecert/statistics/__init__.py": "c28a5e0deb7a2808b35b8f54e2f7f401c11424be8f8955ab263b9a78f6738364",
+2026-11-09T00:29:39.7887315Z         "src/wavecert/statistics/audit.py": "fe2751439a2b9554daaeebd075072e39b727fbf094c5b722370da34b7a6175bb",
+2026-11-09T00:29:39.7888471Z         "src/wavecert/statistics/conformal.py": "50a983a6f5560e12374ddd7461605f3600f18852f6d19abd6093f1cfae8a2fdb",
+2026-11-09T00:29:39.7889681Z         "src/wavecert/statistics/finite_population.py": "590c7f9d61dffdf4e3308516854f2f6e718e05e22870be274393db7559ab44a1",
+2026-11-09T00:29:39.7890893Z         "src/wavecert/statistics/inference.py": "75bd6e9a82dc2d0802097710b1161cb1799b22692fb41de1eb088d7d7040d608",
+2026-11-09T00:29:39.7892240Z         "src/wavecert/statistics/pathwise.py": "87181a6e818a29fcbd30ecda30f40985edd300b1590b5badb418396e2b6c0863",
+2026-11-09T00:29:39.7893700Z         "src/wavecert/statistics/tolerance.py": "e67c7274a4949a5bb1b724844d811e3da948278600b98a81d40d83eeaeb1c2c2",
+2026-11-09T00:29:39.7894842Z         "src/wavecert/surrogates/__init__.py": "fc6e735e3c35edfa11fe9faa5b19fc13a6691778856c0ae12123f6c03f418c3b",
+2026-11-09T00:29:39.7895965Z         "src/wavecert/surrogates/base.py": "6a128b568254bda4e4c384547f6ccdcc8795d689925c507ebdcb4db29785307e",
+2026-11-09T00:29:39.7897025Z         "src/wavecert/surrogates/fno.py": "56760590e3ac351180643f7bbd2f5decfe91cb21265775ee61cbd8721020f8cc",
+2026-11-09T00:29:39.7898332Z         "src/wavecert/surrogates/low_fidelity.py": "b766ec44d7667c4a4bbc9f8837d586e7f391ffb91e97533917aeb68bba8b5f5c",
+2026-11-09T00:29:39.7899449Z         "src/wavecert/surrogates/pod.py": "b613dc2e62ba24f65a9c7587d40c3d1af4f7fc0d2e5fcab8daee649908bcd5ca",
+2026-11-09T00:29:39.7900526Z         "src/wavecert/surrogates/pod_batch.py": "c45b15f557e414bb62f53ee18a49d18526a158410e5b39bc324c6ac19623a923",
+2026-11-09T00:29:39.7901725Z         "src/wavecert/surrogates/torch_adapter.py": "e8274a119af40ea3aa7962f235be777eaacc6d4e7cc81aeffd1ce9c7d35caf46"
+2026-11-09T00:29:39.7902552Z       },
+2026-11-09T00:29:39.7902827Z       "python": "3.12.16",
+2026-11-09T00:29:39.7903274Z       "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+2026-11-09T00:29:39.7903951Z       "machine": "x86_64",
+2026-11-09T00:29:39.7904278Z       "packages": {
+2026-11-09T00:29:39.7904590Z         "numpy": "2.5.4",
+2026-11-09T00:29:39.7904899Z         "scipy": "1.18.1",
+2026-11-09T00:29:39.7905213Z         "torch": "2.15.0",
+2026-11-09T00:29:39.7905535Z         "matplotlib": "3.11.2",
+2026-11-09T00:29:39.7905887Z         "pandas": "3.1.1",
+2026-11-09T00:29:39.7906206Z         "pytest": "9.2.0",
+2026-11-09T00:29:39.7906521Z         "h5py": "3.16.0",
+2026-11-09T00:29:39.7906850Z         "hdf5plugin": null,
+2026-11-09T00:29:39.7907198Z         "pyarrow": "26.0.1",
+2026-11-09T00:29:39.7907532Z         "devito": null
+2026-11-09T00:29:39.7907843Z       },
+2026-11-09T00:29:39.7908134Z       "thread_environment": {
+2026-11-09T00:29:39.7908499Z         "OMP_NUM_THREADS": null,
+2026-11-09T00:29:39.7908871Z         "MKL_NUM_THREADS": null,
+2026-11-09T00:29:39.7909230Z         "OPENBLAS_NUM_THREADS": null,
+2026-11-09T00:29:39.7909633Z         "VECLIB_MAXIMUM_THREADS": null,
+2026-11-09T00:29:39.7910028Z         "NUMEXPR_NUM_THREADS": null
+2026-11-09T00:29:39.7910379Z       },
+2026-11-09T00:29:39.7910644Z       "torch_threads": 1
+2026-11-09T00:29:39.7910949Z     }
+2026-11-09T00:29:39.7911195Z   },
+2026-11-09T00:29:39.7911490Z   "pathwise_scale": 0.0006897688477413517,
+2026-11-09T00:29:39.7911926Z   "comparisons": {
+2026-11-09T00:29:39.7912246Z     "clean": {
+2026-11-09T00:29:39.7912716Z       "exact": {
+2026-11-09T00:29:39.7913003Z         "n_models": 1,
+2026-11-09T00:29:39.7913446Z         "objective_ratio": {
+2026-11-09T00:29:39.7913786Z           "mean": 0.7160949216967679,
+2026-11-09T00:29:39.7914134Z           "ci95": null,
+2026-11-09T00:29:39.7914462Z           "n_independent_models": 1
+2026-11-09T00:29:39.7914820Z         },
+2026-11-09T00:29:39.7915095Z         "final_model_error": {
+2026-11-09T00:29:39.7915436Z           "mean": 0.053199418313198826,
+2026-11-09T00:29:39.7915785Z           "ci95": null,
+2026-11-09T00:29:39.7916100Z           "n_independent_models": 1
+2026-11-09T00:29:39.7916447Z         },
+2026-11-09T00:29:39.7916711Z         "algorithm_seconds": {
+2026-11-09T00:29:39.7917046Z           "mean": 0.004031341999990445,
+2026-11-09T00:29:39.7917397Z           "ci95": null,
+2026-11-09T00:29:39.7917722Z           "n_independent_models": 1
+2026-11-09T00:29:39.7918075Z         },
+2026-11-09T00:29:39.7918346Z         "objective_increases": 0,
+2026-11-09T00:29:39.7918721Z         "mean_exact_gradient_blocks": 4.0,
+2026-11-09T00:29:39.7919122Z         "mean_online_adjoint_rhs": 4.0,
+2026-11-09T00:29:39.7919561Z         "mean_online_analytic_bound_evaluations": 0.0,
+2026-11-09T00:29:39.7920021Z         "mean_online_cache_hits": 8.0,
+2026-11-09T00:29:39.7920772Z         "mean_online_dense_inverse_rhs": 0.0,
+2026-11-09T00:29:39.7921212Z         "mean_online_factorizations": 4.0,
+2026-11-09T00:29:39.7921607Z         "mean_online_forward_rhs": 8.0,
+2026-11-09T00:29:39.7921988Z         "mean_online_stability_rhs": 0.0,
+2026-11-09T00:29:39.7922409Z         "mean_online_svd_evaluations": 0.0,
+2026-11-09T00:29:39.7922818Z         "mean_online_tangent_rhs": 0.0,
+2026-11-09T00:29:39.7923208Z         "paired_runtime_ratio_to_exact": {
+2026-11-09T00:29:39.7923742Z           "mean": 1.0,
+2026-11-09T00:29:39.7924020Z           "ci95": null,
+2026-11-09T00:29:39.7924322Z           "n_independent_models": 1
+2026-11-09T00:29:39.7924667Z         },
+2026-11-09T00:29:39.7924990Z         "paired_final_model_error_difference_to_exact": {
+2026-11-09T00:29:39.7925436Z           "mean": 0.0,
+2026-11-09T00:29:39.7925740Z           "ci95": null,
+2026-11-09T00:29:39.7926058Z           "n_independent_models": 1
+2026-11-09T00:29:39.7926402Z         },
+2026-11-09T00:29:39.7926751Z         "paired_model_error_difference_to_random-repair": {
+2026-11-09T00:29:39.7927224Z           "mean": -0.00011579956738055203,
+2026-11-09T00:29:39.7927602Z           "ci95": null,
+2026-11-09T00:29:39.7927928Z           "n_independent_models": 1
+2026-11-09T00:29:39.7928274Z         },
+2026-11-09T00:29:39.7928592Z         "paired_runtime_ratio_to_random-repair": {
+2026-11-09T00:29:39.7929033Z           "mean": 0.18768338139186433,
+2026-11-09T00:29:39.7929386Z           "ci95": null,
+2026-11-09T00:29:39.7929725Z           "n_independent_models": 1
+2026-11-09T00:29:39.7930070Z         },
+2026-11-09T00:29:39.7930432Z         "paired_model_error_difference_to_residual-repair": {
+2026-11-09T00:29:39.7930917Z           "mean": -0.0003563705991471572,
+2026-11-09T00:29:39.7931282Z           "ci95": null,
+2026-11-09T00:29:39.7931606Z           "n_independent_models": 1
+2026-11-09T00:29:39.7931950Z         },
+2026-11-09T00:29:39.7932262Z         "paired_runtime_ratio_to_residual-repair": {
+2026-11-09T00:29:39.7932707Z           "mean": 0.17521554116439506,
+2026-11-09T00:29:39.7933070Z           "ci95": null,
+2026-11-09T00:29:39.7933550Z           "n_independent_models": 1
+2026-11-09T00:29:39.7933901Z         }
+2026-11-09T00:29:39.7934145Z       },
+2026-11-09T00:29:39.7934409Z       "neural-only": {
+2026-11-09T00:29:39.7934717Z         "n_models": 1,
+2026-11-09T00:29:39.7935020Z         "objective_ratio": {
+2026-11-09T00:29:39.7935370Z           "mean": 0.7923895268810045,
+2026-11-09T00:29:39.7935733Z           "ci95": null,
+2026-11-09T00:29:39.7936049Z           "n_independent_models": 1
+2026-11-09T00:29:39.7936393Z         },
+2026-11-09T00:29:39.7936660Z         "final_model_error": {
+2026-11-09T00:29:39.7937013Z           "mean": 0.05360584034794715,
+2026-11-09T00:29:39.7937363Z           "ci95": null,
+2026-11-09T00:29:39.7937674Z           "n_independent_models": 1
+2026-11-09T00:29:39.7938011Z         },
+2026-11-09T00:29:39.7938275Z         "algorithm_seconds": {
+2026-11-09T00:29:39.7938625Z           "mean": 0.02171099599999593,
+2026-11-09T00:29:39.7938985Z           "ci95": null,
+2026-11-09T00:29:39.7939304Z           "n_independent_models": 1
+2026-11-09T00:29:39.7939639Z         },
+2026-11-09T00:29:39.7939925Z         "objective_increases": 0,
+2026-11-09T00:29:39.7940281Z         "mean_exact_gradient_blocks": 0.0,
+2026-11-09T00:29:39.7940672Z         "mean_online_adjoint_rhs": 0.0,
+2026-11-09T00:29:39.7941095Z         "mean_online_analytic_bound_evaluations": 0.0,
+2026-11-09T00:29:39.7941556Z         "mean_online_cache_hits": 4.0,
+2026-11-09T00:29:39.7941954Z         "mean_online_dense_inverse_rhs": 0.0,
+2026-11-09T00:29:39.7942373Z         "mean_online_factorizations": 4.0,
+2026-11-09T00:29:39.7942777Z         "mean_online_forward_rhs": 8.0,
+2026-11-09T00:29:39.7943193Z         "mean_online_stability_rhs": 0.0,
+2026-11-09T00:29:39.7943805Z         "mean_online_svd_evaluations": 0.0,
+2026-11-09T00:29:39.7944216Z         "mean_online_tangent_rhs": 0.0,
+2026-11-09T00:29:39.7944624Z         "paired_runtime_ratio_to_exact": {
+2026-11-09T00:29:39.7945441Z           "mean": 5.385550518920843,
+2026-11-09T00:29:39.7945808Z           "ci95": null,
+2026-11-09T00:29:39.7946126Z           "n_independent_models": 1
+2026-11-09T00:29:39.7946479Z         },
+2026-11-09T00:29:39.7946832Z         "paired_final_model_error_difference_to_exact": {
+2026-11-09T00:29:39.7947289Z           "mean": 0.0004064220347483258,
+2026-11-09T00:29:39.7947661Z           "ci95": null,
+2026-11-09T00:29:39.7947979Z           "n_independent_models": 1
+2026-11-09T00:29:39.7948317Z         },
+2026-11-09T00:29:39.7948663Z         "paired_model_error_difference_to_random-repair": {
+2026-11-09T00:29:39.7949133Z           "mean": 0.00029062246736777375,
+2026-11-09T00:29:39.7949509Z           "ci95": null,
+2026-11-09T00:29:39.7949835Z           "n_independent_models": 1
+2026-11-09T00:29:39.7950179Z         },
+2026-11-09T00:29:39.7950497Z         "paired_runtime_ratio_to_random-repair": {
+2026-11-09T00:29:39.7950935Z           "mean": 1.0107783320477732,
+2026-11-09T00:29:39.7951315Z           "ci95": null,
+2026-11-09T00:29:39.7951631Z           "n_independent_models": 1
+2026-11-09T00:29:39.7951983Z         },
+2026-11-09T00:29:39.7952343Z         "paired_model_error_difference_to_residual-repair": {
+2026-11-09T00:29:39.7952834Z           "mean": 5.005143560116859e-05,
+2026-11-09T00:29:39.7953212Z           "ci95": null,
+2026-11-09T00:29:39.7953697Z           "n_independent_models": 1
+2026-11-09T00:29:39.7954036Z         },
+2026-11-09T00:29:39.7954357Z         "paired_runtime_ratio_to_residual-repair": {
+2026-11-09T00:29:39.7954790Z           "mean": 0.9436321486409041,
+2026-11-09T00:29:39.7955157Z           "ci95": null,
+2026-11-09T00:29:39.7955466Z           "n_independent_models": 1
+2026-11-09T00:29:39.7955821Z         }
+2026-11-09T00:29:39.7956075Z       },
+2026-11-09T00:29:39.7956359Z       "random-repair": {
+2026-11-09T00:29:39.7956689Z         "n_models": 1,
+2026-11-09T00:29:39.7957004Z         "objective_ratio": {
+2026-11-09T00:29:39.7957349Z           "mean": 0.7492062556183398,
+2026-11-09T00:29:39.7957703Z           "ci95": null,
+2026-11-09T00:29:39.7958024Z           "n_independent_models": 1
+2026-11-09T00:29:39.7958368Z         },
+2026-11-09T00:29:39.7958641Z         "final_model_error": {
+2026-11-09T00:29:39.7958992Z           "mean": 0.05331521788057938,
+2026-11-09T00:29:39.7959355Z           "ci95": null,
+2026-11-09T00:29:39.7959673Z           "n_independent_models": 1
+2026-11-09T00:29:39.7960024Z         },
+2026-11-09T00:29:39.7960301Z         "algorithm_seconds": {
+2026-11-09T00:29:39.7960666Z           "mean": 0.02147948300000735,
+2026-11-09T00:29:39.7961022Z           "ci95": null,
+2026-11-09T00:29:39.7961343Z           "n_independent_models": 1
+2026-11-09T00:29:39.7961702Z         },
+2026-11-09T00:29:39.7961985Z         "objective_increases": 0,
+2026-11-09T00:29:39.7962365Z         "mean_exact_gradient_blocks": 2.0,
+2026-11-09T00:29:39.7962769Z         "mean_online_adjoint_rhs": 2.0,
+2026-11-09T00:29:39.7963207Z         "mean_online_analytic_bound_evaluations": 0.0,
+2026-11-09T00:29:39.7963887Z         "mean_online_cache_hits": 8.0,
+2026-11-09T00:29:39.7964312Z         "mean_online_dense_inverse_rhs": 0.0,
+2026-11-09T00:29:39.7964748Z         "mean_online_factorizations": 4.0,
+2026-11-09T00:29:39.7965172Z         "mean_online_forward_rhs": 10.0,
+2026-11-09T00:29:39.7965586Z         "mean_online_stability_rhs": 0.0,
+2026-11-09T00:29:39.7965985Z         "mean_online_svd_evaluations": 0.0,
+2026-11-09T00:29:39.7966414Z         "mean_online_tangent_rhs": 0.0,
+2026-11-09T00:29:39.7966870Z         "paired_runtime_ratio_to_exact": {
+2026-11-09T00:29:39.7967267Z           "mean": 5.328122248139269,
+2026-11-09T00:29:39.7967626Z           "ci95": null,
+2026-11-09T00:29:39.7967949Z           "n_independent_models": 1
+2026-11-09T00:29:39.7968314Z         },
+2026-11-09T00:29:39.7968650Z         "paired_final_model_error_difference_to_exact": {
+2026-11-09T00:29:39.7969138Z           "mean": 0.00011579956738055203,
+2026-11-09T00:29:39.7969519Z           "ci95": null,
+2026-11-09T00:29:39.7970176Z           "n_independent_models": 1
+2026-11-09T00:29:39.7970535Z         },
+2026-11-09T00:29:39.7970885Z         "paired_model_error_difference_to_random-repair": {
+2026-11-09T00:29:39.7971338Z           "mean": 0.0,
+2026-11-09T00:29:39.7971637Z           "ci95": null,
+2026-11-09T00:29:39.7971965Z           "n_independent_models": 1
+2026-11-09T00:29:39.7972324Z         },
+2026-11-09T00:29:39.7972652Z         "paired_runtime_ratio_to_random-repair": {
+2026-11-09T00:29:39.7973127Z           "mean": 1.0,
+2026-11-09T00:29:39.7973624Z           "ci95": null,
+2026-11-09T00:29:39.7973951Z           "n_independent_models": 1
+2026-11-09T00:29:39.7974323Z         },
+2026-11-09T00:29:39.7974686Z         "paired_model_error_difference_to_residual-repair": {
+2026-11-09T00:29:39.7975169Z           "mean": -0.00024057103176660516,
+2026-11-09T00:29:39.7975544Z           "ci95": null,
+2026-11-09T00:29:39.7975870Z           "n_independent_models": 1
+2026-11-09T00:29:39.7976226Z         },
+2026-11-09T00:29:39.7976569Z         "paired_runtime_ratio_to_residual-repair": {
+2026-11-09T00:29:39.7977080Z           "mean": 0.9335698230977753,
+2026-11-09T00:29:39.7977445Z           "ci95": null,
+2026-11-09T00:29:39.7977753Z           "n_independent_models": 1
+2026-11-09T00:29:39.7978092Z         }
+2026-11-09T00:29:39.7978338Z       },
+2026-11-09T00:29:39.7978617Z       "residual-repair": {
+2026-11-09T00:29:39.7978946Z         "n_models": 1,
+2026-11-09T00:29:39.7979269Z         "objective_ratio": {
+2026-11-09T00:29:39.7979615Z           "mean": 0.7645169356860261,
+2026-11-09T00:29:39.7979973Z           "ci95": null,
+2026-11-09T00:29:39.7980297Z           "n_independent_models": 1
+2026-11-09T00:29:39.7980650Z         },
+2026-11-09T00:29:39.7980926Z         "final_model_error": {
+2026-11-09T00:29:39.7981275Z           "mean": 0.053555788912345983,
+2026-11-09T00:29:39.7981643Z           "ci95": null,
+2026-11-09T00:29:39.7981961Z           "n_independent_models": 1
+2026-11-09T00:29:39.7982303Z         },
+2026-11-09T00:29:39.7982578Z         "algorithm_seconds": {
+2026-11-09T00:29:39.7982922Z           "mean": 0.023007902000017566,
+2026-11-09T00:29:39.7983278Z           "ci95": null,
+2026-11-09T00:29:39.7983768Z           "n_independent_models": 1
+2026-11-09T00:29:39.7984115Z         },
+2026-11-09T00:29:39.7984398Z         "objective_increases": 0,
+2026-11-09T00:29:39.7984775Z         "mean_exact_gradient_blocks": 2.0,
+2026-11-09T00:29:39.7985176Z         "mean_online_adjoint_rhs": 2.0,
+2026-11-09T00:29:39.7985618Z         "mean_online_analytic_bound_evaluations": 0.0,
+2026-11-09T00:29:39.7986068Z         "mean_online_cache_hits": 8.0,
+2026-11-09T00:29:39.7986476Z         "mean_online_dense_inverse_rhs": 0.0,
+2026-11-09T00:29:39.7986904Z         "mean_online_factorizations": 4.0,
+2026-11-09T00:29:39.7987323Z         "mean_online_forward_rhs": 10.0,
+2026-11-09T00:29:39.7987737Z         "mean_online_stability_rhs": 0.0,
+2026-11-09T00:29:39.7988143Z         "mean_online_svd_evaluations": 0.0,
+2026-11-09T00:29:39.7988576Z         "mean_online_tangent_rhs": 0.0,
+2026-11-09T00:29:39.7988988Z         "paired_runtime_ratio_to_exact": {
+2026-11-09T00:29:39.7989395Z           "mean": 5.707256293331624,
+2026-11-09T00:29:39.7989752Z           "ci95": null,
+2026-11-09T00:29:39.7990065Z           "n_independent_models": 1
+2026-11-09T00:29:39.7990407Z         },
+2026-11-09T00:29:39.7990750Z         "paired_final_model_error_difference_to_exact": {
+2026-11-09T00:29:39.7991223Z           "mean": 0.0003563705991471572,
+2026-11-09T00:29:39.7991586Z           "ci95": null,
+2026-11-09T00:29:39.7991927Z           "n_independent_models": 1
+2026-11-09T00:29:39.7992280Z         },
+2026-11-09T00:29:39.7992633Z         "paired_model_error_difference_to_random-repair": {
+2026-11-09T00:29:39.7993110Z           "mean": 0.00024057103176660516,
+2026-11-09T00:29:39.7993657Z           "ci95": null,
+2026-11-09T00:29:39.7993986Z           "n_independent_models": 1
+2026-11-09T00:29:39.7994331Z         },
+2026-11-09T00:29:39.7994835Z         "paired_runtime_ratio_to_random-repair": {
+2026-11-09T00:29:39.7995491Z           "mean": 1.0711571596024771,
+2026-11-09T00:29:39.7995851Z           "ci95": null,
+2026-11-09T00:29:39.7996161Z           "n_independent_models": 1
+2026-11-09T00:29:39.7996499Z         },
+2026-11-09T00:29:39.7996857Z         "paired_model_error_difference_to_residual-repair": {
+2026-11-09T00:29:39.7997317Z           "mean": 0.0,
+2026-11-09T00:29:39.7997635Z           "ci95": null,
+2026-11-09T00:29:39.7997951Z           "n_independent_models": 1
+2026-11-09T00:29:39.7998298Z         },
+2026-11-09T00:29:39.7998626Z         "paired_runtime_ratio_to_residual-repair": {
+2026-11-09T00:29:39.7999056Z           "mean": 1.0,
+2026-11-09T00:29:39.7999362Z           "ci95": null,
+2026-11-09T00:29:39.7999683Z           "n_independent_models": 1
+2026-11-09T00:29:39.8000019Z         }
+2026-11-09T00:29:39.8000267Z       },
+2026-11-09T00:29:39.8000552Z       "periodic-exact": {
+2026-11-09T00:29:39.8000883Z         "n_models": 1,
+2026-11-09T00:29:39.8001224Z         "objective_ratio": {
+2026-11-09T00:29:39.8001586Z           "mean": 0.7160949216967679,
+2026-11-09T00:29:39.8001946Z           "ci95": null,
+2026-11-09T00:29:39.8002257Z           "n_independent_models": 1
+2026-11-09T00:29:39.8002600Z         },
+2026-11-09T00:29:39.8002875Z         "final_model_error": {
+2026-11-09T00:29:39.8003220Z           "mean": 0.053199418313198826,
+2026-11-09T00:29:39.8003744Z           "ci95": null,
+2026-11-09T00:29:39.8004059Z           "n_independent_models": 1
+2026-11-09T00:29:39.8004394Z         },
+2026-11-09T00:29:39.8004663Z         "algorithm_seconds": {
+2026-11-09T00:29:39.8005010Z           "mean": 0.011467251999988548,
+2026-11-09T00:29:39.8005369Z           "ci95": null,
+2026-11-09T00:29:39.8005677Z           "n_independent_models": 1
+2026-11-09T00:29:39.8006018Z         },
+2026-11-09T00:29:39.8006292Z         "objective_increases": 0,
+2026-11-09T00:29:39.8006675Z         "mean_exact_gradient_blocks": 4.0,
+2026-11-09T00:29:39.8007074Z         "mean_online_adjoint_rhs": 4.0,
+2026-11-09T00:29:39.8007521Z         "mean_online_analytic_bound_evaluations": 0.0,
+2026-11-09T00:29:39.8007974Z         "mean_online_cache_hits": 8.0,
+2026-11-09T00:29:39.8008375Z         "mean_online_dense_inverse_rhs": 0.0,
+2026-11-09T00:29:39.8008799Z         "mean_online_factorizations": 4.0,
+2026-11-09T00:29:39.8009210Z         "mean_online_forward_rhs": 8.0,
+2026-11-09T00:29:39.8009602Z         "mean_online_stability_rhs": 0.0,
+2026-11-09T00:29:39.8010027Z         "mean_online_svd_evaluations": 0.0,
+2026-11-09T00:29:39.8010486Z         "mean_online_tangent_rhs": 0.0,
+2026-11-09T00:29:39.8010885Z         "paired_runtime_ratio_to_exact": {
+2026-11-09T00:29:39.8011279Z           "mean": 2.8445247265093676,
+2026-11-09T00:29:39.8011629Z           "ci95": null,
+2026-11-09T00:29:39.8011952Z           "n_independent_models": 1
+2026-11-09T00:29:39.8012297Z         },
+2026-11-09T00:29:39.8012632Z         "paired_final_model_error_difference_to_exact": {
+2026-11-09T00:29:39.8013068Z           "mean": 0.0,
+2026-11-09T00:29:39.8013531Z           "ci95": null,
+2026-11-09T00:29:39.8013853Z           "n_independent_models": 1
+2026-11-09T00:29:39.8014198Z         },
+2026-11-09T00:29:39.8014543Z         "paired_model_error_difference_to_random-repair": {
+2026-11-09T00:29:39.8015001Z           "mean": -0.00011579956738055203,
+2026-11-09T00:29:39.8015364Z           "ci95": null,
+2026-11-09T00:29:39.8015684Z           "n_independent_models": 1
+2026-11-09T00:29:39.8016034Z         },
+2026-11-09T00:29:39.8016353Z         "paired_runtime_ratio_to_random-repair": {
+2026-11-09T00:29:39.8016773Z           "mean": 0.5338700191240462,
+2026-11-09T00:29:39.8017127Z           "ci95": null,
+2026-11-09T00:29:39.8017439Z           "n_independent_models": 1
+2026-11-09T00:29:39.8017778Z         },
+2026-11-09T00:29:39.8018150Z         "paired_model_error_difference_to_residual-repair": {
+2026-11-09T00:29:39.8018688Z           "mean": -0.0003563705991471572,
+2026-11-09T00:29:39.8019100Z           "ci95": null,
+2026-11-09T00:29:39.8019626Z           "n_independent_models": 1
+2026-11-09T00:29:39.8020138Z         },
+2026-11-09T00:29:39.8020456Z         "paired_runtime_ratio_to_residual-repair": {
+2026-11-09T00:29:39.8020900Z           "mean": 0.4984049393108417,
+2026-11-09T00:29:39.8021251Z           "ci95": null,
+2026-11-09T00:29:39.8021585Z           "n_independent_models": 1
+2026-11-09T00:29:39.8021936Z         }
+2026-11-09T00:29:39.8022182Z       },
+2026-11-09T00:29:39.8022463Z       "conformal-selective": {
+2026-11-09T00:29:39.8022811Z         "n_models": 1,
+2026-11-09T00:29:39.8023126Z         "objective_ratio": {
+2026-11-09T00:29:39.8024019Z           "mean": 0.7923895268810045,
+2026-11-09T00:29:39.8024443Z           "ci95": null,
+2026-11-09T00:29:39.8024746Z           "n_independent_models": 1
+2026-11-09T00:29:39.8025053Z         },
+2026-11-09T00:29:39.8025289Z         "final_model_error": {
+2026-11-09T00:29:39.8025586Z           "mean": 0.05360584034794715,
+2026-11-09T00:29:39.8025884Z           "ci95": null,
+2026-11-09T00:29:39.8026177Z           "n_independent_models": 1
+2026-11-09T00:29:39.8026465Z         },
+2026-11-09T00:29:39.8026696Z         "algorithm_seconds": {
+2026-11-09T00:29:39.8026980Z           "mean": 0.07128202999999189,
+2026-11-09T00:29:39.8027276Z           "ci95": null,
+2026-11-09T00:29:39.8027534Z           "n_independent_models": 1
+2026-11-09T00:29:39.8027813Z         },
+2026-11-09T00:29:39.8028043Z         "objective_increases": 0,
+2026-11-09T00:29:39.8028358Z         "mean_exact_gradient_blocks": 0.0,
+2026-11-09T00:29:39.8028693Z         "mean_online_adjoint_rhs": 0.0,
+2026-11-09T00:29:39.8029061Z         "mean_online_analytic_bound_evaluations": 0.0,
+2026-11-09T00:29:39.8029445Z         "mean_online_cache_hits": 8.0,
+2026-11-09T00:29:39.8029846Z         "mean_online_dense_inverse_rhs": 0.0,
+2026-11-09T00:29:39.8030196Z         "mean_online_factorizations": 4.0,
+2026-11-09T00:29:39.8030525Z         "mean_online_forward_rhs": 8.0,
+2026-11-09T00:29:39.8030842Z         "mean_online_stability_rhs": 48.0,
+2026-11-09T00:29:39.8031175Z         "mean_online_svd_evaluations": 4.0,
+2026-11-09T00:29:39.8031499Z         "mean_online_tangent_rhs": 0.0,
+2026-11-09T00:29:39.8031814Z         "paired_runtime_ratio_to_exact": {
+2026-11-09T00:29:39.8032127Z           "mean": 17.681960498553792,
+2026-11-09T00:29:39.8032411Z           "ci95": null,
+2026-11-09T00:29:39.8032662Z           "n_independent_models": 1
+2026-11-09T00:29:39.8032945Z         },
+2026-11-09T00:29:39.8033215Z         "paired_final_model_error_difference_to_exact": {
+2026-11-09T00:29:39.8033714Z           "mean": 0.0004064220347483258,
+2026-11-09T00:29:39.8034004Z           "ci95": null,
+2026-11-09T00:29:39.8034254Z           "n_independent_models": 1
+2026-11-09T00:29:39.8034533Z         },
+2026-11-09T00:29:39.8034809Z         "paired_model_error_difference_to_random-repair": {
+2026-11-09T00:29:39.8035183Z           "mean": 0.00029062246736777375,
+2026-11-09T00:29:39.8035479Z           "ci95": null,
+2026-11-09T00:29:39.8035736Z           "n_independent_models": 1
+2026-11-09T00:29:39.8036024Z         },
+2026-11-09T00:29:39.8036276Z         "paired_runtime_ratio_to_random-repair": {
+2026-11-09T00:29:39.8036626Z           "mean": 3.3186101360059506,
+2026-11-09T00:29:39.8036915Z           "ci95": null,
+2026-11-09T00:29:39.8037168Z           "n_independent_models": 1
+2026-11-09T00:29:39.8037446Z         },
+2026-11-09T00:29:39.8037733Z         "paired_model_error_difference_to_residual-repair": {
+2026-11-09T00:29:39.8038136Z           "mean": 5.005143560116859e-05,
+2026-11-09T00:29:39.8038432Z           "ci95": null,
+2026-11-09T00:29:39.8038685Z           "n_independent_models": 1
+2026-11-09T00:29:39.8038961Z         },
+2026-11-09T00:29:39.8039213Z         "paired_runtime_ratio_to_residual-repair": {
+2026-11-09T00:29:39.8039560Z           "mean": 3.098154277601559,
+2026-11-09T00:29:39.8039847Z           "ci95": null,
+2026-11-09T00:29:39.8040109Z           "n_independent_models": 1
+2026-11-09T00:29:39.8040384Z         }
+2026-11-09T00:29:39.8040553Z       },
+2026-11-09T00:29:39.8041116Z       "conformal-selective-guarded": {
+2026-11-09T00:29:39.8041381Z         "n_models": 1,
+2026-11-09T00:29:39.8041626Z         "objective_ratio": {
+2026-11-09T00:29:39.8041858Z           "mean": 0.7923895268810045,
+2026-11-09T00:29:39.8042091Z           "ci95": null,
+2026-11-09T00:29:39.8042300Z           "n_independent_models": 1
+2026-11-09T00:29:39.8042530Z         },
+2026-11-09T00:29:39.8042720Z         "final_model_error": {
+2026-11-09T00:29:39.8042944Z           "mean": 0.05360584034794715,
+2026-11-09T00:29:39.8043174Z           "ci95": null,
+2026-11-09T00:29:39.8043635Z           "n_independent_models": 1
+2026-11-09T00:29:39.8043871Z         },
+2026-11-09T00:29:39.8044051Z         "algorithm_seconds": {
+2026-11-09T00:29:39.8044274Z           "mean": 0.07134580999999685,
+2026-11-09T00:29:39.8044500Z           "ci95": null,
+2026-11-09T00:29:39.8044703Z           "n_independent_models": 1
+2026-11-09T00:29:39.8044930Z         },
+2026-11-09T00:29:39.8045121Z         "objective_increases": 0,
+2026-11-09T00:29:39.8045386Z         "mean_exact_gradient_blocks": 0.0,
+2026-11-09T00:29:39.8045655Z         "mean_online_adjoint_rhs": 0.0,
+2026-11-09T00:29:39.8045944Z         "mean_online_analytic_bound_evaluations": 0.0,
+2026-11-09T00:29:39.8046242Z         "mean_online_cache_hits": 8.0,
+2026-11-09T00:29:39.8046504Z         "mean_online_dense_inverse_rhs": 0.0,
+2026-11-09T00:29:39.8046782Z         "mean_online_factorizations": 4.0,
+2026-11-09T00:29:39.8047046Z         "mean_online_forward_rhs": 8.0,
+2026-11-09T00:29:39.8047303Z         "mean_online_stability_rhs": 48.0,
+2026-11-09T00:29:39.8047574Z         "mean_online_svd_evaluations": 4.0,
+2026-11-09T00:29:39.8047846Z         "mean_online_tangent_rhs": 0.0,
+2026-11-09T00:29:39.8048107Z         "paired_runtime_ratio_to_exact": {
+2026-11-09T00:29:39.8048363Z           "mean": 17.69778153284091,
+2026-11-09T00:29:39.8048594Z           "ci95": null,
+2026-11-09T00:29:39.8048804Z           "n_independent_models": 1
+2026-11-09T00:29:39.8049030Z         },
+2026-11-09T00:29:39.8049265Z         "paired_final_model_error_difference_to_exact": {
+2026-11-09T00:29:39.8049564Z           "mean": 0.0004064220347483258,
+2026-11-09T00:29:39.8049803Z           "ci95": null,
+2026-11-09T00:29:39.8050010Z           "n_independent_models": 1
+2026-11-09T00:29:39.8050264Z         },
+2026-11-09T00:29:39.8050494Z         "paired_model_error_difference_to_random-repair": {
+2026-11-09T00:29:39.8050801Z           "mean": 0.00029062246736777375,
+2026-11-09T00:29:39.8051045Z           "ci95": null,
+2026-11-09T00:29:39.8051251Z           "n_independent_models": 1
+2026-11-09T00:29:39.8051481Z         },
+2026-11-09T00:29:39.8051692Z         "paired_runtime_ratio_to_random-repair": {
+2026-11-09T00:29:39.8051979Z           "mean": 3.3215794812180737,
+2026-11-09T00:29:39.8052218Z           "ci95": null,
+2026-11-09T00:29:39.8052425Z           "n_independent_models": 1
+2026-11-09T00:29:39.8052648Z         },
+2026-11-09T00:29:39.8052884Z         "paired_model_error_difference_to_residual-repair": {
+2026-11-09T00:29:39.8053204Z           "mean": 5.005143560116859e-05,
+2026-11-09T00:29:39.8053563Z           "ci95": null,
+2026-11-09T00:29:39.8053769Z           "n_independent_models": 1
+2026-11-09T00:29:39.8053991Z         },
+2026-11-09T00:29:39.8054199Z         "paired_runtime_ratio_to_residual-repair": {
+2026-11-09T00:29:39.8054486Z           "mean": 3.100926368685957,
+2026-11-09T00:29:39.8054718Z           "ci95": null,
+2026-11-09T00:29:39.8054919Z           "n_independent_models": 1
+2026-11-09T00:29:39.8055147Z         }
+2026-11-09T00:29:39.8055323Z       },
+2026-11-09T00:29:39.8055513Z       "deterministic-selective": {
+2026-11-09T00:29:39.8055759Z         "n_models": 1,
+2026-11-09T00:29:39.8055965Z         "objective_ratio": {
+2026-11-09T00:29:39.8056193Z           "mean": 0.7160949216967679,
+2026-11-09T00:29:39.8056431Z           "ci95": null,
+2026-11-09T00:29:39.8056638Z           "n_independent_models": 1
+2026-11-09T00:29:39.8056863Z         },
+2026-11-09T00:29:39.8057047Z         "final_model_error": {
+2026-11-09T00:29:39.8057532Z           "mean": 0.053199418313198826,
+2026-11-09T00:29:39.8057776Z           "ci95": null,
+2026-11-09T00:29:39.8057991Z           "n_independent_models": 1
+2026-11-09T00:29:39.8058217Z         },
+2026-11-09T00:29:39.8058398Z         "algorithm_seconds": {
+2026-11-09T00:29:39.8058629Z           "mean": 0.14497491099999138,
+2026-11-09T00:29:39.8058866Z           "ci95": null,
+2026-11-09T00:29:39.8059070Z           "n_independent_models": 1
+2026-11-09T00:29:39.8059298Z         },
+2026-11-09T00:29:39.8059499Z         "objective_increases": 0,
+2026-11-09T00:29:39.8059760Z         "mean_exact_gradient_blocks": 4.0,
+2026-11-09T00:29:39.8060035Z         "mean_online_adjoint_rhs": 4.0,
+2026-11-09T00:29:39.8060340Z         "mean_online_analytic_bound_evaluations": 0.0,
+2026-11-09T00:29:39.8060649Z         "mean_online_cache_hits": 16.0,
+2026-11-09T00:29:39.8060924Z         "mean_online_dense_inverse_rhs": 0.0,
+2026-11-09T00:29:39.8061208Z         "mean_online_factorizations": 4.0,
+2026-11-09T00:29:39.8061492Z         "mean_online_forward_rhs": 8.0,
+2026-11-09T00:29:39.8061761Z         "mean_online_stability_rhs": 96.0,
+2026-11-09T00:29:39.8062037Z         "mean_online_svd_evaluations": 8.0,
+2026-11-09T00:29:39.8062309Z         "mean_online_tangent_rhs": 0.0,
+2026-11-09T00:29:39.8062568Z         "paired_runtime_ratio_to_exact": {
+2026-11-09T00:29:39.8062832Z           "mean": 35.96194790725644,
+2026-11-09T00:29:39.8063074Z           "ci95": null,
+2026-11-09T00:29:39.8063421Z           "n_independent_models": 1
+2026-11-09T00:29:39.8063660Z         },
+2026-11-09T00:29:39.8063890Z         "paired_final_model_error_difference_to_exact": {
+2026-11-09T00:29:39.8064324Z           "mean": 0.0,
+2026-11-09T00:29:39.8064573Z           "ci95": null,
+2026-11-09T00:29:39.8064789Z           "n_independent_models": 1
+2026-11-09T00:29:39.8065019Z         },
+2026-11-09T00:29:39.8065252Z         "paired_model_error_difference_to_random-repair": {
+2026-11-09T00:29:39.8065566Z           "mean": -0.00011579956738055203,
+2026-11-09T00:29:39.8065824Z           "ci95": null,
+2026-11-09T00:29:39.8066037Z           "n_independent_models": 1
+2026-11-09T00:29:39.8066264Z         },
+2026-11-09T00:29:39.8066474Z         "paired_runtime_ratio_to_random-repair": {
+2026-11-09T00:29:39.8066758Z           "mean": 6.749459984671967,
+2026-11-09T00:29:39.8066989Z           "ci95": null,
+2026-11-09T00:29:39.8067199Z           "n_independent_models": 1
+2026-11-09T00:29:39.8067428Z         },
+2026-11-09T00:29:39.8067666Z         "paired_model_error_difference_to_residual-repair": {
+2026-11-09T00:29:39.8067985Z           "mean": -0.0003563705991471572,
+2026-11-09T00:29:39.8068236Z           "ci95": null,
+2026-11-09T00:29:39.8068457Z           "n_independent_models": 1
+2026-11-09T00:29:39.8068687Z         },
+2026-11-09T00:29:39.8068907Z         "paired_runtime_ratio_to_residual-repair": {
+2026-11-09T00:29:39.8069197Z           "mean": 6.301092163895722,
+2026-11-09T00:29:39.8069429Z           "ci95": null,
+2026-11-09T00:29:39.8069639Z           "n_independent_models": 1
+2026-11-09T00:29:39.8069877Z         }
+2026-11-09T00:29:39.8070047Z       },
+2026-11-09T00:29:39.8070236Z       "analytic-selective": {
+2026-11-09T00:29:39.8070465Z         "n_models": 1,
+2026-11-09T00:29:39.8070681Z         "objective_ratio": {
+2026-11-09T00:29:39.8070921Z           "mean": 0.7160949216967679,
+2026-11-09T00:29:39.8071161Z           "ci95": null,
+2026-11-09T00:29:39.8071368Z           "n_independent_models": 1
+2026-11-09T00:29:39.8071594Z         },
+2026-11-09T00:29:39.8071777Z         "final_model_error": {
+2026-11-09T00:29:39.8072012Z           "mean": 0.053199418313198826,
+2026-11-09T00:29:39.8072253Z           "ci95": null,
+2026-11-09T00:29:39.8072460Z           "n_independent_models": 1
+2026-11-09T00:29:39.8072690Z         },
+2026-11-09T00:29:39.8072874Z         "algorithm_seconds": {
+2026-11-09T00:29:39.8073106Z           "mean": 0.14198363500000255,
+2026-11-09T00:29:39.8073557Z           "ci95": null,
+2026-11-09T00:29:39.8073807Z           "n_independent_models": 1
+2026-11-09T00:29:39.8074364Z         },
+2026-11-09T00:29:39.8074555Z         "objective_increases": 0,
+2026-11-09T00:29:39.8074810Z         "mean_exact_gradient_blocks": 4.0,
+2026-11-09T00:29:39.8075077Z         "mean_online_adjoint_rhs": 4.0,
+2026-11-09T00:29:39.8075361Z         "mean_online_analytic_bound_evaluations": 2.0,
+2026-11-09T00:29:39.8075656Z         "mean_online_cache_hits": 8.0,
+2026-11-09T00:29:39.8075924Z         "mean_online_dense_inverse_rhs": 0.0,
+2026-11-09T00:29:39.8076209Z         "mean_online_factorizations": 4.0,
+2026-11-09T00:29:39.8076470Z         "mean_online_forward_rhs": 8.0,
+2026-11-09T00:29:39.8076727Z         "mean_online_stability_rhs": 0.0,
+2026-11-09T00:29:39.8076993Z         "mean_online_svd_evaluations": 0.0,
+2026-11-09T00:29:39.8077263Z         "mean_online_tangent_rhs": 0.0,
+2026-11-09T00:29:39.8077521Z         "paired_runtime_ratio_to_exact": {
+2026-11-09T00:29:39.8077776Z           "mean": 35.21994288758906,
+2026-11-09T00:29:39.8078008Z           "ci95": null,
+2026-11-09T00:29:39.8078231Z           "n_independent_models": 1
+2026-11-09T00:29:39.8078458Z         },
+2026-11-09T00:29:39.8078704Z         "paired_final_model_error_difference_to_exact": {
+2026-11-09T00:29:39.8078998Z           "mean": 0.0,
+2026-11-09T00:29:39.8079203Z           "ci95": null,
+2026-11-09T00:29:39.8079418Z           "n_independent_models": 1
+2026-11-09T00:29:39.8079649Z         },
+2026-11-09T00:29:39.8079885Z         "paired_model_error_difference_to_random-repair": {
+2026-11-09T00:29:39.8080203Z           "mean": -0.00011579956738055203,
+2026-11-09T00:29:39.8080535Z           "ci95": null,
+2026-11-09T00:29:39.8080749Z           "n_independent_models": 1
+2026-11-09T00:29:39.8080979Z         },
+2026-11-09T00:29:39.8081200Z         "paired_runtime_ratio_to_random-repair": {
+2026-11-09T00:29:39.8081483Z           "mean": 6.610197973571057,
+2026-11-09T00:29:39.8081718Z           "ci95": null,
+2026-11-09T00:29:39.8081930Z           "n_independent_models": 1
+2026-11-09T00:29:39.8082164Z         },
+2026-11-09T00:29:39.8082415Z         "paired_model_error_difference_to_residual-repair": {
+2026-11-09T00:29:39.8082736Z           "mean": -0.0003563705991471572,
+2026-11-09T00:29:39.8082987Z           "ci95": null,
+2026-11-09T00:29:39.8083202Z           "n_independent_models": 1
+2026-11-09T00:29:39.8083693Z         },
+2026-11-09T00:29:39.8083919Z         "paired_runtime_ratio_to_residual-repair": {
+2026-11-09T00:29:39.8084214Z           "mean": 6.171081352828004,
+2026-11-09T00:29:39.8084447Z           "ci95": null,
+2026-11-09T00:29:39.8084652Z           "n_independent_models": 1
+2026-11-09T00:29:39.8084878Z         }
+2026-11-09T00:29:39.8085047Z       }
+2026-11-09T00:29:39.8085215Z     }
+2026-11-09T00:29:39.8085380Z   },
+2026-11-09T00:29:39.8085556Z   "limitations": [
+2026-11-09T00:29:39.8085942Z     "Conformal interpretation applies only to exchangeable clean initial-state repair paths.",
+2026-11-09T00:29:39.8086666Z     "No trajectory-wide or shifted-distribution conformal coverage is claimed.",
+2026-11-09T00:29:39.8087653Z     "Exact-decrease acceptance pays online true-objective forward costs and prevents increases by construction; this is not evidence that calibration alone guarantees finite-step safety.",
+2026-11-09T00:29:39.8088696Z     "Fixed heuristic budgets are declared in config; these are not matched-cost unless measured total costs match.",
+2026-11-09T00:29:39.8089461Z     "Scenarios share seed/case models; uncertainty is computed within scenario over independent generated model pairs.",
+2026-11-09T00:29:39.8090225Z     "Timing includes online certification and verification; offline validation uses a separate solver/cache.",
+2026-11-09T00:29:39.8090943Z     "This development study does not establish field-scale computational advantage or competition readiness.",
+2026-11-09T00:29:39.8091829Z     "The guarded policy detects declared acquisition-support mismatches only; it cannot establish geological exchangeability or detect every kind of OOD shift."
+2026-11-09T00:29:39.8092486Z   ],
+2026-11-09T00:29:39.8092947Z   "clean_initial_pathwise_coverage": {
+2026-11-09T00:29:39.8093228Z     "observed_coverage": 0.0,
+2026-11-09T00:29:39.8093692Z     "failure_uncertainty": {
+2026-11-09T00:29:39.8093928Z       "n_units": 1,
+2026-11-09T00:29:39.8094130Z       "failures": 1,
+2026-11-09T00:29:39.8094346Z       "observed_failure_rate": 1.0,
+2026-11-09T00:29:39.8094599Z       "confidence": 0.95,
+2026-11-09T00:29:39.8094854Z       "one_sided_failure_probability_upper": 1.0,
+2026-11-09T00:29:39.8095176Z       "method": "exact one-sided Clopper-Pearson",
+2026-11-09T00:29:39.8095649Z       "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+2026-11-09T00:29:39.8096076Z     },
+2026-11-09T00:29:39.8096478Z     "scope": "independent generated clean initial models; simultaneous repair path, not inversion trajectory"
+2026-11-09T00:29:39.8096956Z   },
+2026-11-09T00:29:39.8109019Z   "source_sha256_at_end": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+2026-11-09T00:29:39.8109524Z   "source_unchanged_during_run": true
+2026-11-09T00:29:39.8109795Z }
+2026-11-09T00:29:40.5376052Z Post job cleanup.
+2026-11-09T00:29:40.6591079Z (node:7896) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-09T00:29:40.6592082Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-09T00:29:40.6800641Z Post job cleanup.
+2026-11-09T00:29:40.7774061Z [command]/usr/bin/git version
+2026-11-09T00:29:40.7823797Z git version 2.56.0
+2026-11-09T00:29:40.7868773Z Temporarily overriding HOME='/home/runner/work/_temp/1391be0e-f50d-4af3-84e9-418d0f100d35' before making global git config changes
+2026-11-09T00:29:40.7870060Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-09T00:29:40.7875328Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/wavecert-fwi/wavecert-fwi
+2026-11-09T00:29:40.7919232Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T00:29:40.7960664Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T00:29:40.8303531Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T00:29:40.8333122Z http.https://github.com/.extraheader
+2026-11-09T00:29:40.8346111Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-09T00:29:40.8422281Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T00:29:40.8759058Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T00:29:40.8796510Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T00:29:40.9250502Z Cleaning up orphan processes
+2026-11-09T00:29:40.9726615Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

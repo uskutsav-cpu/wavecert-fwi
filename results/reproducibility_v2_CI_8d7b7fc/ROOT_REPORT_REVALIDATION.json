@@ -1,0 +1,65 @@
+{
+  "observed_utc": "2026-11-09T00:36:27.639839+00:00",
+  "tested_commit": "8d7b7fce53d61234ef542522dd98604fbc0c7e33",
+  "workflow": 42540137515,
+  "all_four_jobs_terminal_success": true,
+  "actual_original_reports": 28,
+  "root_independent_log_and_required_report_checks": [
+    {
+      "job_id": 128913003176,
+      "job_name": "test (3.11)",
+      "reports": 7,
+      "pytest_summary": [
+        "513 passed, 34 skipped in 99.75s (0:01:39)"
+      ],
+      "Python": "3.11.18",
+      "NumPy": "2.4.6",
+      "BP_trace_max": 4.409051766940796e-14,
+      "BP_DD_max": 6.823473661506754e-14,
+      "108controls_all_pass": true
+    },
+    {
+      "job_id": 128913003345,
+      "job_name": "test (3.12)",
+      "reports": 7,
+      "pytest_summary": [
+        "513 passed, 34 skipped in 106.46s (0:01:46)"
+      ],
+      "Python": "3.12.16",
+      "NumPy": "2.5.4",
+      "BP_trace_max": 4.409051766940796e-14,
+      "BP_DD_max": 6.823473661506754e-14,
+      "108controls_all_pass": true
+    },
+    {
+      "job_id": 128913003377,
+      "job_name": "test (3.10)",
+      "reports": 7,
+      "pytest_summary": [
+        "513 passed, 34 skipped in 67.39s (0:01:07)"
+      ],
+      "Python": "3.10.22",
+      "NumPy": "2.2.6",
+      "BP_trace_max": 4.409051766940796e-14,
+      "BP_DD_max": 6.823473661506754e-14,
+      "108controls_all_pass": true
+    },
+    {
+      "job_id": 128913003456,
+      "job_name": "learned-and-data",
+      "reports": 7,
+      "pytest_summary": [
+        "564 passed, 4 skipped, 1 warning in 114.78s (0:01:54)"
+      ],
+      "Python": "3.12.16",
+      "NumPy": "2.5.4",
+      "BP_trace_max": 4.409051766940796e-14,
+      "BP_DD_max": 6.823473661506754e-14,
+      "108controls_all_pass": true
+    }
+  ],
+  "agent_summary_sha256": "e83983ff85854e2f61c01c876251ed412bab96b054f3c132c15637b232efb4e6",
+  "production_source_unchanged": "9f/161",
+  "old97f_CI_failure_preserved": true,
+  "no_new_geological_samples_or_scientific_completion": true
+}

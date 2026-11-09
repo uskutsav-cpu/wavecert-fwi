@@ -182,3 +182,8 @@ quality/cost/generalization evidence. General gradient certification, POD, coars
 correction and residual repair are not claimed as new. A more ambitious novelty
 claim requires a broader primary-source comparison and substantive human
 mathematical review.
+
+
+## Updated contribution boundary
+
+The [latest primary-source assessment](contribution_prior_art_update.md) includes recent adaptive accuracy work and corrects the larger-grid cost rationale: the paid merit loop already supplies reusable factors/fields. Generic regularization, directional certification, adaptive stopping and overhead crossovers are established prior work. A specific useful operating-region result remains a research candidate, with no priority claim or demonstrated recovery benefit.
