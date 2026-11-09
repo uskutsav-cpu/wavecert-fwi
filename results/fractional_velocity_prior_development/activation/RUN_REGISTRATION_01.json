@@ -1,0 +1,63 @@
+{
+  "activation_rule": "A separate registration-only commit must have exactly one parent equal to the successful control/source-bundle commit. Actual study run_attempt must be1; no retries or automatic activation.",
+  "baseline_commit": "1983664d5e033dab1b131b80d9aaf2358fc6c5de",
+  "bundle_manifest_sha256": "821821fd8fffe267f4503ec3ba66656d1bc309a6260e02d7da42bc244fdea603",
+  "control_cohort_id": "prior48_remote_controls_02",
+  "execution_authorized": true,
+  "expected_control_counts": {
+    "adapter": 21,
+    "driver": 30,
+    "launcher": 50,
+    "prior": 39
+  },
+  "mode": "study",
+  "numpy_version": "2.4.6",
+  "predecessor_control_attempt": {
+    "cohort_id": "prior48_remote_controls_01",
+    "conclusion": "failure",
+    "independent_review_sha256": "4c56af1df083e601651b9bda105a337be7a953c5f4d86acb5649aa2a68e01dae",
+    "job_id": 128938514065,
+    "role": "Preserved failed setup evidence only; no resume, pooling or activation authority",
+    "run_attempt": 1,
+    "run_id": 42548463638,
+    "source_commit": "72326311db4179b7392d7b539fa034f99b8a52d5"
+  },
+  "prior_successful_control": {
+    "commit": "9778fd3e998c8eb7dde8915789f5ea612ab71422",
+    "run_attempt": 1,
+    "run_id": 42549126689
+  },
+  "production_file_count": 161,
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "python_version": "3.11.18",
+  "role": "Root activated one full48 development cohort after final source reviews and verified actual162-control success; original failed setup cohort stays separate. No automatic repeat or outcome claim.",
+  "root_go": {
+    "authorization": "GO_CLASSICAL_PRIOR48_DEVELOPMENT",
+    "control_run_attempt": 1,
+    "created_utc": "2026-11-09T02:11:29.894354+00:00",
+    "driver_sha256": "7c7fc525894dbd38899ad6ee46bff8a0a0d996ea2ef61d5da2e6ce8b4320d882",
+    "independent_post_auditor_sha256": "57946398ebd6d3eaad35ea73491ee50f3bf00c64ef42d6067a1a2fd522c040a4",
+    "independent_source_review_clear": true,
+    "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "prospective_criteria_sha256": "b06e9618b4d980ed0aa08c05a0da136d0ba3e37ecc422be4df411a5f3b96edf6",
+    "protocol_sha256": "92433c9d7b9d2990799f3a81707f6d04f63784a1820d3f109804a83b484ccfa6",
+    "review_receipt_sha256": {
+      "independent_driver_review": "684dec72cabc9cf637aece9dd6ed6dea060d3c34e2749f2f48754c0074e3f431",
+      "independent_final_auditor_review": "bbc0d39ed11a32a43cd9781b841876dcac8984d70418b0e59940cd0009c31147",
+      "independent_v2_workflow_delta_review": "998f091e6fac093d96901e0605baa2d93b41fb960f340a9f6d7b686d13cbec60",
+      "independent_workflow_launcher_review": "fa70a7f9e3c5d302f306cc77bb181365a5d06086c287cd2dc02eecbfcf17ce34",
+      "root_initial_source_review": "a5819d77ea1c115931416311fc6644a6acbeda9bdcb3fec33c1aef639b1fe86d",
+      "verified_actual_control_evidence": "bd231f51b796d2d66727afc1eb63aff6271e508cfcd6fda4eb1129798b9601e3"
+    },
+    "schedule_sha256": "930e8ecf6bdbb78901b2330c0e1e71a470c7b914067feaf3c0ba3316442be150",
+    "scientific_goals_complete": false,
+    "scope": "One frozen 48-slot reused development study; no retry, resume, pooling, student final design, novelty or scientific-goal completion claim.",
+    "source_bundle_commit": "9778fd3e998c8eb7dde8915789f5ea612ab71422",
+    "student_final_design": false,
+    "successful_control_run_id": 42549126689
+  },
+  "root_go_sha256": "44234fe02f29956a74b61850e8cb7752841aff97545ea9c1e5e2039df5efa1e1",
+  "schema_version": 1,
+  "scipy_version": "1.17.1",
+  "source_bundle_commit": "9778fd3e998c8eb7dde8915789f5ea612ab71422"
+}

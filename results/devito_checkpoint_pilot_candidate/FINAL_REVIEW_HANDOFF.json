@@ -1,0 +1,39 @@
+{
+  "GO": "ABSENT",
+  "actual_PDE_calls": 0,
+  "actual_manufactured_errors": 0,
+  "actual_manufactured_failures": 0,
+  "actual_manufactured_tests": 15,
+  "actual_model_values": 0,
+  "actual_operators": 0,
+  "created_utc": "2026-11-09T02:29:20.968609+00:00",
+  "evidence_sha256": {
+    "CONTROL_LOG_03.txt": "9fbf1749d2c698f580df974550ea3f6b73b31496cbdaef57f811554a990848b0",
+    "HELD_SOURCE_CONTROL_RECEIPT.json": "b2005c5c5e93cb50fa5bb2728147359022171a1a156d1eddd4a3069cbc23dffe",
+    "INDEPENDENT_SOURCE_REVIEW.json": "88bdd5fd266517ee134042315f216f52753a12d4e1c4f500961403482255fb89",
+    "MANUFACTURED_CONTROL_RECEIPT_03.json": "390347ecfcf07f21f4422711ec77cc3bd783ee7f0c37dfa2675e31c53780fb18",
+    "PRIMARY_SOURCE_HASHES.json": "aa0bc4ab2b97e0fa2ba93cdb20aae76b28ef5c6aeb164ffb8f38ae8cb404ae08",
+    "README.md": "f64c5ca829eb62ea423834e932ffa187683ea19b50708338d6f18b6821cc1c16",
+    "RUNTIME_SOURCE_PINS.json": "bfbc2e31cd4ff7ae2a0f0342dc3633c5e4dc0189daea0d06eaeb12de1040350f",
+    "STAGED_FILE_MANIFEST.json": "345dc9e526b0fc2c351c79979f4bd1a79fab3a04c000654800a1f79e962782f0"
+  },
+  "external_process_supervision": "Future separately reviewed foreground caller required for actual waits, signals, full wall/CPU/resource/log evidence; no new launcher supplied",
+  "independent_review_status": "INDEPENDENT_SOURCE_REVIEW_CLEAR_FOR_ROOT_REVIEW_ONLY_RUNTIME_UNEXECUTED",
+  "native_runtime_or_numerical_agreement": "UNEXECUTED",
+  "production9f_and_workflows": "Untouched",
+  "remaining": [
+    "Root review of exact source and proposed criteria before freeze",
+    "Separately approved ephemeral Linux dependency environment with exact installed source gate",
+    "Separate exact source-bound root GO",
+    "Actual native alias/ring/scheduler/allocation validation",
+    "Actual receiver/padded/physical gradient and all20FD child evaluations",
+    "Actual external wait/exit and resource review; no fair-speed inference due shared warm JIT cache"
+  ],
+  "source_files": {
+    "RUNTIME_SOURCE_PINS.json": "bfbc2e31cd4ff7ae2a0f0342dc3633c5e4dc0189daea0d06eaeb12de1040350f",
+    "pilot_accounting.py": "1b0094af99fb57e44966e18808aa80f939a2a83771ed98c53a94a5e1460f33f2",
+    "protocol.json": "08f262f638da9a72b262d252ba8e3eaab4452d772d8c80606bc44e7137fba866",
+    "run_checkpoint_pilot.py": "31969bd3e072dcbf554e0cd98f022b0e35dd5438ef12566f9c23fa98eee76e9b"
+  },
+  "status": "HELD_REVIEWABLE_CANDIDATE_WITH_INDEPENDENT_SOURCE_CLEAR_AND_15_CONTROLS_NO_RUNTIME_GO"
+}

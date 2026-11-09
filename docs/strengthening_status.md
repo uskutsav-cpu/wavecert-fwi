@@ -286,7 +286,7 @@ The 97f8905 CI run fails the old BP input-direction guard before the new 108-con
 
 A fixed Overthrust stored-data cross-section is acquired:207 rows,663,228 model bytes, no conversion/row removal/PDE. An independent saved-byte audit passes3,186 integrity checks, with a precise record-ETag/file-ETag disclosure correction. The qualified JUDI/HDF5.jl interpretation and unresolved file-identity/water-provenance limits are explicit in the [acquisition report](overthrust_partial_acquisition.md). It is a candidate different synthetic ancestor, not accepted physics or an independent field site.
 
-The [classical fractional-velocity prior candidate](../results/fractional_velocity_prior_candidate/README.md) has39 author controls and39 independent scalar/math checks. Its48-run development comparison is still unimplemented/unexecuted, with fixed gates requiring useful recovery beyond both initialization and a paired exact baseline. The prior is zero-gradient at initialization and is not a new regularization method. All four scientific objectives remain open.
+The [48-run classical-prior study](fractional_velocity_prior_development.md) is complete: all 48 returns are eligible within 8 s, but 0/8 cases meet the fixed recovery target (six required). The prior beats the exact baseline on 5/8 case medians and is slightly worse than initialization on 5/8; its best median improvement over initialization is 4.10%. The 51,613-check scalar audit and separate 3,902-check actual-model/table review pass. This classical prior does not resolve useful recovery, and all four scientific objectives remain open.
 
 
 ### Completed Linux V2/control validation

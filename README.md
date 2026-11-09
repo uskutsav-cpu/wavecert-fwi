@@ -11,6 +11,8 @@ This is a **research prototype**. Its tested certificate applies to a discrete
 2-D Helmholtz system. Field-scale acceleration, time-domain certification, and
 reliability on measured seismic data remain unestablished.
 
+The latest [48-run classical-prior recovery study](docs/fractional_velocity_prior_development.md) completes all returns within the cap, but meets the fixed recovery target on **0/8 reused cases**. Raw evidence, separate scalar reproduction, all-return CSVs and the figure are retained. Useful reconstruction at fully paid cost remains open. These additions are in the draft `research-strengthening` branch; main remains unmerged.
+
 ## Start here
 
 ```bash

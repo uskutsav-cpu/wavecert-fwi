@@ -1,0 +1,274 @@
+{
+  "audit_tolerances": {
+    "composed_F_atol": 2e-11,
+    "composed_F_rtol": 2e-09,
+    "objective_atol_initial_floor": 1e-12,
+    "objective_atol_initial_scale": 2e-12,
+    "objective_rtol": 2e-09,
+    "observation_rtol": 1e-09,
+    "prior_atol": 2e-14,
+    "prior_rtol": 2e-12
+  },
+  "candidate_files_sha256": {
+    "__init__.py": "8f5dde1292081eedb460cc9752025c72350673a2bd705bd407a5e6fa531bf22b",
+    "adapter.py": "f793f4439551bf7614bd72421057d209f3cb353710fe06f8c13de85b44eecf61",
+    "protocol.json": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c",
+    "verification.py": "b7bee25257caf456d52932962ceba2fde00197f0a78b585cf90c138e795bba4c"
+  },
+  "complete_return_cap_seconds": 8.0,
+  "continuation_gates": {
+    "complete_eligible_repetitions_required_per_case_arm": 3,
+    "failures": "Any incomplete eligibility group fails the continuation gate; preserve every planned slot without replacing, omitting, selecting repetitions or imputing a successful deadline.",
+    "interpretation": "Heuristic preregisterable development gates, not IID inference, geological confirmation, method novelty, competition readiness, or a final student design.",
+    "near_initial_model_is_success": false,
+    "no_case_may_exceed_initial_error_factor": 1.1,
+    "successful_case_requires_all": [
+      "regularized case-median velocity error <=0.90*initial velocity error",
+      "regularized case-median velocity error <=0.90*paired normalized exact data-only case median",
+      "regularized case-median returned common-eight Phi/Phi0 <=0.75"
+    ],
+    "successful_cases_required_of_eight": 6
+  },
+  "disk": {
+    "final_receipt_reservation_bytes": 2097152,
+    "initial_free_bytes": 268435456,
+    "maximum_output_bytes": 25165824,
+    "per_run_reserve_bytes": 67108864
+  },
+  "engine_deadline_seconds": 7.5,
+  "execution_performed": false,
+  "frequencies_hz": [
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    2.5,
+    3.0,
+    3.5,
+    4.0
+  ],
+  "geometry": {
+    "blocks_per_model": 48,
+    "dirichlet_extent_km": 1.25,
+    "frequencies_hz": [
+      0.25,
+      0.5,
+      1.0,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0
+    ],
+    "mapping": "integer factor2: (old_coord+1)*2-1; C-order flatten on49 grid",
+    "original_receiver_indices": [
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69
+    ],
+    "original_shape": [
+      24,
+      24
+    ],
+    "original_source_indices": [
+      50,
+      54,
+      58,
+      61,
+      65,
+      69
+    ],
+    "original_spacing": 0.05
+  },
+  "geometry_scope": "geometry is actual all8/48; original_geometry_context is inherited upper4/24 input-decoding context only",
+  "identities": [
+    {
+      "array_index": 0,
+      "parent_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "source_file": "slices/slice_gom_148_il_0236.h5",
+      "source_sha256": "3a693c7aab525351aca671cc640afa4bed4ffb3be14b8039c40f59f2905209db"
+    },
+    {
+      "array_index": 24,
+      "parent_id": "gom_148",
+      "slice_id": "gom_148_xl_0768",
+      "source_file": "slices/slice_gom_148_xl_0768.h5",
+      "source_sha256": "6d1f16d527a9fed2e245f4d37254de75a2e430be7f4283cf65cfbfee7f1e84a1"
+    },
+    {
+      "array_index": 48,
+      "parent_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "source_file": "slices/slice_seam_011_il_0522.h5",
+      "source_sha256": "5f0982f2f87dbd40c40f758e40e14b5f898b6f8e92dde3b255433e6dfe1b958e"
+    },
+    {
+      "array_index": 72,
+      "parent_id": "seam_011",
+      "slice_id": "seam_011_xl_0866",
+      "source_file": "slices/slice_seam_011_xl_0866.h5",
+      "source_sha256": "2ac2600a3f37bda30bb9f336ebf0f82f7251d47f7ae55fa3b5810e0a616f16f8"
+    },
+    {
+      "array_index": 96,
+      "parent_id": "gom_151",
+      "slice_id": "gom_151_il_0247",
+      "source_file": "slices/slice_gom_151_il_0247.h5",
+      "source_sha256": "306380b97261c6812c45900fe6d47f4cb7b41b5851f3054f7881c2912a32c8c8"
+    },
+    {
+      "array_index": 120,
+      "parent_id": "gom_151",
+      "slice_id": "gom_151_xl_0857",
+      "source_file": "slices/slice_gom_151_xl_0857.h5",
+      "source_sha256": "157ad1e6e2bdab57496379fd54e49467816c0cd75cb4f7b3b9279a35c84da7b6"
+    },
+    {
+      "array_index": 144,
+      "parent_id": "seam_005",
+      "slice_id": "seam_005_il_0596",
+      "source_file": "slices/slice_seam_005_il_0596.h5",
+      "source_sha256": "be96babcb90440f814887f3dbe9955b3879181e92b13bc59d3da0b5beb6ac5ff"
+    },
+    {
+      "array_index": 168,
+      "parent_id": "seam_005",
+      "slice_id": "seam_005_xl_0795",
+      "source_file": "slices/slice_seam_005_xl_0795.h5",
+      "source_sha256": "ab1ebc7628336883cd518745ef117d1763e7b60e0bdcedfb35b5f94da5746204"
+    }
+  ],
+  "inputs_sha256": {
+    "data/reference/subsurfacegen_parent_split/split_manifest.csv": "30fed6e30e07a1b54d17f3ae9511d06eac6f44c69fcb57b6ee588f2ade65ef14",
+    "data/reference/subsurfacegen_parent_split/validation.npz": "36d11aba94ae9093cac888e9b28a2d01edcef1aa3a54b12f8e10269b963db2fc",
+    "data/reference/subsurfacegen_parent_split/validation_metadata.csv": "d3ce8ab6a3474a6bc17595f26b68940e7c7ad9481d8c80fb89fe04833e6996e6"
+  },
+  "lbfgsb": {
+    "function_tolerance": 1e-12,
+    "gradient_tolerance": 1e-10,
+    "maximum_corrections": 10,
+    "maximum_line_search_trials": 12
+  },
+  "local_dependency_sha256": {
+    "FROZEN48_SCHEDULE.json": "930e8ecf6bdbb78901b2330c0e1e71a470c7b914067feaf3c0ba3316442be150",
+    "bounded_exact.py": "d5fb6326bcd252efc3a7672dba993311fb0ba724b90039e7fda317bcf8bb770c",
+    "composed_exact_adapter.py": "28f8bc9e6e71fd8c28165a8eddcb56e605cd7323286578180fabdf351e75a637",
+    "fractional_velocity_prior.py": "4aa248fd3862533390ad918f4ad3f70d02fcdebcdc8d784494d375c935536163",
+    "independent_saved_models.py": "807f4f2f0e0aeea1d2f61b64ee5f64a99819c38d4f6164529e664f0a235edeae",
+    "original_prior_proposal.json": "48c26556658f5736b3191af03fa8eb858fdec162acdd35f2a9ad5d0ecfb786f5",
+    "original_protocol.json": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c"
+  },
+  "maximum_steps": 4096,
+  "methods": [
+    {
+      "lambda": 0.0,
+      "name": "normalized_exact_data_only"
+    },
+    {
+      "lambda": 100.0,
+      "name": "normalized_exact_fractional_update_prior"
+    }
+  ],
+  "observation_blocks": 48,
+  "old96_driver_sha256": "a5f4a7bd38350ea1958160d0a5d24fb29b03e986b2601117c1bc7fd399394558",
+  "old96_protocol_sha256": "5c2838eaa1142ae7497717d7a4dfc46c76df4fb5ff8b3e016d5479eb4b51af1e",
+  "original_candidate_relative_directory": "results/provisional_software_benchmark/matched_cost_pilot",
+  "original_geometry_context": {
+    "blocks_per_model": 24,
+    "dirichlet_extent_km": 1.25,
+    "frequencies_hz": [
+      2.5,
+      3.0,
+      3.5,
+      4.0
+    ],
+    "mapping": "integer factor2: (old_coord+1)*2-1; C-order flatten on49 grid",
+    "original_receiver_indices": [
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69
+    ],
+    "original_shape": [
+      24,
+      24
+    ],
+    "original_source_indices": [
+      50,
+      54,
+      58,
+      61,
+      65,
+      69
+    ],
+    "original_spacing": 0.05
+  },
+  "original_prior_proposal_sha256": "48c26556658f5736b3191af03fa8eb858fdec162acdd35f2a9ad5d0ecfb786f5",
+  "original_protocol_sha256": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c",
+  "physics": {
+    "damping_strength": 2.0,
+    "damping_width": 6,
+    "shape": [
+      49,
+      49
+    ],
+    "spacing": 0.025
+  },
+  "prior_smoothing_length_km": 0.1,
+  "production_file_count": 161,
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "root_go_authorization": "GO_CLASSICAL_PRIOR48_DEVELOPMENT",
+  "schedule_seed": 2026110901,
+  "schedule_sha256": "930e8ecf6bdbb78901b2330c0e1e71a470c7b914067feaf3c0ba3316442be150",
+  "schema_version": 1,
+  "scientific_goals_complete": false,
+  "scope": "Classical exact normalized L-BFGS-B comparison, reused development8cases; no new optimizer/certificate/regularizer/physics/independent-geology/student-design claim.",
+  "squared_slowness_bounds": [
+    0.027777777777777776,
+    1.0
+  ],
+  "status": "HELD_REQUIRES_INDEPENDENT_SOURCE_REVIEW_EXACT_ROOT_GO",
+  "student_final_design": false,
+  "threads": {
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "total_runs": 48
+}

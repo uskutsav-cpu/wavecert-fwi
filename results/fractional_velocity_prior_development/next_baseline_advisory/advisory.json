@@ -1,0 +1,189 @@
+{
+  "role": "AI engineering technical advisory after inspected development outcomes; proposal only, not student final research question/design or execution authorization",
+  "source_informed_disclosure": "This reviewer authored the classical prior component and prior48 driver; this is source-informed AI analysis, not blind independent replication or human mathematical review.",
+  "priority": "One bounded cached-field Gauss-Newton trust-region prototype for the existing normalized DATA-ONLY objective, using a real LinearOperator and an established least-squares implementation. Prefer scipy.optimize.least_squares(method=\"trf\", tr_solver=\"lsmr\", loss=\"linear\", fixed native-m bounds/scaling) over a new hand-written LM outer controller. LSMR uses the same supplied J/J* operations as LSQR; retain LSQR only as a manufactured inner-solve cross-check, not a second project arm.",
+  "why_this_next": [
+    "The prior48 result limits drift rather than establishing useful recovery: 0/8 fixed recovery successes; both arms worsen initialization on the same5/8 case medians. The prior beats the drifting baseline on5/8 but remains near initialization. More arbitrary lambda trials would not answer whether a standard curvature-aware solver helps.",
+    "An established bounded nonlinear least-squares baseline can test a materially different update using the SAME data objective, model, frequencies and information. It can outperform, match or worsen L-BFGS-B; none is currently measured. This is not a pure causal curvature ablation because the trust-region/constraint controller also changes.",
+    "Use lambda0 for the first technical baseline. LM/trust-region step damping stabilizes a local solve; it is not the frozen lambda100 geological prior. Do not add a new structural prior, retune lambda, choose stopping from truth, or label fit improvement as recovery."
+  ],
+  "audited_outcome_arithmetic": {
+    "checks": 51613,
+    "numeric_comparisons": 1040,
+    "issues": 0,
+    "all48_eligible": true,
+    "fixed_recovery_successes": 0,
+    "prior_beats_data_only_cases": 5,
+    "prior_worse_than_initial_cases": 5,
+    "data_only_worse_than_initial_cases": 5,
+    "complete_return_wall_min_seconds": 7.520710139000016,
+    "complete_return_wall_max_seconds": 7.581680227999982,
+    "case_medians": [
+      {
+        "case_index": 0,
+        "prior_error_over_initial": 1.0203720987853109,
+        "data_only_error_over_initial": 3.0380392639382587
+      },
+      {
+        "case_index": 1,
+        "prior_error_over_initial": 1.0108225969042643,
+        "data_only_error_over_initial": 3.673895929335552
+      },
+      {
+        "case_index": 2,
+        "prior_error_over_initial": 1.0048481086864192,
+        "data_only_error_over_initial": 3.522310743477186
+      },
+      {
+        "case_index": 3,
+        "prior_error_over_initial": 0.9744062601130502,
+        "data_only_error_over_initial": 0.9558679974734839
+      },
+      {
+        "case_index": 4,
+        "prior_error_over_initial": 1.002130776151646,
+        "data_only_error_over_initial": 2.0241013126893486
+      },
+      {
+        "case_index": 5,
+        "prior_error_over_initial": 1.002081243120509,
+        "data_only_error_over_initial": 1.101662984971005
+      },
+      {
+        "case_index": 6,
+        "prior_error_over_initial": 0.9590144476859253,
+        "data_only_error_over_initial": 0.8983079894929012
+      },
+      {
+        "case_index": 7,
+        "prior_error_over_initial": 0.970666094180272,
+        "data_only_error_over_initial": 0.9165716611482695
+      }
+    ],
+    "native_median_counts_by_arm": {
+      "normalized_exact_data_only": {
+        "factorizations": 712.0,
+        "forward_rhs": 4272.0,
+        "adjoint_rhs": 4224.0
+      },
+      "normalized_exact_fractional_update_prior": {
+        "factorizations": 712.0,
+        "forward_rhs": 4272.0,
+        "adjoint_rhs": 4224.0
+      }
+    },
+    "preparation_separate_per_run": {
+      "factorizations": 8,
+      "forward_rhs": 48
+    }
+  },
+  "public_api_and_algebra": [
+    "ExactMeritOracle.evaluate pays and pins native factors and U for s<=r. export_merit_fields exports actual issued immutable fields/residuals and checks ownership/fingerprints, but explicitly exports NO LU handle. Its snapshots expire when their issued receipt dies. Keep the genuine native receipt alive and model/operator/survey/data identities fixed; never fabricate a native receipt or borrow another policy owner.",
+    "For this current survey, s=6, r_unique=20, c=6 covered sources, f=8, n=2401. Native source columns are U=A^-1(a E_s), a=1/h^2=1600. When the exported actual transpose-symmetry check passes, a covered receiver row is C_j=U[:,source_column].T/a, with NO complex conjugation. A missing row comes from A^H z=e_j and C_j=z^H. This distinguishes transpose symmetry from Hermitian symmetry and avoids an amplitude factor error.",
+    "Preserve all ordered receiver slots and mirrored source/receiver weights. With slot expansion E, J_s p=omega^2 E C(U_s elementwise p); its real adjoint is omega^2 Re[conj(U_s) elementwise C^H E^T y]. Repeated receiver duals SUM under E^T, not average. Use actual ordered source columns, not source index as column number.",
+    "Real residual fvec=[Re(r);Im(r)]/sqrt(Phi0) makes 0.5*||fvec||^2=Phi/Phi0 exactly in algebra. The real Jacobian B applies the same stacking/scaling, so B^T fvec is the native data gradient/Phi0. This retains the native-m bounds [1/36,1] and direct registered initialization.",
+    "Public fun needs residuals, so every residual request, including rejected trials, must pay export_merit_fields overhead (symmetry checks/operator assembly, copies, hashing and validation). The public per-block data_jvp/data_vjp helpers re-solve U and use a separate mutable Helmholtz cache; they do not expose the pinned native receipt factors and cannot be called free cached products."
+  ],
+  "charged_work": {
+    "current_public_export_implementation": "Use a separate source/config/model-validated cold Helmholtz2D map builder, one batched receiver-resolvent call for the14 missing receiver locations at each frequency. Source-derived budget: +8 fresh LU factorizations +112 receiver RHS per distinct Jacobian point, on top of the native objective8LU+48forwardRHS. Existing receiver_resolvent_matrix labels these adjoint-system RHS as stability_rhs, not adjoint_rhs; preserve that counter meaning. Do not access private receipt factors. A future owner-scoped solve API would require separate source review and accounting before claiming reuse.",
+    "within_fixed_point": "Cache U and C only at the exact current linearization point. Once both exist, J/J* products use contractions with zero additional PDE solves; charge each product, memory movement, allocations and iterative-solver overhead. Rejected trust-region radii may reuse that fixed point; a changed model requires fresh native merit and new C. This is an algebraic count, not a measured speedup.",
+    "storage_arithmetic_bytes": {
+      "U_complex128": 1843968,
+      "C_complex128": 6146560,
+      "dense_complex_J_avoided": 36879360
+    },
+    "comparison": "The current native exact L-BFGS-B gradient needs only48 extra source-adjoint RHS after paid U at this geometry, with no extra LU. Its optimized route is the comparator, not the naive 2sf implementation. Compare fresh paired runs on the same runtime/hardware and all common inputs; prior48 timings cannot be reused as the new control. Inner products avoid solves but can consume substantial runtime, so no RHS-to-time equivalence or total-cost benefit is asserted.",
+    "full_cost_scope": "Charge shared bootstrap separately and all per-run input verification, construction, observation synthesis8LU48RHS, initial Phi0, native trial/evaluation/gradient work if invoked, C setup, exports/residual checks, every accepted/rejected query, Krylov products, final actual merit, native/map counters, checkpoint selection, metrics and complete-return serialization. Maintain7.5s optimizer/8s complete-return convention if comparing to the present task, with overruns/failures in the full denominator; unknown interrupted native work remains unknown, never zero."
+  },
+  "acquisition_and_physics_limit": [
+    "The8-band objective has960 complex slots (1920 real) for2401 real parameters. Because the6 equal-amplitude sources are among20 receivers and A.T=A, at most105 complex response classes/frequency remain: 840 complex classes or real Jacobian rank<=1680, hence real linearized nullity>=721. These are exact-arithmetic structural upper/lower bounds, not a measured numerical rank or proof that observed drift is caused by nonuniqueness. LM cannot create the missing information.",
+    "Full truth-correction linearization already has pooled lower-band remainder ratio1.143 and original-band2.057; case2 remains adverse. Trust-region local steps are justified as a cautious baseline, not a promise that GN cures the nonlinear basin problem. Keep the existing all8 frequencies; neither selecting a favorable band nor clipping an unconstrained LSQR step supplies a fair bounded solver.",
+    "This fixture uses noiseless self-consistent data under the same discrete operator, and truth is box-feasible. A data/model physics mismatch is therefore not established as the cause of these numerical inverse failures. The limited shallow-line acquisition, tiny damped Dirichlet domain and truth-smoothed starting model still limit practical interpretation. Physical acceptance remains null, and independent geology is absent. A small classical software baseline is reasonable now; a large recovery/physics claim or expansion to more reused trajectories is premature. Review the separately held checkpoint diagnostic before authorizing any trajectory study."
+  ],
+  "minimal_manufactured_controls_only_before_project_use": [
+    "Single complex scalar A=k-omega^2*m+i*omega*d, q=a: manual u=q/A and du/dm=omega^2*q/A^2; centered differences and real-stacked objective/gradient normalization, including a!=1 and Phi0 scaling. No PDE grid.",
+    "Tiny complex symmetric NON-Hermitian matrix with off-diagonal coupling, nontrivial source order, one covered and one uncovered receiver, and duplicate receiver slots: manual/inverse reference for C, Jp, J* y; real dot-product identity and centered directional differences. Verify U.T/a reuse, missing-row conjugation and summed duplicates.",
+    "Tiny rank-deficient rectangular linear least-squares example: damped LSQR/LSMR versus manual solution and explicit augmented-matrix reference, including squared damp convention, zero residual, nullspace components, bounded optimum and actual feasible-step predicted reduction. A manufactured fit-improves/model-error-worsens example must fail the recovery criterion.",
+    "Owner/model/operator/data/geometry mismatch, altered or expired snapshot, wrong amplitude/column mapping and changed model fail closed. Count one fresh LU and r-c receiver RHS for a missing-row fixture, and no new solves across repeated fixed-point J/J* calls; all-covered case needs no map-builder LU.",
+    "Mocked clock and solver interruptions exercise failed map construction, rejected trust-region trial, incomplete matvec, deadline during final metrics and serializer failure: retain all attempted work branches, no late endpoint credit, no truth-based fallback, restore only the last fully eligible genuine point. Save actual accepted versus rejected query chronology; SciPy callback alone is not a complete-return deadline guard."
+  ],
+  "engineering_gates_and_failure_meaning": [
+    "Advance only after source/control review of the new residual/Jacobian/deadline adapter and exact frozen tolerances/options; this memo supplies no launch or final protocol. Pin the actual SciPy version. Native source9f remains untouched.",
+    "For any later paid pilot, freeze a single damping/trust-region/inner-accuracy rule from software reasoning and manufactured controls before project reads. All8 reused cases stay in the denominator. Retain the existing meaningful recovery requirement (<=0.90*initial AND <=0.90*paired baseline error with common Phi/Phi0<=0.75, plus harm/eligibility gates) as a development threshold unless a separate prospective revision is justified. Baseline drift or near-init stasis alone earns no success.",
+    "Stop a claimed optimizer benefit if there is no eligible accepted step, measured complete-return cost loses against optimized L-BFGS-B, Jacobian/adjoint checks fail, or only data fit improves while model error fails the fixed threshold. If both correct strong baselines still fit but fail recovery, focus on acquisition/observable subspace and independently justified prior information rather than successive algorithm/weight searches.",
+    "Any favorable result remains reused-fixture engineering evidence. GN/LM, trust regions, LSQR/LSMR, reciprocity and cached Jacobians are standard methods, not the research contribution. All four scientific goals remain open."
+  ],
+  "primary_sources": [
+    {
+      "title": "Pratt, Shin and Hicks (1998), Gauss-Newton and full Newton methods in frequency-space seismic waveform inversion",
+      "url": "https://academic.oup.com/gji/article/133/2/341/578128",
+      "support": "Established frequency-domain GN, damped/LM stabilization of singular Hessians and source/receiver-dependent resolution; equations35-38. Search-indexed publisher full sections inspected; direct open failed. No remedy or novelty guarantee."
+    },
+    {
+      "title": "Paige and Saunders (1982), Algorithm583 LSQR",
+      "url": "https://web.stanford.edu/group/SOL/software/lsqr/lsqr-toms82b.pdf",
+      "support": "Primary algorithm uses supplied matrix/transpose products for rectangular and damped least squares. This is the standard inner-solve class, not new WaveCert machinery."
+    },
+    {
+      "title": "Fong and Saunders (2011), LSMR primary paper and author software",
+      "url": "https://arxiv.org/abs/1006.0758v2",
+      "author_software_url": "https://web.stanford.edu/group/SOL/software/lsmr/",
+      "support": "Matrix-free least squares and damped/minimum-norm solutions; monotone normal-residual property supports considering an early-truncated inner solve, not truth recovery."
+    },
+    {
+      "title": "SciPy1.17 official least_squares reference",
+      "url": "https://docs.scipy.org/doc/scipy-1.17.0/reference/generated/scipy.optimize.least_squares.html",
+      "support": "TRF accepts bounds and a LinearOperator; LSMR handles its iterative subproblem and rank-deficiency regularization. MINPACK LM lacks bounds and requires at least as many residuals as variables. Current raw real residual dimension1920 is below2401 variables; use TRF rather than that LM implementation."
+    }
+  ],
+  "source_bindings": {
+    "audited_prior48_report": {
+      "path": "work/prior48_independent_audit_01/report.json",
+      "sha256": "c3b528d942cba432b38be6bd2f46139402b058687e9e220781e10d57a4161baa"
+    },
+    "prior48_status": {
+      "path": "work/prior48_remote_study_01/extracted/study/status.json",
+      "sha256": "f53248a2350044a45a92c79d2572374d845332943485fbcd82223620ff23bfa3"
+    },
+    "prior48_protocol": {
+      "path": "work/new-phase-staging/fractional_velocity_prior48_driver_candidate/protocol.json",
+      "sha256": "92433c9d7b9d2990799f3a81707f6d04f63784a1820d3f109804a83b484ccfa6"
+    },
+    "exact_merit_source": {
+      "path": "work/wavecert-fwi/src/wavecert/physics/exact_merit.py",
+      "sha256": "0fec1f215b28e36017c1e28409d7f7e909a03cbf5b717de5d23eb8d52eb26810"
+    },
+    "helmholtz_source": {
+      "path": "work/wavecert-fwi/src/wavecert/physics/helmholtz.py",
+      "sha256": "caf51b58da24ed6d3633bda4eaaab804714f5c7932d9d5f343644763bc158131"
+    },
+    "cost_model": {
+      "path": "work/wavecert-fwi/docs/cost_model.md",
+      "sha256": "69b7d64d8c2057f0d2714bbda7fae5b49968144061937a53da7fa9f8fdf6ffe1"
+    },
+    "initial_linearization_diagnostic": {
+      "path": "work/wavecert-fwi/docs/initial_linearization_diagnostic.md",
+      "sha256": "f0ab4d5fd6c4ff2ada0da3391894cfa58b6a4ab6c69004bd4aba089316bf1ba3"
+    },
+    "recovery_and_physics_diagnostics": {
+      "path": "work/wavecert-fwi/docs/recovery_and_physics_diagnostics.md",
+      "sha256": "bb6afa702d581eed6d9951c7f3bb48db940760e45f6530bae97ae706c9c1c5a7"
+    },
+    "strengthening_status": {
+      "path": "work/wavecert-fwi/docs/strengthening_status.md",
+      "sha256": "dc8b738b3c43aaf2a2789e9a224d0d705566639d7d4f9cfcf8dca48bc2dbb052"
+    }
+  },
+  "scope": {
+    "project_arrays_loaded": false,
+    "PDE_solves": 0,
+    "dataset_downloads": 0,
+    "experiment_launches": 0,
+    "code_edits": 0,
+    "repo_edits": 0,
+    "new_scientific_result": false,
+    "new_prototype_implemented": false,
+    "student_final_design": false,
+    "execution_authorized": false
+  }
+}

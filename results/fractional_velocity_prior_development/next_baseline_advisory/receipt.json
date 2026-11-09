@@ -1,0 +1,45 @@
+{
+  "status": "DESIGN_ONLY_ADVISORY_SAVED",
+  "advisory_sha256": "d39c03e8de457d3edaaeed8ddd93bd45a8f3d5f1a4faeaab281b90f84fbd3b52",
+  "advisory_bytes": 16837,
+  "source_bindings": {
+    "audited_prior48_report": {
+      "path": "work/prior48_independent_audit_01/report.json",
+      "sha256": "c3b528d942cba432b38be6bd2f46139402b058687e9e220781e10d57a4161baa"
+    },
+    "prior48_status": {
+      "path": "work/prior48_remote_study_01/extracted/study/status.json",
+      "sha256": "f53248a2350044a45a92c79d2572374d845332943485fbcd82223620ff23bfa3"
+    },
+    "prior48_protocol": {
+      "path": "work/new-phase-staging/fractional_velocity_prior48_driver_candidate/protocol.json",
+      "sha256": "92433c9d7b9d2990799f3a81707f6d04f63784a1820d3f109804a83b484ccfa6"
+    },
+    "exact_merit_source": {
+      "path": "work/wavecert-fwi/src/wavecert/physics/exact_merit.py",
+      "sha256": "0fec1f215b28e36017c1e28409d7f7e909a03cbf5b717de5d23eb8d52eb26810"
+    },
+    "helmholtz_source": {
+      "path": "work/wavecert-fwi/src/wavecert/physics/helmholtz.py",
+      "sha256": "caf51b58da24ed6d3633bda4eaaab804714f5c7932d9d5f343644763bc158131"
+    },
+    "cost_model": {
+      "path": "work/wavecert-fwi/docs/cost_model.md",
+      "sha256": "69b7d64d8c2057f0d2714bbda7fae5b49968144061937a53da7fa9f8fdf6ffe1"
+    },
+    "initial_linearization_diagnostic": {
+      "path": "work/wavecert-fwi/docs/initial_linearization_diagnostic.md",
+      "sha256": "f0ab4d5fd6c4ff2ada0da3391894cfa58b6a4ab6c69004bd4aba089316bf1ba3"
+    },
+    "recovery_and_physics_diagnostics": {
+      "path": "work/wavecert-fwi/docs/recovery_and_physics_diagnostics.md",
+      "sha256": "bb6afa702d581eed6d9951c7f3bb48db940760e45f6530bae97ae706c9c1c5a7"
+    },
+    "strengthening_status": {
+      "path": "work/wavecert-fwi/docs/strengthening_status.md",
+      "sha256": "dc8b738b3c43aaf2a2789e9a224d0d705566639d7d4f9cfcf8dca48bc2dbb052"
+    }
+  },
+  "checks": "Read source and audited summary; independently recomputed outcome/size/RHS/rank-bound scalar arithmetic only. No array decoding, new native owner, numerical solver or study execution.",
+  "scientific_goals_complete": false
+}

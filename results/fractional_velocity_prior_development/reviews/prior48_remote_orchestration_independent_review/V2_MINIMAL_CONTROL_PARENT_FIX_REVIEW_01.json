@@ -1,0 +1,59 @@
+{
+  "PDE_calls": 0,
+  "actual_readonly_delta_check_exit_code": 0,
+  "actual_readonly_delta_check_tool_chunk": "2c7046",
+  "actual_study_activation_authorized": false,
+  "all_manifested_hashes_verified": true,
+  "executable_delta": "Exactly one line adds (live / \"control_tmp\").mkdir() after fresh controls.mkdir and before unchanged four controlgroup loop. No other executable bytes differ.",
+  "false_registration_sha256": "551f6549393bba4a63d6222c90fae49a0375500a5b0c2f591de292f5f66de5bd",
+  "first_failed_run_blindly_rerun": false,
+  "gate_controls": {
+    "errors": 0,
+    "failures": 0,
+    "receipt_sha256": "024e881c31e97050ce31a441f19646637caa411efaa2f1d18c6beb45b41ecc5e",
+    "reviewer_reran": false,
+    "tests": 22
+  },
+  "launcher_sha256": "16dbe8e3f533cf3fa2768269479c00e9c9e342e4405f4336c8cd20f5cf3ca8d2",
+  "manifest_sha256": "821821fd8fffe267f4503ec3ba66656d1bc309a6260e02d7da42bc244fdea603",
+  "material_blockers": [],
+  "new_50_control_replay": false,
+  "new_registration_state": {
+    "control_cohort_id": "prior48_remote_controls_02",
+    "execution_authorized": false,
+    "mode": "controls_only",
+    "prior_successful_control": null,
+    "root_go": null
+  },
+  "only_changed_publication_files": [
+    "research/prior48/orchestrate.py",
+    "research/prior48/BUNDLE_MANIFEST.json",
+    "research/prior48/RUN_REGISTRATION_01.json"
+  ],
+  "only_changed_top_level_AST_object": "run_controls",
+  "preserved_first_control_failure": {
+    "conclusion": "failure",
+    "role": "retained setup failure only; not study/scientific outcome, pooledresult or activationauthority",
+    "run_id": 42548463638,
+    "source_commit": "72326311db4179b7392d7b539fa034f99b8a52d5"
+  },
+  "previous_full_source_review_sha256": "fa70a7f9e3c5d302f306cc77bb181365a5d06086c287cd2dc02eecbfcf17ce34",
+  "project_arrays_decoded": 0,
+  "publication_bytes": 391733,
+  "publication_file_count": 26,
+  "role": "Independent AI exact-minimal-delta/source/retained-gate-receipt review; no newcontrol workload or study",
+  "source_edits_by_reviewer": false,
+  "source_sha256": "65e99bd7b862f8e572527744cb9f77af49867557ad50e4ea53c2c32d4c9eae71",
+  "status": "CLEAR_FOR_NEW_V2_CONTROL_ONLY_COMMIT_AND_RUN;ACTUAL_STUDY_HELD",
+  "unchanged": [
+    "frozenbaseline1983664/9f161",
+    "driver7c7/protocol924/schedule930",
+    "launcher16d testedlifecycle",
+    "fourfresh groups39/21/30/50",
+    "22stdlibmetadata controls source",
+    "workflowc91920minute infra bound/readonlypermission/SHAactionpins",
+    "separate source-control success then registration-only root activation rule",
+    "scientificcriteria b06/7.5s/8s and source numerical thresholds"
+  ],
+  "workflow_sha256": "c91907a03aaf79b481fdfb581d2565175e64f31c72471cde3f68dda988c18eda"
+}

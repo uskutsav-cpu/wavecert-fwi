@@ -1,0 +1,680 @@
+"""Independent saved-model Phi/quality check; default CLI reads no project data.
+
+Prepared while the benchmark is running. Execute only after root independently
+confirms the timing process has terminated. No wavecert/helper imports occur.
+This is a second AI implementation of the same discrete problem, not a proof
+of physical realism, mathematical novelty, or student ownership.
+"""
+
+from __future__ import annotations
+
+import argparse
+import csv
+import datetime
+import gzip
+import hashlib
+import io
+import json
+import math
+import os
+import platform
+import sys
+from pathlib import Path
+from time import perf_counter
+
+DRIVER_SHA = "7fc7543294380fda9dbde2784e6c469425be06d9d36ee45be2cbc44a34bd0883"
+ADDENDUM_SHA = "74039601d9785a63899aba406baeac7d21f39ce430cd08798a4e0473f169dce2"
+PROTOCOL_SHA = "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c"
+PRODUCTION_SHA = "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da"
+HELMHOLTZ_SHA = "caf51b58da24ed6d3633bda4eaaab804714f5c7932d9d5f343644763bc158131"
+MODEL_KEYS = ("prepared_initial", "returned_final", "internal_budget_0",
+              "internal_budget_1", "internal_budget_2", "internal_budget_3")
+TOLERANCES = {
+    "objective_rtol": 2e-9,
+    "objective_atol_initial_scale": 2e-12,
+    "objective_atol_initial_floor": 1e-12,
+    "quality_rtol": 5e-11,
+    "quality_atol": 2e-13,
+    "objective_ratio_rtol": 4e-9,
+    "objective_ratio_atol": 4e-12,
+    "initial_model_rtol": 2e-12,
+    "initial_model_atol": 2e-14,
+    "linear_solve_relative_residual_maximum": 1e-9,
+}
+
+
+def sha(raw):
+    return hashlib.sha256(raw).hexdigest()
+
+
+def file_sha(path):
+    digest = hashlib.sha256()
+    with Path(path).open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def json_load(path):
+    path = Path(path)
+    if path.name.endswith(".gz"):
+        with gzip.open(path, "rt") as stream:
+            return json.load(stream)
+    return json.loads(path.read_bytes())
+
+
+def safe_file(root, name):
+    root = Path(root).resolve()
+    path = (root / name).resolve()
+    if not path.is_relative_to(root) or not path.is_file():
+        raise ValueError("missing/escaping file: " + str(name))
+    return path
+
+
+def source_digest(root):
+    """Independently reproduce the documented path/NUL/file-SHA/NUL schema."""
+    files = [root / "pyproject.toml"]
+    files += list((root / "src").rglob("*.py"))
+    files += [p for p in (root / "configs").rglob("*") if p.is_file()]
+    files += [p for p in (root / "scripts").rglob("*") if p.suffix in {".py", ".sh"}]
+    files += list((root / ".github/workflows").glob("*.yml"))
+    files += list(root.glob("requirements*.txt"))
+    digest = hashlib.sha256()
+    count = 0
+    for path in sorted(set(files)):
+        if path.is_file():
+            digest.update(path.relative_to(root).as_posix().encode())
+            digest.update(b"\0")
+            digest.update(file_sha(path).encode())
+            digest.update(b"\0")
+            count += 1
+    return {"sha256": digest.hexdigest(), "files": count}
+
+
+class Checks:
+    def __init__(self):
+        self.count = 0
+        self.numeric_count = 0
+        self.failures = []
+        self.max_numeric_fraction_of_allowance = {}
+
+    def require(self, ok, context, detail=None):
+        self.count += 1
+        if not bool(ok):
+            self.failures.append({"context": context, "detail": detail})
+
+    def near(self, actual, expected, *, rtol, atol, context, family):
+        self.numeric_count += 1
+        if actual is None or expected is None:
+            self.require(actual is None and expected is None, context,
+                         {"actual": actual, "expected": expected})
+            return
+        actual, expected = float(actual), float(expected)
+        finite = math.isfinite(actual) and math.isfinite(expected)
+        allowance = atol + rtol * abs(actual)
+        error = abs(actual - expected) if finite else None
+        self.require(finite and error <= allowance, context,
+                     {"independent": actual, "recorded": expected,
+                      "absolute_error": error, "allowance": allowance})
+        if finite:
+            fraction = error / allowance if allowance else (0.0 if error == 0 else math.inf)
+            self.max_numeric_fraction_of_allowance[family] = max(
+                self.max_numeric_fraction_of_allowance.get(family, 0.0), fraction)
+
+
+def scalar_norm(values):
+    """Different reduction from np.linalg.norm: stable scalar math.hypot."""
+    flat = np.asarray(values).ravel()
+    if np.iscomplexobj(flat):
+        return math.hypot(*(float(v) for pair in zip(flat.real, flat.imag) for v in pair))
+    return math.hypot(*(float(v) for v in flat))
+
+
+def array_sha(values):
+    return sha(np.ascontiguousarray(values, dtype="<f8").tobytes())
+
+
+def independent_refinement(raw):
+    """Explicit bilinear interpolation at half-index nodes; no project helper."""
+    velocity = np.reciprocal(np.sqrt(np.asarray(raw, dtype=np.float64)))
+    padded = np.pad(velocity, ((1, 1), (1, 1)), mode="edge")
+    nodes = np.arange(1, 50, dtype=np.float64) * 0.5
+    low = np.floor(nodes).astype(np.int64)
+    fraction = nodes - low
+    high = low + 1
+    fz, fx = fraction[:, None], fraction[None, :]
+    z0, x0 = low[:, None], low[None, :]
+    z1, x1 = high[:, None], high[None, :]
+    fine = ((1 - fz) * (1 - fx) * padded[z0, x0]
+            + fz * (1 - fx) * padded[z1, x0]
+            + (1 - fz) * fx * padded[z0, x1]
+            + fz * fx * padded[z1, x1])
+    truth = np.reciprocal(fine * fine).reshape(-1)
+    # Reuse of a generic SciPy filter is disclosed; no WaveCert implementation.
+    smoothed = ndi.gaussian_filter(fine, sigma=3.2, mode="reflect")
+    initial = np.reciprocal(smoothed * smoothed).reshape(-1)
+    return truth, initial
+
+
+def mapped_index(old):
+    depth, lateral = divmod(int(old), 24)
+    return (2 * depth + 1) * 49 + (2 * lateral + 1)
+
+
+class IndependentCase:
+    def __init__(self, raw, protocol, checks, case_index):
+        self.protocol, self.checks, self.case_index = protocol, checks, case_index
+        self.truth, self.initial = independent_refinement(raw)
+        self.truth_velocity = np.reciprocal(np.sqrt(self.truth))
+        self.truth_norm = scalar_norm(self.truth)
+        self.velocity_norm = scalar_norm(self.truth_velocity)
+        self.n, self.nz, self.nx, self.h = 2401, 49, 49, 0.025
+        geometry = protocol["geometry"]
+        self.sources = [mapped_index(i) for i in geometry["original_source_indices"]]
+        self.receivers = [mapped_index(i) for i in geometry["original_receiver_indices"]]
+        self.frequencies = list(geometry["frequencies_hz"])
+        # Direct graph assembly differs from the production Kronecker assembly.
+        rows, columns, values = [], [], []
+        for z in range(self.nz):
+            for x in range(self.nx):
+                index = z * self.nx + x
+                rows.append(index)
+                columns.append(index)
+                values.append(4.0 / self.h ** 2)
+                for zz, xx in ((z - 1, x), (z + 1, x), (z, x - 1), (z, x + 1)):
+                    if 0 <= zz < self.nz and 0 <= xx < self.nx:
+                        rows.append(index)
+                        columns.append(zz * self.nx + xx)
+                        values.append(-1.0 / self.h ** 2)
+        self.stiffness = sp.coo_matrix((values, (rows, columns)), shape=(self.n, self.n)).tocsc()
+        distance = np.empty((self.nz, self.nx), dtype=np.float64)
+        for z in range(self.nz):
+            for x in range(self.nx):
+                distance[z, x] = min(z, x, self.nz - z - 1, self.nx - x - 1)
+        self.damping = (2.0 * np.maximum(0.0, (6.0 - distance) / 6.0) ** 2).ravel()
+        self.rhs = np.zeros((self.n, len(self.sources)), dtype=np.complex128)
+        for column, index in enumerate(self.sources):
+            self.rhs[index, column] = 1.0 / self.h ** 2
+        self.factorizations = 0
+        self.forward_rhs = 0
+        self.maximum_relative_linear_residual = 0.0
+        self.observations = {}
+        for frequency in self.frequencies:
+            fields = self.solve(self.truth, frequency, "truth_data")
+            self.observations[frequency] = fields[self.receivers, :].copy()
+        self.cache = {}
+        self.initial_phi = self.evaluate(self.initial)["objective"]
+
+    def operator(self, model, frequency):
+        omega = 2.0 * math.pi * float(frequency)
+        diagonal = -(omega * omega) * model + 1j * omega * self.damping
+        return self.stiffness + sp.diags(diagonal, format="csc")
+
+    def solve(self, model, frequency, context):
+        matrix = self.operator(model, frequency)
+        factor = spla.splu(matrix)
+        fields = factor.solve(self.rhs)
+        self.factorizations += 1
+        self.forward_rhs += len(self.sources)
+        residual = matrix @ fields - self.rhs
+        for column in range(len(self.sources)):
+            relative = scalar_norm(residual[:, column]) / scalar_norm(self.rhs[:, column])
+            self.maximum_relative_linear_residual = max(self.maximum_relative_linear_residual, relative)
+            self.checks.require(
+                math.isfinite(relative) and relative <= TOLERANCES["linear_solve_relative_residual_maximum"],
+                f"case{self.case_index}/{context}/frequency{frequency}/rhs{column}/true_residual",
+                {"relative_residual": relative})
+        return fields
+
+    def evaluate(self, model):
+        model = np.ascontiguousarray(model, dtype=np.float64).reshape(-1)
+        digest = array_sha(model)
+        if digest in self.cache:
+            return self.cache[digest]
+        by_frequency = []
+        for frequency in self.frequencies:
+            fields = self.solve(model, frequency, "saved_model:" + digest)
+            residual = fields[self.receivers, :] - self.observations[frequency]
+            # Scalar fsum over real/imag squares avoids vdot's reduction route.
+            terms = (float(v.real) ** 2 + float(v.imag) ** 2 for v in residual.ravel())
+            by_frequency.append(0.5 * math.fsum(terms))
+        record = {
+            "model_sha256": digest,
+            "objective": math.fsum(by_frequency),
+            "relative_squared_slowness_L2": scalar_norm(model - self.truth) / self.truth_norm,
+            "relative_physical_velocity_L2": scalar_norm(np.reciprocal(np.sqrt(model))
+                                                         - self.truth_velocity) / self.velocity_norm,
+            "per_frequency_objectives": by_frequency,
+        }
+        if not all(math.isfinite(record[k]) for k in (
+                "objective", "relative_squared_slowness_L2", "relative_physical_velocity_L2")):
+            raise ValueError("nonfinite independent model result")
+        self.cache[digest] = record
+        return record
+
+    def objective_check(self, actual, recorded, context):
+        self.checks.near(actual, recorded, rtol=TOLERANCES["objective_rtol"],
+                         atol=TOLERANCES["objective_atol_initial_scale"] * max(
+                             self.initial_phi, TOLERANCES["objective_atol_initial_floor"]),
+                         context=context, family="objective")
+
+    def quality_check(self, record, recorded, context):
+        for key in ("relative_squared_slowness_L2", "relative_physical_velocity_L2"):
+            self.checks.near(record[key], recorded[key], rtol=TOLERANCES["quality_rtol"],
+                             atol=TOLERANCES["quality_atol"], context=context + "/" + key,
+                             family="quality")
+
+
+def load_cases(root, protocol, checks):
+    prefix = "data/reference/subsurfacegen_parent_split/"
+    payloads = {}
+    for name, expected in protocol["inputs_sha256"].items():
+        raw = safe_file(root, name).read_bytes()
+        if sha(raw) != expected:
+            raise ValueError("input SHA mismatch: " + name)
+        payloads[name] = raw
+    metadata = list(csv.DictReader(io.StringIO(payloads[prefix + "validation_metadata.csv"].decode())))
+    manifest = list(csv.DictReader(io.StringIO(payloads[prefix + "split_manifest.csv"].decode())))
+    with np.load(io.BytesIO(payloads[prefix + "validation.npz"]), allow_pickle=False) as archive:
+        models = archive["models"].copy()
+        sources = archive["source_indices"].copy()
+        frequencies = archive["frequencies_hz"].copy()
+        receivers = archive["receiver_indices"].copy()
+        shape = archive["shape"].tolist()
+        spacing = float(archive["spacing"])
+    if (models.shape != (192, 24, 24) or models.dtype != np.float32 or shape != [24, 24]
+            or spacing != 0.05 or len(metadata) != 192
+            or not np.array_equal(receivers, protocol["geometry"]["original_receiver_indices"])
+            or not np.all(np.isfinite(models)) or np.any(models <= 0)):
+        raise ValueError("pinned input layout/domain differs")
+    expected_pairs = {(s, f) for s in protocol["geometry"]["original_source_indices"]
+                      for f in protocol["geometry"]["frequencies_hz"]}
+    cases = []
+    for case_index, identity in enumerate(protocol["identities"]):
+        positions = [i for i, row in enumerate(metadata) if row["slice_id"] == identity["slice_id"]]
+        if len(positions) != 24 or positions[0] != identity["array_index"]:
+            raise ValueError("input identity/array binding differs")
+        if {(int(sources[i]), float(frequencies[i])) for i in positions} != expected_pairs:
+            raise ValueError("input source/frequency coverage differs")
+        for i in positions:
+            row = metadata[i]
+            if (row["split"] != "validation" or row["model_id"] != identity["parent_id"]
+                    or row["source_file"] != identity["source_file"]
+                    or row["source_sha256"] != identity["source_sha256"]
+                    or not np.array_equal(models[i], models[positions[0]])):
+                raise ValueError("input metadata/model repeat binding differs")
+        rows = [row for row in manifest if row["slice_id"] == identity["slice_id"]]
+        checks.require(len(rows) == 1 and rows[0]["split"] == "validation"
+                       and rows[0]["model_id"] == identity["parent_id"], f"case{case_index}/split_manifest")
+        cases.append(models[positions[0]].astype(np.float64))
+    return cases
+
+
+def verify_descriptor(array, descriptor, checks, context):
+    checks.require(isinstance(descriptor, dict), context + "/descriptor_present")
+    if not isinstance(descriptor, dict):
+        return
+    checks.require(descriptor.get("array_shape") == list(array.shape), context + "/shape")
+    checks.require(descriptor.get("array_dtype") == "<f8", context + "/dtype")
+    checks.require(descriptor.get("sha256") == array_sha(array), context + "/sha")
+    checks.require(descriptor.get("dense_values_saved") is False, context + "/compact_descriptor")
+
+
+def target_eligibility(row, trajectory, timing, event, checks):
+    ratio = row["target_ratio"]
+    if ratio is None:
+        checks.require(event.get("applicable") is False and event.get("eligible") is False,
+                       f"run{row['run_index']}/anytime_is_not_return_target")
+        checks.require(event.get("elapsed_seconds") is None,
+                       f"run{row['run_index']}/anytime_no_return_target_time")
+        return False
+    first, last = trajectory.get("initial_objective"), trajectory.get("final_objective")
+    finite = first is not None and last is not None and math.isfinite(first) and math.isfinite(last)
+    wall = timing["actual_start_to_control_return_seconds"]
+    eligible = bool(finite and first > 0 and last <= ratio * first
+                    and trajectory.get("costs_complete") is True
+                    and trajectory.get("status") == "objective_target" and wall <= 8.0)
+    context = f"run{row['run_index']}/returned_target"
+    checks.require(event.get("eligible") is eligible, context + "/eligibility")
+    checks.require(event.get("elapsed_seconds") == (wall if eligible else None), context + "/time_or_censor")
+    checks.require(row.get("end_to_end_target") == event, context + "/row_core_agree")
+    return eligible
+
+
+def execute(root, run, output, expected_script_sha256):
+    global np, scipy, sp, spla, ndi
+    if sha(Path(__file__).read_bytes()) != expected_script_sha256:
+        raise ValueError("reviewed independent auditor source SHA mismatch")
+    root, run, output = Path(root).resolve(), Path(run).resolve(), Path(output).resolve()
+    if output.exists() or output.is_relative_to(run) or output.is_relative_to(root):
+        raise FileExistsError("audit output must be a new path outside benchmark run and repository")
+    # Terminal status is checked before NumPy/SciPy imports or any input arrays.
+    status = json_load(safe_file(run, "status.json"))
+    if status.get("status") not in {"complete_engineering_benchmark", "failed_or_interrupted"}:
+        raise RuntimeError("benchmark status is not terminal; no array loads permitted")
+    import numpy as np
+    import scipy
+    import scipy.ndimage as ndi
+    import scipy.sparse as sp
+    import scipy.sparse.linalg as spla
+
+    started = perf_counter()
+    checks = Checks()
+    frozen = {"driver_source.py": DRIVER_SHA, "execution_addendum.json": ADDENDUM_SHA,
+              "historical_candidate_protocol.json": PROTOCOL_SHA}
+    for name, expected in frozen.items():
+        if file_sha(safe_file(run, name)) != expected:
+            raise ValueError("run frozen artifact mismatch: " + name)
+    protocol = json_load(run / "historical_candidate_protocol.json")
+    addendum = json_load(run / "execution_addendum.json")
+    actual_source = source_digest(root)
+    if actual_source["sha256"] != PRODUCTION_SHA:
+        raise ValueError("current production source differs from frozen benchmark source")
+    if file_sha(safe_file(root, "src/wavecert/physics/helmholtz.py")) != HELMHOLTZ_SHA:
+        raise ValueError("old reference source bytes differ")
+    checks.require(status["source_before"]["candidate"]["repository_source_sha256"] == PRODUCTION_SHA,
+                   "status/source_before")
+    checks.require(addendum["production_source_sha256"] == PRODUCTION_SHA, "addendum/source")
+    checked_artifacts = {}
+    complete_path = run / "complete_receipt.json"
+    if status["status"] == "complete_engineering_benchmark":
+        complete = json_load(safe_file(run, "complete_receipt.json"))
+        checks.require(complete["runs"] == status["runs"], "complete_receipt/status_runs")
+        checks.require(status["source_after"] == status["source_before"], "status/source_unchanged")
+        for name, expected in complete["artifacts"].items():
+            actual = file_sha(safe_file(run, name))
+            checks.require(actual == expected, "complete_receipt/artifact/" + name)
+            checked_artifacts[name] = actual
+        checked_artifacts["complete_receipt.json"] = file_sha(complete_path)
+    else:
+        checked_artifacts["status.json"] = file_sha(run / "status.json")
+    if (protocol["physics"] != {"shape": [49, 49], "spacing": 0.025,
+                                "damping_width": 6, "damping_strength": 2.0}
+            or protocol["endpoint_budgets_seconds"] != [1.0, 2.0, 4.0, 8.0]):
+        raise ValueError("auditor is only for frozen 49-grid configuration")
+    rows = status["runs"]
+    if len(rows) != 360 or [row["run_index"] for row in rows] != list(range(360)):
+        raise ValueError("complete planned360-slot ledger is required even for failed terminal run")
+    raw_cases = load_cases(root, protocol, checks)
+    case_solvers, records, missing_slots = {}, [], []
+    seen_occurrences = {}
+    for row in rows:
+        run_index, case_index = row["run_index"], row["case_index"]
+        prefix = f"run_{run_index:03d}"
+        checks.require(row["identity"] == protocol["identities"][case_index], prefix + "/identity")
+        model_path = run / (prefix + "_models.npz")
+        core_path = run / (prefix + "_core.json.gz")
+        audit_path = run / (prefix + "_audit.json.gz")
+        terminal_eligible = row.get("status") == "complete" and row.get("final_study_eligible") is True
+        if not model_path.exists():
+            checks.require(not terminal_eligible, prefix + "/complete_run_has_saved_models")
+            missing_slots.append({"run_index": run_index, "status": row.get("status"),
+                                  "final_study_eligible": False, "reason": "no_saved_models"})
+            continue
+        model_hash = file_sha(model_path)
+        checked_artifacts[model_path.name] = model_hash
+        checks.require(row.get("models_sha256", model_hash) == model_hash, prefix + "/models_file_sha")
+        core = json_load(core_path) if core_path.exists() else None
+        audit = json_load(audit_path) if audit_path.exists() else None
+        if core is not None:
+            core_hash = file_sha(core_path)
+            checked_artifacts[core_path.name] = core_hash
+            checks.require(row.get("core_sha256", core_hash) == core_hash, prefix + "/core_file_sha")
+            checks.require(core["models_sha256"] == model_hash, prefix + "/core_models_sha")
+            checks.require(core["models_artifact"] == model_path.name, prefix + "/core_models_name")
+        checks.require(not terminal_eligible or (core is not None and audit is not None),
+                       prefix + "/complete_run_core_and_audit")
+        if audit is not None:
+            audit_hash = file_sha(audit_path)
+            checked_artifacts[audit_path.name] = audit_hash
+            checks.require(row.get("audit_sha256", audit_hash) == audit_hash, prefix + "/audit_file_sha")
+        if case_index not in case_solvers:
+            case_solvers[case_index] = IndependentCase(raw_cases[case_index], protocol, checks, case_index)
+        independent = case_solvers[case_index]
+        with np.load(model_path, allow_pickle=False) as archive:
+            if set(archive.files) != set(MODEL_KEYS):
+                raise ValueError(prefix + ": saved-model keys differ")
+            models = {key: archive[key].copy() for key in MODEL_KEYS}
+        for key, model in models.items():
+            if (model.shape != (2401,) or model.dtype != np.float64
+                    or not np.all(np.isfinite(model)) or np.any(model <= 0)):
+                raise ValueError(prefix + "/" + key + ": invalid saved model")
+        low, high = protocol["squared_slowness_bounds"]
+        checks.require(all(np.all((model >= low) & (model <= high)) for model in models.values()),
+                       prefix + "/all_saved_models_in_box")
+        initial = models["prepared_initial"]
+        checks.require(np.allclose(initial, independent.initial,
+                                   rtol=TOLERANCES["initial_model_rtol"],
+                                   atol=TOLERANCES["initial_model_atol"]),
+                       prefix + "/independently_rebuilt_initial_model",
+                       {"maximum_absolute_error": float(np.max(np.abs(initial - independent.initial)))})
+        checks.require(row.get("initial_sha256", array_sha(initial)) == array_sha(initial),
+                       prefix + "/prepared_initial_sha")
+        values = {key: independent.evaluate(model) for key, model in models.items()}
+        entry = {"run_index": run_index, "case_index": case_index, "method": row["method"],
+                 "repetition": row["repetition"], "measurement_mode": row["measurement_mode"],
+                 "row_status": row.get("status"), "terminal_final_study_eligible": terminal_eligible,
+                 "saved_models": {}, "returned_target_credit_eligible": False,
+                 "scope": "all numerical checks are after timing; no new performance timings"}
+        for key in MODEL_KEYS:
+            value = values[key]
+            dedup_key = str(case_index) + ":" + value["model_sha256"]
+            earlier = seen_occurrences.get(dedup_key)
+            if earlier is None:
+                seen_occurrences[dedup_key] = {"run_index": run_index, "model_key": key}
+            entry["saved_models"][key] = {
+                **value, "same_case_model_previous_occurrence": earlier,
+                "matched_budget_or_return_credit": False}
+        if core is not None:
+            trajectory = core["trajectory"]
+            endpoints = core["internal_budget_endpoints"]
+            checks.require(len(endpoints) == 4, prefix + "/four_endpoints")
+            checks.require(trajectory["truth_used_for_policy"] is False
+                           and trajectory["offline_validation_work_performed"] is False,
+                           prefix + "/no_offline_truth_policy_access")
+            verify_descriptor(models["returned_final"], trajectory["final_model"], checks,
+                              prefix + "/returned_final")
+            if trajectory.get("initial_objective") is not None:
+                independent.objective_check(values["prepared_initial"]["objective"],
+                                            trajectory["initial_objective"], prefix + "/online_initial_phi")
+            if trajectory.get("final_objective") is not None:
+                independent.objective_check(values["returned_final"]["objective"],
+                                            trajectory["final_objective"], prefix + "/online_returned_final_phi")
+            returned_eligible = target_eligibility(row, trajectory, core["timing"],
+                                                   core["end_to_end_target"], checks)
+            if row["target_ratio"] is not None:
+                independent_initial_phi = values["prepared_initial"]["objective"]
+                independent_final_phi = values["returned_final"]["objective"]
+                independent_target_reached = (independent_initial_phi > 0 and independent_final_phi
+                                              <= row["target_ratio"] * independent_initial_phi)
+                entry["independent_returned_target_reached"] = bool(independent_target_reached)
+                entry["independent_returned_target_margin"] = (
+                    row["target_ratio"] * independent_initial_phi - independent_final_phi)
+                if returned_eligible:
+                    checks.require(independent_target_reached,
+                                   prefix + "/independent_returned_phi_meets_recorded_target",
+                                   {"initial_phi": independent_initial_phi, "final_phi": independent_final_phi,
+                                    "target_ratio": row["target_ratio"]})
+            entry["returned_target_credit_eligible"] = terminal_eligible and returned_eligible
+            entry["saved_models"]["returned_final"]["matched_budget_or_return_credit"] = (
+                terminal_eligible and returned_eligible)
+            checkpoints = trajectory["checkpoints"]
+            for checkpoint in checkpoints:
+                elapsed = checkpoint["elapsed_seconds"]
+                checks.require(math.isfinite(elapsed) and elapsed >= 0
+                               and checkpoint["within_budget"] is (elapsed <= 8.0),
+                               prefix + "/checkpoint_budget_flag")
+                checks.require(checkpoint["model"]["sha256"] == checkpoint["model_sha256"],
+                               prefix + "/checkpoint_model_descriptor_sha")
+            for i, endpoint in enumerate(endpoints):
+                key, budget = "internal_budget_" + str(i), protocol["endpoint_budgets_seconds"][i]
+                verify_descriptor(models[key], endpoint["model"], checks, prefix + "/" + key)
+                checks.require(endpoint["budget_seconds"] == budget, prefix + "/endpoint_budget_order")
+                eligible = [cp for cp in checkpoints if cp["within_budget"] and cp["elapsed_seconds"] <= budget]
+                selected = eligible[-1] if eligible else None
+                expected_sha = array_sha(initial) if selected is None else selected["model_sha256"]
+                checks.require(array_sha(models[key]) == expected_sha == endpoint["model_sha256"],
+                               prefix + "/" + key + "/selected_state_sha")
+                checks.require(endpoint["completed_paid_checkpoint"] is (selected is not None),
+                               prefix + "/" + key + "/paid_checkpoint_flag")
+                checks.require(endpoint["checkpoint_elapsed_seconds"] == (
+                    None if selected is None else selected["elapsed_seconds"]),
+                    prefix + "/" + key + "/selected_checkpoint_time")
+                if selected is not None:
+                    independent.objective_check(values[key]["objective"], selected["objective"],
+                                                prefix + "/" + key + "/selected_checkpoint_phi")
+                    independent.objective_check(values[key]["objective"], endpoint["online_objective"],
+                                                prefix + "/" + key + "/endpoint_online_phi")
+                    initial_phi = values["prepared_initial"]["objective"]
+                    relative = None if initial_phi <= 0 else values[key]["objective"] / initial_phi
+                    checks.near(relative, endpoint["relative_online_objective"],
+                                rtol=TOLERANCES["objective_ratio_rtol"],
+                                atol=TOLERANCES["objective_ratio_atol"],
+                                context=prefix + "/" + key + "/online_objective_ratio",
+                                family="objective_ratio")
+                else:
+                    checks.require(endpoint["online_objective"] is None,
+                                   prefix + "/" + key + "/unpaid_fallback_no_online_phi")
+                    checks.require(endpoint["relative_online_objective"] is None,
+                                   prefix + "/" + key + "/unpaid_fallback_no_online_ratio")
+                entry["saved_models"][key]["matched_budget_or_return_credit"] = (
+                    terminal_eligible and selected is not None)
+                entry["saved_models"][key]["credit_scope"] = "internal checkpoint diagnostic only"
+        if audit is not None and core is not None:
+            independent.objective_check(values["prepared_initial"]["objective"],
+                                        audit["offline_audit"]["initial_objective"],
+                                        prefix + "/after_return_initial_phi")
+            diagnostics = audit["budget_endpoint_diagnostics"]
+            quality = audit["credited_reconstruction_quality"]
+            checks.require(audit["policy_access"] is False and quality["truth_used_for_policy"] is False,
+                           prefix + "/offline_audit_not_policy_input")
+            checks.require(len(diagnostics) == 4 and len(quality["internal_budget_states"]) == 4,
+                           prefix + "/four_offline_endpoint_diagnostics")
+            for i, diagnostic in enumerate(diagnostics):
+                key = "internal_budget_" + str(i)
+                independent.objective_check(values[key]["objective"], diagnostic["offline_objective"],
+                                            prefix + "/" + key + "/after_return_phi")
+                initial_phi = values["prepared_initial"]["objective"]
+                relative = None if initial_phi <= 0 else values[key]["objective"] / initial_phi
+                checks.near(relative, diagnostic["offline_objective_ratio"],
+                            rtol=TOLERANCES["objective_ratio_rtol"],
+                            atol=TOLERANCES["objective_ratio_atol"],
+                            context=prefix + "/" + key + "/after_return_objective_ratio",
+                            family="objective_ratio")
+                checks.require(diagnostic["budget_seconds"] == protocol["endpoint_budgets_seconds"][i]
+                               and diagnostic["model_sha256"] == values[key]["model_sha256"],
+                               prefix + "/" + key + "/offline_diagnostic_binding")
+                checks.near(values[key]["relative_physical_velocity_L2"], diagnostic["relative_velocity_error"],
+                            rtol=TOLERANCES["quality_rtol"], atol=TOLERANCES["quality_atol"],
+                            context=prefix + "/" + key + "/legacy_velocity_error", family="quality")
+                verify_descriptor(models[key], diagnostic["model"], checks, prefix + "/offline/" + key)
+                state_quality = quality["internal_budget_states"][i]
+                paid = core["internal_budget_endpoints"][i]["completed_paid_checkpoint"]
+                checks.require(state_quality["budget_seconds"] == protocol["endpoint_budgets_seconds"][i],
+                               prefix + "/" + key + "/quality_budget_binding")
+                checks.require(state_quality["eligible_paid_checkpoint"] is paid,
+                               prefix + "/" + key + "/credited_quality_flag")
+                checks.require(audit["matched_budget_eligible"][i] is paid,
+                               prefix + "/" + key + "/offline_paid_flag")
+                if paid:
+                    independent.quality_check(values[key], state_quality["quality"],
+                                              prefix + "/" + key + "/quality")
+                else:
+                    checks.require(state_quality["quality"] is None,
+                                   prefix + "/" + key + "/unpaid_fallback_no_credited_quality")
+            raw_target = core["end_to_end_target"]["eligible"]
+            checks.require(quality["fully_returned_target_eligible"] is raw_target,
+                           prefix + "/returned_target_quality_flag")
+            if raw_target:
+                independent.quality_check(values["returned_final"], quality["fully_returned_target_state"],
+                                          prefix + "/returned_target_quality")
+            else:
+                checks.require(quality["fully_returned_target_state"] is None,
+                               prefix + "/ineligible_target_no_credited_quality")
+        records.append(entry)
+    checks.require(not any(name.startswith("wavecert") for name in sys.modules), "no_wavecert_imports")
+    passed = not checks.failures
+    for entry in records:
+        entry["verified_returned_target_credit_eligible"] = (
+            passed and entry["returned_target_credit_eligible"])
+        for value in entry["saved_models"].values():
+            value["recorded_time_status_eligibility"] = value.pop("matched_budget_or_return_credit")
+            value["verified_credit_eligible"] = passed and value["recorded_time_status_eligibility"]
+    summary = {
+        "status": "passed" if passed else "failed",
+        "created_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        "scope": "independent same-discrete-equation saved-model objective/quality audit; AI reproduction",
+        "benchmark_terminal_status": status["status"],
+        "auditor_source_sha256": file_sha(Path(__file__)),
+        "frozen_source_files": frozen,
+        "production_source": actual_source,
+        "tolerances_frozen_before_output_inspection": TOLERANCES,
+        "tolerance_rationale": "independent bilinear/stencil assembly and scalar reductions change FP ordering; objective comparison uses 2e-9 relative plus 2e-12 initial-Phi scale, quality5e-11 relative+2e-13 absolute; ordinary FP checks, no interval enclosure",
+        "runtime": {"python": sys.version, "numpy": np.__version__, "scipy": scipy.__version__,
+                    "platform": platform.platform(), "threads": {key: os.environ.get(key) for key in (
+                        "OMP_NUM_THREADS", "MKL_NUM_THREADS", "OPENBLAS_NUM_THREADS",
+                        "VECLIB_MAXIMUM_THREADS", "NUMEXPR_NUM_THREADS")}},
+        "audit_wall_seconds_not_performance_evidence": perf_counter() - started,
+        "checks": checks.count,
+        "numeric_comparisons": checks.numeric_count,
+        "max_numeric_fraction_of_allowance": checks.max_numeric_fraction_of_allowance,
+        "failures": checks.failures,
+        "scheduled_runs": len(rows),
+        "runs_with_saved_models_checked": len(records),
+        "saved_model_slots_checked": len(records) * len(MODEL_KEYS),
+        "distinct_case_model_sha_from_saved_slots": len(seen_occurrences),
+        "deduplication_key": "case_index + canonical little-endian float64 model SHA256",
+        "all_slot_occurrences_preserved": True,
+        "missing_saved_model_runs": missing_slots,
+        "case_summaries": {str(index): {
+            "identity": protocol["identities"][index],
+            "independently_rebuilt_truth_sha256": array_sha(case.truth),
+            "independently_rebuilt_initial_sha256": array_sha(case.initial),
+            "distinct_numerically_evaluated_models_including_rebuilt_initial": len(case.cache),
+            "audit_factorizations": case.factorizations,
+            "audit_forward_rhs": case.forward_rhs,
+            "maximum_relative_linear_residual": case.maximum_relative_linear_residual,
+        } for index, case in case_solvers.items()},
+        "artifacts_checked": checked_artifacts,
+        "records": records,
+        "credit_gate": "If this audit fails, no row is verified for positive use. Otherwise terminal rowcomplete + final_study_eligible + selected paid checkpoint/internal or eligible fully returned target required.",
+        "no_unavailable_vectors_reconstructed": True,
+        "intermediate_certificate_or_direction_replay": False,
+        "independent_solver_implementation": "direct graph stencil/diagonal assembly and scipy sparse LU; shares NumPy/SciPy/SuperLU dependency, no wavecert/oracle/helper imports",
+        "limitations": ["Same discrete Dirichlet/damped scalar physics, not independent physical truth.",
+                        "Reused development geology, SEAM shared ancestry; no independent-site inference.",
+                        "Only saved initial/final/four endpoint models checked; intermediate dense directions unavailable.",
+                        "This is separate AI code, not external human reproduction or student interpretation.",
+                        "No acceleration/reconstruction advantage is inferred by this numerical audit."],
+    }
+    output.parent.mkdir(parents=True, exist_ok=True)
+    raw = (json.dumps(summary, indent=2, sort_keys=True, allow_nan=False) + "\n").encode()
+    with output.open("xb") as stream:
+        stream.write(raw)
+    return {"status": summary["status"], "output": str(output), "sha256": sha(raw),
+            "checks": checks.count, "failure_count": len(checks.failures),
+            "saved_model_slots_checked": summary["saved_model_slots_checked"],
+            "distinct_case_model_sha": len(seen_occurrences)}
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--execute-after-terminal-confirmation", action="store_true")
+    parser.add_argument("--expected-script-sha256")
+    parser.add_argument("--repo", type=Path)
+    parser.add_argument("--run", type=Path)
+    parser.add_argument("--output", type=Path)
+    args = parser.parse_args(argv)
+    if not args.execute_after_terminal_confirmation:
+        print(json.dumps({"status": "source_only_no_project_reads_or_numeric_imports",
+                          "script_sha256": file_sha(Path(__file__)), "tolerances": TOLERANCES}))
+        return 0
+    if not all((args.expected_script_sha256, args.repo, args.run, args.output)):
+        parser.error("execution requires expected script SHA, --repo, --run and new --output")
+    result = execute(args.repo, args.run, args.output, args.expected_script_sha256)
+    print(json.dumps(result))
+    return 0 if result["status"] == "passed" else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

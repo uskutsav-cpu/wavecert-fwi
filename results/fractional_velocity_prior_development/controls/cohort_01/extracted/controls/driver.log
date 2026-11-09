@@ -1,0 +1,19 @@
+......E
+==================================== ERRORS ====================================
+_ ERROR at setup of test_self_rehashed_schedule_tamper_still_fails_fixed_order _
+
+self = PosixPath('/home/runner/work/wavecert-fwi/wavecert-fwi/prior48_artifacts/live/control_tmp/driver')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/home/runner/work/wavecert-fwi/wavecert-fwi/prior48_artifacts/live/control_tmp/driver'
+
+/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/pathlib.py:1116: FileNotFoundError
+=========================== short test summary info ============================
+ERROR test_driver_manufactured.py::test_self_rehashed_schedule_tamper_still_fails_fixed_order - FileNotFoundError: [Errno 2] No such file or directory: '/home/runner/work/wavecert-fwi/wavecert-fwi/prior48_artifacts/live/control_tmp/driver'
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!

@@ -1,0 +1,53 @@
+{
+  "status": "STAGED_PUBLIC_PARENT75_STATIC_REVIEW_CLEAR_NOT_EXECUTED",
+  "created_utc": "2026-11-09T02:47:20.404253+00:00",
+  "source_sha256": "6f6048bdf57eac5f7e42607761e3d96c7378691e5f9bc8f052656a952a257a6b",
+  "source_bytes": 8401,
+  "future_repo_test": "tests/test_prior48_archival_manufactured_reproduction.py",
+  "future_repo_fixture": "results/fractional_velocity_prior_development/portable_controls",
+  "fixture_sibling_directories": [
+    "fractional_velocity_prior48_post_audit",
+    "fractional_velocity_prior48_driver_candidate"
+  ],
+  "fixture_manifest_sha256": "3385d0b238586e99312226b545b817b3fae4f8ea90ca6b5129ddc401c5cb1f0b",
+  "fixture_layout_sha256": "e5487f5b424cf5ffd57223ec8ca8db48129b8f9dc84927bd884d5f38cb86f919",
+  "computational_files": 16,
+  "computational_bytes": 296711,
+  "additional_pinned_descriptors": 2,
+  "controls_expected": 75,
+  "control_files": [
+    "test_scalar_audit_manufactured.py",
+    "test_trace_checks.py",
+    "test_producer_schema_interop.py"
+  ],
+  "staging_validation": {
+    "Ruff": "PASS tool2d7a96 using repository pyproject.toml",
+    "Python310_grammar": true,
+    "independent_static_review": {
+      "reviewer": "/root/prior48_auditor_review/portable_parent_review",
+      "result": "CLEAR",
+      "exact_hash_independently_checked": true,
+      "material_issues": [],
+      "imports_tests_models_PDE_executed": false
+    }
+  },
+  "contract": [
+    "Verify exact descriptor pins and all16 unique computational paths,size,hash,totalbytes before any execution.",
+    "Copy ONLY16files+2pinned descriptors into fresh temporary literal-sibling layout and verify exact copiedbytes before spawn.",
+    "Run exactly three selected existing control files ONCE in fresh dedicated process group: current Python -B -I -Werror -m pytest -q -x -Werror,no cache,-c os.devnull,import-modeprepend,noconftest.",
+    "Scrub inherited pytest/Pythonpath configuration, disable plugin autoload, set five BLAS thread envs1 and fixedhashseed0.",
+    "Create temporary output parent before XML/log/basetemp; pytest owns fresh basetemp; no retry.",
+    "180s timeout kills/reaps the dedicated known process group, including exporter descendants; preserves actual observed exit/timedout metadata.",
+    "Require actualchildexit0, exact75tests,75uniquecaseidentities andzero failures/errors/skips; verify originalfixture AND executioncopy unchanged afterward.",
+    "Emit JSON check=prior48_archival_manufactured_reproduction and sentinel=WAVECERT_PRIOR48_ARCHIVAL75_V1 on pass and preflight/childfailure, with log/XML/source hashes,counts,command/paths and error/logtail when available. Also persistreport.json and pytestrecordproperty."
+  ],
+  "platform_scope": "Current Mac/POSIX and standard LinuxCI; no Windows validation claimed",
+  "project_arrays_decoded": 0,
+  "PDE_calls": 0,
+  "controls_executed_by_stager": false,
+  "repeat140_or108_controls": false,
+  "producer_auditor_or_scientific_criteria_modified": false,
+  "repo_tests_workflow_production_modified": false,
+  "actual3902_review_modified": false,
+  "next": "Root copies exactcandidate into repo/tests afterfixturecopy, executes publicparent once locally with warningsaserrors, then publishes normalCI checks."
+}

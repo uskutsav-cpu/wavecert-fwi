@@ -1,0 +1,49 @@
+{
+  "cohort_id": "prior48_remote_01",
+  "driver": "/home/runner/work/wavecert-fwi/wavecert-fwi/experiment/research/prior48/driver/run_prior48.py",
+  "expected_driver_sha256": "7c7fc525894dbd38899ad6ee46bff8a0a0d996ea2ef61d5da2e6ce8b4320d882",
+  "expected_production_file_count": 161,
+  "expected_production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "expected_protocol_sha256": "92433c9d7b9d2990799f3a81707f6d04f63784a1820d3f109804a83b484ccfa6",
+  "expected_root_go_sha256": "44234fe02f29956a74b61850e8cb7752841aff97545ea9c1e5e2039df5efa1e1",
+  "expected_schedule_file_sha256": "930e8ecf6bdbb78901b2330c0e1e71a470c7b914067feaf3c0ba3316442be150",
+  "output": "/home/runner/work/wavecert-fwi/wavecert-fwi/prior48_artifacts/live/study",
+  "protected_prior_contexts": [
+    {
+      "expected_receipt_sha256": "0642ddb0b58635fe652a1cc565d2f9ffacc0cb5da864040b640439a0602e1c81",
+      "no_pooling": true,
+      "no_resume": true,
+      "output": "/home/runner/work/wavecert-fwi/wavecert-fwi/baseline/results/frequency_continuation_development/cohort_01",
+      "receipt": "/home/runner/work/wavecert-fwi/wavecert-fwi/baseline/results/frequency_continuation_development/cohort_01_external_observation.json",
+      "role": "Protected prior inspected development context only; never resumed or pooled"
+    },
+    {
+      "expected_receipt_sha256": "742fe3b09e75217ace89167e838201fe7095f9ea112f72ff74ee45b756b95cfd",
+      "no_pooling": true,
+      "no_resume": true,
+      "output": "/home/runner/work/wavecert-fwi/wavecert-fwi/baseline/results/frequency_continuation_development/cohort_02",
+      "receipt": "/home/runner/work/wavecert-fwi/wavecert-fwi/baseline/results/frequency_continuation_development/cohort_02_terminal_observation.json",
+      "role": "Protected prior inspected development context only; never resumed or pooled"
+    }
+  ],
+  "protocol": "/home/runner/work/wavecert-fwi/wavecert-fwi/experiment/research/prior48/driver/protocol.json",
+  "python": "/opt/hostedtoolcache/Python/3.11.18/x64/bin/python3.11",
+  "repo": "/home/runner/work/wavecert-fwi/wavecert-fwi/baseline",
+  "root_go": "/home/runner/work/wavecert-fwi/wavecert-fwi/prior48_artifacts/live/runtime_inputs/root_go.json",
+  "schedule": {
+    "cases": 8,
+    "methods": 2,
+    "repetitions": 3,
+    "total_runs": 48
+  },
+  "schedule_file": "/home/runner/work/wavecert-fwi/wavecert-fwi/experiment/research/prior48/driver/FROZEN48_SCHEDULE.json",
+  "schema_version": 2,
+  "study_semantics": "new_48_slot_development_no_resume_no_pooling",
+  "threads": {
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "role": "AI-authored provisional SOFTWARE ENGINEERING benchmark",
+  "created_utc": "2026-11-08T01:47:27.780381+00:00",
+  "student_final_research_design": false,
+  "student_preregistration": false,
+  "competition_evidence": false,
+  "project_execution_authorized": false,
+  "scope": "Implementation verification on reused development inputs; not a final research question, hypothesis, complete student experimental design, independent geology, confirmation, or competition proof. Outcomes/timings must not be run without separate root authorization and student ownership determination.",
+  "methods": [
+    "exact_lu_projected",
+    "exact_lu_lbfgsb",
+    "same_M_gmres_projected",
+    "fixed_sweeps_uncertified",
+    "fixed_sweeps_certified"
+  ],
+  "physics": {
+    "shape": [
+      49,
+      49
+    ],
+    "spacing": 0.025,
+    "damping_width": 6,
+    "damping_strength": 2.0
+  },
+  "geometry": {
+    "original_shape": [
+      24,
+      24
+    ],
+    "original_spacing": 0.05,
+    "dirichlet_extent_km": 1.25,
+    "original_source_indices": [
+      50,
+      54,
+      58,
+      61,
+      65,
+      69
+    ],
+    "original_receiver_indices": [
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69
+    ],
+    "frequencies_hz": [
+      2.5,
+      3.0,
+      3.5,
+      4.0
+    ],
+    "mapping": "integer factor2: (old_coord+1)*2-1; C-order flatten on49 grid",
+    "blocks_per_model": 24
+  },
+  "preparation": {
+    "velocity": "1/sqrt(original float32 squared slowness), evaluated float64",
+    "refinement": "RegularGridInterpolator linear on edge-padded26x26 velocity with coordinates0..25; new interior nodes1..49 mapped to old-coordinate j*25/50; no clipping",
+    "initialization": "Gaussian filter refined velocity sigma.08km/.025km=3.2 grid cells, reflect; then reciprocal-square",
+    "truth": "same fine discrete reference solver on reciprocal-square refined raw velocity; noiseless self-consistent observations; all truth-data generation outside online clock and separately counted",
+    "native_high_resolution_geology": false
+  },
+  "identities": [
+    {
+      "array_index": 0,
+      "parent_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "source_file": "slices/slice_gom_148_il_0236.h5",
+      "source_sha256": "3a693c7aab525351aca671cc640afa4bed4ffb3be14b8039c40f59f2905209db"
+    },
+    {
+      "array_index": 24,
+      "parent_id": "gom_148",
+      "slice_id": "gom_148_xl_0768",
+      "source_file": "slices/slice_gom_148_xl_0768.h5",
+      "source_sha256": "6d1f16d527a9fed2e245f4d37254de75a2e430be7f4283cf65cfbfee7f1e84a1"
+    },
+    {
+      "array_index": 48,
+      "parent_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "source_file": "slices/slice_seam_011_il_0522.h5",
+      "source_sha256": "5f0982f2f87dbd40c40f758e40e14b5f898b6f8e92dde3b255433e6dfe1b958e"
+    },
+    {
+      "array_index": 72,
+      "parent_id": "seam_011",
+      "slice_id": "seam_011_xl_0866",
+      "source_file": "slices/slice_seam_011_xl_0866.h5",
+      "source_sha256": "2ac2600a3f37bda30bb9f336ebf0f82f7251d47f7ae55fa3b5810e0a616f16f8"
+    },
+    {
+      "array_index": 96,
+      "parent_id": "gom_151",
+      "slice_id": "gom_151_il_0247",
+      "source_file": "slices/slice_gom_151_il_0247.h5",
+      "source_sha256": "306380b97261c6812c45900fe6d47f4cb7b41b5851f3054f7881c2912a32c8c8"
+    },
+    {
+      "array_index": 120,
+      "parent_id": "gom_151",
+      "slice_id": "gom_151_xl_0857",
+      "source_file": "slices/slice_gom_151_xl_0857.h5",
+      "source_sha256": "157ad1e6e2bdab57496379fd54e49467816c0cd75cb4f7b3b9279a35c84da7b6"
+    },
+    {
+      "array_index": 144,
+      "parent_id": "seam_005",
+      "slice_id": "seam_005_il_0596",
+      "source_file": "slices/slice_seam_005_il_0596.h5",
+      "source_sha256": "be96babcb90440f814887f3dbe9955b3879181e92b13bc59d3da0b5beb6ac5ff"
+    },
+    {
+      "array_index": 168,
+      "parent_id": "seam_005",
+      "slice_id": "seam_005_xl_0795",
+      "source_file": "slices/slice_seam_005_xl_0795.h5",
+      "source_sha256": "ab1ebc7628336883cd518745ef117d1763e7b60e0bdcedfb35b5f94da5746204"
+    }
+  ],
+  "inputs_sha256": {
+    "data/reference/subsurfacegen_parent_split/validation.npz": "36d11aba94ae9093cac888e9b28a2d01edcef1aa3a54b12f8e10269b963db2fc",
+    "data/reference/subsurfacegen_parent_split/validation_metadata.csv": "d3ce8ab6a3474a6bc17595f26b68940e7c7ad9481d8c80fb89fe04833e6996e6",
+    "data/reference/subsurfacegen_parent_split/split_manifest.csv": "30fed6e30e07a1b54d17f3ae9511d06eac6f44c69fcb57b6ee588f2ade65ef14"
+  },
+  "ancestry": "All8 already reused development slices; nominal SEAM model IDs share ancestor. No independent-parent/site/IID confidence claims; every run retained.",
+  "rank": 64,
+  "fixed_sweeps": 4,
+  "gmres": {
+    "rtol": 1e-10,
+    "atol": 1e-12,
+    "maxiter": 200,
+    "restart": 40
+  },
+  "gmres_role": "Same paid LU merit for all5 methods. GMRES solves only missing Lambda/V using same coarse-Galerkin initializer and same norm-free inverse action as fixed sweeps. Convergence requires true residual for every column. No certificate SVD/eig paid by GMRES. Failed GMRES trajectory and all reports/costs retained; no nonconverged field returned.",
+  "lbfgsb": {
+    "maximum_corrections": 10,
+    "function_tolerance": 1e-12,
+    "gradient_tolerance": 1e-10
+  },
+  "trajectory": {
+    "budget_seconds": 8.0,
+    "maximum_steps": 200,
+    "initial_step": 0.002,
+    "maximum_step": 0.02,
+    "maximum_line_search_trials": 12,
+    "contraction": 0.5,
+    "accepted_step_growth": 1.5,
+    "relative_objective_target": null,
+    "absolute_objective_target": null,
+    "exact_projected_stationarity_tolerance": 1e-10
+  },
+  "squared_slowness_bounds": [
+    0.027777777777777776,
+    1.0
+  ],
+  "endpoint_budgets_seconds": [
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "reported_objective_ratios": [
+    0.5,
+    0.25
+  ],
+  "target_role": "Reporting endpoints only; neither ratio stops the online algorithm. First within-budget strict accepted checkpoint achieving ratio; unreached targets remain censored, never replaced with elapsed budget.",
+  "repetitions": 3,
+  "order_seed": 2026110729,
+  "order": "repetition outer, fixed identity order, independent rng.default_rng(order_seed).permutation(methods) per case/repetition; save all120 scheduled runs before execution",
+  "online_rule": "Fresh oracle/physics/proxy/stability per policy/case/repetition; constructor/setup+initialLUmerit+allcurrentmodelwork+alltrials+fallbacks+policy metadata construction and acceptance paid. Final strict serialization/artifact compression and offline numerical audits are outside the algorithm clock. Only strict accepted endpoints completed within budget credited. A raw point certificate does not certify clipping or a finite step.",
+  "offline_rule": "Generate shared truth data before controls; independent fresh-LU endpoint verification and certificate-DD audits after each timed trajectory, never passed to policy. Record offline costs/time separately.",
+  "cache_rule": "Within-run current+latest LU receipts, own norm-free modelcache4/contextcache8 and own stability modelcache4; no cross-policy or cross-run fields/contexts/warm starts.",
+  "threads": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "execution_gate": "No project-study runner or execution CLI is supplied. This archived AI-authored software candidate is unapproved; root GO and student ownership determination are required before any future project execution.",
+  "artifact_rule": "New output directory only; status written before work, every scheduled run/failure retained. Gzipped JSON hashes/time/Phi/cost histories without duplicate dense vectors; compressed NPZ initial/budget/final models only. Offline audits use in-RAM full trajectory before releasing it. Explicit disk preflight. No timings hidden/pooled as IID; no selecting a winner as confirmation.",
+  "statistics": "Per-run paired raw endpoints and target times; descriptive case/nominal-parent summaries only, no IID eight-slice CI or geology-independent inference.",
+  "numerical_scope": "Float64/complex128 ordinary FP. Coarse inequalities use existing unverified allowances, no formal roundoff enclosure, finite-step safety theorem, or acceleration promise.",
+  "candidate_controls_and_defaults_only": true,
+  "design_status": "Unapproved AI-authored engineering defaults; not the student final or complete experiment design."
+}

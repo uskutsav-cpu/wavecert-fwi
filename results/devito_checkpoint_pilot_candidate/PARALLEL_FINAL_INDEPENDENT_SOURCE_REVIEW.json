@@ -1,0 +1,363 @@
+{
+  "status": "INDEPENDENT_SOURCE_REVIEW_CLEAR_FOR_ROOT_PREPARATION_REVIEW_ONLY_NATIVE_UNEXECUTED",
+  "reviewer": "/root/matched_cost_next_design",
+  "role": "Independent AI source review of another agent authored worker; selected primary source text and saved stdlib control evidence only. No blind native reproduction or human mathematical certification.",
+  "reviewed_handoff_sha256": "30f18b01411d92b17b9683ebacbaa75de1b96935899394119408e7775470f7e2",
+  "source_files": {
+    "RUNTIME_SOURCE_PINS.json": "bfbc2e31cd4ff7ae2a0f0342dc3633c5e4dc0189daea0d06eaeb12de1040350f",
+    "pilot_accounting.py": "1b0094af99fb57e44966e18808aa80f939a2a83771ed98c53a94a5e1460f33f2",
+    "protocol.json": "08f262f638da9a72b262d252ba8e3eaab4452d772d8c80606bc44e7137fba866",
+    "run_checkpoint_pilot.py": "31969bd3e072dcbf554e0cd98f022b0e35dd5438ef12566f9c23fa98eee76e9b"
+  },
+  "evidence_bindings": {
+    "CONTROL_LOG_03.txt": "9fbf1749d2c698f580df974550ea3f6b73b31496cbdaef57f811554a990848b0",
+    "HELD_SOURCE_CONTROL_RECEIPT.json": "b2005c5c5e93cb50fa5bb2728147359022171a1a156d1eddd4a3069cbc23dffe",
+    "INDEPENDENT_SOURCE_REVIEW.json": "88bdd5fd266517ee134042315f216f52753a12d4e1c4f500961403482255fb89",
+    "MANUFACTURED_CONTROL_RECEIPT_03.json": "390347ecfcf07f21f4422711ec77cc3bd783ee7f0c37dfa2675e31c53780fb18",
+    "PRIMARY_SOURCE_HASHES.json": "aa0bc4ab2b97e0fa2ba93cdb20aae76b28ef5c6aeb164ffb8f38ae8cb404ae08",
+    "README.md": "f64c5ca829eb62ea423834e932ffa187683ea19b50708338d6f18b6821cc1c16",
+    "RUNTIME_SOURCE_PINS.json": "bfbc2e31cd4ff7ae2a0f0342dc3633c5e4dc0189daea0d06eaeb12de1040350f",
+    "STAGED_FILE_MANIFEST.json": "345dc9e526b0fc2c351c79979f4bd1a79fab3a04c000654800a1f79e962782f0"
+  },
+  "read_only_identity_checks": [
+    {
+      "check": "handoff source RUNTIME_SOURCE_PINS.json",
+      "pass": true
+    },
+    {
+      "check": "handoff source pilot_accounting.py",
+      "pass": true
+    },
+    {
+      "check": "handoff source protocol.json",
+      "pass": true
+    },
+    {
+      "check": "handoff source run_checkpoint_pilot.py",
+      "pass": true
+    },
+    {
+      "check": "handoff evidence CONTROL_LOG_03.txt",
+      "pass": true
+    },
+    {
+      "check": "handoff evidence HELD_SOURCE_CONTROL_RECEIPT.json",
+      "pass": true
+    },
+    {
+      "check": "handoff evidence INDEPENDENT_SOURCE_REVIEW.json",
+      "pass": true
+    },
+    {
+      "check": "handoff evidence MANUFACTURED_CONTROL_RECEIPT_03.json",
+      "pass": true
+    },
+    {
+      "check": "handoff evidence PRIMARY_SOURCE_HASHES.json",
+      "pass": true
+    },
+    {
+      "check": "handoff evidence README.md",
+      "pass": true
+    },
+    {
+      "check": "handoff evidence RUNTIME_SOURCE_PINS.json",
+      "pass": true
+    },
+    {
+      "check": "handoff evidence STAGED_FILE_MANIFEST.json",
+      "pass": true
+    },
+    {
+      "check": "manifest BOUNDED_SOURCE_RETRIEVAL_NOTE.json",
+      "pass": true
+    },
+    {
+      "check": "manifest CONTROL_LOG_02.txt",
+      "pass": true
+    },
+    {
+      "check": "manifest CONTROL_LOG_03.txt",
+      "pass": true
+    },
+    {
+      "check": "manifest MANUFACTURED_CONTROL_RECEIPT_02.json",
+      "pass": true
+    },
+    {
+      "check": "manifest MANUFACTURED_CONTROL_RECEIPT_03.json",
+      "pass": true
+    },
+    {
+      "check": "manifest PRIMARY_RETRIEVAL_METADATA.json",
+      "pass": true
+    },
+    {
+      "check": "manifest PRIMARY_SOURCE_HASHES.json",
+      "pass": true
+    },
+    {
+      "check": "manifest README.md",
+      "pass": true
+    },
+    {
+      "check": "manifest RUNTIME_SOURCE_PINS.json",
+      "pass": true
+    },
+    {
+      "check": "manifest history/control_attempt_01_syntax_failure/FAILURE.json",
+      "pass": true
+    },
+    {
+      "check": "manifest history/control_attempt_01_syntax_failure/test_pilot_controls.py",
+      "pass": true
+    },
+    {
+      "check": "manifest history/control_attempt_02_pass_before_review_diagnostics/CONTROL_LOG_02.txt",
+      "pass": true
+    },
+    {
+      "check": "manifest history/control_attempt_02_pass_before_review_diagnostics/MANUFACTURED_CONTROL_RECEIPT_02.json",
+      "pass": true
+    },
+    {
+      "check": "manifest history/control_attempt_02_pass_before_review_diagnostics/run_checkpoint_pilot.py",
+      "pass": true
+    },
+    {
+      "check": "manifest history/control_attempt_02_pass_before_review_diagnostics/test_pilot_controls.py",
+      "pass": true
+    },
+    {
+      "check": "manifest pilot_accounting.py",
+      "pass": true
+    },
+    {
+      "check": "manifest primary_sources/DEVITO_LICENSE.md",
+      "pass": true
+    },
+    {
+      "check": "manifest primary_sources/PYREVOLVE_LICENSE",
+      "pass": true
+    },
+    {
+      "check": "manifest primary_sources/devito/__init__.py",
+      "pass": true
+    },
+    {
+      "check": "manifest primary_sources/devito/builtins/initializers.py",
+      "pass": true
+    },
+    {
+      "check": "manifest primary_sources/devito/builtins/utils.py",
+      "pass": true
+    },
+    {
+      "check": "manifest primary_sources/devito/checkpointing/__init__.py",
+      "pass": true
+    },
+    {
+      "check": "manifest primary_sources/devito/checkpointing/checkpoint.py",
+      "pass": true
+    },
+    {
+      "check": "manifest primary_sources/examples/seismic/__init__.py",
+      "pass": true
+    },
+    {
+      "check": "manifest primary_sources/examples/seismic/acoustic/operators.py",
+      "pass": true
+    },
+    {
+      "check": "manifest primary_sources/examples/seismic/acoustic/wavesolver.py",
+      "pass": true
+    },
+    {
+      "check": "manifest primary_sources/examples/seismic/model.py",
+      "pass": true
+    },
+    {
+      "check": "manifest primary_sources/examples/seismic/source.py",
+      "pass": true
+    },
+    {
+      "check": "manifest primary_sources/examples/seismic/utils.py",
+      "pass": true
+    },
+    {
+      "check": "manifest primary_sources/pyrevolve/pyrevolve.py",
+      "pass": true
+    },
+    {
+      "check": "manifest primary_sources/pyrevolve/storage.py",
+      "pass": true
+    },
+    {
+      "check": "manifest protocol.json",
+      "pass": true
+    },
+    {
+      "check": "manifest run_checkpoint_pilot.py",
+      "pass": true
+    },
+    {
+      "check": "manifest test_pilot_controls.py",
+      "pass": true
+    },
+    {
+      "check": "saved runtime API source devito/__init__.py",
+      "pass": true
+    },
+    {
+      "check": "saved runtime API source devito/builtins/initializers.py",
+      "pass": true
+    },
+    {
+      "check": "saved runtime API source devito/builtins/utils.py",
+      "pass": true
+    },
+    {
+      "check": "saved runtime API source devito/checkpointing/__init__.py",
+      "pass": true
+    },
+    {
+      "check": "saved runtime API source devito/checkpointing/checkpoint.py",
+      "pass": true
+    },
+    {
+      "check": "saved runtime API source examples/seismic/__init__.py",
+      "pass": true
+    },
+    {
+      "check": "saved runtime API source examples/seismic/acoustic/operators.py",
+      "pass": true
+    },
+    {
+      "check": "saved runtime API source examples/seismic/acoustic/wavesolver.py",
+      "pass": true
+    },
+    {
+      "check": "saved runtime API source examples/seismic/model.py",
+      "pass": true
+    },
+    {
+      "check": "saved runtime API source examples/seismic/source.py",
+      "pass": true
+    },
+    {
+      "check": "saved runtime API source examples/seismic/utils.py",
+      "pass": true
+    },
+    {
+      "check": "saved runtime API source pyrevolve/pyrevolve.py",
+      "pass": true
+    },
+    {
+      "check": "saved runtime API source pyrevolve/storage.py",
+      "pass": true
+    },
+    {
+      "check": "six retrieved source examples/seismic/model.py",
+      "pass": true
+    },
+    {
+      "check": "six retrieved source examples/seismic/source.py",
+      "pass": true
+    },
+    {
+      "check": "six retrieved source examples/seismic/utils.py",
+      "pass": true
+    },
+    {
+      "check": "six retrieved source devito/builtins/initializers.py",
+      "pass": true
+    },
+    {
+      "check": "six retrieved source examples/seismic/__init__.py",
+      "pass": true
+    },
+    {
+      "check": "six retrieved source devito/builtins/utils.py",
+      "pass": true
+    },
+    {
+      "check": "saved 15-control receipt",
+      "pass": true
+    },
+    {
+      "check": "saved control log15/OK",
+      "pass": true
+    },
+    {
+      "check": "executed control source identity",
+      "pass": true
+    },
+    {
+      "check": "no top-level numerical imports in source AST",
+      "pass": true
+    },
+    {
+      "check": "maintained source Python3.10 grammar parsed without execution",
+      "pass": true
+    }
+  ],
+  "identity_check_count": 70,
+  "identity_failures": 0,
+  "material_source_wiring_blockers": [],
+  "findings": [
+    {
+      "area": "time/index and replay",
+      "assessment": "Source consistent",
+      "evidence": "Worker explicitly requests both native wrappers time_m=1,time_M=255 fornt257; independently prepared start offsets must each be1. Pinned CheckpointOperator maps scheduler[a,b) to[a+1,b]. Registered nsteps255 therefore covers native1..255. Saved/FD rolling forward share this interval; actual initial forward and reverse require exact once-only coverage. Pinned official AcousticWaveSolver also uses rec_nt-2 scheduler steps. Actual reverse order/ring-state correctness remains a runtime agreement requirement."
+    },
+    {
+      "area": "full source and separate forward scratch/reverse dual",
+      "assessment": "Source consistent",
+      "evidence": "One explicit PointSource is filled once on fixed257sample axis, retained for every forward segment and hashed before/after native calls. Full early40ms/late160ms pulses remain in that array; no segment resampling/recreation. Forward rec scratch is separate from fixed rec=dual reverse input; source/dual array alias checks and immutable hashes are present. Initial full receiver record is copied before replay can overwrite scratch. Source and dual endpoints are initialized/zeroed as registered. Native argument alias binding still must be checked by actual execution."
+    },
+    {
+      "area": "physical m and edge pullback",
+      "assessment": "Source consistent for this OT2/fsFalse scope",
+      "evidence": "Pinned Model.m=1/(vp*vp); perturb physical m then setvp=1/sqrt(m). Pinned default constant initializer replicates physical edge values across nbl; inverse-square commutes with replication. Worker verifies actual padded vp against np.pad(...,mode=edge) for each base/FD model. edge_pullback sums every padded domain cell throughE^T, including faces/corners, with no crop-only rule or extra velocity-chain factor. OT2 uses local m coefficients; no OT4/free-surface claim follows. Damping is spacing/nbl-based and actual damping hashes must match across FD children; fixed dt prevents a CFL-dependent derivative."
+    },
+    {
+      "area": "K storage versus workspace",
+      "assessment": "Source consistent; allocation result unexecuted",
+      "evidence": "Pinned DevitoCheckpoint.size counts two allocated time planes in elements; inherited nbytes multiplies dtypeitemsize. Worker checks cp.size==2*u._data[0].size and exact cp.nbytes, admits explicitK2/K4 capacity before Revolver allocation, then verifies one uncompressed NumpyStorage array withshape(K,cp.size),dtype andbytes. Live rollingu has3planes; savedu has257. AuditedStorage delegates actual native save/load pointers and records attempted/returned bytes. Field buffer inventory includes allocatedu/v/grad/vp/damp and sparse buffers; output copybytes are disclosed. These are subtotals, not whole-process memory or an OS cap."
+    },
+    {
+      "area": "actual work, costs and JIT",
+      "assessment": "Source consistent within worker-only scope",
+      "evidence": "AuditedKernel constructor performs no propagation; each actual scheduled call records attempted/returned range and stepcount. PyRevolve forward calls during reverse accrue as replay; reverse calls and checkpoint copies retain separate sequences. Setup/propagation/JIT spans, worker CPU/RSS and compiler-child peaks are observed without adding nonconcurrent maxima. Generated C/library/timer metadata are observational. Whole-worker entry total covers code construction/export/instrumentation beyond named propagation spans, but Python startup, final result serialization/return and actual wait require the future external caller. Shared JIT caches remain warm; no fair timing advantage is supported."
+    },
+    {
+      "area": "FD and failure preservation",
+      "assessment": "Source consistent; criteria/results unexecuted",
+      "evidence": "Fixed-dualL=sum(r*F) is checked against nativeJ^Tr for two registered physicalm directions,5epsilons,2signs=20fresh FDchildren. Compare requires all3variants, complete vector shapes, nonzero finite references and both informative directions; all3 middle epsilons per direction are required, endpoints retained. Every child preserves source/protocol/output hashes and failed native/storage attempt events. Top-level exceptions retain failure.json without retry/fallback. Saved15stdlibcontrols test admission/default isolation/accounting/pullback/failure logic; they do not execute aliases, circular fields, compiled operators or PDEs."
+    }
+  ],
+  "runtime_preparation_and_source_scope_notes": [
+    "No numerical installation, Linux job, operator or GO is authorized by this source review. Runtime preparation remains a separate root decision, with exact installed source/package gates.",
+    "Installed-source hashes cover13 selected Python files, not whole distributions, loaded-module origins or compiled scheduler binaries. A future isolated foreground controller should preserve/verify actual imported paths and runtime identities; this review does not equate distribution metadata with proof of every executed binary.",
+    "The external23numerical-child plus comparison controller, actual wait/exit/signal evidence, full launch-to-return timing, final serialization/resource review and complete failure supervision are not implemented here. Their absence is correctly disclosed and blocks a complete runtime-pilot acceptance claim, not this source component review.",
+    "Actual receiver/gradient agreement, ring extraction/restoration, independent chronological native trace audit, K allocation and all20FD evaluations must still pass frozen criteria. Current selected source review supplies no numerical agreement, field accuracy, independent geology, recovery, new checkpoint method, paid-cost benefit or student interpretation."
+  ],
+  "actions": {
+    "source_and_saved_receipt_reads": true,
+    "stdlib_only_hash_JSON_AST_checks": true,
+    "producer_or_accounting_imports": 0,
+    "numerical_imports": 0,
+    "controls_rerun": 0,
+    "model_values_read_or_constructed": 0,
+    "operator_constructions": 0,
+    "PDE_solves": 0,
+    "network_calls": 0,
+    "installs": 0,
+    "downloads": 0,
+    "jobs_launched": 0,
+    "author_source_edits": 0
+  },
+  "execution_authorized": false,
+  "GO_created": false,
+  "scientific_goals_complete": false
+}

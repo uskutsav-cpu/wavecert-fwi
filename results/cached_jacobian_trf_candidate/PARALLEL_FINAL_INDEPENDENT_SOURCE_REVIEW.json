@@ -1,0 +1,80 @@
+{
+  "actions": {
+    "PDE_solves": 0,
+    "controls_rerun": 0,
+    "native_owners_constructed": 0,
+    "production_imports": 0,
+    "project_arrays_read": 0,
+    "source_edits": 0,
+    "study_launches": 0
+  },
+  "additional_geometry_metadata_binding": {
+    "work/new-phase-staging/fractional_velocity_prior48_driver_candidate/original_protocol.json": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c",
+    "work/new-phase-staging/fractional_velocity_prior48_driver_candidate/protocol.json": "92433c9d7b9d2990799f3a81707f6d04f63784a1820d3f109804a83b484ccfa6"
+  },
+  "authorization_scope": "Source/control review only. Does not authorize a project driver, native integration execution, publication of scientific benefit, student design/novelty, or completion of scientific goals.",
+  "bound_metadata_sha256": {
+    "COMPONENT_SCOPE.json": "db0f6f3397d99e65b0d0bed6f389cb0f64779bd73af92fd14803e2d7f9007c4a",
+    "MANUFACTURED_COMPONENT_RECEIPT.json": "5401ff782bf31f2e831c08c0d4abce355ffe6881ad17135502299acdd617451d",
+    "STAGED_FILE_MANIFEST.json": "8ecab60a4a917781672d45a3a96417040be766ed8e2678094c80b797e7f6caae",
+    "controls_attempt_05.log": "38f324173ffc61587076ebcbdd9eb35af590578e097c652b16acf188efaa5835",
+    "controls_attempt_05.xml": "8396c2d3ce3b07913f6d7f2fe946b0e129d8fdd5ac07d3a8d818a5a0c75ab403"
+  },
+  "candidate_directory": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/cached_jacobian_trf_candidate",
+  "evidence_check": {
+    "attempt_test_counts": [
+      35,
+      41,
+      42,
+      44,
+      44
+    ],
+    "author_reported_exec_session_id": 15711,
+    "author_reported_final_control_exit_code": 0,
+    "author_reported_terminal_chunk_id": "8520a7",
+    "command_exit_code": 0,
+    "final_xml_errors": 0,
+    "final_xml_failures": 0,
+    "final_xml_skips": 0,
+    "final_xml_testcases": 44,
+    "five_existing_attempt_logs_xml_source_histories_bytewise_match": true,
+    "no_controls_rerun": true,
+    "receipt_scope": "Existing actual execution receipts/XML were checked; this reviewer did not independently rerun numerical controls.",
+    "tool_chunk": "468960"
+  },
+  "exact_source_sha256": {
+    "cached_jacobian.py": "f613370617d7e0bd7815cf441dd8ba5f41816ad4791275e86f33de228657c79b",
+    "public_map_builder.py": "622a624f54b17d9d882da9d88af547c516b26ee42c87d80ec68d5fe99a687ec1",
+    "test_manufactured.py": "c7d7d9d9e152b4b0c037b5cd2efc411356d2c1206b5ce3824ed8a351acda3104"
+  },
+  "findings": {
+    "TRF_scope": "Existing bounded synthetic quadratic invokes actual least_squares(method=trf,tr_solver=lsmr,loss=linear,x_scale=1) with this LinearOperator and known clipped solution. This validates tiny API/algebra behavior, not a project nonlinear optimizer or recovery improvement.",
+    "all_terms": "Exact current_full_layout is49x49 with8distinct frequencies,6source blocks each and20receiver slots:960complex/1920real terms. Complete block permutation/order/source/receiver checks and residual/objective consistency prevent omitted terms. Tiny fullsurvey control preserves all1920terms and checks8LU112RHS while native model dimension remains source-only.",
+    "cache_and_deadline_limits": "Component retains latest residual/Jacobian/operator and any caller-held old operator/receipt. It implements no project complete-return deadline, serializer or hard memory ceiling; NumPy/SciPy/native internals remain explicitly unmeasured. Any future driver must review and pay all setup/query/map/Krylov/rejection/metric/serialization work and strict absolute7.5/8-second gates before project GO.",
+    "complex_reciprocity_and_adjoint": "Only actual exported transpose symmetry allows a covered receiver row U[:,source]/a_source. No conjugation of complex a is needed under transpose symmetry. Nonsymmetric points build all receiver rows. Public missing-row API solves A^H X=E and returns X^H=P A^-1. Real J* is the frequency/source sum of omega^2 Re[U*(C.T*conj(y_real+i*y_imag))]/sqrt(Phi0), with duplicate slot sums via add.at.",
+    "native_api_and_cost": "Builder constructs separate factorization_cache_size0 Helmholtz owner per missing-row frequency batch and calls only public receiver_resolvent_matrix with no inverse/private LU/source solve. Public actual counters must be cold and then exactly one factorization plus missing receiver count in stability_rhs. At current symmetric geometry14missing receivers across8frequencies yields8LU112stabilityRHS. This is source-derived and manufactured-confirmed; native integration remains unexecuted.",
+    "objective_and_sign": "f=[Re r;Im r]/sqrt(Phi0), so0.5||f||^2=Phi/Phi0. Frozen native A=K-omega^2 diag(m)+i omega D has m-independent damping, hence positive Jp=omega^2 C diag(U)p. Phi0 is paid at the exact initial native m, positive, read-only through public property and captured/checked by each operator.",
+    "ownership_and_fixed_operator": "Native and builder cannot belong to two live policies. Native receipts and issued snapshots are retained; copied point/map arrays are immutable byte-backed values and rehashed/revalidated. Old LinearOperators close over their own point/maps/fixed normalization, so new residual/Jacobian trials do not change old products. Contract mutations fail closed.",
+    "unknown_prefixes": "Factory/solve/snapshot/BaseException failures retain elapsed dispatch/completion flags and last actual prefix with unknown work. Native failed dispatch uncertainty remains sticky after later successful snapshots. Native cumulative prefixes are reported once; separate map-owner batches are disjoint. Dispatch counts are not converted into RHS."
+  },
+  "manifest_verification": {
+    "all_entries_actual_sha256_and_length_match": true,
+    "bytes": 377498,
+    "entries": 39
+  },
+  "material_blockers": [],
+  "native_source_read_bindings": {
+    "work/wavecert-fwi/results/provisional_software_benchmark/matched_cost_pilot/verification.py": "b7bee25257caf456d52932962ceba2fde00197f0a78b585cf90c138e795bba4c",
+    "work/wavecert-fwi/src/wavecert/physics/exact_merit.py": "0fec1f215b28e36017c1e28409d7f7e909a03cbf5b717de5d23eb8d52eb26810",
+    "work/wavecert-fwi/src/wavecert/physics/helmholtz.py": "caf51b58da24ed6d3633bda4eaaab804714f5c7932d9d5f343644763bc158131"
+  },
+  "reviewed_utc": "2026-11-09T02:59:35.500979+00:00",
+  "reviewer": "/root/canonical_input_controls",
+  "schema_version": 1,
+  "secondary_readonly_math_review": {
+    "reviewer": "/root/canonical_input_controls/prior_audit_trace_controls",
+    "scope": "Two maintained source files only; independent complex reciprocity/real adjoint/normalization/allterms/fixedpoint reasoning. No import, execution, PDE or project access.",
+    "status": "CLEAR"
+  },
+  "status": "CLEAR_FOR_HELD_SOURCE_AND_MANUFACTURED_COMPONENT_ONLY"
+}

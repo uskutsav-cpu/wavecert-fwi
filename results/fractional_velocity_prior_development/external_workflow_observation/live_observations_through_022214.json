@@ -1,0 +1,486 @@
+{
+  "run_id": 42549962037,
+  "head_sha": "e8c144c69e5a5d7b71668329427bd3c88cba26b1",
+  "run_attempt": 1,
+  "live_log_unavailable": true,
+  "observations": [
+    {
+      "observed_utc": "2026-11-09T02:17:53Z",
+      "run_id": 42549962037,
+      "status": "in_progress",
+      "conclusion": null,
+      "attempt": 1,
+      "head_sha": "e8c144c69e5a5d7b71668329427bd3c88cba26b1",
+      "job": {
+        "jobs": [
+          {
+            "id": 128943091873,
+            "name": "registered-development",
+            "status": "in_progress",
+            "conclusion": null,
+            "run_id": 42549962037,
+            "logs_url": null,
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1
+              },
+              {
+                "name": "Initialize bounded workflow evidence",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2
+              },
+              {
+                "name": "Checkout registered experiment source",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3
+              },
+              {
+                "name": "Checkout unchanged production baseline",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4
+              },
+              {
+                "name": "Select registered Python runtime",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5
+              },
+              {
+                "name": "Install CPU development and data runtime",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 6
+              },
+              {
+                "name": "Check manufactured orchestration gates",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7
+              },
+              {
+                "name": "Execute registration gate and admitted phase",
+                "status": "in_progress",
+                "conclusion": null,
+                "number": 8
+              },
+              {
+                "name": "Upload retained evidence even after failure",
+                "status": "pending",
+                "conclusion": null,
+                "number": 9
+              },
+              {
+                "name": "Post Select registered Python runtime",
+                "status": "pending",
+                "conclusion": null,
+                "number": 16
+              },
+              {
+                "name": "Post Checkout unchanged production baseline",
+                "status": "pending",
+                "conclusion": null,
+                "number": 17
+              },
+              {
+                "name": "Post Checkout registered experiment source",
+                "status": "pending",
+                "conclusion": null,
+                "number": 18
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "observed_utc": "2026-11-09T02:19:09Z",
+      "run_id": 42549962037,
+      "status": "in_progress",
+      "conclusion": null,
+      "attempt": 1,
+      "head_sha": "e8c144c69e5a5d7b71668329427bd3c88cba26b1",
+      "job": {
+        "jobs": [
+          {
+            "id": 128943091873,
+            "name": "registered-development",
+            "status": "in_progress",
+            "conclusion": null,
+            "run_id": 42549962037,
+            "logs_url": null,
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1
+              },
+              {
+                "name": "Initialize bounded workflow evidence",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2
+              },
+              {
+                "name": "Checkout registered experiment source",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3
+              },
+              {
+                "name": "Checkout unchanged production baseline",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4
+              },
+              {
+                "name": "Select registered Python runtime",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5
+              },
+              {
+                "name": "Install CPU development and data runtime",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 6
+              },
+              {
+                "name": "Check manufactured orchestration gates",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7
+              },
+              {
+                "name": "Execute registration gate and admitted phase",
+                "status": "in_progress",
+                "conclusion": null,
+                "number": 8
+              },
+              {
+                "name": "Upload retained evidence even after failure",
+                "status": "pending",
+                "conclusion": null,
+                "number": 9
+              },
+              {
+                "name": "Post Select registered Python runtime",
+                "status": "pending",
+                "conclusion": null,
+                "number": 16
+              },
+              {
+                "name": "Post Checkout unchanged production baseline",
+                "status": "pending",
+                "conclusion": null,
+                "number": 17
+              },
+              {
+                "name": "Post Checkout registered experiment source",
+                "status": "pending",
+                "conclusion": null,
+                "number": 18
+              }
+            ]
+          }
+        ]
+      },
+      "live_log_available": false,
+      "live_log_error": {
+        "error": "GitHub API error 404: ﻿<?xml version=\"1.0\" encoding=\"utf-8\"?><Error><Code>BlobNotFound</Code><Message>The specified blob does not exist.\nRequestId:2854e735-101e-0011-19f0-6f4015000000\nTime:2026-11-09T02:19:09.2941915Z</Message></Error>",
+        "error_code": "NOT_FOUND",
+        "error_data": {
+          "error_str": "GitHub API error 404: ﻿<?xml version=\"1.0\" encoding=\"utf-8\"?><Error><Code>BlobNotFound</Code><Message>The specified blob does not exist.\nRequestId:2854e735-101e-0011-19f0-6f4015000000\nTime:2026-11-09T02:19:09.2941915Z</Message></Error>"
+        }
+      }
+    },
+    {
+      "observed_utc": "2026-11-09 02:20:15 UTC",
+      "run_id": 42549962037,
+      "status": "in_progress",
+      "conclusion": null,
+      "attempt": 1,
+      "head_sha": "e8c144c69e5a5d7b71668329427bd3c88cba26b1",
+      "jobs": {
+        "jobs": [
+          {
+            "id": 128943091873,
+            "name": "registered-development",
+            "status": "in_progress",
+            "conclusion": null,
+            "run_id": 42549962037,
+            "logs_url": null,
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1
+              },
+              {
+                "name": "Initialize bounded workflow evidence",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2
+              },
+              {
+                "name": "Checkout registered experiment source",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3
+              },
+              {
+                "name": "Checkout unchanged production baseline",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4
+              },
+              {
+                "name": "Select registered Python runtime",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5
+              },
+              {
+                "name": "Install CPU development and data runtime",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 6
+              },
+              {
+                "name": "Check manufactured orchestration gates",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7
+              },
+              {
+                "name": "Execute registration gate and admitted phase",
+                "status": "in_progress",
+                "conclusion": null,
+                "number": 8
+              },
+              {
+                "name": "Upload retained evidence even after failure",
+                "status": "pending",
+                "conclusion": null,
+                "number": 9
+              },
+              {
+                "name": "Post Select registered Python runtime",
+                "status": "pending",
+                "conclusion": null,
+                "number": 16
+              },
+              {
+                "name": "Post Checkout unchanged production baseline",
+                "status": "pending",
+                "conclusion": null,
+                "number": 17
+              },
+              {
+                "name": "Post Checkout registered experiment source",
+                "status": "pending",
+                "conclusion": null,
+                "number": 18
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "observed_utc": "2026-11-09 02:21:15 UTC",
+      "run_id": 42549962037,
+      "status": "in_progress",
+      "conclusion": null,
+      "attempt": 1,
+      "head_sha": "e8c144c69e5a5d7b71668329427bd3c88cba26b1",
+      "jobs": {
+        "jobs": [
+          {
+            "id": 128943091873,
+            "name": "registered-development",
+            "status": "in_progress",
+            "conclusion": null,
+            "run_id": 42549962037,
+            "logs_url": null,
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1
+              },
+              {
+                "name": "Initialize bounded workflow evidence",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2
+              },
+              {
+                "name": "Checkout registered experiment source",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3
+              },
+              {
+                "name": "Checkout unchanged production baseline",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4
+              },
+              {
+                "name": "Select registered Python runtime",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5
+              },
+              {
+                "name": "Install CPU development and data runtime",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 6
+              },
+              {
+                "name": "Check manufactured orchestration gates",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7
+              },
+              {
+                "name": "Execute registration gate and admitted phase",
+                "status": "in_progress",
+                "conclusion": null,
+                "number": 8
+              },
+              {
+                "name": "Upload retained evidence even after failure",
+                "status": "pending",
+                "conclusion": null,
+                "number": 9
+              },
+              {
+                "name": "Post Select registered Python runtime",
+                "status": "pending",
+                "conclusion": null,
+                "number": 16
+              },
+              {
+                "name": "Post Checkout unchanged production baseline",
+                "status": "pending",
+                "conclusion": null,
+                "number": 17
+              },
+              {
+                "name": "Post Checkout registered experiment source",
+                "status": "pending",
+                "conclusion": null,
+                "number": 18
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "observed_utc": "2026-11-09 02:22:14 UTC",
+      "run_id": 42549962037,
+      "status": "in_progress",
+      "conclusion": null,
+      "attempt": 1,
+      "head_sha": "e8c144c69e5a5d7b71668329427bd3c88cba26b1",
+      "jobs": {
+        "jobs": [
+          {
+            "id": 128943091873,
+            "name": "registered-development",
+            "status": "in_progress",
+            "conclusion": null,
+            "run_id": 42549962037,
+            "logs_url": null,
+            "steps": [
+              {
+                "name": "Set up job",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 1
+              },
+              {
+                "name": "Initialize bounded workflow evidence",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 2
+              },
+              {
+                "name": "Checkout registered experiment source",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 3
+              },
+              {
+                "name": "Checkout unchanged production baseline",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 4
+              },
+              {
+                "name": "Select registered Python runtime",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 5
+              },
+              {
+                "name": "Install CPU development and data runtime",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 6
+              },
+              {
+                "name": "Check manufactured orchestration gates",
+                "status": "completed",
+                "conclusion": "success",
+                "number": 7
+              },
+              {
+                "name": "Execute registration gate and admitted phase",
+                "status": "in_progress",
+                "conclusion": null,
+                "number": 8
+              },
+              {
+                "name": "Upload retained evidence even after failure",
+                "status": "pending",
+                "conclusion": null,
+                "number": 9
+              },
+              {
+                "name": "Post Select registered Python runtime",
+                "status": "pending",
+                "conclusion": null,
+                "number": 16
+              },
+              {
+                "name": "Post Checkout unchanged production baseline",
+                "status": "pending",
+                "conclusion": null,
+                "number": 17
+              },
+              {
+                "name": "Post Checkout registered experiment source",
+                "status": "pending",
+                "conclusion": null,
+                "number": 18
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
