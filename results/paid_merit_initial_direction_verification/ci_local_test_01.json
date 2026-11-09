@@ -1,0 +1,121 @@
+{
+  "observed_utc": "2026-11-08T05:32:18.067263+00:00",
+  "actual_executor_session": 93357,
+  "terminal_exit_code": 0,
+  "tests": 1,
+  "raw_cases": 8,
+  "warnings": "error",
+  "command": "PYTHONPATH=src single-thread /opt/miniconda3/bin/python -m pytest -q -W error tests/test_paid_initial_witness_replay.py",
+  "test_source_sha256": "d28d00460fc6669d23d35ce6ae11b75846871893cc0ca27288d753efb6f4f76f",
+  "ruff": "src/tests/scripts PASS; actual sameexec exit0",
+  "runtime_report": {
+    "check": "eight_initial_raw_direction_witnesses",
+    "python": "3.13.13",
+    "numpy": "2.4.3",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "result": "clear_raw_witness_replay",
+    "checks": 1289,
+    "directions": 8,
+    "false_certifications": 0,
+    "literal_bound_misses": 0,
+    "cases": [
+      {
+        "case_index": 0,
+        "independent_gradient_relative_error": 1.0130431392570112e-16,
+        "approximate_gradient_relative_error": 0.0,
+        "true_directional_derivative": -26.35505854723491,
+        "approximate_center": -26.355058534281316,
+        "bound": 0.0034542543287551975,
+        "certified": true,
+        "false_certification": false,
+        "bound_covers_without_extra_allowance": true,
+        "bound_covers_with_historical_helper_allowance": true
+      },
+      {
+        "case_index": 1,
+        "independent_gradient_relative_error": 8.921894647291444e-17,
+        "approximate_gradient_relative_error": 0.0,
+        "true_directional_derivative": -149.0688041852611,
+        "approximate_center": -149.06950031138948,
+        "bound": 0.02498710518075192,
+        "certified": true,
+        "false_certification": false,
+        "bound_covers_without_extra_allowance": true,
+        "bound_covers_with_historical_helper_allowance": true
+      },
+      {
+        "case_index": 2,
+        "independent_gradient_relative_error": 7.599170850903604e-17,
+        "approximate_gradient_relative_error": 0.0,
+        "true_directional_derivative": -23.196135467904366,
+        "approximate_center": -23.19613034175022,
+        "bound": 0.0014703325482143099,
+        "certified": true,
+        "false_certification": false,
+        "bound_covers_without_extra_allowance": true,
+        "bound_covers_with_historical_helper_allowance": true
+      },
+      {
+        "case_index": 3,
+        "independent_gradient_relative_error": 7.44315152716693e-17,
+        "approximate_gradient_relative_error": 0.0,
+        "true_directional_derivative": -45.98573945091478,
+        "approximate_center": -45.98575494827409,
+        "bound": 0.0009343388135817514,
+        "certified": true,
+        "false_certification": false,
+        "bound_covers_without_extra_allowance": true,
+        "bound_covers_with_historical_helper_allowance": true
+      },
+      {
+        "case_index": 4,
+        "independent_gradient_relative_error": 7.927923368369585e-17,
+        "approximate_gradient_relative_error": 0.0,
+        "true_directional_derivative": -100.76549784016395,
+        "approximate_center": -100.76551114677878,
+        "bound": 0.004008482080259255,
+        "certified": true,
+        "false_certification": false,
+        "bound_covers_without_extra_allowance": true,
+        "bound_covers_with_historical_helper_allowance": true
+      },
+      {
+        "case_index": 5,
+        "independent_gradient_relative_error": 1.1814638006052468e-16,
+        "approximate_gradient_relative_error": 0.0,
+        "true_directional_derivative": -63.14229462812927,
+        "approximate_center": -63.142580454479734,
+        "bound": 0.06587485632817046,
+        "certified": true,
+        "false_certification": false,
+        "bound_covers_without_extra_allowance": true,
+        "bound_covers_with_historical_helper_allowance": true
+      },
+      {
+        "case_index": 6,
+        "independent_gradient_relative_error": 7.516537525779892e-17,
+        "approximate_gradient_relative_error": 0.0,
+        "true_directional_derivative": -60.951517299598486,
+        "approximate_center": -60.95162549996801,
+        "bound": 0.0014522402746306915,
+        "certified": true,
+        "false_certification": false,
+        "bound_covers_without_extra_allowance": true,
+        "bound_covers_with_historical_helper_allowance": true
+      },
+      {
+        "case_index": 7,
+        "independent_gradient_relative_error": 7.481209616881895e-17,
+        "approximate_gradient_relative_error": 0.0,
+        "true_directional_derivative": -61.71087514699512,
+        "approximate_center": -61.71098287014516,
+        "bound": 0.0014541723133349633,
+        "certified": true,
+        "false_certification": false,
+        "bound_covers_without_extra_allowance": true,
+        "bound_covers_with_historical_helper_allowance": true
+      }
+    ]
+  },
+  "scope": "known-fixture regression, not confirmation/physicalaccuracy/newgeology or studentinterpretation"
+}

@@ -1,0 +1,35 @@
+{
+  "status": "frozen_stage_ready_for_root_and_independent_review_no_PDE",
+  "recorded_utc": "2026-11-08T02:49:19.998669+00:00",
+  "actual_PDE_executed": false,
+  "project_arrays_inspected": false,
+  "main_files_modified": false,
+  "student_final_research_design": false,
+  "fixed_cases": 7,
+  "tests": {
+    "synthetic_count": 11,
+    "result": "passed",
+    "warnings": "error",
+    "ruff": "passed",
+    "command": "threads1 python -m pytest -o addopts='' -q -s -W error -p no:cacheprovider -o tmp_path_retention_policy=failed test_verify_boundary.py",
+    "PDE_calls_in_tests": 0
+  },
+  "files": {
+    "test_verify_boundary.py": "0fa49485be8f61d6f1a2b3f13ef722810e306df450d7f8099bf461134dee1b5a",
+    "README.md": "7b7f022d7c5f4ad93d1eb933af317322607e39798b9334488e946248099e55f5",
+    "protocol.json": "a83f2de93543b16af428d1fbe562f4d7db8d9df982b203a04bb0d445e93306b8",
+    "verify_boundary.py": "f8a522f34a3ce1be68293944dbef362ea86ae9731f28fd802eabb0434fb57cb1",
+    ".ruff_cache/CACHEDIR.TAG": "5953156d7e0c564a427251316eaf26f8870e6483ae2197f916b630e4f93e31ae",
+    ".ruff_cache/.gitignore": "9e3a60f1e6ec4ae60215c11d54b171392745ec25e9dded433d5bd921363af316",
+    "history/TEST_RECEIPT_664cf543.json.original": "fd55eab5f0904bfc64681fe8786e3c13dd800ed6e85409ae6033ecf5d4f1431d",
+    "history/verify_boundary_664cf543.py.original": "664cf543eb93fa93cab18d77ca3826da481f311c21d7ad3d5ab7c5524eaf7559",
+    ".ruff_cache/0.16.6/16479738077060009487": "39c4c3eb9b69a0327c08ae7ddc8ea974cec9580679bc56c8f3db3689d01a0e02",
+    ".ruff_cache/0.16.6/7812063178119871815": "67b5ffb2041e4f7ba7a7ae7396efad18777c4af191ef5fbdb30a02ae0f124590"
+  },
+  "pre_execution_retention_fix": {
+    "previous_runner_sha256": "664cf543eb93fa93cab18d77ca3826da481f311c21d7ad3d5ab7c5524eaf7559",
+    "history_path": "history/verify_boundary_664cf543.py.original",
+    "PDE_executed_before_fix": false,
+    "scope": "Persist attempted case before execute_case; ordinary Exception continues; BaseException persists interrupted case and reraises; no duplicate append. Mock KeyboardInterrupt regression passes."
+  }
+}

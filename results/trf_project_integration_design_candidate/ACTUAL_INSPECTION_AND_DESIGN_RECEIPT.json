@@ -1,0 +1,50 @@
+{
+  "GO_created": false,
+  "PDE_calls": 0,
+  "actual_operations": [
+    {
+      "actual_exit": 0,
+      "kind": "ValidationNPZschema/ancestry/rawcasehash/localnonPDEinitializerinspection",
+      "log_sha256": "62b094b39dc6936914e719d35d1037eddf80c4d2bea2fd578444a3ca4421eceb",
+      "report_sha256": "80df79e5d2240553e26b713e884096716897caf598268b105746a511fa1ec699",
+      "session": 72071,
+      "terminal_chunk": "d7ab47"
+    },
+    {
+      "actual_exit": 0,
+      "kind": "Retainedoldinitialnumericdifferencecomparison",
+      "log_sha256": "91338fe2784a56c0d6275e3705cb15282c907322e54e43662de1641a4dda3ab5",
+      "report_sha256": "38f463fe2da6068a043cba868a089960d58631f58d7188953ac9afe0975f4e99",
+      "session": 28484,
+      "terminal_chunk": "5327f3"
+    },
+    {
+      "actual_exit": 0,
+      "kind": "Exactretainedinitialinputextractionandroundtriphashverification",
+      "log_sha256": "1b518d71c259ca29d341510e153f941ccad6503c94bf241c116ea6999abce306",
+      "npz_sha256": "73d3e5b42ee3df6d40c0a9d8dc872c7603ad65d25ccbb459e0c0bbd40cdb4fc1",
+      "report_sha256": "96b9eb330ffbf79a7623116cb842639ed501a814f0774f9c674016ee60244572",
+      "terminal_chunk": "53cba3",
+      "tool_wait_wall_seconds": 0.24543175
+    }
+  ],
+  "external_downloads": 0,
+  "installs": 0,
+  "jobs_launched": 0,
+  "native_owner_constructions": 0,
+  "new_control_tests": 0,
+  "plan_sha256": "fa71c76631cc23ccfbac74bcc50a267d2b240a96f4115bf9eb9c5e0e7fd9d918",
+  "production_edits": 0,
+  "scientific_goals_complete": false,
+  "sources_sha256": {
+    "compare_retained_initials.py": "00e89401d0b56cb61fffb621270706514b947c6063ea80e903cc466d5c0e1954",
+    "freeze_retained_initials.py": "b75886f3de75b3d6eb1ab5d05c9e903e9ded8151fb7c21a35901eefdc740f79c",
+    "inspect_retained_inputs.py": "e81ffecce66e794ccc6f35da904a3f50caaf6f4df53bf2bb15ad104fae7fa226"
+  },
+  "static_checks": {
+    "frozen_API_inventory_unchanged": "All38exacthashes/bytecountsactualPASS7dcc28; no API/protocol/scheduleedits.",
+    "python310grammar": "ActualPASS7dcc28",
+    "ruff": "ActualPASS91f8a9 onthreeinspection/extractionsources"
+  },
+  "status": "ACTUAL_RETAINED_INPUT_INSPECTION_AND_INPUT_EXTRACTION_SOURCE_DESIGN_ONLY_NO_PDE"
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "checkpoint_pilot_ephemeral_linux_environment_v1",
+  "status": "SCHEMA_ONLY_NOT_AN_APPROVED_ENVIRONMENT_OR_INSTALL_AUTHORIZATION",
+  "ephemeral": false,
+  "native_use_review_clear": false,
+  "system": "Linux",
+  "machine": "x86_64",
+  "python_version": "3.11.18",
+  "python_executable": null,
+  "python_realpath": null,
+  "python_binary_sha256": null,
+  "prefix": null,
+  "packages": {"devito": "4.8.23", "pyrevolve": "2.2.8", "numpy": "2.4.3", "scipy": "1.17.1"},
+  "modules": null,
+  "preparation_requirement": "Separate root-reviewed ephemeral environment preparation and transitive/build evidence first. Record exactly17 selected actual module paths/hashes:13 primary APIs from the frozen worker pins plus pyrevolve package root, pyrevolve.crevolve compiled scheduler, numpy root and scipy root. Each identity row contains exactly path and sha256. Actual source files must match the frozen selected primary hashes and resolve inside the reviewed prefix. This template cannot pass controller admission."
+}

@@ -1,0 +1,63 @@
+diff --git a/tests/test_bp_numpy_tangent_reproduction.py b/tests/test_bp_numpy_tangent_reproduction.py
+index 767d889..e6f9a93 100644
+--- a/tests/test_bp_numpy_tangent_reproduction.py
++++ b/tests/test_bp_numpy_tangent_reproduction.py
+@@ -31,6 +31,38 @@ def _sha(path):
+     return hashlib.sha256(path.read_bytes()).hexdigest()
+ 
+ 
++def _replay_failure_diagnostics(completed, output):
++    diagnostic = dict(check="bp_numpy_tangent_reproduction_failure",
++        returncode=completed.returncode, stdout=completed.stdout, stderr=completed.stderr,
++        output=str(output))
++    try:
++        status = json.loads((output / "status.json").read_text())
++        if not isinstance(status, dict):
++            raise ValueError("saved status is not an object")
++        diagnostic["status"] = {key: status.get(key) for key in (
++            "status", "result", "error", "source_sha256", "protocol_sha256",
++            "all3_own_complete_before_native_arrays", "native_comparison_started",
++            "native_numeric_arrays_opened", "numerical_agreement_pass",
++            "own_solves_planned", "directions_planned")}
++        diagnostic["cases"] = []
++        for row in status.get("cases", []):
++            comparison = row.get("comparison") or row.get("comparison_prefix") or {}
++            diagnostic["cases"].append(dict(
++                case_id=row.get("case_id"), own_status=row.get("status"),
++                error=row.get("error"), comparison_status=row.get("comparison_status"),
++                comparison_error=row.get("comparison_error"),
++                trace=comparison.get("trace"), trace_agreement=comparison.get("trace_agreement"),
++                source_relative_L2=comparison.get("source_relative_L2"),
++                padded_fold_relative_L2=comparison.get("padded_fold_relative_L2"),
++                directions=[{key: direction.get(key) for key in (
++                    "direction", "status", "informative", "agreement", "relative_error",
++                    "absolute_error", "independent_tangent_DD", "native_folded_gradient_DD")}
++                    for direction in row.get("directions", [])]))
++    except (OSError, ValueError, AttributeError, TypeError) as exc:
++        diagnostic["saved_status_error"] = f"{type(exc).__name__}: {exc}"
++    return json.dumps(diagnostic, sort_keys=True)
++
++
+ def test_bp_numpy_traces_and_physical_m_tangents_without_devito(tmp_path, capsys):
+     script, protocol_path = FIXTURE / "run_replay.py", FIXTURE / "protocol.json"
+     native_run = ARCHIVE / "native_run_01"
+@@ -53,7 +85,7 @@ def test_bp_numpy_traces_and_physical_m_tangents_without_devito(tmp_path, capsys
+     for key in ("OMP_NUM_THREADS", "MKL_NUM_THREADS", "OPENBLAS_NUM_THREADS",
+                 "VECLIB_MAXIMUM_THREADS", "NUMEXPR_NUM_THREADS"):
+         env[key] = "1"
+-    subprocess.run(
++    completed = subprocess.run(
+         [sys.executable, "-I", "-W", "error", str(script),
+          "--protocol", str(protocol_path), "--execute-after-native-terminal",
+          "--inputs", str(INPUTS), "--native-run", str(native_run),
+@@ -61,8 +93,9 @@ def test_bp_numpy_traces_and_physical_m_tangents_without_devito(tmp_path, capsys
+          "--expected-source-sha256", RUNNER_SHA256,
+          "--expected-protocol-sha256", PROTOCOL_SHA256,
+          "--expected-native-complete-sha256", NATIVE_COMPLETE_SHA256],
+-        check=True, capture_output=True, text=True, env=env, timeout=300,
++        check=False, capture_output=True, text=True, env=env, timeout=300,
+     )
++    assert completed.returncode == 0, _replay_failure_diagnostics(completed, output)
+     result = json.loads((output / "complete_receipt.json").read_text())
+     assert json.loads((output / "status.json").read_text()) == result
+     assert result["status"] == "complete_comparison"

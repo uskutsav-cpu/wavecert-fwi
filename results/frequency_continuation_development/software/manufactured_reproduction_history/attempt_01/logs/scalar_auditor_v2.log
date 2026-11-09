@@ -1,0 +1,19 @@
+....................................E                                    [100%]
+==================================== ERRORS ====================================
+_ ERROR at setup of test_missing_manifest_file_and_path_escape_are_integrity_failures _
+
+self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/scalar_auditor_v2')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/scalar_auditor_v2'
+
+/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError
+=========================== short test summary info ============================
+ERROR work/new-phase-staging/frequency_continuation_post_audit_v2/test_audit_scalar.py::test_missing_manifest_file_and_path_escape_are_integrity_failures
+36 passed, 1 error in 3.04s

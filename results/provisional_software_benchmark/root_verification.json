@@ -1,0 +1,44 @@
+{
+  "status": "archived_unexecuted_AI_authored_software_candidate",
+  "student_final_research_design": false,
+  "competition_evidence": false,
+  "project_execution_loop_or_CLI": false,
+  "project_arrays_inspected": false,
+  "project_outcomes_or_measured_timings_run": false,
+  "root_synthetic_tests": {
+    "adapter": {
+      "count": 8,
+      "session": 41430,
+      "exit_code": 0
+    },
+    "helpers": {
+      "count": 7,
+      "session": 93362,
+      "exit_code": 0
+    },
+    "warnings": "error",
+    "network_requests": 0,
+    "source_module_import_and_config_guards": "passed"
+  },
+  "independent_final_review": "CLEAR;15tests warnings-as-errors and repository-contextRuff passed; seeindependent_review.json",
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "artifact_sha256": {
+    "verification.py": "b7bee25257caf456d52932962ceba2fde00197f0a78b585cf90c138e795bba4c",
+    "adapter.py": "f793f4439551bf7614bd72421057d209f3cb353710fe06f8c13de85b44eecf61",
+    "__init__.py": "8f5dde1292081eedb460cc9752025c72350673a2bd705bd407a5e6fa531bf22b",
+    "test_adapter.py": "e0265c67779dda21219ffa7b5ebda92416af7416975a49d61342b61ece5bef27",
+    "README.md": "fad48d47fbaa1d7bb5d965ee6a39e8528303d81065d92178ecfbb508cc0f64a3",
+    "protocol.json": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c",
+    "test_verification.py": "3e630d65f424d0988afc8dd4d42ecec1a6e7aa01aebb63331ee38ce0d1c8aef0"
+  },
+  "archival_import_formatting": {
+    "scope": "three import-block separators and one EOF blank line only; full AST including imports unchanged",
+    "original_staged_sha256": {
+      "adapter.py": "12405acdbaa54243b3f07f4b6a7e836e332b64a76313b05303e6c04250fea335",
+      "verification.py": "c1f04533bfb53f1e0757d0d86647051c976f9d4f918c5c1c93c77ccafeb0dac4",
+      "test_adapter.py": "e83b8d753bb6874e736c0f20c63351e238a360df65f6d6ba8499e20af8322ad7"
+    }
+  },
+  "root_archive_lint": "Ruff passes in repository context after import separators",
+  "root_archive_import_guards": "all7main modules and exact candidate config guard passed"
+}

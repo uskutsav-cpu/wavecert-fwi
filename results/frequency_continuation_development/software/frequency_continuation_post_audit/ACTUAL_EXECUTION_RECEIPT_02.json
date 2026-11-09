@@ -1,0 +1,58 @@
+{
+  "recorded_utc": "2026-11-08T18:58:20Z",
+  "result": "FIRST_ACTUAL_AUDIT_FAILED_RETAINED_NO_VERIFIED_CREDIT",
+  "root_terminal_and_explicit_audit_GO_received": true,
+  "cwd": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi",
+  "exact_command_file": "ACTUAL_AUDIT_COMMAND_02.txt",
+  "exact_command_file_sha256": "f26066796dfe65ac9feba1b0c5f5c10d05c21240a838c7895232438527593fc9",
+  "actual_tool_chunk": "d819a8",
+  "actual_exit_code": 2,
+  "actual_wall_seconds": 2.945825875,
+  "full_stdout_stderr_log": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_continuation_post_audit_execution_02.log",
+  "full_log_sha256": "56cb34e0045995d3326ff6dbaea7fe98093b9b876081f10f5cb64cb31584b2e6",
+  "report": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_continuation_post_audit_run_02/report.json",
+  "report_sha256": "4b7f1364f0f31d66a100a95f094ca15d76290bbe9df2fb25e33413e525fc955c",
+  "pins": {
+    "auditor_source_before_after": "f980f99749f93310d30092ccd0dbdbce653ac34daeab36a6a458215fdaf4b6a1",
+    "criteria_before_after": "3f3f91aa283c56d42cdcd7947996e82d717e478f445db9092de193ea64dd9240",
+    "driver": "a5f4a7bd38350ea1958160d0a5d24fb29b03e986b2601117c1bc7fd399394558",
+    "protocol": "5c2838eaa1142ae7497717d7a4dfc46c76df4fb5ff8b3e016d5479eb4b51af1e",
+    "terminal_observation": "742fe3b09e75217ace89167e838201fe7095f9ea112f72ff74ee45b756b95cfd",
+    "complete_receipt_before_after": "261a3b0c6ce4c5a8533339ccee201a1ac6c23e74a60c6989897cda9f1251423b",
+    "production_source": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da"
+  },
+  "observed_audit_counts": {
+    "checks": 23089,
+    "scalar_numeric_comparisons": 1440,
+    "issues": 2734,
+    "planned_and_retained_records": 96,
+    "recorded_complete_rows": 96,
+    "raw_references": 8,
+    "case_repetition_quadruples": 24,
+    "case_method_groups": 32,
+    "per_arm_denominator": 24,
+    "production_manifest_files": 161,
+    "run_artifact_hashes_before_after_equal": true,
+    "verified_study_credit_enabled": false
+  },
+  "failure_triage_from_pinned_source": {
+    "root_cause": "Auditor requested per-step library_evaluations_trace; finalized pinned d5fb engine end_step writes library_evaluations_summary. The trace name belongs only to the separate active-step pending-prefix path.",
+    "issue_categories": {
+      "library_stream_schema": 2277,
+      "method_valid_not_unsealed_or_failed": 96,
+      "joint_terminal_eligibility": 96,
+      "ineligible_quality_null": 96,
+      "half_ratio_return_event_cascade": 94,
+      "quarter_ratio_return_event_cascade": 75
+    },
+    "raw_numeric_mismatch_issue_category_present": false,
+    "meaning": "The first auditor result remains invalid/noncredit. This schema diagnosis is not a passed audit or positive performance finding.",
+    "proposed_correction": "Versioned auditor/test field-name correction to pinned finalized-step library_evaluations_summary; preserve all numerical criteria and unsealed gates; review and controls before any fresh audit rerun.",
+    "correction_or_retry_already_executed": false
+  },
+  "producer_or_source_or_criteria_modified": false,
+  "new_PDE_or_optimizer_calls": 0,
+  "first_interrupted_cohort_pooled_or_replaced": false,
+  "physical_acceptance": null,
+  "student_final_design_or_confirmation": false
+}

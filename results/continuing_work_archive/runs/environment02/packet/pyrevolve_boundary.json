@@ -1,0 +1,36 @@
+{
+  "GID": 1001,
+  "IPv4_route_rows": 0,
+  "NoNewPrivs": 1,
+  "PGID": 2368,
+  "PID": 2369,
+  "PPID": 2368,
+  "SID": 2368,
+  "UID": 1001,
+  "argv": [
+    "/opt/wavecert/checkpoint23_environment_01/build_env/bin/python",
+    "-B",
+    "-I",
+    "-m",
+    "pip",
+    "wheel",
+    "--no-index",
+    "--no-deps",
+    "--no-build-isolation",
+    "--wheel-dir",
+    "/opt/wavecert/checkpoint23_environment_01/built/pyrevolve",
+    "/opt/wavecert/checkpoint23_environment_01/source_trees/pyrevolve/pyrevolve-2.2.8"
+  ],
+  "capabilities": {
+    "CapAmb": 0,
+    "CapBnd": 0,
+    "CapEff": 0,
+    "CapInh": 0,
+    "CapPrm": 0
+  },
+  "network_namespace": "net:[4026532313]",
+  "parent_network_namespace": "net:[4026531833]",
+  "scope": "Prevent implicit fetches in trusted registered builds; no general sandbox claim.",
+  "status": "OFFLINE_BUILD_BOUNDARY_BEFORE_EXEC",
+  "supplementary_groups": []
+}

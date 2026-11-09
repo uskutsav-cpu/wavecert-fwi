@@ -1,0 +1,47 @@
+{
+  "role": "AI primary-literature advisory, approximately800words; not student question, hypothesis, complete design, method selection or novelty clearance",
+  "context": "Root reports4483 diagnostic checks clear: all8 initial/truth models strictly box-feasible; both actualp and exact-negative-gradient increase half-relative-squared velocity error in5/8 initials(0,2,5,6,7), merror in3/8(0,1,2), andg·(truth-m)>0in0,1,2. These sets differ from8second drift cases, so the initial slopes are not established causes of trajectory outcomes. No additional diagnostic computation was performed for this advisory.",
+  "assessment": "A correct gradient-error certificate answers whether a direction descends the declared data objective. It supplies neither missing information nor a model prior, curvature correction, basin-of-attraction guarantee or truth-error guarantee. Current evidence establishes neither a practical certificate win nor a specific new FWI contribution. Improving certificate accuracy/cost alone does not resolve the demonstrated recovery-objective distinction.",
+  "primary_matrix": [
+    {
+      "source": "Brenders and Pratt(2007), Efficient waveform tomography for lithospheric imaging",
+      "doi": "10.1111/j.1365-246X.2006.03096.x",
+      "url": "https://academic.oup.com/gji/article/168/1/152/578748?login=false",
+      "verified_location": "Efficient Waveform Tomography: Frequency selection strategy, eqs1-5; source/receiver-subsampling and minimum-frequency experiments; publisher-indexed full sections inspected, direct open unavailable.",
+      "established_control": "Low-to-high frequency inversion and coverage-aware frequency selection, evaluated with acquisition sampling and starting-model assumptions.",
+      "tradeoff": "Requires usable low frequencies and adequate illumination; four frequencies are not interchangeable merely because their count matches. Extra/changed data alter the task and costs. Geometry-dependent results do not guarantee recovery for this tiny Dirichlet survey. A certificate cannot create missing wavenumber coverage."
+    },
+    {
+      "source": "Pratt, Shin and Hicks(1998), Gauss-Newton and full Newton methods in frequency-space seismic waveform inversion",
+      "doi": "10.1046/j.1365-246X.1998.00498.x",
+      "url": "https://academic.oup.com/gji/article/133/2/341/578128",
+      "verified_location": "The Gauss-Newton method, eq35; damped/Levenberg-Marquardt eq36; resolution eqs37-38; AppendixA Alternative Parametrization. Original publisher-indexed sections inspected; direct page open failed.",
+      "established_control": "Curvature-scaled updates, damping for singular/ill-conditioned Hessians and alternative inversion bases.",
+      "tradeoff": "Linearization, derivative/Hessian work, rank deficiency and damping remain material. Their stationarity/update machinery is not a truth-recovery guarantee. AppendixA concerns basis parameters; the present nonlinear m-to-velocity coordinate effect is a separate chain-rule inference, not a claimed reproduction. Changing gradient coordinates changes the update metric, whereas relabeling reported error does not."
+    },
+    {
+      "source": "Esser etal(2018), Total Variation Regularization Strategies in Full-Waveform Inversion",
+      "doi": "10.1137/17M111328X",
+      "url": "https://slim.gatech.edu/Publications/Public/Journals/SIAMJournalOnImagingSciences/2018/esser2016tvr/esser2016tvr.pdf",
+      "verified_location": "Author preprint sectionsII-III, constrained updates eqs6,13; IV Numerical Experiments; continuation discussion onPDFpage36. Journal DOI/metadata independently verified; final publisherPDF inaccessible.",
+      "established_control": "Box plus TV/asymmetric-TV constraints and scaled constrained subproblems in conventional/extended FWI.",
+      "tradeoff": "Adds explicit structural information and bias; box-feasibility alone is insufficient. Tight TV can erase real structure, while directional priors can be wrong. The inspected preprint explicitly discusses choosing constraint radii proportional to true-model values. That oracle choice must not be imported here: usable prior strength needs justification independent of hidden truth. Added constrained-solver work remains paid."
+    },
+    {
+      "source": "van Leeuwen and Herrmann(2013), Mitigating local minima in full-waveform inversion by expanding the search space",
+      "doi": "10.1093/gji/ggt258",
+      "url": "https://slim.gatech.edu/Publications/Public/Journals/GeophysicalJournalInternational/2013/vanLeeuwen2013GJImlm/vanLeeuwen2013mlm.pdf",
+      "verified_location": "Primary author preprint section3, penaltyeq5/augmentedwaveeq6; sections4.2-4.3; section5discussion.",
+      "established_control": "Wavefield reconstruction/penalty formulation relaxes the wave equation and enlarges the search space.",
+      "tradeoff": "Introduces a penalty tradeoff, augmented solves and altered intermediate objective. Reduced data-objective decrease and relaxed-merit decrease cannot be equated; original certificate formulas do not automatically certify this gradient. Favorable examples are not a universal local-minimum or identifiability guarantee."
+    }
+  ],
+  "unresolved_falsifiable_questions": [
+    "Would a mathematically valid change of update metric/curvature alter recovery alignment, or merely change data-misfit convergence? Which effects survive paying for that work?",
+    "Does the available band/aperture resolve the structures whose errors grow? The reciprocity840-real-row ceiling is an exact-arithmetic upper bound, not measured numerical rank or a demonstrated cause.",
+    "Can a prior justified without these true models improve recovery on separate geology, rather than encode the answer? Can all failures and extra prior/solver costs remain visible?",
+    "After a standard recovery control is useful, does certification add value beyond identical uncertified fields and strong exact controls? Otherwise only implementation/negative-evidence contributions remain supportable."
+  ],
+  "next_legitimate_engineering_action": "Prepare a source-level comparison specification for a student/mentor-selected established control: its objective, coordinate map, prior inputs, legal caches, costs and failure meaning. Do not select from these8 truth improvements, silently change the certificate target, or present standard FWI ingredients as invented. This advisory authorizes no implementation, parameter trial or new study.",
+  "limits": "Targeted original-method review, not exhaustive priority clearance. No method guarantee, new diagnostic/PDE/model calculation, independent-site inference, student authorship or final scientific conclusion. All earlier source9f and artifacts remain untouched."
+}

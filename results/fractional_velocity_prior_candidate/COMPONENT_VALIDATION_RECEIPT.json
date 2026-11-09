@@ -1,0 +1,79 @@
+{
+  "actual_execution": {
+    "attempt_01": {
+      "errors": 0,
+      "exit_code": 1,
+      "failures": 1,
+      "junit_sha256": "b11a1d20a8bd1921b65694f59e117191dd94c7ae452105b192782c2239723b32",
+      "log_sha256": "d5f06e62aa5ae117accc690a32be33b4bd854b2b72af18df639a79a275ddfaf7",
+      "skipped": 0,
+      "tests": 39,
+      "tool_chunk": "36dd4e"
+    },
+    "attempt_02": {
+      "errors": 0,
+      "exit_code": 0,
+      "failures": 0,
+      "junit_sha256": "41948a689a6b1a06ee9556983071b74a882a2b16b15362735646f54d078cf0d2",
+      "log_sha256": "6a1e34b05ed4242bd648f92a87741fa224da4cb15e2a98f9ff1b8ec8d0f6e6a8",
+      "skipped": 0,
+      "tests": 39,
+      "tool_chunk": "ca2352"
+    }
+  },
+  "correction": "Centered-difference steps halved from (2e-5,1e-5) to (1e-5,5e-6), tolerances and second-order rule unchanged. Numerical penalty and gradient unchanged. Import order, wrong-prior TypeError, literal test dictionary also corrected for lint.",
+  "files": {
+    "README.md": {
+      "bytes": 2945,
+      "sha256": "76481f7532333e27108924629fa69a38b0738d69ada0d25569ae5d39f835ca24"
+    },
+    "UNEXECUTED_STUDY_PROPOSAL.json": {
+      "bytes": 7351,
+      "sha256": "48c26556658f5736b3191af03fa8eb858fdec162acdd35f2a9ad5d0ecfb786f5"
+    },
+    "controls_attempt_01.log": {
+      "bytes": 2176,
+      "sha256": "d5f06e62aa5ae117accc690a32be33b4bd854b2b72af18df639a79a275ddfaf7"
+    },
+    "controls_attempt_01.xml": {
+      "bytes": 6805,
+      "sha256": "b11a1d20a8bd1921b65694f59e117191dd94c7ae452105b192782c2239723b32"
+    },
+    "controls_attempt_02.log": {
+      "bytes": 99,
+      "sha256": "6a1e34b05ed4242bd648f92a87741fa224da4cb15e2a98f9ff1b8ec8d0f6e6a8"
+    },
+    "controls_attempt_02.xml": {
+      "bytes": 4864,
+      "sha256": "41948a689a6b1a06ee9556983071b74a882a2b16b15362735646f54d078cf0d2"
+    },
+    "fractional_velocity_prior.py": {
+      "bytes": 6297,
+      "sha256": "4aa248fd3862533390ad918f4ad3f70d02fcdebcdc8d784494d375c935536163"
+    },
+    "history_attempt_01/fractional_velocity_prior.py": {
+      "bytes": 6298,
+      "sha256": "a0a6f9c4835ac3c0aed3741d4ae4bb4d6516c0227dde3001d08d25189ab91627"
+    },
+    "history_attempt_01/test_fractional_velocity_prior.py": {
+      "bytes": 7565,
+      "sha256": "d65b1c8d4906aada606b8afef9a3d689b2fc8269050eb3966291f8a6d60844b2"
+    },
+    "test_fractional_velocity_prior.py": {
+      "bytes": 7634,
+      "sha256": "83060f28fe274f98c3b7486bc6b5c529ce640ca1cf94154742e55eb41c7a24db"
+    }
+  },
+  "first_failure_preserved": true,
+  "independence_limits": "Scalar reference shares NumPy input arrays and generic decoding; no blind human reproduction, no rigorous floating-point enclosure.",
+  "lint": {
+    "exit_code": 0,
+    "result": "All checks passed!",
+    "tool_chunk": "230f9a"
+  },
+  "python": "3.13.13",
+  "python_3_10_grammar": true,
+  "scope": "staging only; no project array decode, PDE, optimizer, 48-run driver, source mutation, publication, or student-final design",
+  "status": "manufactured controls pass; project recovery benefit untested; independent root source review pending",
+  "total_bound_bytes": 52034
+}

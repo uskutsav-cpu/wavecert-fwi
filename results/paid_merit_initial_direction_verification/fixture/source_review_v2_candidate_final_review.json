@@ -1,0 +1,38 @@
+{
+  "result": "CLEAR_SOURCE_ONLY_FOR_PURE_MOCK_VALIDATION; NOT_PROJECT_QUERY_GO",
+  "reviewer": "candidate_final_review",
+  "runner_sha256": "52cdbb46e8337b955cbdec13a0b1ed96637c8c34da337e1f3269ad423ffe38f9",
+  "raw_replayer_sha256": "ca033a1462d036ac383d0c43e8e5630889b4da96df0c864d629dea66fbafaeac",
+  "protocol_sha256": "75531d211bb833cb89ea65f580582600eb6d4948ba61922fc67f3cb381ccaca2",
+  "readme_sha256": "22862d8b37d1c8a7140d5191b3e40e92242e474ae5bdd06c0f7dcd86207baf10",
+  "baseline_review": "source_review_v1_candidate_final_review.json",
+  "resolved_blockers": {
+    "R1": "BaseException during per-case computation is marked interrupted, available raw arrays and current receipt/status are persisted, then the exception reraises into overall failed/interrupted status. Remaining slots stay unattempted. Protocol now explicitly excludes persistence/hardkill guarantees.",
+    "R2": "Replayer rejects clear when upstream verification has issues or independently replayed false certification/beyond-historical-allowance coverage miss occurs. Historical1e-9 allowance arithmetic and coverage are recomputed and archived flags checked separately from literal coverage. Literal misses remain visible diagnostics, without quiet threshold changes.",
+    "R3": "Initial raw model hash/shape/dtype binds to the actual snapshot model descriptor/modelSHA. Raw production damping binds to snapshot descriptor and is compared to independent damping. Per-frequency source/receiver order and actual paid/missing-field descriptors are also checked."
+  },
+  "retained_scope_checks": [
+    "Wrapper forwards the exact original certificate args/kwargs, calls original once, returns the original certificate and restores binding in finally. It only observes references; there is no production source mutation or timing claim.",
+    "Independent physical gradient uses positive omega^2 Re(conj(adjoint)*state), conjugate-transpose solve, correct source1/h^2 normalization and ordered20receiver/sixsource/fourfrequency summation. Direct stencil signs and Dirichlet boundary diagonal agree.",
+    "All8 fixed original initial models, rank64 and four repairs remain fixed. Production truth-observation preparation4LU/24RHS and independent constructor work are separately retained from fresh gradient solves; no work is reinterpreted as360benchmark costs.",
+    "Raw NPZ arrays have individual canonical descriptors/hashes and complete file hashes; full original scalar certificate/proposal/frame data and copied runner/protocol/807/replayer sources remain manifested.",
+    "Raw replay reconstructs physical gradients, directions, DD, state/adjoint/data residuals and sums of stored bound terms. It does not independently derive/enclose production coarse stability constants or every component bound.",
+    "Unavailable directions and failed cases remain in8-slot denominator with unknown values. No clipping, finite-step, stationarity, formalFP, performance, independent geology, all360query replay, human/student ownership or final student design claim is made.",
+    "Protocol numerical settings/tolerances unchanged; only material-correction provenance and replayer source hash changed from preserved prior version."
+  ],
+  "activities": {
+    "source_text_diff_and_hash_review_only": true,
+    "import_parse_tests_or_execution": false,
+    "witness_queries_or_project_array_loads": false,
+    "benchmark_outcomes_read": false,
+    "production_or_benchmark_files_changed": false
+  },
+  "material_source_blockers": [],
+  "required_validation_before_parent_GO": [
+    "Pure/mock capture identity/same-object return/restoration checks for success and exception.",
+    "Pure/mock KeyboardInterrupt after partial arrays: current interrupted receipt/raw data retained, remaining slots unattempted, no complete receipt.",
+    "Synthetic false-certification/historical-miss/upstream-issue checks must prevent clear; literal miss stays separately visible.",
+    "Synthetic snapshot model/damping tampering must be detected."
+  ],
+  "authorization": "Parent confirmed original timed benchmark terminal but has not authorized actual eight project queries. Parent owns exact freeze, validation and separate execution GO."
+}

@@ -1,0 +1,432 @@
+{
+  "scope": "diagnostic cProfile; one existing validation case; not benchmark",
+  "case": "gom_148_il_0236",
+  "method": "scalar correctedPOD64/coarse96",
+  "costs": {
+    "pod": {
+      "adjoint_rhs_projections": 24,
+      "factor_cache_hits": 20,
+      "fine_adjoint_lifts": 24,
+      "fine_state_lifts": 24,
+      "fine_tangent_lifts": 0,
+      "mass_assemblies": 1,
+      "mass_cache_hits": 3,
+      "reduced_adjoint_rhs": 24,
+      "reduced_factorizations": 4,
+      "reduced_forward_rhs": 24,
+      "reduced_tangent_rhs": 0,
+      "source_projections": 24,
+      "tangent_rhs_projections": 0
+    },
+    "coarse_stability": {
+      "coarse_correction_rhs": 48,
+      "coarse_inverse_rhs": 384,
+      "coarse_lift_calls": 192,
+      "coarse_lu_factorizations": 4,
+      "coarse_multiplication_matrices": 2,
+      "coarse_oriented_rhs": 48,
+      "coarse_projection_calls": 192,
+      "coarse_receiver_rhs": 80,
+      "coarse_rhs": 0,
+      "coarse_solve_calls": 104,
+      "coarse_solve_rhs": 560,
+      "dst_I_real_transforms": 384,
+      "fine_grid_dense_svd": 0,
+      "fine_grid_factorizations": 0,
+      "fine_grid_rhs": 0,
+      "full_operator_applications": 96,
+      "idst_I_real_transforms": 384,
+      "model_cache_hits": 3,
+      "offline_dct_I_real_transforms": 0,
+      "online_dct_I_real_transforms": 2,
+      "receiver_cache_hits": 44,
+      "receiver_geometry_evaluations": 4,
+      "small_hermitian_eigenproblems": 16,
+      "small_svd_evaluations": 12
+    },
+    "certificate": {
+      "physical_gradient_contractions": 24,
+      "receiver_injections": 48
+    },
+    "reference_solver": {
+      "adjoint_rhs": 0,
+      "analytic_bound_evaluations": 0,
+      "cache_hits": 0,
+      "dense_inverse_rhs": 0,
+      "factorizations": 0,
+      "forward_rhs": 0,
+      "stability_rhs": 0,
+      "svd_evaluations": 0,
+      "tangent_rhs": 0
+    },
+    "dimensions": {
+      "fine": 576,
+      "pod": 64,
+      "spectral_coarse": 96
+    }
+  },
+  "available": true,
+  "certified": true,
+  "functions": [
+    {
+      "file": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/certificates/coarse_adjoint.py",
+      "line": 185,
+      "name": "certify_survey",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds_instrumented": 0.001795581,
+      "cumulative_seconds_instrumented": 0.087044041
+    },
+    {
+      "file": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py",
+      "line": 168,
+      "name": "evaluate",
+      "primitive_calls": 4,
+      "total_calls": 4,
+      "self_seconds_instrumented": 0.001930164,
+      "cumulative_seconds_instrumented": 0.024454876
+    },
+    {
+      "file": "/opt/miniconda3/lib/python3.13/site-packages/scipy/fft/_backend.py",
+      "line": 19,
+      "name": "__ua_function__",
+      "primitive_calls": 388,
+      "total_calls": 388,
+      "self_seconds_instrumented": 0.00046714500000000003,
+      "cumulative_seconds_instrumented": 0.018738335000000002
+    },
+    {
+      "file": "/opt/miniconda3/lib/python3.13/site-packages/scipy/fft/_realtransforms_backend.py",
+      "line": 8,
+      "name": "_execute",
+      "primitive_calls": 388,
+      "total_calls": 388,
+      "self_seconds_instrumented": 0.000658329,
+      "cumulative_seconds_instrumented": 0.017918094000000002
+    },
+    {
+      "file": "/opt/miniconda3/lib/python3.13/site-packages/scipy/_lib/_util.py",
+      "line": 1102,
+      "name": "wrapper",
+      "primitive_calls": 176,
+      "total_calls": 192,
+      "self_seconds_instrumented": 0.0014545220000000002,
+      "cumulative_seconds_instrumented": 0.017383291000000002
+    },
+    {
+      "file": "/opt/miniconda3/lib/python3.13/site-packages/scipy/fft/_duccfft/realtransforms.py",
+      "line": 59,
+      "name": "_r2rn",
+      "primitive_calls": 388,
+      "total_calls": 388,
+      "self_seconds_instrumented": 0.00203105,
+      "cumulative_seconds_instrumented": 0.016049304
+    },
+    {
+      "file": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py",
+      "line": 437,
+      "name": "correct",
+      "primitive_calls": 48,
+      "total_calls": 48,
+      "self_seconds_instrumented": 0.000452773,
+      "cumulative_seconds_instrumented": 0.015739167000000002
+    },
+    {
+      "file": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py",
+      "line": 388,
+      "name": "component_norms",
+      "primitive_calls": 96,
+      "total_calls": 96,
+      "self_seconds_instrumented": 0.000392587,
+      "cumulative_seconds_instrumented": 0.012882545
+    },
+    {
+      "file": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/certificates/coarse_adjoint.py",
+      "line": 172,
+      "name": "_pod_fields",
+      "primitive_calls": 24,
+      "total_calls": 24,
+      "self_seconds_instrumented": 0.00401616,
+      "cumulative_seconds_instrumented": 0.011838209
+    },
+    {
+      "file": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py",
+      "line": 371,
+      "name": "project",
+      "primitive_calls": 192,
+      "total_calls": 192,
+      "self_seconds_instrumented": 0.0016813540000000001,
+      "cumulative_seconds_instrumented": 0.011245446000000001
+    },
+    {
+      "file": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py",
+      "line": 379,
+      "name": "lift",
+      "primitive_calls": 192,
+      "total_calls": 192,
+      "self_seconds_instrumented": 0.0015416890000000002,
+      "cumulative_seconds_instrumented": 0.010787921
+    },
+    {
+      "file": "/opt/miniconda3/lib/python3.13/site-packages/scipy/linalg/_decomp_svd.py",
+      "line": 215,
+      "name": "svdvals",
+      "primitive_calls": 12,
+      "total_calls": 12,
+      "self_seconds_instrumented": 1.7291e-05,
+      "cumulative_seconds_instrumented": 0.009815081
+    },
+    {
+      "file": "/opt/miniconda3/lib/python3.13/site-packages/scipy/linalg/_decomp_svd.py",
+      "line": 37,
+      "name": "svd",
+      "primitive_calls": 12,
+      "total_calls": 12,
+      "self_seconds_instrumented": 6.4961e-05,
+      "cumulative_seconds_instrumented": 0.00979779
+    },
+    {
+      "file": "/opt/miniconda3/lib/python3.13/site-packages/scipy/linalg/_decomp.py",
+      "line": 970,
+      "name": "eigvalsh",
+      "primitive_calls": 16,
+      "total_calls": 16,
+      "self_seconds_instrumented": 2.9457000000000003e-05,
+      "cumulative_seconds_instrumented": 0.009670125
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "name": "<built-in method scipy.linalg._batched_linalg._svd>",
+      "primitive_calls": 12,
+      "total_calls": 12,
+      "self_seconds_instrumented": 0.009511666,
+      "cumulative_seconds_instrumented": 0.009511666
+    },
+    {
+      "file": "/opt/miniconda3/lib/python3.13/site-packages/scipy/linalg/_decomp.py",
+      "line": 311,
+      "name": "eigh",
+      "primitive_calls": 16,
+      "total_calls": 16,
+      "self_seconds_instrumented": 0.0074090070000000004,
+      "cumulative_seconds_instrumented": 0.009397378000000001
+    },
+    {
+      "file": "/opt/miniconda3/lib/python3.13/site-packages/scipy/fft/_realtransforms_backend.py",
+      "line": 30,
+      "name": "dstn",
+      "primitive_calls": 192,
+      "total_calls": 192,
+      "self_seconds_instrumented": 9.7256e-05,
+      "cumulative_seconds_instrumented": 0.007713427
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "name": "<built-in method scipy.fft._duccfft.pyduccfft.dst>",
+      "primitive_calls": 768,
+      "total_calls": 768,
+      "self_seconds_instrumented": 0.007688863000000001,
+      "cumulative_seconds_instrumented": 0.007688863000000001
+    },
+    {
+      "file": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py",
+      "line": 458,
+      "name": "receiver_constants",
+      "primitive_calls": 48,
+      "total_calls": 48,
+      "self_seconds_instrumented": 0.0008718290000000001,
+      "cumulative_seconds_instrumented": 0.007321457000000001
+    },
+    {
+      "file": "/opt/miniconda3/lib/python3.13/site-packages/scipy/fft/_realtransforms_backend.py",
+      "line": 36,
+      "name": "idstn",
+      "primitive_calls": 192,
+      "total_calls": 192,
+      "self_seconds_instrumented": 9.2366e-05,
+      "cumulative_seconds_instrumented": 0.007216663000000001
+    },
+    {
+      "file": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py",
+      "line": 394,
+      "name": "_solve",
+      "primitive_calls": 104,
+      "total_calls": 104,
+      "self_seconds_instrumented": 0.0007501080000000001,
+      "cumulative_seconds_instrumented": 0.0070683280000000005
+    },
+    {
+      "file": "/opt/miniconda3/lib/python3.13/site-packages/scipy/linalg/_decomp_lu.py",
+      "line": 134,
+      "name": "lu_solve",
+      "primitive_calls": 152,
+      "total_calls": 152,
+      "self_seconds_instrumented": 0.000150253,
+      "cumulative_seconds_instrumented": 0.006583375000000001
+    },
+    {
+      "file": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py",
+      "line": 501,
+      "name": "oriented_adjoint_error_bounds",
+      "primitive_calls": 24,
+      "total_calls": 24,
+      "self_seconds_instrumented": 0.000192799,
+      "cumulative_seconds_instrumented": 0.0064520820000000005
+    },
+    {
+      "file": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py",
+      "line": 414,
+      "name": "solve_coarse",
+      "primitive_calls": 100,
+      "total_calls": 100,
+      "self_seconds_instrumented": 9.0146e-05,
+      "cumulative_seconds_instrumented": 0.0057239610000000005
+    },
+    {
+      "file": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/surrogates/pod.py",
+      "line": 37,
+      "name": "__init__",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds_instrumented": 0.00017545900000000002,
+      "cumulative_seconds_instrumented": 0.0056122080000000005
+    },
+    {
+      "file": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py",
+      "line": 419,
+      "name": "apply_operator",
+      "primitive_calls": 96,
+      "total_calls": 96,
+      "self_seconds_instrumented": 0.003647557,
+      "cumulative_seconds_instrumented": 0.005297421
+    },
+    {
+      "file": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py",
+      "line": 68,
+      "name": "__init__",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds_instrumented": 0.0008967500000000001,
+      "cumulative_seconds_instrumented": 0.005178417
+    },
+    {
+      "file": "/opt/miniconda3/lib/python3.13/functools.py",
+      "line": 1009,
+      "name": "__get__",
+      "primitive_calls": 3,
+      "total_calls": 3,
+      "self_seconds_instrumented": 1.2832e-05,
+      "cumulative_seconds_instrumented": 0.005120709
+    },
+    {
+      "file": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/helmholtz.py",
+      "line": 155,
+      "name": "stiffness",
+      "primitive_calls": 1,
+      "total_calls": 1,
+      "self_seconds_instrumented": 0.00023054500000000002,
+      "cumulative_seconds_instrumented": 0.005013584000000001
+    },
+    {
+      "file": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/surrogates/pod.py",
+      "line": 198,
+      "name": "_state",
+      "primitive_calls": 24,
+      "total_calls": 24,
+      "self_seconds_instrumented": 0.003741827,
+      "cumulative_seconds_instrumented": 0.0049754560000000005
+    },
+    {
+      "file": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py",
+      "line": 448,
+      "name": "oriented_error_bounds",
+      "primitive_calls": 24,
+      "total_calls": 24,
+      "self_seconds_instrumented": 0.00015300600000000002,
+      "cumulative_seconds_instrumented": 0.004628790000000001
+    },
+    {
+      "file": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py",
+      "line": 158,
+      "name": "_multiplication",
+      "primitive_calls": 4,
+      "total_calls": 4,
+      "self_seconds_instrumented": 0.001068086,
+      "cumulative_seconds_instrumented": 0.004549376
+    },
+    {
+      "file": "/opt/miniconda3/lib/python3.13/site-packages/numpy/_core/fromnumeric.py",
+      "line": 2548,
+      "name": "all",
+      "primitive_calls": 1244,
+      "total_calls": 1244,
+      "self_seconds_instrumented": 0.0007761830000000001,
+      "cumulative_seconds_instrumented": 0.0041700140000000005
+    },
+    {
+      "file": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py",
+      "line": 365,
+      "name": "_vector",
+      "primitive_calls": 720,
+      "total_calls": 720,
+      "self_seconds_instrumented": 0.0016106550000000001,
+      "cumulative_seconds_instrumented": 0.0041260640000000005
+    },
+    {
+      "file": "/opt/miniconda3/lib/python3.13/site-packages/scipy/linalg/_decomp_lu.py",
+      "line": 193,
+      "name": "_lu_solve",
+      "primitive_calls": 152,
+      "total_calls": 152,
+      "self_seconds_instrumented": 0.0034523920000000003,
+      "cumulative_seconds_instrumented": 0.0037971270000000004
+    },
+    {
+      "file": "/opt/miniconda3/lib/python3.13/site-packages/scipy/linalg/_misc.py",
+      "line": 19,
+      "name": "norm",
+      "primitive_calls": 369,
+      "total_calls": 369,
+      "self_seconds_instrumented": 0.0014997160000000001,
+      "cumulative_seconds_instrumented": 0.0037812510000000002
+    },
+    {
+      "file": "/opt/miniconda3/lib/python3.13/site-packages/numpy/_core/fromnumeric.py",
+      "line": 86,
+      "name": "_wrapreduction_any_all",
+      "primitive_calls": 1273,
+      "total_calls": 1273,
+      "self_seconds_instrumented": 0.0013413470000000001,
+      "cumulative_seconds_instrumented": 0.003470453
+    },
+    {
+      "file": "/opt/miniconda3/lib/python3.13/site-packages/scipy/fft/_realtransforms_backend.py",
+      "line": 18,
+      "name": "dctn",
+      "primitive_calls": 4,
+      "total_calls": 4,
+      "self_seconds_instrumented": 3.791e-06,
+      "cumulative_seconds_instrumented": 0.003181417
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "name": "<method 'reduce' of 'numpy.ufunc' objects>",
+      "primitive_calls": 1858,
+      "total_calls": 1858,
+      "self_seconds_instrumented": 0.0030286970000000003,
+      "cumulative_seconds_instrumented": 0.0030286970000000003
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "name": "<built-in method scipy.fft._duccfft.pyduccfft.dct>",
+      "primitive_calls": 4,
+      "total_calls": 4,
+      "self_seconds_instrumented": 0.002645001,
+      "cumulative_seconds_instrumented": 0.0029860430000000003
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "status": "ACTUAL_CONTROL_ONLY_JOB_FAILED_SETUP_NO_PROJECT_STUDY",
+  "created_utc": "2026-11-09T02:03:20.335617+00:00",
+  "run_id": 42548463638,
+  "job_id": 128938514065,
+  "run_attempt": 1,
+  "source_commit": "72326311db4179b7392d7b539fa034f99b8a52d5",
+  "job_conclusion": "failure",
+  "gate_controls": {
+    "PDE_calls": 0,
+    "actual_study_launches": 0,
+    "errors": 0,
+    "failures": 0,
+    "network_requests": 0,
+    "orchestrator_sha256": "6c5867b922b9312f27a266e5affe4c3ff5c29277560f120d3df7c2c3612b36ec",
+    "project_arrays_decoded": 0,
+    "source_sha256": "e26317990d26413a1c00627cc691eea172b6108b02ef1e1e6f729bf541fb6391",
+    "status": "MANUFACTURED_METADATA_GATE_CONTROLS_PASS",
+    "tests": 22
+  },
+  "control_groups": {
+    "prior": {
+      "tests": 39,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "adapter": {
+      "tests": 21,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "driver": {
+      "tests": 7,
+      "failures": 0,
+      "errors": 1,
+      "skipped": 0
+    }
+  },
+  "driver_passed_before_fixture_error": 6,
+  "launcher_group": "NOT_REACHED",
+  "artifact_inventory_verified_files": 17,
+  "artifact_sha256": "3c6a7da4c3f5e256da1fb9a070b823bd0bf22a1537dbcfbb78f9f00178f6737e",
+  "failure": {
+    "error": "RuntimeError: manufactured control subprocess failed: driver",
+    "mode": "controls_only",
+    "no_retry_or_fallback": true,
+    "process_elapsed_seconds": 1.358428642000007,
+    "scientific_success_not_inferred": true,
+    "status": "orchestration_failed_or_interrupted"
+  },
+  "cause": "Orchestrator passed --basetemp live/control_tmp/driver without creating live/control_tmp parent; pytest tmp_path fixture cannot mkdir nested basetemp. No numerical criteria/source issue inferred.",
+  "runtime": {
+    "executable": "/opt/hostedtoolcache/Python/3.11.18/x64/bin/python",
+    "packages": {
+      "h5py": "3.16.0",
+      "numpy": "2.4.6",
+      "pytest": "9.2.0",
+      "scipy": "1.17.1"
+    },
+    "python": "3.11.18",
+    "resources": {
+      "available_memory_bytes": 15684722688,
+      "cpu_count": 4,
+      "free_disk_bytes": 92036071424,
+      "load_average": [
+        0.64111328125,
+        0.22509765625,
+        0.08154296875
+      ],
+      "machine": "x86_64",
+      "physical_memory_bytes": 16759439360,
+      "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43"
+    },
+    "threads": {
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    },
+    "workflow_setup_scope": "Checkouts/setup-python/pip precede this process; their costs remain in workflow logs, not free project work."
+  },
+  "source_9f_161_verified": true,
+  "project_study_started": false,
+  "no_retry_or_resume": true,
+  "next": "Versioned one-line orchestration parent-directory fix, independent delta review and fresh control-only source/run; failed run never authorizes study."
+}

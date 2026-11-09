@@ -1,0 +1,428 @@
+{
+  "checks": 887,
+  "criteria_sha256": "e18f1554cc99e2c71d9acfbb3a884fc5e4fa5d6608d1208adddac651902474c5",
+  "files_after": {
+    "actual_github_context.json": "2354fd6e1ee21fd8c30b11b7f896106a594d9d4816b9747ed57bab66fd44168f",
+    "actual_github_event.json": "10bb81859207b49b6952ca5ea17ff06cf010b46620be4db2925e0864c95692c9",
+    "actual_registration.json": "404a7996bb374eac41e514b998eb3e294c86294a9096c75d02bcae5ef1200811",
+    "actual_runtime.json": "5d7de31b8c37709c3b3d3cc1f2d1e9b3ac9c398d9088bcf5a4205d7fb9b229f0",
+    "artifact_inventory.json": "0668144151f5802d13b3107b150835da0f72ac56b4c083f21c878ac3e2cfd032",
+    "component46.log": "2fdbfd8ca4b1f03517583a95c9d797258bdf9116d64cf90fbdaa175b61869611",
+    "component46.xml": "55ef0f3d756223686cd82e61a4262021276ea22424283e40ea51df5f9f55e5cb",
+    "component46_actual_wait.json": "1b2f52303540579c9642bd34406eab6f0214ec61a36ae578ce864b4980272126",
+    "component46_requested.json": "9e7ed8b0dbc0eebba49331dd8e750c9105a1b5bb8ddccb0a6ccf6e503d91064f",
+    "component46_spawned.json": "95af64a29538246c48fb54e02df1521dcaba2f49e8758d81113c537517bb4f65",
+    "lifecycle14.log": "2d394622564a44a81e205bc257a49aed861bdd65a43f0083ca135b8fe1dbda1e",
+    "lifecycle14_actual_wait.json": "2b399c1f72ecf10a3c6125b6b355232d40fddf6cf719054bd5f1e7b8cf398743",
+    "lifecycle14_requested.json": "5e31fee166d812af460321a5fdf0797def7a630b31c4390b83134b3efa3602a6",
+    "lifecycle14_spawned.json": "d031a0fcede1da1df54c43cdf71859a1a91c6b4f73cdd25aa2c89de1021344ef",
+    "mandatory58_controls.json": "24c9cc837af706c54885db104636607ba0f2d790798e1e56a39881613f52e115",
+    "native.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native/admission.json": "9c9c25f04a950b89c76f7db8e3b0154489db233b54847d7a67e7937fcf175726",
+    "native/arrays.npz": "08bb08d56e32e52c827427a0b850cba2c672efbcb8ce77aa7ec111c058f85aa6",
+    "native/events.jsonl": "6b86784b2f0bfcca16c53d9d877b1f622a8b5745990be90d93ddb36096c8c1e3",
+    "native/plan.json": "8a21079f34af37d01d7588f341a25a801ac039d18aaa5a9ced8a601ef6b154b3",
+    "native/result.json": "f92deb594263fbf83a13c25e3b23563d49740c011d202709175026b7019ba882",
+    "native_actual_wait.json": "9abbcb43af7b5cdc5dc151bdd9535a76379f594e171ba2041cb96a8c0e6cba58",
+    "native_requested.json": "22b2cb0852f086f3ac8ae372bbe9cdde5747cbb9d9d7ca182e78203294ebd783",
+    "native_spawned.json": "2536e64870cf31e7760005f918c4db56c48ffec3d62e28ff4f030a76e24eaadc",
+    "route_result.json": "305cef7096d87b64bcd32437e1db4a84936551063e06f117a0aa768b10ba861f",
+    "source_after.json": "b9b9f9e1ff37c26fb97d31eb40ea860d9b2ec7b5d9f268ab8cbfb4c9c0edbbeb",
+    "source_before.json": "b9b9f9e1ff37c26fb97d31eb40ea860d9b2ec7b5d9f268ab8cbfb4c9c0edbbeb",
+    "supplied_root_go.json": "4459907bf06162ca7a50c170a708a4b3743b48beee3142867bdfc4e08879445e"
+  },
+  "files_before": {
+    "actual_github_context.json": "2354fd6e1ee21fd8c30b11b7f896106a594d9d4816b9747ed57bab66fd44168f",
+    "actual_github_event.json": "10bb81859207b49b6952ca5ea17ff06cf010b46620be4db2925e0864c95692c9",
+    "actual_registration.json": "404a7996bb374eac41e514b998eb3e294c86294a9096c75d02bcae5ef1200811",
+    "actual_runtime.json": "5d7de31b8c37709c3b3d3cc1f2d1e9b3ac9c398d9088bcf5a4205d7fb9b229f0",
+    "artifact_inventory.json": "0668144151f5802d13b3107b150835da0f72ac56b4c083f21c878ac3e2cfd032",
+    "component46.log": "2fdbfd8ca4b1f03517583a95c9d797258bdf9116d64cf90fbdaa175b61869611",
+    "component46.xml": "55ef0f3d756223686cd82e61a4262021276ea22424283e40ea51df5f9f55e5cb",
+    "component46_actual_wait.json": "1b2f52303540579c9642bd34406eab6f0214ec61a36ae578ce864b4980272126",
+    "component46_requested.json": "9e7ed8b0dbc0eebba49331dd8e750c9105a1b5bb8ddccb0a6ccf6e503d91064f",
+    "component46_spawned.json": "95af64a29538246c48fb54e02df1521dcaba2f49e8758d81113c537517bb4f65",
+    "lifecycle14.log": "2d394622564a44a81e205bc257a49aed861bdd65a43f0083ca135b8fe1dbda1e",
+    "lifecycle14_actual_wait.json": "2b399c1f72ecf10a3c6125b6b355232d40fddf6cf719054bd5f1e7b8cf398743",
+    "lifecycle14_requested.json": "5e31fee166d812af460321a5fdf0797def7a630b31c4390b83134b3efa3602a6",
+    "lifecycle14_spawned.json": "d031a0fcede1da1df54c43cdf71859a1a91c6b4f73cdd25aa2c89de1021344ef",
+    "mandatory58_controls.json": "24c9cc837af706c54885db104636607ba0f2d790798e1e56a39881613f52e115",
+    "native.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native/admission.json": "9c9c25f04a950b89c76f7db8e3b0154489db233b54847d7a67e7937fcf175726",
+    "native/arrays.npz": "08bb08d56e32e52c827427a0b850cba2c672efbcb8ce77aa7ec111c058f85aa6",
+    "native/events.jsonl": "6b86784b2f0bfcca16c53d9d877b1f622a8b5745990be90d93ddb36096c8c1e3",
+    "native/plan.json": "8a21079f34af37d01d7588f341a25a801ac039d18aaa5a9ced8a601ef6b154b3",
+    "native/result.json": "f92deb594263fbf83a13c25e3b23563d49740c011d202709175026b7019ba882",
+    "native_actual_wait.json": "9abbcb43af7b5cdc5dc151bdd9535a76379f594e171ba2041cb96a8c0e6cba58",
+    "native_requested.json": "22b2cb0852f086f3ac8ae372bbe9cdde5747cbb9d9d7ca182e78203294ebd783",
+    "native_spawned.json": "2536e64870cf31e7760005f918c4db56c48ffec3d62e28ff4f030a76e24eaadc",
+    "route_result.json": "305cef7096d87b64bcd32437e1db4a84936551063e06f117a0aa768b10ba861f",
+    "source_after.json": "b9b9f9e1ff37c26fb97d31eb40ea860d9b2ec7b5d9f268ab8cbfb4c9c0edbbeb",
+    "source_before.json": "b9b9f9e1ff37c26fb97d31eb40ea860d9b2ec7b5d9f268ab8cbfb4c9c0edbbeb",
+    "supplied_root_go.json": "4459907bf06162ca7a50c170a708a4b3743b48beee3142867bdfc4e08879445e"
+  },
+  "input_packet": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/results/cached_jacobian_native_verification/payload/cohorts/v2_success/extracted",
+  "issues": [],
+  "ledger": {
+    "actual_dispatches": 160,
+    "disjoint_totals": {
+      "adjoint_rhs": 48,
+      "factorizations": 96,
+      "forward_rhs": 480,
+      "stability_rhs": 272,
+      "tangent_rhs": 48
+    },
+    "expected_guard_rejections": 2,
+    "mandatory_controls": 60,
+    "recorded_dynamic_check_count": 154
+  },
+  "limits": [
+    "Stdlib scalar/array-only recomputation; no native/PDE/NumPy/producer import or full-J reconstruction.",
+    "Only six covered rows per frequency are retained; missing14 receiver-map rows are not independently replayed.",
+    "Old-operator repeat vector and native receipt identities are not reconstructible from arrays; source-bound checks/events/counters retain those controls.",
+    "Mandatory60 means actual14 lifecycle plus46 manufactured component tests, not60 numerical conditions or160 native dispatches; legacy filename mandatory58_controls.json remains source-bound.",
+    "Actual source/context/wait evidence is externally recorded; self-reported fields are not independent OS/remote authenticity proof.",
+    "Worker selfRSS is measured before final serialization; parent RUSAGE_CHILDREN includes controls and must not be assigned solely to native.",
+    "Ordinary floating-point scalar agreement at one fixed constant model/direction/dual, not physical accuracy, rigorous enclosure, recovery, speedup, novelty or student work."
+  ],
+  "mandatory_controls": 60,
+  "npz_arrays_decoded": 14,
+  "numeric_comparisons": 108,
+  "physical_acceptance": null,
+  "planned_FD_steps": 2,
+  "planned_array_members": 14,
+  "planned_complex_source_covered_rows": 48,
+  "planned_native_covered_rows": 48,
+  "planned_public_dispatches": 160,
+  "scalar_results": {
+    "FD": [
+      {
+        "independent_objective_FD": 43.70227257908143,
+        "jvp_relative_error": 7.322664636179237e-06,
+        "normalized_objective_DD": 43.702142792923595,
+        "objective_relative_error": 2.969780521144397e-06,
+        "step": 0.0001
+      },
+      {
+        "independent_objective_FD": 43.70217523930075,
+        "jvp_relative_error": 1.8306705708333426e-06,
+        "normalized_objective_DD": 43.702142792923595,
+        "objective_relative_error": 7.424430701025634e-07,
+        "step": 5e-05
+      }
+    ],
+    "covered_rows": [
+      {
+        "complex_source_relative_error": 2.846525400385916e-16,
+        "frequency_hz": 0.25,
+        "native_relative_error": 3.4320190676932886e-16,
+        "source_index": 250
+      },
+      {
+        "complex_source_relative_error": 2.854048104140656e-16,
+        "frequency_hz": 0.25,
+        "native_relative_error": 2.776950103600773e-16,
+        "source_index": 258
+      },
+      {
+        "complex_source_relative_error": 3.4631034423900875e-16,
+        "frequency_hz": 0.25,
+        "native_relative_error": 3.5709343973392966e-16,
+        "source_index": 266
+      },
+      {
+        "complex_source_relative_error": 2.8874840237271217e-16,
+        "frequency_hz": 0.25,
+        "native_relative_error": 2.442953408770824e-16,
+        "source_index": 272
+      },
+      {
+        "complex_source_relative_error": 3.5338872977155573e-16,
+        "frequency_hz": 0.25,
+        "native_relative_error": 3.2273255644162285e-16,
+        "source_index": 280
+      },
+      {
+        "complex_source_relative_error": 3.078278487098814e-16,
+        "frequency_hz": 0.25,
+        "native_relative_error": 2.618736134911129e-16,
+        "source_index": 288
+      },
+      {
+        "complex_source_relative_error": 3.3138500140435573e-16,
+        "frequency_hz": 0.5,
+        "native_relative_error": 2.6214231718368466e-16,
+        "source_index": 250
+      },
+      {
+        "complex_source_relative_error": 3.056863727378363e-16,
+        "frequency_hz": 0.5,
+        "native_relative_error": 5.868329662459015e-16,
+        "source_index": 258
+      },
+      {
+        "complex_source_relative_error": 3.6433576128781414e-16,
+        "frequency_hz": 0.5,
+        "native_relative_error": 3.8768223591062485e-16,
+        "source_index": 266
+      },
+      {
+        "complex_source_relative_error": 3.8594947544845967e-16,
+        "frequency_hz": 0.5,
+        "native_relative_error": 4.3838272756973204e-16,
+        "source_index": 272
+      },
+      {
+        "complex_source_relative_error": 3.6076098990379495e-16,
+        "frequency_hz": 0.5,
+        "native_relative_error": 2.862729785695487e-16,
+        "source_index": 280
+      },
+      {
+        "complex_source_relative_error": 2.290307083266503e-16,
+        "frequency_hz": 0.5,
+        "native_relative_error": 2.1883691303480895e-16,
+        "source_index": 288
+      },
+      {
+        "complex_source_relative_error": 3.5586496993416627e-16,
+        "frequency_hz": 1.0,
+        "native_relative_error": 3.1719371896873585e-16,
+        "source_index": 250
+      },
+      {
+        "complex_source_relative_error": 6.68379141626851e-16,
+        "frequency_hz": 1.0,
+        "native_relative_error": 6.655077988035935e-16,
+        "source_index": 258
+      },
+      {
+        "complex_source_relative_error": 3.4367822726299583e-16,
+        "frequency_hz": 1.0,
+        "native_relative_error": 2.9575967946907936e-16,
+        "source_index": 266
+      },
+      {
+        "complex_source_relative_error": 3.250215794127631e-16,
+        "frequency_hz": 1.0,
+        "native_relative_error": 4.665481317001491e-16,
+        "source_index": 272
+      },
+      {
+        "complex_source_relative_error": 4.505972969895658e-16,
+        "frequency_hz": 1.0,
+        "native_relative_error": 6.274016899864184e-16,
+        "source_index": 280
+      },
+      {
+        "complex_source_relative_error": 3.434539970216074e-16,
+        "frequency_hz": 1.0,
+        "native_relative_error": 8.8613832722543385e-16,
+        "source_index": 288
+      },
+      {
+        "complex_source_relative_error": 1.7176035286046653e-15,
+        "frequency_hz": 2.0,
+        "native_relative_error": 3.2262854657757223e-15,
+        "source_index": 250
+      },
+      {
+        "complex_source_relative_error": 4.501586285053111e-15,
+        "frequency_hz": 2.0,
+        "native_relative_error": 2.2860596561967643e-15,
+        "source_index": 258
+      },
+      {
+        "complex_source_relative_error": 4.10012268893102e-15,
+        "frequency_hz": 2.0,
+        "native_relative_error": 3.512997841104007e-15,
+        "source_index": 266
+      },
+      {
+        "complex_source_relative_error": 3.135003526865596e-15,
+        "frequency_hz": 2.0,
+        "native_relative_error": 3.1771840584234877e-15,
+        "source_index": 272
+      },
+      {
+        "complex_source_relative_error": 3.571002651975205e-15,
+        "frequency_hz": 2.0,
+        "native_relative_error": 4.6577991776999335e-15,
+        "source_index": 280
+      },
+      {
+        "complex_source_relative_error": 4.896628446502295e-15,
+        "frequency_hz": 2.0,
+        "native_relative_error": 5.0720522347661765e-15,
+        "source_index": 288
+      },
+      {
+        "complex_source_relative_error": 2.3876668523813626e-15,
+        "frequency_hz": 2.5,
+        "native_relative_error": 2.5253292166357943e-15,
+        "source_index": 250
+      },
+      {
+        "complex_source_relative_error": 2.504909812832679e-15,
+        "frequency_hz": 2.5,
+        "native_relative_error": 2.160975503980442e-15,
+        "source_index": 258
+      },
+      {
+        "complex_source_relative_error": 2.7775358226117214e-15,
+        "frequency_hz": 2.5,
+        "native_relative_error": 2.2103483624971854e-15,
+        "source_index": 266
+      },
+      {
+        "complex_source_relative_error": 2.940451758357379e-15,
+        "frequency_hz": 2.5,
+        "native_relative_error": 1.1411291192643338e-15,
+        "source_index": 272
+      },
+      {
+        "complex_source_relative_error": 1.6873643198852025e-15,
+        "frequency_hz": 2.5,
+        "native_relative_error": 1.3491639365533848e-15,
+        "source_index": 280
+      },
+      {
+        "complex_source_relative_error": 3.0002132995817938e-15,
+        "frequency_hz": 2.5,
+        "native_relative_error": 2.7632312327516943e-15,
+        "source_index": 288
+      },
+      {
+        "complex_source_relative_error": 2.219302482807416e-15,
+        "frequency_hz": 3.0,
+        "native_relative_error": 3.998951690783071e-15,
+        "source_index": 250
+      },
+      {
+        "complex_source_relative_error": 5.06393657949864e-15,
+        "frequency_hz": 3.0,
+        "native_relative_error": 5.531533343803472e-15,
+        "source_index": 258
+      },
+      {
+        "complex_source_relative_error": 3.1991662813355105e-15,
+        "frequency_hz": 3.0,
+        "native_relative_error": 3.727265759568671e-15,
+        "source_index": 266
+      },
+      {
+        "complex_source_relative_error": 3.987134855559591e-15,
+        "frequency_hz": 3.0,
+        "native_relative_error": 4.843502838805093e-15,
+        "source_index": 272
+      },
+      {
+        "complex_source_relative_error": 8.951553232533607e-15,
+        "frequency_hz": 3.0,
+        "native_relative_error": 9.524489711739608e-15,
+        "source_index": 280
+      },
+      {
+        "complex_source_relative_error": 8.275104440091789e-15,
+        "frequency_hz": 3.0,
+        "native_relative_error": 7.745578030502299e-15,
+        "source_index": 288
+      },
+      {
+        "complex_source_relative_error": 2.566504071283984e-15,
+        "frequency_hz": 3.5,
+        "native_relative_error": 1.3181488211254927e-15,
+        "source_index": 250
+      },
+      {
+        "complex_source_relative_error": 2.0961492113021262e-15,
+        "frequency_hz": 3.5,
+        "native_relative_error": 2.5753621379550332e-15,
+        "source_index": 258
+      },
+      {
+        "complex_source_relative_error": 1.4218156641543195e-15,
+        "frequency_hz": 3.5,
+        "native_relative_error": 1.5486045969043111e-15,
+        "source_index": 266
+      },
+      {
+        "complex_source_relative_error": 1.9763013358010346e-15,
+        "frequency_hz": 3.5,
+        "native_relative_error": 2.366771427037848e-15,
+        "source_index": 272
+      },
+      {
+        "complex_source_relative_error": 2.3824730569126754e-15,
+        "frequency_hz": 3.5,
+        "native_relative_error": 1.7458590757088536e-15,
+        "source_index": 280
+      },
+      {
+        "complex_source_relative_error": 1.590518114490266e-15,
+        "frequency_hz": 3.5,
+        "native_relative_error": 1.2744345691769917e-15,
+        "source_index": 288
+      },
+      {
+        "complex_source_relative_error": 1.856390604952892e-15,
+        "frequency_hz": 4.0,
+        "native_relative_error": 2.3856515263279398e-15,
+        "source_index": 250
+      },
+      {
+        "complex_source_relative_error": 3.5443550450041514e-15,
+        "frequency_hz": 4.0,
+        "native_relative_error": 2.4304153761020046e-15,
+        "source_index": 258
+      },
+      {
+        "complex_source_relative_error": 1.9029247322370448e-15,
+        "frequency_hz": 4.0,
+        "native_relative_error": 1.8769748767769267e-15,
+        "source_index": 266
+      },
+      {
+        "complex_source_relative_error": 1.6697909125136933e-15,
+        "frequency_hz": 4.0,
+        "native_relative_error": 2.1189589098095755e-15,
+        "source_index": 272
+      },
+      {
+        "complex_source_relative_error": 1.5121859810434628e-15,
+        "frequency_hz": 4.0,
+        "native_relative_error": 2.1049923777128685e-15,
+        "source_index": 280
+      },
+      {
+        "complex_source_relative_error": 2.6239868294151717e-15,
+        "frequency_hz": 4.0,
+        "native_relative_error": 2.0852337002682343e-15,
+        "source_index": 288
+      }
+    ],
+    "fixed_objective_direction_cosine": 0.6869693817680586,
+    "left_zJp": -9.633175101717589,
+    "native_Phi0": 29.31843603324798,
+    "normalized_initial_cost": 1.0,
+    "real_adjoint_relative_error": 0.0,
+    "relative_vector_errors": {
+      "jvp": 1.772853139816292e-15,
+      "vjp": 1.1562177229184583e-15
+    },
+    "right_pJstarz": -9.633175101717589,
+    "scalar_recomputed_Phi0": 29.31843603324798
+  },
+  "scientific_goals_complete": false,
+  "source_pins": {
+    "FROZEN_PRODUCTION_SOURCE.json": "e7ba5deef7a651f42d02b9f8e0bcbee9624291b8217ab378bdde7586c57cd4de",
+    "cached_jacobian.py": "f613370617d7e0bd7815cf441dd8ba5f41816ad4791275e86f33de228657c79b",
+    "protocol.json": "d1b6986d23d9840a1e66aa48a766a2cc624d2ee18a92f327d259067423fb8e85",
+    "public_map_builder.py": "7e1c79f99df6e68dda185552f0ff6f480b5fd4823061e7581952cafbd759cb11",
+    "verify_native_fields.py": "c660a025badbebd5e9d9a4d6ddbfc684c95193c6111f2de349f25112976d1d6b"
+  },
+  "source_sha256": "ffdc8e89b13fbaaf08239c4b5b4accf8b61c86c678eabac41091d72609edf1e1",
+  "status": "RETAINED_ARRAY_SCALAR_AUDIT_CLEAR",
+  "student_final_design": false,
+  "verified_credit": true
+}

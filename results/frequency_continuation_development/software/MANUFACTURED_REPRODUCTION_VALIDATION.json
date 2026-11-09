@@ -1,0 +1,118 @@
+{
+  "created_utc": "2026-11-08T19:28:23.693658+00:00",
+  "role": "AI-owned local archival manufactured-control reproduction evidence, LinuxCI still pending",
+  "result": "ACTUAL_PUBLIC_TEST_PASS_AND_108_OF_108_CHILD_CONTROLS_PASS",
+  "harness_sha256": "4715f767f50821798f35020ab0e70d94d8934ce9293c9e6cffbc64a5dc636b5e",
+  "publictest_sha256": "fc0162657c0023699f12166005310d423a9dd1724c887d176a32eebe698dc29d",
+  "asset_manifest_sha256": "0932ce13b0565133cab94c186022f62244b51e69fd1384f00c8ef0a9217c3120",
+  "actual_parent": {
+    "session": 46070,
+    "initial_chunk": "f3a5d2",
+    "terminal_chunk": "8415a7",
+    "PID": 87297,
+    "exit_code": 0,
+    "passed": 1,
+    "pytest_seconds": 56.61,
+    "terminal_receipt_sha256": "a27e56756dff74d8fe9369de44a66d005bcbf5310b6bcef546ed10d4fd878ddf",
+    "full_log_sha256": "322511f5a0b363f1b329238a8b1a22e78e70980dd40615b76535044843b7efce"
+  },
+  "actual_child_suites_independently_recounted_from_JUnit_and_log": [
+    {
+      "name": "bounded_engine",
+      "actual_testcases": 17,
+      "actual_passed": 17,
+      "failed_errors_skips": 0,
+      "actual_exit_code": 0,
+      "PID": 87308,
+      "log_sha256": "f89967d0643b0d34cfb57f3dd2a14c8b79f8e972e6c37f951bd00ad1770bf06e",
+      "junit_sha256": "98a30ebf189e7b169c88cb7787d5f028e1fd7d5314ad63964e29266185f13bac"
+    },
+    {
+      "name": "controller",
+      "actual_testcases": 24,
+      "actual_passed": 24,
+      "failed_errors_skips": 0,
+      "actual_exit_code": 0,
+      "PID": 87357,
+      "log_sha256": "b5617833ad52841103c41f5d28d10ebff169fe6a88ae110df777f3a55900cc43",
+      "junit_sha256": "485f93037ac276f51833d97a0e261ddc69b3e9ab82209398d62c962044d2e8bb"
+    },
+    {
+      "name": "driver",
+      "actual_testcases": 15,
+      "actual_passed": 15,
+      "failed_errors_skips": 0,
+      "actual_exit_code": 0,
+      "PID": 87397,
+      "log_sha256": "fd7a4796caa09ba4f22ae15777c7862faa1b6307286b87f141bff2772ce6d270",
+      "junit_sha256": "63f7669b3bb4f4b71496f5a8a178eb2e7e6ef55670fd399ffc690a701bd7ee0d"
+    },
+    {
+      "name": "launcher",
+      "actual_testcases": 15,
+      "actual_passed": 15,
+      "failed_errors_skips": 0,
+      "actual_exit_code": 0,
+      "PID": 87406,
+      "log_sha256": "b19a5da3d42a5b3eb84507956c55a7b78619022dd02acf112d0cc82cf3a0851c",
+      "junit_sha256": "3f7f0fb8ff293e06e968e3749b082c3ad6521c8446b65876c7062cc7695a5b93"
+    },
+    {
+      "name": "scalar_auditor_v2",
+      "actual_testcases": 37,
+      "actual_passed": 37,
+      "failed_errors_skips": 0,
+      "actual_exit_code": 0,
+      "PID": 87482,
+      "log_sha256": "fe4bb49bf968161f27edc627e52fe24cfea17bbb9b71e48b8b9f8d7b474e706b",
+      "junit_sha256": "e08e7e6fe33aff3819aacb987f60489741ac292aba4e548a82c0b3ebde29263a"
+    }
+  ],
+  "actual_observed": 108,
+  "actual_passed": 108,
+  "actual_failed": 0,
+  "actual_errors": 0,
+  "actual_skipped": 0,
+  "environment": {
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "packages": {
+      "numpy": "2.4.3",
+      "scipy": "1.18.1",
+      "pytest": "9.1.1"
+    }
+  },
+  "source_identity": {
+    "before": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "after": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "files_before": 161,
+    "files_after": 161,
+    "all161_file_SHA_equal": true,
+    "all17_archived_asset_SHA_equal": true,
+    "physical_fixture_source_checked": true,
+    "all4_candidate_assets_SHA_equal": true
+  },
+  "harness_raw_receipt_sha256": "5c903e0164b6012656edd78c65f896a896d51d21560a5e0fc4a7ae21852e04fa",
+  "successful_local_workspace_preserved": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_02/test_archived_frequency_manufa0/archival108",
+  "static_Ruff_grammar_default_pass": true,
+  "preexecution_freeze_sha256": "1eae4c79313f0231d7d60bcd3d52d70c29830e93d36705c3e94af2b3f92681d6",
+  "source_peer_CLEAR": true,
+  "first_failed_attempt_preserved": {
+    "compact_receipt_sha256": "96328f422209c3e034695f628c9264ecdbadb10250adabfb3dc8f621a1218fc0",
+    "parent_actual_exit": 1,
+    "harness_actual_exit": 2,
+    "actual_observed": 108,
+    "passed": 86,
+    "setup_errors": 22,
+    "full5logs5JUnit_archived": true,
+    "original161_fixture_kept_local_not_duplicated_inarchive": true
+  },
+  "wrapper_correction": "Exactlyone mkdir(output/pytest_tmp) before suites pluspublictest harnesspin; no archivedcontrol/model/settings/criterion/count change. Onefreshparentretry only; no separate direct108 rerun.",
+  "reproduction_context": "Requires9f/161 research-strengthening PRcheckout, not unchanged81-file main. ActualdriverTEMPb982context copied fromhistory/driver_full_controls_01; later2b49 described separately.",
+  "scope": [
+    "Existing tiny synthetic physics/oracle/API controls only; no projectcorpus/study96run/training/dependencyinstall.",
+    "No production/core/workflow change inthisphase; new publictest andresultarchive wrapper only.",
+    "LocalmacOS Python3.13 evidence; LinuxPython3.10/11/12 portability remains tobe measured byexistingCI.",
+    "No methodnovelty, competitionrank, studentauthorship, independentgeology or completedscientificgoal claim."
+  ]
+}

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import copy
 import json
+import time
 from dataclasses import asdict
 from pathlib import Path
 
@@ -10,7 +11,14 @@ import numpy as np
 import torch
 from torch.utils.data import DataLoader, TensorDataset
 
+from wavecert.data.splits import audit_dataset_roles, verify_dataset_provenance
 from wavecert.data.wavefields import WavefieldDatasetArrays
+from wavecert.experiments.derivative_training import (
+    make_tangent_labels,
+    normalized_tangent_target,
+    normalized_value_and_tangent,
+)
+from wavecert.provenance import sha256_file
 from wavecert.surrogates.fno import (
     FNO2dWavefield,
     FNOConfig,
@@ -81,13 +89,30 @@ def run_real_geology_training(
     seed: int = 20260911,
     device: str = "cpu",
     config: FNOConfig | None = None,
+    jacobian_weight: float = 0.0,
+    jacobian_seed: int = 20261107,
 ) -> dict:
-    """Train a stronger FNO on real-geology-derived WaveCert datasets."""
+    """Train forward-only or derivative-informed FNO using train/validation only.
+
+    A positive ``jacobian_weight`` adds one fixed random-direction exact tangent
+    label per training/model-selection example. The model-selection score is
+    forward normalized MSE plus the weighted normalized tangent MSE. This is
+    an established derivative-supervision baseline, not a novel WaveCert claim.
+    Calibration/test derivatives are never generated for training or selection.
+    """
+
+    started = time.perf_counter()
+    if not np.isfinite(jacobian_weight) or jacobian_weight < 0:
+        raise ValueError("jacobian_weight must be finite and nonnegative")
+    if isinstance(jacobian_seed, bool) or int(jacobian_seed) != jacobian_seed or jacobian_seed < 0:
+        raise ValueError("jacobian_seed must be a nonnegative integer")
 
     if config is None:
         config = FNOConfig(modes_z=12, modes_x=12, width=48, depth=4, padding=2)
 
     dataset_dir = Path(dataset_dir)
+    split_audit = audit_dataset_roles(dataset_dir)
+    provenance = verify_dataset_provenance(dataset_dir)
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     checkpoint_path = Path(checkpoint_path)
@@ -109,13 +134,34 @@ def run_real_geology_training(
     encoder = FNOInputEncoder(train.shape, norm)
     model = FNO2dWavefield(config).to(device)
 
+    training_tensors = [
+        torch.as_tensor(train.models, dtype=torch.float32),
+        torch.as_tensor(train.source_indices, dtype=torch.long),
+        torch.as_tensor(train.frequencies_hz, dtype=torch.float32),
+        torch.as_tensor(train.wavefields, dtype=torch.float32),
+    ]
+    jacobian_labels = {}
+    label_started = time.perf_counter()
+    if jacobian_weight > 0:
+        labels = {}
+        for role, arrays in (("train", train), ("validation", validation)):
+            labels[role] = make_tangent_labels(arrays, role=role, seed=jacobian_seed)
+            path = out / f"jacobian_{role}_labels.npz"
+            np.savez_compressed(path, directions=labels[role].directions, tangents=labels[role].tangents)
+            jacobian_labels[role] = {
+                **labels[role].metadata,
+                "artifact": path.name,
+                "artifact_sha256": sha256_file(path),
+            }
+        training_tensors += [
+            torch.as_tensor(labels["train"].directions, dtype=torch.float32),
+            torch.as_tensor(labels["train"].tangents, dtype=torch.float32),
+        ]
+        vd = torch.as_tensor(labels["validation"].directions, dtype=torch.float32, device=device)
+        vt = torch.as_tensor(labels["validation"].tangents, dtype=torch.float32, device=device)
+    label_seconds = time.perf_counter() - label_started
     loader = DataLoader(
-        TensorDataset(
-            torch.as_tensor(train.models, dtype=torch.float32),
-            torch.as_tensor(train.source_indices, dtype=torch.long),
-            torch.as_tensor(train.frequencies_hz, dtype=torch.float32),
-            torch.as_tensor(train.wavefields, dtype=torch.float32),
-        ),
+        TensorDataset(*training_tensors),
         batch_size=batch_size,
         shuffle=True,
         generator=torch.Generator().manual_seed(seed),
@@ -138,32 +184,52 @@ def run_real_geology_training(
     best_state = None
     bad_epochs = 0
 
+    training_started = time.perf_counter()
     for epoch in range(1, epochs + 1):
         model.train()
         total = 0.0
         seen = 0
-        for m, s, f, y in loader:
+        jacobian_total = 0.0
+        for batch in loader:
+            m, s, f, y = batch[:4]
             m, s, f, y = m.to(device), s.to(device), f.to(device), y.to(device)
-            pred_norm = model(encoder.encode_batch(m, s, f))
+            if jacobian_weight > 0:
+                direction, tangent = (tensor.to(device) for tensor in batch[4:])
+                pred_norm, pred_tangent = normalized_value_and_tangent(model, encoder, m, s, f, direction)
+                jacobian_loss = torch.mean((pred_tangent - normalized_tangent_target(encoder, tangent)) ** 2)
+            else:
+                pred_norm = model(encoder.encode_batch(m, s, f))
+                jacobian_loss = torch.zeros((), dtype=pred_norm.dtype, device=device)
             target_norm = encoder.normalize_target(y).permute(0, 3, 1, 2)
             loss_full = torch.mean((pred_norm - target_norm) ** 2)
             pred = encoder.decode_output(pred_norm)
             p = pred.reshape(pred.shape[0], -1, 2)[:, receiver_idx]
             t = y.reshape(y.shape[0], -1, 2)[:, receiver_idx]
             loss_receiver = torch.mean(((p - t) / scale) ** 2)
-            loss = loss_full + 0.25 * loss_receiver
+            loss = loss_full + 0.25 * loss_receiver + jacobian_weight * jacobian_loss
+            if not bool(torch.isfinite(loss)):
+                raise FloatingPointError(f"non-finite training loss at epoch {epoch}")
             optimizer.zero_grad(set_to_none=True)
             loss.backward()
-            torch.nn.utils.clip_grad_norm_(model.parameters(), 5.0)
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 5.0, error_if_nonfinite=True)
             optimizer.step()
             total += float(loss.detach()) * len(m)
+            jacobian_total += float(jacobian_loss.detach()) * len(m)
             seen += len(m)
 
         model.eval()
         with torch.no_grad():
-            val_pred = model(encoder.encode_batch(vm, vs, vf))
+            if jacobian_weight > 0:
+                val_pred, val_tangent = normalized_value_and_tangent(model, encoder, vm, vs, vf, vd)
+                val_jacobian_loss = float(torch.mean((val_tangent - normalized_tangent_target(encoder, vt)) ** 2).cpu())
+            else:
+                val_pred = model(encoder.encode_batch(vm, vs, vf))
+                val_jacobian_loss = 0.0
             val_target = encoder.normalize_target(vy).permute(0, 3, 1, 2)
-            val_loss = float(torch.mean((val_pred - val_target) ** 2).cpu())
+            val_forward_loss = float(torch.mean((val_pred - val_target) ** 2).cpu())
+            val_loss = val_forward_loss + jacobian_weight * val_jacobian_loss
+            if not np.isfinite(val_loss):
+                raise FloatingPointError(f"non-finite model-selection loss at epoch {epoch}")
         scheduler.step()
         train_loss = total / max(seen, 1)
         history.append(
@@ -171,6 +237,9 @@ def run_real_geology_training(
                 "epoch": epoch,
                 "train_loss": train_loss,
                 "validation_loss": val_loss,
+                "validation_forward_loss": val_forward_loss,
+                "validation_jacobian_loss": val_jacobian_loss,
+                "training_jacobian_loss": jacobian_total / max(seen, 1),
                 "lr": optimizer.param_groups[0]["lr"],
             }
         )
@@ -183,6 +252,7 @@ def run_real_geology_training(
             bad_epochs += 1
         if bad_epochs >= patience:
             break
+    training_seconds = time.perf_counter() - training_started
 
     if best_state is None:
         raise RuntimeError("training produced no checkpoint")
@@ -193,6 +263,18 @@ def run_real_geology_training(
 
     summary = {
         "dataset": "SubsurfaceGen real geology with WaveCert reference wavefields",
+        "dataset_provenance": provenance,
+        "split_audit": split_audit,
+        "calibration_role_use": "not loaded for training, early stopping, normalization, or checkpoint selection",
+        "training_objective": "forward full-field normalized MSE + 0.25 receiver MSE + jacobian_weight * normalized tangent MSE",
+        "model_selection_objective": "validation forward normalized MSE + jacobian_weight * normalized tangent MSE",
+        "jacobian_weight": float(jacobian_weight),
+        "jacobian_seed": int(jacobian_seed),
+        "jacobian_labels": jacobian_labels,
+        "jacobian_label_generation_seconds": label_seconds,
+        "training_seconds": training_seconds,
+        "seconds_before_artifact_writes": time.perf_counter() - started,
+        "derivative_baseline_scope": "Existing derivative-supervision strategy used as a comparator; float32 neural derivatives and stored tangent labels are numerical approximations, not a new certification theorem.",
         "seed": seed,
         "shape": list(train.shape),
         "model_config": asdict(config),
@@ -204,7 +286,8 @@ def run_real_geology_training(
             "test_ood": int(len(test_ood.models)),
         },
         "best_epoch": best_epoch,
-        "best_validation_normalized_mse": best_val,
+        "best_validation_normalized_mse": history[best_epoch - 1]["validation_forward_loss"],
+        "best_validation_selection_score": best_val,
         "id": id_metrics,
         "ood": ood_metrics,
         "ood_to_id_receiver_error_ratio": float(
@@ -229,11 +312,17 @@ def run_real_geology_training(
             history=history,
             receiver_indices=train.receiver_indices.tolist(),
             dataset="SubsurfaceGen",
+            dataset_manifest_sha256=provenance["dataset_manifest_sha256"],
+            training_manifest_sha256=provenance["role_manifest_sha256"],
+            calibration_role_used_for_model_selection=False,
+            jacobian_weight=float(jacobian_weight),
+            jacobian_seed=int(jacobian_seed),
+            jacobian_labels=jacobian_labels,
         ),
         checkpoint_path,
     )
-    (out / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
-    (out / "training_history.json").write_text(json.dumps(history, indent=2) + "\n")
+    (out / "summary.json").write_text(json.dumps(summary, indent=2, allow_nan=False) + "\n")
+    (out / "training_history.json").write_text(json.dumps(history, indent=2, allow_nan=False) + "\n")
 
     fig, ax = plt.subplots(figsize=(6.8, 4.5), constrained_layout=True)
     ax.semilogy([r["epoch"] for r in history], [r["train_loss"] for r in history], label="train")

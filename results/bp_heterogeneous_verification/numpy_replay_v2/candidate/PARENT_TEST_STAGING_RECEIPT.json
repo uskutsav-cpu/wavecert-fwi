@@ -1,0 +1,20 @@
+{
+  "role": "Staged parent CI test replacement; not installed or executed by this agent",
+  "candidate_sha256": "601e047769f584cabc3da92d3725029c457da17abc7e9acd2193683465a30398",
+  "old_repo_test_sha256": "0cb4641e4e17fb79444a6c7b721e8badd0c4d69b587695da1771aa43c82346ba",
+  "intended_path": "tests/test_bp_numpy_tangent_reproduction.py",
+  "fixture_path": "results/bp_heterogeneous_verification/numpy_replay_v2",
+  "canonical_inputs_path": "results/bp_heterogeneous_verification/canonical_inputs_v2_01",
+  "new_pins": {
+    "runner": "5c7f59a667a3cf8cdce56d65d8055792a3311c8ea20cab1f1470ddba12bb46e0",
+    "protocol": "173873ed81968927c6a43edc3f37bdd7986aaa457582225e5df35d70948a938c",
+    "canonical_manifest": "2d878a87d947e8b4f1e9e69a5e487ab772e3de1156511a714a0a3b012fad3b35"
+  },
+  "preserved_acceptance": "All3 traces, all6 informative directional derivatives, source/geometry/sample axes, original thresholds/full denominators retained. Added explicit canonical input exact-value identity and existing1e-14 direction agreement guard assertions.",
+  "changed_claims": "Native-derived canonical numeric INPUTS usedTrue; native SOLUTION OUTPUTS during own solvesFalse. No independent direction generation claim. Legacy kernel no-file flag scoped.",
+  "diagnostics": "Saved canonical velocity/context/direction hashes and exact identity plus original native model ULP diagnostics; runtime separates context mass/direction norm/direction mismatch errors.",
+  "source_only_verification": "Repository Ruff and Python3.10 grammar checks; no parent test execution yet",
+  "actual_project_PDE_calls_by_this_agent": 0,
+  "repo_test_unchanged": true,
+  "actual_replay_terminal_report_from_root": "Root reported actual3+6 V2 replay exit0 chunk91be02; this candidate does not convert earlier failed CI to success."
+}

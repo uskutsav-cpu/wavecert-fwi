@@ -1,0 +1,131 @@
+{
+  "role": "AI-authored publication of existing verified engineering data; no fitting, propagation, threshold selection or omission",
+  "created_utc": "2026-11-08T07:34:39.298981+00:00",
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "audit_result": "CLEAR_COORDINATE_ENGINEERING_POSTAUDIT",
+  "audit_checks": 4523,
+  "audit_numeric_comparisons": 672,
+  "audit_issues": 0,
+  "planned_denominator": 48,
+  "shown_verified_returns": 48,
+  "case_denominator": 8,
+  "repetitions_per_method_case": 3,
+  "raw_rows_csv": "all_48_returned_states.csv",
+  "case_summaries_csv": "all_8_case_summaries.csv",
+  "common_initial_is_single_model_not_independent_replicates": true,
+  "summary_rule": "all3 median with min-max; no confidence interval or successful-only selection",
+  "larger_error_than_initial_cases": {
+    "native_m_lbfgsb": [
+      0,
+      1,
+      2,
+      4,
+      5
+    ],
+    "physical_v_lbfgsb": [
+      0,
+      1,
+      2,
+      4,
+      5
+    ]
+  },
+  "returned_ratio_counts": {
+    "native_m_lbfgsb": {
+      "0.5": 24,
+      "0.25": 24
+    },
+    "physical_v_lbfgsb": {
+      "0.5": 21,
+      "0.25": 18
+    }
+  },
+  "invalid_prior_attempt_counts": {
+    "failed": 14,
+    "interrupted": 1,
+    "unattempted": 33
+  },
+  "no_new_PDE_solves": true,
+  "no_new_timings": true,
+  "plotting_versions": {
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]",
+    "numpy": "2.4.3",
+    "matplotlib": "3.11.2"
+  },
+  "input_file_sha256": {
+    "work/coordinate_cost_post_audit_02/report.json": "e494b94086608c0cd2ab79dfc4a2b5c09fe04a9b22570fad504fcaf759472dcf",
+    "work/coordinate_cost_run_02/status.json": "67ef68509f327182325cca985c332ae8a484c6d379829c2413c77ca6045f0f8f",
+    "work/coordinate_cost_run_02/complete_receipt.json": "2e7b62662a9a0342842226376c78b3f7a6f70b36d24d15b7b7419599602160d7",
+    "work/coordinate_cost_run_01/status.json": "96e4c891adcb5ba2ef373462840bfffec6851bb404ddeb35efe67a456e9440ab",
+    "work/coordinate_cost_run_02/run_000_core.json.gz": "49d9fa449f505cd395098d44be9aaa63d79d05fd10d824d53912cdbe1e3aefe3",
+    "work/coordinate_cost_run_02/run_001_core.json.gz": "eb09cd02a4a5deb5012d16a25ad1d01b1273dfdf4ead911e03732c865cc5ceca",
+    "work/coordinate_cost_run_02/run_002_core.json.gz": "cac92d5477b808795b9e9ad1c24e12000cea79460416115aaffdffceab1b219b",
+    "work/coordinate_cost_run_02/run_003_core.json.gz": "d813083581e3dd4b2bcba5e305b0e23c84ca92bb86e19b8e358d32207d2fb7c5",
+    "work/coordinate_cost_run_02/run_004_core.json.gz": "7f2ad9987964090edad8df2d4e0a5fcc490c50cd2e15821fbfef79cc9217ed9a",
+    "work/coordinate_cost_run_02/run_005_core.json.gz": "024499a4d0696adb3282ad7746d9c2e7bf7525e5147fa56bb11715bd62e6520b",
+    "work/coordinate_cost_run_02/run_006_core.json.gz": "1af7619db0c316012cb90abbd2c3cbb75be8f230aa1115e5616106db80f5bfb7",
+    "work/coordinate_cost_run_02/run_007_core.json.gz": "27e581ed762aa39f817e4d21d7ced662ead89ef6b1c781a227630e0103bbda69",
+    "work/coordinate_cost_run_02/run_008_core.json.gz": "741869ee71d2555e445c3cf1f1d420754cc4f10be39a1fe762d863c576ca2cbf",
+    "work/coordinate_cost_run_02/run_009_core.json.gz": "c795ba70a2ea2b3712bf0517d4aca44a340c142dc7ff1d5feba87380464c0bb6",
+    "work/coordinate_cost_run_02/run_010_core.json.gz": "8f713e400c794c832f583b1dc509a245e8cc191db91011b2d5a237388b9d2045",
+    "work/coordinate_cost_run_02/run_011_core.json.gz": "c70f95b2e30fb1a17e1324e246eb8180585b90cec01f4e7d78e6fda41f80f318",
+    "work/coordinate_cost_run_02/run_012_core.json.gz": "ef6bfafb92e0e92a4e17e9ec5eeed889ab9933478d3a5817b33d9978f3153286",
+    "work/coordinate_cost_run_02/run_013_core.json.gz": "1d3b3304636e82c669dcc00970fe85d53f93b3c752ea269446b01426bbb9bf66",
+    "work/coordinate_cost_run_02/run_014_core.json.gz": "0370fc04538a3405843c524862380f4dc5fa00bd8347d9189407cdc1ff71714e",
+    "work/coordinate_cost_run_02/run_015_core.json.gz": "30792dbc1e816c8d21c5c623fe74474253a1d3395fe6b4b15be3226baadeb914",
+    "work/coordinate_cost_run_02/run_016_core.json.gz": "f950f2b6f58707d17cab6446488f2614b3f38d525f595d240c431f874f86f5cf",
+    "work/coordinate_cost_run_02/run_017_core.json.gz": "24bd4cd7898f9027328dd09a995325bd682e06df8f2846e56f9ac8c087c351fa",
+    "work/coordinate_cost_run_02/run_018_core.json.gz": "129978646ef8142eb07a32efa0d72465c466eee955ff23440c309ee9ce7a55f2",
+    "work/coordinate_cost_run_02/run_019_core.json.gz": "c2731bbe23f139a79b6e5aecb2f0afddb80f7da9321dc37d2c02f36433d0fc76",
+    "work/coordinate_cost_run_02/run_020_core.json.gz": "c3a7f575bdede9ef7875ea2cfd7253c9edf71b0849d3cac87a720df227f27d36",
+    "work/coordinate_cost_run_02/run_021_core.json.gz": "a6d29b07330073056432787d1c8c814c2819a1791d1d604c6023c6c4c5c77413",
+    "work/coordinate_cost_run_02/run_022_core.json.gz": "8bbf60b552d4f1e4f49f7b282b3d1d5930dfd4fcf3cfcf0ca1459458467472fc",
+    "work/coordinate_cost_run_02/run_023_core.json.gz": "916a300ec5b5887418065b3e744735df263474d60f385e8803030ce3c317cfcb",
+    "work/coordinate_cost_run_02/run_024_core.json.gz": "7bd8648b22455ccc7cd9197a7e6943141138d7a8795916315ba224c5f86281ad",
+    "work/coordinate_cost_run_02/run_025_core.json.gz": "fb76bd402e6c23e9988aed25856724f130d29f487725ad4e490d03dd9aca988d",
+    "work/coordinate_cost_run_02/run_026_core.json.gz": "5394d2a0e1e8cb34de88081c1c8d3e3a2173d4005bc4349a5c369381200fcb07",
+    "work/coordinate_cost_run_02/run_027_core.json.gz": "70f60423dc3ce310c0c43c7fcdd5d73cb022db9361e893de695f6fc5237cf7a6",
+    "work/coordinate_cost_run_02/run_028_core.json.gz": "ae48fc3bf8c4c7b0721e2b14733205b91557a18c0cc849d9305758b7c406403e",
+    "work/coordinate_cost_run_02/run_029_core.json.gz": "3a004217b53a5b738ae11f487c92246a4f670c42496be2b392ef12966d92e5e5",
+    "work/coordinate_cost_run_02/run_030_core.json.gz": "c287b20539a2b63645f27d6277691dc551327272aacac8d570d9a614e1dba7b7",
+    "work/coordinate_cost_run_02/run_031_core.json.gz": "12288daeaffab186ee98fbd01ad75a4051b5539b6293e33e9814da7d677b4be1",
+    "work/coordinate_cost_run_02/run_032_core.json.gz": "67b9206e5f7cef10c9190caa990b9fe939475718264611932db6c76007fe5824",
+    "work/coordinate_cost_run_02/run_033_core.json.gz": "d72322186429cd80db3e3723885e309dcc3c67da7013871dce8284783fe7fe3a",
+    "work/coordinate_cost_run_02/run_034_core.json.gz": "2d046a2355a56a42719eba9c487af3477b16bf1a26aa9e535f60934735758dba",
+    "work/coordinate_cost_run_02/run_035_core.json.gz": "ec74d672ab4290d463f5c4d854019b1fffcf7aa49f3a0bea43d1fad70aee6e97",
+    "work/coordinate_cost_run_02/run_036_core.json.gz": "08f0d83e163e3571d9c05982d4ede2b96d6e2e12c3738a98cfb10be030718cdb",
+    "work/coordinate_cost_run_02/run_037_core.json.gz": "7de1aeda2ec44ebc17d7711bc4513e6111b436abf0a8d69ef494c60494574369",
+    "work/coordinate_cost_run_02/run_038_core.json.gz": "b0494fd0bb3ab028113532c162a602fde58e5fe987349726b1cea608a37d354d",
+    "work/coordinate_cost_run_02/run_039_core.json.gz": "035d7dadd4aa451aec0601b432429f50b503b9c5314bb67e4ba042bb867881e6",
+    "work/coordinate_cost_run_02/run_040_core.json.gz": "40b16285f16fd2a4255599f4c0068b7a2d409f39395f864571918b24bf51f188",
+    "work/coordinate_cost_run_02/run_041_core.json.gz": "49c31ce4f677f0682d6a54fdc647c04a3d210e23436aa5791429a64712efc23f",
+    "work/coordinate_cost_run_02/run_042_core.json.gz": "dd2822caf0f5612363ef833869f4ab6e6edb292302fa186de6cae3f8c0ee5094",
+    "work/coordinate_cost_run_02/run_043_core.json.gz": "e2936722164760d0fee60af9207d1e14fd75383e266735efb05db200ba8f50ae",
+    "work/coordinate_cost_run_02/run_044_core.json.gz": "70780fa0be26aaeee7a870c740666f8b5a82ba739b4ab60461a6726473c2c6c3",
+    "work/coordinate_cost_run_02/run_045_core.json.gz": "393a956e9bb7a9b53ee29bb2378f7ea48c49e5a0e65e3e5d884368a11e9bcf07",
+    "work/coordinate_cost_run_02/run_046_core.json.gz": "af50b71ab2ae5cc451929ba0ffb073f09d5501fb96c0fdbbcac98424bf085c98",
+    "work/coordinate_cost_run_02/run_047_core.json.gz": "94553ab9f87d6b3cd42605a80baec64ea71192cc6f6d5be99e85f3c399fbbce0"
+  },
+  "input_files_unchanged_after_plotting": true,
+  "layout_history_file": "layout_history.json",
+  "visual_QA": {
+    "status": "passed",
+    "method": "Viewed exported PNG with native view_image after final sparse-tick update",
+    "observations": "All8caseIDs and bothpanels readable; no overlapping ticklabels, clipped text or omitted cases; commoninitialdiamonds visible; all3 repetitions retained in CSV/median/minmax.",
+    "image_pixels": [
+      2772,
+      1980
+    ],
+    "first_layout_issue": "Overlapping left log minor labels; corrected and history retained with reconstructed first PNG byte-identical to recorded original hash."
+  },
+  "artifact_sha256": {
+    "coordinate_cost_returned_diagnostics.caption.txt": "476659ebc01947ea78f69966f19b23adcdff6a0d5a5e46b72e98ba6d509d98ae",
+    "layout_history.json": "8f13eb7345bcc78069673ce1e46cbec1786b530cb0d0b1a6fe956a445bf085f0",
+    "all_48_returned_states.csv": "8341cc3a5f55bbf777de91f738bb9a9e6217f9237ee37718b845ebdbb1197d1b",
+    "plot_coordinate_cost.py": "d48af601aacbf06e9770a1ce8439abbed78d8073d636d875e33a7f3a72a4b97a",
+    "coordinate_cost_returned_diagnostics.png": "177b670d6f27522c708249df3019e4b5ec98fefa495a927acfbdc617f64f8f1e",
+    "all_8_case_summaries.csv": "79e004c786733a7a1ad658f8bf07b9109991c3d3ef773b4ef81454f89ed8694e",
+    "coordinate_cost_returned_diagnostics.svg": "928cc74ed68a2afe00f4e0524ae2c77d1cfeb9650969a84183c6125cc30415b3"
+  },
+  "numeric_csvs_byte_identical_to_prior_layouts": true
+}

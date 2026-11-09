@@ -1,0 +1,151 @@
+{
+  "created_utc": "2026-11-08T19:23:08.262677+00:00",
+  "result": "FIRST_ATTEMPT_FAIL_PRESERVED_DIAGNOSED_WRAPPER_SETUP_BUG",
+  "parent_actual_exit": 1,
+  "harness_actual_exit": 2,
+  "actual_observed": 108,
+  "actual_passed": 86,
+  "setup_errors": 22,
+  "root_cause": "Harness supplied --basetemp output/pytest_tmp/<suite> without creating its parent output/pytest_tmp. Pytest mkdir(parents=False) fails all22 controls usingtmp_path.",
+  "all22_XML_errors_match_same_missing_parent": true,
+  "errors": [
+    {
+      "suite": "launcher",
+      "testcase": "test_actual_exit_pid_and_no_false_completion[0]",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "launcher",
+      "testcase": "test_actual_exit_pid_and_no_false_completion[7]",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "launcher",
+      "testcase": "test_dispatch_returns_while_dummy_keeps_running",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "launcher",
+      "testcase": "test_supervisor_signal_forwarding_records_real_signal_exit",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "launcher",
+      "testcase": "test_hash_changes_prevent_dispatch[manifest]",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "launcher",
+      "testcase": "test_hash_changes_prevent_dispatch[driver]",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "launcher",
+      "testcase": "test_hash_changes_prevent_dispatch[protocol]",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "launcher",
+      "testcase": "test_hash_changes_prevent_dispatch[predecessor]",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "launcher",
+      "testcase": "test_existing_output_and_job_are_never_overwritten",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "launcher",
+      "testcase": "test_default_cli_does_not_open_registration_or_launch",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "launcher",
+      "testcase": "test_dispatch_receipt_write_failure_tracks_and_reaps_known_worker",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "launcher",
+      "testcase": "test_registration_must_bind_protocol_cohort_and_predecessor[cohort_id]",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "launcher",
+      "testcase": "test_registration_must_bind_protocol_cohort_and_predecessor[protocol_predecessor]",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "launcher",
+      "testcase": "test_predecessor_tree_cannot_receive_new_artifacts[output]",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "launcher",
+      "testcase": "test_predecessor_tree_cannot_receive_new_artifacts[job]",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/launcher'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "driver",
+      "testcase": "test_unknown_dependency_review_cannot_execute",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/driver'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/driver')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/driver'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "driver",
+      "testcase": "test_interrupted_paid_prefix_vectors_saved_without_quality_credit",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/driver'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/driver')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/driver'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "driver",
+      "testcase": "test_failure_saving_error_is_recorded_and_never_overwrites",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/driver'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/driver')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/driver'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "driver",
+      "testcase": "test_scalar_failure_prefix_does_not_claim_unavailable_vectors",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/driver'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/driver')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/driver'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "driver",
+      "testcase": "test_artifact_reservation_checks_before_writing",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/driver'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/driver')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/driver'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "driver",
+      "testcase": "test_real_manufactured_49_grid_bootstrap_and_independent_common8_audit",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/driver'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/driver')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/driver'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    },
+    {
+      "suite": "scalar_auditor_v2",
+      "testcase": "test_missing_manifest_file_and_path_escape_are_integrity_failures",
+      "message": "failed on setup with \"FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/scalar_auditor_v2'\"",
+      "text": "self = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/scalar_auditor_v2')\nmode = 448, parents = False, exist_ok = False\n\n    def mkdir(self, mode=0o777, parents=False, exist_ok=False):\n        \"\"\"\n        Create a new directory at this given path.\n        \"\"\"\n        try:\n>           os.mkdir(self, mode)\nE           FileNotFoundError: [Errno 2] No such file or directory: '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108/pytest_tmp/scalar_auditor_v2'\n\n/opt/miniconda3/lib/python3.13/pathlib/_local.py:722: FileNotFoundError"
+    }
+  ],
+  "workspace_preserved": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108",
+  "parent_terminal_sha256": "f139f6105fa8d0b7267ac833c2a631d9c5e67594068e5b2002f88cbf95356097",
+  "harness_receipt_sha256": "23f25b9916c526dc80d1912deb3db5c95cc95d76c7759173dc1f262114589e7c",
+  "old_harness_sha256": "13a6bcff83424c9f8ae65877f486fd1efbcb4ecd72708e64d46930ed46a3ffe0",
+  "old_publictest_sha256": "5fdccc952124825cc1c157d055786bf64065a94bb2f4109dd84a437b32eaccf5",
+  "minimal_fix": "Create output/pytest_tmp once before launching any suite; exact child sources/tests/manifest/protocols unchanged. Update publictest source pin. Fresh rerun only after newfreeze/review; no retries issued yet."
+}

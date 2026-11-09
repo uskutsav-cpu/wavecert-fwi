@@ -1,0 +1,26 @@
+{
+  "role": "AI source-only algebraic observation, not computed numerical rank or student conclusion",
+  "source": "Frozen matched_cost_pilot protocolfb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c and native Helmholtz2D/exact_merit source9f",
+  "fixed_geometry": {
+    "original_sources": [50,54,58,61,65,69],
+    "original_receivers": "all integers50..69 inclusive",
+    "all_sources_are_receivers": true,
+    "source_count": 6,
+    "receiver_count": 20,
+    "frequencies": 4,
+    "real_model_parameters": 2401
+  },
+  "derivation": [
+    "In exact arithmetic, for the native operator A(m)=K-omega^2 diag(m)+i omega diag(d), K is real symmetric and potentials are diagonal; hence A^T=A although A is generally not Hermitian. Ordinary LU/derivative arithmetic may introduce small numerical violations, so this is not an asserted numerical rank of stored computations.",
+    "At an invertible model and fixed frequency, equal real nodal source amplitudea=1/h^2 gives datumD(receiverj,sourcei)=a(A^-1)[j,i]. For two positions both in the six-source set, D(j,i)=D(i,j). The refined integer index mapping preserves this inclusion and equality.",
+    "Each frequency has120 complex slots. The6x6 source/source subblock has36 slots but at most21 transpose-symmetry classes; six-source observations at the other14receivers supply84 further slots. Thus there are at most105 classes per frequency,420 over four frequencies, instead of480 slots.",
+    "For differentiable real m, these pairwise data identities also constrain the Jacobian rows. Real/imaginary stacking therefore gives the structural upper bound rank<=840, before any additional dependence or conditioning loss. This is only an upper bound: no rank, singular value, effective dimension or recovery failure was computed.",
+    "Independent unequal observational noise could break observed pair values but not the native forward-map row identity. Different source amplitudes/physics require explicit rechecking rather than silently borrowing this specialization."
+  ],
+  "important_limits": [
+    "No project arrays, observations, gradients, Jacobians or new outcomes were loaded or computed for this note.",
+    "It does not establish actual numerical rank840, an identifiable subspace, a causal explanation of endpoint drift, a resolution claim or successful/failed reconstruction.",
+    "The full least-squares objective retains all480complex slots and their multiplicities. Dropping mirrored off-diagonal slots without doubling their weight changes the objective and gradient. This note authorizes no source/protocol/objective changes.",
+    "Six sources, frequencies and receiver positions are reused synthetic development geometry; symmetry counting does not create independent geological sites or student scientific ownership."
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "schema": "source_informed_ot2_tangent_derivation_v1",
+  "scope": "AI-assisted source-informed numerical port and manufactured algebra controls. No BP arrays, native numeric outcomes, field fitting, student conclusions, verified enclosure, or differentiation of discontinuous floating-point arithmetic.",
+  "source_authentication": {
+    "status": "fresh_pinned_primary_generates_byte_identical_C_with_Operator_apply_trapped; actual_native_run_cache_ancestry_not_claimed",
+    "warning": "Cache filenames alone do not establish that a native run used these kernels. A separate metadata-only query regenerated the exact listed C bytes with Operator.apply forbidden and no Model constructor, BP arrays, native numeric data, or saved-u allocation. No outcome-derived coefficient selection is permitted.",
+    "files": [
+      {
+        "role": "rolling_forward_generated_C",
+        "path": "/var/folders/f4/8spnm17n3g9cvbpydqnw8m380000gn/T/devito-jitcache-uid501/217654e5bcbe2bcd652ce9fe3bef6e0cc12bc044.c",
+        "sha256": "e26af052bba5b5557e087ccbb160f551188ee38eae8af41cf3f48f046758ec65"
+      },
+      {
+        "role": "saved_forward_generated_C",
+        "path": "/var/folders/f4/8spnm17n3g9cvbpydqnw8m380000gn/T/devito-jitcache-uid501/9ba19aea750045ed5f015618041722d71c732228.c",
+        "sha256": "b187920749f98c8789fa7d32b6b67ae76f48c86277d7cebba5cd65f0caf5d7be"
+      },
+      {
+        "role": "gradient_generated_C",
+        "path": "/var/folders/f4/8spnm17n3g9cvbpydqnw8m380000gn/T/devito-jitcache-uid501/098077760fa288827113843ea63a980fe02f53f9.c",
+        "sha256": "a88c47726b2900ce13a43a25fa47b0b70343db88ac97c1089bbc368936b3e35f"
+      },
+      {
+        "role": "installed_primary_acoustic_operators",
+        "path": "/opt/miniconda3/lib/python3.13/site-packages/examples/seismic/acoustic/operators.py",
+        "sha256": "1ab37a6f2e95b7ab7fdec58d141290880127da9705dfe8deb6045fc0590d6336"
+      },
+      {
+        "role": "installed_primary_acoustic_solver",
+        "path": "/opt/miniconda3/lib/python3.13/site-packages/examples/seismic/acoustic/wavesolver.py",
+        "sha256": "9e8cca80ac1fd1bb66abe3133a09ad0f2d23b2b55aba0e0c1003362c458b929e"
+      },
+      {
+        "role": "separate_fresh_primary_metadata_query",
+        "path": "query_primary_metadata.py",
+        "sha256": "e5c22147bd37a5d28c29d227dc8fc6ecdaa1bab6a0e947144c5814b7fa3745c2"
+      },
+      {
+        "role": "fresh_generated_source_and_rolling_argument_evidence",
+        "path": "primary_metadata/operator_metadata.json",
+        "sha256": "072bb4156bd455ca9b8afe08b90993663b6bb6bdac138fff5af6d582e38275a7"
+      }
+    ]
+  },
+  "symbols": {
+    "m": "1/(vp*vp), on the full logical grid including constant-edge padding",
+    "mu": "E applied to a direction normalized on the physical m grid",
+    "u": "current primal wavefield",
+    "v": "previous primal wavefield (not adjoint v)",
+    "w": "current directional wavefield derivative",
+    "z": "previous directional wavefield derivative",
+    "d": "fixed damping, independent of m",
+    "q": "source sample at the current integer time, fixed independently of m",
+    "p": "next primal field BEFORE source injection",
+    "P": "fixed receiver sampling operator",
+    "E": "constant-edge extension from physical nodes to all logical padding, corners included"
+  },
+  "spatial_stencil": {
+    "spacing_m": 12.5,
+    "dtype": "float64",
+    "weights_far_near_center": [0.000533333333302289, 0.00853333333283663, 0.032],
+    "literal_strings": ["5.33333333302289e-4", "8.53333333283663e-3", "3.2e-2"],
+    "equation": "L(u)=far*(-u[x-2,z]-u[x,z-2]-u[x,z+2]-u[x+2,z])+near*(u[x-1,z]+u[x,z-1]+u[x,z+1]+u[x+1,z])-center*u[x,z]",
+    "constraint": "Use these emitted decimal literals, not exact rational coefficients or rescaled h=10 literals. Preserve the grouped neighbor sums for the primal source-informed port. Independent dense tests allow harmless summation roundoff.",
+    "boundary": "Every logical node is updated, including outer padded faces/corners. Only exterior ghost values are fixed zero. Two exterior cells per face suffice for radius 2; native allocated halo width 4 is an allocation detail, not a logical zero boundary."
+  },
+  "primal_recurrence": {
+    "dt_ms": 0.5,
+    "r1": "1/(dt*dt) = 4",
+    "r2": "1/dt = 2",
+    "a": "-2*r1*u+r1*v",
+    "N": "-m*a+r2*d*u+L(u)",
+    "D": "m*r1+r2*d",
+    "p": "N/D",
+    "u_next": "p+dt*dt*(vp_source*vp_source)*q at the aligned source node; p elsewhere",
+    "evaluation_order": [
+      "Read current and previous rolling slots; compute p over every logical node.",
+      "Compute tangent quotient derivative using p before any source injection.",
+      "Add source derivative to the next tangent source node.",
+      "Add primal source injection using the supplied native vp_source*vp_source, rather than replacing its arithmetic by 1/m_source.",
+      "Sample the CURRENT primal and tangent slots at fixed receivers, following the native C order."
+    ]
+  },
+  "tangent_recurrence": {
+    "a_dot": "-2*r1*w+r1*z",
+    "N_dot": "-mu*a-m*a_dot+r2*d*w+L(w)",
+    "D_dot": "r1*mu",
+    "p_dot": "(N_dot-p*D_dot)/D",
+    "u_next_dot": "p_dot-dt*dt*q*mu_source/(m_source*m_source) at the aligned source node; p_dot elsewhere",
+    "source_dependency": "The source q and interpolation coordinates are fixed. The injected 1/m factor is model dependent. Its real-arithmetic derivative is -mu/m^2 even though primal literal fidelity preserves the supplied vp*vp product.",
+    "pitfall": "Do not replace p by the already injected u_next in p_dot while also adding the explicit source derivative: that double counts a source-related term.",
+    "born_equivalence_limit": "A post-injection -mu*u_tt form without a separate source derivative is equivalent at the pinned undamped source d_source=0. With nonzero source damping it needs a correction; the explicit pre-injection quotient form above remains valid."
+  },
+  "extension_and_gradient_pairing": {
+    "direction_order": "Normalize each fixed direction on the physical grid, then apply E by nearest-edge copying. Do not renormalize after padding.",
+    "duality": "<g_padded,E*d_physical>=<E^T*g_padded,d_physical>. E^T sums all padded face and corner contributions onto their generating physical edge/corner nodes.",
+    "naive_crop": "Cropping g_padded to physical nodes omits the derivative of constant-edge padding and generally differs from E^T."
+  },
+  "layout_and_time": {
+    "physical_shape_xz": [192, 96],
+    "width": 40,
+    "logical_shape_xz": [272, 176],
+    "numpy_rolling_shape": [3, 276, 180],
+    "rolling_slots": "current=time%3; previous=(time+2)%3; following=(time+1)%3",
+    "physical_source_node_xz": [96, 16],
+    "logical_source_node_xz": [136, 56],
+    "physical_receiver_x_nodes": [16, 32, 48, 64, 80, 112, 128, 144, 160, 176],
+    "physical_receiver_z_node": 16,
+    "native_expected_time_bounds": {"time_m": 1, "time_M": 1999, "nt": 2001},
+    "bounds_status": "Fresh metadata-only primary rolling operator arguments establish time1..1999 and logical x0..271,z0..175 at dt0.5. Saved/gradient producer per-call argument evidence remains separate. This derivation does not read native arrays or claim cache ancestry.",
+    "record_mask": "1<=time<=nt-2; uncomputed endpoints 0 and nt-1 remain zero",
+    "objective": "Phi=0.5*sum_{computed time,receiver}(P*u-observed)^2",
+    "directional_derivative": "sum_{computed time,receiver}(P*u-observed)*(P*w)",
+    "quadrature": "No added dt, dx, or dz factor for this discrete objective.",
+    "source_time": "q(time)=(1-2*a^2)*exp(-a^2), a=pi*0.005*(time*dt-200ms)"
+  },
+  "manufactured_controls": {
+    "data_scope": "Deterministic small synthetic arrays only; no project propagation, Devito import, BP input, cached field, receiver array, or native numerical outcome.",
+    "checks": [
+      "Exact equality to the three emitted spatial literals.",
+      "Independent dense stencil on all logical nodes including boundaries and a one-node grid.",
+      "Independent rearranged dense primal/analytic tangent for variable positive mass, nonzero variable damping, two directions and all rolling slot permutations.",
+      "Source-only primal supplied-inverse-mass and tangent -dt^2*q*mu/m^2, including nonzero source damping and zero source direction.",
+      "Fixed-history central differences at a predeclared epsilon sequence; no fitted coefficient or tolerance."
+    ],
+    "central_fd_epsilons": [0.01, 0.001, 0.0001],
+    "central_fd_relative_bound": "2*epsilon^2+2e-10 at every fixed epsilon; final relative error<1e-7",
+    "execution_status": "Not represented here: retain the first separate pytest log and source hashes."
+  }
+}

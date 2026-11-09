@@ -1,0 +1,22 @@
+{
+  "role": "AI-authored independent retained-record scalar audit; no wave solver, inversion or physical acceptance",
+  "producer_sha256": "73b617773c76a35e847add60d4b9f2200517d49d68a0f9af63b1098bc9d0137d",
+  "protocol_sha256": "63d8338f6a023f17365b8fa0d706f9f3a04e0b1e96006381e49309c3856444f0",
+  "helper_sha256": "ad3b808c53d9cd6b7d38a9a03f692615d8ff664db9515d31faf47c3482884d02",
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "planned_cases": 3,
+  "planned_forward_calls": 54,
+  "planned_adjoint_calls": 3,
+  "planned_direction_step_rows_per_case": 6,
+  "scalar_report_relative_tolerance": 1e-10,
+  "scalar_report_absolute_tolerance": 1e-14,
+  "derived_relative_error_absolute_tolerance": 1e-8,
+  "model_interpolation_relative_tolerance": 1e-14,
+  "source_relative_l2_tolerance": 1e-14,
+  "pullback_relative_l2_tolerance": 1e-12,
+  "near_zero_directional_fraction": 1e-8,
+  "fixed_middle_relative_step": 0.0003,
+  "middle_step_directional_relative_error_limit": 0.001,
+  "physical_acceptance": null,
+  "scope": "All three retained crops are one BP composite synthetic ancestor. Numerical integrity and the fixed gradient diagnostic are separate outputs. Failed, missing and uninformative rows remain in all denominators. No best-step/window/width selection or parameter fitting. Scalar report comparisons use ordinary engineering tolerances, including1e-8 absolute for an error ratio formed after subtracting nearly equal objectives; no formal floating-point enclosure or physical quality threshold. Source/metadata and raw arrays support retained-record validation; this is not an independent BP wave solve or verification of discarded wavefields. Execution only after root native-terminal confirmation, explicit terminal-file/source/criteria SHA gates, and a new output directory. The terminal hash binds root-provided evidence; it is not an independent process-liveness detector."
+}

@@ -1,0 +1,45 @@
+{
+  "observed_utc": "2026-11-09T00:06:22.934167+00:00",
+  "status": "ROOT_INDEPENDENT_SOURCE_REVIEW_CLEAR_FOR_EXACT_INPUT_EXPORT_AND_3_PLUS_6_REPLAY",
+  "source_sha256": {
+    "canonical_inputs.py": "2a2e430a616d70a421b69fb5a76723844f10231b2ac5490852963917a51ea768",
+    "run_replay.py": "5c7f59a667a3cf8cdce56d65d8055792a3311c8ea20cab1f1470ddba12bb46e0",
+    "protocol.json": "173873ed81968927c6a43edc3f37bdd7986aaa457582225e5df35d70948a938c",
+    "EXPORT_SOURCE_PLAN.json": "bca57fc2fd89585b4b10176361f5ad9a0bd376bcb8d05c79b16937868eb39d48",
+    "numpy_bp_tangent.py": "b217dd6d2850f8c264f5910933cb1f4687bed8a7b3e780f7712c750d149328ce",
+    "test_canonical_inputs_manufactured.py": "5ae6ec351e4c20940d4a1564601baf39d539049f29686af117cf6e141d99820e"
+  },
+  "control_receipt_sha256": "c3379e975ffa84ffd7081fe3e5bcd4dfbc093795c6465be30256088c39b9e745",
+  "unchanged_comparison_helper_AST": [
+    "sha",
+    "atomic_json",
+    "local_file",
+    "scalar_norm",
+    "relative",
+    "dot",
+    "read_npz",
+    "save_npz",
+    "independent_fold"
+  ],
+  "unchanged_kernel": true,
+  "unchanged_numerical_criteria": true,
+  "old_public_fixture_byte_identical": true,
+  "source_review": [
+    "Exporter selects only allowed exact input NPZ members; verifies native aggregate, worker status and completion, probe call and artifact, witness metadata and array hashes.",
+    "C-contiguous copies preserve element bytes and no velocity roundtrip, context/direction regeneration, fitting or normalization occurs.",
+    "Runtime loads pinned canonical inputs, finishes all three independently implemented primal/two-tangent solves, then decodes native target arrays; failed own solves block comparison phase.",
+    "Post-solve worker/probe/witness byte identities rechecked before numerical comparisons. Comparison formulae and thresholds unchanged; the split mass/direction diagnostics improve failure localization.",
+    "Legacy kernel flag is renamed and scope is disclosed: native-derived numeric INPUTS used, native SOLUTION OUTPUTS not used during own propagation."
+  ],
+  "verified_control_count": 27,
+  "actual_native_terminal_sha256": "75e54d29d1bf593471d9544363aa6c9d2b66ffa3db82d0aabe6e3d67c3fcd94d",
+  "native_complete_sha256": "ae2ca931876b6c1159af151394bfb0e9c0352ea0c384e879ac398e5bca019206",
+  "free_bytes": 321732608,
+  "output_envelope_bytes": 16777216,
+  "GO_scope": "One fresh exact input export and one complete three-case/six-derivative V2 replay only. No native PDE rerun, optimizer, tolerance change, CI retry or physics acceptance.",
+  "scope_limits": [
+    "Source-informed AI reproduction using shared numeric inputs; not independent direction generation or blind human reproduction.",
+    "Three artificial crops share one BP ancestor; physical acceptance remains null.",
+    "Does not retroactively fix or pass the failed97f CI; Linux V2 verification requires an actual new run."
+  ]
+}

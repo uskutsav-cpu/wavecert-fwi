@@ -1,0 +1,189 @@
+# Literature map
+
+This is the reading map that motivated the repository architecture.
+
+## A. Seismic forward modeling, adjoints, and FWI
+
+### Devito seismic modeling and FWI tutorials
+- Devito, *Introduction to seismic modelling*: https://www.devitoproject.org/examples/seismic/tutorials/01_modelling.html
+- Devito, *Full-Waveform Inversion*: https://www.devitoproject.org/examples/seismic/tutorials/03_fwi.html
+
+Why it matters: provides an open, modern reference implementation of the acoustic wave equation, acquisition geometry, adjoint-state gradient, and multi-shot FWI workflow. The Devito FWI tutorial writes the gradient as \(J^T\delta d\), exactly the object a neural surrogate can corrupt through an inaccurate Jacobian.
+
+### Virieux & Operto (2009)
+*An overview of full-waveform inversion in exploration geophysics.*
+
+Why it matters: classic reference for FWI physics, optimization, frequency continuation, acquisition, conditioning, and failure modes.
+
+## B. Neural operators and derivative accuracy
+
+### Kovachki et al. (2023)
+*Neural Operator: Learning Maps Between Function Spaces with Applications to PDEs.* JMLR.
+
+Why it matters: broad mathematical/operator-learning framework.
+
+### Official NeuralOperator library
+https://github.com/neuraloperator/neuraloperator
+
+Why it matters: maintained PyTorch implementation of FNO/TFNO and related operator-learning infrastructure. WaveCert has a generic differentiable PyTorch adapter and also implements its own compact FNO baseline in `surrogates/fno.py`. The compact baseline is not an official NeuralOperator-library reproduction.
+
+
+### O'Leary-Roseberry et al. (2024) — DINO
+*Derivative-Informed Neural Operator: An efficient framework for high-dimensional parametric derivative learning.* Journal of Computational Physics 496, 112555.
+https://doi.org/10.1016/j.jcp.2023.112555
+
+Why it matters: directly demonstrates that neural operators trained without derivative information can produce inaccurate parametric derivatives even when the forward map is useful. It establishes the general derivative-accuracy problem that WaveCert studies in the seismic/FWI setting.
+
+**Difference from WaveCert:** DINO adds compressed Jacobian information during training. WaveCert focuses on post-training, deployment-time detection/certification and exact-physics fallback.
+
+### Park et al. (2026)
+*Neural Operators with Accurate Jacobian for High-Fidelity Image-Domain Seismic Inversion.*
+https://slim.gatech.edu/Publications/Public/Conferences/SEG/2026/park2026IMAGEnoa/abstract.html
+
+Why it matters: closest seismic evidence for the core failure mode. Forward-only neural operators can have inaccurate inversion-relevant Jacobians; Jacobian-informed training improves gradient structure and reconstruction quality.
+
+**Difference from WaveCert:** Park et al. improve derivatives during training. WaveCert asks whether an already-trained surrogate's derivative can be certified online and selectively rejected.
+
+## C. Residual-based neural-operator reliability
+
+### Cao et al. (2023)
+*Residual-based error correction for neural operator accelerated infinite-dimensional Bayesian inverse problems.* Journal of Computational Physics 486, 112104.
+https://doi.org/10.1016/j.jcp.2023.112104
+
+Why it matters: uses PDE residual information to correct neural-operator predictions in inverse problems. It strongly motivates post-training physical-consistency checks.
+
+### Jha (2024)
+*Residual-based error corrector operator to enhance accuracy and reliability of neural operator surrogates of nonlinear variational boundary-value problems.* CMAME 419, 116595.
+https://doi.org/10.1016/j.cma.2023.116595
+
+Why it matters: develops the residual-corrector perspective further and demonstrates large downstream optimization errors when neural surrogates are used naively.
+
+## D. Certified surrogate optimization
+
+### Qian, Grepl, Veroy & Willcox (2017)
+*A Certified Trust Region Reduced Basis Approach to PDE-Constrained Optimization.* SIAM Journal on Scientific Computing 39(5), S434–S460.
+https://doi.org/10.1137/16M1081981
+
+Why it matters: probably the most important abstract precedent for this project. It derives a posteriori bounds for surrogate cost **and cost gradient**, embeds them in a trust-region method, and calls the high-fidelity PDE only when the reduced model is not sufficiently accurate.
+
+**Novelty implication:** WaveCert should not claim to invent “gradient certification plus fallback” in general. The research opportunity is the neural-wave-operator / seismic / residual-Jacobian setting and potentially blockwise shot-frequency certification.
+
+## E. Realistic seismic ML stress tests
+
+### Stitt et al. (2026)
+*SubsurfaceGen: Procedural Generation of Field-Scale Earth Models and Seismic Data.*
+https://arxiv.org/abs/2605.30541
+
+Why it matters: provides geologically diverse field-scale models, wavefields, and shot gathers, including a held-out geological setting for OOD evaluation. It is a natural second-stage benchmark after Marmousi.
+
+## F. The conceptual synthesis
+
+### Additional close comparison identified in the 2026-11-07 review
+
+**Cheng et al. (ICML 2025), _Accelerating PDE-Constrained Optimization by the
+Derivative of Neural Operators_.**
+Primary proceedings: https://proceedings.mlr.press/v267/cheng25f.html
+
+This work combines optimization-oriented training, enhanced derivative learning,
+and hybrid numerical/neural optimization. It makes broad claims of novelty about
+"hybrid neural optimization" inappropriate for WaveCert. The specific comparison
+must concern post-training residual bounds on inversion-relevant directions and
+the source/frequency fallback decision, with equally accounted total cost.
+
+**O'Leary-Roseberry, DINO research overview.**
+Author's explanation and primary-paper links: https://tomoleary.github.io/dino/
+
+The optional random-JVP-supervised FNO is an established derivative-informed
+baseline. It is not a reproduction of every architectural/compression choice in
+DINO or Park et al.; its training directions, loss, label precision, and offline
+solve cost are explicitly recorded.
+
+**Jha and Enakoutsa (2026), _Neural operators with residual-based correction:
+Applications to optimization and Bayesian inference_.**
+Author's publication page:
+https://prashjha.github.io/publication/jha-2026-nop-chapter/
+
+Residual correction already appears inside optimization loops. A useful WaveCert
+claim therefore needs a clear distinction between correction and directional
+certification/abstention. The existence of a PDE residual alone is not novelty.
+
+These comparisons are a targeted review, not an exhaustive novelty clearance.
+The student should read the primary methods and decide what contribution the
+final results actually support.
+
+The working hypothesis is:
+
+```text
+Park 2026:
+forward accuracy != Jacobian accuracy
+             +
+Cao/Jha:
+PDE residuals expose/correct neural-operator inconsistency
+             +
+Qian 2017:
+a-posteriori gradient bounds can govern adaptive high-fidelity fallback
+             ↓
+WaveCert-FWI:
+post-training residual certificate for neural seismic derivative reliability
++ shot/frequency selective exact-physics verification
+```
+
+## Calibration and uncertainty quantification added for Phase 5
+
+- **Ma, Azizzadenesheli & Anandkumar (2024), _Calibrated Uncertainty Quantification for Operator Learning via Conformal Prediction_.** Establishes finite-sample conformal calibration ideas specifically for operator-learning outputs.
+- **Gopakumar et al. (ICML 2025), _Calibrated Physics-Informed Uncertainty Quantification_.** Uses physics residual information inside a conformal UQ framework and is particularly relevant to WaveCert's decision to distinguish residual-based physics information from statistical calibration.
+- **Gray et al. (UAI 2025), _Guaranteed Prediction Sets for Functional Surrogate Models_.** Develops conformal prediction sets for function-valued surrogates, including neural operators.
+- **Stent & Boullé (2026), _Conformal Uncertainty Quantification Guarantees for Neural Operators_.** Recent split-conformal treatment for neural operators; reinforces the use of a held-out calibration set and explicit finite-sample coverage semantics.
+- **Qiu, Dahmen & Chen (2026), _Variationally correct operator learning: Reduced basis neural operator with a posteriori error estimation_.** Important cautionary result: residual magnitudes are only trustworthy error estimators when tied to a variationally stable norm. WaveCert's deterministic Phase-4 reference therefore uses explicit discrete operator norms rather than treating a raw residual as a certificate.
+
+## Phase 7–9 benchmark references
+
+- **Devito FWI / Dask tutorial** — production reference for saved forward wavefields, analytical adjoint gradients, squared-slowness parameterization, box constraints, and SciPy L-BFGS-B integration: https://www.devitoproject.org/examples/seismic/tutorials/04_dask.html
+- **OpenFWI (NeurIPS 2022 Datasets & Benchmarks)** — 12 public FWI datasets (~2.1 TB) spanning velocity, fault, style/interface and CO2 settings: https://proceedings.neurips.cc/paper_files/paper/2022/hash/27d3ef263c7cb8d542c4f9815a49b69b-Abstract-Datasets_and_Benchmarks.html
+- **OpenFWI official code** — canonical `.npy` batch shapes and train/test file splits: https://github.com/lanl/OpenFWI
+- **SubsurfaceGen (2026)** — 42 field-scale 3-D models, 4,276 2-D slices, wavefields and shot gathers across Penobscot, F3, Gulf of Mexico, Fault, Salt Canopy and SEAM settings, with explicit ID/OOD evaluation: https://arxiv.org/abs/2605.30541
+- **SubsurfaceGen field-scale dataset** — HDF5 key/shape and split conventions: https://huggingface.co/datasets/subsurfacegen/field-scale-dataset
+
+## Boundary check after the classical/coarse experiments
+
+The targeted primary-source review is archived in
+`results/strengthening_audit/coarse_adjoint_primary_literature_review.json`. It is
+not exhaustive and does not establish priority for an implementation recipe.
+
+- [Qian, Grepl, Veroy and Willcox (2017), DOI 10.1137/16M1081981](https://kiwi.oden.utexas.edu/papers/multifidelity-optimization-adaptive-reduced-model-qian-grepl-veroy-willcox.pdf):
+  Lemma 3 and Theorem 5 already bound coupled state/adjoint and cost-gradient
+  errors, including the three state/adjoint/product terms used here. The current
+  complex-indefinite component constants require a separate derivation, but the
+  general residual-gradient error decomposition is established prior work.
+- [Keil et al. (2020 preprint; M2AN 2021), DOI 10.1051/m2an/2021019](https://arxiv.org/abs/2006.09297):
+  Section 2.3 and Proposition 2.7 distinguish plug-in state/adjoint gradients from
+  derivatives of the reduced objective and provide error bounds. WaveCert's
+  sequentially corrected physical proposal must preserve that distinction.
+- [Sen et al. (2006)](https://www.mit.edu/~cuongng/project/rbm4/rbm4.pdf):
+  natural-norm reduced-basis estimation, Helmholtz stability and deflated output
+  bounds predate the current coarse-space certificate.
+- [Tang et al. (2009)](https://diamhomes.ewi.tudelft.nl/~kvuik/papers/Tan09NVE.pdf):
+  coarse correction/deflation is classical. Its SPD results do not automatically
+  prove convergence for the current complex damped operator.
+- [Shen et al. (2016)](https://www.math.purdue.edu/~shen7/pub/SWX16.pdf),
+  [Morin and Paux (2024)](https://doi.org/10.1016/j.cma.2024.116772), and
+  [Paux, Morin and Gelebart (2024/2025)](https://doi.org/10.1002/nme.7615):
+  fast transform/Galerkin multiplication and assembly are established methods.
+  No first-fast-assembly claim follows from the two-DCT moment implementation.
+- [Buhr et al. (2014)](https://arxiv.org/abs/1407.8005):
+  residual-estimator cancellation can undermine numerical stability; the current
+  floating-point allowance does not replace verified error enclosures.
+- [Li and Que (2026)](https://arxiv.org/abs/2609.24776):
+  adaptive coarse/POD Helmholtz residual estimation is another close comparison.
+
+The supported contribution is the particular discrete component/oriented
+implementation, its abstention behavior, exact controls, and transparent
+quality/cost/generalization evidence. General gradient certification, POD, coarse
+correction and residual repair are not claimed as new. A more ambitious novelty
+claim requires a broader primary-source comparison and substantive human
+mathematical review.
+
+
+## Updated contribution boundary
+
+The [latest primary-source assessment](contribution_prior_art_update.md) includes recent adaptive accuracy work and corrects the larger-grid cost rationale: the paid merit loop already supplies reusable factors/fields. Generic regularization, directional certification, adaptive stopping and overhead crossovers are established prior work. A specific useful operating-region result remains a research candidate, with no priority claim or demonstrated recovery benefit.

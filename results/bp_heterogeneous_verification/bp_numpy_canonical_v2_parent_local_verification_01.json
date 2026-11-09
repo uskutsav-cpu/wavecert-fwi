@@ -1,0 +1,33 @@
+{
+  "observed_utc": "2026-11-09T00:11:28.798965+00:00",
+  "parent_test_sha256": "601e047769f584cabc3da92d3725029c457da17abc7e9acd2193683465a30398",
+  "attempts": [
+    {
+      "attempt": 1,
+      "actual_session": 98694,
+      "actual_exit_code": 4,
+      "actual_terminal_chunk": "37175e",
+      "phase": "conftest import before test collection; no test solve",
+      "cause": "Environment editable installation resolved wavecert from /Users/swethasunilkumar/Documents/wavecert-fwi-latest; its experiments package lacks gradient_confirmation.",
+      "source_change": false
+    },
+    {
+      "attempt": 2,
+      "actual_session": 47626,
+      "actual_exit_code": 0,
+      "actual_terminal_chunk": "c17627",
+      "environment_correction": "PYTHONPATH=src from actual repository root",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "JUnit_sha256": "2c5e9a5c88c4b603917319c5039d703887590c2a5058e48ba34b1df1a396443d",
+      "trace_comparisons": 3,
+      "informative_DD_comparisons": 6,
+      "thresholds_unchanged": true
+    }
+  ],
+  "native_PDE_rerun": false,
+  "physical_acceptance": null,
+  "Linux_V2_status": "not yet run"
+}

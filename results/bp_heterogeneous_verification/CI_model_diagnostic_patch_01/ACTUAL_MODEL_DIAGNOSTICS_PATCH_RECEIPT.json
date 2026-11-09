@@ -1,0 +1,65 @@
+{
+  "created_utc": "2026-11-08T09:32:10.131305+00:00",
+  "result": "FAILURE_ONLY_DIAGNOSTICS_CLEAR",
+  "role": "Root-requested test observability patch, no model/physics or acceptance change",
+  "test_sha256": "0cb4641e4e17fb79444a6c7b721e8badd0c4d69b587695da1771aa43c82346ba",
+  "original_c197_test_sha256": "2bb3b01039ef9373bfd62e71e5e3b3444a8a6c2f7548afe3b0ef6d4286648ca6",
+  "prior_f0b_test_sha256": "f0b9e8656274bfb63f9e16200ce2117acdc7a13cacb100876e512b6359cbc07c",
+  "prior_executed_f0b_receipt_sha256": "1876b771791b243588b2eed9ca01efc97b55263763b474e5b551a47b1a2cd718",
+  "patch_from_c197_sha256": "8bcbdd7ee1b120306135e12ed9ec0127763e9ec4a29fda3a70fe9b1b7aba61db",
+  "preexecution_review_sha256": "f52ef0e806fc2750165f5dec8525d0c7e29855bcd7f7f68c69665f524921b325",
+  "original_success_module_AST_equals_normalized_new_AST": true,
+  "model_diagnostics": "Failure-only and behind stored all3-own phase flag: verify root native completeSHA and own/native NPZ artifactSHAs, read saved2D vp/m only, report canonical hashes/dtype/shape/unequal count/maxabs/maxULP. Positive finite float64 bitwise ordering; unsigned max-min prevents underflow. Catch percase diagnostic exceptions without replacing original exit/stdout/stderr. No arrays mutated and no acceptance from these diagnostics.",
+  "independent_source_review": {
+    "agent": "/root/candidate_final_review/verification_helpers_review",
+    "result": "CLEAR",
+    "test_sha256": "0cb4641e4e17fb79444a6c7b721e8badd0c4d69b587695da1771aa43c82346ba",
+    "execution_or_array_read_by_reviewer": false
+  },
+  "actual_validation": {
+    "focused_pytest": {
+      "launch_chunk": "e9af84",
+      "session_id": 74628,
+      "terminal_chunk": "f55929",
+      "exit_code": 0,
+      "passed": 1,
+      "pytest_seconds": 8.29,
+      "command": "env PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/src OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest tests/test_bp_numpy_tangent_reproduction.py -W error -s --basetemp=/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/bp_numpy_ci_model_diagnostics_validation_01/pytest_tmp > /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/bp_numpy_ci_model_diagnostics_validation_01/pytest_execution_01.log 2>&1",
+      "cwd": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi"
+    },
+    "ruff": {
+      "tool_chunk": "c137c5",
+      "exit_code": 0,
+      "command": "/opt/miniconda3/bin/python -m ruff check tests/test_bp_numpy_tangent_reproduction.py > /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/bp_numpy_ci_model_diagnostics_validation_01/ruff_execution_01.log 2>&1",
+      "cwd": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi"
+    },
+    "synthetic_diagnostics": {
+      "tool_chunk": "858452",
+      "exit_code": 0,
+      "script_sha256": "a334a0a74cecced34954182654df3029dfe7ede7e8c4b2f69a6a3a67b9ada96e",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 /opt/miniconda3/bin/python -I /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/bp_numpy_ci_model_diagnostics_validation_01/exercise_failure_diagnostics.py > /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/bp_numpy_ci_model_diagnostics_validation_01/synthetic_failure_execution_01.log 2>&1",
+      "controls": [
+        "nonzero_still_fails_with3cases6directions",
+        "missing_status",
+        "malformed_status",
+        "wrong_schema",
+        "positive_float_ULP1and3",
+        "shape_and_positive_guards",
+        "pinned_NPZ_model_binding",
+        "stale_artifact_caught",
+        "phase_guard_prevents_model_read"
+      ],
+      "new_propagation": false
+    }
+  },
+  "logs_sha256": {
+    "pytest_execution_01.log": "c2a3d31bc7648c4bd03b26fa977c5a42616a3b659a0bb5d8143776b7843c07a8",
+    "ruff_execution_01.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "synthetic_failure_execution_01.log": "ccd409f1e5c217764e717f4b1bc707e1136f5dd09ecdba63b24d4b7929e72ebd"
+  },
+  "production_source_files": 161,
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "numerical_core_protocol_criteria_workflow_edits": false,
+  "native_rerun": false,
+  "no_CI_cause_or_version_conclusion": "Parent reports failing and successful Python3.12.16/NumPy2.5.4/Linux7x86_64 jobs. Fresh diagnostic CI is needed to identify the gate. No power/product mass proxy correction, tolerance relaxation, model substitution or numerical tuning implemented."
+}

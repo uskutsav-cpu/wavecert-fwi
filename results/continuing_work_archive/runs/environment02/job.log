@@ -1,0 +1,312 @@
+﻿2026-11-09T06:59:36.8114936Z Current runner version: '2.338.2'
+2026-11-09T06:59:36.8137865Z ##[group]Runner Image Provisioner
+2026-11-09T06:59:36.8139020Z Hosted Compute Agent
+2026-11-09T06:59:36.8139564Z Version: 20261028.624
+2026-11-09T06:59:36.8140476Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-09T06:59:36.8141155Z Build Date: 2026-10-28T21:51:42Z
+2026-11-09T06:59:36.8141772Z Worker ID: {664d05c9-7ab4-41f4-903f-fa9cab76c858}
+2026-11-09T06:59:36.8142472Z Region: eastus
+2026-11-09T06:59:36.8142984Z Cloud: Azure
+2026-11-09T06:59:36.8143468Z ##[endgroup]
+2026-11-09T06:59:36.8144800Z ##[group]Operating System
+2026-11-09T06:59:36.8145376Z Ubuntu
+2026-11-09T06:59:36.8145933Z 24.04.5
+2026-11-09T06:59:36.8146435Z LTS
+2026-11-09T06:59:36.8146918Z ##[endgroup]
+2026-11-09T06:59:36.8147506Z ##[group]Runner Image
+2026-11-09T06:59:36.8148066Z Image: ubuntu-24.04
+2026-11-09T06:59:36.8148637Z Version: 20261101.360.1
+2026-11-09T06:59:36.8149783Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-09T06:59:36.8151504Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+2026-11-09T06:59:36.8152368Z ##[endgroup]
+2026-11-09T06:59:36.8153427Z ##[group]GITHUB_TOKEN Permissions
+2026-11-09T06:59:36.8155370Z Contents: read
+2026-11-09T06:59:36.8155972Z Metadata: read
+2026-11-09T06:59:36.8156511Z ##[endgroup]
+2026-11-09T06:59:36.8158335Z Secret source: Actions
+2026-11-09T06:59:36.8159298Z Cache mode: write
+2026-11-09T06:59:36.8160473Z Prepare workflow directory
+2026-11-09T06:59:36.8484599Z Prepare all required actions
+2026-11-09T06:59:36.8526858Z Getting action download info
+2026-11-09T06:59:37.0782213Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-09T06:59:37.1984813Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-09T06:59:37.2992350Z Download action repository 'actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9' (SHA:cf430e030ddbb5b0abf93d22962f4752f3646cd9)
+2026-11-09T06:59:37.4897686Z Complete job name: environment
+2026-11-09T06:59:37.5608703Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-11-09T06:59:37.5609568Z with:
+2026-11-09T06:59:37.5609967Z   ref: 26fd8153972d2c6b07b0363596b262967c78ca27
+2026-11-09T06:59:37.5610648Z   fetch-depth: 2
+2026-11-09T06:59:37.5611050Z   persist-credentials: false
+2026-11-09T06:59:37.5611591Z   repository: uskutsav-cpu/wavecert-fwi
+2026-11-09T06:59:37.5614765Z   token: ***
+2026-11-09T06:59:37.5615136Z   ssh-strict: true
+2026-11-09T06:59:37.5615515Z   ssh-user: git
+2026-11-09T06:59:37.5615876Z   clean: true
+2026-11-09T06:59:37.5616255Z   sparse-checkout-cone-mode: true
+2026-11-09T06:59:37.5616705Z   fetch-tags: false
+2026-11-09T06:59:37.5617092Z   show-progress: true
+2026-11-09T06:59:37.5617474Z   lfs: false
+2026-11-09T06:59:37.5617822Z   submodules: false
+2026-11-09T06:59:37.5618230Z   set-safe-directory: true
+2026-11-09T06:59:37.5618656Z   allow-unsafe-pr-checkout: false
+2026-11-09T06:59:37.5619255Z env:
+2026-11-09T06:59:37.5619662Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T06:59:37.5620087Z   PYTHONUNBUFFERED: 1
+2026-11-09T06:59:37.5620705Z   PYTHONHASHSEED: 0
+2026-11-09T06:59:37.5621082Z   OMP_NUM_THREADS: 1
+2026-11-09T06:59:37.5621457Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T06:59:37.5621849Z   MKL_NUM_THREADS: 1
+2026-11-09T06:59:37.5622227Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T06:59:37.5622633Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T06:59:37.5623019Z ##[endgroup]
+2026-11-09T06:59:37.8062426Z Syncing repository: uskutsav-cpu/wavecert-fwi
+2026-11-09T06:59:37.8064281Z ##[group]Getting Git version info
+2026-11-09T06:59:37.8064986Z Working directory is '/home/runner/work/wavecert-fwi/wavecert-fwi'
+2026-11-09T06:59:37.8065965Z [command]/usr/bin/git version
+2026-11-09T06:59:37.8149614Z git version 2.56.0
+2026-11-09T06:59:37.8174720Z ##[endgroup]
+2026-11-09T06:59:37.8198870Z Temporarily overriding HOME='/home/runner/work/_temp/f14a4150-05b6-447f-863d-944604ba02d1' before making global git config changes
+2026-11-09T06:59:37.8202100Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-09T06:59:37.8207268Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/wavecert-fwi/wavecert-fwi
+2026-11-09T06:59:37.8265181Z Deleting the contents of '/home/runner/work/wavecert-fwi/wavecert-fwi'
+2026-11-09T06:59:37.8269259Z ##[group]Initializing the repository
+2026-11-09T06:59:37.8283010Z [command]/usr/bin/git init /home/runner/work/wavecert-fwi/wavecert-fwi
+2026-11-09T06:59:37.8413333Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-09T06:59:37.8415086Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-09T06:59:37.8418032Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-09T06:59:37.8419368Z hint: call:
+2026-11-09T06:59:37.8420545Z hint:
+2026-11-09T06:59:37.8421426Z hint: 	git config --global init.defaultBranch <name>
+2026-11-09T06:59:37.8422536Z hint:
+2026-11-09T06:59:37.8423661Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-09T06:59:37.8425359Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-09T06:59:37.8426866Z hint:
+2026-11-09T06:59:37.8427765Z hint: 	git branch -m <name>
+2026-11-09T06:59:37.8428858Z hint:
+2026-11-09T06:59:37.8430089Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-09T06:59:37.8432395Z Initialized empty Git repository in /home/runner/work/wavecert-fwi/wavecert-fwi/.git/
+2026-11-09T06:59:37.8443246Z [command]/usr/bin/git remote add origin https://github.com/uskutsav-cpu/wavecert-fwi
+2026-11-09T06:59:37.8501361Z ##[endgroup]
+2026-11-09T06:59:37.8502950Z ##[group]Disabling automatic garbage collection
+2026-11-09T06:59:37.8512483Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-09T06:59:37.8553314Z ##[endgroup]
+2026-11-09T06:59:37.8554793Z ##[group]Setting up auth
+2026-11-09T06:59:37.8560667Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T06:59:37.8604499Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T06:59:37.9019307Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T06:59:37.9058262Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T06:59:37.9289930Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T06:59:37.9327771Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T06:59:37.9531301Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-09T06:59:37.9576252Z ##[endgroup]
+2026-11-09T06:59:37.9587057Z ##[group]Fetching the repository
+2026-11-09T06:59:37.9588152Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=2 origin 26fd8153972d2c6b07b0363596b262967c78ca27
+2026-11-09T06:59:43.7626441Z From https://github.com/uskutsav-cpu/wavecert-fwi
+2026-11-09T06:59:43.7628593Z  * branch            26fd8153972d2c6b07b0363596b262967c78ca27 -> FETCH_HEAD
+2026-11-09T06:59:43.7632027Z ##[endgroup]
+2026-11-09T06:59:43.7633022Z ##[group]Determining the checkout info
+2026-11-09T06:59:43.7634130Z ##[endgroup]
+2026-11-09T06:59:43.7635704Z [command]/usr/bin/git sparse-checkout disable
+2026-11-09T06:59:43.7692652Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-09T06:59:43.7731918Z ##[group]Checking out the ref
+2026-11-09T06:59:43.7734933Z [command]/usr/bin/git checkout --progress --force 26fd8153972d2c6b07b0363596b262967c78ca27
+2026-11-09T06:59:44.7899146Z Updating files:  90% (5380/5955)
+2026-11-09T06:59:44.7981777Z Updating files:  91% (5420/5955)
+2026-11-09T06:59:44.8346227Z Updating files:  92% (5479/5955)
+2026-11-09T06:59:44.8422832Z Updating files:  93% (5539/5955)
+2026-11-09T06:59:44.8587064Z Updating files:  94% (5598/5955)
+2026-11-09T06:59:44.8639694Z Updating files:  95% (5658/5955)
+2026-11-09T06:59:44.8669468Z Updating files:  96% (5717/5955)
+2026-11-09T06:59:44.8698543Z Updating files:  97% (5777/5955)
+2026-11-09T06:59:44.8740304Z Updating files:  98% (5836/5955)
+2026-11-09T06:59:44.8776309Z Updating files:  99% (5896/5955)
+2026-11-09T06:59:44.8776719Z Updating files: 100% (5955/5955)
+2026-11-09T06:59:44.8777083Z Updating files: 100% (5955/5955), done.
+2026-11-09T06:59:44.8828826Z Note: switching to '26fd8153972d2c6b07b0363596b262967c78ca27'.
+2026-11-09T06:59:44.8829197Z 
+2026-11-09T06:59:44.8829469Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-09T06:59:44.8830334Z changes and commit them, and you can discard any commits you make in this
+2026-11-09T06:59:44.8830785Z state without impacting any branches by switching back to a branch.
+2026-11-09T06:59:44.8831032Z 
+2026-11-09T06:59:44.8831199Z If you want to create a new branch to retain commits you create, you may
+2026-11-09T06:59:44.8831653Z do so (now or later) by using -c with the switch command. Example:
+2026-11-09T06:59:44.8831903Z 
+2026-11-09T06:59:44.8832028Z   git switch -c <new-branch-name>
+2026-11-09T06:59:44.8832181Z 
+2026-11-09T06:59:44.8832272Z Or undo this operation with:
+2026-11-09T06:59:44.8832467Z 
+2026-11-09T06:59:44.8832545Z   git switch -
+2026-11-09T06:59:44.8832704Z 
+2026-11-09T06:59:44.8832877Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-09T06:59:44.8833131Z 
+2026-11-09T06:59:44.8833336Z HEAD is now at 26fd815 Correct root wheel metadata selection in isolated checkpoint setup
+2026-11-09T06:59:44.8925315Z ##[endgroup]
+2026-11-09T06:59:44.8982767Z [command]/usr/bin/git log -1 --format=%H
+2026-11-09T06:59:44.9017749Z 26fd8153972d2c6b07b0363596b262967c78ca27
+2026-11-09T06:59:44.9027517Z ##[group]Removing auth
+2026-11-09T06:59:44.9031172Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T06:59:44.9068703Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T06:59:44.9305228Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T06:59:44.9336955Z http.https://github.com/.extraheader
+2026-11-09T06:59:44.9344124Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-09T06:59:44.9381787Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T06:59:44.9601879Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T06:59:44.9636687Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T06:59:44.9858046Z ##[endgroup]
+2026-11-09T06:59:45.0051779Z ##[group]Run python3 -B -I research/checkpoint23_environment/prepare_environment.py --source-gate --github-output "$GITHUB_OUTPUT"
+2026-11-09T06:59:45.0052610Z [36;1mpython3 -B -I research/checkpoint23_environment/prepare_environment.py --source-gate --github-output "$GITHUB_OUTPUT"[0m
+2026-11-09T06:59:45.0074749Z shell: /usr/bin/bash -e {0}
+2026-11-09T06:59:45.0074979Z env:
+2026-11-09T06:59:45.0075165Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T06:59:45.0075386Z   PYTHONUNBUFFERED: 1
+2026-11-09T06:59:45.0075580Z   PYTHONHASHSEED: 0
+2026-11-09T06:59:45.0075758Z   OMP_NUM_THREADS: 1
+2026-11-09T06:59:45.0076158Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T06:59:45.0076348Z   MKL_NUM_THREADS: 1
+2026-11-09T06:59:45.0076544Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T06:59:45.0076749Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T06:59:45.0076949Z ##[endgroup]
+2026-11-09T06:59:45.8267804Z {"preparation_authorized": true, "native_execution_authorized": false}
+2026-11-09T06:59:45.8420423Z ##[group]Run mkdir -m 700 "$RUNNER_TEMP/checkpoint23-environment-metadata"
+2026-11-09T06:59:45.8420867Z [36;1mmkdir -m 700 "$RUNNER_TEMP/checkpoint23-environment-metadata"[0m
+2026-11-09T06:59:45.8421488Z [36;1mpython3 -B -I research/checkpoint23_environment/test_environment_route.py > "$RUNNER_TEMP/checkpoint23-environment-metadata/route_controls.log" 2>&1[0m
+2026-11-09T06:59:45.8440871Z shell: /usr/bin/bash -e {0}
+2026-11-09T06:59:45.8441082Z env:
+2026-11-09T06:59:45.8441273Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T06:59:45.8441487Z   PYTHONUNBUFFERED: 1
+2026-11-09T06:59:45.8441676Z   PYTHONHASHSEED: 0
+2026-11-09T06:59:45.8441871Z   OMP_NUM_THREADS: 1
+2026-11-09T06:59:45.8442058Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T06:59:45.8442261Z   MKL_NUM_THREADS: 1
+2026-11-09T06:59:45.8442439Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T06:59:45.8442638Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T06:59:45.8442832Z ##[endgroup]
+2026-11-09T06:59:46.2532876Z ##[group]Run python3 -B -I research/checkpoint23_environment/run_probe_controls.py > "$RUNNER_TEMP/checkpoint23-environment-metadata/probe_controls.log" 2>&1
+2026-11-09T06:59:46.2533802Z [36;1mpython3 -B -I research/checkpoint23_environment/run_probe_controls.py > "$RUNNER_TEMP/checkpoint23-environment-metadata/probe_controls.log" 2>&1[0m
+2026-11-09T06:59:46.2552441Z shell: /usr/bin/bash -e {0}
+2026-11-09T06:59:46.2552655Z env:
+2026-11-09T06:59:46.2552848Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T06:59:46.2553076Z   PYTHONUNBUFFERED: 1
+2026-11-09T06:59:46.2553272Z   PYTHONHASHSEED: 0
+2026-11-09T06:59:46.2553452Z   OMP_NUM_THREADS: 1
+2026-11-09T06:59:46.2553648Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T06:59:46.2553855Z   MKL_NUM_THREADS: 1
+2026-11-09T06:59:46.2554036Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T06:59:46.2554236Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T06:59:46.2554429Z ##[endgroup]
+2026-11-09T06:59:46.4309924Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+2026-11-09T06:59:46.4310647Z with:
+2026-11-09T06:59:46.4310891Z   python-version: 3.11.18
+2026-11-09T06:59:46.4311107Z   architecture: x64
+2026-11-09T06:59:46.4311295Z   check-latest: false
+2026-11-09T06:59:46.4313235Z   token: ***
+2026-11-09T06:59:46.4313432Z   update-environment: true
+2026-11-09T06:59:46.4313655Z   allow-prereleases: false
+2026-11-09T06:59:46.4313864Z   freethreaded: false
+2026-11-09T06:59:46.4314054Z env:
+2026-11-09T06:59:46.4314240Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T06:59:46.4314460Z   PYTHONUNBUFFERED: 1
+2026-11-09T06:59:46.4314650Z   PYTHONHASHSEED: 0
+2026-11-09T06:59:46.4314846Z   OMP_NUM_THREADS: 1
+2026-11-09T06:59:46.4315041Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T06:59:46.4315244Z   MKL_NUM_THREADS: 1
+2026-11-09T06:59:46.4315453Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T06:59:46.4315662Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T06:59:46.4315863Z ##[endgroup]
+2026-11-09T06:59:46.5537566Z ##[group]Installed versions
+2026-11-09T06:59:46.5557909Z (node:2264) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-09T06:59:46.5558826Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-09T06:59:46.5559429Z Successfully set up CPython (3.11.18)
+2026-11-09T06:59:46.5560579Z ##[endgroup]
+2026-11-09T06:59:46.5739279Z ##[group]Run python3 -B -I research/checkpoint23_environment/prepare_environment.py --execute --metadata-dir "$RUNNER_TEMP/checkpoint23-environment-metadata"
+2026-11-09T06:59:46.5740919Z [36;1mpython3 -B -I research/checkpoint23_environment/prepare_environment.py --execute --metadata-dir "$RUNNER_TEMP/checkpoint23-environment-metadata"[0m
+2026-11-09T06:59:46.5782579Z shell: /usr/bin/bash -e {0}
+2026-11-09T06:59:46.5783112Z env:
+2026-11-09T06:59:46.5783377Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T06:59:46.5783702Z   PYTHONUNBUFFERED: 1
+2026-11-09T06:59:46.5783979Z   PYTHONHASHSEED: 0
+2026-11-09T06:59:46.5784232Z   OMP_NUM_THREADS: 1
+2026-11-09T06:59:46.5784491Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T06:59:46.5784767Z   MKL_NUM_THREADS: 1
+2026-11-09T06:59:46.5785032Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T06:59:46.5785317Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T06:59:46.5785680Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T06:59:46.5786290Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-09T06:59:46.5786834Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T06:59:46.5787306Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T06:59:46.5787802Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T06:59:46.5788278Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-09T06:59:46.5788683Z ##[endgroup]
+2026-11-09T07:00:14.3272924Z ##[error]Process completed with exit code 2.
+2026-11-09T07:00:14.3322494Z ##[group]Run python3 -B -I research/checkpoint23_environment/prepare_environment.py --artifact-admission --metadata-dir "$RUNNER_TEMP/checkpoint23-environment-metadata" --github-output "$GITHUB_OUTPUT"
+2026-11-09T07:00:14.3323654Z [36;1mpython3 -B -I research/checkpoint23_environment/prepare_environment.py --artifact-admission --metadata-dir "$RUNNER_TEMP/checkpoint23-environment-metadata" --github-output "$GITHUB_OUTPUT"[0m
+2026-11-09T07:00:14.3344089Z shell: /usr/bin/bash -e {0}
+2026-11-09T07:00:14.3344324Z env:
+2026-11-09T07:00:14.3344523Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T07:00:14.3344749Z   PYTHONUNBUFFERED: 1
+2026-11-09T07:00:14.3344950Z   PYTHONHASHSEED: 0
+2026-11-09T07:00:14.3345133Z   OMP_NUM_THREADS: 1
+2026-11-09T07:00:14.3345326Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T07:00:14.3345525Z   MKL_NUM_THREADS: 1
+2026-11-09T07:00:14.3345712Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T07:00:14.3345931Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T07:00:14.3346219Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T07:00:14.3346593Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-09T07:00:14.3346946Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T07:00:14.3347265Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T07:00:14.3347572Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T07:00:14.3347885Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-09T07:00:14.3348161Z ##[endgroup]
+2026-11-09T07:00:14.4015720Z {"artifact_size_admission_only": {"metadata": true, "wheels": false}, "native_use_review_clear": false}
+2026-11-09T07:00:14.4198411Z ##[group]Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+2026-11-09T07:00:14.4198766Z with:
+2026-11-09T07:00:14.4198995Z   name: checkpoint23-environment-metadata-42576446840
+2026-11-09T07:00:14.4199342Z   path: /home/runner/work/_temp/checkpoint23-environment-metadata
+2026-11-09T07:00:14.4199653Z   retention-days: 7
+2026-11-09T07:00:14.4199840Z   compression-level: 6
+2026-11-09T07:00:14.4200037Z   overwrite: false
+2026-11-09T07:00:14.4200424Z   if-no-files-found: error
+2026-11-09T07:00:14.4200637Z   include-hidden-files: false
+2026-11-09T07:00:14.4200838Z   archive: true
+2026-11-09T07:00:14.4201014Z env:
+2026-11-09T07:00:14.4201194Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T07:00:14.4201404Z   PYTHONUNBUFFERED: 1
+2026-11-09T07:00:14.4201588Z   PYTHONHASHSEED: 0
+2026-11-09T07:00:14.4201764Z   OMP_NUM_THREADS: 1
+2026-11-09T07:00:14.4201948Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T07:00:14.4202140Z   MKL_NUM_THREADS: 1
+2026-11-09T07:00:14.4202374Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T07:00:14.4202575Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T07:00:14.4202813Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T07:00:14.4203162Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-09T07:00:14.4203707Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T07:00:14.4204012Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T07:00:14.4204320Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T07:00:14.4204623Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-09T07:00:14.4204898Z ##[endgroup]
+2026-11-09T07:00:14.5816852Z With the provided path, there will be 139 files uploaded
+2026-11-09T07:00:14.5821969Z Artifact name is valid!
+2026-11-09T07:00:14.5822989Z Root directory input is valid!
+2026-11-09T07:00:14.8171748Z Uploading artifact: checkpoint23-environment-metadata-42576446840.zip
+2026-11-09T07:00:14.8206595Z Beginning upload of artifact content to blob storage
+2026-11-09T07:00:15.0823644Z Uploaded bytes 590331
+2026-11-09T07:00:15.0967441Z Finished uploading artifact content to blob storage!
+2026-11-09T07:00:15.0968228Z SHA256 digest of uploaded artifact is ee1a9108679fbb6da039c4b35a5274199d2c23c7c6c15786573df6d8bd3b4e8a
+2026-11-09T07:00:15.0969169Z Finalizing artifact upload
+2026-11-09T07:00:15.4829983Z Artifact checkpoint23-environment-metadata-42576446840 successfully finalized. Artifact ID 13655272565
+2026-11-09T07:00:15.4831387Z Artifact checkpoint23-environment-metadata-42576446840 has been successfully uploaded! Final size is 590331 bytes. Artifact ID is 13655272565
+2026-11-09T07:00:15.4833860Z Artifact download URL: https://github.com/uskutsav-cpu/wavecert-fwi/actions/runs/42576446840/artifacts/13655272565
+2026-11-09T07:00:15.5041223Z Post job cleanup.
+2026-11-09T07:00:15.5793727Z [command]/usr/bin/git version
+2026-11-09T07:00:15.5867877Z git version 2.56.0
+2026-11-09T07:00:15.5906483Z Temporarily overriding HOME='/home/runner/work/_temp/77bd102a-ffff-4de4-9285-337cae6c0524' before making global git config changes
+2026-11-09T07:00:15.5907324Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-09T07:00:15.5912023Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/wavecert-fwi/wavecert-fwi
+2026-11-09T07:00:15.5951756Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T07:00:15.5993205Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T07:00:15.6239942Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T07:00:15.6275563Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T07:00:15.6540934Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T07:00:15.6593519Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T07:00:15.6965960Z Cleaning up orphan processes
+2026-11-09T07:00:15.7278124Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

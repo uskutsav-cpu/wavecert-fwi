@@ -1,0 +1,29 @@
+{
+  "status": "CLEAR",
+  "old_artifact_chain_checks": 64,
+  "all_pass": true,
+  "execution": {
+    "command": "env PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 /opt/miniconda3/bin/python work/new-phase-staging/review_stability_anchor_feasibility.py",
+    "terminal_chunk": "c38811",
+    "exit_code": 0,
+    "log": "stability_anchor_feasibility_independent_review_03.log",
+    "log_sha256": "276e8744a70014ead2bbd4b0b7f2e7161fb0aed612171ad6185f252bc637c7e3"
+  },
+  "review_receipt_sha256": "9e166de698db9270a15e32b5dde4426966719ee83fbffe4a4673ddcf086a3c79",
+  "review_source_sha256": "7faa76391ea758b718caa0c35ab7ffdd2e91b3eb4d77bf298c2876398d40b5b3",
+  "initial_debugging_attempts_preserved": {
+    "stability_anchor_feasibility_independent_review.log": {
+      "exit_code": 1,
+      "reason": "Reviewer script initially assumed direct native contract for both coordinate arms; VP contract is explicitly nested under native.",
+      "sha256": "54b2c28c998a1abb28616bd97657072c191621f694314068fef2f38c5b2c8f98"
+    },
+    "stability_anchor_feasibility_independent_review_02.log": {
+      "exit_code": 1,
+      "reason": "Reviewer assertion expected a shorthand mapping label; fixed to the actual pinned np.power(float64_velocity,-2.) metadata string. No arithmetic or producer settings changed.",
+      "sha256": "c3198b7b2f78b25d24be9bc085fdeb7ca15aadb6a06c1948973d318c2ee70d01"
+    }
+  },
+  "no_BP_arrays_or_PDE_or_optimization": true,
+  "producer_source_not_imported_or_executed": true,
+  "frozen_BP_bundle_and_postauditor_untouched": true
+}

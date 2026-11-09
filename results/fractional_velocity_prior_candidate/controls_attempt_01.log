@@ -1,0 +1,42 @@
+........F..............................                                  [100%]
+=================================== FAILURES ===================================
+________ test_directional_derivative_against_scalar_reference[interior] ________
+
+manufactured = (array([[0.25      , 0.2402922 , 0.23113905, 0.22249911, 0.21433471,
+        0.20661157, 0.19929847],
+       [0.226757...75, 0.12903617],
+       [0.13840171, 0.13200858, 0.12599113, 0.12032251, 0.1149781 ,
+        0.10993534, 0.10517353]]))
+mode = 'interior'
+
+    @pytest.mark.parametrize("mode", ["corner", "edge", "interior", "mixed"])
+    def test_directional_derivative_against_scalar_reference(manufactured, mode):
+        initial, model = manufactured
+        direction = np.zeros_like(model)
+        if mode == "mixed":
+            for row in range(model.shape[0]):
+                for col in range(model.shape[1]):
+                    direction[row, col] = math.sin(2.3 * row + 0.7 * col + 0.4)
+        else:
+            direction[{"corner": (0, 0), "edge": (0, 3), "interior": (2, 3)}[mode]] = 1
+        direction /= math.sqrt(math.fsum(float(x * x) for x in direction.flat))
+        prior = FractionalVelocityPrior(initial, 0.025)
+        analytic = math.fsum(
+            float(a * b) for a, b in zip(prior.evaluate(model).gradient.flat, direction.flat)
+        )
+        errors = []
+        for step in (2e-5, 1e-5):
+            plus = scalar_reference(model + step * direction, initial, 0.025, 0.1)
+            minus = scalar_reference(model - step * direction, initial, 0.025, 0.1)
+            centered = (plus - minus) / (2 * step)
+>           assert centered == pytest.approx(analytic, rel=2e-6, abs=2e-8)
+E           assert -0.003653709114339459 == -0.0036536788...7255 ± 2.0e-08
+E             
+E             comparison failed
+E             Obtained: -0.003653709114339459
+E             Expected: -0.0036536788992307255 ± 2.0e-08
+
+test_fractional_velocity_prior.py:98: AssertionError
+=========================== short test summary info ============================
+FAILED test_fractional_velocity_prior.py::test_directional_derivative_against_scalar_reference[interior]
+1 failed, 38 passed in 0.11s

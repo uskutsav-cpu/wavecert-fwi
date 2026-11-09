@@ -1,0 +1,28 @@
+{
+  "role": "AI-root preexecution GO for reference-informed separate NumPy implementation verification, not student final research design or blind/human confirmation",
+  "created_utc": "2026-11-08T03:40:46.582308+00:00",
+  "git_revision": "327552794b4ea50f730120c82b539e58c097bbc7",
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "reviewed_files": {
+    "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/numpy_boundary_replay/replay_numpy.py": "4832612882cb7b484777e309fb14ccc291685ad1afb5efd030332d84df31375c",
+    "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/numpy_boundary_replay/protocol.json": "53fbdd57a119ec68dd07e8c3ce833857e281acce13c0ff9001456ec114b59550",
+    "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/numpy_boundary_pre_review.json": "51a4fc64d7b91cc101f9c22671d80a170c435994faa5bd93c72288577e7e3208"
+  },
+  "planned_replays": 14,
+  "variants": [
+    "faithful_literals",
+    "rational_spatial"
+  ],
+  "receiver_relative_L2_tolerance": 1e-09,
+  "source_relative_L2_tolerance": 1e-14,
+  "exact_sample_times_required": true,
+  "source_bitwise_equality_diagnostic_only": true,
+  "root_pure_tests": "12 passed warnings-as-errors; no full propagation",
+  "independent_review": "CLEAR;12 puretests and sourceguard; no full propagation",
+  "original_Devito_results_already_known": true,
+  "reference_arrays_used_to_drive_replay": false,
+  "reference_arrays_opened_only_after_all_own_solves": true,
+  "output_new_directory": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/numpy_boundary_replay_run_01",
+  "goal4_completion_claim": false,
+  "GO": "run exact frozen14; retaineveryvariant/failure; no alignment/coefficients/threshold changes after outcomes"
+}

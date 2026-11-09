@@ -1,0 +1,67 @@
+{"run_index": 0, "method": "native_m_lbfgsb", "status": "failed", "actual_api_return": 7.716087167002115, "primary_quality_eligible": false}
+{"run_index": 1, "method": "physical_v_lbfgsb", "status": "failed", "actual_api_return": 7.667961042003299, "primary_quality_eligible": false}
+{"run_index": 2, "method": "native_m_lbfgsb", "status": "failed", "actual_api_return": 7.667748584000947, "primary_quality_eligible": false}
+{"run_index": 3, "method": "physical_v_lbfgsb", "status": "failed", "actual_api_return": 7.6442429999988235, "primary_quality_eligible": false}
+{"run_index": 4, "method": "physical_v_lbfgsb", "status": "failed", "actual_api_return": 7.65384987500147, "primary_quality_eligible": false}
+{"run_index": 5, "method": "native_m_lbfgsb", "status": "failed", "actual_api_return": 7.7549160000016855, "primary_quality_eligible": false}
+{"run_index": 6, "method": "physical_v_lbfgsb", "status": "failed", "actual_api_return": 7.6745743329993275, "primary_quality_eligible": false}
+{"run_index": 7, "method": "native_m_lbfgsb", "status": "failed", "actual_api_return": 7.704807875001279, "primary_quality_eligible": false}
+{"run_index": 8, "method": "native_m_lbfgsb", "status": "failed", "actual_api_return": 7.6775999999990745, "primary_quality_eligible": false}
+{"run_index": 9, "method": "physical_v_lbfgsb", "status": "failed", "actual_api_return": 7.719965249998495, "primary_quality_eligible": false}
+{"run_index": 10, "method": "native_m_lbfgsb", "status": "failed", "actual_api_return": 7.464298791001056, "primary_quality_eligible": false}
+{"run_index": 11, "method": "physical_v_lbfgsb", "status": "failed", "actual_api_return": 7.70095824999953, "primary_quality_eligible": false}
+{"run_index": 12, "method": "physical_v_lbfgsb", "status": "failed", "actual_api_return": 7.687938167000539, "primary_quality_eligible": false}
+{"run_index": 13, "method": "native_m_lbfgsb", "status": "failed", "actual_api_return": 7.66900329100099, "primary_quality_eligible": false}
+Traceback (most recent call last):
+  File "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/coordinate_cost_engineering_benchmark/run_coordinate_comparison.py", line 556, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/coordinate_cost_engineering_benchmark/run_coordinate_comparison.py", line 550, in main
+    receipt = run(args.repo, args.output, args.protocol, args.expected_protocol_sha256, args.expected_driver_sha256)
+  File "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/coordinate_cost_engineering_benchmark/run_coordinate_comparison.py", line 467, in run
+    execute_timed(root, protocol, original, row, runtime, context, phase, check_static,
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                  expected_common=common_by_case.get(row["case_index"]))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/coordinate_cost_engineering_benchmark/run_coordinate_comparison.py", line 265, in execute_timed
+    result = runtime.engine.run_exact_lbfgsb(oracle_factory=oracle_factory, m0=initial_parameter,
+        lower_bound=vlo if is_velocity else lo, upper_bound=vhi if is_velocity else hi,
+        options=runtime.engine.TrajectoryOptions(**protocol["trajectory"]), clock=anchored, **protocol["lbfgsb"])
+  File "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/src/wavecert/optimization/paid_descent.py", line 474, in run_exact_lbfgsb
+    result = minimize(function, ledger.model.copy(), jac=jacobian, method="L-BFGS-B",
+        bounds=list(zip(ledger.lower, ledger.upper, strict=True)), callback=callback,
+        options=dict(maxiter=options.maximum_steps, maxls=options.maximum_line_search_trials,
+            maxcor=maximum_corrections, ftol=function_tolerance, gtol=gradient_tolerance))
+  File "/opt/miniconda3/lib/python3.13/site-packages/scipy/optimize/_minimize.py", line 784, in minimize
+    res = _minimize_lbfgsb(fun, x0, args, jac, bounds,
+                           callback=callback, **options)
+  File "/opt/miniconda3/lib/python3.13/site-packages/scipy/optimize/_lbfgsb_py.py", line 420, in _minimize_lbfgsb
+    f, g = func_and_grad(x)
+           ~~~~~~~~~~~~~^^^
+  File "/opt/miniconda3/lib/python3.13/site-packages/scipy/optimize/_differentiable_functions.py", line 412, in fun_and_grad
+    self._update_fun()
+    ~~~~~~~~~~~~~~~~^^
+  File "/opt/miniconda3/lib/python3.13/site-packages/scipy/optimize/_differentiable_functions.py", line 362, in _update_fun
+    fx = self._wrapped_fun(self.x)
+  File "/opt/miniconda3/lib/python3.13/site-packages/scipy/_lib/_util.py", line 544, in __call__
+    fx = self.f(np.copy(x), *self.args)
+  File "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/src/wavecert/optimization/paid_descent.py", line 430, in function
+    receipt = ledger.oracle.evaluate(model)
+  File "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/coordinate_cost_engineering_benchmark/velocity_oracle.py", line 233, in evaluate
+    native = self._native.evaluate(model)  # Always dispatch, including genuine native cache hits.
+  File "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/src/wavecert/physics/exact_merit.py", line 401, in evaluate
+    state, factor = self._solve(model, frequency, rhs, category="forward_rhs")
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/src/wavecert/physics/exact_merit.py", line 369, in _solve
+    factor = _SparseLUContext(self._p._factorization(model, frequency))
+                              ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/src/wavecert/physics/helmholtz.py", line 129, in _factorization
+    factor = spla.splu(self.operator(model, frequency_hz).tocsc())
+  File "/opt/miniconda3/lib/python3.13/site-packages/scipy/sparse/linalg/_dsolve/linsolve.py", line 444, in splu
+    return _superlu.gstrf(N, A.nnz, A.data, indices, indptr,
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                          csc_construct_func=csc_construct_func,
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                          ilu=False, options=_options)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

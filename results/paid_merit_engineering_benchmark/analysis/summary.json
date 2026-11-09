@@ -1,0 +1,250 @@
+{
+  "role": "AI-authored descriptive SOFTWARE analysis; all eight cases reused development",
+  "planned_runs": 360,
+  "terminal_counts": {
+    "complete": 360
+  },
+  "engine_status_counts": {
+    "budget_exhausted": 190,
+    "solver_terminated": 5,
+    "objective_target": 165
+  },
+  "returned_engine_failures": 0,
+  "target_summary": [
+    {
+      "mode": "target_stop_0.5",
+      "method": "exact_lu_lbfgsb",
+      "planned": 24,
+      "eligible_targets": 24,
+      "ineligible_or_censored": 0,
+      "median_seconds_among_eligible_ONLY": 0.6899135830008163,
+      "failure_reasons": {}
+    },
+    {
+      "mode": "target_stop_0.5",
+      "method": "exact_lu_projected",
+      "planned": 24,
+      "eligible_targets": 21,
+      "ineligible_or_censored": 3,
+      "median_seconds_among_eligible_ONLY": 0.9142534999991767,
+      "failure_reasons": {
+        "unreached_budget_exhausted": 3
+      }
+    },
+    {
+      "mode": "target_stop_0.5",
+      "method": "fixed_sweeps_certified",
+      "planned": 24,
+      "eligible_targets": 21,
+      "ineligible_or_censored": 3,
+      "median_seconds_among_eligible_ONLY": 2.2714237079999293,
+      "failure_reasons": {
+        "unreached_budget_exhausted": 3
+      }
+    },
+    {
+      "mode": "target_stop_0.5",
+      "method": "fixed_sweeps_uncertified",
+      "planned": 24,
+      "eligible_targets": 21,
+      "ineligible_or_censored": 3,
+      "median_seconds_among_eligible_ONLY": 1.6884079169994948,
+      "failure_reasons": {
+        "unreached_budget_exhausted": 3
+      }
+    },
+    {
+      "mode": "target_stop_0.5",
+      "method": "same_M_gmres_projected",
+      "planned": 24,
+      "eligible_targets": 17,
+      "ineligible_or_censored": 7,
+      "median_seconds_among_eligible_ONLY": 0.6270173329994577,
+      "failure_reasons": {
+        "unreached_budget_exhausted": 6,
+        "target_returned_after_budget": 1
+      }
+    },
+    {
+      "mode": "target_stop_0.25",
+      "method": "exact_lu_lbfgsb",
+      "planned": 24,
+      "eligible_targets": 24,
+      "ineligible_or_censored": 0,
+      "median_seconds_among_eligible_ONLY": 1.302516396000101,
+      "failure_reasons": {}
+    },
+    {
+      "mode": "target_stop_0.25",
+      "method": "exact_lu_projected",
+      "planned": 24,
+      "eligible_targets": 9,
+      "ineligible_or_censored": 15,
+      "median_seconds_among_eligible_ONLY": 0.3460197080003127,
+      "failure_reasons": {
+        "unreached_budget_exhausted": 15
+      }
+    },
+    {
+      "mode": "target_stop_0.25",
+      "method": "fixed_sweeps_certified",
+      "planned": 24,
+      "eligible_targets": 9,
+      "ineligible_or_censored": 15,
+      "median_seconds_among_eligible_ONLY": 0.6995528749994264,
+      "failure_reasons": {
+        "unreached_budget_exhausted": 15
+      }
+    },
+    {
+      "mode": "target_stop_0.25",
+      "method": "fixed_sweeps_uncertified",
+      "planned": 24,
+      "eligible_targets": 9,
+      "ineligible_or_censored": 15,
+      "median_seconds_among_eligible_ONLY": 0.5314322499998525,
+      "failure_reasons": {
+        "unreached_budget_exhausted": 15
+      }
+    },
+    {
+      "mode": "target_stop_0.25",
+      "method": "same_M_gmres_projected",
+      "planned": 24,
+      "eligible_targets": 9,
+      "ineligible_or_censored": 15,
+      "median_seconds_among_eligible_ONLY": 0.9877635419998114,
+      "failure_reasons": {
+        "unreached_budget_exhausted": 15
+      }
+    }
+  ],
+  "internal_availability": [
+    {
+      "method": "exact_lu_lbfgsb",
+      "budget_seconds": 1,
+      "planned": 24,
+      "eligible": 24
+    },
+    {
+      "method": "exact_lu_projected",
+      "budget_seconds": 1,
+      "planned": 24,
+      "eligible": 24
+    },
+    {
+      "method": "fixed_sweeps_certified",
+      "budget_seconds": 1,
+      "planned": 24,
+      "eligible": 24
+    },
+    {
+      "method": "fixed_sweeps_uncertified",
+      "budget_seconds": 1,
+      "planned": 24,
+      "eligible": 24
+    },
+    {
+      "method": "same_M_gmres_projected",
+      "budget_seconds": 1,
+      "planned": 24,
+      "eligible": 24
+    },
+    {
+      "method": "exact_lu_lbfgsb",
+      "budget_seconds": 2,
+      "planned": 24,
+      "eligible": 24
+    },
+    {
+      "method": "exact_lu_projected",
+      "budget_seconds": 2,
+      "planned": 24,
+      "eligible": 24
+    },
+    {
+      "method": "fixed_sweeps_certified",
+      "budget_seconds": 2,
+      "planned": 24,
+      "eligible": 24
+    },
+    {
+      "method": "fixed_sweeps_uncertified",
+      "budget_seconds": 2,
+      "planned": 24,
+      "eligible": 24
+    },
+    {
+      "method": "same_M_gmres_projected",
+      "budget_seconds": 2,
+      "planned": 24,
+      "eligible": 24
+    },
+    {
+      "method": "exact_lu_lbfgsb",
+      "budget_seconds": 4,
+      "planned": 24,
+      "eligible": 24
+    },
+    {
+      "method": "exact_lu_projected",
+      "budget_seconds": 4,
+      "planned": 24,
+      "eligible": 24
+    },
+    {
+      "method": "fixed_sweeps_certified",
+      "budget_seconds": 4,
+      "planned": 24,
+      "eligible": 24
+    },
+    {
+      "method": "fixed_sweeps_uncertified",
+      "budget_seconds": 4,
+      "planned": 24,
+      "eligible": 24
+    },
+    {
+      "method": "same_M_gmres_projected",
+      "budget_seconds": 4,
+      "planned": 24,
+      "eligible": 24
+    },
+    {
+      "method": "exact_lu_lbfgsb",
+      "budget_seconds": 8,
+      "planned": 24,
+      "eligible": 24
+    },
+    {
+      "method": "exact_lu_projected",
+      "budget_seconds": 8,
+      "planned": 24,
+      "eligible": 24
+    },
+    {
+      "method": "fixed_sweeps_certified",
+      "budget_seconds": 8,
+      "planned": 24,
+      "eligible": 24
+    },
+    {
+      "method": "fixed_sweeps_uncertified",
+      "budget_seconds": 8,
+      "planned": 24,
+      "eligible": 24
+    },
+    {
+      "method": "same_M_gmres_projected",
+      "budget_seconds": 8,
+      "planned": 24,
+      "eligible": 24
+    }
+  ],
+  "internal_diagnostics_only": true,
+  "target_censoring": "Missing targets have null times; 8 seconds is never substituted as an observed event",
+  "medians_scope": "Eligible-only medians are conditional; inspect every failure denominator and case row",
+  "dependence": "Three repetitions and slices do not create independent geological sites; SEAM IDs share ancestry",
+  "statistical_inference": "No IID confidence interval, p-value, unconditional speedup, or winner promotion",
+  "scientific_goal_complete": false
+}

@@ -1,0 +1,630 @@
+"""Post-terminal audit of the frozen 360-run engineering receipt.
+
+This file is staged without execution during the live benchmark. It imports no
+project solver and performs no PDE solve. NumPy is imported only after terminal
+status and complete-receipt checks. Scalar consistency is not raw bound replay.
+"""
+
+from __future__ import annotations
+
+import argparse
+import collections
+import datetime
+import gzip
+import hashlib
+import json
+import math
+from pathlib import Path
+
+
+DRIVER_SHA = "7fc7543294380fda9dbde2784e6c469425be06d9d36ee45be2cbc44a34bd0883"
+ADDENDUM_SHA = "74039601d9785a63899aba406baeac7d21f39ce430cd08798a4e0473f169dce2"
+PROTOCOL_SHA = "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c"
+SOURCE_SHA = "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da"
+METHODS = ("exact_lu_projected", "exact_lu_lbfgsb", "same_M_gmres_projected",
+           "fixed_sweeps_uncertified", "fixed_sweeps_certified")
+MODES = (("anytime", None), ("target_stop_0.5", .5), ("target_stop_0.25", .25))
+SCHEDULE_KEYS = ("run_index", "original_schedule_index", "case_index", "repetition",
+                 "order_position", "method", "measurement_mode", "target_ratio", "identity")
+BACKEND_FILES = {
+    "wavecert.physics.exact_merit": "physics/exact_merit.py",
+    "wavecert.physics.coarse_dst_reference": "physics/coarse_dst_reference.py",
+    "wavecert.certificates.cached_merit_certificate": "certificates/cached_merit_certificate.py",
+    "wavecert.optimization.paid_descent": "optimization/paid_descent.py",
+    "wavecert.physics.helmholtz": "physics/helmholtz.py",
+    "wavecert.physics.coarse_stability": "physics/coarse_stability.py",
+    "wavecert.physics.coarse_batch": "physics/coarse_batch.py",
+}
+
+
+def sha_file(path):
+    h = hashlib.sha256()
+    with Path(path).open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def strict_json(path):
+    def bad_constant(value):
+        raise ValueError("nonfinite JSON token: " + value)
+    if str(path).endswith(".gz"):
+        with gzip.open(path, "rt") as stream:
+            return json.load(stream, parse_constant=bad_constant)
+    with Path(path).open() as stream:
+        return json.load(stream, parse_constant=bad_constant)
+
+
+def owned(directory, name):
+    if not isinstance(name, str) or not name or Path(name).name != name:
+        raise ValueError("artifact must be a single owned filename")
+    path = (directory / name).resolve()
+    if not path.is_relative_to(directory.resolve()):
+        raise ValueError("artifact escapes owned directory")
+    return path
+
+
+def scalar(value):
+    return isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value)
+
+
+def close(a, b, *, rtol=2e-12, atol=1e-11):
+    return scalar(a) and scalar(b) and abs(a-b) <= atol + rtol * max(abs(a), abs(b))
+
+
+class Checks:
+    def __init__(self):
+        self.count = 0
+        self.issues = []
+
+    def require(self, condition, message, *, run=None):
+        self.count += 1
+        if not condition:
+            self.issues.append({"run_index": run, "message": message})
+
+
+def source_manifest(repo):
+    # Independent copy of the documented path-and-sha256-v2 byte contract;
+    # intentionally no import of wavecert.provenance or benchmark helpers.
+    files = [repo / "pyproject.toml"]
+    files += sorted((repo / "src").rglob("*.py"))
+    files += sorted(p for p in (repo / "configs").rglob("*") if p.is_file())
+    files += sorted(p for p in (repo / "scripts").rglob("*") if p.suffix in {".py", ".sh"})
+    files += sorted((repo / ".github/workflows").glob("*.yml"))
+    files += sorted(repo.glob("requirements*.txt"))
+    return {p.relative_to(repo).as_posix(): sha_file(p) for p in sorted(set(files)) if p.is_file()}
+
+
+def source_digest(manifest):
+    h = hashlib.sha256()
+    for name, digest in manifest.items():
+        h.update(name.encode()); h.update(b"\0"); h.update(digest.encode()); h.update(b"\0")
+    return h.hexdigest()
+
+
+def flatten_counts(tree, prefix=""):
+    if not isinstance(tree, dict):
+        raise ValueError("counter root is not a mapping")
+    flat = {}
+    for key, value in tree.items():
+        path = prefix + "/" + key
+        if isinstance(value, dict):
+            flat.update(flatten_counts(value, path))
+        elif isinstance(value, int) and not isinstance(value, bool) and value >= 0:
+            flat[path] = value
+        else:
+            raise ValueError("boolean/noninteger/negative metadata inside counter tree: " + path)
+    return flat
+
+
+def counts_leq(left, right):
+    return all(value <= right.get(key, 0) for key, value in left.items())
+
+
+def array_sha(np, values, dtype="<f8"):
+    return hashlib.sha256(np.ascontiguousarray(values, dtype=dtype).tobytes()).hexdigest()
+
+
+def check_descriptor(checks, np, descriptor, values, label, run):
+    checks.require(isinstance(descriptor, dict), label + " compact array descriptor exists", run=run)
+    if not isinstance(descriptor, dict):
+        return
+    checks.require(descriptor.get("array_shape") == list(values.shape), label + " shape", run=run)
+    checks.require(descriptor.get("array_dtype") == "<f8", label + " float64 descriptor", run=run)
+    checks.require(descriptor.get("dense_values_saved") is False, label + " compact scope", run=run)
+    checks.require(descriptor.get("sha256") == array_sha(np, values), label + " raw array hash", run=run)
+
+
+def expected_schedule(np, protocol):
+    rng = np.random.default_rng(protocol["order_seed"])
+    original = []
+    for repetition in range(3):
+        for case in range(8):
+            for position, method in enumerate(rng.permutation(METHODS).tolist()):
+                original.append(dict(run_index=len(original), repetition=repetition,
+                                     case_index=case, order_position=position, method=method))
+    rows = []
+    for mode, ratio in MODES:
+        for old in original:
+            row = dict(old)
+            row.update(run_index=len(rows), original_schedule_index=old["run_index"],
+                       measurement_mode=mode, target_ratio=ratio,
+                       identity=protocol["identities"][old["case_index"]])
+            rows.append(row)
+    return rows
+
+
+def target_decision(result, ratio, wall, budget):
+    if ratio is None:
+        return {"applicable": False, "eligible": False, "elapsed_seconds": None,
+                "reason": "anytime internal checkpoints are not completed-return target evidence"}
+    initial, final = result.get("initial_objective"), result.get("final_objective")
+    finite = scalar(initial) and scalar(final)
+    reached = bool(finite and initial > 0 and final <= ratio*initial)
+    if finite and initial == 0:
+        reason = "already_solved_trivial_initial_objective_not_ratio_speedup"
+    elif not result.get("costs_complete", False) or result["status"] == "failed":
+        reason = "failed_or_incomplete_method"
+    elif not reached:
+        reason = "unreached_" + result["status"]
+    elif result["status"] != "objective_target":
+        reason = "target_not_reported_as_complete_target_stop"
+    elif wall > budget:
+        reason = "target_returned_after_budget"
+    else:
+        reason = "target_returned_in_budget"
+    eligible = reason == "target_returned_in_budget"
+    internal = [p for p in result["checkpoints"] if p["within_budget"]
+                and finite and initial > 0 and p["objective"] <= ratio*initial]
+    return dict(applicable=True, configured_ratio=ratio, reached_by_returned_objective=reached,
+                eligible=eligible, elapsed_seconds=wall if eligible else None,
+                observed_return_wall_seconds=wall, observation_end_seconds=wall,
+                internal_first_target_checkpoint_seconds=None if not internal else internal[0]["elapsed_seconds"],
+                stopping_status=result["status"], reason=reason,
+                initial_objective=initial, final_objective=final)
+
+
+def verify_timing(checks, timing, trajectory, row, budget, run):
+    wall = timing["actual_start_to_control_return_seconds"]
+    engine = timing["engine_reported_seconds_including_preparation"]
+    prefix = timing["pre_control_elapsed_seconds"]
+    for name, value in timing.items():
+        if name.endswith("_seconds") and value is not None:
+            checks.require(scalar(value) and value >= 0, "nonnegative finite timing " + name, run=run)
+    checks.require(prefix <= engine + 1e-8 and engine <= wall + 1e-8, "prefix <= engine <= actual return", run=run)
+    checks.require(close(engine, trajectory["total_online_seconds"]), "engine time agrees with core", run=run)
+    checks.require(close(timing["engine_finish_tail_seconds"], max(0., wall-engine)), "actual finish tail arithmetic", run=run)
+    checks.require(close(timing["actual_return_overshoot_seconds"], max(0., wall-budget)), "return overshoot arithmetic", run=run)
+    checks.require(close(trajectory["budget_overshoot_seconds"], max(0., engine-budget)), "engine overshoot arithmetic", run=run)
+    checks.require(close(timing["engine_budget_overshoot_seconds"], trajectory["budget_overshoot_seconds"]), "both engine overshoot receipts agree", run=run)
+    checks.require(timing["input_loading_verification_seconds"] + timing["refinement_initialization_observation_seconds"] <= prefix + 1e-8,
+                   "actual preparation subsets inside prefix", run=run)
+    checks.require(timing.get("timed_progress_write_seconds", 0.) <= wall + 1e-8, "bounded progress IO subset of actual wall", run=run)
+    checks.require(timing["preparation_seconds_are_subsets_not_added_again"] is True, "prefix not added again", run=run)
+    expected_return = bool(wall <= budget and trajectory.get("costs_complete", False) and trajectory["status"] != "failed")
+    checks.require(timing["fully_returned_within_max_budget"] == expected_return, "actual returned-within-budget gate", run=run)
+    checks.require(type(timing["anchored_clock_calls"]) is int and timing["anchored_clock_calls"] >= 2, "real anchored clock used", run=run)
+    checks.require(row.get("timing") == timing, "terminal row/core timing agreement", run=run)
+    prep = flatten_counts(timing["preparation_physics_costs"])
+    checks.require(prep.get("/factorizations") == 4 and prep.get("/forward_rhs") == 24,
+                   "actual four-frequency/six-source preparation costs", run=run)
+    checks.require(all(value == 0 for key, value in prep.items() if key not in {"/factorizations", "/forward_rhs"}),
+                   "preparation has no unexplained solves or cache reuse", run=run)
+    return wall
+
+
+def verify_counters(checks, trajectory, certificates, run):
+    total = flatten_counts(trajectory["total_online_costs"])
+    setup = flatten_counts(trajectory["setup_costs"])
+    checks.require(counts_leq(setup, total), "setup counts are a subset of total", run=run)
+    points = trajectory["checkpoints"]
+    baseline = flatten_counts(points[0]["online_costs"]) if points else setup
+    checks.require(counts_leq(setup, baseline) and counts_leq(baseline, total), "initial/checkpoint cumulative count scope", run=run)
+    last = baseline
+    for point in points:
+        current = flatten_counts(point["online_costs"])
+        checks.require(counts_leq(last, current) and counts_leq(current, total), "checkpoint counters monotone and bounded", run=run)
+        last = current
+    summed = collections.Counter(baseline)
+    for step in trajectory["steps"]:
+        summed.update(flatten_counts(step["online_cost_delta"]))
+    checks.require(all(summed.get(key, 0) == total.get(key, 0) for key in set(summed) | set(total)),
+                   "initial costs plus step deltas equals cumulative total once", run=run)
+    local, dispatches = collections.Counter(), collections.Counter()
+    for cert in certificates:
+        local.update(flatten_counts(cert["costs"]["local"]))
+        dispatches.update(flatten_counts(cert["costs"]["dispatches"]))
+        flatten_counts(cert["costs"]["stability_query"])
+    for name, recomputed in (("certificate_local", local), ("certificate_dispatches", dispatches)):
+        actual = flatten_counts(trajectory["total_online_costs"].get("proposal", {}).get(name, {}))
+        checks.require(dict(recomputed) == actual, name + " accumulated once; stability query not added again", run=run)
+    return {"counter_leaves": len(total), "preparation_engine_offline_never_combined": True,
+            "cost_scope": "cumulative engine once; setup/checkpoints/query deltas are subsets, not extra work"}
+
+
+def certificate_steps(trajectory):
+    found = []
+    for step in trajectory["steps"]:
+        proposal = step.get("proposal")
+        diagnostic = None if proposal is None else proposal.get("diagnostics")
+        cert = None if diagnostic is None else diagnostic.get("certificate")
+        if cert is not None:
+            found.append((step, proposal, cert))
+    return found
+
+
+def verify_certificate_receipts(checks, records, audit, run):
+    rows = audit["certificate_rows"]
+    checks.require(len(rows) == len(records), "all attempted certificate diagnostics retained offline", run=run)
+    summary = collections.Counter(attempted=len(records))
+    for index, (step, proposal, cert) in enumerate(records):
+        if index >= len(rows):
+            break
+        row = rows[index]
+        for key, expected in (("iteration", step["iteration"]), ("model_sha256", step["model_sha256"]),
+                              ("available", cert["available"]), ("certified_descent", cert["certified_descent"])):
+            checks.require(row.get(key) == expected, "offline certificate binding " + key, run=run)
+        checks.require(cert["formally_verified_roundoff_enclosure"] is False and cert["stationarity_claim"] is False,
+                       "ordinary-FP/no-stationarity certificate scope", run=run)
+        summary["available"] += int(cert["available"])
+        summary["certified"] += int(cert["certified_descent"])
+        center, bound, upper = (cert["approximate_directional_derivative"], cert["directional_error_bound"], cert["certified_upper_derivative"])
+        if bound is not None:
+            checks.require(scalar(bound) and bound >= 0 and close(upper, center+bound), "scalar center + bound = upper", run=run)
+            frequency_bounds = [f["directional_error_bound"] for f in cert["frequency_records"] if "directional_error_bound" in f]
+            checks.require(close(bound, math.fsum(frequency_bounds)), "sum of retained frequency bounds", run=run)
+        if cert["certified_descent"]:
+            checks.require(cert["available"] and cert["evaluation_complete"] and scalar(upper) and upper < 0,
+                           "strict complete negative derivative for certified flag", run=run)
+            checks.require(proposal["raw_direction_certificate_valid"] is True, "engine checked matching raw direction", run=run)
+        dd = row["true_derivative"]
+        if dd is None:
+            summary["unassessable_direction"] += 1
+            checks.require(row["bound_covers"] is None and row["false_certification"] is None,
+                           "unavailable true DD stays unknown", run=run)
+            checks.require(proposal.get("direction") is None, "missing DD has no saved proposal direction", run=run)
+        else:
+            checks.require(scalar(dd), "finite archived offline directional derivative", run=run)
+            false = bool(cert["certified_descent"] and dd >= 0)
+            checks.require(row["false_certification"] == false, "false-certification scalar recomputation", run=run)
+            summary["assessed_direction"] += 1
+            summary["false_certifications"] += int(false)
+            if bound is not None:
+                tolerance = 1e-9 * max(abs(dd), abs(center), bound, 1.)
+                covers = bool(abs(dd-center) <= bound+tolerance)
+                checks.require(row["bound_covers"] == covers, "offline bound-cover tolerance recomputation", run=run)
+                summary["assessed_bound"] += 1
+                summary["bound_violations"] += int(not covers)
+            else:
+                checks.require(row["bound_covers"] is None, "unavailable bound has no coverage decision", run=run)
+    return dict(summary)
+
+
+def refined_truth(np, raw):
+    # Independent bilinear formula for the frozen 24->49 refinement, with no
+    # scipy/project interpolation helper and no forward wave solve.
+    velocity = np.pad(1/np.sqrt(raw.astype(np.float64)), 1, mode="edge")
+    nodes = np.arange(1, 50, dtype=np.float64)/2
+    lo = np.floor(nodes).astype(int)
+    weight = nodes-lo
+    out = ((1-weight[:, None])*(1-weight[None, :])*velocity[lo[:, None], lo[None, :]]
+           + weight[:, None]*(1-weight[None, :])*velocity[lo[:, None]+1, lo[None, :]]
+           + (1-weight[:, None])*weight[None, :]*velocity[lo[:, None], lo[None, :]+1]
+           + weight[:, None]*weight[None, :]*velocity[lo[:, None]+1, lo[None, :]+1])
+    return (1/out**2).reshape(-1)
+
+
+def quality_numbers(np, model, truth):
+    return {"relative_squared_slowness_L2": float(np.linalg.norm(model-truth)/np.linalg.norm(truth)),
+            "relative_physical_velocity_L2": float(np.linalg.norm(1/np.sqrt(model)-1/np.sqrt(truth))
+                                               / np.linalg.norm(1/np.sqrt(truth)))}
+
+
+def verify_models_and_endpoints(checks, np, run_dir, row, core, protocol, truth, initial_hashes, run):
+    name = core["models_artifact"]
+    path = owned(run_dir, name)
+    checks.require(sha_file(path) == core["models_sha256"] == row["models_sha256"], "raw model NPZ artifact hash", run=run)
+    expected_names = {"prepared_initial", "returned_final"} | {f"internal_budget_{i}" for i in range(4)}
+    with np.load(path, allow_pickle=False) as archive:
+        checks.require(set(archive.files) == expected_names, "only initial/final/four diagnostic models saved", run=run)
+        models = {name: archive[name].copy() for name in archive.files}
+    lower, upper = protocol["squared_slowness_bounds"]
+    for label, model in models.items():
+        checks.require(model.dtype == np.float64 and model.shape == (2401,) and bool(np.all(np.isfinite(model)))
+                       and bool(np.all(model >= lower)) and bool(np.all(model <= upper)), "finite boxed float64 model " + label, run=run)
+    trajectory = core["trajectory"]
+    check_descriptor(checks, np, trajectory["final_model"], models["returned_final"], "returned final", run)
+    initial_hash = array_sha(np, models["prepared_initial"])
+    checks.require(row["initial_sha256"] == initial_hash, "initial row/raw binding", run=run)
+    prior = initial_hashes.setdefault(row["case_index"], initial_hash)
+    checks.require(initial_hash == prior, "same initial model across all arms/repeats/modes", run=run)
+    points = trajectory["checkpoints"]
+    if points:
+        checks.require(points[0]["kind"] == "initial" and points[0]["model_sha256"] == initial_hash,
+                       "first paid checkpoint is prepared initial", run=run)
+    endpoints = core["internal_budget_endpoints"]
+    checks.require(len(endpoints) == 4, "all four internal diagnostic budgets retained", run=run)
+    for index, (endpoint, budget) in enumerate(zip(endpoints, protocol["endpoint_budgets_seconds"], strict=True)):
+        candidates = [p for p in points if p["within_budget"] and p["elapsed_seconds"] <= budget]
+        selected = candidates[-1] if candidates else None
+        model = models[f"internal_budget_{index}"]
+        digest = array_sha(np, model)
+        checks.require(endpoint["budget_seconds"] == budget and endpoint["completed_paid_checkpoint"] == bool(selected),
+                       "internal endpoint paid-time gate", run=run)
+        checks.require(endpoint["model_sha256"] == digest == (initial_hash if selected is None else selected["model_sha256"]),
+                       "internal endpoint selected model hash", run=run)
+        check_descriptor(checks, np, endpoint["model"], model, "internal model", run)
+        checks.require(endpoint["checkpoint_elapsed_seconds"] == (None if selected is None else selected["elapsed_seconds"]),
+                       "internal endpoint completed timestamp", run=run)
+        checks.require(endpoint["online_objective"] == (None if selected is None else selected["objective"]),
+                       "unpaid fallback gets no online objective credit", run=run)
+        initial = trajectory["initial_objective"]
+        ratio = None if selected is None or initial is None or initial <= 0 else selected["objective"]/initial
+        checks.require(endpoint["relative_online_objective"] == ratio, "internal objective-ratio arithmetic", run=run)
+    for event, ratio in zip(core["internal_target_events"], protocol["reported_objective_ratios"], strict=True):
+        candidates = [] if trajectory["initial_objective"] is None else [p for p in points
+            if p["within_budget"] and p["objective"] <= ratio*trajectory["initial_objective"]]
+        selected = candidates[0] if candidates else None
+        expected = dict(objective_ratio=ratio, reached=selected is not None,
+                        elapsed_seconds=None if selected is None else selected["elapsed_seconds"],
+                        model_sha256=None if selected is None else selected["model_sha256"])
+        checks.require(event == expected, "internal target event retained as diagnostic only", run=run)
+    return models
+
+
+def verify_quality(checks, np, models, truth, core, audit, run):
+    quality = audit["credited_reconstruction_quality"]
+    checks.require(quality["truth_used_for_policy"] is False, "quality has no policy access", run=run)
+    endpoints = core["internal_budget_endpoints"]
+    diagnostics = audit["budget_endpoint_diagnostics"]
+    states = quality["internal_budget_states"]
+    checks.require(len(states) == len(diagnostics) == 4, "all offline endpoint rows retained", run=run)
+    for i, (endpoint, state, diagnostic) in enumerate(zip(endpoints, states, diagnostics, strict=True)):
+        eligible = endpoint["completed_paid_checkpoint"]
+        checks.require(state["budget_seconds"] == endpoint["budget_seconds"] and state["eligible_paid_checkpoint"] == eligible,
+                       "offline quality matched to paid endpoint", run=run)
+        recomputed = quality_numbers(np, models[f"internal_budget_{i}"], truth)
+        if eligible:
+            checks.require(isinstance(state["quality"], dict) and all(close(state["quality"].get(k), v) for k, v in recomputed.items()),
+                           "independently refined truth m/velocity quality", run=run)
+        else:
+            checks.require(state["quality"] is None, "unpaid initial fallback has no credited quality", run=run)
+        checks.require(close(diagnostic["relative_velocity_error"], recomputed["relative_physical_velocity_L2"]),
+                       "raw helper velocity diagnostic consistent (not automatic credit)", run=run)
+        if eligible:
+            checks.require(close(diagnostic["offline_objective"], endpoint["online_objective"], rtol=1e-8, atol=1e-9),
+                           "archived offline LU objective agrees with paid endpoint", run=run)
+    target = core["end_to_end_target"].get("eligible", False)
+    checks.require(quality["fully_returned_target_eligible"] == target, "target quality eligibility", run=run)
+    if target:
+        recomputed = quality_numbers(np, models["returned_final"], truth)
+        checks.require(isinstance(quality["fully_returned_target_state"], dict)
+                       and all(close(quality["fully_returned_target_state"].get(k), v) for k, v in recomputed.items()),
+                       "returned target m/velocity quality recomputation", run=run)
+    else:
+        checks.require(quality["fully_returned_target_state"] is None, "censored/unreached target quality not credited", run=run)
+    checks.require(audit["matched_budget_eligible"] == [e["completed_paid_checkpoint"] for e in endpoints],
+                   "offline diagnostic scope does not overwrite eligibility", run=run)
+
+
+def verify_trajectory(checks, trajectory, budget, run):
+    checks.require(trajectory["truth_used_for_policy"] is False and trajectory["offline_validation_work_performed"] is False,
+                   "online policy truth/offline separation", run=run)
+    checks.require(trajectory["budget_seconds"] == budget, "frozen engine budget", run=run)
+    points = trajectory["checkpoints"]
+    last_time, last_objective = -1., math.inf
+    hashes = set()
+    for i, point in enumerate(points):
+        time, objective = point["elapsed_seconds"], point["objective"]
+        checks.require(scalar(time) and time >= last_time and scalar(objective) and objective >= 0,
+                       "checkpoint times/objectives finite and ordered", run=run)
+        checks.require(point["within_budget"] == (time <= budget), "checkpoint budget flag exact", run=run)
+        if i:
+            checks.require(point["kind"] == "accepted" and point["within_budget"] and objective < last_objective,
+                           "accepted checkpoint strict paid decrease within budget", run=run)
+        checks.require(point["model"]["sha256"] == point["model_sha256"], "checkpoint compact/hash binding", run=run)
+        hashes.add(point["model_sha256"])
+        last_time, last_objective = time, objective
+    if points:
+        checks.require(trajectory["initial_objective"] == points[0]["objective"], "initial objective checkpoint agreement", run=run)
+        checks.require(trajectory["final_objective"] == points[-1]["objective"]
+                       and trajectory["final_model"]["sha256"] == points[-1]["model_sha256"],
+                       "final state is last committed paid state", run=run)
+    else:
+        checks.require(trajectory["initial_objective"] is None and trajectory["final_objective"] is None,
+                       "no initial paid receipt means unknown objectives", run=run)
+    for step in trajectory["steps"]:
+        checks.require(step["model_sha256"] in hashes, "step starts from retained committed model hash", run=run)
+        for trial in step.get("trials", []):
+            if trial.get("accepted"):
+                checks.require(trial["objective_evaluated"] and trial["objective"] < step["objective_before"]
+                               and trial["elapsed_seconds"] <= budget, "no post-budget/increasing trial credit", run=run)
+    return points
+
+
+def audit_completed(repo, run_dir, checks):
+    # These two terminal metadata reads are deliberately first. No NumPy import,
+    # source fixture, NPZ, partial status analysis or project module precedes them.
+    status = strict_json(run_dir / "status.json")
+    if status.get("status") != "complete_engineering_benchmark":
+        raise ValueError("terminal complete_engineering_benchmark required before auditing")
+    complete = strict_json(run_dir / "complete_receipt.json")
+    if complete.get("status") != "complete_engineering_benchmark":
+        raise ValueError("terminal complete_receipt required before auditing")
+    import numpy as np
+
+    checks.require({k: v for k, v in complete.items() if k != "artifacts"} == status, "terminal status and receipt identical")
+    artifacts = complete["artifacts"]
+    checks.require("complete_receipt.json" not in artifacts, "completion receipt does not self-hash")
+    for name, expected in artifacts.items():
+        path = owned(run_dir, name)
+        checks.require(path.is_file() and sha_file(path) == expected, "manifest artifact hash: " + name)
+    checks.require(not any(name.endswith(".tmp") for name in artifacts), "no incomplete temporary artifacts")
+    extras = sorted(p.name for p in run_dir.iterdir() if p.is_file() and p.name not in artifacts and p.name != "complete_receipt.json")
+    protocol = strict_json(run_dir / "historical_candidate_protocol.json")
+    addendum = strict_json(run_dir / "execution_addendum.json")
+    for name, expected in (("driver_source.py", DRIVER_SHA), ("execution_addendum.json", ADDENDUM_SHA),
+                           ("historical_candidate_protocol.json", PROTOCOL_SHA)):
+        checks.require(sha_file(run_dir/name) == expected, "fixed source/addendum/protocol: " + name)
+    checks.require(protocol["methods"] == list(METHODS) and len(protocol["identities"]) == 8 and protocol["repetitions"] == 3,
+                   "frozen five methods/eight development cases/three repetitions")
+    checks.require(addendum["schedule"]["total_runs"] == 360 and addendum["schedule"]["target_ratios"] == [.5, .25], "360 fixed addendum")
+    checks.require(addendum["student_final_research_design"] is False and addendum["competition_evidence"] is False,
+                   "software-only role retained")
+    manifest = source_manifest(repo)
+    checks.require(source_digest(manifest) == SOURCE_SHA, "actual current source digest matches frozen9f")
+    checks.require(status["source_before"] == status["source_after"], "source-before/after receipt equality")
+    freeze = status["source_before"]
+    checks.require(freeze["driver_sha256"] == DRIVER_SHA and freeze["addendum_sha256"] == ADDENDUM_SHA, "source freeze runner pins")
+    candidate = freeze["candidate"]
+    checks.require(candidate["repository_source_sha256"] == SOURCE_SHA and candidate["protocol_sha256"] == PROTOCOL_SHA, "candidate source/protocol pins")
+    candidate_dir = repo/addendum["original_candidate_relative_directory"]
+    for name, expected in addendum["candidate_files_sha256"].items():
+        checks.require(sha_file(candidate_dir/name) == expected, "actual archived candidate pin: " + name)
+    checks.require(candidate["adapter_sha256"] == addendum["candidate_files_sha256"]["adapter.py"]
+                   and candidate["verification_helpers_sha256"] == addendum["candidate_files_sha256"]["verification.py"], "loaded candidate receipt pins")
+    for module, relative in BACKEND_FILES.items():
+        checks.require(candidate["backend_modules"][module] == sha_file(repo/"src/wavecert"/relative), "actual backend pin: " + module)
+    input_receipts = {}
+    for relative, expected in protocol["inputs_sha256"].items():
+        path = (repo/relative).resolve()
+        checks.require(path.is_relative_to(repo), "input remains inside repository")
+        digest = sha_file(path)
+        checks.require(digest == expected, "actual input pin: " + relative)
+        input_receipts[relative] = dict(sha256=digest, bytes=path.stat().st_size)
+    checks.require(status["input_hashes_after"] == input_receipts, "terminal input receipt matches current bytes")
+    checks.require(status["environment"]["threads"] == protocol["threads"], "all five fixed one-thread settings recorded")
+    checks.require(status["all360_scheduled_before_project_input_loading"] is True and status["runs_attempted"] == 360, "all attempts included")
+    plans = strict_json(run_dir / "schedule.json")
+    rows = status["runs"]
+    expected = expected_schedule(np, protocol)
+    checks.require(len(plans) == len(rows) == len(expected) == 360, "complete360 schedule denominator")
+    for actual, plan in zip(plans, expected, strict=True):
+        checks.require(all(actual.get(k) == plan[k] for k in SCHEDULE_KEYS) and actual["status"] == "unattempted", "published pre-work schedule/order")
+    units = [(r["measurement_mode"], r["case_index"], r["repetition"], r["method"]) for r in rows]
+    checks.require(len(set(units)) == 360, "every method/case/repetition/mode exactly once")
+    checks.require(collections.Counter(r["method"] for r in rows) == {m: 72 for m in METHODS}, "all methods retain72 scheduled denominators")
+    prefix = "data/reference/subsurfacegen_parent_split/"
+    with np.load(repo/prefix/"validation.npz", allow_pickle=False) as archive:
+        raw_models = archive["models"].copy()
+    checks.require(raw_models.shape == (192, 24, 24) and raw_models.dtype == np.float32, "pinned raw truth schema")
+    truths = {i: refined_truth(np, raw_models[identity["array_index"]]) for i, identity in enumerate(protocol["identities"])}
+    initial_hashes, summaries = {}, []
+    certificate_totals = collections.Counter()
+    for row, plan in zip(rows, expected, strict=True):
+        run = row["run_index"]
+        checks.require(all(row.get(k) == plan[k] for k in SCHEDULE_KEYS), "terminal row fixed schedule identity", run=run)
+        summary = {"run_index": run, "measurement_mode": row["measurement_mode"], "method": row["method"],
+                   "status": row["status"], "engine_status": row.get("engine_status"), "in_denominator": True,
+                   "final_eligible_target_event": False, "censor_followup_seconds": None}
+        try:
+            checks.require(row["status"] in {"complete", "failed"}, "no missing/interrupted/unattempted row in complete study", run=run)
+            progress_name = row["progress_artifact"]
+            checks.require(progress_name in artifacts, "registered per-run progress manifested", run=run)
+            progress = strict_json(owned(run_dir, progress_name))
+            checks.require(progress["run_index"] == run and progress["status"] == row["status"] and "runs" not in progress,
+                           "bounded terminal progress binds current attempt", run=run)
+            if row["status"] == "failed":
+                checks.require(row["final_study_eligible"] is False, "driver failure cannot get final study credit", run=run)
+                failure = strict_json(owned(run_dir, row["failure_artifact"]))
+                checks.require(sha_file(owned(run_dir, row["failure_artifact"])) == row["failure_sha256"], "failure artifact hash", run=run)
+                checks.require(failure["final_study_eligible"] is False, "failure receipt credit gate", run=run)
+                if failure["returned_trajectory_metadata_retained"]:
+                    checks.require("completed_trajectory" in failure, "returned failed trajectory metadata retained", run=run)
+                observed = row.get("observed_elapsed_until_failure_seconds")
+                if scalar(observed):
+                    summary["censor_followup_seconds"] = min(8., observed)
+                if "core_artifact" not in row:
+                    summary["unavailable_core_retained_as_unknown"] = True
+                    summaries.append(summary)
+                    continue
+            else:
+                checks.require(row["final_study_eligible"] is True, "completed artifact/integrity/audit row final gate", run=run)
+            core = strict_json(owned(run_dir, row["core_artifact"]))
+            checks.require(sha_file(owned(run_dir, row["core_artifact"])) == row["core_sha256"], "core hash", run=run)
+            checks.require(all(core["schedule"].get(k) == plan[k] for k in SCHEDULE_KEYS), "core binds original schedule", run=run)
+            checks.require(core["schedule"]["final_study_eligible"] is False, "core pending-integrity snapshot never grants final study credit", run=run)
+            trajectory = core["trajectory"]
+            verify_trajectory(checks, trajectory, 8., run)
+            wall = verify_timing(checks, core["timing"], trajectory, row, 8., run)
+            decision = target_decision(trajectory, row["target_ratio"], wall, 8.)
+            checks.require(core["end_to_end_target"] == row["end_to_end_target"] == decision, "independent returned target eligibility decision", run=run)
+            final_target = bool(row["status"] == "complete" and row["final_study_eligible"] and decision["eligible"])
+            summary.update(final_eligible_target_event=final_target,
+                           target_elapsed_seconds=wall if final_target else None,
+                           censor_followup_seconds=None if row["target_ratio"] is None or final_target else min(wall, 8.),
+                           actual_observed_return_seconds=wall,
+                           reason=decision["reason"], internal_states_are_return_evidence=False)
+            models = verify_models_and_endpoints(checks, np, run_dir, row, core, protocol, truths[row["case_index"]], initial_hashes, run)
+            records = certificate_steps(trajectory)
+            summary["cost_audit"] = verify_counters(checks, trajectory, [x[2] for x in records], run)
+            if row["status"] == "complete":
+                checks.require(row["verified_input_hashes_before"] == protocol["inputs_sha256"]
+                               and row["verified_input_hashes_after"] == input_receipts, "per-run before/after input pins", run=run)
+                audit_path = owned(run_dir, row["audit_artifact"])
+                checks.require(sha_file(audit_path) == row["audit_sha256"], "offline audit artifact hash", run=run)
+                audit = strict_json(audit_path)
+                offline = audit["offline_audit"]
+                checks.require(audit["policy_access"] is False and offline["policy_access"] is False, "offline numerical work inaccessible to policy", run=run)
+                flatten_counts(offline["costs"])
+                summary["certificate_receipt_summary"] = verify_certificate_receipts(checks, records, offline, run)
+                certificate_totals.update(summary["certificate_receipt_summary"])
+                verify_quality(checks, np, models, truths[row["case_index"]], core, audit, run)
+            else:
+                summary["offline_certificate_assessment_missing_not_zero"] = True
+        except (OSError, KeyError, ValueError, TypeError, IndexError) as exc:
+            checks.require(False, "run audit unable to finish: " + type(exc).__name__ + ": " + str(exc), run=run)
+            summary["audit_error"] = type(exc).__name__ + ": " + str(exc)
+        summaries.append(summary)
+    checks.require(status["runs_with_execution_failures"] == sum(r["status"] == "failed" for r in rows), "driver failure denominator")
+    checks.require(status["returned_engine_failures"] == sum(r.get("engine_status") == "failed" for r in rows), "engine failure denominator")
+    return {"status_artifact_sha256": sha_file(run_dir/"status.json"),
+            "complete_receipt_sha256": sha_file(run_dir/"complete_receipt.json"),
+            "artifact_manifest_entries": len(artifacts), "unmanifested_post_completion_files": extras,
+            "source_file_count": len(manifest), "source_sha256": source_digest(manifest),
+            "schedule_denominator": 360, "status_counts": dict(collections.Counter(r["status"] for r in rows)),
+            "engine_status_counts": dict(collections.Counter(r.get("engine_status", "no_return") for r in rows)),
+            "mode_denominators": dict(collections.Counter(r["measurement_mode"] for r in rows)),
+            "certificate_receipt_summary": dict(certificate_totals), "runs": summaries,
+            "source_scope": "Byte/receipt consistency, not OS tracing or retrospective proof of every executing instruction",
+            "offline_DD_scope": "Archived independently computed LU DD scalars checked for consistency; no new PDE/gradient solve",
+            "raw_bound_replay": False,
+            "raw_bound_replay_limitation": "Intermediate directions, gradients and complex fields are compact hashes; only initial/budget/final models are stored. Raw bound terms and true DD cannot be independently regenerated from these compact artifacts. Scalar sums/coverage flags are receipt checks only.",
+            "inference_scope": "No speedup/winner/p-values/IID or independent-three-site inference; correlated reused development cases only",
+            "no_project_solver_imports_or_PDE_solves": True}
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--repo", type=Path, required=True)
+    parser.add_argument("--run", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--terminal-confirmed", action="store_true",
+                        help="Parent explicitly confirmed the live process terminated; required before reading run artifacts")
+    args = parser.parse_args(argv)
+    if not args.terminal_confirmed:
+        parser.error("explicit parent terminal authorization is required; no run artifacts read")
+    repo, run_dir, output = args.repo.resolve(), args.run.resolve(), args.output.resolve()
+    if output.exists() or output.is_relative_to(run_dir) or output.is_relative_to(repo):
+        parser.error("audit output must be a fresh OUTER path outside run and repo")
+    checks = Checks()
+    report = {"role": "Independent AI post-terminal software receipt audit; not student conclusions or human review",
+              "recorded_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              "auditor_sha256": sha_file(Path(__file__)), "run_directory": str(run_dir),
+              "terminal_authorized_by_caller": True, "performance_claim": False}
+    try:
+        report.update(audit_completed(repo, run_dir, checks))
+    except (OSError, KeyError, ValueError, TypeError, IndexError) as exc:
+        checks.require(False, "top-level audit failed: " + type(exc).__name__ + ": " + str(exc))
+    report.update(result="CLEAR_RECEIPT_CHECKS" if not checks.issues else "ISSUES_REQUIRE_REVIEW",
+                  checks=checks.count, issues=checks.issues)
+    with output.open("x") as stream:
+        json.dump(report, stream, indent=2, allow_nan=False)
+        stream.write("\n")
+    print(json.dumps({"result": report["result"], "checks": checks.count,
+                      "issues": len(checks.issues), "output": str(output), "sha256": sha_file(output)}))
+    return 0 if not checks.issues else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

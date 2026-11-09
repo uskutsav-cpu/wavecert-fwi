@@ -1,0 +1,51 @@
+{
+  "status": "metadata_only_every_Operator_apply_forbidden",
+  "records": [
+    {
+      "label": "rolling_forward",
+      "generated_sha256": "e26af052bba5b5557e087ccbb160f551188ee38eae8af41cf3f48f046758ec65",
+      "cached_sha256": "e26af052bba5b5557e087ccbb160f551188ee38eae8af41cf3f48f046758ec65",
+      "byte_identical_to_cache": true,
+      "scalar_arguments": {
+        "time_m": 1,
+        "time_M": 1999,
+        "x_m": 0,
+        "x_M": 271,
+        "y_m": 0,
+        "y_M": 175,
+        "dt": 0.5
+      },
+      "saved_u_data_unallocated": false,
+      "source": "rolling_forward.c"
+    },
+    {
+      "label": "saved_forward",
+      "generated_sha256": "b187920749f98c8789fa7d32b6b67ae76f48c86277d7cebba5cd65f0caf5d7be",
+      "cached_sha256": "b187920749f98c8789fa7d32b6b67ae76f48c86277d7cebba5cd65f0caf5d7be",
+      "byte_identical_to_cache": true,
+      "scalar_arguments": null,
+      "saved_u_data_unallocated": true,
+      "source": "saved_forward.c"
+    },
+    {
+      "label": "gradient",
+      "generated_sha256": "a88c47726b2900ce13a43a25fa47b0b70343db88ac97c1089bbc368936b3e35f",
+      "cached_sha256": "a88c47726b2900ce13a43a25fa47b0b70343db88ac97c1089bbc368936b3e35f",
+      "byte_identical_to_cache": true,
+      "scalar_arguments": null,
+      "saved_u_data_unallocated": true,
+      "source": "gradient.c"
+    }
+  ],
+  "query_source_sha256": "e5c22147bd37a5d28c29d227dc8fc6ecdaa1bab6a0e947144c5814b7fa3745c2",
+  "environment": {
+    "python": "3.13.13",
+    "numpy": "2.4.3",
+    "devito": "4.8.23"
+  },
+  "no_Model_constructor": true,
+  "own_analytic_vp_only": true,
+  "no_BP_or_native_numeric_data_read": true,
+  "actual_run_cache_ancestry_claim": false,
+  "interpretation": "Fresh pinned primary source generates these exact C bytes. Cache comparison establishes generated-source agreement, not cached-file actual-run ancestry. Rolling scalar defaults prove all logical nodes and times1..1999. Saved/gradient native per-call bounds remain separately recorded by the producer and its manufactured control."
+}

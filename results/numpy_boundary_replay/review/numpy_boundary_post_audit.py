@@ -1,0 +1,174 @@
+"""Saved-array audit only. No propagation and no solver implementation import."""
+import argparse
+import datetime
+import hashlib
+import json
+import math
+from pathlib import Path
+
+import numpy as np
+
+DEFAULT = Path(__file__).resolve().parents[1]
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--repo", type=Path, default=DEFAULT/"wavecert-fwi")
+parser.add_argument("--run", type=Path, default=DEFAULT/"numpy_boundary_replay_run_01")
+parser.add_argument("--primary", type=Path, default=DEFAULT/"devito_boundary_verification_run_01")
+parser.add_argument("--source-base", type=Path, default=Path(__file__).resolve().parent/"numpy_boundary_replay")
+parser.add_argument("--output", type=Path, default=Path(__file__).with_name("numpy_boundary_post_audit.json"))
+args = parser.parse_args()
+
+def sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+def array_sha(values):
+    return hashlib.sha256(np.ascontiguousarray(values).tobytes()).hexdigest()
+
+def load(path):
+    return json.loads(Path(path).read_text())
+
+def norm(values):
+    return math.hypot(*np.asarray(values).ravel().tolist())
+
+def close(actual, expected):
+    return math.isclose(float(actual), float(expected), rel_tol=5e-14, abs_tol=0.)
+
+def prod_digest(repo):
+    paths = [repo/"pyproject.toml"]
+    paths += list((repo/"src").rglob("*.py"))
+    paths += [p for p in (repo/"configs").rglob("*") if p.is_file()]
+    paths += [p for p in (repo/"scripts").rglob("*") if p.suffix in {".py", ".sh"}]
+    paths += list((repo/".github/workflows").glob("*.yml"))
+    paths += list(repo.glob("requirements*.txt"))
+    result = hashlib.sha256()
+    for path in sorted(set(paths)):
+        if path.is_file():
+            result.update(path.relative_to(repo).as_posix().encode()+b"\0")
+            result.update(sha(path).encode()+b"\0")
+    return result.hexdigest()
+
+receipt, status = load(args.run/"complete_receipt.json"), load(args.run/"status.json")
+protocol = load(args.run/"protocol.json")
+original = load(args.run/"original_protocol.json")
+agreement = load(args.run/"agreement.json")
+primary_receipt = load(args.primary/"complete_receipt.json")
+primary_metrics = load(args.primary/"metrics.json")
+assert {k:v for k,v in receipt.items() if k != "artifacts"} == status
+assert receipt["status"] == "complete_independent_software_replay"
+assert receipt["source_sha256"] == sha(args.run/"runner_source.py") == "4832612882cb7b484777e309fb14ccc291685ad1afb5efd030332d84df31375c"
+assert receipt["protocol_sha256"] == sha(args.run/"protocol.json") == "53fbdd57a119ec68dd07e8c3ce833857e281acce13c0ff9001456ec114b59550"
+assert sha(args.primary/"complete_receipt.json") == protocol["original_complete_receipt_sha256"]
+assert sha(args.run/"original_protocol.json") == protocol["original_protocol_sha256"] == sha(args.primary/"protocol.json")
+for folder, r, count in [(args.run,receipt,19),(args.primary,primary_receipt,11)]:
+    assert len(r["artifacts"]) == count
+    for name, expected in r["artifacts"].items():
+        assert sha(folder/name) == expected, (folder,name)
+assert receipt["source_before"] == receipt["source_after"]
+assert prod_digest(args.repo.resolve()) == receipt["source_before"]["production_source_sha256"] == "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da"
+for relative, expected in receipt["source_before"]["local_input_source_sha256"].items():
+    assert sha(args.source_base/relative) == expected, relative
+assert len(receipt["source_before"]["local_input_source_sha256"]) == 21
+assert receipt["propagation_dependencies"] == ["stdlib","NumPy"]
+assert not receipt["goal4_completion_claim"] and not receipt["student_final_research_design"]
+assert receipt["comparison_started"] and receipt["reference_numeric_arrays_opened"]
+assert protocol["agreement_relative_L2_tolerance"] == 1e-9
+assert protocol["matching_excitation_relative_L2_tolerance"] == 1e-14
+metadata = load(args.source_base/"primary_metadata/operator_time_arguments.json")
+assert sha(args.source_base/"primary_metadata/operator_time_arguments.json") == protocol["argument_evidence_sha256"]
+for row in metadata["records"]:
+    assert row["scalar_arguments"]["time_m"] == 1 and row["scalar_arguments"]["time_M"] == 1099
+    assert row["byte_identical_to_cached_primary"] is True
+    assert row["generated_code_sha256"] == row["cached_primary_code_sha256"]
+expected_order=[(v,c["id"]) for v in protocol["variants"] for c in original["cases"]]
+assert len(receipt["records"]) == len(agreement) == 14
+assert [(r["variant"],r["case_id"]) for r in receipt["records"]] == expected_order
+assert [(r["variant"],r["case_id"]) for r in agreement] == expected_order
+assert all(r["status"] == "complete" for r in receipt["records"])
+assert max(r["finished_utc"] for r in receipt["records"]) <= receipt["all_own_solves_complete_utc"] <= receipt["finished_utc"]
+assert protocol["pre_execution_criteria_amendment"]["utc"] < receipt["started_utc"]
+primary = {}
+for entry in primary_receipt["case_records"]:
+    with np.load(args.primary/entry["raw_artifact"], allow_pickle=False) as z:
+        primary[entry["case_id"]] = {k:z[k].copy() for k in z.files}
+own, audit_rows, damping_checks = {}, [], []
+times=np.arange(1101,dtype=np.float64)
+r=np.pi*.005*(times-200.)
+wavelet=((1-2*r**2)*np.exp(-r**2))[:,None]
+case_by_name={c["id"]:c for c in original["cases"]}
+scalar_checks=0
+for entry, report in zip(receipt["records"],agreement):
+    name,variant=entry["case_id"],entry["variant"]
+    assert sha(args.run/entry["raw_artifact"]) == entry["raw_sha256"]
+    with np.load(args.run/entry["raw_artifact"],allow_pickle=False) as z:
+        arrays={k:z[k].copy() for k in z.files}
+    assert set(arrays)=={"times_ms","source","receiver","damping"}
+    assert all(a.dtype==np.float64 and np.all(np.isfinite(a)) for a in arrays.values())
+    assert np.array_equal(arrays["times_ms"],times) and np.array_equal(arrays["source"],wavelet)
+    assert arrays["receiver"].shape==(1101,1) and np.all(arrays["receiver"][[0,1100]]==0)
+    ref=primary[name]
+    num,den=norm(arrays["receiver"]-ref["receiver"]),norm(ref["receiver"])
+    src_num,src_den=norm(arrays["source"]-ref["source_before"]),norm(ref["source_before"])
+    value,src_value=num/den,src_num/src_den
+    src_max=float(np.max(np.abs(arrays["source"]-ref["source_before"])))
+    for key,actual in [("numerator",num),("denominator",den),("relative_L2",value),("source_L2_numerator",src_num),("source_L2_denominator",src_den),("source_relative_L2",src_value),("source_max_absolute_difference",src_max)]:
+        assert close(actual,report[key]),(variant,name,key)
+        scalar_checks+=1
+    same_time=np.array_equal(arrays["times_ms"],ref["times_before_ms"])
+    same_source=np.array_equal(arrays["source"],ref["source_before"])
+    matching=src_value<=1e-14
+    accepted=bool(same_time and matching and value<=1e-9)
+    assert report["agreement"]==accepted and report["matching_excitation"]==matching
+    assert report["time_samples_bitwise_equal"]==same_time and report["source_samples_bitwise_equal"]==same_source
+    assert report["bitwise_source_flag_is_diagnostic"] is True
+    assert report["tolerance"]==1e-9 and report["matching_excitation_tolerance"]==1e-14
+    case=case_by_name[name];n=case["shape_x_z"][0]+2*case["nbl"]
+    record=entry["record"]
+    assert record["state_shape"]==[3,n+4,n+4] and record["state_bytes"]==3*(n+4)**2*8
+    assert record["logical_grid_shape"]==[n,n] and record["halo_width_cells"]==2
+    assert record["mass"]==.25 and record["finite"] and not record["full_time_history_saved"]
+    assert record["damping_sha256"]==array_sha(arrays["damping"])
+    assert record["damping_min"]==float(arrays["damping"].min()) and record["damping_max"]==float(arrays["damping"].max())
+    width=case["nbl"];profile=np.zeros(n)
+    if width:
+        C=1.5*math.log(1000.)/(width*10.)
+        for i in range(n):
+            p=(width-i+1)/width if i<width else (width-(n-1-i)+1)/width if i>=n-width else None
+            if p is not None:profile[i]=C*(p-math.sin(2*math.pi*p)/(2*math.pi))
+    independent=profile[:,None]+profile[None,:]
+    diff=float(np.max(np.abs(independent-arrays["damping"])))
+    assert np.allclose(independent,arrays["damping"],rtol=5e-14,atol=5e-17)
+    expected_weights={"faithful_literals":(.000833333333284827,.0133333333325572,.05),"rational_spatial":(1/1200,1/75,1/20)}[variant]
+    assert tuple(record["spatial_coefficients"][k] for k in ["far_positive","near_positive","center_positive"])==expected_weights
+    own[(variant,name)]=arrays
+    audit_rows.append(dict(case_id=name,variant=variant,relative_L2=value,source_relative_L2=src_value,source_max_absolute_difference=src_max,source_bitwise_equal=same_source,time_exact=same_time,agreement=accepted,raw_sha256=entry["raw_sha256"],state_bytes=record["state_bytes"]))
+    damping_checks.append(dict(case_id=name,variant=variant,independent_scalar_profile_max_abs_difference=diff,corner_sum_and_layer_indices_verified=True))
+for name in case_by_name:
+    assert np.array_equal(own[("faithful_literals",name)]["damping"],own[("rational_spatial",name)]["damping"])
+counts={v:sum(r["agreement"] for r in audit_rows if r["variant"]==v) for v in protocol["variants"]}
+assert counts==receipt["agreement_by_variant"]=={"faithful_literals":7,"rational_spatial":0}
+# Recompute the original finite-record boundary measurements from NumPy's OWN
+# seven faithful traces and its OWN largest-box reference. No PDE is rerun.
+boundary=[]
+for group,rows in primary_metrics.items():
+    for name,reported in rows.items():
+        refname="reference_321" if group=="against_reference_321" else {"small_nbl20":"matched_exterior_20_undamped","small_nbl40":"matched_exterior_40_undamped"}[name]
+        candidate,reference=own[("faithful_literals",name)]["receiver"],own[("faithful_literals",refname)]["receiver"]
+        old_candidate,old_reference=primary[name]["receiver"],primary[refname]["receiver"]
+        early=times<=250.
+        values={}
+        eps=protocol["agreement_relative_L2_tolerance"]
+        for label,mask,denmask in [("early_relative",early,early),("late_mismatch_over_full_reference",~early,np.ones(1101,dtype=bool)),("full_relative",np.ones(1101,dtype=bool),np.ones(1101,dtype=bool))]:
+            current=norm((candidate-reference)[mask])/norm(reference[denmask])
+            old=norm((old_candidate-old_reference)[mask])/norm(old_reference[denmask])
+            assert close(old,reported[label]["value"])
+            # Consequence of the ORIGINAL fixed trace tolerance, not an added
+            # physics pass criterion: triangle-inequality ratio perturbation.
+            delta_den=eps*norm(old_reference)
+            low_den=norm(old_reference[denmask])-delta_den
+            assert low_den>0
+            envelope=eps*(norm(old_candidate)+norm(old_reference)+old*norm(old_reference))/low_den
+            assert abs(current-old)<=envelope
+            values[label]=dict(from_faithful_NumPy=current,from_primary=old,absolute_difference=abs(current-old),ratio_change_bound_from_predeclared_trace_tolerance=envelope)
+        boundary.append(dict(group=group,case_id=name,reference_case_id=refname,metrics=values,within_derived_port_agreement_envelope=True))
+result=dict(status="PASS_saved_array_arithmetic_metadata_and_negative_effect_reproduction",recorded_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),reviewer="separate AI /root/candidate_final_review; hash/source/phase subreview /root/candidate_final_review/verification_helpers_review",audit_source_sha256=sha(__file__),completed_replay_receipt_sha256=sha(args.run/"complete_receipt.json"),completed_primary_receipt_sha256=sha(args.primary/"complete_receipt.json"),artifact_hashes_verified=dict(own_replay=19,primary=11),ordered_complete_replays=14,agreement_numeric_scalars_recomputed=scalar_checks,independent_norm="Python math.hypot; no propagation or solver/runner metric helper imports",audit_float_comparison=dict(relative=5e-14,absolute=0.),analytic_damping_audit_comparison=dict(relative=5e-14,absolute=5e-17),auditor_initial_parser_failure=dict(scope="initial auditor expected the wrong amendment JSON key; failed before numerical-array audit; corrected parser only, no study values or criteria changed",preserved_source="numpy_boundary_post_audit_v1_metadata_key.py.original",sha256="a95cecb97145b0e94672329d7066648099b4585ec50faca650551a816f538cc7"),fixed_study_criteria=dict(trace_relative_L2=1e-9,source_relative_L2=1e-14,time_axis="exact",source_bitwise="diagnostic"),agreement_by_variant=counts,recomputed_agreement=audit_rows,analytic_damping_rechecks=damping_checks,negative_boundary_effect_from_own_faithful_traces=boundary,all_local_excitation_relative_errors_zero=all(r["source_relative_L2"]==0 for r in audit_rows),all_time_axes_exact=all(r["time_exact"] for r in audit_rows),phase_order_evidence="Pinned runner control flow, ordered completion timestamps and persisted source/access-phase records; not independent OS file-access tracing",source_before_after_current_identical=True,maximum_recorded_state_bytes=max(r["state_bytes"] for r in audit_rows),replay_propagation_rerun=False,main_files_modified=False,goal4_completion_claim=False,student_final_research_design=False,limits=["Reference-informed AI implementation verification, not blind derivation, independent human reproduction or student defense", "Faithful port reproduces primary finite-record boundary mismatch; this is not an intrinsic reflection coefficient or a physics-quality pass", "Rational spatial variant is a declared different floating-point discrete operator; its strict trace-agreement failures do not establish which operator is closer to continuum truth", "One homogeneous source band/geometry/backend does not establish realistic-geology generalization, certificate transfer, matched-cost inversion benefit or full scientific-goal completion", "Only final cyclic-state hashes and allocation metadata persist, not full final state arrays or peak process RAM", "Ordinary floating-point comparisons and perturbation-envelope evaluation are not verified interval enclosures"])
+with args.output.open("x") as stream:json.dump(result,stream,indent=2);stream.write("\n")
+print(json.dumps(dict(status=result["status"],agreement=counts,scalars=scalar_checks,output=str(args.output),sha256=sha(args.output))))

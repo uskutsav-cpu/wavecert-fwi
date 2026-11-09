@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "role": "AI-authored reference-informed independent NumPy implementation verification of the same fixed discrete cases; not blind, not student final research design, not continuum truth",
+  "created_utc": "2026-11-08T03:22:57.488825+00:00",
+  "student_final_research_design": false,
+  "goal4_completion_claim": false,
+  "original_protocol_sha256": "a83f2de93543b16af428d1fbe562f4d7db8d9df982b203a04bb0d445e93306b8",
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "variants": [
+    "faithful_literals",
+    "rational_spatial"
+  ],
+  "replays": 14,
+  "schedule": "variant outer in declared order, original seven cases inner in original fixed order",
+  "agreement_relative_L2_tolerance": 1e-09,
+  "tolerance_scope": "Predeclared ordinary-FP engineering agreement check, no enclosure; all errors and failed flags retained; never tune coefficients or alignment to traces.",
+  "propagation_dependencies": [
+    "Python standard library",
+    "NumPy"
+  ],
+  "forbidden_propagation_inputs": [
+    "Devito solver/fields/damping arrays",
+    "cached source/receiver arrays",
+    "original receiver traces before all fourteen independent solves finish"
+  ],
+  "actual_time_discretization": "m*(u_next-2u_current+u_previous)/dt**2 +d*(u_next-u_current)/dt -Lap_h(u_current)=0; centered second derivative and actual one-sided forward damping derivative. It is not a centered damping derivative.",
+  "laplacian_derivation": "For offsets j=-2,-1,0,1,2 solve sum(w_j*j**k)=2 ifk=2 else0, k=0..4, in exact rational arithmetic; obtains(-1/12,4/3,-5/2,4/3,-1/12). Add the two axis second derivatives; zero exterior ghosts, no forced-zero logical grid nodes.",
+  "faithful_spatial_coefficients_h10": {
+    "positive_far": "8.33333333284827e-4",
+    "positive_near": "1.33333333325572e-2",
+    "positive_two_dimensional_center": "5.0e-2"
+  },
+  "rational_spatial_coefficients_h10": {
+    "positive_far": "1/1200",
+    "positive_near": "1/75",
+    "positive_two_dimensional_center": "1/20"
+  },
+  "time_bounds": {
+    "time_m": 1,
+    "time_M": 1099,
+    "nt": 1101,
+    "recorded_receiver_indices": "1..1099 inclusive; indices0 and1100 remain initialized zero",
+    "source_indices_used": "1..1099 inclusive; samples0 and1100 unused",
+    "final_computed_wavefield_time": 1100
+  },
+  "time_bounds_evidence": "primary_metadata/operator_time_arguments.json and byte-exact trapped metadata query/C snapshots; actual .arguments without Model/Operator.apply/wave propagation or cached numeric inputs",
+  "source_receiver_order": "First update next time slice with the recurrence; then add dt**2/m*independent Ricker[time] at the aligned source node; then receiver[time] reads CURRENT slice. No interpolation fit: all fixed coordinates align on nodes.",
+  "damping_derivation": "b=0 gives zero. For each axisN=nphysical+2b: left i=0..b-1 p=(b-i+1)/b; right i=N-b..N-1 p=(b-(N-1-i)+1)/b. Add1.5*log(1000)/(b*h)*(p-sin(2*pi*p)/(2*pi)) for each active face; corners SUM. First physical indexb has no axis damping, innermost paddingp=2/b; no p=1/b sample.",
+  "raw_retention": "All14 ownreceivertraces, ownRicker/timearrays and ownfullanalyticdamping arrays retained before comparison; three cyclic wavefield slices only. ReferenceNPZs opened only after all ownsolvescomplete.",
+  "publication": "Exclusive new output, attempt persisted before each replay; interrupted attempts retained and reraised; atomic complete receipt; failed agreement is a reported numerical outcome, not an execution omission.",
+  "primary_generated_C_sha256": {
+    "c8d7e91f8921d1891d0e307f5142a10b3c66f1a3.c": "0a6777367c0497ca008d76961ea989ad3ea99db41e7c965656dbf75a767d3c6b",
+    "ffed801f4f0a40986b4fcc46fb263373afd68994.c": "82966d6bfcc7542535163804ac127bf01053808757e9f35fc4e363a01925da38"
+  },
+  "installed_primary_files": {
+    "model.py": "22faa9eafcb2ef7012ce5bbcd977418b5a8515c3f4f9d1c42fcb105f7854ebd4",
+    "operators.py": "1ab37a6f2e95b7ab7fdec58d141290880127da9705dfe8deb6045fc0590d6336",
+    "wavesolver.py": "9e8cca80ac1fd1bb66abe3133a09ad0f2d23b2b55aba0e0c1003362c458b929e",
+    "source.py": "f8c4bba77e982490a25e5924e654f482afd21f8f2ebae3274e87eb1b45c147ac",
+    "utils.py": "27532feafcaf32f760ffff0b7978cdfa4ee1f7920a9d3367d4d05016657eff19"
+  },
+  "limits": [
+    "Faithful variant reproduces generated spatial literals, not exact rational coefficients; separate rational variant quantifies this declared implementation difference.",
+    "Same physical absorber/source/band/geometry as original seven cases. No new absorber, integrator, waveform alignment, coefficient selection or final hypothesis.",
+    "Separate AI implementation/arithmetic reproduction is not independent human reproduction or student scientific interpretation."
+  ],
+  "argument_evidence_sha256": "8d654aaec79a040a683329abb82f4e35c1099b8c14828be3f1c2c5a4693cbcb5",
+  "original_complete_receipt_sha256": "a182454fdb8925997dea44d67b98871635e2cf537a0bb30ae6b15e229065fc04",
+  "argument_query_source_sha256": "14e2bd1da0ce486218affede8ef6832fa148b65a119b8a8ee7c50a92d063c2c4"
+}

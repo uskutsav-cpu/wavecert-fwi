@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "study_role": "exploratory_validation_reproduction",
+  "recorded_utc": "2026-11-07T22:15:22.155368+00:00",
+  "development_scope": "Public-source reproduction of previously observed private development results. Not prospective confirmation, student preregistration, held-out evaluation, field data, a novelty claim or an inversion experiment. All three methods and every original validation inverse case are retained.",
+  "preceding_private_aggregate_protocol": {
+    "recorded_utc": "2026-11-07T21:55:14.951137+00:00",
+    "sha256": "567b8bd1b63341dd3a70b9c7cb1a947c3f491cb72ea8c5fc6df2c786c825fda2",
+    "outcomes_already_inspected": true
+  },
+  "methods": [
+    "uncorrected_generic_M",
+    "uncorrected_oriented",
+    "coarse_corrected_oriented"
+  ],
+  "spectral_coarse_rank": 96,
+  "pod_rank": 64,
+  "physics": {
+    "shape": [
+      24,
+      24
+    ],
+    "spacing": 0.05,
+    "damping_width": 3,
+    "damping_strength": 2.0
+  },
+  "source_indices": [
+    50,
+    54,
+    58,
+    61,
+    65,
+    69
+  ],
+  "frequencies_hz": [
+    2.5,
+    3.0,
+    3.5,
+    4.0
+  ],
+  "receiver_indices": [
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69
+  ],
+  "identities": [
+    {
+      "parent_id": "gom_148",
+      "slice_id": "gom_148_il_0236"
+    },
+    {
+      "parent_id": "gom_148",
+      "slice_id": "gom_148_xl_0768"
+    },
+    {
+      "parent_id": "gom_151",
+      "slice_id": "gom_151_il_0247"
+    },
+    {
+      "parent_id": "gom_151",
+      "slice_id": "gom_151_xl_0857"
+    },
+    {
+      "parent_id": "seam_005",
+      "slice_id": "seam_005_il_0596"
+    },
+    {
+      "parent_id": "seam_005",
+      "slice_id": "seam_005_xl_0795"
+    },
+    {
+      "parent_id": "seam_011",
+      "slice_id": "seam_011_il_0522"
+    },
+    {
+      "parent_id": "seam_011",
+      "slice_id": "seam_011_xl_0866"
+    }
+  ],
+  "inputs": {
+    "fixture": {
+      "path": "data/reference/coarse_adjoint_validation/validation_inverse_cases.npz",
+      "sha256": "be429def325b741d415546167b8e13b5d52a3304d79f36efd3945a58363177db"
+    },
+    "fixture_provenance": {
+      "path": "data/reference/coarse_adjoint_validation/provenance.json",
+      "sha256": "c0f32413bee5db2aa67e128d81f3a6523a87bd398dc68aa35b4fa0485212a941"
+    },
+    "basis": {
+      "path": "results/pod_development/bases/state_tangent_rank64.npz",
+      "sha256": "f2ae08cbcb251802ba7be92d69e87c28f425c5b1dfeede02fd94d6720c484447"
+    },
+    "pod_input_provenance": {
+      "path": "results/pod_development/input_provenance.json",
+      "sha256": "8e835f911df2525fd159ffceaa8213fd4bf647fc2c71a920af9baa95086a23ad"
+    },
+    "pod_summary": {
+      "path": "results/pod_development/summary.json",
+      "sha256": "872d7f557f4d1a2c18401ce86278132f24e8bfe37bef2536e872922f648603c6"
+    },
+    "pod_source": {
+      "path": "src/wavecert/surrogates/pod.py",
+      "sha256": "b613dc2e62ba24f65a9c7587d40c3d1af4f7fc0d2e5fcab8daee649908bcd5ca"
+    }
+  },
+  "direction_rule": "unit negative sum of all 24 physical block gradients; zero if norm <= 1e-14",
+  "aggregation_rule": "sum all 24 directional error bounds; unavailable if any block unavailable",
+  "unavailable_rule": "Retain raw POD on unavailable frequencies, skip correction there, keep all paid work and descriptive aggregate gradients, null aggregate bound/upper. Any uncertified proposal requires exact fallback; this API does not execute recovery.",
+  "cost_rule": "Cold independent POD and spectral engine for every case/method. Constructor offline DCT/projection setup, online cumulative/delta counters, shared historical teacher generation/basis fit, and separate offline fine validation are reported distinctly. No cross-method reuse.",
+  "numerical_check_relative_tolerance": 1e-09,
+  "numerical_check_absolute_tolerance": 1e-10,
+  "numerical_scope": "Exact-arithmetic inequalities evaluated in ordinary float64/complex128 with unverified PSD cancellation allowances. No formal roundoff enclosure, corrected-ROM autograd identity, or finite-step guarantee.",
+  "sampling_scope": "Eight correlated slices from four previously used validation parents; descriptive equal-parent summaries only, no IID-eight claim.",
+  "timing_claims": false,
+  "heldout_arrays_loaded": false
+}

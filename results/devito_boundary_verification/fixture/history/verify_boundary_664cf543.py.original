@@ -1,0 +1,358 @@
+"""Fixed forward-only software verification; default invocation runs no PDE.
+
+AI-authored support, not a student final research design or a certificate test.
+"""
+
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import gc
+import hashlib
+import importlib
+import importlib.metadata
+import json
+import os
+import platform
+import shutil
+import sys
+from pathlib import Path
+
+import numpy as np
+
+
+def sha(raw):
+    return hashlib.sha256(raw).hexdigest()
+
+
+def utc():
+    return dt.datetime.now(dt.timezone.utc).isoformat()
+
+
+def json_raw(value):
+    return (json.dumps(value, indent=2, allow_nan=False)+"\n").encode()
+
+
+def load_protocol(path):
+    raw = Path(path).read_bytes()
+    p = json.loads(raw)
+    expected = [("small_nbl0", 61, 0, 0.), ("small_nbl20", 61, 20, 0.),
+                ("small_nbl40", 61, 40, 0.),
+                ("matched_exterior_20_undamped", 101, 0, 200.),
+                ("matched_exterior_40_undamped", 141, 0, 400.),
+                ("reference_241", 241, 40, 900.),
+                ("reference_321", 321, 40, 1300.)]
+    actual = [(c["id"], c["shape_x_z"][0], c["nbl"], c["translation_m"][0]) for c in p["cases"]]
+    if actual != expected or any(c["shape_x_z"][0] != c["shape_x_z"][1]
+            or c["translation_m"][0] != c["translation_m"][1] for c in p["cases"]):
+        raise ValueError("not the fixed seven-case fixture")
+    common = p["common"]
+    required = dict(velocity_km_per_s=2., spacing_m=[10., 10.], dt_ms=1., t0_ms=0.,
+                    tmax_ms=1100., f0_per_ms=.005, space_order=4, dtype="float64",
+                    save_wavefield=False, source_base_x_z_m=[300., 300.],
+                    receiver_base_x_z_m=[350., 300.])
+    if common != required or p["windows"]["cutoff_ms"] != 250.:
+        raise ValueError("fixed source/sampling/window choices changed")
+    if (p["schema_version"] != 1 or p["student_final_research_design"] is not False
+            or p["metrics"]["quality_thresholds"] is not None):
+        raise ValueError("software scope/threshold contract changed")
+    return p, raw
+
+
+def ratio(numerator, denominator):
+    n, d = float(numerator), float(denominator)
+    if not np.isfinite(n) or not np.isfinite(d) or n < 0 or d < 0:
+        raise ValueError("metric norms must be finite and nonnegative")
+    return dict(numerator=n, denominator=d, value=None if d == 0 else n/d,
+                denominator_zero=d == 0)
+
+
+def trace_metrics(candidate, reference, times, cutoff=250.):
+    candidate, reference, times = np.asarray(candidate), np.asarray(reference), np.asarray(times)
+    if (candidate.shape != reference.shape or candidate.ndim != 2
+            or times.shape != (candidate.shape[0],) or not np.all(np.isfinite(candidate))
+            or not np.all(np.isfinite(reference)) or not np.all(np.isfinite(times))
+            or not np.all(np.diff(times) > 0)):
+        raise ValueError("finite matched two-dimensional traces and increasing times required")
+    early = times <= cutoff
+    if not np.any(early) or np.all(early):
+        raise ValueError("both fixed time windows must contain samples")
+    difference = candidate-reference
+    return dict(early_relative=ratio(np.linalg.norm(difference[early]), np.linalg.norm(reference[early])),
+                late_mismatch_over_full_reference=ratio(np.linalg.norm(difference[~early]), np.linalg.norm(reference)),
+                full_relative=ratio(np.linalg.norm(difference), np.linalg.norm(reference)),
+                early_samples=int(np.sum(early)), late_samples=int(np.sum(~early)),
+                quality_threshold=None, physics_pass_claim=False)
+
+
+def geometry(case, common):
+    translation = np.asarray(case["translation_m"], dtype=float)
+    source = np.asarray(common["source_base_x_z_m"], dtype=float)+translation
+    receiver = np.asarray(common["receiver_base_x_z_m"], dtype=float)+translation
+    spacing = np.asarray(common["spacing_m"])
+    extent = (np.asarray(case["shape_x_z"])-1)*spacing
+    if np.any(source < 0) or np.any(receiver < 0) or np.any(source > extent) or np.any(receiver > extent):
+        raise ValueError("coordinates are outside the declared physical box")
+    if not np.all(source/spacing == np.round(source/spacing)) or not np.all(receiver/spacing == np.round(receiver/spacing)):
+        raise ValueError("fixed fixture requires aligned physical nodes")
+
+    def image_paths(lower, upper):
+        paths = []
+        for axis in (0, 1):
+            for boundary in (lower[axis], upper[axis]):
+                image = source.copy()
+                image[axis] = 2*boundary-source[axis]
+                paths.append(float(np.linalg.norm(receiver-image)))
+        return paths
+
+    physical = image_paths(np.zeros(2), extent)
+    padding = case["nbl"]*spacing
+    exterior = image_paths(-padding, extent+padding)
+    return dict(source_x_z_m=source.tolist(), receiver_x_z_m=receiver.tolist(),
+                source_grid_index=(source/spacing).astype(int).tolist(),
+                receiver_grid_index=(receiver/spacing).astype(int).tolist(),
+                nominal_physical_image_path_lengths_m=physical,
+                nominal_padded_image_path_lengths_m=exterior,
+                nearest_physical_image_travel_ms=min(physical)/common["velocity_km_per_s"],
+                nearest_padded_image_travel_ms=min(exterior)/common["velocity_km_per_s"],
+                scope="continuum geometric estimates at nominal box edges; no strict discrete causal or clean-window bound")
+
+
+def _new_file(path, raw):
+    with path.open("xb") as stream:
+        stream.write(raw)
+
+
+def _atomic_owned_json(path, value):
+    temporary = path.with_name(path.name+".tmp")
+    _new_file(temporary, json_raw(value))
+    temporary.replace(path)
+
+
+def source_receipt(repo, protocol):
+    from wavecert.provenance import source_digest
+
+    repo = Path(repo).resolve()
+    backend = importlib.import_module("wavecert.physics.devito_backend")
+    provenance = importlib.import_module("wavecert.provenance")
+    paths = {"backend": Path(backend.__file__).resolve(), "provenance": Path(provenance.__file__).resolve()}
+    if paths != {"backend": repo/"src/wavecert/physics/devito_backend.py",
+                 "provenance": repo/"src/wavecert/provenance.py"}:
+        raise ValueError("imported implementation is outside the declared repository")
+    digest = source_digest(repo)
+    if digest != protocol["production_source_sha256"]:
+        raise ValueError("production source differs from the fixed verification source")
+    if importlib.metadata.version("devito") != protocol["devito_version"]:
+        raise ValueError("installed Devito version differs from the fixed fixture")
+    installed = {}
+    for name in ["examples.seismic.model", "examples.seismic.acoustic.operators", "examples.seismic.acoustic.wavesolver",
+                 "examples.seismic.source", "examples.seismic.utils"]:
+        path = Path(importlib.import_module(name).__file__).resolve()
+        checksum = sha(path.read_bytes())
+        if checksum != protocol["installed_example_sha256"][path.name]:
+            raise ValueError("installed Devito example source changed")
+        installed[name] = dict(path=str(path), sha256=checksum)
+    return dict(production_source_sha256=digest,
+                native_module_sha256={k: sha(v.read_bytes()) for k, v in paths.items()},
+                installed_example_modules=installed)
+
+
+def _time_samples(signal):
+    axis = getattr(signal, "_time_range", None)
+    if axis is None:
+        raise ValueError("actual sparse signal has no declared sample-time axis")
+    return np.array(axis.time_values, dtype=np.float64, copy=True)
+
+
+def _physics_record(adapter):
+    vp = np.asarray(adapter.model.vp.data)
+    damping = adapter.model.damp
+    damping = np.asarray(damping if np.isscalar(damping) else damping.data)
+
+    def field(values):
+        array = np.ascontiguousarray(values)
+        return dict(shape=list(array.shape), dtype=str(array.dtype), sha256=sha(array.tobytes()))
+
+    return dict(vp=field(vp), derived_squared_slowness=field(1/vp**2), damping=field(damping),
+        grid_shape=[int(v) for v in adapter.model.grid.shape],
+        grid_spacing=[float(v) for v in adapter.model.grid.spacing],
+        grid_origin=[float(v) for v in adapter.model.grid.origin],
+        critical_dt_ms=float(adapter.model.critical_dt))
+
+
+def execute_case(case, common):
+    from wavecert.physics.devito_backend import DevitoAcousticConfig, DevitoAcousticFWI
+
+    position = geometry(case, common)
+    adapter = DevitoAcousticFWI(np.full(case["shape_x_z"], common["velocity_km_per_s"]),
+        source_coordinates=np.asarray([position["source_x_z_m"]]),
+        receiver_coordinates=np.asarray([position["receiver_x_z_m"]]),
+        config=DevitoAcousticConfig(spacing=tuple(common["spacing_m"]), nbl=case["nbl"],
+            t0=common["t0_ms"], tn=common["tmax_ms"], f0=common["f0_per_ms"],
+            dt=common["dt_ms"], max_velocity=common["velocity_km_per_s"],
+            space_order=common["space_order"], dtype=common["dtype"]))
+    source = adapter.geometry.src
+    arrays = dict(times_before_ms=adapter.time_values, source_times_before_ms=_time_samples(source),
+        source_before=np.array(source.data, copy=True),
+        source_coordinates_before_m=np.array(source.coordinates.data, copy=True))
+    record = dict(case=case, geometry=position, dt_before_ms=adapter.dt,
+        physics_before=_physics_record(adapter),
+        call="adapter.solver.forward(src=actual_source_object,save=False,dt=adapter.dt); same audited backend as adapter.forward")
+    rec, wavefield = adapter.solver.forward(src=source, save=False, dt=adapter.dt)[0:2]
+    arrays.update(receiver=np.array(rec.data, copy=True), receiver_times_ms=_time_samples(rec),
+        times_after_ms=adapter.time_values,
+        source_times_after_ms=_time_samples(source), source_after=np.array(source.data, copy=True),
+        source_coordinates_after_m=np.array(source.coordinates.data, copy=True),
+        receiver_coordinates_m=np.array(rec.coordinates.data, copy=True))
+    origin = np.asarray(record["physics_before"]["grid_origin"])
+    spacing = np.asarray(record["physics_before"]["grid_spacing"])
+    record["computational_source_index"] = ((arrays["source_coordinates_before_m"]-origin)/spacing).tolist()
+    record["computational_receiver_index"] = ((arrays["receiver_coordinates_m"]-origin)/spacing).tolist()
+    logical = wavefield.data
+    halo = wavefield.data_with_halo
+    record.update(dt_after_ms=adapter.dt,
+        physics_after=_physics_record(adapter),
+        wavefield=dict(logical_shape=list(logical.shape), logical_bytes=logical.nbytes,
+            halo_shape=list(halo.shape), halo_bytes=halo.nbytes, dtype=str(logical.dtype),
+            full_time_history_saved=False))
+    del adapter, source, rec, wavefield, logical, halo
+    gc.collect()
+    return arrays, record
+
+
+def validate_case(arrays, record, common):
+    n = len(arrays["times_before_ms"])
+    shape = tuple(record["case"]["shape_x_z"])
+    pad = record["case"]["nbl"]
+    ricker_argument = np.pi*common["f0_per_ms"]*(arrays["times_before_ms"]-1/common["f0_per_ms"])
+    expected_source = ((1-2.*ricker_argument**2)*np.exp(-ricker_argument**2))[:, None]
+    checks = dict(all_arrays_finite=all(np.all(np.isfinite(a)) for a in arrays.values()),
+        receiver_shape=arrays["receiver"].shape == (n, 1),
+        source_shape=arrays["source_before"].shape == (n, 1),
+        fixed_dt=record["dt_before_ms"] == record["dt_after_ms"] == common["dt_ms"],
+        exact_fixture_time_axis=np.array_equal(arrays["times_before_ms"],
+            np.arange(common["t0_ms"], common["tmax_ms"]+common["dt_ms"]/2, common["dt_ms"])),
+        physics_unchanged=record["physics_before"] == record["physics_after"],
+        fixed_step_under_reported_CFL=record["dt_before_ms"] <= record["physics_before"]["critical_dt_ms"]*(1+1e-7),
+        time_axis_unchanged=np.array_equal(arrays["times_before_ms"], arrays["times_after_ms"]),
+        actual_source_times_match=np.array_equal(arrays["source_times_before_ms"], arrays["times_before_ms"])
+            and np.array_equal(arrays["source_times_after_ms"], arrays["times_before_ms"]),
+        actual_receiver_times_match=np.array_equal(arrays["receiver_times_ms"], arrays["times_before_ms"]),
+        source_unchanged=np.array_equal(arrays["source_before"], arrays["source_after"]),
+        actual_Ricker_samples_match_fixed_spec=np.array_equal(arrays["source_before"], expected_source),
+        source_coordinates_unchanged=np.array_equal(arrays["source_coordinates_before_m"], arrays["source_coordinates_after_m"]),
+        source_coordinates_match=np.array_equal(arrays["source_coordinates_before_m"], [record["geometry"]["source_x_z_m"]]),
+        receiver_coordinates_match=np.array_equal(arrays["receiver_coordinates_m"], [record["geometry"]["receiver_x_z_m"]]),
+        exactly_three_wavefield_slices=record["wavefield"]["logical_shape"] == [3, shape[0]+2*pad, shape[1]+2*pad],
+        float64=record["wavefield"]["dtype"] == "float64" and arrays["receiver"].dtype == np.float64)
+    return {k: bool(v) for k, v in checks.items()}
+
+
+def matched_layout(first, second):
+    fields = ["vp", "derived_squared_slowness", "grid_shape", "grid_spacing"]
+    return dict(same_background_and_stencil_grid=all(first["physics_before"][k] == second["physics_before"][k] for k in fields),
+                same_computational_source_index=first["computational_source_index"] == second["computational_source_index"],
+                same_computational_receiver_index=first["computational_receiver_index"] == second["computational_receiver_index"])
+
+
+def run(protocol_path, repo, output, expected_protocol_sha256, expected_source_sha256):
+    protocol, protocol_raw = load_protocol(protocol_path)
+    source_raw = Path(__file__).read_bytes()
+    if sha(protocol_raw) != expected_protocol_sha256 or sha(source_raw) != expected_source_sha256:
+        raise ValueError("protocol/source hash mismatch before PDE or output creation")
+    output = Path(output).resolve()
+    if output.exists():
+        raise FileExistsError("existing output is never overwritten or reused")
+    if not output.parent.is_dir() or shutil.disk_usage(output.parent).free < protocol["memory"]["minimum_free_disk_bytes"]:
+        raise OSError("at least100MiB free disk and an existing output parent are required")
+    before = source_receipt(repo, protocol)
+    output.mkdir()  # Exclusive creation; only files in this new run are owned.
+    status = dict(status="running", started_utc=utc(), case_records=[],
+        protocol_sha256=sha(protocol_raw), runner_sha256=sha(source_raw),
+        source_before=before, student_final_research_design=False, goal2_completion_claim=False)
+    _new_file(output/"protocol.json", protocol_raw)
+    _new_file(output/"runner_source.py", source_raw)
+    _atomic_owned_json(output/"status.json", status)
+    raw = {}
+    try:
+        for case in protocol["cases"]:
+            entry = dict(case_id=case["id"], status="attempted", started_utc=utc())
+            try:
+                arrays, record = execute_case(case, protocol["common"])
+                filename = case["id"]+"_raw.npz"
+                with (output/filename).open("xb") as stream:
+                    np.savez_compressed(stream, **arrays)
+                checks = validate_case(arrays, record, protocol["common"])
+                entry.update(record=record, software_invariants=checks,
+                    raw_artifact=filename, raw_sha256=sha((output/filename).read_bytes()),
+                    status="complete" if all(checks.values()) else "failed_invariants")
+                if all(checks.values()):
+                    raw[case["id"]] = arrays
+            except Exception as exc:
+                entry.update(status="failed", error=f"{type(exc).__name__}: {exc}")
+            entry["finished_utc"] = utc()
+            status["case_records"].append(entry)
+            _atomic_owned_json(output/"status.json", status)
+        after = source_receipt(repo, protocol)
+        if (after != before or Path(protocol_path).read_bytes() != protocol_raw
+                or Path(__file__).read_bytes() != source_raw):
+            raise ValueError("source/protocol changed during verification")
+        if len(raw) != 7:
+            raise ValueError("not all seven fixed cases completed their software invariants")
+        reference = raw["reference_321"]
+        times = reference["times_before_ms"]
+        if not all(np.array_equal(a["times_before_ms"], times)
+            and np.array_equal(a["source_before"], reference["source_before"]) for a in raw.values()):
+            raise ValueError("cases do not share exact source samples and time axes")
+        records = {entry["case_id"]: entry["record"] for entry in status["case_records"]}
+        paired_layout = {name: matched_layout(records[name], records[control])
+            for name, control in [("small_nbl20", "matched_exterior_20_undamped"),
+                                  ("small_nbl40", "matched_exterior_40_undamped")]}
+        if not all(all(checks.values()) for checks in paired_layout.values()):
+            raise ValueError("same-exterior controls do not match the computational layout")
+        metrics = dict(against_reference_321={name: trace_metrics(a["receiver"], reference["receiver"], times)
+                   for name, a in raw.items() if name != "reference_321"},
+            matched_exterior_contrasts={name: trace_metrics(raw[name]["receiver"], raw[control]["receiver"], times)
+                for name, control in [("small_nbl20", "matched_exterior_20_undamped"),
+                                      ("small_nbl40", "matched_exterior_40_undamped")]})
+        _new_file(output/"metrics.json", json_raw(metrics))
+        status.update(status="complete_software_verification", finished_utc=utc(), source_after=after,
+            matched_exterior_layout=paired_layout,
+            quality_thresholds=None, boundary_fidelity_pass_claim=False,
+            scope=protocol["reference_scope"],
+            environment=dict(python=sys.version, platform=platform.platform(),
+                packages={name: importlib.metadata.version(name) for name in ["numpy", "scipy", "devito"]},
+                threads={name: os.environ.get(name) for name in ["OMP_NUM_THREADS", "MKL_NUM_THREADS", "OPENBLAS_NUM_THREADS", "VECLIB_MAXIMUM_THREADS", "NUMEXPR_NUM_THREADS"]}))
+        _atomic_owned_json(output/"status.json", status)
+        receipt = dict(status, artifacts={p.name: sha(p.read_bytes()) for p in output.iterdir() if p.is_file()})
+        _atomic_owned_json(output/"complete_receipt.json", receipt)
+        return receipt
+    except BaseException as exc:
+        status.update(status="failed", finished_utc=utc(), error=f"{type(exc).__name__}: {exc}")
+        _atomic_owned_json(output/"status.json", status)
+        raise
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--protocol", type=Path, default=Path(__file__).with_name("protocol.json"))
+    parser.add_argument("--run", action="store_true")
+    parser.add_argument("--repo", type=Path)
+    parser.add_argument("--output", type=Path)
+    parser.add_argument("--expected-protocol-sha256")
+    parser.add_argument("--expected-source-sha256")
+    args = parser.parse_args(argv)
+    _, raw = load_protocol(args.protocol)
+    if not args.run:
+        print(json.dumps(dict(status="protocol_only_no_PDE", protocol_sha256=sha(raw),
+            runner_sha256=sha(Path(__file__).read_bytes()))))
+        return 0
+    if not all((args.repo, args.output, args.expected_protocol_sha256, args.expected_source_sha256)):
+        parser.error("--run requires --repo, --output and both reviewed SHA256 values")
+    receipt = run(args.protocol, args.repo, args.output, args.expected_protocol_sha256, args.expected_source_sha256)
+    print(json.dumps(dict(status=receipt["status"], output=str(args.output))))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

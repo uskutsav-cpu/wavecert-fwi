@@ -3,7 +3,6 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import math
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
@@ -11,7 +10,11 @@ import numpy as np
 import pandas as pd
 import scipy.ndimage as ndi
 
-from wavecert.certificates.directional import certify_direction
+from wavecert.data.splits import (
+    audit_dataset_roles,
+    verify_calibration_checkpoint,
+    verify_dataset_provenance,
+)
 from wavecert.data.wavefields import WavefieldDatasetArrays
 from wavecert.metrics import cosine_similarity
 from wavecert.physics.helmholtz import Helmholtz2D, SurveyBlock
@@ -19,6 +22,12 @@ from wavecert.repair.adaptive import (
     adaptive_hybrid_direction,
     global_fallback_direction,
 )
+from wavecert.statistics import (
+    binomial_failure_summary,
+    cluster_bootstrap_mean,
+    split_conformal_quantile,
+)
+from wavecert.statistics.pathwise import pathwise_case_score_details
 from wavecert.surrogates.fno import TrainedFNOWavefieldSurrogate
 
 
@@ -26,6 +35,7 @@ from wavecert.surrogates.fno import TrainedFNOWavefieldSurrogate
 class RealCase:
     slice_id: str
     model_type: str
+    model_id: str
     m_eval: np.ndarray
     blocks: tuple[SurveyBlock, ...]
 
@@ -35,6 +45,7 @@ class PolicyRow:
     split: str
     slice_id: str
     model_type: str
+    model_id: str
     policy: str
     certified: bool
     true_descent: bool
@@ -53,14 +64,8 @@ def _normalised_negative(g: np.ndarray) -> np.ndarray:
 
 
 def _split_quantile(scores: np.ndarray, alpha: float) -> float:
-    scores = np.sort(np.asarray(scores, dtype=float))
-    n = len(scores)
-    if n == 0:
-        raise ValueError("empty calibration score array")
-    k = int(math.ceil((n + 1) * (1.0 - alpha)))
-    if k > n:
-        return float("inf")
-    return float(scores[k - 1])
+    """Backward-compatible alias for the shared finite-sample order statistic."""
+    return split_conformal_quantile(scores, alpha)
 
 
 def _load_cases(
@@ -111,6 +116,7 @@ def _load_cases(
             RealCase(
                 slice_id=str(slice_id),
                 model_type=str(group["model_type"].iloc[0]),
+                model_id=str(group["model_id"].iloc[0]),
                 m_eval=m_eval,
                 blocks=tuple(blocks),
             )
@@ -126,124 +132,11 @@ def _pathwise_case_score(
     surrogate: TrainedFNOWavefieldSurrogate,
     receiver_indices: tuple[int, ...],
 ) -> tuple[float, int]:
-    """Worst normalized certificate error across the full greedy repair path.
-
-    The repair order is generated with the unscaled deterministic bounds.
-    A single uniform conformal multiplier leaves this ranking unchanged, so
-    calibrating the maximum score over the complete path covers every stopping
-    round that the uniformly scaled adaptive policy may encounter.
-    """
-
-    states: list[dict] = []
-    for block in case.blocks:
-        q = physics.source(block.source_index)
-        _, neural_gradient, _, _ = surrogate.objective_and_gradient(
-            case.m_eval,
-            q,
-            block.observed,
-            receiver_indices,
-            block.frequency_hz,
-        )
-        states.append(
-            {
-                "block": block,
-                "q": q,
-                "neural_gradient": np.asarray(neural_gradient, dtype=float),
-                "exact_gradient": None,
-            }
-        )
-
-    frequencies = sorted({float(s["block"].frequency_hz) for s in states})
-    constants: dict[float, tuple[np.ndarray, float]] = {}
-    for frequency in frequencies:
-        matrix = physics.receiver_resolvent_matrix(
-            case.m_eval,
-            frequency,
-            receiver_indices,
-        )
-        alpha = physics.receiver_resolvent_norm(
-            case.m_eval,
-            frequency,
-            receiver_indices,
-            receiver_resolvent_matrix=matrix,
-        )
-        constants[frequency] = (matrix, float(alpha))
-
-    worst_ratio = 0.0
-    scored_certificates = 0
-
-    while True:
-        hybrid_gradient = np.sum(
-            [
-                state["exact_gradient"]
-                if state["exact_gradient"] is not None
-                else state["neural_gradient"]
-                for state in states
-            ],
-            axis=0,
-        )
-        direction = _normalised_negative(hybrid_gradient)
-        if np.linalg.norm(direction) <= 1e-14:
-            break
-
-        unrepaired = [state for state in states if state["exact_gradient"] is None]
-        if not unrepaired:
-            break
-
-        kappas: dict[float, float] = {}
-        for frequency in frequencies:
-            matrix, _alpha = constants[frequency]
-            kappas[frequency] = float(
-                physics.directional_receiver_tangent_resolvent_norm(
-                    case.m_eval,
-                    frequency,
-                    receiver_indices,
-                    direction,
-                    receiver_resolvent_matrix=matrix,
-                )
-            )
-
-        uncertainty: list[tuple[dict, float]] = []
-        for state in unrepaired:
-            block = state["block"]
-            frequency = float(block.frequency_hz)
-            matrix, alpha = constants[frequency]
-
-            cert = certify_direction(
-                physics=physics,
-                surrogate=surrogate,
-                m=case.m_eval,
-                q=state["q"],
-                observed=block.observed,
-                receiver_indices=receiver_indices,
-                frequency_hz=frequency,
-                direction=direction,
-                stability_mode="directional",
-                receiver_resolvent_matrix=matrix,
-                receiver_resolvent_norm=alpha,
-                directional_tangent_resolvent_norm=kappas[frequency],
-                validate_exact=True,
-            )
-            realized = float(cert.realized_error or 0.0)
-            base = float(cert.directional_error_bound)
-            ratio = realized / max(base, 1e-15)
-            worst_ratio = max(worst_ratio, ratio)
-            scored_certificates += 1
-            uncertainty.append((state, base))
-
-        # Uniform scaling does not change this greedy ordering.
-        selected = max(uncertainty, key=lambda item: item[1])[0]
-        block = selected["block"]
-        _, exact_gradient, _, _ = physics.objective_and_gradient(
-            case.m_eval,
-            selected["q"],
-            block.observed,
-            receiver_indices,
-            block.frequency_hz,
-        )
-        selected["exact_gradient"] = np.asarray(exact_gradient, dtype=float)
-
-    return float(worst_ratio), int(scored_certificates)
+    result = pathwise_case_score_details(
+        physics=physics, surrogate=surrogate, m=case.m_eval,
+        blocks=case.blocks, receiver_indices=receiver_indices,
+    )
+    return result.score, result.certificates_scored
 
 
 def _block_gradients(
@@ -296,6 +189,7 @@ def _append(
             split=split,
             slice_id=case.slice_id,
             model_type=case.model_type,
+            model_id=case.model_id,
             policy=policy,
             certified=bool(certified),
             true_descent=true_descent,
@@ -454,12 +348,18 @@ def _aggregate(rows: list[PolicyRow]) -> dict:
         cert = np.asarray([row.certified for row in subset], dtype=bool)
         false = np.asarray([row.false_certification for row in subset], dtype=bool)
         cosine = np.asarray([row.cosine_to_exact for row in subset], dtype=float)
+        parents = sorted({row.model_id for row in subset})
+        parent_any_false = np.asarray([
+            any(row.false_certification for row in subset if row.model_id == parent)
+            for parent in parents
+        ])
         modes = {
             mode: int(sum(row.mode == mode for row in subset))
             for mode in sorted({row.mode for row in subset})
         }
         result[policy] = {
             "n_cases": len(subset),
+            "n_parent_models": len(parents),
             "true_descent_rate": float(np.mean(desc)),
             "certified_rate": float(np.mean(cert)),
             "false_certifications": int(np.sum(false)),
@@ -468,6 +368,10 @@ def _aggregate(rows: list[PolicyRow]) -> dict:
             "p90_exact_blocks": float(np.quantile(exact, 0.90)),
             "mean_exact_fraction": float(np.mean(exact) / 24.0),
             "mean_cosine_to_exact": float(np.mean(cosine)),
+            "parent_any_false_acceptance": binomial_failure_summary(parent_any_false),
+            "parent_bootstrap_cosine": cluster_bootstrap_mean(
+                cosine, np.asarray([row.model_id for row in subset]),
+            ),
             "mode_counts": modes,
         }
     return result
@@ -490,14 +394,18 @@ def main() -> None:
     parser.add_argument("--alpha", type=float, default=0.10)
     parser.add_argument("--sigma", type=float, default=1.6)
     parser.add_argument("--seed", type=int, default=20260911)
+    parser.add_argument("--evaluate-path-coverage", action="store_true", help="pay offline full-path labels to measure parent-simultaneous held-out coverage")
     args = parser.parse_args()
 
     dataset_dir = Path(args.dataset)
+    split_audit = audit_dataset_roles(dataset_dir)
+    dataset_provenance = verify_dataset_provenance(dataset_dir)
+    checkpoint_provenance = verify_calibration_checkpoint(args.checkpoint, dataset_provenance)
     output = Path(args.output)
     output.mkdir(parents=True, exist_ok=True)
 
     surrogate = TrainedFNOWavefieldSurrogate.load(args.checkpoint)
-    validation_arrays = WavefieldDatasetArrays.load(dataset_dir / "validation.npz")
+    validation_arrays = WavefieldDatasetArrays.load(dataset_dir / "calibration.npz")
     receiver_indices = tuple(int(x) for x in validation_arrays.receiver_indices)
     physics = Helmholtz2D(
         shape=surrogate.shape,
@@ -507,7 +415,7 @@ def main() -> None:
     )
 
     print("LOADING 24-BLOCK GEOLOGY CASES")
-    validation = _load_cases(dataset_dir, "validation", physics, args.sigma)
+    validation = _load_cases(dataset_dir, "calibration", physics, args.sigma)
     test_id = _load_cases(dataset_dir, "test_id", physics, args.sigma)
     test_ood = _load_cases(dataset_dir, "test_ood", physics, args.sigma)
 
@@ -527,17 +435,22 @@ def main() -> None:
             {
                 "slice_id": case.slice_id,
                 "model_type": case.model_type,
+                "model_id": case.model_id,
                 "pathwise_max_ratio": score,
                 "certificates_scored": ncert,
             }
         )
         print(f"calibration {i:02d}/{len(validation)} {case.slice_id}: max_ratio={score:.8g}")
 
-    score_values = np.asarray(
-        [row["pathwise_max_ratio"] for row in scores],
-        dtype=float,
-    )
+    # Parent-level maxima retain arbitrary dependence among slices of one Earth model.
+    parent_scores: dict[str, float] = {}
+    for row in scores:
+        parent = str(row["model_id"])
+        parent_scores[parent] = max(parent_scores.get(parent, 0.0), row["pathwise_max_ratio"])
+    score_values = np.asarray(list(parent_scores.values()), dtype=float)
     q = _split_quantile(score_values, args.alpha)
+    if q == 0.0:
+        q = 1.0  # conservative deterministic fallback avoids underflow/tied rankings
 
     with (output / "calibration_scores.csv").open("w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=list(scores[0].keys()))
@@ -595,6 +508,11 @@ def main() -> None:
         "alpha": args.alpha,
         "target_id_pathwise_coverage": 1.0 - args.alpha,
         "calibration_cases": len(validation),
+        "calibration_parent_models": len(parent_scores),
+        "calibration_unit": "maximum fixed-state repair-path score across selected slices of one parent model",
+        "split_audit": split_audit,
+        "dataset_provenance": dataset_provenance,
+        "checkpoint_provenance": checkpoint_provenance,
         "pathwise_uniform_scale": q,
         "calibration_score_min": float(np.min(score_values)),
         "calibration_score_median": float(np.median(score_values)),
@@ -602,10 +520,15 @@ def main() -> None:
         "blocks_per_case": 24,
         "id": _aggregate(id_rows),
         "ood": _aggregate(ood_rows),
+        "held_out_parent_pathwise_coverage": {
+            "status": "not measured; true descent and false acceptance are different events from simultaneous error-bound coverage",
+        },
         "semantics": {
             "id": (
-                "case-level pathwise split-conformal calibration; interpretation "
-                "requires exchangeability between validation and ID cases"
+                "parent-level maximum over fixed-state greedy repair paths; interpretation "
+                "requires exchangeable independent calibration/ID parents and the same "
+                "predeclared within-parent slice-sampling protocol; not a guarantee for "
+                "future inversion iterates or conditional on acceptance"
             ),
             "ood": (
                 "held-out-geology stress test only; nominal conformal coverage "
@@ -617,6 +540,33 @@ def main() -> None:
             ),
         },
     }
+    if args.evaluate_path_coverage:
+        coverage = {}
+        coverage_rows = []
+        for split, cases in (("id", test_id), ("ood", test_ood)):
+            by_parent: dict[str, float] = {}
+            for case in cases:
+                score, count = _pathwise_case_score(
+                    case=case, physics=physics, surrogate=surrogate,
+                    receiver_indices=receiver_indices,
+                )
+                by_parent[case.model_id] = max(by_parent.get(case.model_id, 0.0), score)
+                coverage_rows.append({"split": split, "slice_id": case.slice_id,
+                                      "model_id": case.model_id, "pathwise_score": score,
+                                      "certificates_scored": count})
+            failures = np.asarray([score > q for score in by_parent.values()])
+            coverage[split] = {
+                "n_parent_models": len(by_parent),
+                "parent_simultaneous_coverage": float(np.mean(~failures)),
+                "parent_score": by_parent,
+                "failure_uncertainty": binomial_failure_summary(failures),
+                "scope": "fixed-state complete repair paths; OOD is descriptive only; nominal ID interpretation requires exchangeable parents and the same within-parent sampling protocol",
+            }
+        summary["held_out_parent_pathwise_coverage"] = coverage
+        with (output / "held_out_path_coverage.csv").open("w", newline="") as stream:
+            writer = csv.DictWriter(stream, fieldnames=list(coverage_rows[0]))
+            writer.writeheader()
+            writer.writerows(coverage_rows)
 
     for split in ("id", "ood"):
         selective = summary[split]["wavecert-selective"]

@@ -1,0 +1,66 @@
+{
+  "actual_execution": {
+    "checks": 778,
+    "exit_code": 0,
+    "issues": 0,
+    "scope": "stdlib read/hash/JSON review; not candidate test/runtime/native execution",
+    "tool_chunk": "478e28"
+  },
+  "authority": {
+    "PDE": 0,
+    "candidate_edits": 0,
+    "downloads": 0,
+    "environment_approved": false,
+    "execution_authorized": false,
+    "installs": 0,
+    "jobs": 0,
+    "root_GO": false,
+    "runtime_package_imports": 0,
+    "tests": 0
+  },
+  "controls": "Author four unchanged metadata admission passes/log read; reviewer reran zero controls/tests.",
+  "dependency_conclusion": "Direct declared bounds only: NumPy2.4.3 satisfies retained Devito4.8.23 and SciPy1.17.1 NumPy ranges; Python3.11.18 satisfies direct Python ranges. Retained release JSON and sidecar hashes agree. No fresh network verification.",
+  "exact_seven_pointer_files": [
+    "BUNDLE_MANIFEST.json",
+    "ENVIRONMENT_RECEIPT_TEMPLATE.json",
+    "FROZEN_PLAN23.json",
+    "HELD_REGISTRATION.json",
+    "comparison.py",
+    "pilot23_common.py",
+    "worker/protocol.json"
+  ],
+  "files_sha256": {
+    "BOUND_REVIEW.json": "8b83d801378915b27d4da2d3bc8a0819413531cce05dd85f171f796a220b1f73",
+    "BOUND_REVIEW_02.json": "6b7c2c5ce0ca558da1a263ddda1a8acd3404ec3f602cb2506769d2846e278bf5",
+    "history/review01_worker_manifest_exclusions/review_metadata.py": "d163603b75ee048ebdb61bccc980407a4bc1f097087253a0d263c5699742e90c",
+    "review_01.log": "e0218ed304c937ed979c0db5cf263ea93f666c418954994b3fd96d2a5abb9bcf",
+    "review_02.log": "1c6175ec6c76c043ba686069ba27c34218c23721a5575dd97097031a3d14fdb6",
+    "review_metadata.py": "6a28b932021803d63cae55aa3b144151d4b2f6e5ee9d71119184857654e5df51"
+  },
+  "first_attempt_preserved": {
+    "cause": "Reviewer inventory assumption omitted two explicitly excluded original-worker review receipts. Both receipts now match original handoff hashes; only reviewer script corrected.",
+    "checks": 760,
+    "exit_code": 1,
+    "issues": 1,
+    "tool_chunk": "591d73"
+  },
+  "identical_slot_objects": 23,
+  "not_established": [
+    "full transitive runtime/build lock",
+    "compiled PyRevolve scheduler loadability",
+    "actual17origin/13selected-source match",
+    "binary/system linkage",
+    "numerical agreement"
+  ],
+  "read_hash_review_command": "/opt/miniconda3/bin/python -I -B work/new-phase-staging/checkpoint_pilot23_runtime_contract_v2_independent_review/review_metadata.py > work/new-phase-staging/checkpoint_pilot23_runtime_contract_v2_independent_review/review_02.log 2>&1",
+  "reviewed_handoff_sha256": "518a7cf93386769b779d5083a2d5ed1e1d38c95cd6de7fb55eb937a2b5bb8860",
+  "status": "CLEAR_SOURCE_METADATA_ONLY_NO_AUTHORITY",
+  "v1_manifests": {
+    "all_declared_and_handoff_files_SHA_equal": true,
+    "controller_files": 51,
+    "environment_files": 18,
+    "original_worker_files": 34
+  },
+  "v2_manifest_files": 25,
+  "v2_runtime_bundle_files": 10
+}

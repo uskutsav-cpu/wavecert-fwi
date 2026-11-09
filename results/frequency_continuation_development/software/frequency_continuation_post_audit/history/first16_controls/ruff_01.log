@@ -1,0 +1,20 @@
+F401 [*] `collections.defaultdict` imported but unused
+  --> work/new-phase-staging/frequency_continuation_post_audit/audit_scalar.py:16:34
+   |
+14 | import math
+15 | import random
+16 | from collections import Counter, defaultdict
+   |                                  ^^^^^^^^^^^
+17 | from datetime import datetime, timezone
+18 | from pathlib import Path
+   |
+help: Remove unused import: `collections.defaultdict`
+   |
+15 | import random
+   - from collections import Counter, defaultdict
+16 + from collections import Counter
+17 | from datetime import datetime, timezone
+   |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

@@ -1,0 +1,29 @@
+{
+  "observed_utc": "2026-11-09T00:23:06.008371+00:00",
+  "scope": "One-flag parent-test bytecode hygiene change; frozen runtime/kernel/criteria unchanged",
+  "parent_test_sha256": "e9334842bfdc97a12d9e490b94e7d1fceba1075dafc07049c35831fe13b057c7",
+  "delta": "Add -B to childPythonargv only; exact string delta checked against601e candidate",
+  "actual_session": 79369,
+  "actual_terminal_chunk": "62c15a",
+  "actual_exit_code": 0,
+  "tests": 1,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "JUnit_sha256": "7d0bfe5cebe62abad35d33964209b3f787b0d2820bc2bc92600b0bd74de5d35a",
+  "own_disposable_bytecode_removed": [
+    {
+      "path": "results/bp_heterogeneous_verification/numpy_replay_v2/__pycache__/numpy_bp_tangent.cpython-313.pyc",
+      "sha256": "36925f3fde341ec6867308c69ecc191b70b4bde094aaf3c3e4cae97782fd4035",
+      "bytes": 12548
+    },
+    {
+      "path": "results/bp_heterogeneous_verification/numpy_replay_v2/__pycache__/canonical_inputs.cpython-313.pyc",
+      "sha256": "a707f5e7df3c8885ef604eb734e3032a621c6031764f2f82628bfb3649a76940",
+      "bytes": 16974
+    }
+  ],
+  "no_raw_science_artifact_removed": true,
+  "production_source_unchanged": "9f/161",
+  "Linux_V2_status": "not yet run"
+}

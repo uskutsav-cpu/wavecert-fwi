@@ -1,0 +1,43 @@
+{
+  "status": "HELD_REMOTE_SOURCE_BUNDLE_AND_FALSE_REGISTRATION_READY_FOR_INDEPENDENT_REVIEW",
+  "actual_publication": false,
+  "actual_remote_or_local_study_launched": false,
+  "orchestrator_sha256": "6c5867b922b9312f27a266e5affe4c3ff5c29277560f120d3df7c2c3612b36ec",
+  "workflow_sha256": "c91907a03aaf79b481fdfb581d2565175e64f31c72471cde3f68dda988c18eda",
+  "bundle_manifest_sha256": "0fbf65c5baea2ee111f526480f9b8e4a53dbd3c8cb7dec8e2ddd893088589cc0",
+  "false_registration_sha256": "f1e4031ce44e1a5c0f4c050c152fb8cd96bba84a357295bc571f127223b4e9ac",
+  "gate_source_sha256": "e26317990d26413a1c00627cc691eea172b6108b02ef1e1e6f729bf541fb6391",
+  "actual_metadata_gate_controls": {
+    "tests": 22,
+    "actual_exit_code": 0,
+    "tool_chunk": "b53763",
+    "receipt_sha256": "2a6164f0bdbe0045346639bfbcf1bdc0ebd961938f63eb0e2be56460d05289a9",
+    "log_sha256": "94beb7e370e5a9988a59f329c447998a1fa092305819980662211604aa995f6a"
+  },
+  "Ruff": {
+    "exit_code": 0,
+    "tool_chunk": "96a011",
+    "config": "work/wavecert-fwi/pyproject.toml"
+  },
+  "Python310_grammar": true,
+  "frozen_remote_controls_planned": {
+    "prior": 39,
+    "adapter": 21,
+    "driver": 30,
+    "launcher": 50
+  },
+  "frozen_remote_control_groups_run_locally_this_phase": false,
+  "preserved_first_gate_attempt": "validation/history_attempt01 contains21 attempted tests with4 canonical-Mac-temp-path fixture errors and initial style findings; corrected fixtures resolve their roots, no admission or numerical tolerance was weakened.",
+  "second_gate_attempt": "21 passed; final22 adds independent-review requested interrupted handoff recovery. Frozen runtime/control source files and criteria unchanged.",
+  "review_changes": [
+    "Root-requested20-minute infrastructure cap",
+    "Removed mutable orchestrator tee artifact",
+    "Bounded copies hash actual retained targets, verify source/target stability and actual total, with mutation control",
+    "Recover owned supervisor PID from returned dispatch or immutable dispatch receipt during interrupted handoff, with metadata control"
+  ],
+  "root_action_pin_evidence_sha256": "7d4b0f9f398618fe28fc944762815b42f02d63c0934de2116d1732ef75f84282",
+  "publication_manifest_sha256": "527c574e324a91fb4cad0c5be8716eb8cd9cbac712002ec64739f3490856c180",
+  "independent_remote_review": "PENDING final source-bound receipt",
+  "root_remote_review": "PENDING final source-bound receipt",
+  "source_scope": "All publication files are under publish/. Existing repository workflows, frozen producer/protocol/criteria and old launcher source were not edited."
+}

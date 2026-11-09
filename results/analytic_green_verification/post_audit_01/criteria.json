@@ -1,0 +1,18 @@
+{
+  "role": "Post-outcome independent numerical verification; not student final design or physical-quality approval",
+  "quad_epsabs": 1e-11,
+  "quad_epsrel": 1e-11,
+  "quad_limit": 50,
+  "full_valid_curve_relative_L2_maximum": 1e-10,
+  "step_normalized_max_abs_maximum": 1e-12,
+  "source_relative_L2_maximum": 1e-14,
+  "scalar_rtol": 2e-12,
+  "scalar_atol": 1e-14,
+  "time_samples": 1101,
+  "valid_indices_inclusive": [1, 1099],
+  "early_cutoff_ms": 250.0,
+  "quad_substitution": "s=a+z^2, U=A/pi integral_0^sqrt(t-a) q(t-a-z^2)/sqrt(2a+z^2) dz",
+  "forcing": "standard-library math.exp causal Ricker, f=.005/ms, delay200ms",
+  "no_retries_or_tolerance_changes": true,
+  "limits": "QUADPACK error estimates, convergence and cross-quadrature agreement are ordinary FP diagnostics, not enclosures or physical pass criteria. All7 traces are correlated versions of one homogeneous scene."
+}

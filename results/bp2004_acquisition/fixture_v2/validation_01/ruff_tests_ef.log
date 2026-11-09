@@ -1,0 +1,131 @@
+E501 Line too long (106 > 100)
+  --> test_collect_bp2004.py:39:101
+   |
+37 |     struct.pack_into(">h", binary, 304, extended)
+38 |     parts, headers = [text, bytes(binary)], []
+39 |     values = np.arange(ns, dtype=np.float32)[:, None] + 10 * np.arange(ntr, dtype=np.float32)[None, :] + 1
+   |                                                                                                     ^^^^^^
+40 |     if code == 1:
+41 |         values[:] = 1000
+   |
+
+E501 Line too long (107 > 100)
+  --> test_collect_bp2004.py:50:101
+   |
+48 |         struct.pack_into(">i", header, 72, x * 125)
+49 |         headers.append(bytes(header))
+50 |         samples = values[:, x].astype(">f4").tobytes() if code != 1 else struct.pack(">I", 0x433e8000) * ns
+   |                                                                                                     ^^^^^^^
+51 |         parts.extend((bytes(header), samples))
+52 |     raw = b"".join(parts)
+   |
+
+E501 Line too long (101 > 100)
+  --> test_collect_bp2004.py:60:101
+   |
+58 | def test_full_integrity_headers_and_fixed_parent_crops_without_interpolation(code, trace_ns):
+59 |     payload, raw, values, headers = synthetic(code=code, trace_ns=trace_ns)
+60 |     crops, receipt = parse_velocity_gzip(payload, samples_per_trace=8, traces=10, windows=[window()])
+   |                                                                                                     ^
+61 |     np.testing.assert_array_equal(crops["fixed"], values[1:7, 2:6])
+62 |     np.testing.assert_array_equal(crops["fixed"][::2], values[1:7:2, 2:6])
+   |
+
+E501 Line too long (105 > 100)
+  --> test_collect_bp2004.py:90:101
+   |
+90 | @pytest.mark.parametrize("kind", ["crc", "isize", "truncated", "extra_member", "extra_compressed_bytes"])
+   |                                                                                                     ^^^^^
+91 | def test_gzip_integrity_failures_are_not_published(kind):
+92 |     payload, _, _, _ = synthetic()
+   |
+
+E501 Line too long (120 > 100)
+   --> test_collect_bp2004.py:121:101
+    |
+121 | @pytest.mark.parametrize("kind", ["binary_ns", "trace_ns", "sample_format", "extended", "trailing_segy", "zero", "nan"])
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^^
+122 | def test_strict_layout_and_value_failures(kind):
+123 |     payload, raw, _, _ = synthetic(trace_ns=7 if kind == "trace_ns" else None,
+    |
+
+E501 Line too long (111 > 100)
+   --> test_collect_bp2004.py:159:101
+    |
+159 | @pytest.mark.parametrize("kind", ["status", "length", "etag", "encoding", "redirect", "oversize", "truncated"])
+    |                                                                                                     ^^^^^^^^^^^
+160 | def test_bounded_http_failures_use_mock_responses_only(kind):
+161 |     payload = b"abcd"
+    |
+
+E501 Line too long (102 > 100)
+   --> test_collect_bp2004.py:185:101
+    |
+184 | def test_http_exact_body_and_sha_are_recorded():
+185 |     data, receipt = fetch_bounded("https://official.invalid/model", expected_bytes=4, maximum_bytes=4,
+    |                                                                                                     ^^
+186 |         expected_etag="frozen", opener=lambda *a, **k: Response(b"abcd"))
+187 |     assert data == b"abcd" and receipt["compressed_sha256"] == sha256(b"abcd")
+    |
+
+E501 Line too long (108 > 100)
+   --> test_collect_bp2004.py:198:101
+    |
+197 | def test_default_cli_never_performs_network(monkeypatch, capsys):
+198 |     monkeypatch.setattr(module.urllib.request, "urlopen", lambda *a, **k: pytest.fail("unexpected network"))
+    |                                                                                                     ^^^^^^^^
+199 |     assert module.main([]) == 0
+200 |     assert json.loads(capsys.readouterr().out)["status"] == "protocol_only_no_network"
+    |
+
+E501 Line too long (101 > 100)
+   --> test_collect_bp2004.py:205:101
+    |
+203 | def test_unapproved_source_hash_refuses_before_network(tmp_path):
+204 |     with pytest.raises(AcquisitionError, match="SHA256 mismatch"):
+205 |         module.collect(Path(__file__).with_name("protocol.json"), tmp_path / "new", "wrong", "wrong",
+    |                                                                                                     ^
+206 |                        opener=lambda *a, **k: pytest.fail("network before approval hashes"))
+207 |     assert not (tmp_path / "new").exists()
+    |
+
+E501 Line too long (108 > 100)
+   --> test_collect_bp2004.py:214:101
+    |
+212 |     protocol, _ = load_protocol(Path(__file__).with_name("protocol.json"))
+213 |     payload, raw, _, _ = synthetic()
+214 |     protocol["source"].update(expected_compressed_bytes=len(payload), maximum_compressed_bytes=len(payload),
+    |                                                                                                     ^^^^^^^^
+215 |                               expected_etag="frozen", url="https://official.invalid/model")
+216 |     protocol["layout"].update(samples_per_trace=8, traces=10)
+    |
+
+E501 Line too long (106 > 100)
+   --> test_collect_bp2004.py:246:101
+    |
+244 |     with pytest.raises(AcquisitionError, match="already exists"):
+245 |         module.collect(path, output, sha256(protocol_raw), source_sha,
+246 |                        opener=lambda *a, **k: pytest.fail("must refuse existing evidence before network"))
+    |                                                                                                     ^^^^^^
+
+E501 Line too long (105 > 100)
+   --> test_collect_bp2004.py:249:101
+    |
+249 | def test_publication_failure_removes_only_own_stage_and_exposes_no_partial_output(tmp_path, monkeypatch):
+    |                                                                                                     ^^^^^
+250 |     path, protocol_raw, source_sha, payload, _ = synthetic_collection(tmp_path, monkeypatch)
+251 |     untouched = tmp_path / "unrelated.txt"
+    |
+
+E501 Line too long (112 > 100)
+   --> test_collect_bp2004.py:254:101
+    |
+252 |     untouched.write_text("retain")
+253 |     output = tmp_path / "collected"
+254 |     monkeypatch.setattr(module.os, "rename", lambda *a: (_ for _ in ()).throw(OSError("synthetic I/O failure")))
+    |                                                                                                     ^^^^^^^^^^^^
+255 |     with pytest.raises(OSError, match="I/O failure"):
+256 |         module.collect(path, output, sha256(protocol_raw), source_sha,
+    |
+
+Found 13 errors.

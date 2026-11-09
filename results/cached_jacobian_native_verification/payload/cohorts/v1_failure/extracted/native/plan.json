@@ -1,0 +1,150 @@
+{
+  "complex_source_multipliers": [
+    [
+      1.0,
+      1.0
+    ],
+    [
+      2.0,
+      -0.5
+    ],
+    [
+      -0.75,
+      0.25
+    ],
+    [
+      0.5,
+      -1.5
+    ],
+    [
+      1.25,
+      0.75
+    ],
+    [
+      -1.0,
+      -1.0
+    ]
+  ],
+  "criteria_pending_independent_review": {
+    "fd_jvp_relative_error_each_step": 0.0001,
+    "fd_objective_relative_error_each_step": 0.0001,
+    "nontrivial_relative_dd_cosine": 1e-05,
+    "nonzero_norm_floor": 1e-12,
+    "normalized_objective_absolute_error": 2e-14,
+    "normalized_objective_relative_error": 2e-12,
+    "old_operator_repeat": "array_equal",
+    "receiver_row_relative_error": 2e-10,
+    "relative_real_adjoint_error": 2e-11,
+    "relative_vector_error": 2e-09
+  },
+  "direction": "p=m0*(1+0.2*sin(2*pi*i/48)*cos(2*pi*j/48))/1.2 in C order; fixed independent of observations",
+  "dual": "z[k]=(sin(.017*(k+1))+cos(.013*(k+1)))/norm2 on all1920realterms",
+  "execution_authorized": false,
+  "expected_complete_disjoint_counts": {
+    "adjoint_rhs": 48,
+    "factorizations": 96,
+    "forward_rhs": 480,
+    "stability_rhs": 272,
+    "tangent_rhs": 48
+  },
+  "failure_policy": "Fresh output, no retries/fallback/changed frequencies/epsilons/tolerances. Persist every dispatch before call, actual snapshots or unknown prefix after failure. IfOS cap terminates worker, external actual wait/log observer must retain prefix; no fictional completion.",
+  "fd_steps": [
+    0.0001,
+    5e-05
+  ],
+  "frequencies_hz": [
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    2.5,
+    3.0,
+    3.5,
+    4.0
+  ],
+  "initial_velocity": 2.0,
+  "lifecycle_scope": "Worker only, no study48/fullTRF optimizer or detached supervisor. External foreground actual wait/complete resource observation required separately before runtime acceptance.",
+  "observation_blocks": 48,
+  "observation_velocity": 2.05,
+  "physics": {
+    "damping_strength": 2.0,
+    "damping_width": 6,
+    "shape": [
+      49,
+      49
+    ],
+    "spacing": 0.025
+  },
+  "planned_order": [
+    "persist plan/source/admission before numerical imports or owner construction",
+    "separate synthetic observations8LU48forwardRHS",
+    "cold policy initial normalized residual8LU48forwardRHS",
+    "policy copied Jacobian map8newLU112stabilityRHS",
+    "cached JVP/J* and realadjoint check",
+    "separate public data_jvp8LU48forward48tangent",
+    "separate public data_vjp8LU48forward48adjoint",
+    "separate fullC reference8LU160stabilityRHS plus complexU8LU48forward; retain48covered row pairs",
+    "four fresh FD forward batches,8LU48forward each; no chosen best step",
+    "one policy trial residual8LU48forward then oldoperator repeat; no newmap",
+    "final actual snapshots/finitechecks/artifacts/serialization, external wait required"
+  ],
+  "real_residual_terms": 1920,
+  "receiver_indices": [
+    250,
+    252,
+    254,
+    256,
+    258,
+    260,
+    262,
+    264,
+    266,
+    268,
+    270,
+    272,
+    274,
+    276,
+    278,
+    280,
+    282,
+    284,
+    286,
+    288
+  ],
+  "resources": {
+    "address_space_bytes": 2147483648,
+    "cpu_limit_seconds": 180,
+    "initial_free_bytes_minimum": 134217728,
+    "maximum_recorded_public_dispatches": 256,
+    "output_cap_bytes": 16777216,
+    "peak_RSS_review_bytes": 1073741824,
+    "retained_array_payload_cap_bytes": 8388608,
+    "wall_alarm_seconds": 180
+  },
+  "role": "Classical cached-field integration verification, not reconstruction, new method, student final design or scientific completion",
+  "root_go_authorization": "GO_CACHED_J_NATIVE_FIELD_VERIFICATION",
+  "runtime": {
+    "numpy": "2.4.6",
+    "platform": "Linux",
+    "python": "3.11.18",
+    "scipy": "1.17.1",
+    "threads": 1
+  },
+  "scientific_goals_complete": false,
+  "source_components": {
+    "FROZEN_PRODUCTION_SOURCE.json": "e7ba5deef7a651f42d02b9f8e0bcbee9624291b8217ab378bdde7586c57cd4de",
+    "cached_jacobian.py": "f613370617d7e0bd7815cf441dd8ba5f41816ad4791275e86f33de228657c79b",
+    "public_map_builder.py": "622a624f54b17d9d882da9d88af547c516b26ee42c87d80ec68d5fe99a687ec1"
+  },
+  "source_indices": [
+    250,
+    258,
+    266,
+    272,
+    280,
+    288
+  ],
+  "status": "HELD_SOURCE_AND_MANUFACTURED_LIFECYCLE_ONLY",
+  "student_final_design": false,
+  "synthetic_data_policy": "Fresh separate public batched source solves for constant observation model, complete before constructing a cold policy owner. No Earth data or quality metric. All work retained separately."
+}

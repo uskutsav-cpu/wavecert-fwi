@@ -1,0 +1,23 @@
+{
+  "result": "MATH_SOURCE_CLEAR; PLANNED_PREFIX_RETENTION_FIX_PENDING",
+  "reviewer": "candidate_final_review",
+  "runner_sha256_reviewed": "e44ce3ef89bd53d2eca415f98a1e1320d3c70d1d3b162c1db63cd70ef31a229a",
+  "protocol_sha256_reviewed": "9a71e8e42e381d8824a06993702b9b9f5fcdb113fd7832e2e00de8d4d73ba679",
+  "independent_derivation_note": "../analytic_green_math_source_note.json",
+  "mathematical_review": [
+    "Independently checked primary Toronto2D method-of-descent inhomogeneous formula. Multiplying D-kernel byc^2 for L=c^-2D cancels all extra amplitude factors, giving1/(2pi sqrt(s^2-(r/c)^2)).",
+    "Native nodal injection has no1/h^2, so continuum point strengthh^2=100m^2 is correct mass matching. m/ms conventions c2,f.005,t0200,r50,a25 are consistent; finite-grid source is not equated exactly with continuum delta.",
+    "s=a cosh(v) substitution cancels the endpoint singularity. Interval0..acosh(t/a), zero before/atarrival, h^2/(2pi) prefactor and independent unit-step acosh control agree.",
+    "Legendre Jacobi offdiagonalk/sqrt(4k^2-1), symmetric eigh ordered nodes and2times first-eigenvector-entry squared weights are correct. All fixed128/256/512 orders, polynomial moments, both convergence pairs and controls are retained without order selection.",
+    "Old traces must have exact source/time/geometry checks and actual recorded1..1099 mask. Full1101 analytic points, discrete0/1100 sentinels and causal-Ricker/source0-unused startup mismatch are retained without shifts/amplitude fitting.",
+    "Metric numerators/denominators/counts and null zero-denominator handling are explicit. Internal software/quadrature gates are separated from physical_quality_pass=null. No arbitrary physical threshold, independent-geology, inverse-gradient or theorem conclusion follows."
+  ],
+  "material_prefix_issue": {
+    "id": "G1",
+    "issue": "Initial status has empty orders/cases and appends only attempts. Interruption in first order or first case leaves other fixed planned rows absent from status, obscuring the planned denominator despite the protocol listing it.",
+    "minimal_fix_requested": "Register all3 order and7 case rows asunattempted before numerical work; update those rows in place. Extend tiny interruption/prefix checks. Preserve e44/9a71 source history; no numeric settings change."
+  },
+  "provenance_wording": "old_snapshot necessarily reads compressed NPZ bytes for SHA before own curves. Numeric arrays are decoded via np.load only after all3 curves are saved. Describe this distinction rather than claiming no prior NPZ file access at all.",
+  "activities": {"source_math_review_only": true, "primary_source_browsed": true, "candidate_import_parse_tests": false, "fixture_curve_or_old_trace_array_reads": false, "new_outcomes": false, "repository_edits": false},
+  "gate": "Parent exact freeze, validation and GO remain pending. This is AI software verification support, not student final design or physical-quality approval."
+}

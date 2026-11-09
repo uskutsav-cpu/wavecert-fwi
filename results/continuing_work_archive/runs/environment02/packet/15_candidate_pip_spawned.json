@@ -1,0 +1,24 @@
+{
+  "actual_pid": 2489,
+  "argv": [
+    "/opt/wavecert/checkpoint23/env_01/bin/python",
+    "-B",
+    "-I",
+    "-c",
+    "import runpy,sys;sys.path.insert(0,sys.argv.pop(1));sys.argv[0]=\"pip\";runpy.run_module(\"pip\",run_name=\"__main__\")",
+    "/opt/wavecert/checkpoint23_environment_01/acquired_wheels/pip-26.2-py3-none-any.whl",
+    "install",
+    "--no-index",
+    "--no-deps",
+    "--no-compile",
+    "/opt/wavecert/checkpoint23_environment_01/acquired_wheels/pip-26.2-py3-none-any.whl"
+  ],
+  "cwd": "/home/runner/work/_temp/checkpoint23_environment_raw",
+  "label": "15_candidate_pip",
+  "launch_state": "HANDLE_ASSIGNED",
+  "observed_pgid": 2489,
+  "requested_new_session": true,
+  "terminal_state_known": false,
+  "timeout_seconds": 600,
+  "wait_observed": false
+}

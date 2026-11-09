@@ -1,0 +1,41 @@
+{
+  "result": "CLEAR_CITATION_ONLY_SOURCE_DELTA; NOT_EXECUTION_GO",
+  "reviewer": "candidate_final_review",
+  "scope": "Independent AI source-only comparison during live benchmark; not student authorship/design or human review",
+  "frozen_hashes": {
+    "collect_bp2004.py": "7a499a425ca495c8cffb2714af260e88e9ad929e9c6f85b0d9d7c0ef9624e28d",
+    "README.md": "71c7dd67024a7c28bc31233c30ff8f532417859b3c9604189929f38edb9895e2",
+    "protocol.json": "a84ce64dcac7f93f035007daf313cb2ab7bde713800d10d9d37d812f12c836f4",
+    "test_collect_bp2004.py": "245555dddb95eab9e0712603ac99cf8fbb03c62562374f495e6e061dc96fe44f",
+    "documentation_manifest.json": "c98ba723da343ad75e36ba0c4549b666d7c2143b18521bacf516ca605d00b05d",
+    "original_BP2004_READMES.pdf": "e29b003fc2161c44d2b9f04448195e58ebe6f476a195b31c3be77440adb60e24",
+    "V1_TO_V2_MANIFEST.json": "249de54151b314667c763b320b0312270d897b1c5b8560962d3714f2948a23d5",
+    "citation_only.patch": "44dca39f6c202444addc0154e37d5b752c3323e9fafaf1566ebda6f4d33b4beb"
+  },
+  "comparison": [
+    "Actual unified differences from preserved v1 collector and README contain exactly two title substitutions: Complex subsalt imaging challenges -> The 2004 BP velocity benchmark. Both the generated modification_readme citation string and README bibliography now agree.",
+    "Authors,2005 year,67th EAGE venue,B035 identifier and DOI10.3997/2214-4609-pdb.1.B035 are unchanged. The corrected title matches the archived independent primary-document review of page3 README_History, zero-index page2/extracted lines101-107.",
+    "The original publisher PDF and documentation manifest remain byte-identical. BP/Frederic Billette acknowledgement, disclaimer preservation, redistribution/modification notices and no-new-license wording are unaltered.",
+    "Protocol, tests and documentation assets match immutable main v1 by SHA256; changed v1 collector/README snapshots also match immutable main v1. Numeric settings, three crops/coordinates/decimation, bounds, URL/length/ETag guards, gzip/SEG-Y/IBM32/IEEE parser, source/ancestry role and output semantics are unchanged because the collector diff contains only the citation string.",
+    "The new caller collector source pin changes to7a499a42...e28d while the protocol pin remainsa84ce64d...36f4. Historical35-test receipts remain explicitly v1 evidence and are not a v2 test-pass claim."
+  ],
+  "citation_evidence": {
+    "archived_review": "../bp2004_acquisition_review_followup.json",
+    "archived_review_sha256": "4ed6ba1bdb38e849d2f36eb4c1683c2998952ef24528923d0b121019fb713fdb",
+    "original_document_url": "https://s3.amazonaws.com/open.source.geoscience/open_data/bpvelanal2004/2004_Benchmark_READMES.pdf",
+    "title": "The 2004 BP velocity benchmark",
+    "doi": "10.3997/2214-4609-pdb.1.B035",
+    "direct_page_reextraction_this_review": false,
+    "limitation": "Citation alignment uses the already archived primary-PDF page3 review and unchanged PDF SHA; no new PDF parser/render/download was run during the live timing job."
+  },
+  "activities": {
+    "source_text_diff_cmp_and_sha256_only": true,
+    "collector_import_parse_execution_or_tests": false,
+    "network_or_downloads": false,
+    "project_arrays_PDE_or_benchmark_work": false,
+    "current_benchmark_outputs_read": false,
+    "immutable_v1_or_repository_modified": false
+  },
+  "material_citation_delta_blockers": [],
+  "remaining_gate": "Parent must confirm timed benchmark terminal, validate the unexecuted v2 including actual generated modification notice and original-document consistency, and separately decide acquisition GO. This source review authorizes no GET, crop, PDE, independent-site inference or scientific conclusion."
+}

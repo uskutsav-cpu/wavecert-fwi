@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "role": "AI-authored analytical homogeneous software-verification candidate; not student final design, physics-quality approval or goal2 completion",
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "equation": "c^(-2) u_tt - Laplacian(u) = A q(t) delta2(x-xs), zero initial displacement/velocity at t=0, infinite homogeneous 2D space",
+  "velocity_m_per_ms": 2.0,
+  "source_receiver_distance_m": 50.0,
+  "cell_area_point_strength_m2": 100.0,
+  "source": {"kind": "Ricker(t) H(t)", "frequency_per_ms": 0.005, "delay_ms": 200.0, "amplitude": 1.0},
+  "time_ms": {"start": 0.0, "stop": 1100.0, "step": 1.0, "samples": 1101},
+  "valid_comparison_indices_inclusive": [1,1099],
+  "uncomputed_discrete_receiver_indices": [0,1100],
+  "windows": {"early_upper_ms_inclusive": 250.0, "late": "time>250ms", "intersect_with_valid_mask": true},
+  "primary_case": "reference_321",
+  "case_ids": ["small_nbl0","small_nbl20","small_nbl40","matched_exterior_20_undamped","matched_exterior_40_undamped","reference_241","reference_321"],
+  "quadrature": {
+    "orders": [128,256,512],
+    "construction": "Gauss-Legendre via symmetric Jacobi eigenproblem: diagonal0, offdiagonal k/sqrt(4k^2-1), weights2*v_first^2; no trace-informed coefficients",
+    "substitution": "s=a*cosh(v), a=r/c; v in[0,acosh(t/a)]; ds/sqrt(s^2-a^2)=dv",
+    "comparison_order": 512,
+    "convergence_relative_L2_maximum": 1e-10,
+    "convergence_pairs": [[128,256],[256,512]],
+    "convergence_mask": "valid indices1..1099",
+    "node_weight_and_moment_absolute_tolerance": 1e-12,
+    "step_control_normalized_max_abs_tolerance": 1e-12,
+    "step_control": "q(t)=H(t), response A/(2*pi)*acosh(t/a) for t>a and0 otherwise; every full time sample, all three orders",
+    "scope": "Ordinary floating-point internal numerical checks only, not rigorous error bounds or physical agreement thresholds. Preserve all results even on failed gates; no order increase/tolerance tuning."
+  },
+  "metrics": {
+    "full_relative": "norm((discrete-analytic512)[valid])/norm(analytic512[valid])",
+    "early_relative": "norm((discrete-analytic512)[valid and time<=250])/norm(analytic512[valid and time<=250])",
+    "late_mismatch_over_full_analytic": "norm((discrete-analytic512)[valid and time>250])/norm(analytic512[valid])",
+    "retain_numerators_denominators_and_counts": true,
+    "zero_denominator": "null ratio; zero_denominator true, no pass by fiat",
+    "physical_quality_threshold": null
+  },
+  "source_sample_matching_relative_L2_maximum": 1e-14,
+  "source_bitwise_matching": "diagnostic only",
+  "startup_scope": "Continuum q(t)=Ricker(t)H(t) has nonzero q0=(1-2*pi^2)*exp(-pi^2). Pinned discrete loop starts1 with u0=u1=0 and source0 unused; known startup-discretization mismatch is retained, without time shifts, activation changes or amplitude fitting.",
+  "limits": ["Mass-matched grid node is not an exact continuum point delta at finite h; r is only five grid spacings.","Finite space/time dispersion, startup, finite-domain boundary and finite-grid source effects can all contribute; this diagnostic does not isolate each cause.","Analytic full1101 samples and valid mask are retained. Discrete0/1100 sentinels are preserved but excluded from comparison.","The existing approximately25percent finite-domain discrepancy and all7 Devito/14 NumPy artifacts remain unchanged; no absorber change or PDE rerun.","No amplitude, shift, window, width, source parameter or quadrature-order selection from trace outcomes."],
+  "input_pins": {
+    "original_boundary_protocol.json": "a83f2de93543b16af428d1fbe562f4d7db8d9df982b203a04bb0d445e93306b8",
+    "primary_metadata/operator_time_arguments.json": "8d654aaec79a040a683329abb82f4e35c1099b8c14828be3f1c2c5a4693cbcb5",
+    "primary_metadata/forward_undamped_primary.c": "82966d6bfcc7542535163804ac127bf01053808757e9f35fc4e363a01925da38",
+    "primary_metadata/forward_damped_primary.c": "0a6777367c0497ca008d76961ea989ad3ea99db41e7c965656dbf75a767d3c6b"
+  },
+  "old_run_metadata_pins": {"status.json":"3a22946be66d85ff7abbfa47ef89268ae990837819e0e27eab6697c769b9ffb4","complete_receipt.json":"a182454fdb8925997dea44d67b98871635e2cf537a0bb30ae6b15e229065fc04","protocol.json":"a83f2de93543b16af428d1fbe562f4d7db8d9df982b203a04bb0d445e93306b8"},
+  "old_raw_pins": {"small_nbl0_raw.npz":"4c050ebd9902ac0ff60676c6f01d3cfa4d7a449217110ca6766b3ef551e96a53","small_nbl20_raw.npz":"627edd39671bf733f2913cd000276bfe23f2e90924d7ce495482c89cc4e037ad","small_nbl40_raw.npz":"026732481fd815c2674146d606e1602ab08ef2e1c1acbfff3b31d134f599643c","matched_exterior_20_undamped_raw.npz":"d0e178dad419dc7e6bc2437de675d15497fa350032c52b0291e76c9f70c0364a","matched_exterior_40_undamped_raw.npz":"20938f8347cf08097e5526cba3e8a75f6d755d184bfd80abb87f3bf4b7252f4d","reference_241_raw.npz":"2ec0f70d0e6cee58376899adf78d8c922bcd58a0e6918597428ee388ddfa3837","reference_321_raw.npz":"7fadc5d340acb6140fe8f017f8f824941ec765fe2ecbd5425b779e80b0bdb9d0"},
+  "execution": {"explicit_hash_gated_run_required": true,"new_output_only": true,"minimum_free_disk_bytes":104857600,"all_analytic_orders_before_old_npz_decode":true,"old_compressed_npz_bytes_hashed_before_analytic_curves":true,"all3orders_and7cases_in_status_before_any_curve":true,"save_all_controls_curves_times_source_mask":true,"failed_interrupted_prefixes_retained":true,"no_PDE_or_original_artifact_writes":true}
+}

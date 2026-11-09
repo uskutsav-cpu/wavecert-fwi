@@ -1,0 +1,126 @@
+{
+  "actual_namespace_status": "ACTUAL_LINUX_DUMMY_NAMESPACE_SIGNAL_PASS",
+  "actual_remote_controls": {
+    "probe_controls.log": {
+      "report": {
+        "PDE_calls": 0,
+        "actual_import_probe": false,
+        "errors": 0,
+        "failures": 0,
+        "fixture_source_sha256": {
+          "RUNTIME_SOURCE_PINS.json": "bfbc2e31cd4ff7ae2a0f0342dc3633c5e4dc0189daea0d06eaeb12de1040350f",
+          "protocol.json": "27e5a331d6bd9eff0dd6b4fa0ca1bc666c6014ed70ffb3da01821c62f83fdcbc"
+        },
+        "package_actions": 0,
+        "probe_source_sha256": "f9d2209c296338b1ed7a631aa292fb6cd79fb98d0c4a23e013636c40bd57fe51",
+        "runtime_import_attempts": [],
+        "sentinel": "CHECKPOINT23_IMPORT_PROBE_V2_MANUFACTURED",
+        "skips": 0,
+        "test_source_sha256": "6748459142471e6aeda82f936383681eb22ecc11e6d2b2844e3735900b0cbdc1",
+        "tests": 25
+      },
+      "sha256": "32949eda25e36f42124fa19b52d4a7b6bc5cf357e08cb2d2f7b6b5e605977833",
+      "unique_named_passes": 25
+    },
+    "route_controls.log": {
+      "report": {
+        "PDE_calls": 0,
+        "actual_namespace_probe": false,
+        "errors": 0,
+        "failures": 0,
+        "package_actions": 0,
+        "runtime_import_attempts": [],
+        "sentinel": "CHECKPOINT23_ENVIRONMENT_ROUTE_MANUFACTURED_V2",
+        "skips": 0,
+        "source_sha256": "60247250455f41b51c78e0c54ba760b0b548d0394554b5388fe9db2ef6adff40",
+        "tests": 26
+      },
+      "sha256": "4651d605eca785eee65594cf018da88650fcb0a74605258a4815ea5db2f24363",
+      "unique_named_passes": 26
+    }
+  },
+  "attempt": 1,
+  "complete_environment": false,
+  "diagnosis": {
+    "explanation": "V2 counted every nested .dist-info/METADATA suffix. Last completed archive was setuptools84.2.1; root verified its official tagged vendor source contains nested dist-info directories. Exact remote wheel members were not retained/inspected here. Corrected actual preparation remains unexecuted.",
+    "parent_primary_receipt_path": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/checkpoint23_environment_remote_01/primary_api_receipts.json",
+    "parent_primary_receipt_sha256": "6d8a5697175ec4be720f99e8a0d5e7419825d17ace6e4279affa214cbe614236",
+    "primary_wheel_layout": "https://packaging.python.org/en/latest/specifications/binary-distribution-format/",
+    "status": "SUPPORTED_INFERENCE_NOT_RAW_WHEEL_INSPECTION_PROOF"
+  },
+  "explicit_body_bytes": 7183949,
+  "explicit_transfer_ledger_sha256": "f7d944430f3ebbdd481c282ac42929f9e1c51fedb36c44013fa1e85b9f7a8520",
+  "failure": {
+    "exception_type": "ValueError",
+    "message": "one wheel METADATA required",
+    "native_execution_authorized": false,
+    "native_use_review_clear": false,
+    "status": "ENVIRONMENT_PREPARATION_FAILED_OR_INTERRUPTED_NO_RETRY"
+  },
+  "head": "d8a2d4e818127b060aca94c62036fa952b29c651",
+  "job_id": 129020686732,
+  "last_completed_transfer": {
+    "actual_body_bytes": 876263,
+    "attempted": true,
+    "completed": true,
+    "destination": "/opt/wavecert/checkpoint23_environment_01/acquired_wheels/setuptools-84.2.1-py3-none-any.whl",
+    "sha256": "ca140b45d5325a9478f880e351484f62fef15f336462e449ca0c03c873d589c2",
+    "url": "https://files.pythonhosted.org/packages/ef/55/6dc6d6bb953bdfc52519a0059592c52b6e3b8ad51cf8256dffceb55b0610/setuptools-84.2.1-py3-none-any.whl"
+  },
+  "metadata_zip": {
+    "bytes": 104300,
+    "path": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/checkpoint23_environment_remote_01/metadata.zip",
+    "sha256": "81eca1b90ebc3108fbf310a5b46564c47f4380fa9b55d7e67657099967d50f3a"
+  },
+  "namespace_evidence_sha256": "0ed729dd375718986c7e36fcb4431e7b77de6d6d40b3690e6c3ade658d7c8a2c",
+  "native_execution_authorized": false,
+  "native_use_review_clear": false,
+  "packet_inventory": {
+    "exact_total_files_including_inventory": 45,
+    "path": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/checkpoint23_environment_remote_01/packet/artifact_inventory.json",
+    "payload_files_hashverified": 44,
+    "sha256": "669343efc9b12d3f42da7d5129b2b04b2c78101a47d94bd6fc1d525c000d7ab8"
+  },
+  "persisted_actual_wait_receipts": {
+    "01_namespace_dummy_actual_wait.json": {
+      "actual_pid": 2263,
+      "group_alive_after_cleanup": false,
+      "persisted_actual_wait_returncode": 0,
+      "sha256": "3e2191ed9b62791dc059332f6817e5d81177304ec83f671363336a479a75a907"
+    },
+    "02_create_task_roots_actual_wait.json": {
+      "actual_pid": 2266,
+      "group_alive_after_cleanup": false,
+      "persisted_actual_wait_returncode": 0,
+      "sha256": "1034c43698e78e724c6631c64e594053a42b8fb495fedd4350b8f1aa33bdcf3d"
+    },
+    "03_build_venv_actual_wait.json": {
+      "actual_pid": 2268,
+      "group_alive_after_cleanup": false,
+      "persisted_actual_wait_returncode": 0,
+      "sha256": "4ae9a4a3f3aedc1c224646188a495545df24c7505ffbeb88e49eaf851f4fefba"
+    },
+    "04_build_pip_actual_wait.json": {
+      "actual_pid": 2270,
+      "group_alive_after_cleanup": false,
+      "persisted_actual_wait_returncode": 0,
+      "sha256": "78edd9f7e398382e961bb4228f10c31bd6681c532b7b0433b00d3a1dae2f3f31"
+    },
+    "05_resolve_build_actual_wait.json": {
+      "actual_pid": 2293,
+      "group_alive_after_cleanup": false,
+      "persisted_actual_wait_returncode": 0,
+      "sha256": "0a54b3f7835777f911daf1be7dfe2435e5bdb1342c019f9eba4f881e1c409867"
+    }
+  },
+  "root_terminal_review": {
+    "controller_step_exit_code_as_reported_by_root": 2,
+    "path": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/checkpoint23_environment_remote_01/root_review.json",
+    "sha256": "70a172c1fd6a733b0d87cc24b119e2dbf903c3217a355f7c7b205f944a26c224"
+  },
+  "run_id": 42575024250,
+  "schema": "checkpoint23_environment_first_failure_bound_source_review_v1",
+  "scientific_goals_complete": false,
+  "source": "Already downloaded private-to-workspace metadata packet only; no new remote retrieval or wheel inspection.",
+  "status": "PRESERVED_FAILURE_SUPPORTED_DIAGNOSIS_NO_SUCCESS_OR_RETRY"
+}

@@ -1,0 +1,518 @@
+{
+  "alpha": 0.1,
+  "target_coverage": 0.9,
+  "calibration_cases": 576,
+  "calibration_unit": "maximum normalized error across selected slices and blocks of one parent model",
+  "calibration_parent_models": 12,
+  "calibration_score_by_parent": {
+    "f3_043": 0.0006577292607298689,
+    "f3_046": 0.0009661283073345146,
+    "f3_048": 0.0005526212318362997,
+    "f3_051": 0.00033113256592508597,
+    "fault_000": 0.0009083547478287394,
+    "fault_002": 0.0008998636148507133,
+    "fault_004": 0.001112536126386857,
+    "gom_149": 0.00512341130786043,
+    "salt_canopy_002": 0.002625223942848991,
+    "salt_canopy_003": 0.0009605988402764143,
+    "seam_000": 0.00030033730322156474,
+    "seam_004": 0.0026690988023615994
+  },
+  "calibration_selected_counts_by_parent": {
+    "f3_043": {
+      "n_slices": 2,
+      "n_blocks": 48
+    },
+    "f3_046": {
+      "n_slices": 2,
+      "n_blocks": 48
+    },
+    "f3_048": {
+      "n_slices": 2,
+      "n_blocks": 48
+    },
+    "f3_051": {
+      "n_slices": 2,
+      "n_blocks": 48
+    },
+    "fault_000": {
+      "n_slices": 2,
+      "n_blocks": 48
+    },
+    "fault_002": {
+      "n_slices": 2,
+      "n_blocks": 48
+    },
+    "fault_004": {
+      "n_slices": 2,
+      "n_blocks": 48
+    },
+    "gom_149": {
+      "n_slices": 2,
+      "n_blocks": 48
+    },
+    "salt_canopy_002": {
+      "n_slices": 2,
+      "n_blocks": 48
+    },
+    "salt_canopy_003": {
+      "n_slices": 2,
+      "n_blocks": 48
+    },
+    "seam_000": {
+      "n_slices": 2,
+      "n_blocks": 48
+    },
+    "seam_004": {
+      "n_slices": 2,
+      "n_blocks": 48
+    }
+  },
+  "conformal_scale": 0.00512341130786043,
+  "finite_calibration_bound_supported": true,
+  "calibration_id_within_parent_sampling_shapes_match": true,
+  "sampling_scope": "Observed slice counts and source/frequency block sets match across calibration and ID parents; parent exchangeability still requires the declared sampling design.",
+  "split_audit": {
+    "roles": {
+      "calibration": {
+        "rows": 576,
+        "unique_slices": 24,
+        "unique_parent_models": 12,
+        "parent_models": [
+          "f3_043",
+          "f3_046",
+          "f3_048",
+          "f3_051",
+          "fault_000",
+          "fault_002",
+          "fault_004",
+          "gom_149",
+          "salt_canopy_002",
+          "salt_canopy_003",
+          "seam_000",
+          "seam_004"
+        ],
+        "rows_per_parent": {
+          "f3_043": 48,
+          "f3_046": 48,
+          "f3_048": 48,
+          "f3_051": 48,
+          "fault_000": 48,
+          "fault_002": 48,
+          "fault_004": 48,
+          "gom_149": 48,
+          "salt_canopy_002": 48,
+          "salt_canopy_003": 48,
+          "seam_000": 48,
+          "seam_004": 48
+        },
+        "geology_counts": {
+          "f3": 192,
+          "fault": 144,
+          "gom": 48,
+          "salt_canopy": 96,
+          "seam": 96
+        }
+      },
+      "test_id": {
+        "rows": 384,
+        "unique_slices": 16,
+        "unique_parent_models": 8,
+        "parent_models": [
+          "f3_042",
+          "fault_001",
+          "fault_003",
+          "gom_144",
+          "seam_001",
+          "seam_002",
+          "seam_008",
+          "seam_009"
+        ],
+        "rows_per_parent": {
+          "f3_042": 48,
+          "fault_001": 48,
+          "fault_003": 48,
+          "gom_144": 48,
+          "seam_001": 48,
+          "seam_002": 48,
+          "seam_008": 48,
+          "seam_009": 48
+        },
+        "geology_counts": {
+          "f3": 48,
+          "fault": 96,
+          "gom": 48,
+          "seam": 192
+        }
+      },
+      "test_ood": {
+        "rows": 96,
+        "unique_slices": 4,
+        "unique_parent_models": 1,
+        "parent_models": [
+          "penobscot_000"
+        ],
+        "rows_per_parent": {
+          "penobscot_000": 96
+        },
+        "geology_counts": {
+          "penobscot": 96
+        }
+      },
+      "train": {
+        "rows": 816,
+        "unique_slices": 34,
+        "unique_parent_models": 17,
+        "parent_models": [
+          "f3_044",
+          "f3_045",
+          "f3_047",
+          "f3_049",
+          "f3_050",
+          "gom_142",
+          "gom_143",
+          "gom_145",
+          "gom_146",
+          "gom_147",
+          "gom_150",
+          "salt_canopy_000",
+          "salt_canopy_001",
+          "seam_003",
+          "seam_006",
+          "seam_007",
+          "seam_010"
+        ],
+        "rows_per_parent": {
+          "f3_044": 48,
+          "f3_045": 48,
+          "f3_047": 48,
+          "f3_049": 48,
+          "f3_050": 48,
+          "gom_142": 48,
+          "gom_143": 48,
+          "gom_145": 48,
+          "gom_146": 48,
+          "gom_147": 48,
+          "gom_150": 48,
+          "salt_canopy_000": 48,
+          "salt_canopy_001": 48,
+          "seam_003": 48,
+          "seam_006": 48,
+          "seam_007": 48,
+          "seam_010": 48
+        },
+        "geology_counts": {
+          "f3": 240,
+          "gom": 288,
+          "salt_canopy": 96,
+          "seam": 192
+        }
+      },
+      "validation": {
+        "rows": 192,
+        "unique_slices": 8,
+        "unique_parent_models": 4,
+        "parent_models": [
+          "gom_148",
+          "gom_151",
+          "seam_005",
+          "seam_011"
+        ],
+        "rows_per_parent": {
+          "gom_148": 48,
+          "gom_151": 48,
+          "seam_005": 48,
+          "seam_011": 48
+        },
+        "geology_counts": {
+          "gom": 96,
+          "seam": 96
+        }
+      }
+    },
+    "pairwise_overlap": [
+      {
+        "roles": [
+          "calibration",
+          "test_id"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      },
+      {
+        "roles": [
+          "calibration",
+          "test_ood"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      },
+      {
+        "roles": [
+          "calibration",
+          "train"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      },
+      {
+        "roles": [
+          "calibration",
+          "validation"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      },
+      {
+        "roles": [
+          "test_id",
+          "test_ood"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      },
+      {
+        "roles": [
+          "test_id",
+          "train"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      },
+      {
+        "roles": [
+          "test_id",
+          "validation"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      },
+      {
+        "roles": [
+          "test_ood",
+          "train"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      },
+      {
+        "roles": [
+          "test_ood",
+          "validation"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      },
+      {
+        "roles": [
+          "train",
+          "validation"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      }
+    ],
+    "conflicting_slice_parent_ids": [],
+    "slice_isolation_passed": true,
+    "parent_isolation_passed": true,
+    "exchangeability_established": false,
+    "statistical_scope": "Parent isolation is necessary but not sufficient for pooled conformal coverage; fixed geology quotas and unequal within-parent sampling require separate justification.",
+    "scope": "Manifest isolation only; does not prove independent sampling, unseen data, or checkpoint provenance."
+  },
+  "dataset_provenance": {
+    "dataset_manifest_sha256": "e297ab5196bd50142db76a575c78355587bba04f6b381a0ef8700c950d04155a",
+    "role_manifest_sha256": "30fed6e30e07a1b54d17f3ae9511d06eac6f44c69fcb57b6ee588f2ade65ef14",
+    "verified_content_files": [
+      "split_manifest.csv",
+      "train.npz",
+      "train_metadata.csv",
+      "validation.npz",
+      "validation_metadata.csv",
+      "calibration.npz",
+      "calibration_metadata.csv",
+      "test_id.npz",
+      "test_id_metadata.csv",
+      "test_ood.npz",
+      "test_ood_metadata.csv"
+    ],
+    "scope": "file identity only; no proof of unseen test data or independent parent sampling"
+  },
+  "checkpoint_provenance": {
+    "checkpoint_sha256": "b1786eb61fa6d0b7fec3afba7fd35954eb30cea3ac40db6a099d61f9afc89d02",
+    "dataset_manifest_sha256": "e297ab5196bd50142db76a575c78355587bba04f6b381a0ef8700c950d04155a",
+    "training_manifest_sha256": "30fed6e30e07a1b54d17f3ae9511d06eac6f44c69fcb57b6ee588f2ade65ef14",
+    "calibration_role_used_for_model_selection": false,
+    "scope": "verified checkpoint metadata link; does not establish unseen evaluation or independent sampling"
+  },
+  "checkpoint_sha256": "b1786eb61fa6d0b7fec3afba7fd35954eb30cea3ac40db6a099d61f9afc89d02",
+  "calibration_metadata_sha256": "305afa812eee84b96a54ceac01c6d4d469ee35e87ce4e31ac45d1aa8fa56b326",
+  "id": {
+    "n_cases": 384,
+    "observation_unit": "one slice/source/frequency block",
+    "n_slices": 16,
+    "n_parent_models": 8,
+    "receiver_forward_relative_l2_median": 0.7022686863261262,
+    "gradient_relative_l2_median": 1.0007489160778344,
+    "gradient_cosine_median": 0.11203399572378975,
+    "neural_true_descent_rate": 0.6979166666666666,
+    "deterministic_coverage": 1.0,
+    "conformal_coverage": 1.0,
+    "parent_simultaneous_conformal_coverage": 1.0,
+    "parent_coverage_failure_uncertainty": {
+      "n_units": 8,
+      "failures": 0,
+      "observed_failure_rate": 0.0,
+      "confidence": 0.95,
+      "one_sided_failure_probability_upper": 0.3123439780663678,
+      "method": "exact one-sided Clopper-Pearson",
+      "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+    },
+    "parent_selected_counts_and_scores": {
+      "f3_042": {
+        "n_slices": 2,
+        "n_blocks": 48,
+        "max_normalized_error": 0.0016266404417363527,
+        "zero_bound_positive_error": false,
+        "simultaneously_covered": true
+      },
+      "fault_001": {
+        "n_slices": 2,
+        "n_blocks": 48,
+        "max_normalized_error": 0.0012696575890127101,
+        "zero_bound_positive_error": false,
+        "simultaneously_covered": true
+      },
+      "fault_003": {
+        "n_slices": 2,
+        "n_blocks": 48,
+        "max_normalized_error": 0.0011470697430473345,
+        "zero_bound_positive_error": false,
+        "simultaneously_covered": true
+      },
+      "gom_144": {
+        "n_slices": 2,
+        "n_blocks": 48,
+        "max_normalized_error": 0.001912226658207233,
+        "zero_bound_positive_error": false,
+        "simultaneously_covered": true
+      },
+      "seam_001": {
+        "n_slices": 2,
+        "n_blocks": 48,
+        "max_normalized_error": 0.0017730774882456426,
+        "zero_bound_positive_error": false,
+        "simultaneously_covered": true
+      },
+      "seam_002": {
+        "n_slices": 2,
+        "n_blocks": 48,
+        "max_normalized_error": 0.0005910134795811058,
+        "zero_bound_positive_error": false,
+        "simultaneously_covered": true
+      },
+      "seam_008": {
+        "n_slices": 2,
+        "n_blocks": 48,
+        "max_normalized_error": 0.000491905184381781,
+        "zero_bound_positive_error": false,
+        "simultaneously_covered": true
+      },
+      "seam_009": {
+        "n_slices": 2,
+        "n_blocks": 48,
+        "max_normalized_error": 0.002802472937606816,
+        "zero_bound_positive_error": false,
+        "simultaneously_covered": true
+      }
+    },
+    "deterministic_certified_fraction": 0.0,
+    "conformal_certified_fraction": 0.0,
+    "conformal_false_certifications": 0,
+    "parent_any_false_acceptance": {
+      "n_units": 8,
+      "failures": 0,
+      "observed_failure_rate": 0.0,
+      "confidence": 0.95,
+      "one_sided_failure_probability_upper": 0.3123439780663678,
+      "method": "exact one-sided Clopper-Pearson",
+      "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+    },
+    "parent_bootstrap_gradient_cosine": {
+      "n_observations": 384,
+      "n_parent_groups": 8,
+      "mean": 0.12791650267612412,
+      "confidence": 0.95,
+      "interval": [
+        0.07405565319087373,
+        0.18167055607081273
+      ],
+      "method": "whole-parent percentile bootstrap of observation-weighted mean",
+      "seed": 20260912,
+      "n_resamples": 2000,
+      "assumption": "independently sampled parent groups; slices within a parent may be dependent",
+      "status": "descriptive interval conditional on the parent-sampling assumption"
+    }
+  },
+  "ood": {
+    "n_cases": 96,
+    "observation_unit": "one slice/source/frequency block",
+    "n_slices": 4,
+    "n_parent_models": 1,
+    "receiver_forward_relative_l2_median": 0.7296376092283186,
+    "gradient_relative_l2_median": 1.3763397502634094,
+    "gradient_cosine_median": -0.05977807751968357,
+    "neural_true_descent_rate": 0.3958333333333333,
+    "deterministic_coverage": 1.0,
+    "conformal_coverage": 1.0,
+    "parent_simultaneous_conformal_coverage": 1.0,
+    "parent_coverage_failure_uncertainty": {
+      "n_units": 1,
+      "failures": 0,
+      "observed_failure_rate": 0.0,
+      "confidence": 0.95,
+      "one_sided_failure_probability_upper": 0.95,
+      "method": "exact one-sided Clopper-Pearson",
+      "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+    },
+    "parent_selected_counts_and_scores": {
+      "penobscot_000": {
+        "n_slices": 4,
+        "n_blocks": 96,
+        "max_normalized_error": 0.0009233113805614909,
+        "zero_bound_positive_error": false,
+        "simultaneously_covered": true
+      }
+    },
+    "deterministic_certified_fraction": 0.0,
+    "conformal_certified_fraction": 0.0,
+    "conformal_false_certifications": 0,
+    "parent_any_false_acceptance": {
+      "n_units": 1,
+      "failures": 0,
+      "observed_failure_rate": 0.0,
+      "confidence": 0.95,
+      "one_sided_failure_probability_upper": 0.95,
+      "method": "exact one-sided Clopper-Pearson",
+      "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+    },
+    "parent_bootstrap_gradient_cosine": {
+      "n_observations": 96,
+      "n_parent_groups": 1,
+      "mean": -0.0885246241467536,
+      "confidence": 0.95,
+      "interval": null,
+      "method": "whole-parent percentile bootstrap of observation-weighted mean",
+      "seed": 20260912,
+      "n_resamples": 2000,
+      "assumption": "independently sampled parent groups; slices within a parent may be dependent",
+      "status": "unavailable: fewer than two independent parent groups"
+    }
+  },
+  "coverage_semantics": "parent-level split-conformal coverage requires exchangeable independent parents and the same predeclared within-parent sampling protocol; coverage is not conditional on acceptance, not an entire inversion-trajectory guarantee, and does not apply to OOD; interval assumptions are stated alongside each summary",
+  "exit_criteria": {
+    "deterministic_id_full_coverage": true,
+    "deterministic_ood_full_coverage": true,
+    "id_ood_reported_separately": true,
+    "false_certifications_reported": true
+  }
+}

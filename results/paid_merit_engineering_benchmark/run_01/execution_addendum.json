@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "role": "AI-authored SOFTWARE ENGINEERING execution addendum, not student final research design or competition evidence",
+  "created_utc": "2026-11-08T04:09:27.303855+00:00",
+  "student_final_research_design": false,
+  "student_scientific_question_and_contribution_account": "still pending",
+  "competition_evidence": false,
+  "research_goal1_complete_claim": false,
+  "original_candidate_protocol_unmodified": true,
+  "original_candidate_project_execution_authorized": false,
+  "original_candidate_relative_directory": "results/provisional_software_benchmark/matched_cost_pilot",
+  "original_candidate_protocol_sha256": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c",
+  "candidate_files_sha256": {
+    "__init__.py": "8f5dde1292081eedb460cc9752025c72350673a2bd705bd407a5e6fa531bf22b",
+    "adapter.py": "f793f4439551bf7614bd72421057d209f3cb353710fe06f8c13de85b44eecf61",
+    "verification.py": "b7bee25257caf456d52932962ceba2fde00197f0a78b585cf90c138e795bba4c",
+    "protocol.json": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c"
+  },
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "fixed_inputs_and_parameters": "Exactly original candidate8 reused validation slices,49grid,24blocks,five controls,rank64/fourrepairs,GMRES200/restart40,maxsteps200,maxbudget8seconds,three repetitions/orderseed2026110729; no new geology or parameter selection.",
+  "schedule": {
+    "anytime_runs": 120,
+    "target_stop_runs": 240,
+    "total_runs": 360,
+    "mode_order": [
+      "anytime",
+      "target_stop_0.5",
+      "target_stop_0.25"
+    ],
+    "method_case_repetition_order": "Original120 schedule is reproduced unchanged within each mode; saved all360 entries before any input loading/preparation.",
+    "target_ratios": [
+      0.5,
+      0.25
+    ],
+    "target_change": "Only existing TrajectoryOptions.relative_objective_target is set to the fixed reporting ratio in target-stop modes. All other parameters remain unchanged."
+  },
+  "timing": {
+    "global_start": "Real perf_counter timestamp BEFORE per-run source checks,input loading/hash verification,refinement/initialization,and synthetic-observation preparation. All this work is actually repeated each run.",
+    "anchored_engine_clock": "FIRST clock call returns that original global timestamp; every subsequent call returns current perf_counter. Engine commit and budget timestamps therefore include the actually performed prefix.",
+    "prefix_accounting": "Preparation seconds/counters are reported as subsets of measured elapsed work; never add prefix seconds again to engine elapsed.",
+    "returned_wall": "Measure real global-start to run_control RETURN, including engine finish strict metadata/validation tail; preserve engine elapsed, return wall, tail and overshoot separately.",
+    "primary_end_to_end_target": "Only a complete objective_target result with finitepositive initialPhi, matching targetfinalPhi,completecostcontext and ACTUAL return<=8seconds is eligible. Late/unreached/failed results have elapsed target event=null; actual observation wall/status retained. InitialPhi0 is trivial/already solved, not ratio speedup evidence.",
+    "anytime_scope": "1/2/4/8 checkpoints are INTERNAL-state diagnostics, not fully returned API evidence. No initial model/offline quality is counted when completed_paid_checkpoint=false.",
+    "after_return": "Fresh-LU truth/gradient/objective audits and driver compression/artifact IO occur after the timer and are measured separately. No audit information enters the policy.",
+    "bootstrap": "Shared harness imports/source freeze/schedule publication are measured once and reported separately; no fictional per-policy repeated charge.",
+    "final_study_eligibility": "Returned-time target eligibility is distinct from final study credit. Positive performance use requires terminal run statuscomplete ANDfinal_study_eligible=true after source/input integrity and offline/artifact checks. Failed post-return rows remain retained, never credited.",
+    "timed_progress_instrumentation": "During the measured interval, phase callbacks write ONLY a bounded run_NNN_progress.json record of the current run. The full360-run status/history is persisted before timed work and after return/failure/interrupt, never from a timed phase callback. Actual bounded-write seconds are reported as a measured subset, never added twice."
+  },
+  "failure_policy": "Persist all360 planned entries and each actual attempt/phase BEFORE work. Ordinary run failures retained; interrupts persist current attempt then reraise. Fatal source/input mismatch or disk failure stops with remaining entries visibly unattempted, never silently omitted. Unavailable preparation counters are unknown, not assumed zero. Returned core trajectory/models are saved before post-return integrity. Interrupted in-flight wall is recorded; counters/trajectory unavailable from interrupted frozen engine are explicitly unknown, not zero.",
+  "disk": {
+    "initial_free_bytes": 268435456,
+    "per_run_reserve_bytes": 67108864
+  },
+  "analysis_scope": "All data are reused development; SEAM IDs share ancestry. NoIID/synthetic-site confidence claim, untouched confirmation, winner promotion, reconstruction advantage, or JSHS eligibility/ownership inference.",
+  "execution_gate": "Default CLI performs no project input loading, PDE solve or timing. Actual execution requires explicit flag and reviewed driver/addendum SHA256; root GO after independent review.",
+  "offline_reconstruction_diagnostics": {
+    "metrics": [
+      "relative squared-slowness L2",
+      "relative physical-velocity L2, v=1/sqrt(m)"
+    ],
+    "eligible_states": "Paid internal checkpoints, labeled internal diagnostics, and fully returned eligible target states. Unpaid/censored/ineligible states receive no credited quality.",
+    "truth_access": "Only after run_control returns; never algorithm input, stopping or metric-based selection.",
+    "historical_helper_scope": "Original helper raw offline endpoint diagnostics are retained separately; only the explicit credited-quality object may be used for eligible quality comparisons."
+  },
+  "timing_instrumentation_preexecution_fix": {
+    "utc": "2026-11-08T04:29:03.110116+00:00",
+    "previous_driver_sha256": "b90c987dae5cf7146810620baae73c2086d55d676db58ab8468c0af826782f18",
+    "reason": "Remove growing cohort-history serialization from per-run paid clocks before any project outcome; retain bounded SIGKILL-recoverable progress. All360 settings/criteria unchanged."
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "result": "CLEAR_INDEPENDENT_GREEN_POSTAUDIT_EXECUTION_RECEIPT",
+  "recorded_utc": "2026-11-08T06:13:54.783907+00:00",
+  "root_authorization": "Parent explicitly authorized self-guarded alternate-quadrature POSTAUDIT only after actual producer terminal02e5e1 exit0",
+  "auditor_sha256": "7672ae15a52933b417644fd590c13aa50472a6a5755100538effdcde6f4a43e7",
+  "criteria_sha256": "a65f089be1eb088f30d052e9ac3dde4bc06d9e712ce1e37902cb159d92a7163f",
+  "preexecution_freeze_sha256": "405c3bcc518ce6e2d17155148af6752086e22bea5e032fe8930003b56259fb05",
+  "command": "env OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/miniconda3/bin/python /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/analytic_green_post_audit/audit_green.py --repo /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi --bundle /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/analytic_green_verification --original /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/results/devito_boundary_verification/run_01 --run /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/analytic_green_run_01 --output /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/analytic_green_independent_post_audit_01 --criteria /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/analytic_green_post_audit/criteria.json --expected-source-sha256 7672ae15a52933b417644fd590c13aa50472a6a5755100538effdcde6f4a43e7 --expected-criteria-sha256 a65f089be1eb088f30d052e9ac3dde4bc06d9e712ce1e37902cb159d92a7163f",
+  "tool_terminal_chunk_id": "e25288",
+  "exit_code": 0,
+  "execution_log_sha256": "6ad085592386fddb91a26e00af2b64e63ba606957576c4ccf9aa83e23ea10646",
+  "receipt": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/analytic_green_independent_post_audit_01/receipt.json",
+  "receipt_sha256": "279c25532df3f3a1d008496353aca61d7220abc5734af93c9505e7c61e5b79ab",
+  "alternate_curve_sha256": "0e7738a965541cb7a9177480dbc0b8ea2c7466133bbb4823e827a9bcb5761254",
+  "checks": 228,
+  "issues": 0,
+  "orders_complete": 3,
+  "cases_complete": 7,
+  "source_guard": {
+    "sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "files": 161
+  },
+  "all_original_and_bundle_artifacts_unchanged_checks_passed": true,
+  "GL512_vs_alternate_relative_L2": 1.851515462546795e-15,
+  "maximum_all_order_vs_alternate_relative_L2": 2.139797785518467e-15,
+  "alternate_step_normalized_max_abs_error": 3.933420991005696e-16,
+  "quad_convergence_messages": [],
+  "quad_maximum_estimated_absolute_error": 3.1820166945608485e-10,
+  "full_relative_alternate_by_case": {
+    "small_nbl0": 2.4072154510015276,
+    "small_nbl20": 0.5693972854748883,
+    "small_nbl40": 0.24950424068601454,
+    "matched_exterior_20_undamped": 1.0372783411897328,
+    "matched_exterior_40_undamped": 0.6866430597700489,
+    "reference_241": 0.0003051417025018495,
+    "reference_321": 0.00030514170250184975
+  },
+  "literal_result_scope": "Reference321 fullrelative mismatch about0.0305percent for this one homogeneous source/band/grid/recording convention. Small61+nbl40 mismatch remainsabout24.95percent. Neither is a physical-quality pass or formalaccuracy/realisticphysics/inversion claim.",
+  "method": "Independent s=a+z\u00b2 quadrature with scalar math.exp and scipy.integrate.quad epsabs=epsrel1e-11 limit50; full1101curve saved; valid1..1099 only metrics; unitstep acosh control; all7norms withscalar math.hypot, sums withmath.fsum.",
+  "attempt_policy": "One execution; firstattemptsuccess; no retries, source/numericcriterion changes or failed results omitted.",
+  "PDE_production_import_or_original_mutation": false,
+  "limitations": [
+    "Post-outcome AI numerical verification, not student finaldesign or humanreview.",
+    "OriginalcausalRicker/source0unused startup and finite-grid-source mismatch retained; no fit or shift.",
+    "QUADPACK estimates and relativeagreement are ordinaryFP diagnostics, not rigorouserrorenclosures.",
+    "Seven traces are variants of onehomogeneous scene, not independent geologicalenvironments; no certificate/adjoint/inverse/realisticgeology approval."
+  ]
+}

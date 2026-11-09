@@ -1,0 +1,3335 @@
+{
+  "all48_rows_retained": true,
+  "checks": 4523,
+  "created_utc": "2026-11-08T07:22:25.631417+00:00",
+  "criteria_sha256": "f7eba7849b474148812ed009273b0c16af386f4da6fc3d16b10baf8773e6891f",
+  "finished_utc": "2026-11-08T07:22:26.316854+00:00",
+  "independent_truth_sha256": {
+    "0": "e5ce9dd005b3e832f4de6b5e40f6cdaa2fbb1351628e3336f6f3739841294ae1",
+    "1": "c83b63b946854483fa56605336ddc566bb29bfaf1d394982144aebb26d86dcd7",
+    "2": "781c152e8e4ddeb1e53aa0ea4e7c2552741cf54de4409c81dbac493e72136696",
+    "3": "20c6b3388c35b375ee122f76022481a9a8f35e2134faf3168a60fc9e8279d4d9",
+    "4": "a3b36941cce68415e754a636e1efde3d4deca48a3da8783a32b5a5ddc29c4ea9",
+    "5": "50911e3efd7ca27afca82629d92c07f78f3523feb8d8734f9c66709d4ce6a8b0",
+    "6": "733cf26d6354306a061174fe832df0362486c83aa54194f0807e342ffba9e975",
+    "7": "244dbc291b6aea5a5ff297ada8f85ba4d2dbe4f68514162cdaa17ba434c9b638"
+  },
+  "issues": [],
+  "limitations": "Recorded timing is audited against frozen code and metadata, not independently remeasured. Intermediate direction/state vectors are hashed, so their raw arithmetic is not replayed. Embedded807 objective checks share NumPy/SciPy/SuperLU; this auditor does not rerun them. One reused development cohort, not independent geology, performance confirmation, causal recovery proof, new method or completed research goal. The first v1 producer attempt remains invalid/interrupted after an imported audit initialization error; v2 changes only that bootstrap API wiring, without changing this protocol or numerical criteria.",
+  "new_PDE_solves": 0,
+  "numeric_comparisons": 672,
+  "physical_quality_pass": null,
+  "planned_rows": 48,
+  "production_source_after": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "production_source_before": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "recorded_status_counts": {
+    "complete": 48
+  },
+  "result": "CLEAR_COORDINATE_ENGINEERING_POSTAUDIT",
+  "role": "AI post-run engineering integrity and scalar collector; not scientific confirmation or student design",
+  "rows": [
+    {
+      "actual_api_return_seconds": 7.650191958000505,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 0,
+      "common_binding": {
+        "actual_common_m_sha256": "3f320c6a7a45485b0178bc94d422c779a786aece86b0bf0a29b77272403986af",
+        "initial_velocity_sha256": "446e98e7cf2d7e0f42c42670fcdaffdb38c5280757e0c92b050cfaab7f10316c",
+        "observations_sha256": "f72cd625564c33161a9fee45fda678d636ad96bc5942126c7f6a486bfe648540",
+        "raw_model_sha256": "43210a62ee5f98de4c079939d68b6169ee20dcff56b199d1e9afe0192fead191",
+        "requested_m_sha256": "6c31e98a6c11a4a8fad1398f8ee46130745e73f9ec0b2afeadb70c91cc45858a",
+        "truth_sha256": "812884187e0f45ba39834d57811ba6886e58358b365e06bc0d28fc572eedbf00"
+      },
+      "engine_status": "solver_terminated",
+      "final_actual_native_m_sha256": "78f712d6d83e465594d83bde5ac50f3a11d2df474748cf5b8f0e3c6580bfaed6",
+      "final_parameter_sha256": "78f712d6d83e465594d83bde5ac50f3a11d2df474748cf5b8f0e3c6580bfaed6",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 0,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.650191958000505
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.650191958000505
+        }
+      ],
+      "run_index": 0,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.14873192992154508,
+          "relative_squared_slowness_L2": 0.19053788586401718
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.5476898550172103,
+          "relative_squared_slowness_L2": 1.3465114327580066
+        }
+      },
+      "slice_id": "gom_148_il_0236",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.673921040997811,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 0,
+      "common_binding": {
+        "actual_common_m_sha256": "3f320c6a7a45485b0178bc94d422c779a786aece86b0bf0a29b77272403986af",
+        "initial_velocity_sha256": "446e98e7cf2d7e0f42c42670fcdaffdb38c5280757e0c92b050cfaab7f10316c",
+        "observations_sha256": "f72cd625564c33161a9fee45fda678d636ad96bc5942126c7f6a486bfe648540",
+        "raw_model_sha256": "43210a62ee5f98de4c079939d68b6169ee20dcff56b199d1e9afe0192fead191",
+        "requested_m_sha256": "6c31e98a6c11a4a8fad1398f8ee46130745e73f9ec0b2afeadb70c91cc45858a",
+        "truth_sha256": "812884187e0f45ba39834d57811ba6886e58358b365e06bc0d28fc572eedbf00"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "99491812bd9c061f4fd5f4e4db4e811f0bc6bbac3ff1a9cfd75066a07fc6fc0f",
+      "final_parameter_sha256": "3242c7b8c17f9252c187f8a66102ce7813b368d7a2b014d219352c077839351a",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 0,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.673921040997811
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.673921040997811
+        }
+      ],
+      "run_index": 1,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.14873192992154508,
+          "relative_squared_slowness_L2": 0.19053788586401718
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.30831357305431517,
+          "relative_squared_slowness_L2": 0.7125744975723619
+        }
+      },
+      "slice_id": "gom_148_il_0236",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.68776466700001,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 1,
+      "common_binding": {
+        "actual_common_m_sha256": "117637d2f00770d77e8d633be5a1c5e93af31bf2879433dcaf2d720233a37f8b",
+        "initial_velocity_sha256": "f13cb4c31c23e21232fd2129b2189ce8099ddb966d07a2db2d80b34a82d50773",
+        "observations_sha256": "8c77d27c9fe1054908851baeca75f65b72354ea3189d8e33e7acfdffd627ef28",
+        "raw_model_sha256": "ad440df6d7c2796c1f5ed9bbe117d1a8eb12f3193220792386dcdf60ea39278c",
+        "requested_m_sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+        "truth_sha256": "91b41b1854aeb48e82e202b2d0b0ab1d6f6511e10e02aee460a0e0ff6b8a0ed5"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "aff28bb2bd5d7c5e52701e9651c5b538529f85d0a29bb926504a114d7c444907",
+      "final_parameter_sha256": "aff28bb2bd5d7c5e52701e9651c5b538529f85d0a29bb926504a114d7c444907",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 0,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.68776466700001
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.68776466700001
+        }
+      ],
+      "run_index": 2,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.11756818179457211,
+          "relative_squared_slowness_L2": 0.2531403784067119
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.5034278107920138,
+          "relative_squared_slowness_L2": 1.6112773990035445
+        }
+      },
+      "slice_id": "gom_148_xl_0768",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.652534749999177,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 1,
+      "common_binding": {
+        "actual_common_m_sha256": "117637d2f00770d77e8d633be5a1c5e93af31bf2879433dcaf2d720233a37f8b",
+        "initial_velocity_sha256": "f13cb4c31c23e21232fd2129b2189ce8099ddb966d07a2db2d80b34a82d50773",
+        "observations_sha256": "8c77d27c9fe1054908851baeca75f65b72354ea3189d8e33e7acfdffd627ef28",
+        "raw_model_sha256": "ad440df6d7c2796c1f5ed9bbe117d1a8eb12f3193220792386dcdf60ea39278c",
+        "requested_m_sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+        "truth_sha256": "91b41b1854aeb48e82e202b2d0b0ab1d6f6511e10e02aee460a0e0ff6b8a0ed5"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "26fa9359b587a610e9dc74556be48d344cb6ec38c276d409485fef9fda0ee409",
+      "final_parameter_sha256": "de6a14f0f32bc8eda6b7f6cfd0d07007b8452bfaf6e316200b15ef66e652dcf7",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 0,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.652534749999177
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": false,
+          "verified_event_seconds": null
+        }
+      ],
+      "run_index": 3,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.11756818179457211,
+          "relative_squared_slowness_L2": 0.2531403784067119
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.32874358231566003,
+          "relative_squared_slowness_L2": 0.9413369485806374
+        }
+      },
+      "slice_id": "gom_148_xl_0768",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.705068416998984,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 2,
+      "common_binding": {
+        "actual_common_m_sha256": "91281c695ba555197ddcbb1b2bb63357cdd85b2f077bc127e08eef13bb0223a4",
+        "initial_velocity_sha256": "d246f9a9c58bc46365d5dccfa9143a1565392ac64f7cf697de6912de851d0ba7",
+        "observations_sha256": "689a34ed10bd15554d3996db54f351e255efbcadcf68b7578933bc162780495f",
+        "raw_model_sha256": "c15dc307929945bd760e39581ce326604040ca6bcc23e5ddf22b29380b6d5862",
+        "requested_m_sha256": "f405a2742f7781948175eec929e4729ced0324f6c8324a1a87a8671097d75beb",
+        "truth_sha256": "04d0b6704fa459b68f6db3a4e3d6b450f50ed07ef863c35e6cef86369ad691dd"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "d9496250986388c8d2a21c15cb22968add9183cd116cbbfbc941c5a1aa2f5d6f",
+      "final_parameter_sha256": "ba2fd569f57059067471beb4165259d78e627a156219ab303dfd4e96b3b48672",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 0,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": false,
+          "verified_event_seconds": null
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": false,
+          "verified_event_seconds": null
+        }
+      ],
+      "run_index": 4,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.08369824008745379,
+          "relative_squared_slowness_L2": 0.1549280497998702
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.4286533117119907,
+          "relative_squared_slowness_L2": 0.8254943319204028
+        }
+      },
+      "slice_id": "seam_011_il_0522",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.694113167002797,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 2,
+      "common_binding": {
+        "actual_common_m_sha256": "91281c695ba555197ddcbb1b2bb63357cdd85b2f077bc127e08eef13bb0223a4",
+        "initial_velocity_sha256": "d246f9a9c58bc46365d5dccfa9143a1565392ac64f7cf697de6912de851d0ba7",
+        "observations_sha256": "689a34ed10bd15554d3996db54f351e255efbcadcf68b7578933bc162780495f",
+        "raw_model_sha256": "c15dc307929945bd760e39581ce326604040ca6bcc23e5ddf22b29380b6d5862",
+        "requested_m_sha256": "f405a2742f7781948175eec929e4729ced0324f6c8324a1a87a8671097d75beb",
+        "truth_sha256": "04d0b6704fa459b68f6db3a4e3d6b450f50ed07ef863c35e6cef86369ad691dd"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "cdb8974e77bdbd35675f779bf74c050fe01fc69c47d9b534726fcefd326cfa86",
+      "final_parameter_sha256": "cdb8974e77bdbd35675f779bf74c050fe01fc69c47d9b534726fcefd326cfa86",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 0,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.694113167002797
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.694113167002797
+        }
+      ],
+      "run_index": 5,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.08369824008745379,
+          "relative_squared_slowness_L2": 0.1549280497998702
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.5786747468184408,
+          "relative_squared_slowness_L2": 2.001090532415435
+        }
+      },
+      "slice_id": "seam_011_il_0522",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.673295083000994,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 3,
+      "common_binding": {
+        "actual_common_m_sha256": "1a989a5eea1ecef84b801ecc4dab13bcfbae390e5eadf4672de8a97e1dbee85f",
+        "initial_velocity_sha256": "1d6f2d5e4f7a92c34cadaf9bc203bec163c606cdf7a8f2d364845119e63782ac",
+        "observations_sha256": "c2579fd9d477d825f7f38c98a234bef11584e706185fdae306210651317e06a1",
+        "raw_model_sha256": "9549d2c17a511f284d8697110d5c2279de48f04b690c7250f67544ce813df9a1",
+        "requested_m_sha256": "08dfd6921dc0dcc8c6e4da9634fae13be245ab44a2ef9cdddc813ae10a06e712",
+        "truth_sha256": "78f8d3ab69ce09e5ea43e00b711bd8757ac75446fa54fba3c7adce9993b43640"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "b0db0c322e3dd1df6d66554511f661d608c999ace821a29916800c72d8aae965",
+      "final_parameter_sha256": "88242f0cb3323ff1280a1594ca4acbe86ad19740375daa361a4b13e3d780874c",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 0,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.673295083000994
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.673295083000994
+        }
+      ],
+      "run_index": 6,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.02904735454443295,
+          "relative_squared_slowness_L2": 0.03651580593132719
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.02794420428813422,
+          "relative_squared_slowness_L2": 0.01764251391514712
+        }
+      },
+      "slice_id": "seam_011_xl_0866",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.717958208999335,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 3,
+      "common_binding": {
+        "actual_common_m_sha256": "1a989a5eea1ecef84b801ecc4dab13bcfbae390e5eadf4672de8a97e1dbee85f",
+        "initial_velocity_sha256": "1d6f2d5e4f7a92c34cadaf9bc203bec163c606cdf7a8f2d364845119e63782ac",
+        "observations_sha256": "c2579fd9d477d825f7f38c98a234bef11584e706185fdae306210651317e06a1",
+        "raw_model_sha256": "9549d2c17a511f284d8697110d5c2279de48f04b690c7250f67544ce813df9a1",
+        "requested_m_sha256": "08dfd6921dc0dcc8c6e4da9634fae13be245ab44a2ef9cdddc813ae10a06e712",
+        "truth_sha256": "78f8d3ab69ce09e5ea43e00b711bd8757ac75446fa54fba3c7adce9993b43640"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "729083f12b8f2cb017b3843238353c05ca1feba319ce1e1de4c67ef71ddb6d16",
+      "final_parameter_sha256": "729083f12b8f2cb017b3843238353c05ca1feba319ce1e1de4c67ef71ddb6d16",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 0,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.717958208999335
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.717958208999335
+        }
+      ],
+      "run_index": 7,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.02904735454443295,
+          "relative_squared_slowness_L2": 0.03651580593132719
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.02767682562240851,
+          "relative_squared_slowness_L2": 0.017114067155934033
+        }
+      },
+      "slice_id": "seam_011_xl_0866",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.763709416001802,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 4,
+      "common_binding": {
+        "actual_common_m_sha256": "7f13c1842a6b5f28f5facc9a6e134f3dc5b4ad83797c1d120b25c35948a42850",
+        "initial_velocity_sha256": "398c75f88d82a08c0a57ab38a977d3462c1f465f8924712ef62cb027ceaf613a",
+        "observations_sha256": "61f5d5801f307a390ec132b0684b20d7156314d13604d66cbefbc24533307c13",
+        "raw_model_sha256": "81e7b8d24007cf4e9e7e05f441e3e10992ab548e98062b5449d6fb52c358b2c9",
+        "requested_m_sha256": "2fb4cb6e2e3fad4bcbb5d38fd714ce0cc0ee889e8a7221c2e2dfd656aad0a636",
+        "truth_sha256": "7b31103f7c084c2543889c8d1315a409a44e76bbe3a819c03cdab0e08cc8b87a"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "82b038ff2f69dea309711b55fc5b43f35210f0ebb3759f4370f689ccf7e0dc34",
+      "final_parameter_sha256": "82b038ff2f69dea309711b55fc5b43f35210f0ebb3759f4370f689ccf7e0dc34",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 0,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.763709416001802
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.763709416001802
+        }
+      ],
+      "run_index": 8,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.16716473765137113,
+          "relative_squared_slowness_L2": 0.24239736626070943
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.4713873077038684,
+          "relative_squared_slowness_L2": 1.1603215698916671
+        }
+      },
+      "slice_id": "gom_151_il_0247",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.6545358750008745,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 4,
+      "common_binding": {
+        "actual_common_m_sha256": "7f13c1842a6b5f28f5facc9a6e134f3dc5b4ad83797c1d120b25c35948a42850",
+        "initial_velocity_sha256": "398c75f88d82a08c0a57ab38a977d3462c1f465f8924712ef62cb027ceaf613a",
+        "observations_sha256": "61f5d5801f307a390ec132b0684b20d7156314d13604d66cbefbc24533307c13",
+        "raw_model_sha256": "81e7b8d24007cf4e9e7e05f441e3e10992ab548e98062b5449d6fb52c358b2c9",
+        "requested_m_sha256": "2fb4cb6e2e3fad4bcbb5d38fd714ce0cc0ee889e8a7221c2e2dfd656aad0a636",
+        "truth_sha256": "7b31103f7c084c2543889c8d1315a409a44e76bbe3a819c03cdab0e08cc8b87a"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "34fdeb7a1605196344362a6523a48333c40620049e04545ffac1156e3fd5aae7",
+      "final_parameter_sha256": "ede03d31045e7c0f81b214bfeaafcaa52f9c5a73a00bb9fd5b2e5960a4fb683a",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 0,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.6545358750008745
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.6545358750008745
+        }
+      ],
+      "run_index": 9,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.16716473765137113,
+          "relative_squared_slowness_L2": 0.24239736626070943
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.21645896332815373,
+          "relative_squared_slowness_L2": 0.7591485302888217
+        }
+      },
+      "slice_id": "gom_151_il_0247",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.634067625000171,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 5,
+      "common_binding": {
+        "actual_common_m_sha256": "86b6bb3369f898936c47f88ac68a934e6947b4571ed66239b75a10190344690b",
+        "initial_velocity_sha256": "c0b062dcf7d5ecb6a9260bbbfe8f4a29d0cabf307795b2e169f8cbe33e6ad29c",
+        "observations_sha256": "eb7c2a21afa0d1fcbb05196a939c60475b70313faf8b72b4ebdc3dfb2bb3a810",
+        "raw_model_sha256": "5114577dbd24c1fa8e061de4bb78b0065f95034337939807ed549ec75beeca1b",
+        "requested_m_sha256": "cb9d143fd5439b85e44254471b5921f88c1a9eb489d7418b777efdc73d5950cd",
+        "truth_sha256": "cc36539dbc39d03ade3d98dce39d249dbf11b470cc0d3b18ffee20dda98f21d5"
+      },
+      "engine_status": "solver_terminated",
+      "final_actual_native_m_sha256": "30a4b661e70c87983244717218384ddcbe55c01b8c7d2f6e5610c592e092e896",
+      "final_parameter_sha256": "30a4b661e70c87983244717218384ddcbe55c01b8c7d2f6e5610c592e092e896",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 0,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.634067625000171
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.634067625000171
+        }
+      ],
+      "run_index": 10,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.13378237845150975,
+          "relative_squared_slowness_L2": 0.2184660273801825
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.7309204546341704,
+          "relative_squared_slowness_L2": 2.17754529229774
+        }
+      },
+      "slice_id": "gom_151_xl_0857",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.65864991700073,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 5,
+      "common_binding": {
+        "actual_common_m_sha256": "86b6bb3369f898936c47f88ac68a934e6947b4571ed66239b75a10190344690b",
+        "initial_velocity_sha256": "c0b062dcf7d5ecb6a9260bbbfe8f4a29d0cabf307795b2e169f8cbe33e6ad29c",
+        "observations_sha256": "eb7c2a21afa0d1fcbb05196a939c60475b70313faf8b72b4ebdc3dfb2bb3a810",
+        "raw_model_sha256": "5114577dbd24c1fa8e061de4bb78b0065f95034337939807ed549ec75beeca1b",
+        "requested_m_sha256": "cb9d143fd5439b85e44254471b5921f88c1a9eb489d7418b777efdc73d5950cd",
+        "truth_sha256": "cc36539dbc39d03ade3d98dce39d249dbf11b470cc0d3b18ffee20dda98f21d5"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "961b84ade962134e85c2a997378133451a1e880bed84f76c657e3802dd73e0d8",
+      "final_parameter_sha256": "6742d0c8ee67918b281425e2de92f995451652d323ea0d60f845732770a86ea4",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 0,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.65864991700073
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.65864991700073
+        }
+      ],
+      "run_index": 11,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.13378237845150975,
+          "relative_squared_slowness_L2": 0.2184660273801825
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.14583735223701122,
+          "relative_squared_slowness_L2": 0.39967188689507843
+        }
+      },
+      "slice_id": "gom_151_xl_0857",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.684540541999013,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 6,
+      "common_binding": {
+        "actual_common_m_sha256": "9ef8a4f5eaf67ebf5aa41131fb3198586f585cfa71af6abac6bfed653e23788b",
+        "initial_velocity_sha256": "f3717dda61f41d936d8c235b5d0c87b2067e8b3f440a70fd4a63fb3ac28bc8a0",
+        "observations_sha256": "bd4f63dbb1cccb6b4a377573748e76b27aa6d13dff422f283a0b607db5305ee6",
+        "raw_model_sha256": "11932f843e820cf9e1ffb84d5fb04e1b5d92dd65fe311abc5783e3248da772f6",
+        "requested_m_sha256": "d2d7a8d53909bc5a24846b1bd3b8a468df6b046272cc6b1de4727eb1555f42f8",
+        "truth_sha256": "eca9b1fe5c35f00593bfb4ace523374e350723ab29ae0b06ebe397fafa65f088"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "fbc094d30338c92108e1a7e12f5ee835b7dccad9e8d3bf278fa595f33c7f1601",
+      "final_parameter_sha256": "d5aa863639b82f9d8e4fcb288ce7789873250b74b0e5c7e4b2b45e05294065bc",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 0,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.684540541999013
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.684540541999013
+        }
+      ],
+      "run_index": 12,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.017372415435287482,
+          "relative_squared_slowness_L2": 0.037893613195658794
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.015277271203250306,
+          "relative_squared_slowness_L2": 0.017617573178786494
+        }
+      },
+      "slice_id": "seam_005_il_0596",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.705758666001202,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 6,
+      "common_binding": {
+        "actual_common_m_sha256": "9ef8a4f5eaf67ebf5aa41131fb3198586f585cfa71af6abac6bfed653e23788b",
+        "initial_velocity_sha256": "f3717dda61f41d936d8c235b5d0c87b2067e8b3f440a70fd4a63fb3ac28bc8a0",
+        "observations_sha256": "bd4f63dbb1cccb6b4a377573748e76b27aa6d13dff422f283a0b607db5305ee6",
+        "raw_model_sha256": "11932f843e820cf9e1ffb84d5fb04e1b5d92dd65fe311abc5783e3248da772f6",
+        "requested_m_sha256": "d2d7a8d53909bc5a24846b1bd3b8a468df6b046272cc6b1de4727eb1555f42f8",
+        "truth_sha256": "eca9b1fe5c35f00593bfb4ace523374e350723ab29ae0b06ebe397fafa65f088"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "e89125cb1545465b85daa00224b909b5754f03547f64948938e4c1687914d678",
+      "final_parameter_sha256": "e89125cb1545465b85daa00224b909b5754f03547f64948938e4c1687914d678",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 0,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.705758666001202
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.705758666001202
+        }
+      ],
+      "run_index": 13,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.017372415435287482,
+          "relative_squared_slowness_L2": 0.037893613195658794
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.014749900398732831,
+          "relative_squared_slowness_L2": 0.016879778397498667
+        }
+      },
+      "slice_id": "seam_005_il_0596",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.6699479579983745,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 7,
+      "common_binding": {
+        "actual_common_m_sha256": "b6e0cc76d96fce5fa6022430dccd833a11062bf50a7ebef36a016a89c37a6bca",
+        "initial_velocity_sha256": "5dc2c4cee16dc457e13f5fa741fcb7002ceade7c8d08da41de619d082014c6c2",
+        "observations_sha256": "fc4e16565819bcd2c61253bbd6c6bf19b05eda1c546e09b496a57ad89f482cb8",
+        "raw_model_sha256": "3b897b308d0208290e82c3a36b77f4f2d853fe5bfdbef13132300b7219e324b3",
+        "requested_m_sha256": "d04826139055a1d93e6b436c8c72c3741aded061d43e1a505a2d3269ecfab07d",
+        "truth_sha256": "89cdcae3d8cfb64cfae47ffb7b03eb3cd780b4dd92b30d4164d6f7e07bf6c07e"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "258db6ca179d0d0d48167dde592efc9c6610da0fbd0acff323bb4b70a6320936",
+      "final_parameter_sha256": "f0a2eed6e778903372222e49afd0725fd4eaa9e8fcf525dcf0107ecfa0f5a161",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 0,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.6699479579983745
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.6699479579983745
+        }
+      ],
+      "run_index": 14,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.018818339480689887,
+          "relative_squared_slowness_L2": 0.036992428725729935
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.017024385235611464,
+          "relative_squared_slowness_L2": 0.016811147875724245
+        }
+      },
+      "slice_id": "seam_005_xl_0795",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.660995833000925,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 7,
+      "common_binding": {
+        "actual_common_m_sha256": "b6e0cc76d96fce5fa6022430dccd833a11062bf50a7ebef36a016a89c37a6bca",
+        "initial_velocity_sha256": "5dc2c4cee16dc457e13f5fa741fcb7002ceade7c8d08da41de619d082014c6c2",
+        "observations_sha256": "fc4e16565819bcd2c61253bbd6c6bf19b05eda1c546e09b496a57ad89f482cb8",
+        "raw_model_sha256": "3b897b308d0208290e82c3a36b77f4f2d853fe5bfdbef13132300b7219e324b3",
+        "requested_m_sha256": "d04826139055a1d93e6b436c8c72c3741aded061d43e1a505a2d3269ecfab07d",
+        "truth_sha256": "89cdcae3d8cfb64cfae47ffb7b03eb3cd780b4dd92b30d4164d6f7e07bf6c07e"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "9e505a73fde6731582469ad7ff6a64df8a2886d434170661f124fbf6428936d4",
+      "final_parameter_sha256": "9e505a73fde6731582469ad7ff6a64df8a2886d434170661f124fbf6428936d4",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 0,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.660995833000925
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.660995833000925
+        }
+      ],
+      "run_index": 15,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.018818339480689887,
+          "relative_squared_slowness_L2": 0.036992428725729935
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.01679070747772538,
+          "relative_squared_slowness_L2": 0.016237318603840124
+        }
+      },
+      "slice_id": "seam_005_xl_0795",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.678301416999602,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 0,
+      "common_binding": {
+        "actual_common_m_sha256": "3f320c6a7a45485b0178bc94d422c779a786aece86b0bf0a29b77272403986af",
+        "initial_velocity_sha256": "446e98e7cf2d7e0f42c42670fcdaffdb38c5280757e0c92b050cfaab7f10316c",
+        "observations_sha256": "f72cd625564c33161a9fee45fda678d636ad96bc5942126c7f6a486bfe648540",
+        "raw_model_sha256": "43210a62ee5f98de4c079939d68b6169ee20dcff56b199d1e9afe0192fead191",
+        "requested_m_sha256": "6c31e98a6c11a4a8fad1398f8ee46130745e73f9ec0b2afeadb70c91cc45858a",
+        "truth_sha256": "812884187e0f45ba39834d57811ba6886e58358b365e06bc0d28fc572eedbf00"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "26703b286a2706aed625f5f35f6b1e95cbee544f8b18b4010c7a1e39516a63aa",
+      "final_parameter_sha256": "26703b286a2706aed625f5f35f6b1e95cbee544f8b18b4010c7a1e39516a63aa",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 1,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.678301416999602
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.678301416999602
+        }
+      ],
+      "run_index": 16,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.14873192992154508,
+          "relative_squared_slowness_L2": 0.19053788586401718
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.5432440668706975,
+          "relative_squared_slowness_L2": 1.3444042962548
+        }
+      },
+      "slice_id": "gom_148_il_0236",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.641423334000137,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 0,
+      "common_binding": {
+        "actual_common_m_sha256": "3f320c6a7a45485b0178bc94d422c779a786aece86b0bf0a29b77272403986af",
+        "initial_velocity_sha256": "446e98e7cf2d7e0f42c42670fcdaffdb38c5280757e0c92b050cfaab7f10316c",
+        "observations_sha256": "f72cd625564c33161a9fee45fda678d636ad96bc5942126c7f6a486bfe648540",
+        "raw_model_sha256": "43210a62ee5f98de4c079939d68b6169ee20dcff56b199d1e9afe0192fead191",
+        "requested_m_sha256": "6c31e98a6c11a4a8fad1398f8ee46130745e73f9ec0b2afeadb70c91cc45858a",
+        "truth_sha256": "812884187e0f45ba39834d57811ba6886e58358b365e06bc0d28fc572eedbf00"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "0e5dd4ef4fbab14905f967ab13c4cf363dfce48a0523afb8fed52864550fa626",
+      "final_parameter_sha256": "c2beba35cd3deb633ae8bdc7ecbd0a929b3fa9732ded98e530997065e4e542fd",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 1,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.641423334000137
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.641423334000137
+        }
+      ],
+      "run_index": 17,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.14873192992154508,
+          "relative_squared_slowness_L2": 0.19053788586401718
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.30835172096904634,
+          "relative_squared_slowness_L2": 0.7127478041423828
+        }
+      },
+      "slice_id": "gom_148_il_0236",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.710918666998623,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 1,
+      "common_binding": {
+        "actual_common_m_sha256": "117637d2f00770d77e8d633be5a1c5e93af31bf2879433dcaf2d720233a37f8b",
+        "initial_velocity_sha256": "f13cb4c31c23e21232fd2129b2189ce8099ddb966d07a2db2d80b34a82d50773",
+        "observations_sha256": "8c77d27c9fe1054908851baeca75f65b72354ea3189d8e33e7acfdffd627ef28",
+        "raw_model_sha256": "ad440df6d7c2796c1f5ed9bbe117d1a8eb12f3193220792386dcdf60ea39278c",
+        "requested_m_sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+        "truth_sha256": "91b41b1854aeb48e82e202b2d0b0ab1d6f6511e10e02aee460a0e0ff6b8a0ed5"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "3a664ae94c198025d639a8a5641ee51ff756b0773856f0b45934d6f7621398fb",
+      "final_parameter_sha256": "3a664ae94c198025d639a8a5641ee51ff756b0773856f0b45934d6f7621398fb",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 1,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.710918666998623
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.710918666998623
+        }
+      ],
+      "run_index": 18,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.11756818179457211,
+          "relative_squared_slowness_L2": 0.2531403784067119
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.5040989883843009,
+          "relative_squared_slowness_L2": 1.6112491029446971
+        }
+      },
+      "slice_id": "gom_148_xl_0768",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.65678166699945,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 1,
+      "common_binding": {
+        "actual_common_m_sha256": "117637d2f00770d77e8d633be5a1c5e93af31bf2879433dcaf2d720233a37f8b",
+        "initial_velocity_sha256": "f13cb4c31c23e21232fd2129b2189ce8099ddb966d07a2db2d80b34a82d50773",
+        "observations_sha256": "8c77d27c9fe1054908851baeca75f65b72354ea3189d8e33e7acfdffd627ef28",
+        "raw_model_sha256": "ad440df6d7c2796c1f5ed9bbe117d1a8eb12f3193220792386dcdf60ea39278c",
+        "requested_m_sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+        "truth_sha256": "91b41b1854aeb48e82e202b2d0b0ab1d6f6511e10e02aee460a0e0ff6b8a0ed5"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "d62c47fcd5e8c4bd7d88dd23eb643eaa40638197cec690df1573532fbf816dfd",
+      "final_parameter_sha256": "05e30cbb6427a5ba392d6287541919e12f2263223238dbe278853ccf7a0ba743",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 1,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.65678166699945
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": false,
+          "verified_event_seconds": null
+        }
+      ],
+      "run_index": 19,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.11756818179457211,
+          "relative_squared_slowness_L2": 0.2531403784067119
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.3324197885825293,
+          "relative_squared_slowness_L2": 0.9440800901974883
+        }
+      },
+      "slice_id": "gom_148_xl_0768",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.656114833000174,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 2,
+      "common_binding": {
+        "actual_common_m_sha256": "91281c695ba555197ddcbb1b2bb63357cdd85b2f077bc127e08eef13bb0223a4",
+        "initial_velocity_sha256": "d246f9a9c58bc46365d5dccfa9143a1565392ac64f7cf697de6912de851d0ba7",
+        "observations_sha256": "689a34ed10bd15554d3996db54f351e255efbcadcf68b7578933bc162780495f",
+        "raw_model_sha256": "c15dc307929945bd760e39581ce326604040ca6bcc23e5ddf22b29380b6d5862",
+        "requested_m_sha256": "f405a2742f7781948175eec929e4729ced0324f6c8324a1a87a8671097d75beb",
+        "truth_sha256": "04d0b6704fa459b68f6db3a4e3d6b450f50ed07ef863c35e6cef86369ad691dd"
+      },
+      "engine_status": "solver_terminated",
+      "final_actual_native_m_sha256": "80ed0416b2b6702abb76812199dca507c2bbc57bd606f540597a8f2433e48fa8",
+      "final_parameter_sha256": "80ed0416b2b6702abb76812199dca507c2bbc57bd606f540597a8f2433e48fa8",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 1,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.656114833000174
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.656114833000174
+        }
+      ],
+      "run_index": 20,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.08369824008745379,
+          "relative_squared_slowness_L2": 0.1549280497998702
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.5824962822715309,
+          "relative_squared_slowness_L2": 2.0049578731551865
+        }
+      },
+      "slice_id": "seam_011_il_0522",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.660477583001921,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 2,
+      "common_binding": {
+        "actual_common_m_sha256": "91281c695ba555197ddcbb1b2bb63357cdd85b2f077bc127e08eef13bb0223a4",
+        "initial_velocity_sha256": "d246f9a9c58bc46365d5dccfa9143a1565392ac64f7cf697de6912de851d0ba7",
+        "observations_sha256": "689a34ed10bd15554d3996db54f351e255efbcadcf68b7578933bc162780495f",
+        "raw_model_sha256": "c15dc307929945bd760e39581ce326604040ca6bcc23e5ddf22b29380b6d5862",
+        "requested_m_sha256": "f405a2742f7781948175eec929e4729ced0324f6c8324a1a87a8671097d75beb",
+        "truth_sha256": "04d0b6704fa459b68f6db3a4e3d6b450f50ed07ef863c35e6cef86369ad691dd"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "c9e6cbb7787e03e024f0ad39d7a5b12af8439e6e9a8186bd5cf9f5e383394d83",
+      "final_parameter_sha256": "bb98aa6a105f8f24a8d7ddb3457b96e75519e081f232b12727602ee71c7388b2",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 1,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": false,
+          "verified_event_seconds": null
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": false,
+          "verified_event_seconds": null
+        }
+      ],
+      "run_index": 21,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.08369824008745379,
+          "relative_squared_slowness_L2": 0.1549280497998702
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.43610410057468557,
+          "relative_squared_slowness_L2": 0.8328712407684287
+        }
+      },
+      "slice_id": "seam_011_il_0522",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.701754082998377,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 3,
+      "common_binding": {
+        "actual_common_m_sha256": "1a989a5eea1ecef84b801ecc4dab13bcfbae390e5eadf4672de8a97e1dbee85f",
+        "initial_velocity_sha256": "1d6f2d5e4f7a92c34cadaf9bc203bec163c606cdf7a8f2d364845119e63782ac",
+        "observations_sha256": "c2579fd9d477d825f7f38c98a234bef11584e706185fdae306210651317e06a1",
+        "raw_model_sha256": "9549d2c17a511f284d8697110d5c2279de48f04b690c7250f67544ce813df9a1",
+        "requested_m_sha256": "08dfd6921dc0dcc8c6e4da9634fae13be245ab44a2ef9cdddc813ae10a06e712",
+        "truth_sha256": "78f8d3ab69ce09e5ea43e00b711bd8757ac75446fa54fba3c7adce9993b43640"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "2fad9986bb4d82c2a5d5b9c04a4baba7fad295ab79cecf3b99a51df90fa51361",
+      "final_parameter_sha256": "2fad9986bb4d82c2a5d5b9c04a4baba7fad295ab79cecf3b99a51df90fa51361",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 1,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.701754082998377
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.701754082998377
+        }
+      ],
+      "run_index": 22,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.02904735454443295,
+          "relative_squared_slowness_L2": 0.03651580593132719
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.02767590354549565,
+          "relative_squared_slowness_L2": 0.01710445755180507
+        }
+      },
+      "slice_id": "seam_011_xl_0866",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.694714833000035,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 3,
+      "common_binding": {
+        "actual_common_m_sha256": "1a989a5eea1ecef84b801ecc4dab13bcfbae390e5eadf4672de8a97e1dbee85f",
+        "initial_velocity_sha256": "1d6f2d5e4f7a92c34cadaf9bc203bec163c606cdf7a8f2d364845119e63782ac",
+        "observations_sha256": "c2579fd9d477d825f7f38c98a234bef11584e706185fdae306210651317e06a1",
+        "raw_model_sha256": "9549d2c17a511f284d8697110d5c2279de48f04b690c7250f67544ce813df9a1",
+        "requested_m_sha256": "08dfd6921dc0dcc8c6e4da9634fae13be245ab44a2ef9cdddc813ae10a06e712",
+        "truth_sha256": "78f8d3ab69ce09e5ea43e00b711bd8757ac75446fa54fba3c7adce9993b43640"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "1e1ba9453a03a5d3812fea0aeea18b4438414051d9bf27fcde129d85f45729fc",
+      "final_parameter_sha256": "7c31d1a34788f7a9ec8ecd7d95c7688eeda1f751ce54efddb1966d3c6bda3468",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 1,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.694714833000035
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.694714833000035
+        }
+      ],
+      "run_index": 23,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.02904735454443295,
+          "relative_squared_slowness_L2": 0.03651580593132719
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.02793662043869243,
+          "relative_squared_slowness_L2": 0.017598917031942114
+        }
+      },
+      "slice_id": "seam_011_xl_0866",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.7004920420004055,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 4,
+      "common_binding": {
+        "actual_common_m_sha256": "7f13c1842a6b5f28f5facc9a6e134f3dc5b4ad83797c1d120b25c35948a42850",
+        "initial_velocity_sha256": "398c75f88d82a08c0a57ab38a977d3462c1f465f8924712ef62cb027ceaf613a",
+        "observations_sha256": "61f5d5801f307a390ec132b0684b20d7156314d13604d66cbefbc24533307c13",
+        "raw_model_sha256": "81e7b8d24007cf4e9e7e05f441e3e10992ab548e98062b5449d6fb52c358b2c9",
+        "requested_m_sha256": "2fb4cb6e2e3fad4bcbb5d38fd714ce0cc0ee889e8a7221c2e2dfd656aad0a636",
+        "truth_sha256": "7b31103f7c084c2543889c8d1315a409a44e76bbe3a819c03cdab0e08cc8b87a"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "853f896477eb71517f662f0d0d53f2ec337133b273fc101887fdbdf69ba285c6",
+      "final_parameter_sha256": "853f896477eb71517f662f0d0d53f2ec337133b273fc101887fdbdf69ba285c6",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 1,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.7004920420004055
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.7004920420004055
+        }
+      ],
+      "run_index": 24,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.16716473765137113,
+          "relative_squared_slowness_L2": 0.24239736626070943
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.46734983787161943,
+          "relative_squared_slowness_L2": 1.167421741856573
+        }
+      },
+      "slice_id": "gom_151_il_0247",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.701255291001871,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 4,
+      "common_binding": {
+        "actual_common_m_sha256": "7f13c1842a6b5f28f5facc9a6e134f3dc5b4ad83797c1d120b25c35948a42850",
+        "initial_velocity_sha256": "398c75f88d82a08c0a57ab38a977d3462c1f465f8924712ef62cb027ceaf613a",
+        "observations_sha256": "61f5d5801f307a390ec132b0684b20d7156314d13604d66cbefbc24533307c13",
+        "raw_model_sha256": "81e7b8d24007cf4e9e7e05f441e3e10992ab548e98062b5449d6fb52c358b2c9",
+        "requested_m_sha256": "2fb4cb6e2e3fad4bcbb5d38fd714ce0cc0ee889e8a7221c2e2dfd656aad0a636",
+        "truth_sha256": "7b31103f7c084c2543889c8d1315a409a44e76bbe3a819c03cdab0e08cc8b87a"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "d41d55d39aa053c61b6c62652e6e1051c381431e05e4edb2a956200d00d6c805",
+      "final_parameter_sha256": "cd0836831292db030079bd83c7fe96e95cea55ea0b5f0c9b37ed310fb0d51904",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 1,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.701255291001871
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.701255291001871
+        }
+      ],
+      "run_index": 25,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.16716473765137113,
+          "relative_squared_slowness_L2": 0.24239736626070943
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.21620755151693424,
+          "relative_squared_slowness_L2": 0.7558919237728028
+        }
+      },
+      "slice_id": "gom_151_il_0247",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.6104714159992,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 5,
+      "common_binding": {
+        "actual_common_m_sha256": "86b6bb3369f898936c47f88ac68a934e6947b4571ed66239b75a10190344690b",
+        "initial_velocity_sha256": "c0b062dcf7d5ecb6a9260bbbfe8f4a29d0cabf307795b2e169f8cbe33e6ad29c",
+        "observations_sha256": "eb7c2a21afa0d1fcbb05196a939c60475b70313faf8b72b4ebdc3dfb2bb3a810",
+        "raw_model_sha256": "5114577dbd24c1fa8e061de4bb78b0065f95034337939807ed549ec75beeca1b",
+        "requested_m_sha256": "cb9d143fd5439b85e44254471b5921f88c1a9eb489d7418b777efdc73d5950cd",
+        "truth_sha256": "cc36539dbc39d03ade3d98dce39d249dbf11b470cc0d3b18ffee20dda98f21d5"
+      },
+      "engine_status": "solver_terminated",
+      "final_actual_native_m_sha256": "30a4b661e70c87983244717218384ddcbe55c01b8c7d2f6e5610c592e092e896",
+      "final_parameter_sha256": "30a4b661e70c87983244717218384ddcbe55c01b8c7d2f6e5610c592e092e896",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 1,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.6104714159992
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.6104714159992
+        }
+      ],
+      "run_index": 26,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.13378237845150975,
+          "relative_squared_slowness_L2": 0.2184660273801825
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.7309204546341704,
+          "relative_squared_slowness_L2": 2.17754529229774
+        }
+      },
+      "slice_id": "gom_151_xl_0857",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.657750083999417,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 5,
+      "common_binding": {
+        "actual_common_m_sha256": "86b6bb3369f898936c47f88ac68a934e6947b4571ed66239b75a10190344690b",
+        "initial_velocity_sha256": "c0b062dcf7d5ecb6a9260bbbfe8f4a29d0cabf307795b2e169f8cbe33e6ad29c",
+        "observations_sha256": "eb7c2a21afa0d1fcbb05196a939c60475b70313faf8b72b4ebdc3dfb2bb3a810",
+        "raw_model_sha256": "5114577dbd24c1fa8e061de4bb78b0065f95034337939807ed549ec75beeca1b",
+        "requested_m_sha256": "cb9d143fd5439b85e44254471b5921f88c1a9eb489d7418b777efdc73d5950cd",
+        "truth_sha256": "cc36539dbc39d03ade3d98dce39d249dbf11b470cc0d3b18ffee20dda98f21d5"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "7fe20e2f9fb9d517f957b7871ee479b1c161f687a362214ddb0319571cd8e9e2",
+      "final_parameter_sha256": "29b7979ec1dcf4e053857ed6ebbeafbaa6cde6d71ebe89467188dee0f914b561",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 1,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.657750083999417
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.657750083999417
+        }
+      ],
+      "run_index": 27,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.13378237845150975,
+          "relative_squared_slowness_L2": 0.2184660273801825
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.1458497697942992,
+          "relative_squared_slowness_L2": 0.39962068895132946
+        }
+      },
+      "slice_id": "gom_151_xl_0857",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.684713500002545,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 6,
+      "common_binding": {
+        "actual_common_m_sha256": "9ef8a4f5eaf67ebf5aa41131fb3198586f585cfa71af6abac6bfed653e23788b",
+        "initial_velocity_sha256": "f3717dda61f41d936d8c235b5d0c87b2067e8b3f440a70fd4a63fb3ac28bc8a0",
+        "observations_sha256": "bd4f63dbb1cccb6b4a377573748e76b27aa6d13dff422f283a0b607db5305ee6",
+        "raw_model_sha256": "11932f843e820cf9e1ffb84d5fb04e1b5d92dd65fe311abc5783e3248da772f6",
+        "requested_m_sha256": "d2d7a8d53909bc5a24846b1bd3b8a468df6b046272cc6b1de4727eb1555f42f8",
+        "truth_sha256": "eca9b1fe5c35f00593bfb4ace523374e350723ab29ae0b06ebe397fafa65f088"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "075d9de6ffabac325c955559da79c70d6ed0093461e3751c4684c31a78345f92",
+      "final_parameter_sha256": "891e1b55e71496e0c47bbccb70ecccdbb9552445a56f2401b560ae9c9738ab64",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 1,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.684713500002545
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.684713500002545
+        }
+      ],
+      "run_index": 28,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.017372415435287482,
+          "relative_squared_slowness_L2": 0.037893613195658794
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.015277669570218637,
+          "relative_squared_slowness_L2": 0.01761955377430775
+        }
+      },
+      "slice_id": "seam_005_il_0596",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.692006458000833,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 6,
+      "common_binding": {
+        "actual_common_m_sha256": "9ef8a4f5eaf67ebf5aa41131fb3198586f585cfa71af6abac6bfed653e23788b",
+        "initial_velocity_sha256": "f3717dda61f41d936d8c235b5d0c87b2067e8b3f440a70fd4a63fb3ac28bc8a0",
+        "observations_sha256": "bd4f63dbb1cccb6b4a377573748e76b27aa6d13dff422f283a0b607db5305ee6",
+        "raw_model_sha256": "11932f843e820cf9e1ffb84d5fb04e1b5d92dd65fe311abc5783e3248da772f6",
+        "requested_m_sha256": "d2d7a8d53909bc5a24846b1bd3b8a468df6b046272cc6b1de4727eb1555f42f8",
+        "truth_sha256": "eca9b1fe5c35f00593bfb4ace523374e350723ab29ae0b06ebe397fafa65f088"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "2c56fba57901b95b740c305e95530adae736b7a26f51b54f6e5cb161dfcf98c3",
+      "final_parameter_sha256": "2c56fba57901b95b740c305e95530adae736b7a26f51b54f6e5cb161dfcf98c3",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 1,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.692006458000833
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.692006458000833
+        }
+      ],
+      "run_index": 29,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.017372415435287482,
+          "relative_squared_slowness_L2": 0.037893613195658794
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.014755411844765169,
+          "relative_squared_slowness_L2": 0.016886508221511564
+        }
+      },
+      "slice_id": "seam_005_il_0596",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.696296165999229,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 7,
+      "common_binding": {
+        "actual_common_m_sha256": "b6e0cc76d96fce5fa6022430dccd833a11062bf50a7ebef36a016a89c37a6bca",
+        "initial_velocity_sha256": "5dc2c4cee16dc457e13f5fa741fcb7002ceade7c8d08da41de619d082014c6c2",
+        "observations_sha256": "fc4e16565819bcd2c61253bbd6c6bf19b05eda1c546e09b496a57ad89f482cb8",
+        "raw_model_sha256": "3b897b308d0208290e82c3a36b77f4f2d853fe5bfdbef13132300b7219e324b3",
+        "requested_m_sha256": "d04826139055a1d93e6b436c8c72c3741aded061d43e1a505a2d3269ecfab07d",
+        "truth_sha256": "89cdcae3d8cfb64cfae47ffb7b03eb3cd780b4dd92b30d4164d6f7e07bf6c07e"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "fb24b1bb8acc3fb56cd4ffb57e986f0f896ad13209cf4aa448c36c0a8284ed4e",
+      "final_parameter_sha256": "fb24b1bb8acc3fb56cd4ffb57e986f0f896ad13209cf4aa448c36c0a8284ed4e",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 1,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.696296165999229
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.696296165999229
+        }
+      ],
+      "run_index": 30,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.018818339480689887,
+          "relative_squared_slowness_L2": 0.036992428725729935
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.0168092144803113,
+          "relative_squared_slowness_L2": 0.016264074616186966
+        }
+      },
+      "slice_id": "seam_005_xl_0795",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.6742750000012165,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 7,
+      "common_binding": {
+        "actual_common_m_sha256": "b6e0cc76d96fce5fa6022430dccd833a11062bf50a7ebef36a016a89c37a6bca",
+        "initial_velocity_sha256": "5dc2c4cee16dc457e13f5fa741fcb7002ceade7c8d08da41de619d082014c6c2",
+        "observations_sha256": "fc4e16565819bcd2c61253bbd6c6bf19b05eda1c546e09b496a57ad89f482cb8",
+        "raw_model_sha256": "3b897b308d0208290e82c3a36b77f4f2d853fe5bfdbef13132300b7219e324b3",
+        "requested_m_sha256": "d04826139055a1d93e6b436c8c72c3741aded061d43e1a505a2d3269ecfab07d",
+        "truth_sha256": "89cdcae3d8cfb64cfae47ffb7b03eb3cd780b4dd92b30d4164d6f7e07bf6c07e"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "3c2d15a7b95fbaf201e2136651e362ada7f9d4f7a7c6c5c91208739a73f3dab3",
+      "final_parameter_sha256": "1599a46496963d3ca31a11ec6527a07810ec47d1e5aa999198fa881120030d61",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 1,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.6742750000012165
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.6742750000012165
+        }
+      ],
+      "run_index": 31,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.018818339480689887,
+          "relative_squared_slowness_L2": 0.036992428725729935
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.01703329112079516,
+          "relative_squared_slowness_L2": 0.01682127651402044
+        }
+      },
+      "slice_id": "seam_005_xl_0795",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.719198167000286,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 0,
+      "common_binding": {
+        "actual_common_m_sha256": "3f320c6a7a45485b0178bc94d422c779a786aece86b0bf0a29b77272403986af",
+        "initial_velocity_sha256": "446e98e7cf2d7e0f42c42670fcdaffdb38c5280757e0c92b050cfaab7f10316c",
+        "observations_sha256": "f72cd625564c33161a9fee45fda678d636ad96bc5942126c7f6a486bfe648540",
+        "raw_model_sha256": "43210a62ee5f98de4c079939d68b6169ee20dcff56b199d1e9afe0192fead191",
+        "requested_m_sha256": "6c31e98a6c11a4a8fad1398f8ee46130745e73f9ec0b2afeadb70c91cc45858a",
+        "truth_sha256": "812884187e0f45ba39834d57811ba6886e58358b365e06bc0d28fc572eedbf00"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "c3853e06a9747b77c86a7ca6ae3154894a90d7930970d63391f01269e11289eb",
+      "final_parameter_sha256": "c3853e06a9747b77c86a7ca6ae3154894a90d7930970d63391f01269e11289eb",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 2,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.719198167000286
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.719198167000286
+        }
+      ],
+      "run_index": 32,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.14873192992154508,
+          "relative_squared_slowness_L2": 0.19053788586401718
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.5447879411349734,
+          "relative_squared_slowness_L2": 1.345197033857459
+        }
+      },
+      "slice_id": "gom_148_il_0236",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.669169042001158,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 0,
+      "common_binding": {
+        "actual_common_m_sha256": "3f320c6a7a45485b0178bc94d422c779a786aece86b0bf0a29b77272403986af",
+        "initial_velocity_sha256": "446e98e7cf2d7e0f42c42670fcdaffdb38c5280757e0c92b050cfaab7f10316c",
+        "observations_sha256": "f72cd625564c33161a9fee45fda678d636ad96bc5942126c7f6a486bfe648540",
+        "raw_model_sha256": "43210a62ee5f98de4c079939d68b6169ee20dcff56b199d1e9afe0192fead191",
+        "requested_m_sha256": "6c31e98a6c11a4a8fad1398f8ee46130745e73f9ec0b2afeadb70c91cc45858a",
+        "truth_sha256": "812884187e0f45ba39834d57811ba6886e58358b365e06bc0d28fc572eedbf00"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "4b2df4b868a564f7fd977ece8f74bec889a2c5722e7c55d282b2bde33e442c6c",
+      "final_parameter_sha256": "19aaf8fd75793ab6f7b675136e1d4828ee6a5c84441067b3f62fb97149785426",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 2,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.669169042001158
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.669169042001158
+        }
+      ],
+      "run_index": 33,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.14873192992154508,
+          "relative_squared_slowness_L2": 0.19053788586401718
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.30587959591898894,
+          "relative_squared_slowness_L2": 0.7143512136422137
+        }
+      },
+      "slice_id": "gom_148_il_0236",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.640021874998638,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 1,
+      "common_binding": {
+        "actual_common_m_sha256": "117637d2f00770d77e8d633be5a1c5e93af31bf2879433dcaf2d720233a37f8b",
+        "initial_velocity_sha256": "f13cb4c31c23e21232fd2129b2189ce8099ddb966d07a2db2d80b34a82d50773",
+        "observations_sha256": "8c77d27c9fe1054908851baeca75f65b72354ea3189d8e33e7acfdffd627ef28",
+        "raw_model_sha256": "ad440df6d7c2796c1f5ed9bbe117d1a8eb12f3193220792386dcdf60ea39278c",
+        "requested_m_sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+        "truth_sha256": "91b41b1854aeb48e82e202b2d0b0ab1d6f6511e10e02aee460a0e0ff6b8a0ed5"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "4973c448f271e730e0d136720d35f2c72745bc4e69ab8a14dc53bc88978951fe",
+      "final_parameter_sha256": "3a20b96bd116a71904d2b4ecb298f7675d6c4e55a45dd0aaf37fec7733c03c39",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 2,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.640021874998638
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": false,
+          "verified_event_seconds": null
+        }
+      ],
+      "run_index": 34,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.11756818179457211,
+          "relative_squared_slowness_L2": 0.2531403784067119
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.3314172088835926,
+          "relative_squared_slowness_L2": 0.9434023860238636
+        }
+      },
+      "slice_id": "gom_148_xl_0768",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.668070291998447,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 1,
+      "common_binding": {
+        "actual_common_m_sha256": "117637d2f00770d77e8d633be5a1c5e93af31bf2879433dcaf2d720233a37f8b",
+        "initial_velocity_sha256": "f13cb4c31c23e21232fd2129b2189ce8099ddb966d07a2db2d80b34a82d50773",
+        "observations_sha256": "8c77d27c9fe1054908851baeca75f65b72354ea3189d8e33e7acfdffd627ef28",
+        "raw_model_sha256": "ad440df6d7c2796c1f5ed9bbe117d1a8eb12f3193220792386dcdf60ea39278c",
+        "requested_m_sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+        "truth_sha256": "91b41b1854aeb48e82e202b2d0b0ab1d6f6511e10e02aee460a0e0ff6b8a0ed5"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "78f13215ecc9baedf98d6e610f915974db904e7978e5b8e141ca01d52b5a3d01",
+      "final_parameter_sha256": "78f13215ecc9baedf98d6e610f915974db904e7978e5b8e141ca01d52b5a3d01",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 2,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.668070291998447
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.668070291998447
+        }
+      ],
+      "run_index": 35,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.11756818179457211,
+          "relative_squared_slowness_L2": 0.2531403784067119
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.5035673774421088,
+          "relative_squared_slowness_L2": 1.611004175574566
+        }
+      },
+      "slice_id": "gom_148_xl_0768",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.6041711249999935,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 2,
+      "common_binding": {
+        "actual_common_m_sha256": "91281c695ba555197ddcbb1b2bb63357cdd85b2f077bc127e08eef13bb0223a4",
+        "initial_velocity_sha256": "d246f9a9c58bc46365d5dccfa9143a1565392ac64f7cf697de6912de851d0ba7",
+        "observations_sha256": "689a34ed10bd15554d3996db54f351e255efbcadcf68b7578933bc162780495f",
+        "raw_model_sha256": "c15dc307929945bd760e39581ce326604040ca6bcc23e5ddf22b29380b6d5862",
+        "requested_m_sha256": "f405a2742f7781948175eec929e4729ced0324f6c8324a1a87a8671097d75beb",
+        "truth_sha256": "04d0b6704fa459b68f6db3a4e3d6b450f50ed07ef863c35e6cef86369ad691dd"
+      },
+      "engine_status": "solver_terminated",
+      "final_actual_native_m_sha256": "80ed0416b2b6702abb76812199dca507c2bbc57bd606f540597a8f2433e48fa8",
+      "final_parameter_sha256": "80ed0416b2b6702abb76812199dca507c2bbc57bd606f540597a8f2433e48fa8",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 2,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.6041711249999935
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.6041711249999935
+        }
+      ],
+      "run_index": 36,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.08369824008745379,
+          "relative_squared_slowness_L2": 0.1549280497998702
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.5824962822715309,
+          "relative_squared_slowness_L2": 2.0049578731551865
+        }
+      },
+      "slice_id": "seam_011_il_0522",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.707133082996734,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 2,
+      "common_binding": {
+        "actual_common_m_sha256": "91281c695ba555197ddcbb1b2bb63357cdd85b2f077bc127e08eef13bb0223a4",
+        "initial_velocity_sha256": "d246f9a9c58bc46365d5dccfa9143a1565392ac64f7cf697de6912de851d0ba7",
+        "observations_sha256": "689a34ed10bd15554d3996db54f351e255efbcadcf68b7578933bc162780495f",
+        "raw_model_sha256": "c15dc307929945bd760e39581ce326604040ca6bcc23e5ddf22b29380b6d5862",
+        "requested_m_sha256": "f405a2742f7781948175eec929e4729ced0324f6c8324a1a87a8671097d75beb",
+        "truth_sha256": "04d0b6704fa459b68f6db3a4e3d6b450f50ed07ef863c35e6cef86369ad691dd"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "edebb882c09e384adb80ba34f95244633357fa96c67bfe53531678cc3eb15590",
+      "final_parameter_sha256": "54271dcf8682f75b38bac1673d728b67f8265d15e49e3638dbfb550481793630",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 2,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": false,
+          "verified_event_seconds": null
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": false,
+          "verified_event_seconds": null
+        }
+      ],
+      "run_index": 37,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.08369824008745379,
+          "relative_squared_slowness_L2": 0.1549280497998702
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.43567014355909095,
+          "relative_squared_slowness_L2": 0.8322622319991437
+        }
+      },
+      "slice_id": "seam_011_il_0522",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.655332583002746,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 3,
+      "common_binding": {
+        "actual_common_m_sha256": "1a989a5eea1ecef84b801ecc4dab13bcfbae390e5eadf4672de8a97e1dbee85f",
+        "initial_velocity_sha256": "1d6f2d5e4f7a92c34cadaf9bc203bec163c606cdf7a8f2d364845119e63782ac",
+        "observations_sha256": "c2579fd9d477d825f7f38c98a234bef11584e706185fdae306210651317e06a1",
+        "raw_model_sha256": "9549d2c17a511f284d8697110d5c2279de48f04b690c7250f67544ce813df9a1",
+        "requested_m_sha256": "08dfd6921dc0dcc8c6e4da9634fae13be245ab44a2ef9cdddc813ae10a06e712",
+        "truth_sha256": "78f8d3ab69ce09e5ea43e00b711bd8757ac75446fa54fba3c7adce9993b43640"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "691e18b7412c169eb9ab5479051ad7cebd95f868759498519bafbff34e455e01",
+      "final_parameter_sha256": "61964989a6b751901bc072e60a7bf912c9ca090ec2d00a6109c3dc0f4b9a3f08",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 2,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.655332583002746
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.655332583002746
+        }
+      ],
+      "run_index": 38,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.02904735454443295,
+          "relative_squared_slowness_L2": 0.03651580593132719
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.027941100942759565,
+          "relative_squared_slowness_L2": 0.017625823236184987
+        }
+      },
+      "slice_id": "seam_011_xl_0866",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.704205542002455,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 3,
+      "common_binding": {
+        "actual_common_m_sha256": "1a989a5eea1ecef84b801ecc4dab13bcfbae390e5eadf4672de8a97e1dbee85f",
+        "initial_velocity_sha256": "1d6f2d5e4f7a92c34cadaf9bc203bec163c606cdf7a8f2d364845119e63782ac",
+        "observations_sha256": "c2579fd9d477d825f7f38c98a234bef11584e706185fdae306210651317e06a1",
+        "raw_model_sha256": "9549d2c17a511f284d8697110d5c2279de48f04b690c7250f67544ce813df9a1",
+        "requested_m_sha256": "08dfd6921dc0dcc8c6e4da9634fae13be245ab44a2ef9cdddc813ae10a06e712",
+        "truth_sha256": "78f8d3ab69ce09e5ea43e00b711bd8757ac75446fa54fba3c7adce9993b43640"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "9133407bf791dab908f3e0a4e48f1ab447eec0c8cdaf81c98b84fe192d857b8a",
+      "final_parameter_sha256": "9133407bf791dab908f3e0a4e48f1ab447eec0c8cdaf81c98b84fe192d857b8a",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 2,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.704205542002455
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.704205542002455
+        }
+      ],
+      "run_index": 39,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.02904735454443295,
+          "relative_squared_slowness_L2": 0.03651580593132719
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.02767571342408645,
+          "relative_squared_slowness_L2": 0.017101605122065794
+        }
+      },
+      "slice_id": "seam_011_xl_0866",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.659644290997676,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 4,
+      "common_binding": {
+        "actual_common_m_sha256": "7f13c1842a6b5f28f5facc9a6e134f3dc5b4ad83797c1d120b25c35948a42850",
+        "initial_velocity_sha256": "398c75f88d82a08c0a57ab38a977d3462c1f465f8924712ef62cb027ceaf613a",
+        "observations_sha256": "61f5d5801f307a390ec132b0684b20d7156314d13604d66cbefbc24533307c13",
+        "raw_model_sha256": "81e7b8d24007cf4e9e7e05f441e3e10992ab548e98062b5449d6fb52c358b2c9",
+        "requested_m_sha256": "2fb4cb6e2e3fad4bcbb5d38fd714ce0cc0ee889e8a7221c2e2dfd656aad0a636",
+        "truth_sha256": "7b31103f7c084c2543889c8d1315a409a44e76bbe3a819c03cdab0e08cc8b87a"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "34fdeb7a1605196344362a6523a48333c40620049e04545ffac1156e3fd5aae7",
+      "final_parameter_sha256": "ede03d31045e7c0f81b214bfeaafcaa52f9c5a73a00bb9fd5b2e5960a4fb683a",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 2,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.659644290997676
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.659644290997676
+        }
+      ],
+      "run_index": 40,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.16716473765137113,
+          "relative_squared_slowness_L2": 0.24239736626070943
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.21645896332815373,
+          "relative_squared_slowness_L2": 0.7591485302888217
+        }
+      },
+      "slice_id": "gom_151_il_0247",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.695052458999271,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 4,
+      "common_binding": {
+        "actual_common_m_sha256": "7f13c1842a6b5f28f5facc9a6e134f3dc5b4ad83797c1d120b25c35948a42850",
+        "initial_velocity_sha256": "398c75f88d82a08c0a57ab38a977d3462c1f465f8924712ef62cb027ceaf613a",
+        "observations_sha256": "61f5d5801f307a390ec132b0684b20d7156314d13604d66cbefbc24533307c13",
+        "raw_model_sha256": "81e7b8d24007cf4e9e7e05f441e3e10992ab548e98062b5449d6fb52c358b2c9",
+        "requested_m_sha256": "2fb4cb6e2e3fad4bcbb5d38fd714ce0cc0ee889e8a7221c2e2dfd656aad0a636",
+        "truth_sha256": "7b31103f7c084c2543889c8d1315a409a44e76bbe3a819c03cdab0e08cc8b87a"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "853f896477eb71517f662f0d0d53f2ec337133b273fc101887fdbdf69ba285c6",
+      "final_parameter_sha256": "853f896477eb71517f662f0d0d53f2ec337133b273fc101887fdbdf69ba285c6",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 2,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.695052458999271
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.695052458999271
+        }
+      ],
+      "run_index": 41,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.16716473765137113,
+          "relative_squared_slowness_L2": 0.24239736626070943
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.46734983787161943,
+          "relative_squared_slowness_L2": 1.167421741856573
+        }
+      },
+      "slice_id": "gom_151_il_0247",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.650750666998647,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 5,
+      "common_binding": {
+        "actual_common_m_sha256": "86b6bb3369f898936c47f88ac68a934e6947b4571ed66239b75a10190344690b",
+        "initial_velocity_sha256": "c0b062dcf7d5ecb6a9260bbbfe8f4a29d0cabf307795b2e169f8cbe33e6ad29c",
+        "observations_sha256": "eb7c2a21afa0d1fcbb05196a939c60475b70313faf8b72b4ebdc3dfb2bb3a810",
+        "raw_model_sha256": "5114577dbd24c1fa8e061de4bb78b0065f95034337939807ed549ec75beeca1b",
+        "requested_m_sha256": "cb9d143fd5439b85e44254471b5921f88c1a9eb489d7418b777efdc73d5950cd",
+        "truth_sha256": "cc36539dbc39d03ade3d98dce39d249dbf11b470cc0d3b18ffee20dda98f21d5"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "62c78d2e3b6df8f0b7fba6fd0cf770097060918dbcc76b750e8d0ef20cd13d27",
+      "final_parameter_sha256": "62c78d2e3b6df8f0b7fba6fd0cf770097060918dbcc76b750e8d0ef20cd13d27",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 2,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.650750666998647
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.650750666998647
+        }
+      ],
+      "run_index": 42,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.13378237845150975,
+          "relative_squared_slowness_L2": 0.2184660273801825
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.7270558181194221,
+          "relative_squared_slowness_L2": 2.174674026817598
+        }
+      },
+      "slice_id": "gom_151_xl_0857",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.705028667001898,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 5,
+      "common_binding": {
+        "actual_common_m_sha256": "86b6bb3369f898936c47f88ac68a934e6947b4571ed66239b75a10190344690b",
+        "initial_velocity_sha256": "c0b062dcf7d5ecb6a9260bbbfe8f4a29d0cabf307795b2e169f8cbe33e6ad29c",
+        "observations_sha256": "eb7c2a21afa0d1fcbb05196a939c60475b70313faf8b72b4ebdc3dfb2bb3a810",
+        "raw_model_sha256": "5114577dbd24c1fa8e061de4bb78b0065f95034337939807ed549ec75beeca1b",
+        "requested_m_sha256": "cb9d143fd5439b85e44254471b5921f88c1a9eb489d7418b777efdc73d5950cd",
+        "truth_sha256": "cc36539dbc39d03ade3d98dce39d249dbf11b470cc0d3b18ffee20dda98f21d5"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "b49b2f15d25c304d944c0c175525a2b3edd249e71321fce549a835be591bd8a4",
+      "final_parameter_sha256": "8a6140ea2ad922b8a8cb94e52951f91b9e21a0c0997cf8f0296bd6fa3d17c4c8",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 2,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.705028667001898
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.705028667001898
+        }
+      ],
+      "run_index": 43,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.13378237845150975,
+          "relative_squared_slowness_L2": 0.2184660273801825
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.1458354455602698,
+          "relative_squared_slowness_L2": 0.39961947489547706
+        }
+      },
+      "slice_id": "gom_151_xl_0857",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.721449415999814,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 6,
+      "common_binding": {
+        "actual_common_m_sha256": "9ef8a4f5eaf67ebf5aa41131fb3198586f585cfa71af6abac6bfed653e23788b",
+        "initial_velocity_sha256": "f3717dda61f41d936d8c235b5d0c87b2067e8b3f440a70fd4a63fb3ac28bc8a0",
+        "observations_sha256": "bd4f63dbb1cccb6b4a377573748e76b27aa6d13dff422f283a0b607db5305ee6",
+        "raw_model_sha256": "11932f843e820cf9e1ffb84d5fb04e1b5d92dd65fe311abc5783e3248da772f6",
+        "requested_m_sha256": "d2d7a8d53909bc5a24846b1bd3b8a468df6b046272cc6b1de4727eb1555f42f8",
+        "truth_sha256": "eca9b1fe5c35f00593bfb4ace523374e350723ab29ae0b06ebe397fafa65f088"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "d05ef2e8789ba942f7fe700e7744f8accd0d1647e0c41b7646fa7cbd2d4fd5aa",
+      "final_parameter_sha256": "09f54cfeeac966ca22179efd3e836f7b7ff1fa53ddf2735be03387ac5737575e",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 2,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.721449415999814
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.721449415999814
+        }
+      ],
+      "run_index": 44,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.017372415435287482,
+          "relative_squared_slowness_L2": 0.037893613195658794
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.015278438313631676,
+          "relative_squared_slowness_L2": 0.017619427321246186
+        }
+      },
+      "slice_id": "seam_005_il_0596",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.69894558300075,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 6,
+      "common_binding": {
+        "actual_common_m_sha256": "9ef8a4f5eaf67ebf5aa41131fb3198586f585cfa71af6abac6bfed653e23788b",
+        "initial_velocity_sha256": "f3717dda61f41d936d8c235b5d0c87b2067e8b3f440a70fd4a63fb3ac28bc8a0",
+        "observations_sha256": "bd4f63dbb1cccb6b4a377573748e76b27aa6d13dff422f283a0b607db5305ee6",
+        "raw_model_sha256": "11932f843e820cf9e1ffb84d5fb04e1b5d92dd65fe311abc5783e3248da772f6",
+        "requested_m_sha256": "d2d7a8d53909bc5a24846b1bd3b8a468df6b046272cc6b1de4727eb1555f42f8",
+        "truth_sha256": "eca9b1fe5c35f00593bfb4ace523374e350723ab29ae0b06ebe397fafa65f088"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "e89125cb1545465b85daa00224b909b5754f03547f64948938e4c1687914d678",
+      "final_parameter_sha256": "e89125cb1545465b85daa00224b909b5754f03547f64948938e4c1687914d678",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 2,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.69894558300075
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.69894558300075
+        }
+      ],
+      "run_index": 45,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.017372415435287482,
+          "relative_squared_slowness_L2": 0.037893613195658794
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.014749900398732831,
+          "relative_squared_slowness_L2": 0.016879778397498667
+        }
+      },
+      "slice_id": "seam_005_il_0596",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.690753958999267,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 7,
+      "common_binding": {
+        "actual_common_m_sha256": "b6e0cc76d96fce5fa6022430dccd833a11062bf50a7ebef36a016a89c37a6bca",
+        "initial_velocity_sha256": "5dc2c4cee16dc457e13f5fa741fcb7002ceade7c8d08da41de619d082014c6c2",
+        "observations_sha256": "fc4e16565819bcd2c61253bbd6c6bf19b05eda1c546e09b496a57ad89f482cb8",
+        "raw_model_sha256": "3b897b308d0208290e82c3a36b77f4f2d853fe5bfdbef13132300b7219e324b3",
+        "requested_m_sha256": "d04826139055a1d93e6b436c8c72c3741aded061d43e1a505a2d3269ecfab07d",
+        "truth_sha256": "89cdcae3d8cfb64cfae47ffb7b03eb3cd780b4dd92b30d4164d6f7e07bf6c07e"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "d54a55227b69dd8ffca2c7b4bddec23d1fc1259f8533b0a63cf0b86868511c55",
+      "final_parameter_sha256": "d54a55227b69dd8ffca2c7b4bddec23d1fc1259f8533b0a63cf0b86868511c55",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "native_m_lbfgsb",
+      "optimizer_coordinates": "squared_slowness",
+      "order_position": 0,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 2,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.690753958999267
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.690753958999267
+        }
+      ],
+      "run_index": 46,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.018818339480689887,
+          "relative_squared_slowness_L2": 0.036992428725729935
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.016767120402091,
+          "relative_squared_slowness_L2": 0.01620849303954513
+        }
+      },
+      "slice_id": "seam_005_xl_0795",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    },
+    {
+      "actual_api_return_seconds": 7.682488124999509,
+      "audit_status": "saved_core_checked",
+      "bound_scope": "literal native counts retained; VP float64 inverse boxes are not outward-rounded identical native boxes",
+      "candidate_joint_eligible": true,
+      "case_index": 7,
+      "common_binding": {
+        "actual_common_m_sha256": "b6e0cc76d96fce5fa6022430dccd833a11062bf50a7ebef36a016a89c37a6bca",
+        "initial_velocity_sha256": "5dc2c4cee16dc457e13f5fa741fcb7002ceade7c8d08da41de619d082014c6c2",
+        "observations_sha256": "fc4e16565819bcd2c61253bbd6c6bf19b05eda1c546e09b496a57ad89f482cb8",
+        "raw_model_sha256": "3b897b308d0208290e82c3a36b77f4f2d853fe5bfdbef13132300b7219e324b3",
+        "requested_m_sha256": "d04826139055a1d93e6b436c8c72c3741aded061d43e1a505a2d3269ecfab07d",
+        "truth_sha256": "89cdcae3d8cfb64cfae47ffb7b03eb3cd780b4dd92b30d4164d6f7e07bf6c07e"
+      },
+      "engine_status": "budget_exhausted",
+      "final_actual_native_m_sha256": "00ab5c93724b3f1004506a266dc2613a6899d4a98d5b5dc5f77f3ac199d604b1",
+      "final_parameter_sha256": "ba304db1a763a32c0992cf2e13f24efa7dd50c3569e738d37fe9211aae81c7ee",
+      "intermediate_raw_replay_available": false,
+      "literal_final_native_bound_counts": {
+        "above": 0,
+        "below": 0
+      },
+      "method": "physical_v_lbfgsb",
+      "optimizer_coordinates": "physical_velocity",
+      "order_position": 1,
+      "recorded_elapsed_until_failure_or_interrupt_seconds": null,
+      "recorded_error": null,
+      "recorded_phase_at_failure": null,
+      "recorded_primary_quality_is_null": false,
+      "recorded_status": "complete",
+      "recorded_terminal_integrity_flag": true,
+      "repetition": 2,
+      "returned_targets": [
+        {
+          "ratio": 0.5,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.682488124999509
+        },
+        {
+          "ratio": 0.25,
+          "reached_at_return": true,
+          "verified_event_seconds": 7.682488124999509
+        }
+      ],
+      "run_index": 47,
+      "runtime_eligible": true,
+      "runtime_reason": "fully_returned_paid_state",
+      "scalar_errors": {
+        "common_initial": {
+          "relative_physical_velocity_L2": 0.018818339480689887,
+          "relative_squared_slowness_L2": 0.036992428725729935
+        },
+        "returned_final": {
+          "relative_physical_velocity_L2": 0.017030888868470682,
+          "relative_squared_slowness_L2": 0.01681578030243761
+        }
+      },
+      "slice_id": "seam_005_xl_0795",
+      "source_truth_scope": "own scalar half-cell bilinear truth; roundoff need not share producer truth bytes",
+      "verified_credit_eligible": true
+    }
+  ],
+  "source_sha256": "f6645989be8258aafe0a431d91b214890167040448e27eda329e620b6b3e01ca",
+  "status": "complete",
+  "summary": {
+    "case_denominator": 8,
+    "case_method_denominator": 16,
+    "case_method_groups": [
+      {
+        "all3_required": true,
+        "case_index": 0,
+        "median_returned_quality": {
+          "relative_physical_velocity_L2": 0.5447879411349734,
+          "relative_squared_slowness_L2": 1.345197033857459
+        },
+        "method": "native_m_lbfgsb",
+        "planned_repetitions": 3,
+        "slice_id": "gom_148_il_0236",
+        "verified_available": 3
+      },
+      {
+        "all3_required": true,
+        "case_index": 0,
+        "median_returned_quality": {
+          "relative_physical_velocity_L2": 0.30831357305431517,
+          "relative_squared_slowness_L2": 0.7127478041423828
+        },
+        "method": "physical_v_lbfgsb",
+        "planned_repetitions": 3,
+        "slice_id": "gom_148_il_0236",
+        "verified_available": 3
+      },
+      {
+        "all3_required": true,
+        "case_index": 1,
+        "median_returned_quality": {
+          "relative_physical_velocity_L2": 0.5035673774421088,
+          "relative_squared_slowness_L2": 1.6112491029446971
+        },
+        "method": "native_m_lbfgsb",
+        "planned_repetitions": 3,
+        "slice_id": "gom_148_xl_0768",
+        "verified_available": 3
+      },
+      {
+        "all3_required": true,
+        "case_index": 1,
+        "median_returned_quality": {
+          "relative_physical_velocity_L2": 0.3314172088835926,
+          "relative_squared_slowness_L2": 0.9434023860238636
+        },
+        "method": "physical_v_lbfgsb",
+        "planned_repetitions": 3,
+        "slice_id": "gom_148_xl_0768",
+        "verified_available": 3
+      },
+      {
+        "all3_required": true,
+        "case_index": 2,
+        "median_returned_quality": {
+          "relative_physical_velocity_L2": 0.5824962822715309,
+          "relative_squared_slowness_L2": 2.0049578731551865
+        },
+        "method": "native_m_lbfgsb",
+        "planned_repetitions": 3,
+        "slice_id": "seam_011_il_0522",
+        "verified_available": 3
+      },
+      {
+        "all3_required": true,
+        "case_index": 2,
+        "median_returned_quality": {
+          "relative_physical_velocity_L2": 0.43567014355909095,
+          "relative_squared_slowness_L2": 0.8322622319991437
+        },
+        "method": "physical_v_lbfgsb",
+        "planned_repetitions": 3,
+        "slice_id": "seam_011_il_0522",
+        "verified_available": 3
+      },
+      {
+        "all3_required": true,
+        "case_index": 3,
+        "median_returned_quality": {
+          "relative_physical_velocity_L2": 0.02767590354549565,
+          "relative_squared_slowness_L2": 0.01710445755180507
+        },
+        "method": "native_m_lbfgsb",
+        "planned_repetitions": 3,
+        "slice_id": "seam_011_xl_0866",
+        "verified_available": 3
+      },
+      {
+        "all3_required": true,
+        "case_index": 3,
+        "median_returned_quality": {
+          "relative_physical_velocity_L2": 0.027941100942759565,
+          "relative_squared_slowness_L2": 0.017625823236184987
+        },
+        "method": "physical_v_lbfgsb",
+        "planned_repetitions": 3,
+        "slice_id": "seam_011_xl_0866",
+        "verified_available": 3
+      },
+      {
+        "all3_required": true,
+        "case_index": 4,
+        "median_returned_quality": {
+          "relative_physical_velocity_L2": 0.46734983787161943,
+          "relative_squared_slowness_L2": 1.167421741856573
+        },
+        "method": "native_m_lbfgsb",
+        "planned_repetitions": 3,
+        "slice_id": "gom_151_il_0247",
+        "verified_available": 3
+      },
+      {
+        "all3_required": true,
+        "case_index": 4,
+        "median_returned_quality": {
+          "relative_physical_velocity_L2": 0.21645896332815373,
+          "relative_squared_slowness_L2": 0.7591485302888217
+        },
+        "method": "physical_v_lbfgsb",
+        "planned_repetitions": 3,
+        "slice_id": "gom_151_il_0247",
+        "verified_available": 3
+      },
+      {
+        "all3_required": true,
+        "case_index": 5,
+        "median_returned_quality": {
+          "relative_physical_velocity_L2": 0.7309204546341704,
+          "relative_squared_slowness_L2": 2.17754529229774
+        },
+        "method": "native_m_lbfgsb",
+        "planned_repetitions": 3,
+        "slice_id": "gom_151_xl_0857",
+        "verified_available": 3
+      },
+      {
+        "all3_required": true,
+        "case_index": 5,
+        "median_returned_quality": {
+          "relative_physical_velocity_L2": 0.14583735223701122,
+          "relative_squared_slowness_L2": 0.39962068895132946
+        },
+        "method": "physical_v_lbfgsb",
+        "planned_repetitions": 3,
+        "slice_id": "gom_151_xl_0857",
+        "verified_available": 3
+      },
+      {
+        "all3_required": true,
+        "case_index": 6,
+        "median_returned_quality": {
+          "relative_physical_velocity_L2": 0.014749900398732831,
+          "relative_squared_slowness_L2": 0.016879778397498667
+        },
+        "method": "native_m_lbfgsb",
+        "planned_repetitions": 3,
+        "slice_id": "seam_005_il_0596",
+        "verified_available": 3
+      },
+      {
+        "all3_required": true,
+        "case_index": 6,
+        "median_returned_quality": {
+          "relative_physical_velocity_L2": 0.015277669570218637,
+          "relative_squared_slowness_L2": 0.017619427321246186
+        },
+        "method": "physical_v_lbfgsb",
+        "planned_repetitions": 3,
+        "slice_id": "seam_005_il_0596",
+        "verified_available": 3
+      },
+      {
+        "all3_required": true,
+        "case_index": 7,
+        "median_returned_quality": {
+          "relative_physical_velocity_L2": 0.01679070747772538,
+          "relative_squared_slowness_L2": 0.016237318603840124
+        },
+        "method": "native_m_lbfgsb",
+        "planned_repetitions": 3,
+        "slice_id": "seam_005_xl_0795",
+        "verified_available": 3
+      },
+      {
+        "all3_required": true,
+        "case_index": 7,
+        "median_returned_quality": {
+          "relative_physical_velocity_L2": 0.017030888868470682,
+          "relative_squared_slowness_L2": 0.01681578030243761
+        },
+        "method": "physical_v_lbfgsb",
+        "planned_repetitions": 3,
+        "slice_id": "seam_005_xl_0795",
+        "verified_available": 3
+      }
+    ],
+    "paired_denominator": 24,
+    "paired_rows": [
+      {
+        "both_available": true,
+        "case_index": 0,
+        "planned_methods": 2,
+        "repetition": 0,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 1,
+        "planned_methods": 2,
+        "repetition": 0,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 2,
+        "planned_methods": 2,
+        "repetition": 0,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 3,
+        "planned_methods": 2,
+        "repetition": 0,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 4,
+        "planned_methods": 2,
+        "repetition": 0,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 5,
+        "planned_methods": 2,
+        "repetition": 0,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 6,
+        "planned_methods": 2,
+        "repetition": 0,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 7,
+        "planned_methods": 2,
+        "repetition": 0,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 0,
+        "planned_methods": 2,
+        "repetition": 1,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 1,
+        "planned_methods": 2,
+        "repetition": 1,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 2,
+        "planned_methods": 2,
+        "repetition": 1,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 3,
+        "planned_methods": 2,
+        "repetition": 1,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 4,
+        "planned_methods": 2,
+        "repetition": 1,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 5,
+        "planned_methods": 2,
+        "repetition": 1,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 6,
+        "planned_methods": 2,
+        "repetition": 1,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 7,
+        "planned_methods": 2,
+        "repetition": 1,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 0,
+        "planned_methods": 2,
+        "repetition": 2,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 1,
+        "planned_methods": 2,
+        "repetition": 2,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 2,
+        "planned_methods": 2,
+        "repetition": 2,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 3,
+        "planned_methods": 2,
+        "repetition": 2,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 4,
+        "planned_methods": 2,
+        "repetition": 2,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 5,
+        "planned_methods": 2,
+        "repetition": 2,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 6,
+        "planned_methods": 2,
+        "repetition": 2,
+        "verified_available": 2
+      },
+      {
+        "both_available": true,
+        "case_index": 7,
+        "planned_methods": 2,
+        "repetition": 2,
+        "verified_available": 2
+      }
+    ],
+    "row_denominator": 48,
+    "scope": "complete denominators and all3 medians; no winner/p-values/first-hit/independent-geology inference"
+  },
+  "terminal_observation_sha256": "181e281a9f298521342da6e9006187d03c4e93a49a1d7b24f8accf6d9f341d7d",
+  "terminal_scope": "Operator/root confirmation plus completed producer status; not independent process/liveness measurement."
+}

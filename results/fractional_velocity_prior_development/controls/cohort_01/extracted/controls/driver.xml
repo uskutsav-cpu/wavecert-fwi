@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="7" time="0.112" timestamp="2026-11-09T02:00:35.012416+00:00" hostname="runnervmwuk1x"><testcase classname="research.prior48.driver.test_driver_manufactured" name="test_default_is_metadata_only_and_full48_order_is_already_bound" time="0.003" /><testcase classname="research.prior48.driver.test_driver_manufactured" name="test_execution_requires_exact_separate_root_go[authorization]" time="0.001" /><testcase classname="research.prior48.driver.test_driver_manufactured" name="test_execution_requires_exact_separate_root_go[driver_sha256]" time="0.001" /><testcase classname="research.prior48.driver.test_driver_manufactured" name="test_execution_requires_exact_separate_root_go[protocol_sha256]" time="0.001" /><testcase classname="research.prior48.driver.test_driver_manufactured" name="test_execution_requires_exact_separate_root_go[schedule_sha256]" time="0.001" /><testcase classname="research.prior48.driver.test_driver_manufactured" name="test_execution_requires_exact_separate_root_go[independent_source_review_clear]" time="0.001" /><testcase classname="research.prior48.driver.test_driver_manufactured" name="test_self_rehashed_schedule_tamper_still_fails_fixed_order" time="0.000"><error message="failed on setup with &quot;FileNotFoundError: [Errno 2] No such file or directory: '/home/runner/work/wavecert-fwi/wavecert-fwi/prior48_artifacts/live/control_tmp/driver'&quot;">self = PosixPath('/home/runner/work/wavecert-fwi/wavecert-fwi/prior48_artifacts/live/control_tmp/driver')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+&gt;           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/home/runner/work/wavecert-fwi/wavecert-fwi/prior48_artifacts/live/control_tmp/driver'
+
+/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/pathlib.py:1116: FileNotFoundError</error></testcase></testsuite></testsuites>

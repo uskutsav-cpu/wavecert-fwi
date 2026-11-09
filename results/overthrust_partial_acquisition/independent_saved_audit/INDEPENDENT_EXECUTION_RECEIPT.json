@@ -1,0 +1,79 @@
+{
+  "PDE_calls": 0,
+  "actual_auditor_executions": [
+    {
+      "attempt": "01",
+      "exit_code": 0,
+      "report_sha256": "db969d833d663cbba5fc64584f4cf25f02506e49de932e91e8d42cfd5284c408",
+      "tool_chunk": "98cd95"
+    },
+    {
+      "attempt": "02",
+      "exit_code": 0,
+      "report_sha256": "0b795069bd45b2521b36a170fc4fb086d38537f9d2bfab83e8a9026cd139f384",
+      "tool_chunk": "2834bc"
+    }
+  ],
+  "auditor_source_sha256": "48006774e026390873f5961f84a60c14de76bfcc034675bb5ea819992b23e261",
+  "bound_input_path_binding_count": 619,
+  "bound_input_unique_resolved_file_count": 329,
+  "bound_path_note": "Auditor records both relative request paths and absolute contained artifact paths; alias bindings do not create additional distinct input files.",
+  "checks": 3186,
+  "disclosure_findings": [
+    {
+      "HDF5_file_ETags": [
+        null
+      ],
+      "finding": "The producer's blanket no-ETag statement is too broad: record-JSON responses carry an ETag, whereas HDF5 file-range responses do not. A record revision ETag does not identify the whole HDF5 byte stream.",
+      "kind": "scope_wording",
+      "raw_history_unchanged": true,
+      "record_ETags": [
+        "\"2\"",
+        "\"2\""
+      ]
+    }
+  ],
+  "files": {
+    "README.md": {
+      "bytes": 2188,
+      "sha256": "4a7795b475861f7b55282d0686c15608067cdae988a6c7fb4178436c3a2da198"
+    },
+    "audit_saved_partial.py": {
+      "bytes": 12897,
+      "sha256": "48006774e026390873f5961f84a60c14de76bfcc034675bb5ea819992b23e261"
+    },
+    "execution_01.log": {
+      "bytes": 205,
+      "sha256": "9059c02510dd1dbf62bf28ae9f81889ddf35d35eadbef0038590603b6137be52"
+    },
+    "execution_02.log": {
+      "bytes": 205,
+      "sha256": "e1a5f32362deee84bfa0c27814705d1046192b04fefd2fdc9f188dc9aca0a724"
+    },
+    "history_execution_01/audit_saved_partial.py": {
+      "bytes": 12898,
+      "sha256": "afac12941f345533bc3bb79625c06962d3e45a6f642223a7a5d7107f2cb0fd36"
+    },
+    "report_01.json": {
+      "bytes": 113011,
+      "sha256": "db969d833d663cbba5fc64584f4cf25f02506e49de932e91e8d42cfd5284c408"
+    },
+    "report_02.json": {
+      "bytes": 113011,
+      "sha256": "0b795069bd45b2521b36a170fc4fb086d38537f9d2bfab83e8a9026cd139f384"
+    }
+  },
+  "integrity_failures": [],
+  "network_requests_by_auditor": 0,
+  "physical_acceptance": null,
+  "producer_imports": 0,
+  "python": "3.13.13",
+  "python_3_10_grammar_pass": true,
+  "ruff": {
+    "exit_code": 0,
+    "tool_chunk": "c7115b"
+  },
+  "scope": "Independent audit of saved local bytes and response ledger, not independent refetch/authentication, original CD1 velocity identity, whole-HDF5 immutability, validated physical units, geology/physics confirmation, or inversion success. Root actual process terminal observation is separate; producer receipt correctly leaves terminal exit null.",
+  "status": "INTEGRITY_PASS_WITH_DISCLOSURE_FINDING",
+  "whole_file_checksum_verified": false
+}

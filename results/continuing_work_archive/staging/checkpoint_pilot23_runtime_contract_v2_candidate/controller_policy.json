@@ -1,0 +1,22 @@
+{
+  "schema": "checkpoint_pilot23_policy_v1",
+  "execution_authorized": false,
+  "native_children": 23,
+  "total_output_cap_bytes": 67108864,
+  "per_slot_output_cap_bytes": 8388608,
+  "per_console_cap_bytes": 2097152,
+  "per_file_hard_limit_bytes": 16777216,
+  "minimum_free_disk_headroom_bytes": 268435456,
+  "worker_peak_RSS_cap_bytes": 2147483648,
+  "sampled_live_group_RSS_cap_bytes": 3221225472,
+  "minimum_available_memory_bytes": 3758096384,
+  "poll_seconds": 0.1,
+  "resource_prefix_samples": 32,
+  "resource_tail_samples": 32,
+  "execution_timeout_seconds": null,
+  "retry": false,
+  "fallback": false,
+  "automatic_checkpoint_count": false,
+  "stop_policy": "Forward observed INT/TERM/HUP to the known separate child group; stop admission of later slots. Controller error, explicit stop or cap violation kills only its known still-running child group with SIGKILL and performs actual Popen.wait, without a numerical timeout or grace-period retry. Unexpected surviving descendants are killed and reported as unknown work; they are never treated as observed normal exits.",
+  "caps_limitations": "Admission reserves available-memory/disk headroom before each child, and the child sets a per-file RLIMIT_FSIZE before imports. These are not a hard RSS or whole-filesystem guarantee. Live group RSS and output sizes are sampled; overshoots can occur between samples and are retained as failures. Worker Linux ru_maxrss is checked after its actual return. Compiler/cache files outside the retained output tree are not included in output byte totals; full process costs and cache warmth remain disclosed. No fair-speed claim."
+}

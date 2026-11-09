@@ -1,0 +1,407 @@
+{
+  "created_utc": "2026-11-08T19:53:40.230335+00:00",
+  "commit": "97f890567579a7f7cf2b7c8a4c05e0a264a9ba18",
+  "workflow_run": 42515747409,
+  "status": "completed",
+  "conclusion": "failure",
+  "jobs": [
+    {
+      "job_id": 128838255035,
+      "name": "test (3.10)",
+      "conclusion": "cancelled",
+      "decoded_log_sha256": "958c5b3e17d0784a2eb64002cb13f3cc2e77a2111f4c2d1569de6e435968d2c4",
+      "retained_log_bytes": 63164,
+      "pytest_summaries": [
+        "1 failed, 46 passed, 2 skipped in 45.31s"
+      ],
+      "new108_test_report_present": false,
+      "failure_check": "bp_numpy_tangent_reproduction_failure",
+      "cases": [
+        {
+          "case_id": "upper_left",
+          "own_status": "complete_own_solve",
+          "comparison_status": "failed",
+          "comparison_error": "ValueError: fixed physical direction/probe witness mismatch",
+          "trace_agreement": true,
+          "trace_relative_L2": 4.409051766940796e-14,
+          "models": {
+            "physical_m": {
+              "maximum_ULP_distance": 0,
+              "unequal_count": 0,
+              "own_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+              "native_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a"
+            },
+            "physical_velocity": {
+              "maximum_ULP_distance": 0,
+              "unequal_count": 0,
+              "own_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+              "native_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785"
+            }
+          },
+          "directions": [
+            {
+              "direction": "interior",
+              "status": "unavailable",
+              "agreement": null,
+              "relative_error": null,
+              "informative": null
+            },
+            {
+              "direction": "edge",
+              "status": "unavailable",
+              "agreement": null,
+              "relative_error": null,
+              "informative": null
+            }
+          ]
+        },
+        {
+          "case_id": "middle_center",
+          "own_status": "complete_own_solve",
+          "comparison_status": "complete",
+          "comparison_error": null,
+          "trace_agreement": true,
+          "trace_relative_L2": 2.8179763010522686e-14,
+          "models": {
+            "physical_m": {
+              "maximum_ULP_distance": 0,
+              "unequal_count": 0,
+              "own_sha256": "2592d4707d4ee285df4ab6c64d66b88a2185b9d6f7d6f429a2acd135c6cf0dd3",
+              "native_sha256": "2592d4707d4ee285df4ab6c64d66b88a2185b9d6f7d6f429a2acd135c6cf0dd3"
+            },
+            "physical_velocity": {
+              "maximum_ULP_distance": 0,
+              "unequal_count": 0,
+              "own_sha256": "e4afe846ee52b0952205e2bb7faf7699b6a22b7614c467ed19c3e91ac73caf68",
+              "native_sha256": "e4afe846ee52b0952205e2bb7faf7699b6a22b7614c467ed19c3e91ac73caf68"
+            }
+          },
+          "directions": [
+            {
+              "direction": "interior",
+              "status": "complete",
+              "agreement": true,
+              "relative_error": 2.7365619314716946e-14,
+              "informative": true
+            },
+            {
+              "direction": "edge",
+              "status": "complete",
+              "agreement": true,
+              "relative_error": 6.80518016643569e-14,
+              "informative": true
+            }
+          ]
+        },
+        {
+          "case_id": "lower_right",
+          "own_status": "complete_own_solve",
+          "comparison_status": "complete",
+          "comparison_error": null,
+          "trace_agreement": true,
+          "trace_relative_L2": 2.2499482562358158e-14,
+          "models": {
+            "physical_m": {
+              "maximum_ULP_distance": 0,
+              "unequal_count": 0,
+              "own_sha256": "650b2a87450c246df48a3454d9da7d6a83c99de0c78aec466d799f4052fda9aa",
+              "native_sha256": "650b2a87450c246df48a3454d9da7d6a83c99de0c78aec466d799f4052fda9aa"
+            },
+            "physical_velocity": {
+              "maximum_ULP_distance": 0,
+              "unequal_count": 0,
+              "own_sha256": "70d48e59ba4db0d81a811877dd6990fbef7ec5b3dbafd9780f44a219eebe306d",
+              "native_sha256": "70d48e59ba4db0d81a811877dd6990fbef7ec5b3dbafd9780f44a219eebe306d"
+            }
+          },
+          "directions": [
+            {
+              "direction": "interior",
+              "status": "complete",
+              "agreement": true,
+              "relative_error": 3.21064851202396e-14,
+              "informative": true
+            },
+            {
+              "direction": "edge",
+              "status": "complete",
+              "agreement": true,
+              "relative_error": 5.426423002973062e-14,
+              "informative": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "job_id": 128838255907,
+      "name": "test (3.11)",
+      "conclusion": "failure",
+      "decoded_log_sha256": "882a3a4d9038ef3796dc0f8940d5fac87e9d3bacc99152cf5102bae8d302d663",
+      "retained_log_bytes": 61305,
+      "pytest_summaries": [
+        "1 failed, 46 passed, 2 skipped in 39.56s"
+      ],
+      "new108_test_report_present": false,
+      "failure_check": "bp_numpy_tangent_reproduction_failure",
+      "cases": [
+        {
+          "case_id": "upper_left",
+          "own_status": "complete_own_solve",
+          "comparison_status": "failed",
+          "comparison_error": "ValueError: fixed physical direction/probe witness mismatch",
+          "trace_agreement": true,
+          "trace_relative_L2": 4.409051766940796e-14,
+          "models": {
+            "physical_m": {
+              "maximum_ULP_distance": 0,
+              "unequal_count": 0,
+              "own_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+              "native_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a"
+            },
+            "physical_velocity": {
+              "maximum_ULP_distance": 0,
+              "unequal_count": 0,
+              "own_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+              "native_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785"
+            }
+          },
+          "directions": [
+            {
+              "direction": "interior",
+              "status": "unavailable",
+              "agreement": null,
+              "relative_error": null,
+              "informative": null
+            },
+            {
+              "direction": "edge",
+              "status": "unavailable",
+              "agreement": null,
+              "relative_error": null,
+              "informative": null
+            }
+          ]
+        },
+        {
+          "case_id": "middle_center",
+          "own_status": "complete_own_solve",
+          "comparison_status": "complete",
+          "comparison_error": null,
+          "trace_agreement": true,
+          "trace_relative_L2": 2.8179763010522686e-14,
+          "models": {
+            "physical_m": {
+              "maximum_ULP_distance": 0,
+              "unequal_count": 0,
+              "own_sha256": "2592d4707d4ee285df4ab6c64d66b88a2185b9d6f7d6f429a2acd135c6cf0dd3",
+              "native_sha256": "2592d4707d4ee285df4ab6c64d66b88a2185b9d6f7d6f429a2acd135c6cf0dd3"
+            },
+            "physical_velocity": {
+              "maximum_ULP_distance": 0,
+              "unequal_count": 0,
+              "own_sha256": "e4afe846ee52b0952205e2bb7faf7699b6a22b7614c467ed19c3e91ac73caf68",
+              "native_sha256": "e4afe846ee52b0952205e2bb7faf7699b6a22b7614c467ed19c3e91ac73caf68"
+            }
+          },
+          "directions": [
+            {
+              "direction": "interior",
+              "status": "complete",
+              "agreement": true,
+              "relative_error": 2.7365619314716946e-14,
+              "informative": true
+            },
+            {
+              "direction": "edge",
+              "status": "complete",
+              "agreement": true,
+              "relative_error": 6.80518016643569e-14,
+              "informative": true
+            }
+          ]
+        },
+        {
+          "case_id": "lower_right",
+          "own_status": "complete_own_solve",
+          "comparison_status": "complete",
+          "comparison_error": null,
+          "trace_agreement": true,
+          "trace_relative_L2": 2.2499482562358158e-14,
+          "models": {
+            "physical_m": {
+              "maximum_ULP_distance": 0,
+              "unequal_count": 0,
+              "own_sha256": "650b2a87450c246df48a3454d9da7d6a83c99de0c78aec466d799f4052fda9aa",
+              "native_sha256": "650b2a87450c246df48a3454d9da7d6a83c99de0c78aec466d799f4052fda9aa"
+            },
+            "physical_velocity": {
+              "maximum_ULP_distance": 0,
+              "unequal_count": 0,
+              "own_sha256": "70d48e59ba4db0d81a811877dd6990fbef7ec5b3dbafd9780f44a219eebe306d",
+              "native_sha256": "70d48e59ba4db0d81a811877dd6990fbef7ec5b3dbafd9780f44a219eebe306d"
+            }
+          },
+          "directions": [
+            {
+              "direction": "interior",
+              "status": "complete",
+              "agreement": true,
+              "relative_error": 3.21064851202396e-14,
+              "informative": true
+            },
+            {
+              "direction": "edge",
+              "status": "complete",
+              "agreement": true,
+              "relative_error": 5.426423002973062e-14,
+              "informative": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "job_id": 128838256904,
+      "name": "test (3.12)",
+      "conclusion": "cancelled",
+      "decoded_log_sha256": "ffff804348626498e2de5bf0aa78121c33191a905e4c815bfb71d133e9bce6ee",
+      "retained_log_bytes": 46297,
+      "pytest_summaries": [],
+      "new108_test_report_present": false
+    },
+    {
+      "job_id": 128838263308,
+      "name": "learned-and-data",
+      "conclusion": "failure",
+      "decoded_log_sha256": "f9147d5b14cbeadd72173944915fde528b5e7a4d466b8ad362cac859cfcfd495",
+      "retained_log_bytes": 65622,
+      "pytest_summaries": [
+        "1 failed, 67 passed, 1 warning in 32.39s"
+      ],
+      "new108_test_report_present": false,
+      "failure_check": "bp_numpy_tangent_reproduction_failure",
+      "cases": [
+        {
+          "case_id": "upper_left",
+          "own_status": "complete_own_solve",
+          "comparison_status": "failed",
+          "comparison_error": "ValueError: fixed physical direction/probe witness mismatch",
+          "trace_agreement": true,
+          "trace_relative_L2": 4.409051766940796e-14,
+          "models": {
+            "physical_m": {
+              "maximum_ULP_distance": 0,
+              "unequal_count": 0,
+              "own_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+              "native_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a"
+            },
+            "physical_velocity": {
+              "maximum_ULP_distance": 0,
+              "unequal_count": 0,
+              "own_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+              "native_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785"
+            }
+          },
+          "directions": [
+            {
+              "direction": "interior",
+              "status": "unavailable",
+              "agreement": null,
+              "relative_error": null,
+              "informative": null
+            },
+            {
+              "direction": "edge",
+              "status": "unavailable",
+              "agreement": null,
+              "relative_error": null,
+              "informative": null
+            }
+          ]
+        },
+        {
+          "case_id": "middle_center",
+          "own_status": "complete_own_solve",
+          "comparison_status": "complete",
+          "comparison_error": null,
+          "trace_agreement": true,
+          "trace_relative_L2": 2.8179763010522686e-14,
+          "models": {
+            "physical_m": {
+              "maximum_ULP_distance": 0,
+              "unequal_count": 0,
+              "own_sha256": "2592d4707d4ee285df4ab6c64d66b88a2185b9d6f7d6f429a2acd135c6cf0dd3",
+              "native_sha256": "2592d4707d4ee285df4ab6c64d66b88a2185b9d6f7d6f429a2acd135c6cf0dd3"
+            },
+            "physical_velocity": {
+              "maximum_ULP_distance": 0,
+              "unequal_count": 0,
+              "own_sha256": "e4afe846ee52b0952205e2bb7faf7699b6a22b7614c467ed19c3e91ac73caf68",
+              "native_sha256": "e4afe846ee52b0952205e2bb7faf7699b6a22b7614c467ed19c3e91ac73caf68"
+            }
+          },
+          "directions": [
+            {
+              "direction": "interior",
+              "status": "complete",
+              "agreement": true,
+              "relative_error": 2.7365619314716946e-14,
+              "informative": true
+            },
+            {
+              "direction": "edge",
+              "status": "complete",
+              "agreement": true,
+              "relative_error": 6.80518016643569e-14,
+              "informative": true
+            }
+          ]
+        },
+        {
+          "case_id": "lower_right",
+          "own_status": "complete_own_solve",
+          "comparison_status": "complete",
+          "comparison_error": null,
+          "trace_agreement": true,
+          "trace_relative_L2": 2.2499482562358158e-14,
+          "models": {
+            "physical_m": {
+              "maximum_ULP_distance": 0,
+              "unequal_count": 0,
+              "own_sha256": "650b2a87450c246df48a3454d9da7d6a83c99de0c78aec466d799f4052fda9aa",
+              "native_sha256": "650b2a87450c246df48a3454d9da7d6a83c99de0c78aec466d799f4052fda9aa"
+            },
+            "physical_velocity": {
+              "maximum_ULP_distance": 0,
+              "unequal_count": 0,
+              "own_sha256": "70d48e59ba4db0d81a811877dd6990fbef7ec5b3dbafd9780f44a219eebe306d",
+              "native_sha256": "70d48e59ba4db0d81a811877dd6990fbef7ec5b3dbafd9780f44a219eebe306d"
+            }
+          },
+          "directions": [
+            {
+              "direction": "interior",
+              "status": "complete",
+              "agreement": true,
+              "relative_error": 3.21064851202396e-14,
+              "informative": true
+            },
+            {
+              "direction": "edge",
+              "status": "complete",
+              "agreement": true,
+              "relative_error": 5.426423002973062e-14,
+              "informative": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "diagnosis": "Old BP NumPy replay stops at upper_left first/interior direction-relative>1e-14 input-witness guard, conditional now verified against Git97f archived arrays; no actual upper DD comparison occurred. All3 trace comparisons andmiddle/lower4DD pass. Precise Linux vector/norm difference andCPUmechanism remainunmeasured.",
+  "native_model_field_caution": "Exact baselinevp/m0ULP alone didnotexclude distinctwitnessprobe_m; separate archived/Gitbindings subsequentlyprovedwitnessprobe_msameexactSHA.",
+  "new108_CI_status": "Not reached before oldBPfailfast; local108pass remains separate.",
+  "criteria_or_old_fixture_changed": false,
+  "no_blind_retry": true
+}

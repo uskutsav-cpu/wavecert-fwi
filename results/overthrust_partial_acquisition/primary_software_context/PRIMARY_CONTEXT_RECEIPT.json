@@ -1,0 +1,28 @@
+{
+  "observed_utc": "2026-11-09T00:09:42.309071+00:00",
+  "role": "Pinned primary software context; no code execution, no model values",
+  "repository": "slimgroup/JUDI.jl",
+  "commit": "655cc4400514fae01bbfb368ce80d96bcd5bb20b",
+  "source_files": [
+    {
+      "local": "generate_data_overthrust_3D.jl",
+      "sha256": "43ac1cc3d382700cdf1b2f0abaa0a14eb939b66c48c30426078740532ab3c5fe",
+      "url": "https://github.com/slimgroup/JUDI.jl/blob/655cc4400514fae01bbfb368ce80d96bcd5bb20b/examples/software_paper/generate_data_overthrust_3D.jl"
+    },
+    {
+      "local": "ModelStructure.jl",
+      "sha256": "531949e5b4a79b747578a039889aa1ec2a210097326710fead21a463d6fa6b77",
+      "url": "https://github.com/slimgroup/JUDI.jl/blob/655cc4400514fae01bbfb368ce80d96bcd5bb20b/src/TimeModeling/Types/ModelStructure.jl"
+    }
+  ],
+  "supported_context": [
+    "Witte-authored example reads n,d,o,m from file basename overthrust_3D_true_model.h5 and passes arrays directly to JUDI Model.",
+    "JUDI Model documents m as squared slowness in s^2/km^2; grid dimensions are named x,y,z with spacing and origin in metres."
+  ],
+  "limits": [
+    "This software-use context supports a prospective interpretation; it does not establish byte identity of the FTP file with the Zenodo file UUID.",
+    "The saved HDF5 metadata itself contains no explicit m unit or named-axis attribute.",
+    "No HDF5.Julia cross-language dimension-order check or field-value range validation yet.",
+    "No model arithmetic conversion, row removal or physics run is authorized by this context receipt."
+  ]
+}

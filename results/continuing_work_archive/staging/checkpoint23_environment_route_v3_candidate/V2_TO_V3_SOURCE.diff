@@ -1,0 +1,112 @@
+--- v2/research/checkpoint23_environment/environment_steps.py
++++ v3/research/checkpoint23_environment/environment_steps.py
+@@ -115,8 +115,8 @@
+     with zipfile.ZipFile(path) as f:
+         rows=f.infolist();safe_names(r.filename for r in rows)
+         if len(rows)>100000 or sum(r.file_size for r in rows)>1024*MIB or any((r.external_attr>>16)&0o170000==0o120000 for r in rows):raise ValueError("wheel expansion/member/link cap")
+-        names=[r.filename for r in rows if r.filename.endswith(".dist-info/METADATA")]
+-        if len(names)!=1:raise ValueError("one wheel METADATA required")
++        names=[r for r in rows if r.filename.count("/")==1 and r.filename.endswith(".dist-info/METADATA")]
++        if len(names)!=1 or names[0].is_dir() or (names[0].external_attr>>16)&0o170000 not in (0,0o100000):raise ValueError("one top-level regular wheel METADATA required")
+         audit=pure_wheel_audit(f,path,rows) if pure_python_required else None
+         with f.open(names[0]) as stream:b=stream.read(MIB+1)
+         if len(b)>MIB:raise ValueError("bounded wheel METADATA required")
+--- v2/.github/workflows/ci.yml
++++ v3/.github/workflows/ci.yml
+@@ -2,7 +2,7 @@
+ 
+ on:
+   push:
+-    branches-ignore: [research-checkpoint23-environment-01]
++    branches-ignore: [research-checkpoint23-environment-02]
+   pull_request:
+ 
+ jobs:
+--- v2/research/checkpoint23_environment/prepare_environment.py
++++ v3/research/checkpoint23_environment/prepare_environment.py
+@@ -8,13 +8,13 @@
+     value=importlib.util.module_from_spec(spec);spec.loader.exec_module(value);return value
+ S=module("process_supervision");E=module("environment_steps")
+ REPOSITORY="uskutsav-cpu/wavecert-fwi"
+-BRANCH="research-checkpoint23-environment-01"
++BRANCH="research-checkpoint23-environment-02"
+ BASE_COMMIT="83b17ef08acf63fcbc19a0c354fe82ca395c350a"
+ TASK=Path("/opt/wavecert/checkpoint23_environment_01")
+ PREFIX=Path("/opt/wavecert/checkpoint23/env_01")
+ V2_BUNDLE="c8f6cd4a69301df8a04f014746a960eb925cb6acb5346fdfc5a7d5e87901ff3c"
+ CORE=("prepare_environment.py","environment_steps.py","process_supervision.py","namespace_gate.py","import_identity_probe.py","test_environment_route.py","test_import_identity_probe.py","run_probe_controls.py","runtime_top_constraints.in","build_requirements.in","SOURCE_BUILD_ALLOWLIST.json","frozen_v2/worker/protocol.json","frozen_v2/worker/RUNTIME_SOURCE_PINS.json")
+-EXPECTED_FILES={"research/checkpoint23_environment/"+n for n in CORE}|{".github/workflows/checkpoint23-environment-01.yml",".github/workflows/ci.yml"}
++EXPECTED_FILES={"research/checkpoint23_environment/"+n for n in CORE}|{".github/workflows/checkpoint23-environment-02.yml",".github/workflows/ci.yml"}
+ THREADS={k:"1" for k in ("OMP_NUM_THREADS","OPENBLAS_NUM_THREADS","MKL_NUM_THREADS","VECLIB_MAXIMUM_THREADS","NUMEXPR_NUM_THREADS")}
+ NATIVE_ENV={"DEVITO_LANGUAGE":"C","DEVITO_MPI":"0","DEVITO_AUTOTUNING":"off","DEVITO_AUTOPADDING":"0","DEVITO_SAFE_MATH":"1","DEVITO_JIT_BACKDOOR":"0","DEVITO_FIRST_TOUCH":"0","MPLBACKEND":"Agg"}
+ 
+@@ -36,7 +36,7 @@
+             or context.get("GITHUB_REPOSITORY")!=REPOSITORY or context.get("GITHUB_REF")!="refs/heads/"+BRANCH
+             or context.get("GITHUB_EVENT_NAME")!="push" or context.get("GITHUB_RUN_ATTEMPT")!="1"
+             or context.get("GITHUB_WORKFLOW_SHA")!=context.get("GITHUB_SHA")
+-            or context.get("GITHUB_WORKFLOW_REF")!=REPOSITORY+"/.github/workflows/checkpoint23-environment-01.yml@refs/heads/"+BRANCH
++            or context.get("GITHUB_WORKFLOW_REF")!=REPOSITORY+"/.github/workflows/checkpoint23-environment-02.yml@refs/heads/"+BRANCH
+             or event.get("created") is not True or event.get("before")!="0"*40
+             or event.get("ref")!=context.get("GITHUB_REF") or event.get("head_commit",{}).get("id")!=head
+             or event.get("forced") is not False or event.get("deleted") is not False
+--- v2/research/checkpoint23_environment/test_environment_route.py
++++ v3/research/checkpoint23_environment/test_environment_route.py
+@@ -26,7 +26,7 @@
+         rows[name]={"bytes":p.stat().st_size,"sha256":S.digest(p)}
+     E.write(here/"ROUTE_MANIFEST.json",{"schema":"checkpoint23_environment_route_bundle_v2","files":rows})
+     reg={"schema":"checkpoint23_environment_preparation_registration_v2","route_manifest_sha256":S.digest(here/"ROUTE_MANIFEST.json"),"v2_runtime_bundle_sha256":D.V2_BUNDLE,"native_execution_authorized":False,"first_created_branch_only":True,"environment_preparation_registered":False,"root_go":None}
+-    c={"GITHUB_REPOSITORY":D.REPOSITORY,"GITHUB_REF":"refs/heads/"+D.BRANCH,"GITHUB_EVENT_NAME":"push","GITHUB_RUN_ATTEMPT":"1","GITHUB_SHA":"1"*40,"GITHUB_WORKFLOW_SHA":"1"*40,"GITHUB_WORKFLOW_REF":D.REPOSITORY+"/.github/workflows/checkpoint23-environment-01.yml@refs/heads/"+D.BRANCH}
++    c={"GITHUB_REPOSITORY":D.REPOSITORY,"GITHUB_REF":"refs/heads/"+D.BRANCH,"GITHUB_EVENT_NAME":"push","GITHUB_RUN_ATTEMPT":"1","GITHUB_SHA":"1"*40,"GITHUB_WORKFLOW_SHA":"1"*40,"GITHUB_WORKFLOW_REF":D.REPOSITORY+"/.github/workflows/checkpoint23-environment-02.yml@refs/heads/"+D.BRANCH}
+     event={"created":True,"before":"0"*40,"ref":c["GITHUB_REF"],"head_commit":{"id":c["GITHUB_SHA"]},"forced":False,"deleted":False,"repository":{"private":False,"full_name":D.REPOSITORY},"after":"1"*40}
+     return repo,here,reg,c,event
+ 
+@@ -204,6 +204,30 @@
+                     with self.subTest(key=key),self.assertRaises(ValueError):D.source_gate(repo,event,c,bad,[c["GITHUB_SHA"],D.BASE_COMMIT])
+                 reg["role"]="changed after GO binding"
+                 with self.assertRaises(ValueError):D.source_gate(repo,event,c,reg,[c["GITHUB_SHA"],D.BASE_COMMIT])
++    def test_wheel_root_metadata_is_selected_with_multiple_vendored_metadata(self):
++        nested=[("contexttimer/_vendor/first-1.dist-info/METADATA",b"Name: foreign-first\nVersion: 99\nRequires-Dist: wrong-first\n"),("contexttimer/_vendor/second-2.dist-info/METADATA",b"Name: foreign-second\nVersion: 88\nRequires-Dist: wrong-second\n")]
++        with tempfile.TemporaryDirectory() as t:
++            path=manufactured_wheel(Path(t),nested)
++            for pure in (False,True):
++                with self.subTest(pure=pure):
++                    row=E.wheel(path,pure_python_required=pure)
++                    self.assertEqual(row["name"],"contexttimer");self.assertEqual(row["version"],"0.3.3");self.assertEqual(row["requires_dist"],[])
++    def test_wheel_nested_metadata_cannot_replace_missing_top_level_metadata(self):
++        with tempfile.TemporaryDirectory() as t:
++            path=Path(t)/"contexttimer-0.3.3-py3-none-any.whl"
++            with zipfile.ZipFile(path,"w") as archive:archive.writestr("contexttimer/_vendor/foreign-9.dist-info/METADATA",b"Name: foreign\nVersion: 9\n")
++            with self.assertRaisesRegex(ValueError,"one top-level regular wheel METADATA required"):E.wheel(path)
++    def test_wheel_multiple_top_level_metadata_remain_rejected_with_nested_metadata(self):
++        with tempfile.TemporaryDirectory() as t:
++            path=manufactured_wheel(Path(t),[("second-9.dist-info/METADATA",b"Name: second\nVersion: 9\n"),("contexttimer/_vendor/foreign-8.dist-info/METADATA",b"Name: foreign\nVersion: 8\n")])
++            with self.assertRaisesRegex(ValueError,"one top-level regular wheel METADATA required"):E.wheel(path)
++    def test_wheel_top_level_metadata_must_be_regular_entry(self):
++        with tempfile.TemporaryDirectory() as t:
++            root=Path(t)
++            for kind in (0o040000,0o010000,0o020000):
++                path=root/(str(kind)+".whl");info=zipfile.ZipInfo("contexttimer-0.3.3.dist-info/METADATA");info.create_system=3;info.external_attr=(kind|0o600)<<16
++                with zipfile.ZipFile(path,"w") as archive:archive.writestr(info,b"Name: contexttimer\nVersion: 0.3.3\n")
++                with self.subTest(kind=kind),self.assertRaisesRegex(ValueError,"one top-level regular wheel METADATA required"):E.wheel(path)
+     def test_pure_project_text_and_C_sources_pass_with_bounded_audit_receipt(self):
+         with tempfile.TemporaryDirectory() as t:
+             path=manufactured_wheel(Path(t),[("package/__init__.py",b"x=1\n"),("package/template.c",b"int x;\n"),("package/script",b"#!/usr/bin/env python3\n")])
+@@ -256,5 +280,5 @@
+ 
+ if __name__=="__main__":
+     result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromTestCase(RouteControls))
+-    print(json.dumps({"sentinel":"CHECKPOINT23_ENVIRONMENT_ROUTE_MANUFACTURED_V2","tests":result.testsRun,"failures":len(result.failures),"errors":len(result.errors),"skips":len(result.skipped),"runtime_import_attempts":BLOCKED,"PDE_calls":0,"package_actions":0,"actual_namespace_probe":False,"source_sha256":hashlib.sha256(Path(__file__).read_bytes()).hexdigest()},sort_keys=True))
+-    raise SystemExit(0 if result.wasSuccessful() and result.testsRun==26 and not BLOCKED else 1)
++    print(json.dumps({"sentinel":"CHECKPOINT23_ENVIRONMENT_ROUTE_MANUFACTURED_V3","tests":result.testsRun,"failures":len(result.failures),"errors":len(result.errors),"skips":len(result.skipped),"runtime_import_attempts":BLOCKED,"PDE_calls":0,"package_actions":0,"actual_namespace_probe":False,"source_sha256":hashlib.sha256(Path(__file__).read_bytes()).hexdigest()},sort_keys=True))
++    raise SystemExit(0 if result.wasSuccessful() and result.testsRun==30 and not BLOCKED else 1)
+--- v2/.github/workflows/checkpoint23-environment-01.yml
++++ v3/.github/workflows/checkpoint23-environment-02.yml
+@@ -2,7 +2,7 @@
+ 
+ on:
+   push:
+-    branches: [research-checkpoint23-environment-01]
++    branches: [research-checkpoint23-environment-02]
+     paths: [research/checkpoint23_environment/RUN_REGISTRATION_01.json]
+ 
+ permissions:

@@ -1,0 +1,87 @@
+{
+  "authorization": "GO_CHECKPOINT23_ENVIRONMENT_PREPARATION_V1",
+  "execution_authorized": true,
+  "import_identity_probe": {
+    "prefix": "/opt/wavecert/checkpoint23/env_01",
+    "source_files": {
+      "RUNTIME_SOURCE_PINS.json": "bfbc2e31cd4ff7ae2a0f0342dc3633c5e4dc0189daea0d06eaeb12de1040350f",
+      "import_identity_probe.py": "f9d2209c296338b1ed7a631aa292fb6cd79fb98d0c4a23e013636c40bd57fe51",
+      "protocol.json": "27e5a331d6bd9eff0dd6b4fa0ca1bc666c6014ed70ffb3da01821c62f83fdcbc"
+    }
+  },
+  "import_only_identity_probe_authorized": true,
+  "independent_source_review_clear": true,
+  "independent_source_review_receipt_sha256": "f5b59a339d00a588339edd54c227750ec757abe657b697c92c97e3322fca0c21",
+  "local_source_control_receipt_sha256": "cc5ed2c5a9d024c122a51056ba7c2f62dab38fe789f2fefc2e50fcd38cf96845",
+  "local_source_control_review_clear": true,
+  "native_execution_authorized": false,
+  "native_use_review_clear": false,
+  "registration_without_go_sha256": "d332f5e251b8ff5a846426c2922ab23d9790f0f2b86a347f85cd3eb8f031c5cb",
+  "required_remote_controls": 51,
+  "root_environment_preparation_source_review_clear": true,
+  "root_source_review_receipt_sha256": "f83e2908cfa57de89b06d4843035c00b78f1dc5e27c930ad82469a3eeeafe164",
+  "route_manifest_sha256": "701ef110e30d66765af459884eb3352368e667738be58165361f3c13d18badbe",
+  "single_attempt": true,
+  "source_files": {
+    ".github/workflows/checkpoint23-environment-01.yml": {
+      "bytes": 3323,
+      "sha256": "ae83b3b9cdd8d383ff811d2c4c5ce008ffb343709baf11b9fdc1017bba4cf3c8"
+    },
+    ".github/workflows/ci.yml": {
+      "bytes": 1048,
+      "sha256": "d4882919d8afe3d8668834375e04d81a0d954770cc464a8c80b35b40f9ac2436"
+    },
+    "research/checkpoint23_environment/SOURCE_BUILD_ALLOWLIST.json": {
+      "bytes": 3768,
+      "sha256": "8b47bdd024bbec8f31b25019f5cfba4195172e1a9f90665bbcd981941646086a"
+    },
+    "research/checkpoint23_environment/build_requirements.in": {
+      "bytes": 109,
+      "sha256": "899e8fcc56e117f45511e632d864d5f37ab80813eeb1776a337a117e913e5725"
+    },
+    "research/checkpoint23_environment/environment_steps.py": {
+      "bytes": 19957,
+      "sha256": "155fe8ed8d7b487ba9a323982a77bd9dc8e8d028abac8617c6a0ebdcffba291e"
+    },
+    "research/checkpoint23_environment/frozen_v2/worker/RUNTIME_SOURCE_PINS.json": {
+      "bytes": 5191,
+      "sha256": "bfbc2e31cd4ff7ae2a0f0342dc3633c5e4dc0189daea0d06eaeb12de1040350f"
+    },
+    "research/checkpoint23_environment/frozen_v2/worker/protocol.json": {
+      "bytes": 6633,
+      "sha256": "27e5a331d6bd9eff0dd6b4fa0ca1bc666c6014ed70ffb3da01821c62f83fdcbc"
+    },
+    "research/checkpoint23_environment/import_identity_probe.py": {
+      "bytes": 25201,
+      "sha256": "f9d2209c296338b1ed7a631aa292fb6cd79fb98d0c4a23e013636c40bd57fe51"
+    },
+    "research/checkpoint23_environment/namespace_gate.py": {
+      "bytes": 3729,
+      "sha256": "c8afaee908efdc0e5dfac0f76649936d0cec84ecc383bbf49834ef0befe600a0"
+    },
+    "research/checkpoint23_environment/prepare_environment.py": {
+      "bytes": 15039,
+      "sha256": "9ea83c8f265f08f240360231f2ab47d0a940ef9628e3cc5e925bb42adff3113a"
+    },
+    "research/checkpoint23_environment/process_supervision.py": {
+      "bytes": 6828,
+      "sha256": "057310e5b920ca7675452112489bfbb7ae9ee841349bdafba19d94f0027e2c6e"
+    },
+    "research/checkpoint23_environment/run_probe_controls.py": {
+      "bytes": 1578,
+      "sha256": "d149cb6f7a9a7e29d637c9f437290b7f81e8d24320ac1f6db1ca5e8b24c4ad7d"
+    },
+    "research/checkpoint23_environment/runtime_top_constraints.in": {
+      "bytes": 117,
+      "sha256": "0bf0e2a6cc93a167a7acd8121bfaddf2d937d82d0c74b7ccb7cfeceac4678614"
+    },
+    "research/checkpoint23_environment/test_environment_route.py": {
+      "bytes": 21710,
+      "sha256": "60247250455f41b51c78e0c54ba760b0b548d0394554b5388fe9db2ef6adff40"
+    },
+    "research/checkpoint23_environment/test_import_identity_probe.py": {
+      "bytes": 20075,
+      "sha256": "6748459142471e6aeda82f936383681eb22ecc11e6d2b2844e3735900b0cbdc1"
+    }
+  }
+}

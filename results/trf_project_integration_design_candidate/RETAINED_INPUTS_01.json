@@ -1,0 +1,761 @@
+{
+  "NPZ_NPY_members": {
+    "frequencies_hz.npy": {
+      "CRC32": "c69f3023",
+      "NPY_bytes": 896,
+      "NPY_sha256": "f392cf5c5cf6d3982ad2f3aa7de2e756162aef79e5d5eb74343ba12c1d87b967",
+      "compressed_bytes": 89
+    },
+    "models.npy": {
+      "CRC32": "17ef00fa",
+      "NPY_bytes": 442496,
+      "NPY_sha256": "86537d73206c32b4799f0232e26cb92983a0575fe7515ea8f56eb64b0a9ff6e1",
+      "compressed_bytes": 14973
+    },
+    "receiver_indices.npy": {
+      "CRC32": "9aaa3c7e",
+      "NPY_bytes": 288,
+      "NPY_sha256": "b8964dfe56b26935017b5040a3d6fc80e7b0bb2c78f5a3709789005a67c85eda",
+      "compressed_bytes": 123
+    },
+    "shape.npy": {
+      "CRC32": "3f3be1af",
+      "NPY_bytes": 144,
+      "NPY_sha256": "cd311285858eb74966ea337e27b14eb1556476c20c266ed9970c583f78259ff2",
+      "compressed_bytes": 73
+    },
+    "source_indices.npy": {
+      "CRC32": "0b5db8e8",
+      "NPY_bytes": 1664,
+      "NPY_sha256": "d33d48ceb0575ca4be257f4d944def4f13421d0ebb202c94ab6dea43a9155432",
+      "compressed_bytes": 104
+    },
+    "spacing.npy": {
+      "CRC32": "58ccae51",
+      "NPY_bytes": 136,
+      "NPY_sha256": "b5b39cc7c2cde40c2c2adb7184f9035c5641a3a88361d83012f74ce2cc1ca00f",
+      "compressed_bytes": 72
+    },
+    "wavefields.npy": {
+      "CRC32": "ec5ea043",
+      "NPY_bytes": 884864,
+      "NPY_sha256": "ed4eb77ec130a3597d3c4f1c55654d41cb19f0ae28e5b14fcabc07fe59888b37",
+      "compressed_bytes": 826384
+    }
+  },
+  "NPZ_arrays": {
+    "frequencies_hz": {
+      "C_payload_sha256": "19425ed3934fb3fac3658e2666da8f7c5908c7cad42684c37281a5a91086cdf1",
+      "dtype": "float32",
+      "finite": true,
+      "nbytes": 768,
+      "shape": [
+        192
+      ]
+    },
+    "models": {
+      "C_payload_sha256": "bf954ae4e2897aeb3ec0b386e423e3bbdeaa390b5c0bdc72cbdb8cc83fc26df0",
+      "dtype": "float32",
+      "finite": true,
+      "nbytes": 442368,
+      "shape": [
+        192,
+        24,
+        24
+      ]
+    },
+    "receiver_indices": {
+      "C_payload_sha256": "40e4628eb56007210e53897cbbe6433f07d29d36896d6d7a618e15720702edec",
+      "dtype": "int64",
+      "finite": true,
+      "nbytes": 160,
+      "shape": [
+        20
+      ]
+    },
+    "shape": {
+      "C_payload_sha256": "ab436af2298f4c2fed282b1f657544000674c766a08badd095dec2ebb17d1a14",
+      "dtype": "int64",
+      "finite": true,
+      "nbytes": 16,
+      "shape": [
+        2
+      ]
+    },
+    "source_indices": {
+      "C_payload_sha256": "0cb13b43f3f2ac69a060dd3b93200c0452e1099ce846ccc99fa87cc0487e633c",
+      "dtype": "int64",
+      "finite": true,
+      "nbytes": 1536,
+      "shape": [
+        192
+      ]
+    },
+    "spacing": {
+      "C_payload_sha256": "7f925b2036e92fe2f1f0697c3aedfff74d719c1ee2cb6b739d7c30484e75972c",
+      "dtype": "float64",
+      "finite": true,
+      "nbytes": 8,
+      "shape": []
+    },
+    "wavefields": {
+      "C_payload_sha256": "8b5ee8b5114bf1791c0ef214054a6e2098c9ea194654f6ee2474cd8742dfb1e7",
+      "dtype": "float32",
+      "finite": true,
+      "nbytes": 884736,
+      "shape": [
+        192,
+        24,
+        24,
+        2
+      ]
+    }
+  },
+  "actions": {
+    "PDE_calls": 0,
+    "downloads": 0,
+    "frozen_API_edits": 0,
+    "jobs": 0,
+    "native_owners": 0,
+    "production_edits": 0
+  },
+  "cases": [
+    {
+      "NPZ_rows": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "ancestry_rows": [
+        {
+          "base_volume_ancestor_id": "delivered_volume:gom_148",
+          "bundled_slice_count": "2",
+          "generator_pipeline": "SubsurfaceGen_GoM_recipe",
+          "model_id": "gom_148",
+          "model_type": "gom",
+          "origin_kind": "procedural_analogue",
+          "region_analogue": "Gulf_of_Mexico",
+          "research_role": "validation",
+          "site_independence_established": "False",
+          "status": "distinct_delivered_volume_ID_only",
+          "template_group": "GoM_shared_regional_template",
+          "upstream_slice_counts": "{\"test_in_dist\": 2, \"test_out_dist\": 0, \"train\": 73}",
+          "within_setting_draw_independence_verified": "False"
+        }
+      ],
+      "case_index": 0,
+      "identity": {
+        "array_index": 0,
+        "parent_id": "gom_148",
+        "slice_id": "gom_148_il_0236",
+        "source_file": "slices/slice_gom_148_il_0236.h5",
+        "source_sha256": "3a693c7aab525351aca671cc640afa4bed4ffb3be14b8039c40f59f2905209db"
+      },
+      "initial_bound_margin": 0.02548316951378589,
+      "initial_m_minmax": [
+        0.053260947291563665,
+        0.4383341765613449
+      ],
+      "local_derived_initial49_sha256": "6c31e98a6c11a4a8fad1398f8ee46130745e73f9ec0b2afeadb70c91cc45858a",
+      "local_derived_truth49_sha256": "812884187e0f45ba39834d57811ba6886e58358b365e06bc0d28fc572eedbf00",
+      "local_initial_hash_matches_old": false,
+      "local_truth_hash_matches_old": false,
+      "old_linux_binding": {
+        "all8_observations_sha256": "67b9404b6fcd39a6e8aa50faf89eaa6bf92afbedabbabdbd6a12663bcdd7ba06",
+        "initial_native_m_sha256": "199a78f0e77bdc3848192881ad826ace9272091a9168df1e98109b696ef686dc",
+        "raw_model_sha256": "43210a62ee5f98de4c079939d68b6169ee20dcff56b199d1e9afe0192fead191",
+        "truth_sha256": "2477a4268cdfbd0ab391a5577606197aee284ba7011c0bc4a5b2487ebbd2de7e"
+      },
+      "raw_float32_payload_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "raw_float64_sha256": "43210a62ee5f98de4c079939d68b6169ee20dcff56b199d1e9afe0192fead191"
+    },
+    {
+      "NPZ_rows": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "ancestry_rows": [
+        {
+          "base_volume_ancestor_id": "delivered_volume:gom_148",
+          "bundled_slice_count": "2",
+          "generator_pipeline": "SubsurfaceGen_GoM_recipe",
+          "model_id": "gom_148",
+          "model_type": "gom",
+          "origin_kind": "procedural_analogue",
+          "region_analogue": "Gulf_of_Mexico",
+          "research_role": "validation",
+          "site_independence_established": "False",
+          "status": "distinct_delivered_volume_ID_only",
+          "template_group": "GoM_shared_regional_template",
+          "upstream_slice_counts": "{\"test_in_dist\": 2, \"test_out_dist\": 0, \"train\": 73}",
+          "within_setting_draw_independence_verified": "False"
+        }
+      ],
+      "case_index": 1,
+      "identity": {
+        "array_index": 24,
+        "parent_id": "gom_148",
+        "slice_id": "gom_148_xl_0768",
+        "source_file": "slices/slice_gom_148_xl_0768.h5",
+        "source_sha256": "6d1f16d527a9fed2e245f4d37254de75a2e430be7f4283cf65cfbfee7f1e84a1"
+      },
+      "initial_bound_margin": 0.021635570081620398,
+      "initial_m_minmax": [
+        0.049413347859398174,
+        0.441836184542565
+      ],
+      "local_derived_initial49_sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+      "local_derived_truth49_sha256": "91b41b1854aeb48e82e202b2d0b0ab1d6f6511e10e02aee460a0e0ff6b8a0ed5",
+      "local_initial_hash_matches_old": false,
+      "local_truth_hash_matches_old": false,
+      "old_linux_binding": {
+        "all8_observations_sha256": "6d535d50eea2ff98ede0a3c347ed4c293b5db8b032cd9315d2e86072bc6f35bf",
+        "initial_native_m_sha256": "a4ce4bc74dcc29013c08fdf7cc72f46df8bd20416d4be92fe6a9f35a67980db0",
+        "raw_model_sha256": "ad440df6d7c2796c1f5ed9bbe117d1a8eb12f3193220792386dcdf60ea39278c",
+        "truth_sha256": "7a844fd4119e3c4090cd8f2be5a6ebf1a7dbb09856c07107206da175e92d3d27"
+      },
+      "raw_float32_payload_sha256": "0bdb28681c75c30108f68f8752028a288a5ccc510c910e794487f3ba55f6f524",
+      "raw_float64_sha256": "ad440df6d7c2796c1f5ed9bbe117d1a8eb12f3193220792386dcdf60ea39278c"
+    },
+    {
+      "NPZ_rows": [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71
+      ],
+      "ancestry_rows": [
+        {
+          "base_volume_ancestor_id": "SEG_SEAM_PhaseI_EarthModel",
+          "bundled_slice_count": "2",
+          "generator_pipeline": "SEAM_PhaseI_subregion_extraction",
+          "model_id": "seam_011",
+          "model_type": "seam",
+          "origin_kind": "subregion_of_reused_model",
+          "region_analogue": "deepwater_Gulf_of_Mexico",
+          "research_role": "validation",
+          "site_independence_established": "False",
+          "status": "same_original_volume_across_roles",
+          "template_group": "SEG_SEAM_PhaseI_EarthModel",
+          "upstream_slice_counts": "{\"test_in_dist\": 1, \"test_out_dist\": 0, \"train\": 78}",
+          "within_setting_draw_independence_verified": "False"
+        }
+      ],
+      "case_index": 2,
+      "identity": {
+        "array_index": 48,
+        "parent_id": "seam_011",
+        "slice_id": "seam_011_il_0522",
+        "source_file": "slices/slice_seam_011_il_0522.h5",
+        "source_sha256": "5f0982f2f87dbd40c40f758e40e14b5f898b6f8e92dde3b255433e6dfe1b958e"
+      },
+      "initial_bound_margin": 0.022046840025315824,
+      "initial_m_minmax": [
+        0.0498246178030936,
+        0.444444183878865
+      ],
+      "local_derived_initial49_sha256": "f405a2742f7781948175eec929e4729ced0324f6c8324a1a87a8671097d75beb",
+      "local_derived_truth49_sha256": "04d0b6704fa459b68f6db3a4e3d6b450f50ed07ef863c35e6cef86369ad691dd",
+      "local_initial_hash_matches_old": false,
+      "local_truth_hash_matches_old": false,
+      "old_linux_binding": {
+        "all8_observations_sha256": "50e3a26cb2e668ad54437008f10fd9f165c9927f521e0d53a3e7c09b7d9c974d",
+        "initial_native_m_sha256": "eeb6090a9dcb43394e8ba1cd5a281cde3bc246d7ed6d7298ddf65600ad5e2a1b",
+        "raw_model_sha256": "c15dc307929945bd760e39581ce326604040ca6bcc23e5ddf22b29380b6d5862",
+        "truth_sha256": "d3aa0077e4cf9fc93af652e460fe82ce044713dc3d9052f413b5ad8d3b203fd1"
+      },
+      "raw_float32_payload_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "raw_float64_sha256": "c15dc307929945bd760e39581ce326604040ca6bcc23e5ddf22b29380b6d5862"
+    },
+    {
+      "NPZ_rows": [
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95
+      ],
+      "ancestry_rows": [
+        {
+          "base_volume_ancestor_id": "SEG_SEAM_PhaseI_EarthModel",
+          "bundled_slice_count": "2",
+          "generator_pipeline": "SEAM_PhaseI_subregion_extraction",
+          "model_id": "seam_011",
+          "model_type": "seam",
+          "origin_kind": "subregion_of_reused_model",
+          "region_analogue": "deepwater_Gulf_of_Mexico",
+          "research_role": "validation",
+          "site_independence_established": "False",
+          "status": "same_original_volume_across_roles",
+          "template_group": "SEG_SEAM_PhaseI_EarthModel",
+          "upstream_slice_counts": "{\"test_in_dist\": 1, \"test_out_dist\": 0, \"train\": 78}",
+          "within_setting_draw_independence_verified": "False"
+        }
+      ],
+      "case_index": 3,
+      "identity": {
+        "array_index": 72,
+        "parent_id": "seam_011",
+        "slice_id": "seam_011_xl_0866",
+        "source_file": "slices/slice_seam_011_xl_0866.h5",
+        "source_sha256": "2ac2600a3f37bda30bb9f336ebf0f82f7251d47f7ae55fa3b5810e0a616f16f8"
+      },
+      "initial_bound_margin": 0.02799397577611379,
+      "initial_m_minmax": [
+        0.055771753553891565,
+        0.44444437082921073
+      ],
+      "local_derived_initial49_sha256": "08dfd6921dc0dcc8c6e4da9634fae13be245ab44a2ef9cdddc813ae10a06e712",
+      "local_derived_truth49_sha256": "78f8d3ab69ce09e5ea43e00b711bd8757ac75446fa54fba3c7adce9993b43640",
+      "local_initial_hash_matches_old": false,
+      "local_truth_hash_matches_old": false,
+      "old_linux_binding": {
+        "all8_observations_sha256": "d06dbc00ad78c5e1d3ebdb8e7a2c399de9b84e47de23eb348329d1ecc5c18a2f",
+        "initial_native_m_sha256": "2b4846fbdbe0188d82d73ae434e6c47d8d5271cd42dd167f75045d6c415cbe13",
+        "raw_model_sha256": "9549d2c17a511f284d8697110d5c2279de48f04b690c7250f67544ce813df9a1",
+        "truth_sha256": "fb6d4d3c4a380012483c46523414189f442e8a464351ff47248f19845cd00674"
+      },
+      "raw_float32_payload_sha256": "c0253169ca0e5d0693699bd4c74439633aeef1ea9876f81f5d45204bfc5454a2",
+      "raw_float64_sha256": "9549d2c17a511f284d8697110d5c2279de48f04b690c7250f67544ce813df9a1"
+    },
+    {
+      "NPZ_rows": [
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119
+      ],
+      "ancestry_rows": [
+        {
+          "base_volume_ancestor_id": "delivered_volume:gom_151",
+          "bundled_slice_count": "2",
+          "generator_pipeline": "SubsurfaceGen_GoM_recipe",
+          "model_id": "gom_151",
+          "model_type": "gom",
+          "origin_kind": "procedural_analogue",
+          "region_analogue": "Gulf_of_Mexico",
+          "research_role": "validation",
+          "site_independence_established": "False",
+          "status": "distinct_delivered_volume_ID_only",
+          "template_group": "GoM_shared_regional_template",
+          "upstream_slice_counts": "{\"test_in_dist\": 2, \"test_out_dist\": 0, \"train\": 73}",
+          "within_setting_draw_independence_verified": "False"
+        }
+      ],
+      "case_index": 4,
+      "identity": {
+        "array_index": 96,
+        "parent_id": "gom_151",
+        "slice_id": "gom_151_il_0247",
+        "source_file": "slices/slice_gom_151_il_0247.h5",
+        "source_sha256": "306380b97261c6812c45900fe6d47f4cb7b41b5851f3054f7881c2912a32c8c8"
+      },
+      "initial_bound_margin": 0.03131702210629843,
+      "initial_m_minmax": [
+        0.059094799884076205,
+        0.44119432665796293
+      ],
+      "local_derived_initial49_sha256": "2fb4cb6e2e3fad4bcbb5d38fd714ce0cc0ee889e8a7221c2e2dfd656aad0a636",
+      "local_derived_truth49_sha256": "7b31103f7c084c2543889c8d1315a409a44e76bbe3a819c03cdab0e08cc8b87a",
+      "local_initial_hash_matches_old": false,
+      "local_truth_hash_matches_old": false,
+      "old_linux_binding": {
+        "all8_observations_sha256": "04cf0e886cb805b14cd79937bbddb0990c4bdb4c6b56c3c2b763631ee8ac6e00",
+        "initial_native_m_sha256": "a8ad1132c77ccc46b224de79315dfe9a581110242bea7778ea148e94b1a5f4be",
+        "raw_model_sha256": "81e7b8d24007cf4e9e7e05f441e3e10992ab548e98062b5449d6fb52c358b2c9",
+        "truth_sha256": "43fb638d746ec0b56904d0072ad056d457c8f24d6b964b409269f87a13ad2567"
+      },
+      "raw_float32_payload_sha256": "2101050315fc8a72766445031893705050df5fed5ffc4eeb58e5c0b58f3c71d3",
+      "raw_float64_sha256": "81e7b8d24007cf4e9e7e05f441e3e10992ab548e98062b5449d6fb52c358b2c9"
+    },
+    {
+      "NPZ_rows": [
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143
+      ],
+      "ancestry_rows": [
+        {
+          "base_volume_ancestor_id": "delivered_volume:gom_151",
+          "bundled_slice_count": "2",
+          "generator_pipeline": "SubsurfaceGen_GoM_recipe",
+          "model_id": "gom_151",
+          "model_type": "gom",
+          "origin_kind": "procedural_analogue",
+          "region_analogue": "Gulf_of_Mexico",
+          "research_role": "validation",
+          "site_independence_established": "False",
+          "status": "distinct_delivered_volume_ID_only",
+          "template_group": "GoM_shared_regional_template",
+          "upstream_slice_counts": "{\"test_in_dist\": 2, \"test_out_dist\": 0, \"train\": 73}",
+          "within_setting_draw_independence_verified": "False"
+        }
+      ],
+      "case_index": 5,
+      "identity": {
+        "array_index": 120,
+        "parent_id": "gom_151",
+        "slice_id": "gom_151_xl_0857",
+        "source_file": "slices/slice_gom_151_xl_0857.h5",
+        "source_sha256": "157ad1e6e2bdab57496379fd54e49467816c0cd75cb4f7b3b9279a35c84da7b6"
+      },
+      "initial_bound_margin": 0.024998253696889704,
+      "initial_m_minmax": [
+        0.05277603147466748,
+        0.4418880913254456
+      ],
+      "local_derived_initial49_sha256": "cb9d143fd5439b85e44254471b5921f88c1a9eb489d7418b777efdc73d5950cd",
+      "local_derived_truth49_sha256": "cc36539dbc39d03ade3d98dce39d249dbf11b470cc0d3b18ffee20dda98f21d5",
+      "local_initial_hash_matches_old": false,
+      "local_truth_hash_matches_old": false,
+      "old_linux_binding": {
+        "all8_observations_sha256": "08f62a3a255b55f567982ab88b92de530f99e781bde9f0fdca414ccde2232c7e",
+        "initial_native_m_sha256": "2c4a95416f0ad8e37a49cc1f152ccca5c30b00c3125a1e144f28d58db740a9b7",
+        "raw_model_sha256": "5114577dbd24c1fa8e061de4bb78b0065f95034337939807ed549ec75beeca1b",
+        "truth_sha256": "8d3bc881c0e5aae486a0e63203e0540f6e0cef7219bf02024982b8e51d78c8f2"
+      },
+      "raw_float32_payload_sha256": "3da6502e59f9d64611878c9c5ca9fd24a70bef71c4e73cdeaa1ddfe721ea16f8",
+      "raw_float64_sha256": "5114577dbd24c1fa8e061de4bb78b0065f95034337939807ed549ec75beeca1b"
+    },
+    {
+      "NPZ_rows": [
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167
+      ],
+      "ancestry_rows": [
+        {
+          "base_volume_ancestor_id": "SEG_SEAM_PhaseI_EarthModel",
+          "bundled_slice_count": "2",
+          "generator_pipeline": "SEAM_PhaseI_subregion_extraction",
+          "model_id": "seam_005",
+          "model_type": "seam",
+          "origin_kind": "subregion_of_reused_model",
+          "region_analogue": "deepwater_Gulf_of_Mexico",
+          "research_role": "validation",
+          "site_independence_established": "False",
+          "status": "same_original_volume_across_roles",
+          "template_group": "SEG_SEAM_PhaseI_EarthModel",
+          "upstream_slice_counts": "{\"test_in_dist\": 2, \"test_out_dist\": 0, \"train\": 79}",
+          "within_setting_draw_independence_verified": "False"
+        }
+      ],
+      "case_index": 6,
+      "identity": {
+        "array_index": 144,
+        "parent_id": "seam_005",
+        "slice_id": "seam_005_il_0596",
+        "source_file": "slices/slice_seam_005_il_0596.h5",
+        "source_sha256": "be96babcb90440f814887f3dbe9955b3879181e92b13bc59d3da0b5beb6ac5ff"
+      },
+      "initial_bound_margin": 0.04836718307014935,
+      "initial_m_minmax": [
+        0.07614496084792713,
+        0.4444443144662391
+      ],
+      "local_derived_initial49_sha256": "d2d7a8d53909bc5a24846b1bd3b8a468df6b046272cc6b1de4727eb1555f42f8",
+      "local_derived_truth49_sha256": "eca9b1fe5c35f00593bfb4ace523374e350723ab29ae0b06ebe397fafa65f088",
+      "local_initial_hash_matches_old": false,
+      "local_truth_hash_matches_old": false,
+      "old_linux_binding": {
+        "all8_observations_sha256": "a48d6092a0bd5c419bfe435b86995b0912efe9a8c84218cec5b842230a6ad96f",
+        "initial_native_m_sha256": "edd9ef020fd1b73ba7ee7559e82cca6e1432e322853243a3a1d461126d697f96",
+        "raw_model_sha256": "11932f843e820cf9e1ffb84d5fb04e1b5d92dd65fe311abc5783e3248da772f6",
+        "truth_sha256": "cdba1b5a00f95345403d700b70134d7b996feb339aa48172b662df24e7518745"
+      },
+      "raw_float32_payload_sha256": "8b96e8ffc56fe2228a5a81c7b0fe6a915f951dc0a57a40a03c6f00583e32dfc7",
+      "raw_float64_sha256": "11932f843e820cf9e1ffb84d5fb04e1b5d92dd65fe311abc5783e3248da772f6"
+    },
+    {
+      "NPZ_rows": [
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "ancestry_rows": [
+        {
+          "base_volume_ancestor_id": "SEG_SEAM_PhaseI_EarthModel",
+          "bundled_slice_count": "2",
+          "generator_pipeline": "SEAM_PhaseI_subregion_extraction",
+          "model_id": "seam_005",
+          "model_type": "seam",
+          "origin_kind": "subregion_of_reused_model",
+          "region_analogue": "deepwater_Gulf_of_Mexico",
+          "research_role": "validation",
+          "site_independence_established": "False",
+          "status": "same_original_volume_across_roles",
+          "template_group": "SEG_SEAM_PhaseI_EarthModel",
+          "upstream_slice_counts": "{\"test_in_dist\": 2, \"test_out_dist\": 0, \"train\": 79}",
+          "within_setting_draw_independence_verified": "False"
+        }
+      ],
+      "case_index": 7,
+      "identity": {
+        "array_index": 168,
+        "parent_id": "seam_005",
+        "slice_id": "seam_005_xl_0795",
+        "source_file": "slices/slice_seam_005_xl_0795.h5",
+        "source_sha256": "ab1ebc7628336883cd518745ef117d1763e7b60e0bdcedfb35b5f94da5746204"
+      },
+      "initial_bound_margin": 0.046987223858917945,
+      "initial_m_minmax": [
+        0.07476500163669572,
+        0.44444443445747844
+      ],
+      "local_derived_initial49_sha256": "d04826139055a1d93e6b436c8c72c3741aded061d43e1a505a2d3269ecfab07d",
+      "local_derived_truth49_sha256": "89cdcae3d8cfb64cfae47ffb7b03eb3cd780b4dd92b30d4164d6f7e07bf6c07e",
+      "local_initial_hash_matches_old": false,
+      "local_truth_hash_matches_old": false,
+      "old_linux_binding": {
+        "all8_observations_sha256": "aabba7fc042e478262e16376e1a4aba3eb6a380e334577c0b1e2101ee3252844",
+        "initial_native_m_sha256": "0e51f1552d9c3ce6cc76794aa03966826652f1957a48c207b68ba84ee5c7cf95",
+        "raw_model_sha256": "3b897b308d0208290e82c3a36b77f4f2d853fe5bfdbef13132300b7219e324b3",
+        "truth_sha256": "21a1af2fc36d3dfe4067d838347d2cd581a571918b5be77e4f62d75443fd34e0"
+      },
+      "raw_float32_payload_sha256": "5ac6dd409395b54b8b4e9ac234e49a214ee0f0fa1c93c3afdcd53387f6f08e2f",
+      "raw_float64_sha256": "3b897b308d0208290e82c3a36b77f4f2d853fe5bfdbef13132300b7219e324b3"
+    }
+  ],
+  "declared_original_source": {
+    "dataset": "subsurfacegen/field-scale-dataset",
+    "license": "CC-BY-4.0",
+    "raw_cache_retained": false,
+    "revision": "c612dc2255f6dc4a139bb667f12eaaedf61a8d3d",
+    "scope": "new whole-parent research re-split of selected synthetic velocity slices; not official benchmark split or field data"
+  },
+  "inputs": {
+    "data/reference/subsurfacegen_parent_split/split_manifest.csv": {
+      "bytes": 7707,
+      "sha256": "30fed6e30e07a1b54d17f3ae9511d06eac6f44c69fcb57b6ee588f2ade65ef14"
+    },
+    "data/reference/subsurfacegen_parent_split/validation.npz": {
+      "bytes": 842712,
+      "sha256": "36d11aba94ae9093cac888e9b28a2d01edcef1aa3a54b12f8e10269b963db2fc"
+    },
+    "data/reference/subsurfacegen_parent_split/validation_metadata.csv": {
+      "bytes": 29092,
+      "sha256": "d3ce8ab6a3474a6bc17595f26b68940e7c7ad9481d8c80fb89fe04833e6996e6"
+    }
+  },
+  "inspection_source_sha256": "e81ffecce66e794ccc6f35da904a3f50caaf6f4df53bf2bb15ad104fae7fa226",
+  "limits": "Read only validationNPZ and metadata/ancestry/prior receipts. Stored24grid/upper4 wavefields are finite/hash-bound, not PDE-validated or used for newobservations. Local49truth/initializer are source-informed interpolation/smoothing derivations, not new native-resolution geology. OldLinux all8 observation hashes are archived provenance, not newly reproduced. OriginalH5 source hashes are recorded metadata, not reread rawpayloads. Eight reused slices/four nominalIDs, SEAMIDs share oneancestor; no IID/site/physical/recovery/novelty/GO claim.",
+  "runtime": {
+    "numpy": "2.4.3",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]",
+    "scipy": "1.18.1"
+  },
+  "scientific_goals_complete": false,
+  "sources": {
+    "work/new-phase-staging/trf_matched_cost_driver_candidate/FROZEN48_SCHEDULE.json": {
+      "bytes": 21125,
+      "sha256": "3c21717474a32de5ae660812210c5b1993c32d3f2953a2da639886d6bbd49f89"
+    },
+    "work/new-phase-staging/trf_matched_cost_driver_candidate/protocol.json": {
+      "bytes": 8493,
+      "sha256": "e967fdf4096ab820b3fa68b37ce711b99dbfd752b3fe5a88e100589a9a30a41e"
+    },
+    "work/prior48_remote_study_01/extracted/study/complete_receipt.json": {
+      "bytes": 174458,
+      "sha256": "ca69e5e36b2c18727af9d45de84a9d2c37310ceb4d8e1c7069898f4c2b04de85"
+    },
+    "work/prior48_remote_study_01/extracted/study/driver_source.py": {
+      "bytes": 34412,
+      "sha256": "7c7fc525894dbd38899ad6ee46bff8a0a0d996ea2ef61d5da2e6ce8b4320d882"
+    },
+    "work/prior48_remote_study_01/extracted/study/protocol.json": {
+      "bytes": 8650,
+      "sha256": "92433c9d7b9d2990799f3a81707f6d04f63784a1820d3f109804a83b484ccfa6"
+    },
+    "work/prior48_remote_study_01/extracted/study/root_go.json": {
+      "bytes": 1765,
+      "sha256": "44234fe02f29956a74b61850e8cb7752841aff97545ea9c1e5e2039df5efa1e1"
+    },
+    "work/wavecert-fwi/data/reference/subsurfacegen_parent_split/dataset_manifest.json": {
+      "bytes": 22507,
+      "sha256": "e297ab5196bd50142db76a575c78355587bba04f6b381a0ef8700c950d04155a"
+    },
+    "work/wavecert-fwi/data/reference/subsurfacegen_parent_split/source_selection.json": {
+      "bytes": 21284,
+      "sha256": "b8147f1734052d259a4dc72b37b7ac6e92b8aac0a23b946209163759f9fdae7c"
+    },
+    "work/wavecert-fwi/docs/ancestry_audit.md": {
+      "bytes": 14274,
+      "sha256": "5073267ad0a8d10cff839ef084f00f31a4ddfb523e630b1d3241d36330e9a524"
+    },
+    "work/wavecert-fwi/results/new_ancestry_audit/parent_ancestry.csv": {
+      "bytes": 11202,
+      "sha256": "3d2a8cfbb34e27c46dafb77194c376a8c59f0e57ab388975e7abcef11c81d930"
+    },
+    "work/wavecert-fwi/results/provisional_software_benchmark/matched_cost_pilot/verification.py": {
+      "bytes": 16343,
+      "sha256": "b7bee25257caf456d52932962ceba2fde00197f0a78b585cf90c138e795bba4c"
+    }
+  },
+  "status": "RETAINED_VALIDATION_INPUT_SCHEMA_AND_ANCESTRY_BOUND_NO_PDE"
+}

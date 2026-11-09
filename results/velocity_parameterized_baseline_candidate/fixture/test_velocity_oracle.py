@@ -1,0 +1,315 @@
+"""Manufactured tiny-grid verification only; no project datasets or benchmarks."""
+import importlib.util
+import json
+import sys
+from dataclasses import replace
+from pathlib import Path
+
+import numpy as np
+import pytest
+from wavecert.optimization.paid_descent import (
+    TrajectoryOptions,
+    run_exact_lbfgsb,
+    trajectory_to_dict,
+)
+from wavecert.physics.exact_merit import ExactMeritOracle
+from wavecert.physics.helmholtz import Helmholtz2D, SurveyBlock
+
+spec = importlib.util.spec_from_file_location("velocity_baseline_candidate_unique", Path(__file__).with_name("velocity_oracle.py"))
+adapter = importlib.util.module_from_spec(spec)
+sys.modules[spec.name] = adapter
+spec.loader.exec_module(adapter)
+
+
+def manufactured(sources=(9, 12), receivers=(3, 8, 8, 21)):
+    physics = Helmholtz2D((5, 6), spacing=.05, damping_width=1, damping_strength=4.)
+    truth = np.linspace(.19, .23, physics.n)
+    velocity = np.linspace(2., 2.3, physics.n)
+    blocks = []
+    for frequency in [2.3, 3.1]:
+        for source in sources:
+            observed = physics.solve_state(truth, physics.source(source), frequency)[list(receivers)]
+            blocks.append(SurveyBlock(source, frequency, observed, str((source, frequency))))
+    def native_factory():
+        return ExactMeritOracle(physics, blocks, receivers)
+    return physics, velocity, native_factory
+
+
+def wrapped(factory, units="km/s"):
+    native = factory()
+    return adapter.VelocityMeritOracle(native, velocity_units=units), native
+
+
+def test_manufactured_velocity_objective_gradient_finite_difference():
+    _, velocity, factory = manufactured()
+    oracle, _ = wrapped(factory)
+    receipt = oracle.evaluate(velocity)
+    gradient = oracle.gradient(receipt).gradient
+    direction = np.sin(np.arange(len(velocity)) + 1.)
+    direction /= np.linalg.norm(direction)
+    epsilon = 1e-5
+    fd = (oracle.evaluate(velocity + epsilon * direction).objective
+          - oracle.evaluate(velocity - epsilon * direction).objective) / (2 * epsilon)
+    assert fd == pytest.approx(float(gradient @ direction), rel=1e-6, abs=1e-9)
+    assert np.array_equal(receipt.model, velocity)
+    assert np.array_equal(receipt.native_model, adapter.velocity_to_slowness(velocity))
+    assert receipt.native_model_sha256 == adapter.model_sha256(receipt.native_model)
+
+
+def test_manufactured_velocity_tangent_matches_independent_field_fd_and_duality():
+    physics, velocity, factory = manufactured()
+    oracle, native = wrapped(factory)
+    receipt = oracle.evaluate(velocity)
+    dv = np.cos(np.arange(physics.n) + 1.) / np.sqrt(physics.n)
+    dm = oracle.pushforward_direction(receipt, dv)
+    before = native.cost_snapshot()["physics"]
+    assert np.array_equal(dm, -2 * velocity ** -3 * dv)
+    assert before == native.cost_snapshot()["physics"]  # Coordinate mapping has no hidden solve.
+    q, frequency = physics.source(9), 2.3
+    u = physics.solve_state(receipt.native_model, q, frequency)
+    tangent = physics.solve_tangent(receipt.native_model, u, dm, frequency)
+    epsilon = 1e-5
+    fd = (physics.solve_state(adapter.velocity_to_slowness(velocity + epsilon * dv), q, frequency)
+          - physics.solve_state(adapter.velocity_to_slowness(velocity - epsilon * dv), q, frequency)) / (2 * epsilon)
+    assert np.linalg.norm(tangent - fd) / np.linalg.norm(fd) < 1e-6
+    gv = oracle.gradient(receipt).gradient
+    gm = native.gradient(receipt._native).gradient
+    assert gv @ dv == pytest.approx(gm @ dm, rel=1e-13, abs=1e-13)
+
+
+@pytest.mark.parametrize("sources,receivers", [((9, 12), (3, 8, 8, 21)), ((3, 8, 9, 12, 14), (3, 8, 8))])
+def test_exact_native_cost_cache_routes_and_rejected_trial_reuse_are_preserved(sources, receivers):
+    _, velocity, factory = manufactured(sources, receivers)
+    oracle, native = wrapped(factory)
+    direct = factory()
+    v_receipt, m_receipt = oracle.evaluate(velocity), direct.evaluate(adapter.velocity_to_slowness(velocity))
+    oracle.accept(v_receipt)
+    direct.accept(m_receipt)
+    for scale in [1.001, 1.002]:
+        oracle.evaluate(velocity * scale)
+        direct.evaluate(adapter.velocity_to_slowness(velocity * scale))
+    factors_before = native.cost_snapshot()["physics"]["factorizations"]
+    gv, gm = oracle.gradient(v_receipt), direct.gradient(m_receipt)
+    assert gv.objective == gm.objective and gv.additional_rhs == gm.additional_rhs
+    assert gv.frequency_strategies == gm.frequency_strategies
+    np.testing.assert_allclose(gv.gradient, -2 * velocity ** -3 * gm.gradient, rtol=0, atol=0)
+    assert native.cost_snapshot()["physics"]["factorizations"] == factors_before
+    assert oracle.evaluate(velocity.copy()) is v_receipt
+    assert direct.evaluate(adapter.velocity_to_slowness(velocity)) is m_receipt
+    again_v, again_m = oracle.gradient(v_receipt), direct.gradient(m_receipt)
+    assert again_v.additional_rhs == again_m.additional_rhs == 0
+    assert np.array_equal(again_v.gradient, gv.gradient)
+    assert native.cost_snapshot() == direct.cost_snapshot()
+    assert oracle.cost_snapshot()["physics"] == direct.cost_snapshot()["physics"]
+    assert oracle.cost_snapshot()["oracle"] == direct.cost_snapshot()["oracle"]
+    assert oracle.cost_snapshot()["velocity_coordinates"]["gradient_pullbacks"] == 2
+    assert not native._p._factorizations and native._p.factorization_cache_size == 0
+
+
+def test_roundtrip_records_actual_native_model_instead_of_borrowing_original_hash():
+    requested = np.linspace(.17, .31, 37)
+    velocity, actual, record = adapter.start_from_slowness(requested)
+    assert np.any(requested != actual)  # Manufactured IEEE64 roundtrip mismatch is exposed.
+    assert record["native_roundtrip_bitwise_equal"] is False
+    assert record["requested_native_model_sha256"] == adapter.model_sha256(requested)
+    assert record["actual_native_model_sha256"] == adapter.model_sha256(actual)
+    assert record["actual_native_model_sha256"] != record["requested_native_model_sha256"]
+    assert np.array_equal(actual, adapter.velocity_to_slowness(velocity))
+
+
+def test_distinct_velocities_with_same_subnormal_native_model_have_distinct_coordinate_receipts():
+    physics, _, factory = manufactured()
+    oracle, _ = wrapped(factory)
+    first = np.full(physics.n, 1e160)
+    second = np.nextafter(first, np.inf)
+    assert np.array_equal(adapter.velocity_to_slowness(first), adapter.velocity_to_slowness(second))
+    a, b = oracle.evaluate(first), oracle.evaluate(second)
+    assert a is not b and a.model_sha256 != b.model_sha256 and a.key != b.key
+    assert a.native_model_sha256 == b.native_model_sha256 and a._native is b._native
+    with pytest.raises(FloatingPointError, match="derivative"):
+        oracle.gradient(b)  # Unrepresentable derivative is rejected, never a spurious zero gradient.
+
+
+def test_reversed_physical_bounds_and_fixed_coordinates():
+    lo, hi = adapter.velocity_bounds_to_slowness(2., np.array([3., 4.]), size=2)
+    np.testing.assert_allclose(lo, [1 / 9, 1 / 16], rtol=1e-15)
+    np.testing.assert_allclose(hi, [.25, .25], rtol=0, atol=0)
+    vlo, vhi = adapter.slowness_bounds_to_velocity(lo, hi, size=2)
+    np.testing.assert_allclose(vlo, [2., 2.], rtol=1e-15)
+    np.testing.assert_allclose(vhi, [3., 4.], rtol=1e-15)
+    fixed_lo, fixed_hi = adapter.velocity_bounds_to_slowness(2., 2., size=2)
+    assert np.array_equal(fixed_lo, fixed_hi)
+
+
+def test_immutable_receipts_and_gradient_and_owner_fingerprints():
+    _, velocity, factory = manufactured()
+    first, _ = wrapped(factory)
+    second, _ = wrapped(factory)
+    receipt = first.evaluate(velocity)
+    for array in [receipt.model, receipt.native_model, first.gradient(receipt).gradient]:
+        with pytest.raises(ValueError):
+            array.setflags(write=True)
+    for foreign in [receipt, replace(receipt)]:
+        with pytest.raises(ValueError, match="foreign"):
+            second.gradient(foreign)
+    with pytest.raises(ValueError, match="foreign"):
+        first.accept(replace(receipt))
+    object.__setattr__(receipt, "model_sha256", "0" * 64)
+    with pytest.raises(ValueError, match="fingerprint"):
+        first.gradient(receipt)
+
+
+def test_same_native_cannot_be_shared_or_prepaid_between_policies():
+    _, velocity, factory = manufactured()
+    native = factory()
+    adapter.VelocityMeritOracle(native, velocity_units="km/s")
+    with pytest.raises(ValueError, match="fresh"):
+        adapter.VelocityMeritOracle(native, velocity_units="km/s")
+    paid = factory()
+    paid.evaluate(adapter.velocity_to_slowness(velocity))
+    with pytest.raises(ValueError, match="fresh"):
+        adapter.VelocityMeritOracle(paid, velocity_units="km/s")
+
+
+@pytest.mark.parametrize("invalid", [np.zeros(30), -np.ones(30), np.full(30, np.nan), np.full(30, np.inf),
+                                     np.ones(30, complex), np.ones(30, bool), np.ones((5, 6)), np.ones(29),
+                                     np.array(["2"] * 30), np.full(30, 1e-308), np.full(30, 1e308)])
+def test_invalid_velocity_fails_before_native_work(invalid):
+    _, _, factory = manufactured()
+    oracle, native = wrapped(factory)
+    before = native.cost_snapshot()
+    with pytest.raises(ValueError):
+        oracle.evaluate(invalid)
+    assert before == native.cost_snapshot()
+
+
+@pytest.mark.parametrize("lo,hi", [(0., 2.), (-1., 2.), (3., 2.), (np.nan, 2.), (True, 2.), (1., np.inf),
+                                  (np.ones((2, 2)), 3.)])
+def test_invalid_bounds(lo, hi):
+    with pytest.raises(ValueError):
+        adapter.velocity_bounds_to_slowness(lo, hi, size=2)
+
+
+def test_native_failure_is_not_replaced_and_paid_failure_counters_survive(monkeypatch):
+    _, velocity, factory = manufactured()
+    oracle, native = wrapped(factory)
+    receipt = oracle.evaluate(velocity)
+    def fail(receipt):
+        native._count("injected_gradient_failure_attempts")
+        raise RuntimeError("synthetic native failure")
+    monkeypatch.setattr(native, "gradient", fail)
+    with pytest.raises(RuntimeError, match="synthetic native failure"):
+        oracle.gradient(receipt)
+    assert oracle.cost_snapshot()["oracle"]["injected_gradient_failure_attempts"] == 1
+    assert oracle.cost_snapshot()["physics"]["factorizations"] == 2
+
+
+def test_contract_units_initial_and_endpoint_native_hashes_are_explicit():
+    _, velocity, factory = manufactured()
+    oracle, _ = wrapped(factory)
+    other, _ = wrapped(factory, units="explicit alternative unit label; no scaling")
+    assert oracle.contract["problem_fingerprint_sha256"] != other.contract["problem_fingerprint_sha256"]
+    assert oracle.initial_model_record is None
+    receipt = oracle.evaluate(velocity)
+    model, provenance = oracle.to_native_model(velocity)
+    assert provenance["actual_native_model_sha256"] == receipt.native_model_sha256
+    assert np.array_equal(model, receipt.native_model)
+    assert oracle.initial_model_record["actual_native_model_sha256"] == receipt.native_model_sha256
+    assert oracle.initial_model_record["velocity_model_sha256"] == receipt.model_sha256
+    assert "VELOCITY" in oracle.contract["optimizer_model_semantics"]
+    copy = oracle.contract
+    copy["parameterization"]["velocity_units"] = "changed"
+    assert oracle.contract["parameterization"]["velocity_units"] == "km/s"
+    json.dumps(receipt.to_dict(), allow_nan=False)
+    json.dumps(oracle.contract, allow_nan=False)
+
+
+def test_existing_engine_zero_step_initialization_uses_velocity_models_and_cold_factory():
+    _, velocity, factory = manufactured()
+    created = []
+    def oracle_factory():
+        oracle, _ = wrapped(factory)
+        created.append(oracle)
+        return oracle
+    result = run_exact_lbfgsb(oracle_factory=oracle_factory, m0=velocity, lower_bound=1.5, upper_bound=3.,
+        options=TrajectoryOptions(budget_seconds=100., maximum_steps=0, initial_step=1., maximum_step=1.),
+        clock=lambda: 0.)
+    assert result["status"] == "maximum_steps" and result["costs_complete"]
+    assert len(result["checkpoints"]) == 1
+    assert np.array_equal(result["final_model"], velocity)
+    assert np.array_equal(result["checkpoints"][0]["model"], velocity)
+    assert result["total_online_costs"]["oracle"]["physics"]["factorizations"] == 2
+    assert created[0].initial_model_record["actual_native_model_sha256"] == adapter.model_sha256(adapter.velocity_to_slowness(velocity))
+    assert result["total_online_seconds"] == 0.  # Abstract correctness clock, no timing evidence.
+
+
+def test_manufactured_two_step_lbfgsb_control_and_explicit_native_failure():
+    _, velocity, factory = manufactured()
+    created = []
+    def oracle_factory():
+        oracle, native = wrapped(factory)
+        created.append((oracle, native))
+        return oracle
+    options = TrajectoryOptions(budget_seconds=100., maximum_steps=2, initial_step=1., maximum_step=1.)
+    result = run_exact_lbfgsb(oracle_factory=oracle_factory, m0=velocity, lower_bound=1.5, upper_bound=3.,
+                              options=options, clock=lambda: 0.)
+    oracle, native = created[0]
+    assert result["status"] in {"solver_terminated", "solver_success"}
+    assert result["costs_complete"] and result["solver_result"] is not None
+    assert 1 <= result["solver_result"]["nit"] <= 2
+    assert len(result["checkpoints"]) >= 2
+    objectives = [row["objective"] for row in result["checkpoints"]]
+    assert np.all(np.diff(objectives) < 0) and result["final_objective"] < result["initial_objective"]
+    counts = result["total_online_costs"]["oracle"]
+    assert counts["velocity_coordinates"]["gradient_pullbacks"] > 0
+    assert counts["oracle"]["objective_cache_hits"] > 0
+    assert counts["physics"]["factorizations"] == 2 * counts["oracle"]["objective_evaluations"]
+    assert counts["physics"]["forward_rhs"] == 2 * counts["physics"]["factorizations"]
+    assert counts["physics"]["svd_evaluations"] == counts["physics"]["dense_inverse_rhs"] == 0
+    for checkpoint in result["checkpoints"]:
+        assert np.all(checkpoint["model"] >= 1.5) and np.all(checkpoint["model"] <= 3.)
+        assert checkpoint["model_sha256"] == adapter.model_sha256(checkpoint["model"])
+    final_velocity = result["final_model"]
+    final_receipt = oracle.evaluate(final_velocity)
+    actual_native, endpoint = oracle.to_native_model(final_velocity)
+    assert np.array_equal(final_receipt.model, final_velocity)
+    assert np.array_equal(final_receipt.native_model, actual_native)
+    assert not np.array_equal(final_velocity, actual_native)
+    assert endpoint["actual_native_model_sha256"] == final_receipt.native_model_sha256
+    gradient = oracle.gradient(final_receipt)
+    native_gradient = native.gradient(final_receipt._native)
+    assert gradient.receipt is final_receipt
+    np.testing.assert_allclose(gradient.gradient, -2 * final_velocity ** -3 * native_gradient.gradient, rtol=0, atol=0)
+    other, other_native = wrapped(factory)
+    with pytest.raises(ValueError, match="foreign"):
+        other.gradient(final_receipt)
+    assert other_native.cost_snapshot()["physics"]["factorizations"] == 0
+    json.dumps(trajectory_to_dict(result), allow_nan=False)
+    json.dumps(final_receipt.to_dict(), allow_nan=False)
+    json.dumps(oracle.contract, allow_nan=False)
+    json.dumps(oracle.cost_snapshot(), allow_nan=False)
+
+    failed = []
+    def failing_factory():
+        broken, owner = wrapped(factory)
+        def injected_failure(receipt):
+            owner._count("manufactured_gradient_failures")
+            raise RuntimeError("manufactured integration gradient failure")
+        owner.gradient = injected_failure
+        failed.append((broken, owner))
+        return broken
+    failure = run_exact_lbfgsb(oracle_factory=failing_factory, m0=velocity, lower_bound=1.5, upper_bound=3.,
+                               options=options, clock=lambda: 0.)
+    assert failure["status"] == "failed" and failure["costs_complete"]
+    assert "manufactured integration gradient failure" in failure["message"]
+    assert failure["total_online_costs"]["oracle"]["oracle"]["manufactured_gradient_failures"] == 1
+    assert failure["total_online_costs"]["oracle"]["physics"]["factorizations"] == 2
+    assert len(failure["checkpoints"]) == 1 and np.array_equal(failure["final_model"], velocity)
+    json.dumps(trajectory_to_dict(failure), allow_nan=False)
+    print("MANUFACTURED_VELOCITY_INTEGRATION " + json.dumps(dict(
+        scope="Tiny manufactured control and injected failure; constant abstract clock; no project performance/recovery evidence",
+        success_status=result["status"], solver_result=result["solver_result"], checkpoints=len(result["checkpoints"]),
+        objectives=objectives, velocity_final_sha256=adapter.model_sha256(final_velocity),
+        actual_native_final_sha256=final_receipt.native_model_sha256, problem_fingerprint=oracle.contract["problem_fingerprint_sha256"],
+        engine_costs=counts, post_return_verification_costs_scope="additional interface checks above are not engine runtime/cost evidence",
+        failure_status=failure["status"], failure_costs=failure["total_online_costs"]["oracle"]), sort_keys=True))

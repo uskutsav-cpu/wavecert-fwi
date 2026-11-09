@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "status": "INDEPENDENT_SOURCE_REVIEW_CLEAR_FOR_ROOT_REVIEW_ONLY_RUNTIME_UNEXECUTED",
+  "reviewer": "/root/geometry_acquisition_review/official_action_pins",
+  "execution_authorized": false,
+  "root_GO_created": false,
+  "source_files": {
+    "run_checkpoint_pilot.py": "31969bd3e072dcbf554e0cd98f022b0e35dd5438ef12566f9c23fa98eee76e9b",
+    "pilot_accounting.py": "1b0094af99fb57e44966e18808aa80f939a2a83771ed98c53a94a5e1460f33f2",
+    "protocol.json": "08f262f638da9a72b262d252ba8e3eaab4452d772d8c80606bc44e7137fba866",
+    "RUNTIME_SOURCE_PINS.json": "bfbc2e31cd4ff7ae2a0f0342dc3633c5e4dc0189daea0d06eaeb12de1040350f"
+  },
+  "primary_source_context": {
+    "Devito_commit": "110463bd57ade6001fcbabf4883c3ab498041a61",
+    "PyRevolve_commit": "22d4e0f09e4e0ad51dd0bac15503f75870b31109",
+    "six_constructor_extension_sources_manifest_sha256": "aa0bc4ab2b97e0fa2ba93cdb20aae76b28ef5c6aeb164ffb8f38ae8cb404ae08",
+    "review_scope": "Saved pinned acoustic operators, checkpoint wrappers, PyRevolve driver/storage, Model, AcquisitionGeometry, PointSource/Receiver, TimeAxis, initializer and padding source text; no remote code executed."
+  },
+  "source_findings": [
+    "No material source-level mathematical or checkpoint-wiring blocker found for this narrowly specified serial OT2, float64, fs=False engineering pilot.",
+    "Explicit native time_m=1,time_M=nt-2 and prepared offset checks define the same chosen discrete interval in full-save, rolling finite differences and both checkpoint wrappers. Scheduler half-open [a,b) maps to inclusive [a+1,b]. Final source requires exact once-only initial forward and reverse native-index coverage.",
+    "One retained explicit source and fixed receiver dual are hashed; forward scratch and reverse rec=dual bindings are separate. Fresh u/v/grad allocations are explicitly zeroed, including allocated temporal planes and halos. Forward replay does not reset accumulated adjoint state or gradient.",
+    "The objective is the unweighted fixed-dual functional L(m)=sum(r*F(m)), so its intended derivative is J(m)^T r. Finite differences perturb physical m, convert vp=1/sqrt(m), and hold dt, source, receiver geometry, dual, damping and native interval fixed. There is no hidden observed-data solve or FWI reconstruction claim.",
+    "Pinned Model.m equals 1/(vp*vp); ndarray vp is extended by replicated edges. Actual padded vp is checked against edge padding. Physical-m pullback sums padded gradient faces/corners with E^T rather than cropping; no velocity-coordinate chain factor or quadrature factor is inserted.",
+    "Checkpoint.size is treated as element count, nbytes equals size*dtype.itemsize, exactly two allocated temporal planes are required, and actual NumpyStorage shape/dtype/bytes must equal explicit K capacity. Standard uncompressed storage is delegated unchanged; all copy attempts and actual pointer bytes are recorded.",
+    "Warm shared JIT-cache effects are disclosed. Generated C and available compiler/library/timer metadata are observational; no cache-hit, fair-speed or matched-cost superiority inference is made.",
+    "Final diagnostic delta also scales ru_maxrss as Linux KiB versus Darwin bytes. Linux is the only admitted numerical runtime; Darwin support here concerns manufactured accounting controls."
+  ],
+  "remaining_execution_gates": [
+    "Separate root review, frozen criteria and exact source-bound root GO; this review grants no installation or execution authority.",
+    "Admit the exact Linux/Python/package versions and installed source hashes in a separately reviewed runtime. Source review does not establish successful dependency installation or backend compatibility.",
+    "Actual native execution must establish parameter alias binding, source/dual separation, circular-state extraction/restoration, scheduler behavior, generated time loops, exact K allocation and no saved-history allocation in checkpoint children.",
+    "Actual whole-record, padded-gradient, physical-gradient and all registered finite-difference comparisons must satisfy the frozen finite/nontriviality criteria. Source consistency and manufactured accounting controls are not numerical derivative agreement.",
+    "A separately reviewed caller must provide fresh serial processes, actual wait exit/signal observations, complete launch-to-return timing, external logs and resource review. Worker intent-to-return fields and comparison receipts alone do not prove actual terminal success.",
+    "Preserve every failure/interrupt prefix and registered FD step. No retry, fallback, larger K, changed geometry/time/source or outcome-tuned tolerance is authorized."
+  ],
+  "review_actions": {
+    "source_text_and_manifest_reads": true,
+    "source_sha256_checks": true,
+    "worker_or_accounting_imports": 0,
+    "tests_rerun": 0,
+    "network_calls": 0,
+    "installs": 0,
+    "model_values_read_or_constructed": 0,
+    "operator_constructions": 0,
+    "PDE_calls": 0,
+    "author_sources_edited": false
+  },
+  "manufactured_controls": "Author reports final 15 controls passed with receipt 03 and preserved earlier attempts. This independent source-only reviewer did not rerun those controls and does not treat them as a numerical backend test.",
+  "claims_not_established": [
+    "Actual checkpointed derivative agreement",
+    "A new checkpointing method or theorem",
+    "Field accuracy or realistic-geology validation",
+    "Matched-cost reconstruction advantage",
+    "Student-owned final scientific interpretation"
+  ]
+}

@@ -1,0 +1,40 @@
+{"actual_observed": 108, "actual_passed": 86, "check": "frequency_continuation_archival_manufactured_reproduction", "environment": {"packages": {"numpy": "2.4.3", "pytest": "9.1.1", "scipy": "1.18.1"}, "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O", "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]"}, "expected_total": 108, "production_files": 161, "production_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da", "scientific_claim": false, "scope": "archival manufactured controls only; tiny synthetic API physics, no corpus/project96run/training", "status": "failed_controls_retained", "suites": [{"PID": 86388, "actual_exit_code": 0, "errors": 0, "expected_passed": 17, "failed": 0, "name": "bounded_engine", "observed": 17, "passed": 17, "skipped": 0, "status": "passed"}, {"PID": 86428, "actual_exit_code": 0, "errors": 0, "expected_passed": 24, "failed": 0, "name": "controller", "observed": 24, "passed": 24, "skipped": 0, "status": "passed"}, {"PID": 86521, "actual_exit_code": 1, "errors": 6, "expected_passed": 15, "failed": 0, "name": "driver", "observed": 15, "passed": 9, "skipped": 0, "status": "failed_or_count_mismatch"}, {"PID": 86523, "actual_exit_code": 1, "errors": 15, "expected_passed": 15, "failed": 0, "name": "launcher", "observed": 15, "passed": 0, "skipped": 0, "status": "failed_or_count_mismatch"}, {"PID": 86529, "actual_exit_code": 1, "errors": 1, "expected_passed": 37, "failed": 0, "name": "scalar_auditor_v2", "observed": 37, "passed": 36, "skipped": 0, "status": "failed_or_count_mismatch"}], "workspace": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108"}
+F                                                                        [100%]
+=================================== FAILURES ===================================
+________________ test_archived_frequency_manufactured_controls _________________
+
+tmp_path = PosixPath('/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0')
+capfd = <_pytest.capture.CaptureFixture object at 0x118e2e270>
+record_property = <function record_property.<locals>.append_property at 0x118ecf100>
+
+    def test_archived_frequency_manufactured_controls(tmp_path, capfd, record_property):
+        source = ARCHIVE / "reproduce_manufactured.py"
+        assert hashlib.sha256(source.read_bytes()).hexdigest() == HARNESS_SHA256
+        assert hashlib.sha256((ARCHIVE / "MANUFACTURED_REPRODUCTION_ASSETS.json").read_bytes()).hexdigest() == MANIFEST_SHA256
+        output = tmp_path / "archival108"
+        log = tmp_path / "harness_cli.log"
+        command = [sys.executable, "-B", str(source), "--execute-manufactured-controls",
+            "--repo", str(REPO), "--output", str(output)]
+        env = dict(os.environ, PYTHONDONTWRITEBYTECODE="1")
+        with log.open("xb") as stream:
+            result = subprocess.run(command, stdout=stream, stderr=subprocess.STDOUT, env=env, check=False)
+        text = log.read_text()
+        try:
+            report = json.loads(text.splitlines()[-1])
+        except (IndexError, json.JSONDecodeError):
+            report = dict(status="harness_exception", actual_cli_exit_code=result.returncode,
+                full_log=str(log), failure_receipt=str(output / "failure_receipt.json"))
+        encoded = json.dumps(report, allow_nan=False, sort_keys=True)
+        record_property("frequency_manufactured_reproduction", encoded)
+        with capfd.disabled():
+            print(encoded, flush=True)
+>       assert result.returncode == 0, text[-10000:]
+E       AssertionError: {"actual_observed": 108, "actual_passed": 86, "check": "frequency_continuation_archival_manufactured_reproduction", "environment": {"packages": {"numpy": "2.4.3", "pytest": "9.1.1", "scipy": "1.18.1"}, "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O", "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]"}, "expected_total": 108, "production_files": 161, "production_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da", "scientific_claim": false, "scope": "archival manufactured controls only; tiny synthetic API physics, no corpus/project96run/training", "status": "failed_controls_retained", "suites": [{"PID": 86388, "actual_exit_code": 0, "errors": 0, "expected_passed": 17, "failed": 0, "name": "bounded_engine", "observed": 17, "passed": 17, "skipped": 0, "status": "passed"}, {"PID": 86428, "actual_exit_code": 0, "errors": 0, "expected_passed": 24, "failed": 0, "name": "controller", "observed": 24, "passed": 24, "skipped": 0, "status": "passed"}, {"PID": 86521, "actual_exit_code": 1, "errors": 6, "expected_passed": 15, "failed": 0, "name": "driver", "observed": 15, "passed": 9, "skipped": 0, "status": "failed_or_count_mismatch"}, {"PID": 86523, "actual_exit_code": 1, "errors": 15, "expected_passed": 15, "failed": 0, "name": "launcher", "observed": 15, "passed": 0, "skipped": 0, "status": "failed_or_count_mismatch"}, {"PID": 86529, "actual_exit_code": 1, "errors": 1, "expected_passed": 37, "failed": 0, "name": "scalar_auditor_v2", "observed": 37, "passed": 36, "skipped": 0, "status": "failed_or_count_mismatch"}], "workspace": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108"}
+E         
+E       assert 2 == 0
+E        +  where 2 = CompletedProcess(args=['/opt/miniconda3/bin/python', '-B', '/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecer...fwi/work/frequency_manufactured_reproduction_validation_01/test_archived_frequency_manufa0/archival108'], returncode=2).returncode
+
+tests/test_frequency_continuation_manufactured_reproduction.py:36: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_frequency_continuation_manufactured_reproduction.py::test_archived_frequency_manufactured_controls
+1 failed in 45.36s

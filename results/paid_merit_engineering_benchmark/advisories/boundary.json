@@ -1,0 +1,80 @@
+{
+  "role": "Compact AI-authored software implementation advisory, not student final research design, paper or scientific interpretation",
+  "recorded_utc": "2026-11-08T04:45:07.742084+00:00",
+  "live_benchmark_constraint": "The frozen360-run benchmark is live. This advisory used only completed published documentation and primary web sources. No source/config writes, tests, project-array reads, partial-outcome analysis, wave solves or CPU-heavy work were performed.",
+  "published_documents_read_sha256": {
+    "docs/devito_boundary_verification.md": "efc2cf3c234037bdf8b9bae6f6ea86e3326188c1c463066682dbfa2de3a1841f",
+    "docs/numpy_boundary_replay.md": "f8dd0a0a99e7e49aade4361102dd1a043086456a33baedb8999431b36b593222",
+    "results/devito_boundary_verification/README.md": "dae79a1cce2159c52d4cce9356355b60409f4d9e9d736394e2f8e314c5f91cec",
+    "results/numpy_boundary_replay/README.md": "d9b176129c9b7c7b861067f1d40ef689f2c10d73c76b58ced2472bcfcec09d79"
+  },
+  "confirmed_problem": "The61x61 physical box with40 padding cells has0.249489294 full-record receiver-trace relativeL2 difference from the enlarged321 reference for this homogeneous2km/s,5Hz,10m,1ms,0..1100ms fixture. This is not25% model error, energy reflection, an intrinsic reflection coefficient or a universal solver error.",
+  "what_is_already_settled": "A separate reference-informed NumPy implementation reproduces the seven faithful traces locally and across Linux/Python versions. That establishes finite-grid implementation agreement, not boundary adequacy. The exact-rational coefficient variant failed its declared1e-9 agreement check and remains retained; replacing generated literals to force a different answer is not a remedy for boundary fidelity.",
+  "minimal_additive_software_change": {
+    "priority": "After the live benchmark is terminal, add a NEW explicit boundary/backend configuration; preserve source9f, original seven cases, fourteen replays and all historical receipts. Separate physical extent, absorber extent/profile and boundary type.",
+    "binding": "Hash the actual stencil/coefficients, profile, dt, valid samples, source normalization, receiver map, physical-to-padded mapE and any auxiliary states. Reject nominal/actual operator mismatches; do not patch private fields behind the existing oracle."
+  },
+  "measurable_prerequisites_before_any_fidelity_claim": [
+    {
+      "item": "Implementation versus truncation",
+      "measurement": "Keep old literal-replay regressions immutable. Independently check a new operator before measuring its receiver discrepancy against enlarged references. A changed boundary need not reproduce the old contaminated trace."
+    },
+    {
+      "item": "Controlled geometry",
+      "measurement": "Keep damping-versus-undamped comparisons on matching exterior grids and relative nodes, alongside enlarged references. Retain full and declared-window norms with explicit denominators."
+    },
+    {
+      "item": "Adjoint and parameter semantics",
+      "measurement": "Check tangent/adjoint dot products and objective finite differences including physical edges. With extensionE, directions areE*v and gradientsE.T*g. Asymmetric padding/PML auxiliary states need their own adjoint. If boundary coefficients depend on currentm, differentiate them or freeze their design parameters independently."
+    },
+    {
+      "item": "Source, samples and refinement",
+      "measurement": "Preserve a fixed CFL-valid time axis during inversion checks. Changing h/dt requires explicit physical source normalization and common-sample/weighted comparisons; currentdt**2*source/m injection adds no automatic1/h**2 volume scaling. No amplitude fitting or waveform alignment."
+    },
+    {
+      "item": "Actual cost",
+      "measurement": "Report returned wall, field bytes and saved-history/checkpoint work. A forward-only three-slice check does not establish large-grid gradient feasibility; the current Devito gradient saves its full time history."
+    }
+  ],
+  "boundary_options_for_later_student_owned_selection": [
+    {
+      "option": "Move truncation farther away",
+      "implementation": "Explicitly extend a guard region while preserving interior parameters, coordinates, waveform and samples. Define model extensionE; do not invent extra geology. Measure cost and reference sensitivity.",
+      "limit": "Moving returns outside a chosen record is not general boundary validation; the necessary late physical arrivals still have to be retained."
+    },
+    {
+      "option": "Declare a different scalar layer",
+      "implementation": "Use a new explicit smooth profile on a fixed exterior grid, with profile hashes and discrete-adjoint checks. Separate grading from boundary displacement.",
+      "limit": "A larger coefficient/width is not guaranteed better over a broadband finite record; do not select an unreported passing width after these outcomes."
+    },
+    {
+      "option": "PML/CPML or another boundary model",
+      "implementation": "Implement auxiliary equations, corners and matching adjoint explicitly. A physical free surface is a separate reflecting boundary choice.",
+      "limit": "The official Devito tutorial is a simplified first-order acoustic construction and omits overlapping corner subdomains; it is not a validated drop-in replacement.",
+      "primary_source": "https://www.devitoproject.org/examples/userapi/04_boundary_conditions.html"
+    }
+  ],
+  "time_window_and_output_rules": [
+    "Keep the original1101 stored samples/metrics immutable. Only receiver indices1..1099 were computed; endpoints0/1100 are initialized zeros. A future API should expose valid/computed samples explicitly.",
+    "Preserve the old<=250ms split for the old record. New windows must follow needed physical arrivals and be declared before new outcomes; shortening a record to hide visible errors is not a demonstrated remedy.",
+    "Mirror-path times are geometric estimates. Noncompact Ricker samples and fourth-order stencil tails prohibit strict clean-window claims. Enlarged-reference agreement is empirical, not continuum truth."
+  ],
+  "why_larger_damping_alone_is_insufficient": [
+    "The current coefficient scales with1/(nbl*h); increasing nbl changes grading AND outer return paths. It is not simply a stronger absorption constant.",
+    "At5Hz and2km/s the dominant wavelength is400m; lower-frequency components are longer. Layer transition, incidence, corners and the actual one-sided damping derivative can still matter.",
+    "The primary boundary-comparison paper reports method/band/domain dependence and effects on both forward and adjoint FWI. PML is also discretization- and incidence-sensitive; this evidence does not choose a remedy for this repository.",
+    "A new boundary cannot inherit the native five-point Dirichlet certificate automatically. The actual time-domain fourth-order/PML/free-surface operator and derivative need their own bound analysis."
+  ],
+  "next_technical_acceptance_evidence": "After terminal benchmark state and a separate freeze: explicit operator/profile/source/sample/E identity; independent forward/algebra check; full physical adjoint/FD check; controlled receiver discrepancy over the necessary record; measured cost/memory. Student-owned physical intent and fidelity tolerance remain undecided.",
+  "primary_references": [
+    {
+      "url": "https://www.devitoproject.org/examples/userapi/04_boundary_conditions.html",
+      "supports": "Explicit free-surface/PML subdomains, auxiliary boundary construction, simplified corner limitation."
+    },
+    {
+      "url": "https://gmd.copernicus.org/articles/15/5857/2022/",
+      "supports": "Original study of damping/PML/CPML/HABC effectiveness, frequency/domain extension and forward/adjoint/FWI consequences. The broad comparison is contextual, not a new measurement here."
+    }
+  ],
+  "goal_completion_claim": false
+}

@@ -1,0 +1,91 @@
+{
+  "all8_cases_retained": true,
+  "checks": 4483,
+  "direction_summaries": {
+    "actual_raw_proposal": {
+      "available_directions": 8,
+      "full_case_denominator": 8,
+      "metrics": {
+        "half_relative_squared_m_error": {
+          "literal_local_opposition_cases": 3,
+          "metric_derivative_literal_sign_counts": {
+            "negative": 5,
+            "positive": 3
+          },
+          "metric_derivative_numerical_sign_counts": {
+            "negative": 5,
+            "positive": 3
+          },
+          "numerically_classified_local_opposition_cases": 3
+        },
+        "half_relative_squared_velocity_error": {
+          "literal_local_opposition_cases": 5,
+          "metric_derivative_literal_sign_counts": {
+            "negative": 3,
+            "positive": 5
+          },
+          "metric_derivative_numerical_sign_counts": {
+            "negative": 3,
+            "positive": 5
+          },
+          "numerically_classified_local_opposition_cases": 5
+        }
+      },
+      "unavailable_cases_retained": 0
+    },
+    "exact_normalized_negative_data_gradient": {
+      "available_directions": 8,
+      "full_case_denominator": 8,
+      "metrics": {
+        "half_relative_squared_m_error": {
+          "literal_local_opposition_cases": 3,
+          "metric_derivative_literal_sign_counts": {
+            "negative": 5,
+            "positive": 3
+          },
+          "metric_derivative_numerical_sign_counts": {
+            "negative": 5,
+            "positive": 3
+          },
+          "numerically_classified_local_opposition_cases": 3
+        },
+        "half_relative_squared_velocity_error": {
+          "literal_local_opposition_cases": 5,
+          "metric_derivative_literal_sign_counts": {
+            "negative": 3,
+            "positive": 5
+          },
+          "metric_derivative_numerical_sign_counts": {
+            "negative": 3,
+            "positive": 5
+          },
+          "numerically_classified_local_opposition_cases": 5
+        }
+      },
+      "unavailable_cases_retained": 0
+    }
+  },
+  "initial_models_literal_box_feasible_count": 8,
+  "interpretation_scope": "A positive half-relative-squared recovery-error slope alongside negative dataDD is local numerical opposition for that raw direction at that initialmodel. Positive gtrue dot(mtruth-m) is local numerical evidence only. Check truth/bounds feasibility; do not infer universalcause, illposedness, nonconvexity, cycle-skipping, finiteboxedstep behavior, an algorithmic remedy, improvedrank or student conclusions.",
+  "issues": [],
+  "new_PDE_solves": 0,
+  "new_optimizer_trajectories": 0,
+  "no_new_student_final_design_or_causal_conclusion": true,
+  "original_internal_endpoint_instances": 1440,
+  "result": "clear_software_diagnostic",
+  "runtime": {
+    "numpy": "2.4.3",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]"
+  },
+  "toward_truth_data_slope_literal_sign_counts": {
+    "negative": 5,
+    "positive": 3
+  },
+  "toward_truth_data_slope_numerical_sign_counts": {
+    "negative": 5,
+    "positive": 3
+  },
+  "truth_models_literal_box_feasible_count": 8,
+  "truth_used_for_policy": false
+}

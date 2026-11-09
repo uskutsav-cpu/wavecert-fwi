@@ -1,0 +1,120 @@
+{
+  "role": "read-only software/physics evidence audit; AI-authored support, not student final research design or interpretation",
+  "recorded_utc": "2026-11-08T02:32:53.461315+00:00",
+  "actual_new_PDE_or_project_outcomes_executed": false,
+  "main_files_modified": false,
+  "evidence_sha256": {
+    "src/wavecert/physics/devito_backend.py": "67b91aa2f7ed8c653c1f92b99e4c6e48591b8e47d31588d9e2b19445d6b6060a",
+    "src/wavecert/physics/helmholtz.py": "caf51b58da24ed6d3633bda4eaaab804714f5c7932d9d5f343644763bc158131",
+    "src/wavecert/physics/independent_verification.py": "a56d932aff9acd9ffb3391e55e73fe9e7407a306e07f37c52522b82794d9db28",
+    "tests/test_devito_sampling.py": "0e85604635277b7b516d100f666a833ef7a5cb338d97a73aa01f438d4c5b6350",
+    "src/wavecert/experiments/devito_study.py": "ad5ae5123607ba92fe573bf6c56616509e6055d28750ab12c237de84a5d5f4b8",
+    "results/devito_verified/summary.json": "38f2cc72951380e80dea0d65e40a2a5af859a659d4622c100418d874e2c91348"
+  },
+  "installed_primary_code": {
+    "devito_version": "4.8.23",
+    "files": {
+      "/opt/miniconda3/lib/python3.13/site-packages/examples/seismic/model.py": "22faa9eafcb2ef7012ce5bbcd977418b5a8515c3f4f9d1c42fcb105f7854ebd4",
+      "/opt/miniconda3/lib/python3.13/site-packages/examples/seismic/acoustic/operators.py": "1ab37a6f2e95b7ab7fdec58d141290880127da9705dfe8deb6045fc0590d6336",
+      "/opt/miniconda3/lib/python3.13/site-packages/examples/seismic/acoustic/wavesolver.py": "9e8cca80ac1fd1bb66abe3133a09ad0f2d23b2b55aba0e0c1003362c458b929e"
+    }
+  },
+  "already_verified": [
+    {
+      "claim": "native undamped constant-coefficient Dirichlet Helmholtz sparse assembly agrees with independent DST; manufactured sine forcing gives second-order spatial convergence",
+      "evidence": "src/wavecert/physics/independent_verification.py:16; tests/test_independent_physics.py",
+      "limit": "No absorbing-boundary fidelity, variable-coefficient PDE convergence or time-domain transfer."
+    },
+    {
+      "claim": "Devito adapter fixes sample times/CFL, rejects unlabeled or mismatched observations, and pulls edge-extended parameter gradients back by the adjoint extension",
+      "evidence": "tests/test_devito_sampling.py; devito_backend.py:9,129,144,182",
+      "limit": "A discrete gradient check is not a boundary-error or continuum-error check."
+    },
+    {
+      "claim": "one downsampled Marmousi exact baseline executes forward/adjoint and five L-BFGS-B iterations",
+      "evidence": "results/devito_verified/summary.json",
+      "numbers": {
+        "shape_x_z": [
+          128,
+          64
+        ],
+        "time_samples": 474,
+        "best_full_edge_FD_relative_error": 2.6322494264868736e-10,
+        "best_interior_FD_relative_error": 8.427180389102926e-10,
+        "objective_reduction_fraction": 0.7521183937766533,
+        "native_optimizer_success": false
+      },
+      "limit": "One geometry/one numerical model; Devito-generated observations; optimizer stopped at iteration cap; no WaveCert surrogate/certificate path is exercised."
+    }
+  ],
+  "genuinely_missing": [
+    "No recorded damping-layer reflection/error measurement against an exterior-domain reference. FD agreement can hold even when boundary reflections contaminate both truth and inversion.",
+    "No Devito spatial/time refinement comparison on the same physical domain, matched source coordinates and source-volume normalization. Existing continuum-order evidence belongs only to the separate undamped Helmholtz operator.",
+    "No validated operator/derivative/bound bridge from the certificate native Dirichlet five-point K and quadratic all-side imaginary damping to the actual Devito fourth-order spatial stencil and its additive absorbing layer.",
+    "No free-surface extension: current Model construction does not pass fs=True; current padding pullback assumes symmetric all-side padding. PML, attenuation, variable density and elastic physics are also unproved.",
+    "No several-independent-geological-ancestor demonstration is supplied by a homogeneous physics verification or one Marmousi model."
+  ],
+  "smallest_next_verification": {
+    "name": "forward-only homogeneous damping-layer boundary-truncation diagnostic",
+    "why_this_next": "Closes an explicitly missing physical-fidelity measurement using the current supported adapter, without inventing a new solver, parameterization or final research hypothesis.",
+    "mechanism": "Compare current adapter receiver traces in a small homogeneous box with translated source/receiver coordinates in a substantially enlarged homogeneous box, using identical spacing, dt, wavelet, velocity and interpolation. Reference time window ends before its first possible exterior return. Include the undamped small box as a positive contamination control. Inspect both early direct-wave agreement and later difference energy; retain the raw traces and travel-time justification.",
+    "bounded_fixture_option_not_a_final_study": {
+      "velocity_km_per_s": 2.0,
+      "spacing_m": [
+        10.0,
+        10.0
+      ],
+      "space_order": 4,
+      "dtype": "float64",
+      "dt_ms": 1.0,
+      "tmax_ms": 1100.0,
+      "f0_per_ms": 0.005,
+      "small_physical_shape_x_z": [
+        61,
+        61
+      ],
+      "source_x_z_m": [
+        300.0,
+        300.0
+      ],
+      "receiver_x_z_m": [
+        350.0,
+        300.0
+      ],
+      "reference_physical_shape_x_z": [
+        241,
+        241
+      ],
+      "reference_translation_m": [
+        900.0,
+        900.0
+      ],
+      "reference_nbl": 40,
+      "candidate_padding_cells": [
+        0,
+        20,
+        40
+      ],
+      "save_wavefield": false,
+      "caution": "These numbers are an executable engineering fixture option, not registered student experimental choices. Check source support and actual discrete arrival behavior before treating a time gate as clean; a same-code enlarged box isolates truncation, not independent implementation error."
+    },
+    "analytical_guard_for_fixture": "At c=2m/ms the nearest reference physical right boundary image path is2350m, giving1175ms before source delay; padded reference exterior is still farther. A1100ms record is intended to end earlier. Report the actual temporal source samples and all early-wave discrepancies rather than assuming perfect compact support.",
+    "memory": "forward(save=False) uses three time slices in the installed ForwardOperator. Largest padded grid321x321 float64 wavefield needs3*321*321*8=2472984bytes before halos; additional model/source/receiver/compiler/process memory is separate. No n_time-by-grid history is needed.",
+    "what_it_could_support": "Quantified truncation/reflection behavior of this damped discrete backend for this homogeneous source band and geometry only.",
+    "what_it_cannot_support": "No PML/free-surface validation, certificate transfer, native-geology generalization, matched-cost inversion advantage or full goal2 completion."
+  },
+  "unit_and_transfer_obligations": {
+    "verified_convention": "Devito seismic examples use m, ms, velocity km/s numerically equal to m/ms; f0=.010 is10Hz. The local forward kernel is m*u.dt2-laplace(u)+damp*u.dt=q; sparse source update is src*dt**2/m, with no automatic physical cell-volume factor.",
+    "conditional_conversion": "If converting the same continuous equation from m/ms to km/s, numerical squared slowness is unchanged, d_Helmholtz=1000*d_Devito and q_Helmholtz=1e6*q_Devito. A physical point-source normalization needs its own1/h**2 factor. This is dimensional algebra, not implemented cross-backend validation.",
+    "time_discretization": "A finite-dt temporal Fourier symbol differs from continuous omega and finite-window transforms include endpoint terms. Equal frequency labels are insufficient for an operator identity.",
+    "certificate_derivative": "For edge-extension E, a physical direction is E*v and the physical gradient is E.T*g_padded. Any future bound must use the actual operator/stencil/damping and physical receiver/source maps. Do not patch the nominal native operator behind the frozen oracle."
+  },
+  "memory_limit_for_later_gradients": "Current objective_and_gradient always uses save=True. It cannot safely scale to a full619x1000 native slice with thousands of time steps on8GiB. Installed AcousticWaveSolver has checkpointing code, but this adapter does not enable it and pyrevolve availability/recomputation cost are not established. Restrict new verification to forward-only or bounded saved grids until a separately verified checkpoint adapter exists.",
+  "primary_links": [
+    "https://www.devitoproject.org/examples/seismic/tutorials/01_modelling.html",
+    "https://www.devitoproject.org/examples/seismic/acoustic/accuracy.html",
+    "https://github.com/devitocodes/devito/blob/main/examples/seismic/model.py",
+    "https://github.com/devitocodes/devito/blob/main/examples/seismic/acoustic/operators.py"
+  ],
+  "completion_state": "Goal2 remains unproved. A boundary diagnostic is a concrete software-verification advance; final realistic-physics choice and several independent geological environments still require actual evidence and student scientific decisions."
+}

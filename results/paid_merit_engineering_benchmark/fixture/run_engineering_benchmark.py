@@ -1,0 +1,481 @@
+"""Hash-gated AI-authored engineering benchmark, not student final design.
+
+Default invocation never loads project arrays or executes a trajectory.
+"""
+
+from __future__ import annotations
+
+import argparse
+import datetime
+import gzip
+import hashlib
+import importlib
+import importlib.util
+import json
+import math
+import os
+import platform
+import shutil
+import sys
+from pathlib import Path
+from time import perf_counter
+
+
+class StaleFreeze(RuntimeError):
+    pass
+
+
+class AnchoredClock:
+    """Replay the real pre-preparation start once; thereafter read actual time."""
+
+    def __init__(self, started, clock=perf_counter):
+        self.started, self.clock, self.calls = float(started), clock, 0
+        self.last = self.started
+
+    def __call__(self):
+        value = self.started if self.calls == 0 else float(self.clock())
+        self.calls += 1
+        if not math.isfinite(value) or value < self.last:
+            raise ValueError("anchored clock must be finite and monotone")
+        self.last = value
+        return value
+
+
+def sha(raw):
+    return hashlib.sha256(raw).hexdigest()
+
+
+def utc():
+    return datetime.datetime.now(datetime.timezone.utc).isoformat()
+
+
+def json_bytes(value):
+    return (json.dumps(value, indent=2, allow_nan=False)+"\n").encode()
+
+
+def exclusive(path, raw):
+    with path.open("xb") as stream:
+        stream.write(raw)
+
+
+def atomic_owned_json(path, value):
+    temporary = path.with_name(path.name+".tmp")
+    exclusive(temporary, json_bytes(value))
+    temporary.replace(path)
+
+
+def new_gzip(path, value):
+    temporary = path.with_name(path.name+".tmp")
+    with temporary.open("xb") as stream:
+        with gzip.GzipFile(fileobj=stream, mode="wb", mtime=0) as compressed:
+            compressed.write(json_bytes(value))
+    temporary.replace(path)
+
+
+def persist_run_progress(output, row, context):
+    """Bounded current-run metadata; never serialize the growing cohort here."""
+    started = perf_counter()
+    keys = ["run_index", "original_schedule_index", "case_index", "repetition", "order_position",
+            "method", "measurement_mode", "target_ratio", "status", "phase", "started_utc",
+            "global_started_perf_counter", "pre_control_elapsed_seconds", "preparation_physics_costs",
+            "initial_sha256", "verified_input_hashes_before", "finished_utc", "phase_at_failure", "error"]
+    payload = {key: row[key] for key in keys if key in row}
+    payload["scope"] = "bounded single-run progress only; no cohort history or trajectory arrays"
+    atomic_owned_json(output/row["progress_artifact"], payload)
+    elapsed = perf_counter()-started
+    counter = "timed_progress_write_seconds" if context.get("inside_timed_interval", False) else "outside_timer_progress_write_seconds"
+    context[counter] = context.get(counter, 0.)+elapsed
+
+
+def load_addendum(path):
+    raw = Path(path).read_bytes()
+    addendum = json.loads(raw)
+    if (addendum["schema_version"] != 1 or addendum["student_final_research_design"] is not False
+            or addendum["competition_evidence"] is not False
+            or addendum["schedule"]["total_runs"] != 360
+            or addendum["schedule"]["target_ratios"] != [.5, .25]):
+        raise ValueError("not the frozen software execution scope")
+    return addendum, raw
+
+
+def load_candidate(root, addendum):
+    root = Path(root).resolve()
+    directory = root/addendum["original_candidate_relative_directory"]
+    for name, expected in addendum["candidate_files_sha256"].items():
+        if sha((directory/name).read_bytes()) != expected:
+            raise StaleFreeze("original candidate bytes changed:"+name)
+    # Explicit root only. Existing foreign wavecert modules are rejected by the
+    # candidate's executing-module receipt, rather than silently reloaded.
+    sys.path.insert(0, str(root/"src"))
+    name = "_wavecert_paid_merit_engineering_candidate"
+    spec = importlib.util.spec_from_file_location(name, directory/"__init__.py",
+        submodule_search_locations=[str(directory)])
+    if spec is None or spec.loader is None:
+        raise RuntimeError("candidate package cannot be loaded")
+    package = importlib.util.module_from_spec(spec)
+    sys.modules[name] = package
+    spec.loader.exec_module(package)
+    helpers = importlib.import_module(name+".verification")
+    adapter = importlib.import_module(name+".adapter")
+    if (Path(helpers.__file__).resolve() != directory/"verification.py"
+            or Path(adapter.__file__).resolve() != directory/"adapter.py"):
+        raise StaleFreeze("foreign candidate package import")
+    protocol, protocol_raw = helpers._read_protocol(directory/"protocol.json")
+    if sha(protocol_raw) != addendum["original_candidate_protocol_sha256"]:
+        raise StaleFreeze("historical protocol changed")
+    module = importlib.import_module("wavecert.optimization.paid_descent")
+    return helpers, adapter, module.TrajectoryOptions, protocol, protocol_raw
+
+
+def make_schedule(protocol, original_schedule):
+    if len(original_schedule) != 120:
+        raise ValueError("original 120-run schedule is required")
+    rows = []
+    for mode, ratio in [("anytime", None), ("target_stop_0.5", .5), ("target_stop_0.25", .25)]:
+        for old in original_schedule:
+            row = dict(old)
+            row.update(run_index=len(rows), original_schedule_index=old["run_index"],
+                measurement_mode=mode, target_ratio=ratio,
+                identity=dict(protocol["identities"][old["case_index"]]), status="unattempted")
+            rows.append(row)
+    return rows
+
+
+def hash_inputs(root, protocol):
+    root = Path(root).resolve()
+    found = {}
+    for relative, expected in protocol["inputs_sha256"].items():
+        path = (root/relative).resolve()
+        if not path.is_relative_to(root):
+            raise StaleFreeze("input path escapes repository")
+        raw = path.read_bytes()
+        actual = sha(raw)
+        if actual != expected:
+            raise StaleFreeze("pinned input changed:"+relative)
+        found[relative] = dict(sha256=actual, bytes=len(raw))
+    return found
+
+
+def static_receipt(root, helpers, protocol_raw, addendum_path, addendum_raw, addendum):
+    if Path(addendum_path).read_bytes() != addendum_raw:
+        raise StaleFreeze("execution addendum changed")
+    receipt = helpers.source_receipt(root, protocol_raw)
+    if receipt["repository_source_sha256"] != addendum["production_source_sha256"]:
+        raise StaleFreeze("production source changed")
+    directory = Path(root)/addendum["original_candidate_relative_directory"]
+    for name, expected in addendum["candidate_files_sha256"].items():
+        if sha((directory/name).read_bytes()) != expected:
+            raise StaleFreeze("candidate file changed:"+name)
+    return dict(candidate=receipt, driver_sha256=sha(Path(__file__).read_bytes()),
+        addendum_sha256=sha(addendum_raw))
+
+
+def end_to_end_target(result, row, return_wall, maximum_budget):
+    ratio = row["target_ratio"]
+    if ratio is None:
+        return dict(applicable=False, eligible=False, elapsed_seconds=None,
+            reason="anytime internal checkpoints are not completed-return target evidence")
+    initial, final = result.get("initial_objective"), result.get("final_objective")
+    finite = initial is not None and final is not None and math.isfinite(initial) and math.isfinite(final)
+    reached = bool(finite and initial > 0 and final <= ratio*initial)
+    reason = "target_returned_in_budget"
+    if finite and initial == 0:
+        reason = "already_solved_trivial_initial_objective_not_ratio_speedup"
+    elif not result.get("costs_complete", False) or result["status"] == "failed":
+        reason = "failed_or_incomplete_method"
+    elif not reached:
+        reason = "unreached_"+result["status"]
+    elif result["status"] != "objective_target":
+        reason = "target_not_reported_as_complete_target_stop"
+    elif return_wall > maximum_budget:
+        reason = "target_returned_after_budget"
+    eligible = reason == "target_returned_in_budget"
+    internal = [p for p in result["checkpoints"] if p["within_budget"]
+        and finite and initial > 0 and p["objective"] <= ratio*initial]
+    return dict(applicable=True, configured_ratio=ratio, reached_by_returned_objective=reached,
+        eligible=eligible, elapsed_seconds=return_wall if eligible else None,
+        observed_return_wall_seconds=return_wall, observation_end_seconds=return_wall,
+        internal_first_target_checkpoint_seconds=None if not internal else internal[0]["elapsed_seconds"],
+        stopping_status=result["status"], reason=reason,
+        initial_objective=initial, final_objective=final)
+
+
+def execute_timed(root, protocol, row, helpers, adapter, options_class, *,
+                  check_static, context, phase, clock=perf_counter):
+    """Perform each preparation for real, anchored into the unchanged engine."""
+    started = float(clock())
+    context.update(global_started=started, phase="source_checks", preparation_physics_costs=None,
+                   inside_timed_interval=True)
+    phase("source_checks", dict(global_started_perf_counter=started))
+    check_static()
+    phase("input_loading_and_verification", {})
+    context["phase"] = "input_loading_and_verification"
+    input_started = clock()
+    cases = helpers.load_raw_inputs(root, protocol)
+    input_finished = clock()
+    context["verified_input_hashes_before"] = dict(protocol["inputs_sha256"])
+    phase("refinement_initialization_observation_preparation",
+        dict(verified_input_hashes_before=dict(protocol["inputs_sha256"])))
+    context["phase"] = "refinement_initialization_observation_preparation"
+    case_started = clock()
+    prepared = helpers.prepare_case(cases[row["case_index"]], protocol)
+    case_finished = clock()
+    context["prepared"] = prepared
+    context["preparation_physics_costs"] = prepared["preparation_costs"]
+    options_values = dict(protocol["trajectory"])
+    options_values["relative_objective_target"] = row["target_ratio"]
+    options = options_class(**options_values)
+    prefix = float(clock()-started)
+    phase("policy_call", dict(pre_control_elapsed_seconds=prefix,
+        preparation_physics_costs=prepared["preparation_costs"], initial_sha256=prepared["initial_sha256"]))
+    context["phase"] = "policy_call"
+    anchored = AnchoredClock(started, clock)
+    result = adapter.run_control(row["method"], physics_config=protocol["physics"],
+        model=prepared["initial"], blocks=prepared["blocks"], receivers=prepared["receivers"],
+        options=options, lower_bound=protocol["squared_slowness_bounds"][0],
+        upper_bound=protocol["squared_slowness_bounds"][1], rank=protocol["rank"],
+        sweeps=protocol["fixed_sweeps"], gmres=protocol["gmres"], lbfgsb=protocol["lbfgsb"], clock=anchored)
+    returned = float(clock())
+    context.update(result=result, phase="returned", returned_perf_counter=returned,
+                   inside_timed_interval=False)
+    wall = returned-started
+    engine = float(result["total_online_seconds"])
+    if engine < 0 or engine > wall+1e-8 or prefix > engine+1e-8:
+        raise ValueError("engine/global timing scopes do not agree")
+    timing = dict(actual_start_to_control_return_seconds=wall,
+        engine_reported_seconds_including_preparation=engine,
+        engine_finish_tail_seconds=max(0., wall-engine), pre_control_elapsed_seconds=prefix,
+        input_loading_verification_seconds=float(input_finished-input_started),
+        refinement_initialization_observation_seconds=float(case_finished-case_started),
+        preparation_seconds_are_subsets_not_added_again=True,
+        timed_progress_write_seconds=context.get("timed_progress_write_seconds", 0.),
+        progress_write_scope="bounded per-run phase instrumentation; subset of measured elapsed, never added twice",
+        actual_return_overshoot_seconds=max(0., wall-options.budget_seconds),
+        engine_budget_overshoot_seconds=result["budget_overshoot_seconds"],
+        fully_returned_within_max_budget=bool(wall <= options.budget_seconds and result.get("costs_complete", False)
+            and result["status"] != "failed"), anchored_clock_calls=anchored.calls,
+        preparation_physics_costs=prepared["preparation_costs"],
+        preparation_costs_scope="subset of paid total wall, separate from engine oracle/proxy counters")
+    event = end_to_end_target(result, row, wall, options.budget_seconds)
+    return dict(result=result, prepared=prepared, timing=timing, end_to_end_target=event)
+
+
+def save_core(output, row, timed, helpers, endpoints, internal_targets):
+    import numpy as np
+
+    prefix = f"run_{row['run_index']:03d}"
+    models = dict(prepared_initial=timed["prepared"]["initial"], returned_final=timed["result"]["final_model"])
+    models.update({f"internal_budget_{i}": e["model"] for i, e in enumerate(endpoints)})
+    model_path = output/(prefix+"_models.npz")
+    with model_path.open("xb") as stream:
+        np.savez_compressed(stream, **models)
+    core = dict(schedule=row, trajectory=helpers.compact_trajectory(timed["result"]),
+        timing=timed["timing"], end_to_end_target=timed["end_to_end_target"],
+        internal_budget_endpoints=helpers.compact_trajectory(endpoints),
+        internal_target_events=internal_targets,
+        internal_scope="internal accepted states, not completed API-return evidence",
+        no_paid_checkpoint_rule="initial fallback/offline quality has no matched-budget credit when completed_paid_checkpoint=false",
+        integrity_scope="core preserved before post-return integrity/audit; performance credit additionally requires terminal run status complete and final_study_eligible=true",
+        models_artifact=model_path.name, models_sha256=sha(model_path.read_bytes()),
+        offline_audit_separate_artifact=prefix+"_audit.json.gz")
+    core_path = output/(prefix+"_core.json.gz")
+    new_gzip(core_path, core)
+    return dict(core_artifact=core_path.name, core_sha256=sha(core_path.read_bytes()),
+        models_artifact=model_path.name, models_sha256=sha(model_path.read_bytes()))
+
+
+def offline_reconstruction_quality(timed, endpoints):
+    """Truth is available only to this post-return diagnostic, never a policy."""
+    import numpy as np
+
+    truth = timed["prepared"]["truth"]
+
+    def errors(model):
+        return dict(relative_squared_slowness_L2=float(np.linalg.norm(model-truth)/np.linalg.norm(truth)),
+            relative_physical_velocity_L2=float(np.linalg.norm(1/np.sqrt(model)-1/np.sqrt(truth))
+                / np.linalg.norm(1/np.sqrt(truth))))
+
+    internal = []
+    for endpoint in endpoints:
+        eligible = bool(endpoint["completed_paid_checkpoint"])
+        internal.append(dict(budget_seconds=endpoint["budget_seconds"], eligible_paid_checkpoint=eligible,
+            quality=errors(endpoint["model"]) if eligible else None,
+            scope="internal-state diagnostic only, not completed API-return evidence"))
+    target_eligible = bool(timed["end_to_end_target"].get("eligible", False))
+    return dict(internal_budget_states=internal,
+        fully_returned_target_state=errors(timed["result"]["final_model"]) if target_eligible else None,
+        fully_returned_target_eligible=target_eligible, truth_used_for_policy=False)
+
+
+def run(root, output, addendum_path, expected_addendum_sha256, expected_driver_sha256):
+    bootstrap_started = perf_counter()
+    root, output = Path(root).resolve(), Path(output).resolve()
+    addendum, addendum_raw = load_addendum(addendum_path)
+    driver_raw = Path(__file__).read_bytes()
+    if sha(addendum_raw) != expected_addendum_sha256 or sha(driver_raw) != expected_driver_sha256:
+        raise ValueError("reviewed driver/addendum hashes differ before any project input read")
+    if output.exists():
+        raise FileExistsError("existing outputs are never reused or overwritten")
+    if not output.parent.is_dir() or shutil.disk_usage(output.parent).free < addendum["disk"]["initial_free_bytes"]:
+        raise OSError("insufficient initial disk reserve or missing output parent")
+    helpers, adapter, options_class, protocol, protocol_raw = load_candidate(root, addendum)
+    for name, expected in protocol["threads"].items():
+        if os.environ.get(name) != expected:
+            raise ValueError("fixed one-thread environment required:"+name)
+    freeze = static_receipt(root, helpers, protocol_raw, addendum_path, addendum_raw, addendum)
+    schedule = make_schedule(protocol, helpers.scheduled_runs(protocol))
+    if len(schedule) != 360:
+        raise ValueError("complete360-run schedule required")
+    output.mkdir()
+    exclusive(output/"driver_source.py", driver_raw)
+    exclusive(output/"execution_addendum.json", addendum_raw)
+    exclusive(output/"historical_candidate_protocol.json", protocol_raw)
+    exclusive(output/"schedule.json", json_bytes(schedule))
+    status = dict(status="running", started_utc=utc(), source_before=freeze,
+        original_candidate_authorization_flag=False, student_final_research_design=False,
+        all360_scheduled_before_project_input_loading=True, runs=schedule,
+        environment=dict(python=sys.version, platform=platform.platform(),
+            threads={name: os.environ.get(name) for name in protocol["threads"]}))
+    status["shared_bootstrap_seconds"] = perf_counter()-bootstrap_started
+    atomic_owned_json(output/"status.json", status)
+
+    def check_static():
+        if static_receipt(root, helpers, protocol_raw, addendum_path, addendum_raw, addendum) != freeze:
+            raise StaleFreeze("source/addendum freeze changed")
+
+    try:
+        for row in schedule:
+            context = {}
+            row.update(status="attempted", phase="before_preparation", started_utc=utc(), final_study_eligible=False,
+                progress_artifact=f"run_{row['run_index']:03d}_progress.json")
+            atomic_owned_json(output/"status.json", status)
+            persist_run_progress(output, row, context)
+
+            def phase(name, detail, *, row=row, context=context):
+                context["phase"] = name
+                row.update(phase=name, **detail)
+                persist_run_progress(output, row, context)
+
+            try:
+                if shutil.disk_usage(output).free < addendum["disk"]["per_run_reserve_bytes"]:
+                    raise OSError("per-run disk reserve exhausted; remaining schedule unattempted")
+                timed = execute_timed(root, protocol, row, helpers, adapter, options_class,
+                    check_static=check_static, context=context, phase=phase)
+                row.update(phase="returned", engine_status=timed["result"]["status"],
+                    timing=timed["timing"], end_to_end_target=timed["end_to_end_target"])
+                atomic_owned_json(output/"status.json", status)
+                endpoints, internal_targets = helpers.budget_endpoints(timed["result"], timed["prepared"], protocol)
+                artifact_started = perf_counter()
+                context["phase"] = "core_artifact"
+                row.update(save_core(output, row, timed, helpers, endpoints, internal_targets))
+                row["core_artifact_seconds"] = perf_counter()-artifact_started
+                phase("post_return_integrity", {})
+                integrity_started = perf_counter()
+                check_static()
+                hashes_after = hash_inputs(root, protocol)
+                row["post_return_integrity_seconds"] = perf_counter()-integrity_started
+                row["verified_input_hashes_after"] = hashes_after
+                phase("offline_audit", {})
+                offline_started = perf_counter()
+                audit = helpers.offline_audit(timed["result"], timed["prepared"], protocol, endpoints)
+                quality = offline_reconstruction_quality(timed, endpoints)
+                row["offline_audit_wall_seconds"] = perf_counter()-offline_started
+                audit_file = output/f"run_{row['run_index']:03d}_audit.json.gz"
+                artifact_started = perf_counter()
+                new_gzip(audit_file, dict(offline_audit=audit,
+                    credited_reconstruction_quality=quality,
+                    budget_endpoint_diagnostics=helpers.compact_trajectory(endpoints),
+                    matched_budget_eligible=[e["completed_paid_checkpoint"] for e in endpoints],
+                    policy_access=False, scope="after API return; never part of policy or internal checkpoint credit"))
+                row.update(status="complete", phase="finished", final_study_eligible=True, audit_artifact=audit_file.name,
+                    audit_sha256=sha(audit_file.read_bytes()),
+                    audit_artifact_seconds=perf_counter()-artifact_started)
+            except Exception as exc:
+                context["inside_timed_interval"] = False
+                row.update(status="failed", phase_at_failure=context.get("phase", row.get("phase")),
+                    error=f"{type(exc).__name__}: {exc}",
+                    finished_utc=utc(),
+                    preparation_physics_costs=context.get("preparation_physics_costs"),
+                    unavailable_counters_are_unknown=True)
+                if "global_started" in context:
+                    row["observed_elapsed_until_failure_seconds"] = perf_counter()-context["global_started"]
+                failure = output/f"run_{row['run_index']:03d}_failure.json.gz"
+                failure_record = dict(record=row, returned_trajectory_metadata_retained="result" in context,
+                    final_study_eligible=False)
+                if "result" in context:
+                    failure_record["completed_trajectory"] = helpers.compact_trajectory(context["result"])
+                new_gzip(failure, failure_record)
+                row.update(failure_artifact=failure.name, failure_sha256=sha(failure.read_bytes()))
+                persist_run_progress(output, row, context)
+                if context.get("phase") == "input_loading_and_verification":
+                    # A source-data mismatch invalidates the study, rather than
+                    # being counted as hundreds of unrelated method failures.
+                    hash_inputs(root, protocol)
+                if isinstance(exc, (StaleFreeze, OSError)):
+                    raise
+            except BaseException as exc:
+                context["inside_timed_interval"] = False
+                row.update(status="interrupted", phase_at_failure=context.get("phase", row.get("phase")),
+                    error=f"{type(exc).__name__}: {exc}", finished_utc=utc(),
+                    preparation_physics_costs=context.get("preparation_physics_costs"),
+                    in_flight_engine_trajectory_not_recoverable="result" not in context,
+                    in_flight_engine_counters_unknown="result" not in context)
+                if "global_started" in context:
+                    row["observed_elapsed_until_interrupt_seconds"] = perf_counter()-context["global_started"]
+                if "result" in context:
+                    failure = output/f"run_{row['run_index']:03d}_interrupted_return.json.gz"
+                    new_gzip(failure, dict(record=row,
+                        completed_trajectory=helpers.compact_trajectory(context["result"]),
+                        returned_trajectory_metadata_retained=True, final_study_eligible=False))
+                    row.update(interrupted_return_artifact=failure.name, interrupted_return_sha256=sha(failure.read_bytes()))
+                persist_run_progress(output, row, context)
+                atomic_owned_json(output/"status.json", status)
+                raise
+            row["finished_utc"] = utc()
+            persist_run_progress(output, row, context)
+            atomic_owned_json(output/"status.json", status)
+            print(json.dumps(dict(run_index=row["run_index"], mode=row["measurement_mode"], method=row["method"],
+                status=row["status"], engine_status=row.get("engine_status"),
+                return_wall=None if "timing" not in row else row["timing"]["actual_start_to_control_return_seconds"],
+                end_to_end_target=row.get("end_to_end_target"))), flush=True)
+            del context
+        check_static()
+        final_inputs = hash_inputs(root, protocol)
+        status.update(status="complete_engineering_benchmark", finished_utc=utc(),
+            source_after=freeze, input_hashes_after=final_inputs,
+            runs_attempted=360, runs_with_execution_failures=sum(r["status"] == "failed" for r in schedule),
+            returned_engine_failures=sum(r.get("engine_status") == "failed" for r in schedule),
+            research_success_claim=False, independent_geology_claim=False)
+        atomic_owned_json(output/"status.json", status)
+        complete = dict(status, artifacts={p.name: sha(p.read_bytes()) for p in output.iterdir() if p.is_file()})
+        atomic_owned_json(output/"complete_receipt.json", complete)
+        return complete
+    except BaseException as exc:
+        status.update(status="failed_or_interrupted", finished_utc=utc(), error=f"{type(exc).__name__}: {exc}")
+        atomic_owned_json(output/"status.json", status)
+        raise
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--addendum", type=Path, default=Path(__file__).with_name("execution_addendum.json"))
+    parser.add_argument("--execute-engineering-benchmark", action="store_true")
+    parser.add_argument("--repo", type=Path)
+    parser.add_argument("--output", type=Path)
+    parser.add_argument("--expected-addendum-sha256")
+    parser.add_argument("--expected-driver-sha256")
+    args = parser.parse_args(argv)
+    _, raw = load_addendum(args.addendum)
+    if not args.execute_engineering_benchmark:
+        print(json.dumps(dict(status="metadata_only_no_project_execution", addendum_sha256=sha(raw),
+            driver_sha256=sha(Path(__file__).read_bytes()))))
+        return 0
+    if not all((args.repo, args.output, args.expected_addendum_sha256, args.expected_driver_sha256)):
+        parser.error("execution requires repository/new-output paths and both reviewed hashes")
+    receipt = run(args.repo, args.output, args.addendum, args.expected_addendum_sha256, args.expected_driver_sha256)
+    print(json.dumps(dict(status=receipt["status"], attempted=receipt["runs_attempted"])))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

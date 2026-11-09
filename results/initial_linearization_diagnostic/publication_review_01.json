@@ -1,0 +1,110 @@
+{
+  "case_identity_labels_match_old_witnesses": true,
+  "case_rows": 8,
+  "created_utc": "2026-11-08T09:18:22.211615+00:00",
+  "document_sha256": {
+    "docs/initial_linearization_diagnostic.md": "f0ab4d5fd6c4ff2ada0da3391894cfa58b6a4ab6c69004bd4aba089316bf1ba3",
+    "docs/stability_anchor_feasibility.md": "37f11117a1a72f00d6ca357729128c62a3ec3af99f24be3c9f8f3338431e1a53"
+  },
+  "external_literature_URLs_not_reaudited": [
+    "https://doi.org/10.1016/j.cma.2010.02.011",
+    "https://arxiv.org/abs/1503.04760",
+    "https://arxiv.org/abs/1802.03298"
+  ],
+  "independent_scalar_audit": {
+    "checks": 1600,
+    "issues": 0,
+    "receipt_sha256": "1d028269d575bc4408a265cb16ee938f537a2313a5de568437a705374605de73"
+  },
+  "local_links_checked": [
+    {
+      "exists": true,
+      "href": "bp_heterogeneous_verification.md",
+      "source": "docs/initial_linearization_diagnostic.md"
+    },
+    {
+      "exists": true,
+      "href": "../results/initial_linearization_diagnostic/run_01/complete_receipt.json",
+      "source": "docs/initial_linearization_diagnostic.md"
+    },
+    {
+      "exists": true,
+      "href": "../results/initial_linearization_diagnostic/README.md",
+      "source": "docs/initial_linearization_diagnostic.md"
+    },
+    {
+      "exists": true,
+      "href": "../results/initial_linearization_diagnostic/figures/initial_linearization_all8.png",
+      "source": "docs/initial_linearization_diagnostic.md"
+    },
+    {
+      "exists": true,
+      "href": "../results/stability_anchor_feasibility/README.md",
+      "source": "docs/stability_anchor_feasibility.md"
+    },
+    {
+      "exists": true,
+      "href": "../../docs/initial_linearization_diagnostic.md",
+      "source": "results/initial_linearization_diagnostic/README.md"
+    },
+    {
+      "exists": true,
+      "href": "figures/initial_linearization_all8.png",
+      "source": "results/initial_linearization_diagnostic/README.md"
+    },
+    {
+      "exists": true,
+      "href": "../../docs/stability_anchor_feasibility.md",
+      "source": "results/stability_anchor_feasibility/README.md"
+    }
+  ],
+  "lower_ratio_smaller_cases": [
+    0,
+    1,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "native_archive": {
+    "JSON": 2,
+    "all64_receiver_file_hashes_match": true,
+    "receiver_NPZ": 64,
+    "total_bytes": 814928
+  },
+  "native_work_metadata": {
+    "LU_factorizations": 128,
+    "RHS_columns": 1152,
+    "case_frequency_rows": 64,
+    "optimizer_calls": 0,
+    "stages": 192
+  },
+  "new_tests_PDE_solves_optimizer_BP_array_reads": 0,
+  "pooled_lower_ratio_above1": true,
+  "resolved_findings": [
+    "Initial missing README/BP href checks raced root publication writes; all final local links now exist.",
+    "Root changed unescaped pooled norm pipes to Unicode double bars; all final table rows/headers have7 columns."
+  ],
+  "retained_case2_exception": true,
+  "review_method": "Published Markdown/JSON, canonical file hashes, file sizes and local href checks; no NPZ arrays decoded. Unicode minus is normalized only for numeric display matching; no numeric document correction was needed.",
+  "role": "AI independent narrow publication review; no document edits or new numerical experiment",
+  "rounded_case_table_cells_checked": 48,
+  "rounded_pooled_table_cells_checked": 12,
+  "scope_findings": [
+    "Numerical integrity and physical acceptance remain separate; physical fields null.",
+    "Case2/all8 pooling retained; no favorable case/frequency selection.",
+    "No causal cycle-skipping/remedy/independent-cohort/novelty/certificate-transfer claim.",
+    "192zero sufficient bounds do not imply singularity; ordinary-FP anchors remain nonformal and final snapshots do not establish intermediate reuse or timing."
+  ],
+  "stability_review": {
+    "all_candidates_zero": true,
+    "all_unclamped_Decimal_margins_negative": true,
+    "anchors_available": 32,
+    "endpoints": 48,
+    "frequency_endpoint_instances": 192,
+    "largest_signed_margin": "-4.6325072261370615086238307582690380828273966263401365598031519560486272412146552475192710883347",
+    "review_receipt_sha256": "9e166de698db9270a15e32b5dde4426966719ee83fbffe4a4673ddcf086a3c79"
+  },
+  "status": "CLEAR"
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "role": "existing model-selection validation, development only; not held-out/test/field data",
+  "archive": "validation_inverse_cases.npz",
+  "archive_sha256": "be429def325b741d415546167b8e13b5d52a3304d79f36efd3945a58363177db",
+  "original_source_path": "results/gradient_development/labels/validation_inverse_cases.npz",
+  "source_provenance_path": "results/pod_development/input_provenance.json",
+  "source_provenance_sha256": "8e835f911df2525fd159ffceaa8213fd4bf647fc2c71a920af9baa95086a23ad",
+  "dataset_manifest_sha256": "e297ab5196bd50142db76a575c78355587bba04f6b381a0ef8700c950d04155a",
+  "role_assignment_sha256": "30fed6e30e07a1b54d17f3ae9511d06eac6f44c69fcb57b6ee588f2ade65ef14",
+  "n_validation_slices": 8,
+  "n_validation_parents": 4,
+  "blocks_per_slice": 24,
+  "identities": [
+    {
+      "slice_id": "gom_148_il_0236",
+      "parent_id": "gom_148"
+    },
+    {
+      "slice_id": "gom_148_xl_0768",
+      "parent_id": "gom_148"
+    },
+    {
+      "slice_id": "gom_151_il_0247",
+      "parent_id": "gom_151"
+    },
+    {
+      "slice_id": "gom_151_xl_0857",
+      "parent_id": "gom_151"
+    },
+    {
+      "slice_id": "seam_005_il_0596",
+      "parent_id": "seam_005"
+    },
+    {
+      "slice_id": "seam_005_xl_0795",
+      "parent_id": "seam_005"
+    },
+    {
+      "slice_id": "seam_011_il_0522",
+      "parent_id": "seam_011"
+    },
+    {
+      "slice_id": "seam_011_xl_0866",
+      "parent_id": "seam_011"
+    }
+  ],
+  "derivation": "From the existing parent-isolated SubsurfaceGen-derived validation fixture: velocity-smoothed float32 model inputs, original raw float32 teacher observations, independently recomputed float64 full aggregate adjoint gradients/objectives. No new cases or measurements.",
+  "physics": {
+    "shape": [
+      24,
+      24
+    ],
+    "spacing": 0.05,
+    "damping_width": 3,
+    "damping_strength": 2.0
+  },
+  "attribution": {
+    "authors": "Joseph Stitt, Pratik Rathore, Madeleine Udell, and Ching-Yao Lai (2026)",
+    "paper": "SubsurfaceGen: Procedural Generation of Field-Scale Earth Models and Seismic Data",
+    "paper_url": "https://arxiv.org/abs/2605.30541",
+    "dataset_url": "https://huggingface.co/datasets/subsurfacegen/field-scale-dataset",
+    "source_revision": "c612dc2255f6dc4a139bb667f12eaaedf61a8d3d",
+    "data_license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "code_license": "MIT, separately"
+  },
+  "scope": "Eight correlated existing validation slices from four parents. Statistical units are not eight IID geological sites. No calibration/test/external arrays included."
+}

@@ -1,0 +1,41 @@
+{
+  "recorded_utc": "2026-11-08T01:37:35.113611+00:00",
+  "role": "New isolated native cached-merit coupled bound and norm-free fixed-sweep proposal; classical identities, ordinary floating point, no priority claim.",
+  "source_files_sha256": {
+    "cached_merit_certificate.py": "354dad46c2574c6dab205a3eca862e159f885557b29531aeda42a09935942fda",
+    "test_cached_merit_certificate.py": "a7431d6b182cf22b93075cf30ebbe532949d0827578bfad7111b01a824961de0"
+  },
+  "api": {
+    "proposal": "fixed_sweep_missing_fields(expected_oracle,snapshot,normfree_contexts,sweeps=0,initial=None) -> readonly per-frequency Lambda/V fields and query-cost receipt. Initialization is coarse Galerkin if absent.",
+    "bound": "evaluate_cached_merit(expected_oracle,snapshot,missing_fields,stability_contexts,direction=None) -> CachedMeritCertificate. Direction defaults to unit negative SUM of all physical frequency/source contributions; an explicit real shared direction is supported.",
+    "owner_admission": "Calls expected_oracle.validate_merit_fields(snapshot) first. Native oracle owns issued-type/identity registry, immutable byte manifests, current/receipt/operator/model/geometry/data checks. No factor handles/private receipt reads occur in evaluator.",
+    "binding": "Result includes full safe native snapshot.to_dict manifest: model/operator/geometry/data/receipt hashes, field/receiver/data hashes, configuration, accuracy scope. Controlled synthetic issuers are only used to stress mathematical paid-field errors in tests."
+  },
+  "proof": "Retain measured residuals of paid U or Z=C.T, missing Lambda or V, and all three state/adjoint-product directional terms. C-route uses repeated-slot w*a² source forcing and existing forward/adjoint rho equality only for real point sampling+complex-symmetric Ar. No conjugate Z in physical center.",
+  "affine_defects": {
+    "U": "F=Rhat_slots−(P Uhat−D); effective rLambda=rawrLambda+PᵀF.",
+    "C": "F=Rhat_unique−[diag(w)*a*Zhat[source].T−JᵀD]; effective rV=rawrV+Qsrc Fᴴ. This includes the affine mismatch rather than accepting and ignoring it. Oracle rejects any unissued/tampered export before this computation."
+  },
+  "cost_scope": {
+    "included": "Bound residual stencils, source/receiver injection columns, paid/missing residual columns, bound contractions, batched transform/solve dispatches and logical columns, all diagnostic column norms through ops.norm_columns, Frobenius defect norms, survey vector norms and directional dot products. Existing coarse receiver/source constants charge their own reduced RHS/eigen work.",
+    "excluded_from_query_delta": "Current merit, approximate missing-field generation and full stability setup. These must be charged by the owning experiment and are explicitly false in result.costs. Proposal helper reports only norm-free query delta; owner charges constructor/prepare. No lower total-time claim follows from a smaller bound-query count.",
+    "units": "Counters are executed work categories, not FLOPs. Batched legacy counts measure logical columns; dispatches remain separate. No online fine RHS/factorization is executed by this bound/helper."
+  },
+  "failure_scope": "Zero proposal/direction never establishes true stationarity. Unavailable context keeps descriptive physical proposal but aggregate bound/upper null; nonfinite arithmetic returns incomplete numeric abstention with strict-JSON null guards. Invalid owner/model/operator/data/shape is rejected. Pointwise negative upper derivative does not authorize clipped displacement or finite step; paid strict merit acceptance remains separate.",
+  "validation": {
+    "status": "14 passed -Werror, independently repeated by scientific agent; Ruff with actual repository config passed",
+    "synthetic_only": true,
+    "cases": [
+      "Both native actual issued export routes U(s<r) and C(r<s), complex observations, repeated point receivers, non-square grid",
+      "Independent sparseLU physical gradients and objective finite differences for two shared frequencies",
+      "Controlled deliberately perturbed paidU/Z, affine residual defects, and simultaneous errors: component+directional bounds, all3terms and w*a² source forcing",
+      "Native foreign/replaced model/data/field exports rejected; collocation zero additional exact-gradient RHS retained",
+      "Norm-free fixed missing-field sweeps, paid transform/solve columns and no certificateSVD/fineRHS",
+      "Zero/no-stationarity, NaN/overflow/incomplete numeric abstention, contextmodel mismatch and unavailable frequency"
+    ],
+    "ruff_command": "cd new-phase-staging && python -m ruff check --config ../wavecert-fwi/pyproject.toml cached_merit_certificate.py test_cached_merit_certificate.py"
+  },
+  "no_project_outcomes_or_timings": true,
+  "main_source_edits": false,
+  "status": "Source math independently cleared; no project evaluation/timing/mainwrite"
+}

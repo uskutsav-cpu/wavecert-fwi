@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.6.0 — 2026-11-07
+
+- Correct finite-sample calibration, parent-isolated data roles and integrity checks.
+- Add complete fixed-state repair-path scoring and parent-aware uncertainty summaries.
+- Reuse bounded LU factorizations and report complete online/offline exact work.
+- Add analytical stability preflight with explicit unavailability and exact fallback.
+- Add verified finite-step acceptance and fixed-budget trajectory controls.
+- Guard observable acquisition-support mismatches without claiming universal OOD detection.
+- Correct Devito fixed sampling, padding gradients, and optimizer final-state restoration.
+- Add independent spectral/manufactured-solution checks, learned/data CI and reproducible studies.
+- Bundle an attributed compact SubsurfaceGen-derived fixture; retain hard/negative results.
+- Add an optional established derivative-informed baseline and disclose AI assistance.
+
 ## 0.4.0 — Phase 7–9 trajectories, production readiness, and OOD stress tests
 
 - added complete multi-iteration FWI trajectories for exact, neural-only, global-fallback, and selective WaveCert policies;

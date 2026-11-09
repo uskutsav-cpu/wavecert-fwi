@@ -1,0 +1,203 @@
+{
+  "actions_not_performed": [
+    "No --fetch invocation, real BP velocity download, project velocity-array load, numerical benchmark, PDE solve, or main repository edit.",
+    "No candidate activation or new root GO decision."
+  ],
+  "all_frozen_v2_pins_unchanged": true,
+  "default_cli": {
+    "protocol_sha256": "a84ce64dcac7f93f035007daf313cb2ab7bde713800d10d9d37d812f12c836f4",
+    "source_sha256": "7a499a425ca495c8cffb2714af260e88e9ad929e9c6f85b0d9d7c0ef9624e28d",
+    "status": "protocol_only_no_network"
+  },
+  "executions": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 OMP_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest -q -s -W error -p no:cacheprovider --basetemp validation_01/pytest_tmp test_collect_bp2004.py",
+      "exit_code": 0,
+      "log": "pytest.log",
+      "log_identity": {
+        "bytes": 55,
+        "sha256": "482ab8dff5349d6deec7514308cec30143d3952ac40cc119eac3f18c2ba7f273"
+      },
+      "name": "pytest",
+      "session_note": "Completed synchronously; no ongoing session ID was returned.",
+      "tool_output_chunk_id": "79587a",
+      "unified_exec_session_id": null
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -m ruff check --no-cache --config ../../wavecert-fwi/pyproject.toml collect_bp2004.py test_collect_bp2004.py",
+      "exit_code": 1,
+      "log": "ruff.log",
+      "log_identity": {
+        "bytes": 988,
+        "sha256": "378e48bbdcc8f2d3ee32410ba8a2ce9ad36e1b15fc87f2e79c00f6c7c5c3f2d2"
+      },
+      "name": "ruff",
+      "session_note": "Completed synchronously; no ongoing session ID was returned.",
+      "tool_output_chunk_id": "4859c6",
+      "unified_exec_session_id": null
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 OMP_NUM_THREADS=1 /opt/miniconda3/bin/python collect_bp2004.py",
+      "exit_code": 0,
+      "log": "default_cli.log",
+      "log_identity": {
+        "bytes": 211,
+        "sha256": "018f738cdacb441587ef0647fbf39f1becf415fd3aa75600a20de93bb3efb159"
+      },
+      "name": "default_cli",
+      "session_note": "Completed synchronously; no ongoing session ID was returned.",
+      "tool_output_chunk_id": "faf7e4",
+      "unified_exec_session_id": null
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 OMP_NUM_THREADS=1 /opt/miniconda3/bin/python -W error validation_01/check_notice.py",
+      "exit_code": 0,
+      "log": "notice.log",
+      "log_identity": {
+        "bytes": 736,
+        "sha256": "a2f0f4a70ebb7a4028dd001ad77587810defc2ffefeb7c0b31fc529fd7e1bf4b"
+      },
+      "name": "notice",
+      "session_note": "Completed synchronously; no ongoing session ID was returned.",
+      "tool_output_chunk_id": "873d67",
+      "unified_exec_session_id": null
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -m ruff check --no-cache --config ../../wavecert-fwi/pyproject.toml collect_bp2004.py",
+      "exit_code": 0,
+      "log": "ruff_collector.log",
+      "log_identity": {
+        "bytes": 19,
+        "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+      },
+      "name": "ruff_collector",
+      "session_note": "Completed synchronously; no ongoing session ID was returned.",
+      "tool_output_chunk_id": "b30d60",
+      "unified_exec_session_id": null
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -m ruff check --no-cache --config ../../wavecert-fwi/pyproject.toml --select E,F test_collect_bp2004.py",
+      "exit_code": 1,
+      "log": "ruff_tests_ef.log",
+      "log_identity": {
+        "bytes": 6557,
+        "sha256": "c8d3d3c08d6608b0c584f45a205339f8a7b429191d996ac6966049c576c61c7a"
+      },
+      "name": "ruff_tests_ef",
+      "session_note": "Completed synchronously; no ongoing session ID was returned.",
+      "tool_output_chunk_id": "d0bfc4",
+      "unified_exec_session_id": null
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -m ruff check --no-cache --config ../../wavecert-fwi/pyproject.toml --select E,F --ignore E501 test_collect_bp2004.py",
+      "exit_code": 0,
+      "log": "ruff_tests_ef_repoignore.log",
+      "log_identity": {
+        "bytes": 19,
+        "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+      },
+      "name": "ruff_tests_ef_repoignore",
+      "session_note": "Completed synchronously; no ongoing session ID was returned.",
+      "tool_output_chunk_id": "5948ef",
+      "unified_exec_session_id": null
+    }
+  ],
+  "frozen_v2_expected_sha256": {
+    "README.md": "71c7dd67024a7c28bc31233c30ff8f532417859b3c9604189929f38edb9895e2",
+    "collect_bp2004.py": "7a499a425ca495c8cffb2714af260e88e9ad929e9c6f85b0d9d7c0ef9624e28d",
+    "documentation_manifest.json": "c98ba723da343ad75e36ba0c4549b666d7c2143b18521bacf516ca605d00b05d",
+    "original_BP2004_READMES.pdf": "e29b003fc2161c44d2b9f04448195e58ebe6f476a195b31c3be77440adb60e24",
+    "protocol.json": "a84ce64dcac7f93f035007daf313cb2ab7bde713800d10d9d37d812f12c836f4",
+    "test_collect_bp2004.py": "245555dddb95eab9e0712603ac99cf8fbb03c62562374f495e6e061dc96fe44f"
+  },
+  "generated_notice_checks": {
+    "all_checks_passed": true,
+    "checks": {
+      "BP_and_Billette_acknowledgment": true,
+      "ancestor_identity": true,
+      "correct_title": true,
+      "incorrect_title_absent": true,
+      "no_independent_sites": true,
+      "one_composite_ancestor_notice": true,
+      "original_documentation_preserved": true,
+      "original_doi": true,
+      "original_terms_no_new_license": true,
+      "protocol_single_ancestor": true,
+      "unchanged_original_document_sha256": true,
+      "unchanged_protocol_sha256": true
+    },
+    "numpy": "2.4.3",
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]",
+    "scope": "Generated notice and original terms/one-ancestor metadata only; no fetch, velocity input or PDE."
+  },
+  "lint": {
+    "collector_repository_config": "PASS",
+    "frozen_files_edited_to_satisfy_lint": false,
+    "full_bundle_repository_config": "FAIL: inherited I001 import ordering in byte-identical v1 test_collect_bp2004.py; no collector diagnostics",
+    "supplemental_EF_initial_invocation": "FAIL: --select E,F re-enabled 13 E501 diagnostics previously ignored by repository config; full log retained",
+    "supplemental_EF_with_repository_E501_ignore_explicit": "PASS"
+  },
+  "post_validation_files": {
+    "README.md": {
+      "bytes": 2613,
+      "sha256": "71c7dd67024a7c28bc31233c30ff8f532417859b3c9604189929f38edb9895e2"
+    },
+    "collect_bp2004.py": {
+      "bytes": 23386,
+      "sha256": "7a499a425ca495c8cffb2714af260e88e9ad929e9c6f85b0d9d7c0ef9624e28d"
+    },
+    "documentation_manifest.json": {
+      "bytes": 336,
+      "sha256": "c98ba723da343ad75e36ba0c4549b666d7c2143b18521bacf516ca605d00b05d"
+    },
+    "original_BP2004_READMES.pdf": {
+      "bytes": 24615,
+      "sha256": "e29b003fc2161c44d2b9f04448195e58ebe6f476a195b31c3be77440adb60e24"
+    },
+    "protocol.json": {
+      "bytes": 5144,
+      "sha256": "a84ce64dcac7f93f035007daf313cb2ab7bde713800d10d9d37d812f12c836f4"
+    },
+    "test_collect_bp2004.py": {
+      "bytes": 11973,
+      "sha256": "245555dddb95eab9e0712603ac99cf8fbb03c62562374f495e6e061dc96fe44f"
+    }
+  },
+  "recorded_utc": "2026-11-08T05:15:42.530519+00:00",
+  "remaining_gate": "Root freeze and execution decision after review of this actual validation evidence; actual BP layout/content remains unobserved.",
+  "runtime": {
+    "numpy": "2.4.3",
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]"
+  },
+  "scope": "AI software validation of citation-only BP2004 v2 acquisition candidate, not scientific design, actual-source decoding, model evaluation or acquisition authorization.",
+  "status": "validated_with_inherited_test_style_warning_no_payload_fetch",
+  "synthetic_tests": {
+    "actual_log": "pytest.log",
+    "inputs": "Generated synthetic bytes and mock HTTP only; no BP velocity input.",
+    "passed": 35,
+    "warnings_are_errors": true
+  },
+  "terminal_gate": {
+    "file": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/paid_merit_engineering_terminal_observation.json",
+    "identity": {
+      "bytes": 878,
+      "sha256": "a4cbad2f9370f54baf6ec0f3929c4426d8c51fab46d144c864d7ec3f5f1cc31b"
+    },
+    "root_confirmed_360_run_benchmark_terminal_before_validation": true
+  },
+  "validation_support_files": {
+    "README_Modification.generated.md": {
+      "bytes": 1152,
+      "sha256": "897e0baa2441bdd52645769004c4e6f413789ec4eeb0eb8b60568cf39e7bf6f7"
+    },
+    "check_notice.py": {
+      "bytes": 2362,
+      "sha256": "489e8597e28f621de91820b7fe2a2d35f1908e704b6d45f0f5621623049656fc"
+    },
+    "commands.sh": {
+      "bytes": 1629,
+      "sha256": "254bd1e32542fb0d03d1a6b039b9c286ab98c84427ad86d4f1e1a249ecd922a9"
+    }
+  },
+  "working_directory": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/bp2004_acquisition_v2"
+}

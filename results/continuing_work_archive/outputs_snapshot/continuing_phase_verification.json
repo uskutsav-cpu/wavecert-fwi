@@ -1,0 +1,588 @@
+{
+  "updated_utc": "2026-11-09T06:52:01.722047+00:00",
+  "scope": "Current evidence and held development status; not final scientific verification",
+  "published_head": "83b17ef08acf63fcbc19a0c354fe82ca395c350a",
+  "draft_PR5": true,
+  "main_unmerged": true,
+  "production_source": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "production_files": 161,
+  "actual_full_cohort": {
+    "runs": 96,
+    "all_eligible": true,
+    "exit_code": 0,
+    "complete_sha256": "261a3b0c6ce4c5a8533339ccee201a1ac6c23e74a60c6989897cda9f1251423b",
+    "actual_API_return_min_seconds": 7.524792541997158,
+    "actual_API_return_max_seconds": 7.713639624998905,
+    "stage_statuses": {
+      "budget_exhausted": 144
+    },
+    "callback_cap_hits": 0
+  },
+  "audit": {
+    "version": 2,
+    "source": "c5b0ddaebb20aa39bece11894cb23edb26bcda6600d1c8beb8004115484ae45b",
+    "report": "af3dd02c6b2e3ca6d7cf79e001a80c4af226ecdc0122aff45fc7eaf54106eb2b",
+    "checks": 41398,
+    "scalar_comparisons": 1632,
+    "issues": 0,
+    "actual_exit": 0,
+    "failed_V1_preserved": true
+  },
+  "portable_local": {
+    "actual_local_parent_exit": 0,
+    "parent_tests": 1,
+    "child_tests": 108,
+    "suite_counts": [
+      17,
+      24,
+      15,
+      15,
+      37
+    ],
+    "all_child_exits": 0,
+    "fail_error_skip": 0,
+    "source": "4715f767f50821798f35020ab0e70d94d8934ce9293c9e6cffbc64a5dc636b5e",
+    "public_test": "fc0162657c0023699f12166005310d423a9dd1724c887d176a32eebe698dc29d",
+    "first_attempt": {
+      "passed": 86,
+      "setup_errors": 22,
+      "reason": "missingtempdirectory",
+      "one_line_fix": true
+    }
+  },
+  "CI": [
+    {
+      "run": 42540137515,
+      "commit": "8d7b7fce53d61234ef542522dd98604fbc0c7e33",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        128913003176,
+        128913003345,
+        128913003377,
+        128913003456
+      ],
+      "all28_numerical_reports_verified": true,
+      "receipt_path": "work/ci_v2_8d7b7fc_jobs/summary.json",
+      "receipt_sha256": "e83983ff85854e2f61c01c876251ed412bab96b054f3c132c15637b232efb4e6"
+    },
+    {
+      "run": 42541935073,
+      "commit": "1983664d5e033dab1b131b80d9aaf2358fc6c5de",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        128918554947,
+        128918555238,
+        128918555264,
+        128918555266
+      ],
+      "all28_numerical_reports_verified": true,
+      "receipt_path": "work/ci_publication_1983664_jobs/terminal_summary.json",
+      "receipt_sha256": "59f961a1c3627aba4108f66f30c52e822a68c53be9419f8dcad6d32ef3720382"
+    }
+  ],
+  "scientific_goals_complete": false,
+  "CI_notes": "Current83b push+PR bothterminalsuccess:8jobs/64reports verified fromfullfetchedlogs; currentparsedreports/logs infunctionsstore pendinglocalstorage. Historical29164reportfile retainedunderitsoriginalhash.",
+  "active_external_jobs": [],
+  "BP_V2": {
+    "actual_replay_exit": 0,
+    "own_forward_solves": 3,
+    "own_tangent_solves": 6,
+    "same_BP_ancestor": true,
+    "complete_sha256": "286cfc45594415a7138d363ec18d913946d5c373a8fcc6a23922298145f2a846",
+    "canonical_manifest_sha256": "2d878a87d947e8b4f1e9e69a5e487ab772e3de1156511a714a0a3b012fad3b35",
+    "manufactured_controls": 27,
+    "independent_audit_checks": 305,
+    "scalar_comparisons": 87,
+    "Boolean_comparisons": 36,
+    "issues": 0,
+    "public_parent_actual_local_exit": 0,
+    "parent_source_sha256": "e9334842bfdc97a12d9e490b94e7d1fceba1075dafc07049c35831fe13b057c7",
+    "native_inputs_shared": true,
+    "native_solution_outputs_used_during_own_solves": false,
+    "old97f_CI_remains_failed": true
+  },
+  "Overthrust": {
+    "status": "COMPLETED_RAW_ANONYMOUS_PLANE_ONLY",
+    "actual_exit": 0,
+    "rows": 207,
+    "shape": [
+      207,
+      801
+    ],
+    "model_body_bytes": 663228,
+    "actual_total_body_bytes": 686662,
+    "requests": 259,
+    "complete_sha256": "e5446474e9fdb2aeac075a495131cc0221c656b0bd92916a0636f8c8e5fcf82c",
+    "raw_plane_sha256": "23a3efe53b0cec5a83832e57b8db07fe0cba3e5d339ad244a9ce3743931e2907",
+    "independent_integrity_checks": 3186,
+    "integrity_failures": 0,
+    "disclosure_findings": 1,
+    "ETag_note": "Record JSON has ETag2; file ranges have none. Producer raw blanket wording qualified externally.",
+    "unit_and_axis_interpretation": "conditional primary JUDI/HDF5.jl context; no conversion",
+    "PDE_calls": 0,
+    "physical_acceptance": null,
+    "full_file_checksum_verified": false
+  },
+  "prior_candidate": {
+    "source_sha256": "4aa248fd3862533390ad918f4ad3f70d02fcdebcdc8d784494d375c935536163",
+    "author_controls": 39,
+    "independent_math_controls": 39,
+    "adapter_controls": 21,
+    "driver_controls": 30,
+    "launcher_controls": 50,
+    "driver_sha256": "7c7fc525894dbd38899ad6ee46bff8a0a0d996ea2ef61d5da2e6ce8b4320d882",
+    "protocol_sha256": "92433c9d7b9d2990799f3a81707f6d04f63784a1820d3f109804a83b484ccfa6",
+    "schedule_sha256": "930e8ecf6bdbb78901b2330c0e1e71a470c7b914067feaf3c0ba3316442be150",
+    "criteria_sha256": "b06e9618b4d980ed0aa08c05a0da136d0ba3e37ecc422be4df411a5f3b96edf6",
+    "proposed48study": "COMPLETED_AUDITED_NEGATIVE_0_OF_8_GATE",
+    "novelty_claim": false,
+    "remote_branch": "research-prior48-remote-01",
+    "next": "Source-reviewedcached-J/TRFnativeverification before anewfullypaidstudy.",
+    "post_auditor_controls": 75,
+    "post_auditor_source_sha256": "57946398ebd6d3eaad35ea73491ee50f3bf00c64ef42d6067a1a2fd522c040a4",
+    "meaningful_recovery_gate_pass": false,
+    "actual_child_exit": 0,
+    "eligible_returns": 48,
+    "prior_beats_baseline_cases": 5,
+    "prior_worse_than_initial_cases": 5
+  },
+  "latest_CI": {
+    "run": 42567824425,
+    "run_id": 42567824425,
+    "event": "pull_request",
+    "commit": "83b17ef08acf63fcbc19a0c354fe82ca395c350a",
+    "status": "completed",
+    "conclusion": "success",
+    "jobs": [
+      128998119700,
+      128998119839,
+      128998119888,
+      128998119967
+    ],
+    "numerical_reports": 32,
+    "all4_pass": true
+  },
+  "CI_history_current": [
+    {
+      "run": 42540137515,
+      "commit": "8d7b7fce53d61234ef542522dd98604fbc0c7e33",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        128913003176,
+        128913003345,
+        128913003377,
+        128913003456
+      ],
+      "all28_numerical_reports_verified": true,
+      "receipt_path": "work/ci_v2_8d7b7fc_jobs/summary.json",
+      "receipt_sha256": "e83983ff85854e2f61c01c876251ed412bab96b054f3c132c15637b232efb4e6"
+    },
+    {
+      "run": 42541935073,
+      "commit": "1983664d5e033dab1b131b80d9aaf2358fc6c5de",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        128918554947,
+        128918555238,
+        128918555264,
+        128918555266
+      ],
+      "all28_numerical_reports_verified": true,
+      "receipt_path": "work/ci_publication_1983664_jobs/terminal_summary.json",
+      "receipt_sha256": "59f961a1c3627aba4108f66f30c52e822a68c53be9419f8dcad6d32ef3720382"
+    }
+  ],
+  "marmousi_private_header": {
+    "status": "PRIVATE_NATIVE_ZIP_QUARANTINED_HEADER_ONLY",
+    "actual_exit": 0,
+    "ZIP_bytes": 2305936,
+    "ZIP_sha256": "366785977e33e3c9460b855ceba5b71b5ca32ecd46c2ef229b1ff43b5bfc23fc",
+    "model_header_bytes": 3600,
+    "velocity_samples_decoded": 0,
+    "independent_header_checks": 46,
+    "header_geometry": "1.25m spacing, depth0\u20133500m, X0\u201317000m",
+    "amplitude_units": "UNRESOLVED_FOR_EXACT_NATIVE_ZIP",
+    "license": "AGL Level3-Limited; no explicit CC-BY linkage for chosen ZIP; private payload retained",
+    "PDE_calls": 0,
+    "physical_acceptance": null
+  },
+  "all_four_requirements_proved": false,
+  "previous_goal_turn_classification": "PROGRESS: actual48priorstudy/audit/independent3902/standalonereplay published291; fixedrecoverygate0/8,all48eligible; new75parentall8CIjobs/all64reportsverified; nextnativeGN/checkpointsourcepreparation active.",
+  "current_next_actions": [
+    "Complete independenttwo-returncase0 auditor, review9-controlserialparent, freeze targetLinuxroute/control/runtime/source/criteria andexactpilotGO; thenexecute fixedtwo-return integrationpilot only.",
+    "Fix top-level wheelMETADATA selection in separateenvV3 source, retain failedfirstattempt, review controls andfreshone-shotenvironment02; inspect actualclosure/source13/import17 evidence beforeanyseparatecheckpoint23nativeGO.",
+    "Beforeanyfull48 recoveryexperiment, review objective residual/reference evidence andfullypaidcost/gates; demonstrate useful recovery beyondinitialization/strongbaselines, notjustdatafit.",
+    "Resolve unit/provenance andboundary/grid/time acceptance across independentmodelancestries; preserveprivateheader-onlyMarmousistatus.",
+    "Establish specific useful contribution beyond priorcertification andstudent-owned scientificinterpretation/defense withaccurateAIassistance disclosure."
+  ],
+  "current_prior48_remote_control": {
+    "run_id": 42549126689,
+    "job_id": 128940530197,
+    "source_commit": "9778fd3e998c8eb7dde8915789f5ea612ab71422",
+    "status": "completed",
+    "conclusion": "success",
+    "actual_tests": 162,
+    "retained_inventory_files": 21,
+    "actual_project_study_in_control": false,
+    "terminal_review_sha256": "bd231f51b796d2d66727afc1eb63aff6271e508cfcd6fda4eb1129798b9601e3",
+    "prior_failed_control_run_preserved": 42548463638
+  },
+  "current_authority_note": "Top-level current_*, held_next_components, active_project_pilot_preparation and active_checkpoint_environment_preparation are current. Older nested phase/pending/live fields are preserved historical snapshots, not active process handles.",
+  "current_prior48_remote_study": {
+    "run_id": 42549962037,
+    "job_id": 128943091873,
+    "source_commit": "e8c144c69e5a5d7b71668329427bd3c88cba26b1",
+    "source_bundle_commit": "9778fd3e998c8eb7dde8915789f5ea612ab71422",
+    "run_attempt": 1,
+    "status": "completed",
+    "conclusion": "success",
+    "actual_child_exit": 0,
+    "planned_runs": 48,
+    "completed_runs": 48,
+    "all_eligible": true,
+    "return_min_seconds": 7.520710139000016,
+    "return_max_seconds": 7.581680227999982,
+    "successful_cases": 0,
+    "required_cases": 6,
+    "harm_gate_cases_pass": 8,
+    "prior_beats_baseline_cases": 5,
+    "both_arms_worse_than_initial_cases": 5,
+    "best_prior_case_median_improvement_percent": 4.098555231407475,
+    "continuation_gate_pass": false,
+    "complete_receipt_sha256": "ca69e5e36b2c18727af9d45de84a9d2c37310ceb4d8e1c7069898f4c2b04de85",
+    "retained_audit_report_sha256": "c3b528d942cba432b38be6bd2f46139402b058687e9e220781e10d57a4161baa",
+    "retained_audit": {
+      "actual_exit": 0,
+      "checks": 51613,
+      "numeric_comparisons": 1040,
+      "issues": 0
+    },
+    "independent_actual_reproduction": {
+      "checks": 3902,
+      "numeric_comparisons": 1298,
+      "issues": 0,
+      "receipt_sha256": "1cf74abb40f1ef849d350372219bbe9082f1509f8408f6ea6e2025303e545e17"
+    },
+    "archive_manifest_sha256": "d7eabd189147a06d3ee12d2a95a48cfc44db3f36b066310fed0db49c0698657f",
+    "archive_files": 321,
+    "archive_content_bytes": 9449337,
+    "actual_consumed_costs_distinct": true,
+    "old_platform_timings_pooled": false,
+    "scientific_goals_complete": false
+  },
+  "current_publication_CI": [
+    {
+      "run_id": 42567815864,
+      "event": "push",
+      "commit": "83b17ef08acf63fcbc19a0c354fe82ca395c350a",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        128998093335,
+        128998093489,
+        128998093547,
+        128998093610
+      ],
+      "actual_reports": 32
+    },
+    {
+      "run_id": 42567824425,
+      "event": "pull_request",
+      "commit": "83b17ef08acf63fcbc19a0c354fe82ca395c350a",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        128998119700,
+        128998119839,
+        128998119888,
+        128998119967
+      ],
+      "actual_reports": 32
+    }
+  ],
+  "held_next_components": {
+    "cached_J_TRF": {
+      "status": "V2_NATIVE_INTEGRATION_PASS_ONE_CONSTANT_MODEL_FULL_MATCHED_COST_DRIVER_STILL_SOURCE_ONLY",
+      "manufactured_controls": 44,
+      "source_sha256": "f613370617d7e0bd7815cf441dd8ba5f41816ad4791275e86f33de228657c79b",
+      "builder_sha256": "622a624f54b17d9d882da9d88af547c516b26ee42c87d80ec68d5fe99a687ec1",
+      "review_sha256": "ad8bbd253716e3ebdf94445c7a066ee2aa3ef1c412521537a6167af1e3981e76",
+      "native_PDE_calls": null,
+      "full_project_driver": false,
+      "deadline_memory_envelope": false,
+      "expected_added_receiver_map_work": "8freshLU+112receiverRHS perpoint; no borrowednativeLU",
+      "public_manifest_sha256": "adfd1299dcb90745c4853ccce93a1a80f07bf8b11c5154a73d9d90d70701f883",
+      "manufactured_controls_v2": 46,
+      "builder_v2_sha256": "7e1c79f99df6e68dda185552f0ff6f480b5fd4823061e7581952cafbd759cb11"
+    },
+    "checkpoint": {
+      "status": "SOURCE_REVIEW_CLEAR_ENVIRONMENT_AND_ACTUAL_NATIVE_COMPARISON_UNEXECUTED",
+      "manufactured_controls": 15,
+      "worker_sha256": "31969bd3e072dcbf554e0cd98f022b0e35dd5438ef12566f9c23fa98eee76e9b",
+      "protocol_sha256": "08f262f638da9a72b262d252ba8e3eaab4452d772d8c80606bc44e7137fba866",
+      "review_sha256": "75853a3850ed1b53d0e4f63c5a673c358e7032870b32199e95c1d31bb5f2756f",
+      "native_PDE_calls": 0,
+      "external_23child_controller": false,
+      "local_pyrevolve_installed": false,
+      "public_manifest_sha256": "83220f343ee1023ef2fb5116e6a8bc101ce3bd402854830f4bf98e2e45f03579"
+    }
+  },
+  "goal_status": "ACTIVE; all four scientific requirements incomplete",
+  "current_CI_reports_sha256": "503b79d6856e190aa57c63d80a4e9527ba077844ba070fd0a918ed5ade8dfb14",
+  "current_CI_reports_count": 64,
+  "cached_J_native_verification": {
+    "status": "NATIVE_DERIVATIVE_INTEGRATION_AND_RETAINED_ARRAY_AUDIT_PASS_ONE_CONSTANT_MODEL_ONLY",
+    "stage": "work/new-phase-staging/cached_jacobian_native_verification_candidate",
+    "verifier_sha256": "c660a025badbebd5e9d9a4d6ddbfc684c95193c6111f2de349f25112976d1d6b",
+    "protocol_sha256": "3b608f942f3d08f40705e8203375fc7e24763592bd27d7cc70bac12b351391e6",
+    "review_sha256": "f551a8bf61ad118bb6a839cd35b3ce19d55adbe0c95528ec33a79e7f2f0ed478",
+    "manufactured_controls": 14,
+    "numerical_imports": 0,
+    "native_PDE_calls": null,
+    "registered_constant_model_grid": [
+      49,
+      49
+    ],
+    "fixed_real_data_terms": 1920,
+    "expected_disjoint_LU": 96,
+    "expected_disjoint_forward_RHS": 480,
+    "expected_disjoint_tangent_RHS": 48,
+    "expected_disjoint_adjoint_RHS": 48,
+    "expected_disjoint_stability_RHS": 272,
+    "runtime": "LinuxPython3.11.18/NumPy2.4.6/SciPy1.17.1",
+    "external_runner_source_in_progress": true,
+    "execution_authorized": true,
+    "root_GO_created": true,
+    "first_failed_top_level_dispatches_attempted": 10,
+    "first_failed_top_level_dispatches_returned": 9,
+    "first_failed_known_completed_disjoint_prefix": {
+      "factorizations": 16,
+      "forward_rhs": 96
+    },
+    "native_protocol_v2_sha256": "d1b6986d23d9840a1e66aa48a766a2cc624d2ee18a92f327d259067423fb8e85",
+    "native_builder_v2_sha256": "7e1c79f99df6e68dda185552f0ff6f480b5fd4823061e7581952cafbd759cb11",
+    "complete_disjoint_physics_counts": {
+      "adjoint_rhs": 48,
+      "factorizations": 96,
+      "forward_rhs": 480,
+      "stability_rhs": 272,
+      "tangent_rhs": 48
+    },
+    "independent_checks": 887,
+    "independent_numeric_comparisons": 108,
+    "independent_issues": 0,
+    "matched_cost_reconstruction_demonstrated": false
+  },
+  "checkpoint23_controller": {
+    "status": "SOURCE_REVIEW_CLEAR_16_CONTROLLER_35_COMPARATOR_CONTROLS_NATIVE_UNEXECUTED",
+    "stage": "work/new-phase-staging/checkpoint_pilot23_controller_candidate",
+    "controller_sha256": "ef0b545705fa339659d4ebefecc83bdb9261407418da9c6cce259a78c5d2513c",
+    "comparison_sha256": "379cea02a64509a7e3ec15e3c614d47ed8812863ea41904211376c1b5aa6688b",
+    "bundle_sha256": "0a73d9c6f2a536698129712a19adf191b5ad6c0b548404d55850d09870e05237",
+    "held_registration_sha256": "529b80728ad7330e9580330997821727243cb552168624b6df0effd50a19e8e4",
+    "handoff_sha256": "1556214c7b174c87408680464120621951e577ebc8a768869354fdd68ed6370b",
+    "independent_controller_review_sha256": "bf4bc6cecf5c5111ddc5aa8cfbcf3a752c59cc7539266c1b03609e13b6688cd3",
+    "actual_controller_dummy_tests": 16,
+    "actual_comparator_synthetic_tests": 35,
+    "native_workers_started": 0,
+    "runtime_prepared": false,
+    "execution_authorized": false,
+    "runtime_preparation_blocker": "PublishedDevito4.8.23requiresNumPy<=2.4.3 while frozenprotocolpins2.4.6; no environmentinstall/nativeGO; versionedruntimecorrectionneeded"
+  },
+  "next_execution_gate": "Finish/review final2-slot parent+independent auditor; newtargetLinux controls/runtime/source/input/routefreeze and exactpilotGO beforeanycase0 reconstruction. Separatefresh reviewed environment-preparation-only attempt may follow wheelmetadata fix; no nativecheckpointGO.",
+  "cached_J_native_linux_route": {
+    "status": "NATIVE_DERIVATIVE_INTEGRATION_AND_RETAINED_ARRAY_AUDIT_PASS_ONE_CONSTANT_MODEL_ONLY",
+    "run_id": 42562956777,
+    "job_id": 128983168801,
+    "commit": "3b2f9b3ab024068eb618c699f41265bd37a89aa2",
+    "tree": "c11513bca931d0bd030e7b17ba36439a55c45286",
+    "branch": "research-cached-j-native-02",
+    "parent": "2918a47c68ac8bee3d33e532c21a96d335d1718a",
+    "all27_public_blobs_verified": true,
+    "route_manifest_sha256": "58bbd9646313954d46ebbc3676a007a1c1938c5b48d9bf4e85ab0341d9b42368",
+    "controller_sha256": "bf4c9d82c5af61e63b161c9a3073a783c0c028bc99123589c81a678caea1a0a6",
+    "root_GO_sha256": "4459907bf06162ca7a50c170a708a4b3743b48beee3142867bdfc4e08879445e",
+    "root_freeze_sha256": "75eeab5b6c01adf47c6caa8ce99fa2eff997ee95ba308b6ce53adff5a57ce872",
+    "activation_registration_sha256": "404a7996bb374eac41e514b998eb3e294c86294a9096c75d02bcae5ef1200811",
+    "component_builder_sha256": "7e1c79f99df6e68dda185552f0ff6f480b5fd4823061e7581952cafbd759cb11",
+    "native_protocol_sha256": "d1b6986d23d9840a1e66aa48a766a2cc624d2ee18a92f327d259067423fb8e85",
+    "mandatory_remote_controls": 60,
+    "actual_remote_control_result": "60PASS0FAIL_ERROR_SKIP",
+    "actual_native_exit": 0,
+    "numeric_criteria_unchanged_from_v1": true,
+    "local_route_controls": 14,
+    "local_component_controls": 46,
+    "root_GO_created": true,
+    "execution_authorized": true,
+    "automatic_retry": false,
+    "scientific_goals_complete": false,
+    "actual_native_result": "154SELF_CHECKS_AND887_INDEPENDENT_ARRAY_CHECKS_PASS",
+    "root_GO_consumed": true,
+    "independent_array_audit_report_sha256": "1ef4baa3f0324b36c1178652d765e2845776c9349e0d2638adf86845b76e6a64"
+  },
+  "cached_J_native_linux_route_V1_failed": {
+    "status": "ACTUAL58PASS_NATIVE_EXIT2_UNHASHABLE_OWNER_BEFORE_FIRST_MAP_DISPATCH",
+    "run_id": 42561616207,
+    "job_id": 128979062258,
+    "commit": "9fd2372a391f9dc23355a1139b818588448627d2",
+    "tree": "455be8c0508ce45caa79f67b848541da08aa596c",
+    "branch": "research-cached-j-native-01",
+    "parent": "2918a47c68ac8bee3d33e532c21a96d335d1718a",
+    "controller_sha256": "3f5ca85195a08cc08ceb55dd0f75b00655a11de819fe8039bd0616c2fff414b1",
+    "route_manifest_sha256": "c42d300d5fd23c48ff4572abc814e4556d7a1c7ca742c2bc766065f5469fc85b",
+    "independent_route_review_sha256": "79432e0694c1c6478e18981cdfabf49692fcad5368b7f28be6868bf427961e5b",
+    "root_GO_sha256": "2fd8106a28a795d44c6fdf95251938c5d1cf095a0075d4b8382c34d844374a48",
+    "root_freeze_sha256": "706a1760f4875419cffb276e432c1fbd148aae304c056700f7b253d0d074e04a",
+    "activation_registration_sha256": "596b20dc53cb8a502190e0ce6f2cbe8afda1d9fcf6ee191a2246a3af51db2ae2",
+    "local_route_stdlib_controls": 14,
+    "mandatory_remote_controls": 58,
+    "actual_remote_control_result": "58PASS0FAIL_ERROR_SKIP",
+    "actual_native_result": "FAILED_UNHASHABLE_OWNER_NO_ARRAYS",
+    "actual_native_exit": 2,
+    "execution_authorized": true,
+    "retry": false,
+    "root_GO_created": true,
+    "science_scope": "Shared-backend derivative integration only, independent numeric audit still required.",
+    "scientific_goals_complete": false,
+    "terminal_review_sha256": "60f2005ede0a4e65dccc2fd183691fd58b5a329b49c8a8c563d2eab0165bfe4f",
+    "root_GO_consumed": true,
+    "automatic_retry": false
+  },
+  "current_CI_reports_persistence": "work/ci_cachedJ_publication_83b17ef: all8fullUTF8logs/64parsedreportobjects/primaryAPIterminalmetadata retained; outputs/cached_J_publication_CI_reports.json containsall64.",
+  "current_goal_turn_classification": "PROGRESS:83b all8CI/all64reports durably retained; final10-control projectworker source reviewed; 9-control serialparent drafted; independent scalarcore12controls passed with fullauditor unfinished; actualfirstcloud environment setup passed51controls/Linuxnamespace then failed wheelmetadata inspection. No reconstruction benefit or scientific goal completion.",
+  "storage_issue": {
+    "status": "INTERMITTENT_ACTUAL_ENOSPC; BOUNDED_PYTHON_C_WRITES_RECOVERED_NOT_CAPACITY_RESOLVED",
+    "user_question_pending": true,
+    "requested": "Free>=2GB orprovideanotherdrive",
+    "task_clone_sparse_exclusions": [
+      "results/paid_merit_engineering_benchmark/run_01",
+      "results/gradient_development",
+      "results/gradient_confirmation"
+    ],
+    "all_excluded_working_copies_verified_exact_HEAD_and_Git_history_retained": true,
+    "latest_actual_write_evidence": "d46467 retained104300BZIP+311751Bpacket;791744 persistedrootreview/log/API/inventory. Sourcewriters resumed bounded work, stopping on nextactualfailure."
+  },
+  "previous_CI_reports_2918a47_sha256": "fae4ad0699bd09f8c450cdfa581f17534b460d75b626fec9844fd32960440d1c",
+  "checkpoint_runtime_contract_V2": {
+    "status": "SOURCE_AND_PUBLISHED_DIRECT_DEPENDENCY_METADATA_REVIEW_CLEAR_NO_ENVIRONMENT",
+    "review_sha256": "6b7c2c5ce0ca558da1a263ddda1a8acd3404ec3f602cb2506769d2846e278bf5",
+    "source_bundle_sha256": "c8f6cd4a69301df8a04f014746a960eb925cb6acb5346fdfc5a7d5e87901ff3c",
+    "numpy": "2.4.3",
+    "full_dependency_build_closure_established": false,
+    "runtime_installed": false,
+    "native_executed": false,
+    "GO_created": false
+  },
+  "current_publication_head": "83b17ef08acf63fcbc19a0c354fe82ca395c350a",
+  "active_project_pilot_preparation": {
+    "status": "HELD_SOURCE_PREPARATION_NO_PROJECT_EXECUTION",
+    "scope": "Onlyfixedcase0 slots0/1; full48 unavailable.",
+    "worker": {
+      "source_sha256": "9a7a5199b00d9ae28ac000a3998215a9b85d13bee209e2ec6ca2f1f7c50f7f12",
+      "runtime_source_sha256": "7e8bcf12df49fffac27bb0011570550b67bb9cd6382d844503f8a24ba299c38f",
+      "protocol_sha256": "537cb3914c2e47e5d9afa327607bbfacd992ecec8f2020b8128a5005c9b59272",
+      "manufactured_controls": 10,
+      "actual_exit": 0,
+      "receipt_sha256": "30c2f7a0945dc56fb70a8cfb6a7368eb2787cbb420dfcaa86dc5c485c0dd1d82",
+      "manifest_sha256": "3174d872c4426a27ce5b70fc8ae91dcc5e1973dc302a0928051ed5e8ac499b32",
+      "independent_review_sha256": "77514be4084170c3d098dad784af5c03a01f370a87361d9d3654391778792395",
+      "remaining_material_findings": 0
+    },
+    "parent": {
+      "status": "9_DUMMY_CONTROLS_PASS_HANDOFF_AND_REVIEW_PENDING",
+      "actual_tests": 9,
+      "actual_exit": 0,
+      "source_sha256": "09dd8da81961d03d6f5d18370e556b826f0c6696336e541a45191224080c980e"
+    },
+    "auditor": {
+      "status": "12_SCALAR_CORE_CONTROLS_PASS_WRAPPER_AND_FINAL_CONTROLS_UNFINISHED",
+      "actual_scalar_controls": 12,
+      "project_packets_decoded": 0
+    },
+    "criteria_sha256": "a13f07f86b34d4a6f8f39da7f7b9ef288d97b31fe17ea3dd3634a29de5049e56",
+    "pilot_objective_limitation": "No initial/selected nonlinear residual arrays retained by currentworker; data-only auditor can check scalar/receipt/selection consistency but cannot numerically recompute Helmholtz objective. Beforefull48 review residual retention or fullypaid postreturn common8-reference evaluation/reproduction; pilot does not establishgoal4.",
+    "root_go_created": false,
+    "actual_project_workers": 0,
+    "scientific_goals_complete": false
+  },
+  "active_checkpoint_environment_preparation": {
+    "actual_children": [
+      {
+        "actual_wait": 0,
+        "group_alive_after_cleanup": false,
+        "label": "01_namespace_dummy",
+        "pid": 2263,
+        "wall_seconds": 0.5122650299999982
+      },
+      {
+        "actual_wait": 0,
+        "group_alive_after_cleanup": false,
+        "label": "02_create_task_roots",
+        "pid": 2266,
+        "wall_seconds": 0.010230319000001487
+      },
+      {
+        "actual_wait": 0,
+        "group_alive_after_cleanup": false,
+        "label": "03_build_venv",
+        "pid": 2268,
+        "wall_seconds": 0.17035768499999904
+      },
+      {
+        "actual_wait": 0,
+        "group_alive_after_cleanup": false,
+        "label": "04_build_pip",
+        "pid": 2270,
+        "wall_seconds": 1.1813285130000004
+      },
+      {
+        "actual_wait": 0,
+        "group_alive_after_cleanup": false,
+        "label": "05_resolve_build",
+        "pid": 2293,
+        "wall_seconds": 1.5618484909999957
+      }
+    ],
+    "actual_namespace_gate_pass": true,
+    "actual_remote_controls": 51,
+    "attempt": 1,
+    "commit": "d8a2d4e818127b060aca94c62036fa952b29c651",
+    "complete_environment": false,
+    "controller_exit_evidence": "Shell step full fetchedlog and primary GitHub terminal job failure, not a fabricated root Popen wait",
+    "controller_step_exit_code": 2,
+    "explicit_PDE_or_checkpoint_children": 0,
+    "explicit_remote_body_bytes": 7183949,
+    "failure": {
+      "exception_type": "ValueError",
+      "message": "one wheel METADATA required",
+      "native_execution_authorized": false,
+      "native_use_review_clear": false,
+      "status": "ENVIRONMENT_PREPARATION_FAILED_OR_INTERRUPTED_NO_RETRY"
+    },
+    "failure_cause_inference": "All suffix-matching nested vendor dist-info METADATA entries were treated as top-level wheel metadata. Last completed wheel was setuptools84.2.1; upstream tagged source contains nested vendor metadata. Exact remote archive entries were not retained or independently inspected.",
+    "inventory_complete": true,
+    "inventory_payload_files": 44,
+    "issues": 0,
+    "job_id": 129020686732,
+    "metadata_artifact_id": 13654957408,
+    "native_use_review_clear": false,
+    "next_action": "Separate reviewed source correction and fresh one-shot environment02; preserve originalfirstattempt and no unchanged rerun.",
+    "pip_resolver_transfer_bytes": "UNKNOWN_NOT_INSTRUMENTED",
+    "read_only_checks": 76,
+    "run_id": 42575024250,
+    "schema": "checkpoint23_environment_first_attempt_root_review",
+    "scientific_goals_complete": false,
+    "status": "FAILED_BUILD_WHEEL_METADATA_INSPECTION_NO_RETRY_OR_NATIVE_APPROVAL",
+    "target_runtime_import_probe_executed": false,
+    "zip_bytes": 104300,
+    "zip_sha256": "81eca1b90ebc3108fbf310a5b46564c47f4380fa9b55d7e67657099967d50f3a",
+    "root_review_path": "work/checkpoint23_environment_remote_01/root_review.json",
+    "root_review_sha256": "70a172c1fd6a733b0d87cc24b119e2dbf903c3217a355f7c7b205f944a26c224",
+    "retained_manifest_sha256": "d7dc3fdca6a5019dae2121e82c66fa90eace514da0f159984a95bddd79df43ce",
+    "next_source_candidate": "SeparateV3 top-levelwheelMETADATA correction; freshenvironment02branch onlyafterexactcontrols/reviews. No unchanged rerun or nativeGO."
+  }
+}

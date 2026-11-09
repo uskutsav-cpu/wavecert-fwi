@@ -1,0 +1,57 @@
+{
+  "observed_utc": "2026-11-09T00:07:34.024413+00:00",
+  "actual_exec_session": 91995,
+  "actual_terminal_chunk": "91be02",
+  "actual_exit_code": 0,
+  "complete_receipt_sha256": "286cfc45594415a7138d363ec18d913946d5c373a8fcc6a23922298145f2a846",
+  "source_sha256": "5c7f59a667a3cf8cdce56d65d8055792a3311c8ea20cab1f1470ddba12bb46e0",
+  "protocol_sha256": "173873ed81968927c6a43edc3f37bdd7986aaa457582225e5df35d70948a938c",
+  "cases": [
+    {
+      "case": "upper_left",
+      "trace_relative_L2": 4.871289597762567e-14,
+      "direction_relative_L2": [
+        0.0,
+        0.0
+      ],
+      "DD_relative_error": [
+        2.6493167812001604e-15,
+        1.7430968033371306e-14
+      ],
+      "all_DD_pass": true
+    },
+    {
+      "case": "middle_center",
+      "trace_relative_L2": 2.666981482282763e-14,
+      "direction_relative_L2": [
+        0.0,
+        0.0
+      ],
+      "DD_relative_error": [
+        2.686195760953833e-14,
+        6.475897255156544e-14
+      ],
+      "all_DD_pass": true
+    },
+    {
+      "case": "lower_right",
+      "trace_relative_L2": 2.3527419977182974e-14,
+      "direction_relative_L2": [
+        0.0,
+        0.0
+      ],
+      "DD_relative_error": [
+        3.260619695090479e-14,
+        5.4138618386143267e-14
+      ],
+      "all_DD_pass": true
+    }
+  ],
+  "same3BPcrops_one_ancestor": true,
+  "new_native_PDE_calls": 0,
+  "new_own_forward_solves": 3,
+  "new_own_tangent_solves": 6,
+  "physical_acceptance": null,
+  "Linux_verification": "not yet run for V2",
+  "does_not_retroactively_pass_old_CI": true
+}

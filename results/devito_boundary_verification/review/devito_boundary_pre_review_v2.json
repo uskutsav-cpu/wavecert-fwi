@@ -1,0 +1,50 @@
+{
+  "status": "CLEAR_for_fixed_forward_only_mechanical_verification_before_outcomes",
+  "recorded_utc": "2026-11-08T02:50:02.637465+00:00",
+  "reviewer": "separate AI /root/candidate_final_review; interruption/failure subreview /root/candidate_final_review/verification_helpers_review",
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "reviewed_stage_sha256": {
+    "verify_boundary.py": "f8a522f34a3ce1be68293944dbef362ea86ae9731f28fd802eabb0434fb57cb1",
+    "protocol.json": "a83f2de93543b16af428d1fbe562f4d7db8d9df982b203a04bb0d445e93306b8",
+    "test_verify_boundary.py": "0fa49485be8f61d6f1a2b3f13ef722810e306df450d7f8099bf461134dee1b5a"
+  },
+  "cases": 7,
+  "PDE_executed_by_reviewer": false,
+  "main_files_modified": false,
+  "tests": {
+    "passed": 11,
+    "warnings": "error",
+    "exit_code": 0,
+    "command": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 python -m pytest -o addopts='' -q -s -W error -p no:cacheprovider -o tmp_path_retention_policy=failed test_verify_boundary.py",
+    "scope": "pure metrics/layout/CLI/source/output/interruption mocks; no propagation"
+  },
+  "ruff": "passed with repository pyproject config",
+  "resolved_v1_blocker": {
+    "prior_review": "devito_boundary_pre_review_v1.json",
+    "prior_runner_sha256": "664cf543eb93fa93cab18d77ca3826da481f311c21d7ad3d5ab7c5524eaf7559",
+    "original_runner_retained": "history/verify_boundary_664cf543.py.original",
+    "fix": "attempt entry appended and atomically persisted before execute_case; BaseException marks current case interrupted, persists, reraises; outer status failed; no duplicate append",
+    "regression": "mock KeyboardInterrupt checks attempt already on disk before mock propagation and interrupted failed status after, with no completion receipt or raw trace"
+  },
+  "verified_properties": [
+    "Seven cases fixed before outcomes; no physics-quality pass threshold or postoutcome selection",
+    "Matched nbl20/control101 layouts source50,50 receiver55,50; matched nbl40/control141 layouts source70,70 receiver75,70; actual vp/m/grid/node identity checked",
+    "Devito units m/ms/km-per-s, fixed1msdt,5HzRicker and1101sample axes match installed primary API; actual source/receiver time arrays and analytical Ricker integrity checked",
+    "Explicit actual source object passed to unchanged owner solver with save=False; source,vp,m,damping fingerprints checked before/after",
+    "Actual criticaldt checked, expected three-slice float64 field size checked; maximum padded grid401x401 gives nominal3859224B before halos/model/compiler",
+    "Five installed example modules pinned including source.py/utils.py; main import paths, production digest and before/after source/protocol integrity checked",
+    "Complete raw source, time, receiver and coordinate arrays retained per completed case; ordinary case errors retained and fixed remaining cases attempted; interrupts stop with retained attempt",
+    "Reference241/reference321 and matched-exterior contrasts retained with explicit norm denominators and null zero-denominator flags"
+  ],
+  "material_blockers": [],
+  "limitations": [
+    "Review permits a bounded software-verification run only; root still issues actual execution decision",
+    "Continuum image-path estimates do not prove discrete causal cleanliness; reference comparison is empirical and same-code",
+    "Trace norms are finite-record truncation diagnostics, not intrinsic absorber reflection coefficients, continuum convergence, independent implementation or broad real-world fidelity",
+    "Single homogeneous velocity/source band and geometry do not prove independent geology, certificate transfer, free-surface/PML validity, matched-cost inversion improvement or any full scientific goal",
+    "Writer cannot guarantee persistence under external disk exhaustion, abrupt OS kill or filesystem failure; no completion receipt means no completion credit",
+    "Student ownership and final research decisions are not established; separate AI review is not human reproduction"
+  ],
+  "student_final_research_design": false,
+  "scientific_goal_complete": false
+}

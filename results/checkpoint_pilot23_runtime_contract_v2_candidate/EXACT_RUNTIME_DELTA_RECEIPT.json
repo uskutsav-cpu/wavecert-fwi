@@ -1,0 +1,116 @@
+{
+  "authority": {
+    "PDE_calls": 0,
+    "environment_approved": false,
+    "execution_authorized": false,
+    "jobs": 0,
+    "package_imports": 0,
+    "pushes": 0,
+    "root_GO_created": false,
+    "runtime_install_authorized": false
+  },
+  "changes": {
+    "BUNDLE_MANIFEST.json": {
+      "same_bytes": false,
+      "v1_sha256": "0a73d9c6f2a536698129712a19adf191b5ad6c0b548404d55850d09870e05237",
+      "v2_sha256": "c8f6cd4a69301df8a04f014746a960eb925cb6acb5346fdfc5a7d5e87901ff3c"
+    },
+    "ENVIRONMENT_RECEIPT_TEMPLATE.json": {
+      "same_bytes": false,
+      "v1_sha256": "1e13494d586818afbe6b23edd4beddd0eb8250fcf4ea5dc167a3b6a7802694fa",
+      "v2_sha256": "3e451a5a65316ff006f86e77d271caf70144efce2ddb00e479239ea1ac8c9032"
+    },
+    "FROZEN_PLAN23.json": {
+      "same_bytes": false,
+      "v1_sha256": "73432d73bf988a50d3599094f8b09c89e23114450baab3592fb8154c4516626e",
+      "v2_sha256": "d37476a5ee1592a445343ac35de45a45a1de4101ee2fd586e90e465257318a1b"
+    },
+    "HELD_REGISTRATION.json": {
+      "same_bytes": false,
+      "v1_sha256": "529b80728ad7330e9580330997821727243cb552168624b6df0effd50a19e8e4",
+      "v2_sha256": "48cfe4d8df92e820815056cb54150b884a396bfc424fadc9d5ee77d367563958"
+    },
+    "comparison.py": {
+      "same_bytes": false,
+      "v1_sha256": "379cea02a64509a7e3ec15e3c614d47ed8812863ea41904211376c1b5aa6688b",
+      "v2_sha256": "b45004ba2cac1030c449695240418de4dae3aaa44f52fc5794d82a19abc398e2"
+    },
+    "control_pilot23.py": {
+      "same_bytes": true,
+      "v1_sha256": "ef0b545705fa339659d4ebefecc83bdb9261407418da9c6cce259a78c5d2513c",
+      "v2_sha256": "ef0b545705fa339659d4ebefecc83bdb9261407418da9c6cce259a78c5d2513c"
+    },
+    "controller_policy.json": {
+      "same_bytes": true,
+      "v1_sha256": "4e5e7ba52a6b59a6f792892afedd34c3e6f8dd561be21cf4e542e28fe8fee9cb",
+      "v2_sha256": "4e5e7ba52a6b59a6f792892afedd34c3e6f8dd561be21cf4e542e28fe8fee9cb"
+    },
+    "pilot23_common.py": {
+      "same_bytes": false,
+      "v1_sha256": "89d429ca486691a2f81aaee2e996fda486148c2622f14115127a4cbbe7de151e",
+      "v2_sha256": "7586f619ef65ba14ad6a0ea6d2a23e152859633f44fd9fe73f27f1aa4ea05799"
+    },
+    "worker/RUNTIME_SOURCE_PINS.json": {
+      "same_bytes": true,
+      "v1_sha256": "bfbc2e31cd4ff7ae2a0f0342dc3633c5e4dc0189daea0d06eaeb12de1040350f",
+      "v2_sha256": "bfbc2e31cd4ff7ae2a0f0342dc3633c5e4dc0189daea0d06eaeb12de1040350f"
+    },
+    "worker/pilot_accounting.py": {
+      "same_bytes": true,
+      "v1_sha256": "1b0094af99fb57e44966e18808aa80f939a2a83771ed98c53a94a5e1460f33f2",
+      "v2_sha256": "1b0094af99fb57e44966e18808aa80f939a2a83771ed98c53a94a5e1460f33f2"
+    },
+    "worker/protocol.json": {
+      "same_bytes": false,
+      "v1_sha256": "08f262f638da9a72b262d252ba8e3eaab4452d772d8c80606bc44e7137fba866",
+      "v2_sha256": "27e5a331d6bd9eff0dd6b4fa0ca1bc666c6014ed70ffb3da01821c62f83fdcbc"
+    },
+    "worker/run_checkpoint_pilot.py": {
+      "same_bytes": true,
+      "v1_sha256": "31969bd3e072dcbf554e0cd98f022b0e35dd5438ef12566f9c23fa98eee76e9b",
+      "v2_sha256": "31969bd3e072dcbf554e0cd98f022b0e35dd5438ef12566f9c23fa98eee76e9b"
+    },
+    "worker_entry.py": {
+      "same_bytes": true,
+      "v1_sha256": "045abd794d19987deace0b44fe15894d9d49532135f895e5ba46ed923e94cc82",
+      "v2_sha256": "045abd794d19987deace0b44fe15894d9d49532135f895e5ba46ed923e94cc82"
+    }
+  },
+  "exact23_slots_identical": true,
+  "math_and_criteria_source_bytes_identical_except_comparator_protocol_identity_constants": true,
+  "native_worker_bytes_identical": true,
+  "no_source_schema_change": "Same v1 structural schemas and frozen authorization labels; separately versioned candidate directory. Held cohort template remains unchanged and authorizes no cohort.",
+  "numerical_protocol_subtrees_identical": true,
+  "protocol_byte_sha256": "27e5a331d6bd9eff0dd6b4fa0ca1bc666c6014ed70ffb3da01821c62f83fdcbc",
+  "protocol_canonical_object_sha256": "7604536e8c4ee136227a336fbb700c938011e1bcd19af92645296f7e272c4dde",
+  "protocol_changed_json_paths": [
+    "/runtime/numpy"
+  ],
+  "runtime_other_than_numpy_identical": true,
+  "source13_pin_bytes_identical": true,
+  "source_pointer_substitutions": {
+    "comparison.py": [
+      {
+        "from": "08f262f638da9a72b262d252ba8e3eaab4452d772d8c80606bc44e7137fba866",
+        "to": "27e5a331d6bd9eff0dd6b4fa0ca1bc666c6014ed70ffb3da01821c62f83fdcbc"
+      },
+      {
+        "from": "db2a400346ebd1674bd31215730483eea0159e7e8058fa8ab7e7af84bd10e174",
+        "to": "7604536e8c4ee136227a336fbb700c938011e1bcd19af92645296f7e272c4dde"
+      }
+    ],
+    "pilot23_common.py": [
+      {
+        "from": "08f262f638da9a72b262d252ba8e3eaab4452d772d8c80606bc44e7137fba866",
+        "to": "27e5a331d6bd9eff0dd6b4fa0ca1bc666c6014ed70ffb3da01821c62f83fdcbc"
+      }
+    ]
+  },
+  "status": "SOURCE_ONLY_RUNTIME_CONTRACT_V2_NUMPY243_NO_GO",
+  "v1_all10_runtime_sources_verified_unchanged_after_copy": true,
+  "v1_environment_memo_handoff_sha256": "600c32eb83dc62939334e7bbdf2f89023ebca6bbcb7faaf62a1444ac872ad946",
+  "v1_source_bundle_sha256": "0a73d9c6f2a536698129712a19adf191b5ad6c0b548404d55850d09870e05237",
+  "v2_bundle_manifest_sha256": "c8f6cd4a69301df8a04f014746a960eb925cb6acb5346fdfc5a7d5e87901ff3c",
+  "v2_environment_template_sha256": "3e451a5a65316ff006f86e77d271caf70144efce2ddb00e479239ea1ac8c9032",
+  "v2_held_registration_sha256": "48cfe4d8df92e820815056cb54150b884a396bfc424fadc9d5ee77d367563958"
+}

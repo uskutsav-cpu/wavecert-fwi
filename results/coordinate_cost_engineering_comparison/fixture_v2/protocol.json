@@ -1,0 +1,220 @@
+{
+  "artifacts": "Compact gzJSON trajectory with coordinate tags; compressedNPZ requested/common initial m, initial v/parameter, final parameter and actual native-m only; no intermediate vector replay claim or raw-input duplication.",
+  "candidate_files_sha256": {
+    "__init__.py": "8f5dde1292081eedb460cc9752025c72350673a2bd705bd407a5e6fa531bf22b",
+    "adapter.py": "f793f4439551bf7614bd72421057d209f3cb353710fe06f8c13de85b44eecf61",
+    "protocol.json": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c",
+    "verification.py": "b7bee25257caf456d52932962ceba2fde00197f0a78b585cf90c138e795bba4c"
+  },
+  "common_start": {
+    "bounds": "Native bounds unchanged; VP bounds inverse-square-root reversed from native bounds, float64 without outward rounding; log actual bounds hashes and roundtrip caveat.",
+    "definition": "requested_m from unchanged helper; (v0,common_actual_m,record)=frozen start_from_slowness(requested_m); both branches actually repeat this paid preparation. Native starts common_actual_m; VP starts v0 and must map bitwise to common_actual_m.",
+    "record": "Keep requested/native-common/velocity hashes, FP difference/roundtrip flag, initial parameter/native snapshots and pair consistency. No original-m receipt reuse or hidden equivalence.",
+    "velocity_units": "km/s"
+  },
+  "competition_evidence": false,
+  "coordinate_semantics": "Raw trajectories/checkpoint/final_model are m for native arm and v for VP arm. No m-only budget/quality helper is called on VP states. Only returned final VP is converted to actual m inside API timing; intermediate vectors are compact hashes, not independently replayable.",
+  "disk": {
+    "initial_free_bytes": 268435456,
+    "per_run_reserve_bytes": 67108864
+  },
+  "failure_policy": "Full48 schedule before project input reads; attempt/progress path before work. Interrupts retain attempted row/phase/wall and all remaining unattempted rows, in-flight counters explicitly incomplete/unknown. Returned result/final parameter snapshots retained before post-return integrity/audits. Source/input/disk failure stops without auto-resume/retry or overwriting.",
+  "geometry": {
+    "blocks_per_model": 24,
+    "dirichlet_extent_km": 1.25,
+    "frequencies_hz": [
+      2.5,
+      3.0,
+      3.5,
+      4.0
+    ],
+    "mapping": "integer factor2: (old_coord+1)*2-1; C-order flatten on49 grid",
+    "original_receiver_indices": [
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69
+    ],
+    "original_shape": [
+      24,
+      24
+    ],
+    "original_source_indices": [
+      50,
+      54,
+      58,
+      61,
+      65,
+      69
+    ],
+    "original_spacing": 0.05
+  },
+  "identities": [
+    {
+      "array_index": 0,
+      "parent_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "source_file": "slices/slice_gom_148_il_0236.h5",
+      "source_sha256": "3a693c7aab525351aca671cc640afa4bed4ffb3be14b8039c40f59f2905209db"
+    },
+    {
+      "array_index": 24,
+      "parent_id": "gom_148",
+      "slice_id": "gom_148_xl_0768",
+      "source_file": "slices/slice_gom_148_xl_0768.h5",
+      "source_sha256": "6d1f16d527a9fed2e245f4d37254de75a2e430be7f4283cf65cfbfee7f1e84a1"
+    },
+    {
+      "array_index": 48,
+      "parent_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "source_file": "slices/slice_seam_011_il_0522.h5",
+      "source_sha256": "5f0982f2f87dbd40c40f758e40e14b5f898b6f8e92dde3b255433e6dfe1b958e"
+    },
+    {
+      "array_index": 72,
+      "parent_id": "seam_011",
+      "slice_id": "seam_011_xl_0866",
+      "source_file": "slices/slice_seam_011_xl_0866.h5",
+      "source_sha256": "2ac2600a3f37bda30bb9f336ebf0f82f7251d47f7ae55fa3b5810e0a616f16f8"
+    },
+    {
+      "array_index": 96,
+      "parent_id": "gom_151",
+      "slice_id": "gom_151_il_0247",
+      "source_file": "slices/slice_gom_151_il_0247.h5",
+      "source_sha256": "306380b97261c6812c45900fe6d47f4cb7b41b5851f3054f7881c2912a32c8c8"
+    },
+    {
+      "array_index": 120,
+      "parent_id": "gom_151",
+      "slice_id": "gom_151_xl_0857",
+      "source_file": "slices/slice_gom_151_xl_0857.h5",
+      "source_sha256": "157ad1e6e2bdab57496379fd54e49467816c0cd75cb4f7b3b9279a35c84da7b6"
+    },
+    {
+      "array_index": 144,
+      "parent_id": "seam_005",
+      "slice_id": "seam_005_il_0596",
+      "source_file": "slices/slice_seam_005_il_0596.h5",
+      "source_sha256": "be96babcb90440f814887f3dbe9955b3879181e92b13bc59d3da0b5beb6ac5ff"
+    },
+    {
+      "array_index": 168,
+      "parent_id": "seam_005",
+      "slice_id": "seam_005_xl_0795",
+      "source_file": "slices/slice_seam_005_xl_0795.h5",
+      "source_sha256": "ab1ebc7628336883cd518745ef117d1763e7b60e0bdcedfb35b5f94da5746204"
+    }
+  ],
+  "inputs_sha256": {
+    "data/reference/subsurfacegen_parent_split/split_manifest.csv": "30fed6e30e07a1b54d17f3ae9511d06eac6f44c69fcb57b6ee588f2ade65ef14",
+    "data/reference/subsurfacegen_parent_split/validation.npz": "36d11aba94ae9093cac888e9b28a2d01edcef1aa3a54b12f8e10269b963db2fc",
+    "data/reference/subsurfacegen_parent_split/validation_metadata.csv": "d3ce8ab6a3474a6bc17595f26b68940e7c7ad9481d8c80fb89fe04833e6996e6"
+  },
+  "lbfgsb": {
+    "function_tolerance": 1e-12,
+    "gradient_tolerance": 1e-10,
+    "maximum_corrections": 10
+  },
+  "local_dependency_sha256": {
+    "independent_saved_models.py": "807f4f2f0e0aeea1d2f61b64ee5f64a99819c38d4f6164529e664f0a235edeae",
+    "original_protocol.json": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c",
+    "velocity_oracle.py": "61dc9b2c80f7adba64154a92e4e63d716c127b81cdfb161c8267e43a08734d5c"
+  },
+  "methods": [
+    "native_m_lbfgsb",
+    "physical_v_lbfgsb"
+  ],
+  "offline_audit": {
+    "definition": "After API return, own m and physical velocity1/sqrt(actual_native_m) relativeL2 errors against prepared truth; fresh separately assembled IndependentCase per run rebuilds observations and evaluates common actual initial/final native m. No truth metric or audit enters policy/stopping.",
+    "linear_residual_maximum": 1e-09,
+    "objective_atol_initial_floor": 1e-12,
+    "objective_atol_initial_scale": 2e-12,
+    "objective_rtol": 2e-09,
+    "quality_atol": 2e-13,
+    "quality_rtol": 5e-11,
+    "scope": "Ordinary FP/sharedNumPy-SciPy-SuperLU, not continuum truth or independent geology; scalar diagnostics for all returned snapshots retained, primary credit still gated by terminal row.",
+    "source_sha256": "807f4f2f0e0aeea1d2f61b64ee5f64a99819c38d4f6164529e664f0a235edeae"
+  },
+  "original_candidate_relative_directory": "results/provisional_software_benchmark/matched_cost_pilot",
+  "physics": {
+    "damping_strength": 2.0,
+    "damping_width": 6,
+    "shape": [
+      49,
+      49
+    ],
+    "spacing": 0.025
+  },
+  "primary_credit": "Only complete/cost-complete nonfailed fully returned paid final states with actual API wall<=8s AND terminal study-eligible status after integrity/offline audit qualify. No internal checkpoint quality credit and no unpaid initial fallback credit. All48 planned rows, failures/late/unreached states remain visible.",
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "project_execution_authorized": false,
+  "reported_returned_objective_ratios": [
+    0.5,
+    0.25
+  ],
+  "role": "Prospective AI-authored provisional SOFTWARE ENGINEERING coordinate/cost comparison on already inspected development inputs",
+  "schedule": {
+    "cases": 8,
+    "repetitions": 3,
+    "seed": 2026110801,
+    "shuffle": "stdlib random.Random(seed).shuffle(two methods) per case inside repetition; paired adjacent methods; fixed case order",
+    "total_runs": 48
+  },
+  "schema_version": 1,
+  "scope": "All8 are reused development slices; SEAM IDs share an ancestor and repetitions do not create independent sites. No FNO/certificate comparison, scientific confirmation, novelty, ranking10/10, student final question/design, or completion of any of four research requirements.",
+  "squared_slowness_bounds": [
+    0.027777777777777776,
+    1.0
+  ],
+  "student_final_research_design": false,
+  "target_scope": "Diagnostic returned-final objective ratios0.5/0.25 only, never stopping targets; event time is actual API return only when reached and jointly eligible, otherwise null, never8s imputation.",
+  "threads": {
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "timing": {
+    "anchor": "Engine first clock call returns the real global start; later calls read perf_counter. Preparation is a subset, never double-added.",
+    "api_return_cap_seconds": 8.0,
+    "end": "Caller reads perf_counter immediately after complete API payload returns, after engine finish and final native conversion/hash/provenance/cost snapshot. Artifact compression/IO and offline audits are afterward.",
+    "engine_budget_seconds": 7.5,
+    "fixed_output_reserve_seconds": 0.5,
+    "progress": "Only bounded current-run progress writes inside timing; growing48-run status/history outside timing.",
+    "reserve_policy": "Fixed7.5+0.5 accounting, not a guarantee. All late API returns retained and ineligible; no reserve/budget adjustment from outcomes.",
+    "shared_bootstrap": "Imports/module verification reported once outside runs; cold per-run physics/oracle constructors remain timed.",
+    "start": "perf_counter before actual per-run source checks/input read/hash/refinement/initialization/observation preparation/common-start conversion"
+  },
+  "tolerance_scope": "Same existing maxsteps200,maxcor10,ftol1e-12,gtol1e-10 and other trajectory settings; gtol is coordinate-dependent and is not an equal physical stationarity tolerance. No new target stop, prior, algorithm, parameter tuning or positive claim.",
+  "trajectory": {
+    "absolute_objective_target": null,
+    "accepted_step_growth": 1.5,
+    "budget_seconds": 7.5,
+    "contraction": 0.5,
+    "exact_projected_stationarity_tolerance": 1e-10,
+    "initial_step": 0.002,
+    "maximum_line_search_trials": 12,
+    "maximum_step": 0.02,
+    "maximum_steps": 200,
+    "relative_objective_target": null
+  }
+}

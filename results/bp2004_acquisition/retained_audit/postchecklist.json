@@ -1,0 +1,89 @@
+{
+  "role": "AI software/provenance post-acquisition coverage checklist; source-only preparation, not an outcome audit or scientific design",
+  "status": "PREPARED_FROM_FROZEN_SOURCE_WAITING_FOR_ROOT_TERMINAL",
+  "root_execution": {
+    "session_id": 55256,
+    "output": "../bp2004_acquisition_run_01",
+    "log": "../bp2004_acquisition_execution_01.log",
+    "freeze": "../bp2004_acquisition_preexecution_freeze_v2.json",
+    "no_duplicate_fetch_or_restart": true,
+    "no_output_inspected_during_preparation": true
+  },
+  "frozen_inputs": {
+    "collector": "bp2004_acquisition_v2/collect_bp2004.py",
+    "collector_sha256": "7a499a425ca495c8cffb2714af260e88e9ad929e9c6f85b0d9d7c0ef9624e28d",
+    "protocol": "bp2004_acquisition_v2/protocol.json",
+    "protocol_sha256": "a84ce64dcac7f93f035007daf313cb2ab7bde713800d10d9d37d812f12c836f4",
+    "original_document_sha256": "e29b003fc2161c44d2b9f04448195e58ebe6f476a195b31c3be77440adb60e24"
+  },
+  "checks_after_terminal_only": [
+    {
+      "id": "terminal_identity_and_artifacts",
+      "coverage": [
+        "Require root-observed terminal status/exit and receipt status complete_acquisition_only; failure or absent output is retained as failure, not retried.",
+        "Read the preexecution freeze and compare actual command pins, saved collector_source.py/protocol.json bytes and current frozen v2 pins.",
+        "Inventory exactly six named NPY outputs plus protocol.json, collector_source.py, original_BP2004_READMES.pdf, documentation_manifest.json, README_Modification.md and receipt.json.",
+        "Independently recompute SHA256 for all eleven nonreceipt files and match receipt.artifact_sha256; separately record receipt SHA256 without a circular self-hash.",
+        "Confirm no compressed archive, uncompressed SEG-Y, full decoded velocity matrix or additional velocity outputs were retained."
+      ],
+      "evidence_strength": "Direct retained-file identity and terminal evidence; no raw payload reconstruction."
+    },
+    {
+      "id": "full_stream_integrity_receipt",
+      "coverage": [
+        "http status200, exact frozen final_url/no redirect, content_length=compressed_bytes=19533256, matching expected ETag and etag_is_not_sha256=true.",
+        "compressed_sha256 is a valid SHA256 and agrees with the terminal CLI log; Last-Modified is recorded rather than treated as a content checksum.",
+        "segy.uncompressed_bytes=42537780, valid uncompressed_sha256, gzip_members=1, gzip_isize=42537780, eight-hex-digit gzip_crc32_hex, and full_gzip_crc_and_isize_verified=true.",
+        "Layout: shape_z_x=[1911,5395], big endian, registered sample format1 or5, binary_samples_per_trace1911, extended_text_headers0, trace_stride_bytes7884, first_trace_header_offset3600 and first_sample_offset3840.",
+        "Trace sample counts belong to {0,1911}; all_samples_validated_finite_positive=true, header_coordinates_used_for_reordering=false and full_decoded_velocity_array_allocated=false."
+      ],
+      "source_basis": "fetch_bounded hashes the entire bounded HTTP body. BoundedGzipStream hashes and CRCs every decompressed chunk, validates one complete member and its footer, and parse_velocity_gzip consumes every trace/sample before finish().",
+      "evidence_strength": "Collector-supported full-stream integrity with source/test/terminal evidence. Full compressed/uncompressed SHA256, CRC and original sample decoding cannot be independently recomputed after acquisition because neither full payload is retained. Log/receipt agreement is consistency evidence from the same execution, not an independent raw re-decode."
+    },
+    {
+      "id": "lossless_retained_headers",
+      "coverage": [
+        "Strictly base64-decode the text and binary headers; verify lengths3200 and400 and independently recompute their declared SHA256 values.",
+        "Strictly base64-decode and bounded-zlib-decompress concatenated trace headers; require one completed zlib stream/no trailing bytes, length=5395*240=1294800 and matching trace_headers_bytes/SHA256.",
+        "Reparse retained binary/trace headers independently with big-endian struct fields and compare sample counts, intervals, coordinate scalars/units, revision/fixed-length flags and first/last recorded fields against the receipt.",
+        "Keep file-order interpretation explicit: trace index is x and sample index is z; header coordinates are preserved metadata and are not used to reorder the retained arrays."
+      ],
+      "evidence_strength": "Direct verification of retained lossless header serialization and schema summaries. Comparison of these headers with the original downloaded stream relies on the frozen collector's direct byte capture."
+    },
+    {
+      "id": "six_arrays_and_fixed_parent_positions",
+      "expected_windows": [
+        {"id": "upper_left", "start_z_x": [382,983], "stop_exclusive_z_x": [574,1175], "center_fraction_z_x": [0.25,0.20]},
+        {"id": "middle_center", "start_z_x": [859,2601], "stop_exclusive_z_x": [1051,2793], "center_fraction_z_x": [0.50,0.50]},
+        {"id": "lower_right", "start_z_x": [1337,4219], "stop_exclusive_z_x": [1529,4411], "center_fraction_z_x": [0.75,0.80]}
+      ],
+      "coverage": [
+        "Require exactly three crop records in frozen order and exactly two outputs per crop: ID_raw_velocity_mps.npy and ID_stride2z_velocity_mps.npy.",
+        "Load each NPY with allow_pickle=False, require no trailing file bytes, raw shape192x192, stride shape96x192, float32 little-endian C-order encoding and all values finite and strictly positive.",
+        "Independently recompute each full-file SHA256/file byte count and each C-order little-endian float32 array-byte SHA256 against both receipt maps.",
+        "Require exact array equality stride==raw[::2,::1] for all three crops; no tolerance or outcome-based choice. Combined retained array data are663552bytes, excluding NPY headers.",
+        "Require protocol/receipt raw_shape192x192, decimated_shape96x192 and stride[2,1]; independently derive starts via floor(fraction*(axis_length-1)-(window_length-1)/2), stops and all parent indices.",
+        "Derive origins=start*[6.25,12.5]m; native spacing[6.25,12.5]m, decimated spacing[12.5,12.5]m, midpoint=start+(shape-1)/2, same raw/decimated origin, and unitsm/s. Compare every recorded coordinate field.",
+        "Source inspection plus strict finite-positive rejection supports no clipping/normalization/interpolation; direct stride equality verifies the retained transform. Do not claim an independent check of raw crops against omitted original samples."
+      ],
+      "evidence_strength": "Direct retained-array hash/layout/stride checks and independent fixed-index arithmetic. Raw sample-to-parent assignment remains supported by the frozen streaming collector rather than a second decode of the full original payload."
+    },
+    {
+      "id": "original_terms_citation_and_ancestry",
+      "coverage": [
+        "Match original_BP2004_READMES.pdf byte-for-byte with the frozen publisher PDF and documentation_manifest.json, including URL, byte count24615 and expected SHA256.",
+        "Verify generated README_Modification.md contains 'The 2004 BP velocity benchmark', Billette and Brandsberg-Dahl2005, B035 and DOI10.3997/2214-4609-pdb.1.B035, BP/Frederic Billette acknowledgment, original-document preservation and no-new-license wording; reject the v1 incorrect title.",
+        "Compare generated notice with frozen v2 modification_readme() output/validated notice; require crop/decimation descriptions, velocitym/s, one composite ancestor and no independent-site/field-data/original-shot/algorithm-evaluation claim.",
+        "Require protocol, receipt and every crop ancestor_id=BP2004_Billette_BrandsbergDahl_composite_exact_velocity, independent_ancestor_count1 and crops_are_independent_parents=false.",
+        "Record provenance as one distinct named external composite synthetic ancestor with six derived arrays, not six independent geological datasets, measured field data or an independent reproduction of original BP shots."
+      ],
+      "evidence_strength": "Retained publisher documentation, source snapshot and explicit provenance consistency; no new license or scientific independence inference."
+    }
+  ],
+  "claims_excluded": [
+    "No independent raw re-download/re-decode or independent recomputation of complete stream hashes/CRC after the full payload was discarded.",
+    "No evaluation of physical solver, inverse reconstruction, timing performance, geological generalization or competition readiness.",
+    "No student research question, hypothesis, final experimental design, contribution account or interpretation authored here."
+  ],
+  "mutation_policy": "Audit writes go only to a new OUTER staging receipt. Frozen v1/v2 collector/protocol, source9f, run files and numerical arrays remain unchanged."
+}

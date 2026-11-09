@@ -1,0 +1,52 @@
+{
+  "role": "AI independent retained-array/scalar audit of one classical constant-model cached-J native verification; no native execution permission",
+  "status": "PROSPECTIVE_BEFORE_ANY_NATIVE_PACKET_READ",
+  "source_pins": {
+    "verify_native_fields.py": "c660a025badbebd5e9d9a4d6ddbfc684c95193c6111f2de349f25112976d1d6b",
+    "protocol.json": "3b608f942f3d08f40705e8203375fc7e24763592bd27d7cc70bac12b351391e6",
+    "FROZEN_PRODUCTION_SOURCE.json": "e7ba5deef7a651f42d02b9f8e0bcbee9624291b8217ab378bdde7586c57cd4de",
+    "cached_jacobian.py": "f613370617d7e0bd7815cf441dd8ba5f41816ad4791275e86f33de228657c79b",
+    "public_map_builder.py": "622a624f54b17d9d882da9d88af547c516b26ee42c87d80ec68d5fe99a687ec1"
+  },
+  "independent_source_review_sha256": "f551a8bf61ad118bb6a839cd35b3ce19d55adbe0c95528ec33a79e7f2f0ed478",
+  "parser_provenance": {
+    "adapted_from": "work/new-phase-staging/checkpoint_pilot23_comparison_candidate/independent_compare.py:128",
+    "source_sha256": "379cea02a64509a7e3ec15e3c614d47ed8812863ea41904211376c1b5aa6688b",
+    "changes": "Self-contained boundedNPYv1/v2 and ZIP_STORED reader additionally admits little-endian complex128, exact14-array schema,8MiB payload/16MiB archive. No NumPy or producer import."
+  },
+  "source_derived_fixed_counts": {
+    "array_members": 14,
+    "frequencies": 8,
+    "sources_per_frequency": 6,
+    "ordered_receivers": 20,
+    "complex_residual_terms": 960,
+    "real_residual_terms": 1920,
+    "parameters": 2401,
+    "native_covered_complex_row_pairs": 48,
+    "complex_source_covered_row_pairs": 48,
+    "centered_FD_steps_required": 2,
+    "top_level_public_dispatches": 160,
+    "expected_guard_rejections": 2,
+    "mandatory_remote_controls": {"lifecycle_stdlib": 14, "cached_component_pytest": 44, "total": 58}
+  },
+  "criteria_unchanged_from_native_protocol": {
+    "relative_vector_error": 2e-09,
+    "relative_real_adjoint_error": 2e-11,
+    "normalized_objective_relative_error": 2e-12,
+    "normalized_objective_absolute_error": 2e-14,
+    "receiver_row_relative_error": 2e-10,
+    "fd_jvp_relative_error_each_step": 0.0001,
+    "fd_objective_relative_error_each_step": 0.0001,
+    "nontrivial_relative_dd_cosine": 1e-05,
+    "nonzero_norm_floor": 1e-12,
+    "old_operator_repeat": "array_equal"
+  },
+  "additional_audit_rule": "Recompute each of48native and48complex-source covered-row relative errors with the inherited2e-10 row tolerance; source verifier originally compares six-row frames. This is declared before outcomes, not an attained rank or complete-J replay.",
+  "expected_disjoint_physics_totals": {"factorizations": 96, "forward_rhs": 480, "tangent_rhs": 48, "adjoint_rhs": 48, "stability_rhs": 272},
+  "admission": "Require explicit root terminal/audit GO, actual route and native/control exits0 with reaped groups, exact public first-push context/source manifest/conditional registration, mandatory58 no skips, complete inventory/no omitted bytes, source/admission/result consistency, no native failure. Any metadata failure prevents NPZ decode and all verified credit.",
+  "external_observation_schema": "Root externally measured JSON: exit_code0, artifact_inventory_sha256, route_result_sha256, experiment_commit, repository uskutsav-cpu/wavecert-fwi, run_attempt1; explicit expected observation/file/source/criteria/route-manifest hashes passed to CLI. This auditor never manufactures an actual wait or sets GO.",
+  "scope_limits": "No NumPy/producer imports, native/PDE/optimizer calls, installations, full-J or omitted-map reconstruction, rigorous floating-point enclosure, recovery, field accuracy, physical acceptance, speedup, novelty, student authorship or goal completion.",
+  "physical_acceptance": null,
+  "scientific_goals_complete": false,
+  "student_final_design": false
+}

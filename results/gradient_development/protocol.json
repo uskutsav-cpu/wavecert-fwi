@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "protocol_created_utc": "2026-11-07T20:26:40.118046+00:00",
+  "status": "Assistant-development engineering comparison frozen before training; established augmentation and derivative-supervision baselines, not novel theory or student preregistration",
+  "purpose": "Improve forward and derivative quality through a fixed 2x2 training/validation-only comparison; report every candidate and retain negative results",
+  "dataset": {
+    "path": "data/reference/subsurfacegen_parent_split",
+    "dataset_manifest_sha256": "e297ab5196bd50142db76a575c78355587bba04f6b381a0ef8700c950d04155a",
+    "role_manifest_sha256": "30fed6e30e07a1b54d17f3ae9511d06eac6f44c69fcb57b6ee588f2ade65ef14",
+    "allowed_array_roles": ["train", "validation"],
+    "roles": {
+      "train": {
+        "arrays_sha256": "5cd86a6af207190f242ec372ae28ea4872c825c8a9bc4dee7e0cdb2637fb590b",
+        "metadata_sha256": "f41a30ae3039534665830c1e62a1f4e3d03aca2a73bfa2c69d89e9be4eb9e1f6"
+      },
+      "validation": {
+        "arrays_sha256": "36d11aba94ae9093cac888e9b28a2d01edcef1aa3a54b12f8e10269b963db2fc",
+        "metadata_sha256": "d3ce8ab6a3474a6bc17595f26b68940e7c7ad9481d8c80fb89fe04833e6996e6"
+      }
+    },
+    "isolation": "Original parent assignments stay fixed; verify train/validation parent and slice disjointness without opening calibration or test arrays"
+  },
+  "candidates": [
+    {"name": "raw_forward", "augmentation": "raw", "derivative_weight": 0.0},
+    {"name": "raw_derivative", "augmentation": "raw", "derivative_weight": 1.0},
+    {"name": "augmented_forward", "augmentation": "raw+smoothed", "derivative_weight": 0.0},
+    {"name": "augmented_derivative", "augmentation": "raw+smoothed", "derivative_weight": 1.0}
+  ],
+  "model": {"modes_z": 8, "modes_x": 8, "width": 24, "depth": 3, "padding": 2},
+  "training": {
+    "seed": 2026110723,
+    "device": "cpu",
+    "torch_threads": 1,
+    "batch_size": 32,
+    "optimizer_updates": 2000,
+    "validation_interval": 100,
+    "optimizer": "AdamW",
+    "learning_rate": 0.002,
+    "weight_decay": 0.00002,
+    "gradient_clip_norm": 5.0,
+    "scheduler": "CosineAnnealingLR",
+    "scheduler_T_max": 2000,
+    "scheduler_eta_min": 0.0001,
+    "batch_sampling": "Seeded shuffled permutation cycles concatenated across epoch boundaries to form exactly 32 examples per optimizer update; equal optimizer-update budgets rather than equal epochs",
+    "batch_seed_stream": 2,
+    "initialization": "Reset the same torch seed before constructing each candidate",
+    "normalization": "Shared normalization from raw TRAIN model/frequency inputs and recomputed raw TRAIN teacher wavefields only; validation never determines normalization"
+  },
+  "states": {
+    "training_raw": "Every original training example",
+    "training_augmented": "Raw training examples followed by one velocity-smoothed state for every training example; no new independent parents are claimed",
+    "validation": "Identical concatenated raw and smoothed states from every original validation example for every candidate",
+    "smoothing": {"variable": "velocity", "sigma_grid_cells": 1.6, "mode": "reflect"},
+    "storage": "Squared-slowness state inputs are float32 before teacher recomputation; no clipping or validation-driven transformations"
+  },
+  "teacher": {
+    "backend": "WaveCert Helmholtz2D reference operator",
+    "shape": [24, 24],
+    "spacing": 0.05,
+    "damping_width": 3,
+    "damping_strength": 2.0,
+    "state_labels": "Recompute exact states at stored float32 model inputs converted to float64, using original source indices and frequencies",
+    "tangent_labels": "One fixed fresh Gaussian squared-slowness direction per state, normalized to unit L2, then stored float32; recompute exact tangent at those same stored model/direction inputs",
+    "direction_seed": 2026110723,
+    "direction_seed_algorithm": "SeedSequence([direction_seed, role_code, state_code]); train=0, validation=1; raw=0, smoothed=1",
+    "shared_labels": "All candidates share the same raw training labels, augmented training labels, and complete validation labels/directions; no calibration/test labels generated or loaded",
+    "saved_field_dtype": "float32 real/imaginary channels from complex128 reference solves",
+    "cost_scope": "Record all shared offline label-generation factorizations/RHS costs separately from neural training and validation time"
+  },
+  "loss": {
+    "relative_squared_l2": "sum((prediction-target)^2) / max(sum(target^2), 1e-20) per example, jointly over physical real/imaginary channels",
+    "squared_norm_denominator_floor": 1e-20,
+    "training_forward": "full-field physical relative squared L2 + 0.25 * receiver physical relative squared L2",
+    "receiver_weight": 0.25,
+    "training_derivative": "candidate derivative_weight * full-field physical relative squared L2 JVP loss",
+    "tangent_decoding": "Multiply normalized tangent channels by TRAIN output standard deviations, with no mean/centering term"
+  },
+  "selection": {
+    "score": "Equal-parent mean validation receiver physical relative squared L2 + equal-parent mean validation full-field physical relative squared L2 JVP loss + (1 - equal-parent mean aggregate inverse-gradient cosine), all unit weights",
+    "parent_weighting": "Each original validation parent has equal weight; examples are averaged within parent across both state types and all its source/frequency blocks",
+    "checkpoint_eligible_updates": "100,200,...,2000; initial update-zero validation is a reported diagnostic baseline only",
+    "within_candidate_ties": "Earliest optimizer update",
+    "between_candidate_ties": "Frozen candidate list order",
+    "reporting": "All three score components, actual aggregate inverse-gradient cosine/descent/norms, all histories, all four candidates, all best checkpoints, and the selected artifact; do not choose candidates using calibration/test/external outcomes",
+    "deployment": "No calibration/test/external evaluation until a separate winner/protocol freeze by the root workflow"
+  },
+  "validation_inverse_cases": {
+    "case_definition": "Every unique original validation slice, without subsampling; each parent retains all its slices",
+    "evaluation_state": "Stored float32 squared slowness from sigma-1.6 reflect-smoothed velocity",
+    "observations": "Recomputed raw validation teacher wavefields restricted to the original receivers",
+    "objective": "Sum of 0.5 * squared complex receiver residual norm over all original source/frequency blocks for that slice",
+    "exact_gradient": "Precompute the aggregate exact squared-slowness gradient once per slice with full offline costs retained",
+    "neural_gradient": "Autodifferentiate the same summed receiver objective with respect to a shared model input per slice, batched over blocks",
+    "cosine": "Real model-space cosine, zero if either gradient L2 norm <= 1e-14; retain zero-gradient flags rather than resampling or excluding cases",
+    "neural_descent_direction": "Negative aggregate neural gradient normalized to unit L2; zero direction if neural norm <= 1e-14",
+    "true_descent": "Aggregate exact gradient dotted with the neural descent direction is strictly negative",
+    "gradient_norm_zero_threshold": 1e-14,
+    "aggregation": "Average metrics within each original parent, then average parents equally; report every original slice and parent"
+  },
+  "scope": {
+    "calibration_or_test_arrays_loaded": false,
+    "external_test_arrays_loaded": false,
+    "previous_weights_or_results_overwritten": false,
+    "claim": "Bounded exploratory training comparison on 17 training and four model-selection validation parents; no independent confirmation, production certification, or acceleration claim"
+  }
+}

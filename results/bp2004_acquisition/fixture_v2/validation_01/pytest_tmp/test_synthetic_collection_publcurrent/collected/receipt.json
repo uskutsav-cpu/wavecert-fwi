@@ -1,0 +1,181 @@
+{
+  "acquisition_started_utc": "2026-11-08T05:13:59.961365+00:00",
+  "ancestor_id": "BP2004_Billette_BrandsbergDahl_composite_exact_velocity",
+  "artifact_sha256": {
+    "README_Modification.md": "897e0baa2441bdd52645769004c4e6f413789ec4eeb0eb8b60568cf39e7bf6f7",
+    "collector_source.py": "7a499a425ca495c8cffb2714af260e88e9ad929e9c6f85b0d9d7c0ef9624e28d",
+    "documentation_manifest.json": "c98ba723da343ad75e36ba0c4549b666d7c2143b18521bacf516ca605d00b05d",
+    "fixed_raw_velocity_mps.npy": "cc8c467b2a1814044c00554c541d034a5889b5601c67eb2721a52f6e72b783fb",
+    "fixed_stride2z_velocity_mps.npy": "beb73686ffbc7d1d7bd33ef5a6b9ecab1e34350b81e62cbd2f581f4d40e491fa",
+    "original_BP2004_READMES.pdf": "e29b003fc2161c44d2b9f04448195e58ebe6f476a195b31c3be77440adb60e24",
+    "protocol.json": "0e4cd6d65837b7c07ddc2bf9196097c5cbfb0305c48e59e366ac3bd9ad401285"
+  },
+  "collector_source_sha256": "7a499a425ca495c8cffb2714af260e88e9ad929e9c6f85b0d9d7c0ef9624e28d",
+  "completed_utc": "2026-11-08T05:13:59.961864+00:00",
+  "crops": [
+    {
+      "ancestor_id": "BP2004_Billette_BrandsbergDahl_composite_exact_velocity",
+      "decimated_origin_z_x_m": [
+        6.25,
+        25.0
+      ],
+      "decimated_shape_z_x": [
+        3,
+        4
+      ],
+      "decimated_spacing_z_x_m": [
+        12.5,
+        12.5
+      ],
+      "id": "fixed",
+      "outputs": [
+        {
+          "array_C_le_float32_sha256": "de59912cfe73a2a95345e82958e4dd086080ef18bb23a2dafadfce2bc4965e87",
+          "dtype": "float32",
+          "encoding": "NPY little-endian C order",
+          "file_bytes": 224,
+          "file_sha256": "cc8c467b2a1814044c00554c541d034a5889b5601c67eb2721a52f6e72b783fb",
+          "filename": "fixed_raw_velocity_mps.npy",
+          "shape_z_x": [
+            6,
+            4
+          ]
+        },
+        {
+          "array_C_le_float32_sha256": "4e1f611437206c35310f58a065efcb992441be62d7765e63a806078431d94a71",
+          "dtype": "float32",
+          "encoding": "NPY little-endian C order",
+          "file_bytes": 176,
+          "file_sha256": "beb73686ffbc7d1d7bd33ef5a6b9ecab1e34350b81e62cbd2f581f4d40e491fa",
+          "filename": "fixed_stride2z_velocity_mps.npy",
+          "shape_z_x": [
+            3,
+            4
+          ]
+        }
+      ],
+      "raw_origin_z_x_m": [
+        6.25,
+        25.0
+      ],
+      "raw_pixel_midpoint_z_x": [
+        3.5,
+        3.5
+      ],
+      "raw_shape_z_x": [
+        6,
+        4
+      ],
+      "raw_spacing_z_x_m": [
+        6.25,
+        12.5
+      ],
+      "start_z_x": [
+        1,
+        2
+      ],
+      "stop_exclusive_z_x": [
+        7,
+        6
+      ],
+      "stride_z_x": [
+        2,
+        1
+      ],
+      "velocity_units": "m/s"
+    }
+  ],
+  "documentation": {
+    "bytes": 24615,
+    "filename": "original_BP2004_READMES.pdf",
+    "role": "original publisher documentation only; no velocity payload",
+    "sha256": "e29b003fc2161c44d2b9f04448195e58ebe6f476a195b31c3be77440adb60e24",
+    "source_url": "https://s3.amazonaws.com/open.source.geoscience/open_data/bpvelanal2004/2004_Benchmark_READMES.pdf"
+  },
+  "http": {
+    "compressed_bytes": 362,
+    "compressed_sha256": "df3c7d42be4adaad40c309dd17ff78b89d0aa6af7c705079bbdc854ef358f7d7",
+    "content_length": 362,
+    "etag": "frozen",
+    "etag_is_not_sha256": true,
+    "final_url": "https://official.invalid/model",
+    "last_modified": null,
+    "status": 200
+  },
+  "independent_ancestor_count": 1,
+  "plots_or_model_outcomes_computed": false,
+  "protocol_registered_utc": "2026-11-08T01:35:22Z",
+  "protocol_sha256": "0e4cd6d65837b7c07ddc2bf9196097c5cbfb0305c48e59e366ac3bd9ad401285",
+  "raw_payload_written_to_disk": false,
+  "runtime": {
+    "numpy": "2.4.3",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]",
+    "zlib": "1.3.1"
+  },
+  "segy": {
+    "all_samples_validated_finite_positive": true,
+    "binary_sample_interval_raw": 0,
+    "binary_samples_per_trace": 8,
+    "byte_order": "big",
+    "coordinate_scalars_raw": [
+      0
+    ],
+    "coordinate_units_raw": [
+      0
+    ],
+    "extended_text_headers": 0,
+    "first_sample_offset": 3840,
+    "first_trace_fields": {
+      "group_x": 0,
+      "group_y": 0,
+      "source_x": 0,
+      "source_y": 0,
+      "trace_sequence_file": 1,
+      "trace_sequence_line": 1
+    },
+    "first_trace_header_offset": 3600,
+    "fixed_length_trace_flag_raw": 0,
+    "full_decoded_velocity_array_allocated": false,
+    "full_gzip_crc_and_isize_verified": true,
+    "gzip_crc32_hex": "93aae480",
+    "gzip_isize": 6320,
+    "gzip_members": 1,
+    "header_coordinates_used_for_reordering": false,
+    "headers": {
+      "binary_header_base64": "AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+      "binary_header_sha256": "33e30f66f3566cdb703e2e4b67dd40c97f173e6a3027ee937a29b2e0186104d4",
+      "text_header_base64": "QyAxIFNZTlRIRVRJQyBPTkxZICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA=",
+      "text_header_sha256": "9c88130d2620713675b4286f5650b15906f5652489e94f4bd2b09f7b6762996c",
+      "trace_headers_base64": "eNrV1K0RgDAAg9GUvxYm6IIYUFVV7ItCoVCIZoPcwSV33wDPBEBA66ulvOHPdUzdYeLtmbrHxDswcaGaeEemem8T78TUGygm3shU72XiTUy9vd3EOzPVe5p4F6be/OrgfQEPnQvc",
+      "trace_headers_bytes": 2400,
+      "trace_headers_encoding": "zlib+base64, concatenated240-byte headers in original file order",
+      "trace_headers_sha256": "25835fc6cf5885ec719e3110f203d6ae7ea30d001d7732b751997cdd9dc1fe08"
+    },
+    "last_trace_fields": {
+      "group_x": 0,
+      "group_y": 0,
+      "source_x": 1125,
+      "source_y": 0,
+      "trace_sequence_file": 10,
+      "trace_sequence_line": 10
+    },
+    "sample_format_code": 5,
+    "segy_revision_raw": 0,
+    "shape_z_x": [
+      8,
+      10
+    ],
+    "trace_sample_counts_raw": [
+      8
+    ],
+    "trace_sample_intervals_raw": [
+      6250
+    ],
+    "trace_stride_bytes": 272,
+    "uncompressed_bytes": 6320,
+    "uncompressed_sha256": "f6e7134977afac47624ba05d7e06461bdfb25a1294019be84c1f3a7072a5f5e7"
+  },
+  "status": "complete_acquisition_only",
+  "velocity_units": "m/s"
+}

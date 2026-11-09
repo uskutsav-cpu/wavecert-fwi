@@ -1,0 +1,45 @@
+Diagnostic only: ONE existing validation case, cProfile-instrumented cold setup+scalar certificate, not benchmark evidence.
+gom_148_il_0236
+         60773 function calls (59785 primitive calls) in 0.098 seconds
+
+   Ordered by: cumulative time
+   List reduced from 428 to 35 due to restriction <35>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.002    0.002    0.087    0.087 /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/certificates/coarse_adjoint.py:185(certify_survey)
+        4    0.002    0.000    0.024    0.006 /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py:168(evaluate)
+      388    0.000    0.000    0.019    0.000 /opt/miniconda3/lib/python3.13/site-packages/scipy/fft/_backend.py:19(__ua_function__)
+      388    0.001    0.000    0.018    0.000 /opt/miniconda3/lib/python3.13/site-packages/scipy/fft/_realtransforms_backend.py:8(_execute)
+  192/176    0.001    0.000    0.017    0.000 /opt/miniconda3/lib/python3.13/site-packages/scipy/_lib/_util.py:1102(wrapper)
+      388    0.002    0.000    0.016    0.000 /opt/miniconda3/lib/python3.13/site-packages/scipy/fft/_duccfft/realtransforms.py:59(_r2rn)
+       48    0.000    0.000    0.016    0.000 /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py:437(correct)
+       96    0.000    0.000    0.013    0.000 /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py:388(component_norms)
+       24    0.004    0.000    0.012    0.000 /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/certificates/coarse_adjoint.py:172(_pod_fields)
+      192    0.002    0.000    0.011    0.000 /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py:371(project)
+      192    0.002    0.000    0.011    0.000 /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py:379(lift)
+       12    0.000    0.000    0.010    0.001 /opt/miniconda3/lib/python3.13/site-packages/scipy/linalg/_decomp_svd.py:215(svdvals)
+       12    0.000    0.000    0.010    0.001 /opt/miniconda3/lib/python3.13/site-packages/scipy/linalg/_decomp_svd.py:37(svd)
+       16    0.000    0.000    0.010    0.001 /opt/miniconda3/lib/python3.13/site-packages/scipy/linalg/_decomp.py:970(eigvalsh)
+       12    0.010    0.001    0.010    0.001 {built-in method scipy.linalg._batched_linalg._svd}
+       16    0.007    0.000    0.009    0.001 /opt/miniconda3/lib/python3.13/site-packages/scipy/linalg/_decomp.py:311(eigh)
+      192    0.000    0.000    0.008    0.000 /opt/miniconda3/lib/python3.13/site-packages/scipy/fft/_realtransforms_backend.py:30(dstn)
+      768    0.008    0.000    0.008    0.000 {built-in method scipy.fft._duccfft.pyduccfft.dst}
+       48    0.001    0.000    0.007    0.000 /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py:458(receiver_constants)
+      192    0.000    0.000    0.007    0.000 /opt/miniconda3/lib/python3.13/site-packages/scipy/fft/_realtransforms_backend.py:36(idstn)
+      104    0.001    0.000    0.007    0.000 /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py:394(_solve)
+      152    0.000    0.000    0.007    0.000 /opt/miniconda3/lib/python3.13/site-packages/scipy/linalg/_decomp_lu.py:134(lu_solve)
+       24    0.000    0.000    0.006    0.000 /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py:501(oriented_adjoint_error_bounds)
+      100    0.000    0.000    0.006    0.000 /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py:414(solve_coarse)
+        1    0.000    0.000    0.006    0.006 /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/surrogates/pod.py:37(__init__)
+       96    0.004    0.000    0.005    0.000 /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py:419(apply_operator)
+        1    0.001    0.001    0.005    0.005 /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py:68(__init__)
+        3    0.000    0.000    0.005    0.002 /opt/miniconda3/lib/python3.13/functools.py:1009(__get__)
+        1    0.000    0.000    0.005    0.005 /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/helmholtz.py:155(stiffness)
+       24    0.004    0.000    0.005    0.000 /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/surrogates/pod.py:198(_state)
+       24    0.000    0.000    0.005    0.000 /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py:448(oriented_error_bounds)
+        4    0.001    0.000    0.005    0.001 /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py:158(_multiplication)
+     1244    0.001    0.000    0.004    0.000 /opt/miniconda3/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:2548(all)
+      720    0.002    0.000    0.004    0.000 /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-encoded-reference/src/wavecert/physics/coarse_stability.py:365(_vector)
+      152    0.003    0.000    0.004    0.000 /opt/miniconda3/lib/python3.13/site-packages/scipy/linalg/_decomp_lu.py:193(_lu_solve)
+
+

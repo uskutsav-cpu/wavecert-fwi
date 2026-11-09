@@ -1,0 +1,4042 @@
+{
+  "arrays": {
+    "approximate_gradient": {
+      "dtype": "<f8",
+      "raw_values_saved": true,
+      "sha256": "2e0698d8518b6574c53c6ae402d62fd3d07fed1788e5e246fa6ffc23f7aedc3a",
+      "shape": [
+        2401
+      ]
+    },
+    "direction": {
+      "dtype": "<f8",
+      "raw_values_saved": true,
+      "sha256": "2acac87e97d81f7af6fe4cc31dd75d993587c44af73c431d45f240dba9ee5861",
+      "shape": [
+        2401
+      ]
+    },
+    "f0_independent_adjoint": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "e67e8d4464c6d26c12dedeb4eebe16b57be69a36fb552c8f2577f4bfd644eb76",
+      "shape": [
+        2401,
+        6
+      ]
+    },
+    "f0_independent_adjoint_rhs": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "d53f7dac80c382584d15c4de9ff2df24064beb628d22b6503061c9f936d9b098",
+      "shape": [
+        2401,
+        6
+      ]
+    },
+    "f0_independent_observed": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "948ea52f052d78696e9e5b507da651d9a3d5c235548883837887f9247f433da1",
+      "shape": [
+        20,
+        6
+      ]
+    },
+    "f0_independent_residual": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "0c407ff980fc5c2c5a64754fe4f44e127916c46d0ee6cd3d591687e4e756f643",
+      "shape": [
+        20,
+        6
+      ]
+    },
+    "f0_independent_state": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "abdf3fd39cf5c5efc6b3472f1ea3cda5d376bc2a615cc2fd1de1c26146a52c8c",
+      "shape": [
+        2401,
+        6
+      ]
+    },
+    "f0_production_cached_field": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "abdf3fd39cf5c5efc6b3472f1ea3cda5d376bc2a615cc2fd1de1c26146a52c8c",
+      "shape": [
+        2401,
+        6
+      ]
+    },
+    "f0_production_missing_field": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "027d9768a166c50042f07614a098174ada813ad479d962cf56a75655088f325d",
+      "shape": [
+        2401,
+        6
+      ]
+    },
+    "f0_production_observed_slots": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "948ea52f052d78696e9e5b507da651d9a3d5c235548883837887f9247f433da1",
+      "shape": [
+        20,
+        6
+      ]
+    },
+    "f0_production_receiver_expand_indices": {
+      "dtype": "<i8",
+      "raw_values_saved": true,
+      "sha256": "f5c4cb24f4c9b43e624e0a83cb11934f932dbd5db24eee67fed696354ac88a61",
+      "shape": [
+        20
+      ]
+    },
+    "f0_production_residual_slots": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "0c407ff980fc5c2c5a64754fe4f44e127916c46d0ee6cd3d591687e4e756f643",
+      "shape": [
+        20,
+        6
+      ]
+    },
+    "f0_production_residual_unique": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "0c407ff980fc5c2c5a64754fe4f44e127916c46d0ee6cd3d591687e4e756f643",
+      "shape": [
+        20,
+        6
+      ]
+    },
+    "f1_independent_adjoint": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "4a4de1c077a36c6f985d9589c1528510b8f9bc8e9a21c84e92d73bfa55a6a0bf",
+      "shape": [
+        2401,
+        6
+      ]
+    },
+    "f1_independent_adjoint_rhs": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "515dbbc4b27f57886ded60f96c669a9c7c21a6247ca5d511d9e00a83943e61b1",
+      "shape": [
+        2401,
+        6
+      ]
+    },
+    "f1_independent_observed": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "2799ff87d9f6a90b2010228cd6f125b13abf941ea6a4a767fa6d6b81e753ab61",
+      "shape": [
+        20,
+        6
+      ]
+    },
+    "f1_independent_residual": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "c265d5812fed9e567819c3dd62e29755936c848ed8d21887f0056c53743105bb",
+      "shape": [
+        20,
+        6
+      ]
+    },
+    "f1_independent_state": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "c7d93669950e53a9abb0ba1dbb0b137d684c11125783a7e1cc4e4a9601e856e0",
+      "shape": [
+        2401,
+        6
+      ]
+    },
+    "f1_production_cached_field": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "c7d93669950e53a9abb0ba1dbb0b137d684c11125783a7e1cc4e4a9601e856e0",
+      "shape": [
+        2401,
+        6
+      ]
+    },
+    "f1_production_missing_field": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "d80049bb1c94585fd6967cfdff5a1edd4d5904a1df79f2805eb39d3395303cd6",
+      "shape": [
+        2401,
+        6
+      ]
+    },
+    "f1_production_observed_slots": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "9983f7fc8b27800df06e4c0fb612a06c7b100a53c90c5aeed80acedfdb37b2b7",
+      "shape": [
+        20,
+        6
+      ]
+    },
+    "f1_production_receiver_expand_indices": {
+      "dtype": "<i8",
+      "raw_values_saved": true,
+      "sha256": "f5c4cb24f4c9b43e624e0a83cb11934f932dbd5db24eee67fed696354ac88a61",
+      "shape": [
+        20
+      ]
+    },
+    "f1_production_residual_slots": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "b8e463f673cb7f85e655960c427db1d9393aa04cfe5a448c64ed94743bf82864",
+      "shape": [
+        20,
+        6
+      ]
+    },
+    "f1_production_residual_unique": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "b8e463f673cb7f85e655960c427db1d9393aa04cfe5a448c64ed94743bf82864",
+      "shape": [
+        20,
+        6
+      ]
+    },
+    "f2_independent_adjoint": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "28e2e2484efc50ea84695f7de4d7dbab97f9240df8f68e54a94a8f6c9714bec0",
+      "shape": [
+        2401,
+        6
+      ]
+    },
+    "f2_independent_adjoint_rhs": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "cec62c41c118c0d2f4d790aa686766c5d182e5b59ceb642138c7a7a0e2c761b1",
+      "shape": [
+        2401,
+        6
+      ]
+    },
+    "f2_independent_observed": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "593d0400d22539168dda26ac97c459d7ae3381b2ed317a068bd8358f14b59fe2",
+      "shape": [
+        20,
+        6
+      ]
+    },
+    "f2_independent_residual": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "bf1ba083a10d917b3c599f7280f9107b1cdc366aa974fec39870f28e02439ea1",
+      "shape": [
+        20,
+        6
+      ]
+    },
+    "f2_independent_state": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "02a55fd320e34a6b8a956f51574b35b73e157d3164ac4c57a56a5c88b7dacf73",
+      "shape": [
+        2401,
+        6
+      ]
+    },
+    "f2_production_cached_field": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "02a55fd320e34a6b8a956f51574b35b73e157d3164ac4c57a56a5c88b7dacf73",
+      "shape": [
+        2401,
+        6
+      ]
+    },
+    "f2_production_missing_field": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "977f12065ac46e17d8b53156264459b4f21718f1157753a1a16b9dfebf3e14a0",
+      "shape": [
+        2401,
+        6
+      ]
+    },
+    "f2_production_observed_slots": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "fa1ad8932f6a2cf5fdc99077e02de24c9ee3582b8fd050c5f79fd095da53dbc0",
+      "shape": [
+        20,
+        6
+      ]
+    },
+    "f2_production_receiver_expand_indices": {
+      "dtype": "<i8",
+      "raw_values_saved": true,
+      "sha256": "f5c4cb24f4c9b43e624e0a83cb11934f932dbd5db24eee67fed696354ac88a61",
+      "shape": [
+        20
+      ]
+    },
+    "f2_production_residual_slots": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "a26b2acc61c7514f81858d13eda3c9325b3a34684f3aa1f47149ffcaf28e5af1",
+      "shape": [
+        20,
+        6
+      ]
+    },
+    "f2_production_residual_unique": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "a26b2acc61c7514f81858d13eda3c9325b3a34684f3aa1f47149ffcaf28e5af1",
+      "shape": [
+        20,
+        6
+      ]
+    },
+    "f3_independent_adjoint": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "87da5646d77fac39dcb137d5a1fc95c3f72787af44172483bf5fda610213d3c0",
+      "shape": [
+        2401,
+        6
+      ]
+    },
+    "f3_independent_adjoint_rhs": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "cd9e7bafe6667c3be6b5287ba69980889a73dd3fa9aa5e95a9370f47b9eedcd3",
+      "shape": [
+        2401,
+        6
+      ]
+    },
+    "f3_independent_observed": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "132c6123b3d0ced313803677df333357d354ee7c5cd66d8f8841c6f7ba9ebd99",
+      "shape": [
+        20,
+        6
+      ]
+    },
+    "f3_independent_residual": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "216434f9366d51155e22df475e87d5578c1d95284cbe5a570f2d797950f6611b",
+      "shape": [
+        20,
+        6
+      ]
+    },
+    "f3_independent_state": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "307a18a8e51006588dcd2fc4bf832ac6cbc97cab93c62b7d2d011beb4c7a9deb",
+      "shape": [
+        2401,
+        6
+      ]
+    },
+    "f3_production_cached_field": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "307a18a8e51006588dcd2fc4bf832ac6cbc97cab93c62b7d2d011beb4c7a9deb",
+      "shape": [
+        2401,
+        6
+      ]
+    },
+    "f3_production_missing_field": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "3a2d7ecf6d6b74f114198e1255fb89a578061aa7997bdf06fbc4bc58942c5bbc",
+      "shape": [
+        2401,
+        6
+      ]
+    },
+    "f3_production_observed_slots": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "a21d776562fedd41c1cc4c8226d64c24f0d9a01972f04eb85771debcb3222249",
+      "shape": [
+        20,
+        6
+      ]
+    },
+    "f3_production_receiver_expand_indices": {
+      "dtype": "<i8",
+      "raw_values_saved": true,
+      "sha256": "f5c4cb24f4c9b43e624e0a83cb11934f932dbd5db24eee67fed696354ac88a61",
+      "shape": [
+        20
+      ]
+    },
+    "f3_production_residual_slots": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "1e4c0e4facefc85c2059abecb5f0e34dd27ad7d7ead8ca48c4b32b2a49b42e85",
+      "shape": [
+        20,
+        6
+      ]
+    },
+    "f3_production_residual_unique": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "1e4c0e4facefc85c2059abecb5f0e34dd27ad7d7ead8ca48c4b32b2a49b42e85",
+      "shape": [
+        20,
+        6
+      ]
+    },
+    "independent_damping": {
+      "dtype": "<f8",
+      "raw_values_saved": true,
+      "sha256": "7858b903b77991e6ece7b9e41482fbb39958c98fd6fe3fe83f0932827d86e730",
+      "shape": [
+        2401
+      ]
+    },
+    "independent_true_gradient": {
+      "dtype": "<f8",
+      "raw_values_saved": true,
+      "sha256": "6256d757ad334748b14de1ef382736a232f6d1c35c8f88c86177401222ef478b",
+      "shape": [
+        2401
+      ]
+    },
+    "independent_truth_model": {
+      "dtype": "<f8",
+      "raw_values_saved": true,
+      "sha256": "6f4d6d84a507f73c1835dbd2eab11882b22c2a41f9ed04cde8fc1bdf98caeee4",
+      "shape": [
+        2401
+      ]
+    },
+    "initial_model": {
+      "dtype": "<f8",
+      "raw_values_saved": true,
+      "sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+      "shape": [
+        2401
+      ]
+    },
+    "production_damping": {
+      "dtype": "<f8",
+      "raw_values_saved": true,
+      "sha256": "7858b903b77991e6ece7b9e41482fbb39958c98fd6fe3fe83f0932827d86e730",
+      "shape": [
+        2401
+      ]
+    },
+    "receiver_indices": {
+      "dtype": "<i8",
+      "raw_values_saved": true,
+      "sha256": "b54f5874787c176e2958f1b7e130768c2bb016e4fe81186efe659207812adc3f",
+      "shape": [
+        20
+      ]
+    },
+    "source_indices": {
+      "dtype": "<i8",
+      "raw_values_saved": true,
+      "sha256": "b7d6b033921b1c7bfdd22497949edd20df857792786b1ebc73b7b2af4ad4854c",
+      "shape": [
+        6
+      ]
+    },
+    "source_rhs": {
+      "dtype": "<c16",
+      "raw_values_saved": true,
+      "sha256": "a9f75af75a6d0afb417957b77406f4683d7bdf288162df7a25cc58020d25a0e5",
+      "shape": [
+        2401,
+        6
+      ]
+    }
+  },
+  "bound_covers_with_historical_helper_allowance": true,
+  "bound_covers_without_extra_allowance": true,
+  "case_index": 1,
+  "false_certification_using_independent_gradient": false,
+  "finished_utc": "2026-11-08T05:25:10.880194+00:00",
+  "historical_helper_FP_allowance": 1.490695003113895e-07,
+  "identity": {
+    "array_index": 24,
+    "parent_id": "gom_148",
+    "slice_id": "gom_148_xl_0768",
+    "source_file": "slices/slice_gom_148_xl_0768.h5",
+    "source_sha256": "6d1f16d527a9fed2e245f4d37254de75a2e430be7f4283cf65cfbfee7f1e84a1"
+  },
+  "independent_807_constructor_work": {
+    "factorizations": 8,
+    "forward_rhs": 48,
+    "scope": "own truth data plus own rebuilt-initial Phi; separate from fresh gradient state/adjoint solves"
+  },
+  "independent_initial_objective": 133.29811901142727,
+  "independent_linear_solves": [
+    {
+      "adjoint_maximum_relative_residual": 7.767127490147948e-14,
+      "adjoint_rhs": 6,
+      "factorizations": 1,
+      "frequency_hz": 2.5,
+      "state_maximum_relative_residual": 2.2863338552853572e-14,
+      "state_rhs": 6
+    },
+    {
+      "adjoint_maximum_relative_residual": 1.427800812530267e-14,
+      "adjoint_rhs": 6,
+      "factorizations": 1,
+      "frequency_hz": 3.0,
+      "state_maximum_relative_residual": 7.0177053286382835e-15,
+      "state_rhs": 6
+    },
+    {
+      "adjoint_maximum_relative_residual": 5.2147920502016546e-14,
+      "adjoint_rhs": 6,
+      "factorizations": 1,
+      "frequency_hz": 3.5,
+      "state_maximum_relative_residual": 1.653114220539255e-14,
+      "state_rhs": 6
+    },
+    {
+      "adjoint_maximum_relative_residual": 2.6312966544435528e-14,
+      "adjoint_rhs": 6,
+      "factorizations": 1,
+      "frequency_hz": 4.0,
+      "state_maximum_relative_residual": 9.277219748030003e-15,
+      "state_rhs": 6
+    }
+  ],
+  "independent_true_directional_derivative": -149.0688041852611,
+  "no_formal_FP_enclosure": true,
+  "production": {
+    "certificate": {
+      "approximate_directional_derivative": -149.06950031138945,
+      "approximate_gradient_sha256": "2e0698d8518b6574c53c6ae402d62fd3d07fed1788e5e246fa6ffc23f7aedc3a",
+      "available": true,
+      "binding": {
+        "accuracy_scope": "native sparse LU; ordinary floating point; PDE residuals not analytically zero; not a verified roundoff enclosure",
+        "damping": {
+          "dtype": "float64",
+          "sha256": "7858b903b77991e6ece7b9e41482fbb39958c98fd6fe3fe83f0932827d86e730",
+          "shape": [
+            2401
+          ]
+        },
+        "data_sha256": "ba4e762eaebaef3d5a7123d5502aa43c1df82b3ca6ef66bf70907db968baa751",
+        "frequencies": [
+          {
+            "block_indices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "cache_kind": "forward_states",
+            "cached_field": {
+              "dtype": "complex128",
+              "sha256": "abdf3fd39cf5c5efc6b3472f1ea3cda5d376bc2a615cc2fd1de1c26146a52c8c",
+              "shape": [
+                2401,
+                6
+              ]
+            },
+            "frequency_hz": 2.5,
+            "observed_slots": {
+              "dtype": "complex128",
+              "sha256": "948ea52f052d78696e9e5b507da651d9a3d5c235548883837887f9247f433da1",
+              "shape": [
+                20,
+                6
+              ]
+            },
+            "receiver_expand_indices": {
+              "dtype": "int64",
+              "sha256": "f5c4cb24f4c9b43e624e0a83cb11934f932dbd5db24eee67fed696354ac88a61",
+              "shape": [
+                20
+              ]
+            },
+            "receiver_indices": [
+              250,
+              252,
+              254,
+              256,
+              258,
+              260,
+              262,
+              264,
+              266,
+              268,
+              270,
+              272,
+              274,
+              276,
+              278,
+              280,
+              282,
+              284,
+              286,
+              288
+            ],
+            "residual_slots": {
+              "dtype": "complex128",
+              "sha256": "0c407ff980fc5c2c5a64754fe4f44e127916c46d0ee6cd3d591687e4e756f643",
+              "shape": [
+                20,
+                6
+              ]
+            },
+            "residual_unique": {
+              "dtype": "complex128",
+              "sha256": "0c407ff980fc5c2c5a64754fe4f44e127916c46d0ee6cd3d591687e4e756f643",
+              "shape": [
+                20,
+                6
+              ]
+            },
+            "source_amplitude": 1599.9999999999998,
+            "source_indices": [
+              250,
+              258,
+              266,
+              272,
+              280,
+              288
+            ],
+            "transpose_symmetric": true,
+            "unique_receiver_indices": [
+              250,
+              252,
+              254,
+              256,
+              258,
+              260,
+              262,
+              264,
+              266,
+              268,
+              270,
+              272,
+              274,
+              276,
+              278,
+              280,
+              282,
+              284,
+              286,
+              288
+            ]
+          },
+          {
+            "block_indices": [
+              6,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "cache_kind": "forward_states",
+            "cached_field": {
+              "dtype": "complex128",
+              "sha256": "c7d93669950e53a9abb0ba1dbb0b137d684c11125783a7e1cc4e4a9601e856e0",
+              "shape": [
+                2401,
+                6
+              ]
+            },
+            "frequency_hz": 3.0,
+            "observed_slots": {
+              "dtype": "complex128",
+              "sha256": "9983f7fc8b27800df06e4c0fb612a06c7b100a53c90c5aeed80acedfdb37b2b7",
+              "shape": [
+                20,
+                6
+              ]
+            },
+            "receiver_expand_indices": {
+              "dtype": "int64",
+              "sha256": "f5c4cb24f4c9b43e624e0a83cb11934f932dbd5db24eee67fed696354ac88a61",
+              "shape": [
+                20
+              ]
+            },
+            "receiver_indices": [
+              250,
+              252,
+              254,
+              256,
+              258,
+              260,
+              262,
+              264,
+              266,
+              268,
+              270,
+              272,
+              274,
+              276,
+              278,
+              280,
+              282,
+              284,
+              286,
+              288
+            ],
+            "residual_slots": {
+              "dtype": "complex128",
+              "sha256": "b8e463f673cb7f85e655960c427db1d9393aa04cfe5a448c64ed94743bf82864",
+              "shape": [
+                20,
+                6
+              ]
+            },
+            "residual_unique": {
+              "dtype": "complex128",
+              "sha256": "b8e463f673cb7f85e655960c427db1d9393aa04cfe5a448c64ed94743bf82864",
+              "shape": [
+                20,
+                6
+              ]
+            },
+            "source_amplitude": 1599.9999999999998,
+            "source_indices": [
+              250,
+              258,
+              266,
+              272,
+              280,
+              288
+            ],
+            "transpose_symmetric": true,
+            "unique_receiver_indices": [
+              250,
+              252,
+              254,
+              256,
+              258,
+              260,
+              262,
+              264,
+              266,
+              268,
+              270,
+              272,
+              274,
+              276,
+              278,
+              280,
+              282,
+              284,
+              286,
+              288
+            ]
+          },
+          {
+            "block_indices": [
+              12,
+              13,
+              14,
+              15,
+              16,
+              17
+            ],
+            "cache_kind": "forward_states",
+            "cached_field": {
+              "dtype": "complex128",
+              "sha256": "02a55fd320e34a6b8a956f51574b35b73e157d3164ac4c57a56a5c88b7dacf73",
+              "shape": [
+                2401,
+                6
+              ]
+            },
+            "frequency_hz": 3.5,
+            "observed_slots": {
+              "dtype": "complex128",
+              "sha256": "fa1ad8932f6a2cf5fdc99077e02de24c9ee3582b8fd050c5f79fd095da53dbc0",
+              "shape": [
+                20,
+                6
+              ]
+            },
+            "receiver_expand_indices": {
+              "dtype": "int64",
+              "sha256": "f5c4cb24f4c9b43e624e0a83cb11934f932dbd5db24eee67fed696354ac88a61",
+              "shape": [
+                20
+              ]
+            },
+            "receiver_indices": [
+              250,
+              252,
+              254,
+              256,
+              258,
+              260,
+              262,
+              264,
+              266,
+              268,
+              270,
+              272,
+              274,
+              276,
+              278,
+              280,
+              282,
+              284,
+              286,
+              288
+            ],
+            "residual_slots": {
+              "dtype": "complex128",
+              "sha256": "a26b2acc61c7514f81858d13eda3c9325b3a34684f3aa1f47149ffcaf28e5af1",
+              "shape": [
+                20,
+                6
+              ]
+            },
+            "residual_unique": {
+              "dtype": "complex128",
+              "sha256": "a26b2acc61c7514f81858d13eda3c9325b3a34684f3aa1f47149ffcaf28e5af1",
+              "shape": [
+                20,
+                6
+              ]
+            },
+            "source_amplitude": 1599.9999999999998,
+            "source_indices": [
+              250,
+              258,
+              266,
+              272,
+              280,
+              288
+            ],
+            "transpose_symmetric": true,
+            "unique_receiver_indices": [
+              250,
+              252,
+              254,
+              256,
+              258,
+              260,
+              262,
+              264,
+              266,
+              268,
+              270,
+              272,
+              274,
+              276,
+              278,
+              280,
+              282,
+              284,
+              286,
+              288
+            ]
+          },
+          {
+            "block_indices": [
+              18,
+              19,
+              20,
+              21,
+              22,
+              23
+            ],
+            "cache_kind": "forward_states",
+            "cached_field": {
+              "dtype": "complex128",
+              "sha256": "307a18a8e51006588dcd2fc4bf832ac6cbc97cab93c62b7d2d011beb4c7a9deb",
+              "shape": [
+                2401,
+                6
+              ]
+            },
+            "frequency_hz": 4.0,
+            "observed_slots": {
+              "dtype": "complex128",
+              "sha256": "a21d776562fedd41c1cc4c8226d64c24f0d9a01972f04eb85771debcb3222249",
+              "shape": [
+                20,
+                6
+              ]
+            },
+            "receiver_expand_indices": {
+              "dtype": "int64",
+              "sha256": "f5c4cb24f4c9b43e624e0a83cb11934f932dbd5db24eee67fed696354ac88a61",
+              "shape": [
+                20
+              ]
+            },
+            "receiver_indices": [
+              250,
+              252,
+              254,
+              256,
+              258,
+              260,
+              262,
+              264,
+              266,
+              268,
+              270,
+              272,
+              274,
+              276,
+              278,
+              280,
+              282,
+              284,
+              286,
+              288
+            ],
+            "residual_slots": {
+              "dtype": "complex128",
+              "sha256": "1e4c0e4facefc85c2059abecb5f0e34dd27ad7d7ead8ca48c4b32b2a49b42e85",
+              "shape": [
+                20,
+                6
+              ]
+            },
+            "residual_unique": {
+              "dtype": "complex128",
+              "sha256": "1e4c0e4facefc85c2059abecb5f0e34dd27ad7d7ead8ca48c4b32b2a49b42e85",
+              "shape": [
+                20,
+                6
+              ]
+            },
+            "source_amplitude": 1599.9999999999998,
+            "source_indices": [
+              250,
+              258,
+              266,
+              272,
+              280,
+              288
+            ],
+            "transpose_symmetric": true,
+            "unique_receiver_indices": [
+              250,
+              252,
+              254,
+              256,
+              258,
+              260,
+              262,
+              264,
+              266,
+              268,
+              270,
+              272,
+              274,
+              276,
+              278,
+              280,
+              282,
+              284,
+              286,
+              288
+            ]
+          }
+        ],
+        "geometry_sha256": "10234b11eefa78e46ed851726a92536698cfa24c032ad38099c6d15ce4d2d8b2",
+        "model": {
+          "dtype": "float64",
+          "sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+          "shape": [
+            2401
+          ]
+        },
+        "model_sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+        "operator_sha256": "047d8a88da53f9ddce01b79d3a55f0f291fdaa2d3b933796bb92d8b093fbe521",
+        "physics_config": {
+          "damping_strength": 2.0,
+          "damping_width": 6,
+          "shape": [
+            49,
+            49
+          ],
+          "spacing": 0.025
+        },
+        "receipt_key": "5f5a94b5020f5b9320974b54bba895e43e5bd6e43108d4813f6afb89700b519a"
+      },
+      "certified_descent": true,
+      "certified_upper_derivative": -149.0445132062087,
+      "costs": {
+        "dispatches": {
+          "coarse_lift_dispatches": 16,
+          "coarse_projection_dispatches": 16,
+          "coarse_solve_dispatches": 8,
+          "column_norm_dispatches": 52,
+          "dst_I_dispatches": 16,
+          "full_operator_dispatches": 8,
+          "idst_I_dispatches": 16
+        },
+        "local": {
+          "affine_data_defect_columns": 24,
+          "diagnostic_frobenius_norm_calls": 4,
+          "directional_bound_columns": 24,
+          "directional_dot_products": 5,
+          "injection_columns": 48,
+          "missing_field_residual_columns": 24,
+          "paid_field_residual_columns": 24,
+          "physical_gradient_contractions": 24,
+          "survey_vector_norm_calls": 2
+        },
+        "merit_costs_included": false,
+        "proposal_costs_included": false,
+        "setup_costs_included": false,
+        "stability_query": {
+          "coarse_correction_rhs": 0,
+          "coarse_inverse_rhs": 0,
+          "coarse_lift_calls": 96,
+          "coarse_lu_factorizations": 0,
+          "coarse_multiplication_matrices": 0,
+          "coarse_oriented_rhs": 48,
+          "coarse_projection_calls": 96,
+          "coarse_receiver_rhs": 80,
+          "coarse_rhs": 0,
+          "coarse_solve_calls": 12,
+          "coarse_solve_rhs": 128,
+          "dst_I_real_transforms": 192,
+          "fine_grid_dense_svd": 0,
+          "fine_grid_factorizations": 0,
+          "fine_grid_rhs": 0,
+          "full_operator_applications": 48,
+          "idst_I_real_transforms": 192,
+          "model_cache_hits": 0,
+          "offline_dct_I_real_transforms": 0,
+          "online_dct_I_real_transforms": 0,
+          "receiver_cache_hits": 0,
+          "receiver_geometry_evaluations": 4,
+          "small_hermitian_eigenproblems": 8,
+          "small_svd_evaluations": 4
+        }
+      },
+      "direction_sha256": "2acac87e97d81f7af6fe4cc31dd75d993587c44af73c431d45f240dba9ee5861",
+      "directional_error_bound": 0.02498710518075192,
+      "evaluation_complete": true,
+      "exact_fallback_required": false,
+      "formally_verified_roundoff_enclosure": false,
+      "frequency_records": [
+        {
+          "affine_data_defect_norm": 0.0,
+          "approximate_directional_derivative": -160.89873932844046,
+          "cache_kind": "forward_states",
+          "directional_bound_terms": [
+            [
+              1.635532903517799e-05,
+              1.3763561249552787e-05,
+              1.1206357543231609e-06,
+              1.2165099479326975e-05,
+              1.2272354552574544e-05,
+              3.1859968120865773e-06
+            ],
+            [
+              1.6238947241118901e-12,
+              1.3980542841023487e-12,
+              2.549877775913856e-13,
+              1.5426590815106817e-12,
+              1.4593004758952485e-12,
+              3.760087467692336e-13
+            ],
+            [
+              5.676291851079778e-19,
+              5.007259702303842e-19,
+              7.743570177510797e-20,
+              5.048905077694207e-19,
+              4.840290507106989e-19,
+              1.2513282022678972e-19
+            ]
+          ],
+          "directional_error_bound": 5.886298353794938e-05,
+          "frequency_hz": 2.5,
+          "missing_effective_residual_components": [
+            [
+              3.688942425339908e-14,
+              2.945161759080481e-14,
+              1.4665234562452094e-14,
+              3.358603262775338e-14,
+              3.322530999604768e-14,
+              1.5748131816150732e-14
+            ],
+            [
+              1.4030016375373528e-05,
+              1.2566965219825947e-05,
+              4.237383823354268e-06,
+              1.334671036214225e-05,
+              1.3360823746442518e-05,
+              6.771583542510545e-06
+            ]
+          ],
+          "missing_field_error_components": [
+            [
+              5.085658568981885e-08,
+              4.555325754927171e-08,
+              1.535984684768404e-08,
+              4.837970599630935e-08,
+              4.8430870612374206e-08,
+              2.454591541625795e-08
+            ],
+            [
+              3.164738337176255e-08,
+              2.834719194067259e-08,
+              9.558229249008281e-09,
+              3.0106055808473254e-08,
+              3.0137891578881034e-08,
+              1.5274600753082046e-08
+            ]
+          ],
+          "missing_raw_residual_norms": [
+            1.4030016375373559e-05,
+            1.2566965219825935e-05,
+            4.237383823354271e-06,
+            1.334671036214226e-05,
+            1.3360823746442486e-05,
+            6.77158354251056e-06
+          ],
+          "paid_field_error_components": [
+            [
+              4.914357577961078e-13,
+              4.83829656330209e-13,
+              2.2374559941176206e-13,
+              4.625389801138981e-13,
+              4.4198325159753876e-13,
+              2.2554332387446199e-13
+            ],
+            [
+              1.0418201870791227e-13,
+              1.0332171011728681e-13,
+              3.775074744957535e-14,
+              8.175974237468184e-14,
+              8.363112419975304e-14,
+              4.215839240249521e-14
+            ]
+          ],
+          "paid_field_residual_components": [
+            [
+              4.463897634205116e-12,
+              4.069996332486397e-12,
+              1.5732243801982263e-12,
+              3.207516511357446e-12,
+              3.5268759669248958e-12,
+              1.8795877655140927e-12
+            ],
+            [
+              3.684212733441388e-11,
+              3.664021180693539e-11,
+              1.2032774138090337e-11,
+              2.6696043428118418e-11,
+              2.820519048726835e-11,
+              1.4139203604249862e-11
+            ]
+          ],
+          "stability": {
+            "M": [
+              [
+                0.7238047795827844,
+                0.003624839696381551
+              ],
+              [
+                0.04262786484404427,
+                0.002255690978903119
+              ]
+            ],
+            "a": 0.6553028535193935,
+            "available": true,
+            "beta_lower_bound": 1.3791797270193655,
+            "ell": 28.838450265155984,
+            "frequency_hz": 2.5,
+            "gamma": 489.66581399388656,
+            "k": 1.6069753039240384,
+            "model_sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+            "model_sha256_encoding": "C-order flat little-endian float64 squared slowness",
+            "n": 2401,
+            "numerical_diagnostics": {
+              "coarse_singular_value_threshold": 7.508825993491385e-12,
+              "floating_point_scope": "ordinary floating point; heuristic PSD allowance",
+              "formally_verified_roundoff_enclosure": false,
+              "gram_diagonal_shift": 2.0884414050259536e-07,
+              "gram_psd_allowance": 2.0884414050259536e-07,
+              "gram_scale": 114813.28043774414,
+              "offline_damping_real_dct_I_transforms": 2,
+              "raw_gram_minimum_eigenvalue": 0.001606274165133601,
+              "strong_indefiniteness_threshold": -2.0884414050259535e-06
+            },
+            "operator_signature": {
+              "damping_float64_le_sha256": "7858b903b77991e6ece7b9e41482fbb39958c98fd6fe3fe83f0932827d86e730",
+              "first_omitted_laplacian_eigenvalue": 598.6845227819323,
+              "formally_verified_roundoff_enclosure": false,
+              "method": "real-low-Dirichlet-Laplacian-DCT-I-DST-I-v1",
+              "n": 2401,
+              "ordered_eigenvalues_float64_le_sha256": "4ed7032d4d8089a03bad3c537b66c8b78b79e8e5f1a827dd89b085b33f001505",
+              "physics_config_sha256": "2eee38066e85d2fa678323a3f7cf5de42f16162f42b72d371f665fd03a4be29b",
+              "rank": 64,
+              "selected_modes_int64_le_sha256": "a4f98963ffae22884d40321a2cd189c5b15cf616d4c24f750b87aeaa061dcb3c"
+            },
+            "physics_config": {
+              "damping_strength": 2.0,
+              "damping_width": 6,
+              "shape": [
+                49,
+                49
+              ],
+              "spacing": 0.025
+            },
+            "rank": 64,
+            "reason": "available (ordinary floating point)",
+            "tau": 0.09464143923293344
+          },
+          "stability_available": true
+        },
+        {
+          "affine_data_defect_norm": 0.0,
+          "approximate_directional_derivative": 4.765547286923676,
+          "cache_kind": "forward_states",
+          "directional_bound_terms": [
+            [
+              4.5328242102473035e-06,
+              2.488115840479968e-07,
+              4.186274443284321e-06,
+              8.783476933502173e-07,
+              3.0977949548742806e-06,
+              1.9703736461885653e-06
+            ],
+            [
+              2.371656383665277e-14,
+              3.759233810807889e-15,
+              4.5057731765900273e-14,
+              1.1665505104263407e-14,
+              3.4716377897475104e-14,
+              1.774820456066523e-14
+            ],
+            [
+              9.358893922560303e-20,
+              1.3326890450563991e-20,
+              1.6991463487679179e-19,
+              3.7141499646454406e-20,
+              1.3364810287007073e-19,
+              6.855602219698029e-20
+            ]
+          ],
+          "directional_error_bound": 1.4914426668656818e-05,
+          "frequency_hz": 3.0,
+          "missing_effective_residual_components": [
+            [
+              2.973052540830901e-15,
+              4.102597898147029e-16,
+              3.7880968797746405e-15,
+              9.637793562404763e-16,
+              4.224561170463704e-15,
+              3.653161677217217e-15
+            ],
+            [
+              2.200108158854014e-05,
+              1.8997260703286102e-06,
+              2.2791524630473276e-05,
+              5.3448299261706394e-06,
+              2.2088779656389043e-05,
+              2.023819737797319e-05
+            ]
+          ],
+          "missing_field_error_components": [
+            [
+              3.171276728190758e-08,
+              2.738301447856547e-09,
+              3.285212687615178e-08,
+              7.70413794770613e-09,
+              3.183917701925481e-08,
+              2.9171713090946417e-08
+            ],
+            [
+              5.274414234841349e-08,
+              4.554295503982958e-09,
+              5.463910562925445e-08,
+              1.281339162470877e-08,
+              5.295438473034743e-08,
+              4.851790391032699e-08
+            ]
+          ],
+          "missing_raw_residual_norms": [
+            2.200108158854011e-05,
+            1.8997260703286087e-06,
+            2.2791524630473283e-05,
+            5.344829926170643e-06,
+            2.2088779656389047e-05,
+            2.0238197377973173e-05
+          ],
+          "paid_field_error_components": [
+            [
+              4.746039396277792e-14,
+              8.728167416638125e-14,
+              9.217433005781375e-14,
+              8.605475033920504e-14,
+              7.541566900282899e-14,
+              4.1546531903846006e-14
+            ],
+            [
+              2.969005994070097e-14,
+              3.008807740860897e-14,
+              3.3615656255079776e-14,
+              3.095268763357176e-14,
+              2.5552005468245658e-14,
+              1.6164152171548994e-14
+            ]
+          ],
+          "paid_field_residual_components": [
+            [
+              1.5588913785520178e-12,
+              1.4974627630514576e-12,
+              1.7558928405827587e-12,
+              1.7302097580257536e-12,
+              1.2626827712606038e-12,
+              8.050164692796874e-13
+            ],
+            [
+              1.1174654051713914e-11,
+              9.723240802156568e-12,
+              1.1081435297196672e-11,
+              1.0155272824949318e-11,
+              8.204549252433795e-12,
+              5.4419513843428974e-12
+            ]
+          ],
+          "stability": {
+            "M": [
+              [
+                0.14506148310068087,
+                0.0014414185148803773
+              ],
+              [
+                0.013420145989680101,
+                0.00239734314658112
+              ]
+            ],
+            "a": 0.13699253104869394,
+            "available": true,
+            "beta_lower_bound": 6.863872663123476,
+            "ell": 40.862990703885885,
+            "frequency_hz": 3.0,
+            "gamma": 441.69758212714646,
+            "k": 0.601256652363681,
+            "model_sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+            "model_sha256_encoding": "C-order flat little-endian float64 squared slowness",
+            "n": 2401,
+            "numerical_diagnostics": {
+              "coarse_singular_value_threshold": 7.373223488696182e-12,
+              "floating_point_scope": "ordinary floating point; heuristic PSD allowance",
+              "formally_verified_roundoff_enclosure": false,
+              "gram_diagonal_shift": 4.302051309238315e-07,
+              "gram_psd_allowance": 4.302051309238315e-07,
+              "gram_scale": 236507.7718898246,
+              "offline_damping_real_dct_I_transforms": 2,
+              "raw_gram_minimum_eigenvalue": 0.003007499288618135,
+              "strong_indefiniteness_threshold": -4.302051309238315e-06
+            },
+            "operator_signature": {
+              "damping_float64_le_sha256": "7858b903b77991e6ece7b9e41482fbb39958c98fd6fe3fe83f0932827d86e730",
+              "first_omitted_laplacian_eigenvalue": 598.6845227819323,
+              "formally_verified_roundoff_enclosure": false,
+              "method": "real-low-Dirichlet-Laplacian-DCT-I-DST-I-v1",
+              "n": 2401,
+              "ordered_eigenvalues_float64_le_sha256": "4ed7032d4d8089a03bad3c537b66c8b78b79e8e5f1a827dd89b085b33f001505",
+              "physics_config_sha256": "2eee38066e85d2fa678323a3f7cf5de42f16162f42b72d371f665fd03a4be29b",
+              "rank": 64,
+              "selected_modes_int64_le_sha256": "a4f98963ffae22884d40321a2cd189c5b15cf616d4c24f750b87aeaa061dcb3c"
+            },
+            "physics_config": {
+              "damping_strength": 2.0,
+              "damping_width": 6,
+              "shape": [
+                49,
+                49
+              ],
+              "spacing": 0.025
+            },
+            "rank": 64,
+            "reason": "available (ordinary floating point)",
+            "tau": 0.0556243592683154
+          },
+          "stability_available": true
+        },
+        {
+          "affine_data_defect_norm": 0.0,
+          "approximate_directional_derivative": 20.906145009854207,
+          "cache_kind": "forward_states",
+          "directional_bound_terms": [
+            [
+              0.00029365829550475145,
+              0.0009399117373619468,
+              0.0003156633380395775,
+              0.0006643820531779433,
+              0.0017007246489596803,
+              0.0008358203875966017
+            ],
+            [
+              1.4308196544141594e-13,
+              6.495693165728164e-13,
+              1.6242274960993136e-13,
+              4.1261029056159665e-13,
+              1.1416114323880485e-12,
+              5.141490686384301e-13
+            ],
+            [
+              2.8743939445617533e-17,
+              1.2360851334676302e-16,
+              3.016279287654615e-17,
+              8.06813373392938e-17,
+              2.0478439210322522e-16,
+              9.224482236564225e-17
+            ]
+          ],
+          "directional_error_bound": 0.004750160463664506,
+          "frequency_hz": 3.5,
+          "missing_effective_residual_components": [
+            [
+              2.5474363791242438e-15,
+              9.26131993475142e-15,
+              3.447207980451724e-15,
+              6.025825687918277e-15,
+              1.5027890031562093e-14,
+              1.1316519334325941e-14
+            ],
+            [
+              0.0001231636946115787,
+              0.0003567254700605471,
+              0.000187596569360882,
+              0.0002717119990237532,
+              0.0004874873428674843,
+              0.00038388840696689625
+            ]
+          ],
+          "missing_field_error_components": [
+            [
+              1.6503983864185437e-06,
+              4.780135397197962e-06,
+              2.513801442147488e-06,
+              3.640951528835414e-06,
+              6.5323496552973996e-06,
+              5.144119812316574e-06
+            ],
+            [
+              5.559061456971247e-07,
+              1.6101001281158401e-06,
+              8.467274854885683e-07,
+              1.2263871278180788e-06,
+              2.200301068351644e-06,
+              1.732701543171735e-06
+            ]
+          ],
+          "missing_raw_residual_norms": [
+            0.0001231636946115788,
+            0.00035672547006054703,
+            0.0001875965693608818,
+            0.0002717119990237532,
+            0.00048748734286748466,
+            0.0003838884069668961
+          ],
+          "paid_field_error_components": [
+            [
+              4.3587867571552627e-13,
+              6.462146109825714e-13,
+              2.9886877881806125e-13,
+              5.523943015413306e-13,
+              7.828500468031896e-13,
+              4.474502705711658e-13
+            ],
+            [
+              9.640449886088609e-14,
+              1.4737546138288534e-13,
+              7.256742692948583e-14,
+              1.3216517620897553e-13,
+              1.8115867095358618e-13,
+              1.0511556034797378e-13
+            ]
+          ],
+          "paid_field_residual_components": [
+            [
+              1.7212261689128618e-12,
+              3.138864080992796e-12,
+              1.993250937954462e-12,
+              3.0638337518450223e-12,
+              4.838484632180352e-12,
+              2.552990703974495e-12
+            ],
+            [
+              1.3118699054390336e-11,
+              2.1162638736812567e-11,
+              1.1484472935441577e-11,
+              2.047194201707878e-11,
+              2.6646822334682142e-11,
+              1.5835438986291033e-11
+            ]
+          ],
+          "stability": {
+            "M": [
+              [
+                0.7277247260867122,
+                0.013400039422774021
+              ],
+              [
+                0.10406463633539476,
+                0.004513555261212119
+              ]
+            ],
+            "a": 0.4187731017664097,
+            "available": true,
+            "beta_lower_bound": 1.3600646384787893,
+            "ell": 55.05612332587394,
+            "frequency_hz": 3.5,
+            "gamma": 385.00785355736264,
+            "k": 2.96884354954711,
+            "model_sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+            "model_sha256_encoding": "C-order flat little-endian float64 squared slowness",
+            "n": 2401,
+            "numerical_diagnostics": {
+              "coarse_singular_value_threshold": 7.226181048744002e-12,
+              "floating_point_scope": "ordinary floating point; heuristic PSD allowance",
+              "formally_verified_roundoff_enclosure": false,
+              "gram_diagonal_shift": 7.938250997262535e-07,
+              "gram_psd_allowance": 7.938250997262535e-07,
+              "gram_scale": 436409.96378472925,
+              "offline_damping_real_dct_I_transforms": 2,
+              "raw_gram_minimum_eigenvalue": 0.005136783757508377,
+              "strong_indefiniteness_threshold": -7.938250997262534e-06
+            },
+            "operator_signature": {
+              "damping_float64_le_sha256": "7858b903b77991e6ece7b9e41482fbb39958c98fd6fe3fe83f0932827d86e730",
+              "first_omitted_laplacian_eigenvalue": 598.6845227819323,
+              "formally_verified_roundoff_enclosure": false,
+              "method": "real-low-Dirichlet-Laplacian-DCT-I-DST-I-v1",
+              "n": 2401,
+              "ordered_eigenvalues_float64_le_sha256": "4ed7032d4d8089a03bad3c537b66c8b78b79e8e5f1a827dd89b085b33f001505",
+              "physics_config_sha256": "2eee38066e85d2fa678323a3f7cf5de42f16162f42b72d371f665fd03a4be29b",
+              "rank": 64,
+              "selected_modes_int64_le_sha256": "a4f98963ffae22884d40321a2cd189c5b15cf616d4c24f750b87aeaa061dcb3c"
+            },
+            "physics_config": {
+              "damping_strength": 2.0,
+              "damping_width": 6,
+              "shape": [
+                49,
+                49
+              ],
+              "spacing": 0.025
+            },
+            "rank": 64,
+            "reason": "available (ordinary floating point)",
+            "tau": 0.4245446296454263
+          },
+          "stability_available": true
+        },
+        {
+          "affine_data_defect_norm": 0.0,
+          "approximate_directional_derivative": -13.84245327972684,
+          "cache_kind": "forward_states",
+          "directional_bound_terms": [
+            [
+              0.002415326138595835,
+              0.003366280061567114,
+              0.0008884026636415976,
+              0.0028197380304419133,
+              0.0027933047745508596,
+              0.007880115635683667
+            ],
+            [
+              2.7572499305403027e-13,
+              3.6430025788515893e-13,
+              8.441252036264358e-14,
+              3.478792321876781e-13,
+              2.783303808686313e-13,
+              1.0470324169315022e-12
+            ],
+            [
+              2.538755143939461e-16,
+              3.4694269977743486e-16,
+              9.984091219068468e-17,
+              2.970088393727559e-16,
+              2.652722533988538e-16,
+              8.798079660822359e-16
+            ]
+          ],
+          "directional_error_bound": 0.020163167306880808,
+          "frequency_hz": 4.0,
+          "missing_effective_residual_components": [
+            [
+              2.8533443761799674e-15,
+              4.477468253859625e-15,
+              1.2424158275459393e-15,
+              4.7049287976122434e-15,
+              3.881607160270957e-15,
+              1.001413513101355e-14
+            ],
+            [
+              0.000727910711902936,
+              0.0009156933462579831,
+              0.0003909527164387051,
+              0.0008996223539027163,
+              0.0008298441116926372,
+              0.001723756476157977
+            ]
+          ],
+          "missing_field_error_components": [
+            [
+              1.2043179382493476e-05,
+              1.5150016404074194e-05,
+              6.468257191296738e-06,
+              1.4884124115470048e-05,
+              1.372965300593048e-05,
+              2.8519306149414484e-05
+            ],
+            [
+              4.96894352938891e-06,
+              6.2508058375578434e-06,
+              2.6687640937322835e-06,
+              6.141100275442892e-06,
+              5.664772424699799e-06,
+              1.176689454520951e-05
+            ]
+          ],
+          "missing_raw_residual_norms": [
+            0.0007279107119029356,
+            0.0009156933462579841,
+            0.000390952716438705,
+            0.0008996223539027156,
+            0.0008298441116926363,
+            0.0017237564761579762
+          ],
+          "paid_field_error_components": [
+            [
+              3.844771475517779e-13,
+              4.179097187376176e-13,
+              2.8037491743552737e-13,
+              3.6282913236266423e-13,
+              3.5230121303906995e-13,
+              5.64674370578995e-13
+            ],
+            [
+              1.2252710895727526e-13,
+              1.3235809093173468e-13,
+              9.323931892581353e-14,
+              1.1943215657276001e-13,
+              1.1257840856985025e-13,
+              1.728342043397443e-13
+            ]
+          ],
+          "paid_field_residual_components": [
+            [
+              1.7978982934791816e-12,
+              1.940341325539816e-12,
+              1.4711537140229505e-12,
+              1.9320869586087788e-12,
+              1.7727126296225833e-12,
+              2.830419925574225e-12
+            ],
+            [
+              1.1699158282915388e-11,
+              1.2453288851002916e-11,
+              9.774059553030903e-12,
+              1.2256164550247507e-11,
+              1.0817653914331575e-11,
+              1.4907106320769824e-11
+            ]
+          ],
+          "stability": {
+            "M": [
+              [
+                0.31603947652582415,
+                0.016544857998714014
+              ],
+              [
+                0.07062697590240725,
+                0.006826309110869422
+              ]
+            ],
+            "a": 0.14486157230180952,
+            "available": true,
+            "beta_lower_bound": 3.0834229343312125,
+            "ell": 71.42191099819159,
+            "frequency_hz": 4.0,
+            "gamma": 319.5966282845352,
+            "k": 2.423690127417451,
+            "model_sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+            "model_sha256_encoding": "C-order flat little-endian float64 squared slowness",
+            "n": 2401,
+            "numerical_diagnostics": {
+              "coarse_singular_value_threshold": 7.068220346909359e-12,
+              "floating_point_scope": "ordinary floating point; heuristic PSD allowance",
+              "formally_verified_roundoff_enclosure": false,
+              "gram_diagonal_shift": 1.3507098536773688e-06,
+              "gram_psd_allowance": 1.3507098536773688e-06,
+              "gram_scale": 742560.5949349432,
+              "offline_damping_real_dct_I_transforms": 2,
+              "raw_gram_minimum_eigenvalue": 0.008186131108108176,
+              "strong_indefiniteness_threshold": -1.3507098536773687e-05
+            },
+            "operator_signature": {
+              "damping_float64_le_sha256": "7858b903b77991e6ece7b9e41482fbb39958c98fd6fe3fe83f0932827d86e730",
+              "first_omitted_laplacian_eigenvalue": 598.6845227819323,
+              "formally_verified_roundoff_enclosure": false,
+              "method": "real-low-Dirichlet-Laplacian-DCT-I-DST-I-v1",
+              "n": 2401,
+              "ordered_eigenvalues_float64_le_sha256": "4ed7032d4d8089a03bad3c537b66c8b78b79e8e5f1a827dd89b085b33f001505",
+              "physics_config_sha256": "2eee38066e85d2fa678323a3f7cf5de42f16162f42b72d371f665fd03a4be29b",
+              "rank": 64,
+              "selected_modes_int64_le_sha256": "a4f98963ffae22884d40321a2cd189c5b15cf616d4c24f750b87aeaa061dcb3c"
+            },
+            "physics_config": {
+              "damping_strength": 2.0,
+              "damping_width": 6,
+              "shape": [
+                49,
+                49
+              ],
+              "spacing": 0.025
+            },
+            "rank": 64,
+            "reason": "available (ordinary floating point)",
+            "tau": 0.5416345644719716
+          },
+          "stability_available": true
+        }
+      ],
+      "reason": "available (ordinary floating point)",
+      "receipt_key": "5f5a94b5020f5b9320974b54bba895e43e5bd6e43108d4813f6afb89700b519a",
+      "scope": "ordinary floating point; existing unverified stability allowance; pointwise derivative only",
+      "stationarity_claim": false
+    },
+    "costs": {
+      "oracle": {
+        "oracle": {
+          "accepted_receipts": 1,
+          "contract_checks": 5,
+          "export_copied_array_bytes": 35208,
+          "export_fingerprint_bytes": 2952240,
+          "export_fingerprint_evaluations": 3,
+          "factorization_attempts": 4,
+          "forward_solve_dispatches": 4,
+          "linear_solve_dispatches": 4,
+          "merit_field_exports": 1,
+          "merit_field_validation_attempts": 2,
+          "merit_field_validations": 2,
+          "objective_contractions": 4,
+          "objective_evaluations": 1,
+          "operator_assemblies": 8,
+          "transpose_symmetry_checks": 4
+        },
+        "physics": {
+          "adjoint_rhs": 0,
+          "analytic_bound_evaluations": 0,
+          "cache_hits": 0,
+          "dense_inverse_rhs": 0,
+          "factorizations": 4,
+          "forward_rhs": 24,
+          "stability_rhs": 0,
+          "svd_evaluations": 0,
+          "tangent_rhs": 0
+        }
+      },
+      "proposal": {
+        "adapter": {
+          "gmres_failed_columns": 0,
+          "gmres_report_columns": 0,
+          "gradient_norm_calls": 0,
+          "missing_rhs_injection_columns": 24,
+          "physical_gradient_columns": 0,
+          "proposal_calls": 1
+        },
+        "certificate_dispatches": {
+          "coarse_lift_dispatches": 16,
+          "coarse_projection_dispatches": 16,
+          "coarse_solve_dispatches": 8,
+          "column_norm_dispatches": 52,
+          "dst_I_dispatches": 16,
+          "full_operator_dispatches": 8,
+          "idst_I_dispatches": 16
+        },
+        "certificate_local": {
+          "affine_data_defect_columns": 24,
+          "diagnostic_frobenius_norm_calls": 4,
+          "directional_bound_columns": 24,
+          "directional_dot_products": 5,
+          "injection_columns": 48,
+          "missing_field_residual_columns": 24,
+          "paid_field_residual_columns": 24,
+          "physical_gradient_contractions": 24,
+          "survey_vector_norm_calls": 2
+        },
+        "normfree": {
+          "adjoint_operator_columns": 192,
+          "arnoldi_axpy_updates": 0,
+          "arnoldi_dot_products": 0,
+          "arnoldi_iterations": 0,
+          "arnoldi_norm_evaluations": 0,
+          "basis_setups": 1,
+          "certificate_eigenproblems": 0,
+          "certificate_inverse_rhs": 0,
+          "certificate_svd_evaluations": 0,
+          "coarse_adjoint_rhs": 120,
+          "coarse_forward_rhs": 0,
+          "coarse_lu_factorizations": 4,
+          "coarse_solve_dispatches": 20,
+          "context_cache_hits": 0,
+          "dst_I_dispatches": 36,
+          "dst_I_real_column_transforms": 432,
+          "fine_direct_rhs": 0,
+          "fine_factorizations": 0,
+          "forward_operator_columns": 0,
+          "givens_constructions": 0,
+          "givens_rotations": 0,
+          "high_denominator_builds": 4,
+          "high_inverse_columns": 96,
+          "idst_I_dispatches": 36,
+          "idst_I_real_column_transforms": 432,
+          "krylov_solution_update_columns": 0,
+          "laplacian_eigenvalue_entries": 2401,
+          "lift_columns": 120,
+          "linear_solve_columns": 0,
+          "model_moment_cache_hits": 3,
+          "moment_matrices": 2,
+          "offline_dct_I_real_transforms": 1,
+          "online_dct_I_real_transforms": 1,
+          "operator_columns": 192,
+          "operator_dispatches": 32,
+          "preconditioner_columns": 96,
+          "preconditioner_dispatches": 16,
+          "projected_triangular_solves": 0,
+          "projection_columns": 120,
+          "reduced_operator_assemblies": 4,
+          "restart_cycles": 0,
+          "true_residual_checks": 0
+        },
+        "stability": {
+          "coarse_correction_rhs": 0,
+          "coarse_inverse_rhs": 256,
+          "coarse_lift_calls": 96,
+          "coarse_lu_factorizations": 4,
+          "coarse_multiplication_matrices": 4,
+          "coarse_oriented_rhs": 48,
+          "coarse_projection_calls": 96,
+          "coarse_receiver_rhs": 80,
+          "coarse_rhs": 0,
+          "coarse_solve_calls": 16,
+          "coarse_solve_rhs": 384,
+          "dst_I_real_transforms": 192,
+          "fine_grid_dense_svd": 0,
+          "fine_grid_factorizations": 0,
+          "fine_grid_rhs": 0,
+          "full_operator_applications": 48,
+          "idst_I_real_transforms": 192,
+          "model_cache_hits": 3,
+          "offline_dct_I_real_transforms": 2,
+          "online_dct_I_real_transforms": 2,
+          "receiver_cache_hits": 0,
+          "receiver_geometry_evaluations": 4,
+          "small_hermitian_eigenproblems": 16,
+          "small_svd_evaluations": 12
+        }
+      }
+    },
+    "frames": [
+      {
+        "block_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "cache_kind": "forward_states",
+        "cached_field": {
+          "dtype": "complex128",
+          "sha256": "abdf3fd39cf5c5efc6b3472f1ea3cda5d376bc2a615cc2fd1de1c26146a52c8c",
+          "shape": [
+            2401,
+            6
+          ]
+        },
+        "frequency_hz": 2.5,
+        "observed_slots": {
+          "dtype": "complex128",
+          "sha256": "948ea52f052d78696e9e5b507da651d9a3d5c235548883837887f9247f433da1",
+          "shape": [
+            20,
+            6
+          ]
+        },
+        "receiver_expand_indices": {
+          "dtype": "int64",
+          "sha256": "f5c4cb24f4c9b43e624e0a83cb11934f932dbd5db24eee67fed696354ac88a61",
+          "shape": [
+            20
+          ]
+        },
+        "receiver_indices": [
+          250,
+          252,
+          254,
+          256,
+          258,
+          260,
+          262,
+          264,
+          266,
+          268,
+          270,
+          272,
+          274,
+          276,
+          278,
+          280,
+          282,
+          284,
+          286,
+          288
+        ],
+        "residual_slots": {
+          "dtype": "complex128",
+          "sha256": "0c407ff980fc5c2c5a64754fe4f44e127916c46d0ee6cd3d591687e4e756f643",
+          "shape": [
+            20,
+            6
+          ]
+        },
+        "residual_unique": {
+          "dtype": "complex128",
+          "sha256": "0c407ff980fc5c2c5a64754fe4f44e127916c46d0ee6cd3d591687e4e756f643",
+          "shape": [
+            20,
+            6
+          ]
+        },
+        "source_amplitude": 1599.9999999999998,
+        "source_indices": [
+          250,
+          258,
+          266,
+          272,
+          280,
+          288
+        ],
+        "transpose_symmetric": true,
+        "unique_receiver_indices": [
+          250,
+          252,
+          254,
+          256,
+          258,
+          260,
+          262,
+          264,
+          266,
+          268,
+          270,
+          272,
+          274,
+          276,
+          278,
+          280,
+          282,
+          284,
+          286,
+          288
+        ]
+      },
+      {
+        "block_indices": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "cache_kind": "forward_states",
+        "cached_field": {
+          "dtype": "complex128",
+          "sha256": "c7d93669950e53a9abb0ba1dbb0b137d684c11125783a7e1cc4e4a9601e856e0",
+          "shape": [
+            2401,
+            6
+          ]
+        },
+        "frequency_hz": 3.0,
+        "observed_slots": {
+          "dtype": "complex128",
+          "sha256": "9983f7fc8b27800df06e4c0fb612a06c7b100a53c90c5aeed80acedfdb37b2b7",
+          "shape": [
+            20,
+            6
+          ]
+        },
+        "receiver_expand_indices": {
+          "dtype": "int64",
+          "sha256": "f5c4cb24f4c9b43e624e0a83cb11934f932dbd5db24eee67fed696354ac88a61",
+          "shape": [
+            20
+          ]
+        },
+        "receiver_indices": [
+          250,
+          252,
+          254,
+          256,
+          258,
+          260,
+          262,
+          264,
+          266,
+          268,
+          270,
+          272,
+          274,
+          276,
+          278,
+          280,
+          282,
+          284,
+          286,
+          288
+        ],
+        "residual_slots": {
+          "dtype": "complex128",
+          "sha256": "b8e463f673cb7f85e655960c427db1d9393aa04cfe5a448c64ed94743bf82864",
+          "shape": [
+            20,
+            6
+          ]
+        },
+        "residual_unique": {
+          "dtype": "complex128",
+          "sha256": "b8e463f673cb7f85e655960c427db1d9393aa04cfe5a448c64ed94743bf82864",
+          "shape": [
+            20,
+            6
+          ]
+        },
+        "source_amplitude": 1599.9999999999998,
+        "source_indices": [
+          250,
+          258,
+          266,
+          272,
+          280,
+          288
+        ],
+        "transpose_symmetric": true,
+        "unique_receiver_indices": [
+          250,
+          252,
+          254,
+          256,
+          258,
+          260,
+          262,
+          264,
+          266,
+          268,
+          270,
+          272,
+          274,
+          276,
+          278,
+          280,
+          282,
+          284,
+          286,
+          288
+        ]
+      },
+      {
+        "block_indices": [
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "cache_kind": "forward_states",
+        "cached_field": {
+          "dtype": "complex128",
+          "sha256": "02a55fd320e34a6b8a956f51574b35b73e157d3164ac4c57a56a5c88b7dacf73",
+          "shape": [
+            2401,
+            6
+          ]
+        },
+        "frequency_hz": 3.5,
+        "observed_slots": {
+          "dtype": "complex128",
+          "sha256": "fa1ad8932f6a2cf5fdc99077e02de24c9ee3582b8fd050c5f79fd095da53dbc0",
+          "shape": [
+            20,
+            6
+          ]
+        },
+        "receiver_expand_indices": {
+          "dtype": "int64",
+          "sha256": "f5c4cb24f4c9b43e624e0a83cb11934f932dbd5db24eee67fed696354ac88a61",
+          "shape": [
+            20
+          ]
+        },
+        "receiver_indices": [
+          250,
+          252,
+          254,
+          256,
+          258,
+          260,
+          262,
+          264,
+          266,
+          268,
+          270,
+          272,
+          274,
+          276,
+          278,
+          280,
+          282,
+          284,
+          286,
+          288
+        ],
+        "residual_slots": {
+          "dtype": "complex128",
+          "sha256": "a26b2acc61c7514f81858d13eda3c9325b3a34684f3aa1f47149ffcaf28e5af1",
+          "shape": [
+            20,
+            6
+          ]
+        },
+        "residual_unique": {
+          "dtype": "complex128",
+          "sha256": "a26b2acc61c7514f81858d13eda3c9325b3a34684f3aa1f47149ffcaf28e5af1",
+          "shape": [
+            20,
+            6
+          ]
+        },
+        "source_amplitude": 1599.9999999999998,
+        "source_indices": [
+          250,
+          258,
+          266,
+          272,
+          280,
+          288
+        ],
+        "transpose_symmetric": true,
+        "unique_receiver_indices": [
+          250,
+          252,
+          254,
+          256,
+          258,
+          260,
+          262,
+          264,
+          266,
+          268,
+          270,
+          272,
+          274,
+          276,
+          278,
+          280,
+          282,
+          284,
+          286,
+          288
+        ]
+      },
+      {
+        "block_indices": [
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "cache_kind": "forward_states",
+        "cached_field": {
+          "dtype": "complex128",
+          "sha256": "307a18a8e51006588dcd2fc4bf832ac6cbc97cab93c62b7d2d011beb4c7a9deb",
+          "shape": [
+            2401,
+            6
+          ]
+        },
+        "frequency_hz": 4.0,
+        "observed_slots": {
+          "dtype": "complex128",
+          "sha256": "a21d776562fedd41c1cc4c8226d64c24f0d9a01972f04eb85771debcb3222249",
+          "shape": [
+            20,
+            6
+          ]
+        },
+        "receiver_expand_indices": {
+          "dtype": "int64",
+          "sha256": "f5c4cb24f4c9b43e624e0a83cb11934f932dbd5db24eee67fed696354ac88a61",
+          "shape": [
+            20
+          ]
+        },
+        "receiver_indices": [
+          250,
+          252,
+          254,
+          256,
+          258,
+          260,
+          262,
+          264,
+          266,
+          268,
+          270,
+          272,
+          274,
+          276,
+          278,
+          280,
+          282,
+          284,
+          286,
+          288
+        ],
+        "residual_slots": {
+          "dtype": "complex128",
+          "sha256": "1e4c0e4facefc85c2059abecb5f0e34dd27ad7d7ead8ca48c4b32b2a49b42e85",
+          "shape": [
+            20,
+            6
+          ]
+        },
+        "residual_unique": {
+          "dtype": "complex128",
+          "sha256": "1e4c0e4facefc85c2059abecb5f0e34dd27ad7d7ead8ca48c4b32b2a49b42e85",
+          "shape": [
+            20,
+            6
+          ]
+        },
+        "source_amplitude": 1599.9999999999998,
+        "source_indices": [
+          250,
+          258,
+          266,
+          272,
+          280,
+          288
+        ],
+        "transpose_symmetric": true,
+        "unique_receiver_indices": [
+          250,
+          252,
+          254,
+          256,
+          258,
+          260,
+          262,
+          264,
+          266,
+          268,
+          270,
+          272,
+          274,
+          276,
+          278,
+          280,
+          282,
+          284,
+          286,
+          288
+        ]
+      }
+    ],
+    "observation_wrapper": "private adapter evaluate_cached_merit binding captures references and returns original object; restored in finally; source files unchanged; not timing evidence",
+    "production_initial_objective": 133.2981190114273,
+    "proposal_diagnostics": {
+      "certificate": {
+        "approximate_directional_derivative": -149.06950031138945,
+        "approximate_gradient_sha256": "2e0698d8518b6574c53c6ae402d62fd3d07fed1788e5e246fa6ffc23f7aedc3a",
+        "available": true,
+        "binding": {
+          "accuracy_scope": "native sparse LU; ordinary floating point; PDE residuals not analytically zero; not a verified roundoff enclosure",
+          "damping": {
+            "dtype": "float64",
+            "sha256": "7858b903b77991e6ece7b9e41482fbb39958c98fd6fe3fe83f0932827d86e730",
+            "shape": [
+              2401
+            ]
+          },
+          "data_sha256": "ba4e762eaebaef3d5a7123d5502aa43c1df82b3ca6ef66bf70907db968baa751",
+          "frequencies": [
+            {
+              "block_indices": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "cache_kind": "forward_states",
+              "cached_field": {
+                "dtype": "complex128",
+                "sha256": "abdf3fd39cf5c5efc6b3472f1ea3cda5d376bc2a615cc2fd1de1c26146a52c8c",
+                "shape": [
+                  2401,
+                  6
+                ]
+              },
+              "frequency_hz": 2.5,
+              "observed_slots": {
+                "dtype": "complex128",
+                "sha256": "948ea52f052d78696e9e5b507da651d9a3d5c235548883837887f9247f433da1",
+                "shape": [
+                  20,
+                  6
+                ]
+              },
+              "receiver_expand_indices": {
+                "dtype": "int64",
+                "sha256": "f5c4cb24f4c9b43e624e0a83cb11934f932dbd5db24eee67fed696354ac88a61",
+                "shape": [
+                  20
+                ]
+              },
+              "receiver_indices": [
+                250,
+                252,
+                254,
+                256,
+                258,
+                260,
+                262,
+                264,
+                266,
+                268,
+                270,
+                272,
+                274,
+                276,
+                278,
+                280,
+                282,
+                284,
+                286,
+                288
+              ],
+              "residual_slots": {
+                "dtype": "complex128",
+                "sha256": "0c407ff980fc5c2c5a64754fe4f44e127916c46d0ee6cd3d591687e4e756f643",
+                "shape": [
+                  20,
+                  6
+                ]
+              },
+              "residual_unique": {
+                "dtype": "complex128",
+                "sha256": "0c407ff980fc5c2c5a64754fe4f44e127916c46d0ee6cd3d591687e4e756f643",
+                "shape": [
+                  20,
+                  6
+                ]
+              },
+              "source_amplitude": 1599.9999999999998,
+              "source_indices": [
+                250,
+                258,
+                266,
+                272,
+                280,
+                288
+              ],
+              "transpose_symmetric": true,
+              "unique_receiver_indices": [
+                250,
+                252,
+                254,
+                256,
+                258,
+                260,
+                262,
+                264,
+                266,
+                268,
+                270,
+                272,
+                274,
+                276,
+                278,
+                280,
+                282,
+                284,
+                286,
+                288
+              ]
+            },
+            {
+              "block_indices": [
+                6,
+                7,
+                8,
+                9,
+                10,
+                11
+              ],
+              "cache_kind": "forward_states",
+              "cached_field": {
+                "dtype": "complex128",
+                "sha256": "c7d93669950e53a9abb0ba1dbb0b137d684c11125783a7e1cc4e4a9601e856e0",
+                "shape": [
+                  2401,
+                  6
+                ]
+              },
+              "frequency_hz": 3.0,
+              "observed_slots": {
+                "dtype": "complex128",
+                "sha256": "9983f7fc8b27800df06e4c0fb612a06c7b100a53c90c5aeed80acedfdb37b2b7",
+                "shape": [
+                  20,
+                  6
+                ]
+              },
+              "receiver_expand_indices": {
+                "dtype": "int64",
+                "sha256": "f5c4cb24f4c9b43e624e0a83cb11934f932dbd5db24eee67fed696354ac88a61",
+                "shape": [
+                  20
+                ]
+              },
+              "receiver_indices": [
+                250,
+                252,
+                254,
+                256,
+                258,
+                260,
+                262,
+                264,
+                266,
+                268,
+                270,
+                272,
+                274,
+                276,
+                278,
+                280,
+                282,
+                284,
+                286,
+                288
+              ],
+              "residual_slots": {
+                "dtype": "complex128",
+                "sha256": "b8e463f673cb7f85e655960c427db1d9393aa04cfe5a448c64ed94743bf82864",
+                "shape": [
+                  20,
+                  6
+                ]
+              },
+              "residual_unique": {
+                "dtype": "complex128",
+                "sha256": "b8e463f673cb7f85e655960c427db1d9393aa04cfe5a448c64ed94743bf82864",
+                "shape": [
+                  20,
+                  6
+                ]
+              },
+              "source_amplitude": 1599.9999999999998,
+              "source_indices": [
+                250,
+                258,
+                266,
+                272,
+                280,
+                288
+              ],
+              "transpose_symmetric": true,
+              "unique_receiver_indices": [
+                250,
+                252,
+                254,
+                256,
+                258,
+                260,
+                262,
+                264,
+                266,
+                268,
+                270,
+                272,
+                274,
+                276,
+                278,
+                280,
+                282,
+                284,
+                286,
+                288
+              ]
+            },
+            {
+              "block_indices": [
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ],
+              "cache_kind": "forward_states",
+              "cached_field": {
+                "dtype": "complex128",
+                "sha256": "02a55fd320e34a6b8a956f51574b35b73e157d3164ac4c57a56a5c88b7dacf73",
+                "shape": [
+                  2401,
+                  6
+                ]
+              },
+              "frequency_hz": 3.5,
+              "observed_slots": {
+                "dtype": "complex128",
+                "sha256": "fa1ad8932f6a2cf5fdc99077e02de24c9ee3582b8fd050c5f79fd095da53dbc0",
+                "shape": [
+                  20,
+                  6
+                ]
+              },
+              "receiver_expand_indices": {
+                "dtype": "int64",
+                "sha256": "f5c4cb24f4c9b43e624e0a83cb11934f932dbd5db24eee67fed696354ac88a61",
+                "shape": [
+                  20
+                ]
+              },
+              "receiver_indices": [
+                250,
+                252,
+                254,
+                256,
+                258,
+                260,
+                262,
+                264,
+                266,
+                268,
+                270,
+                272,
+                274,
+                276,
+                278,
+                280,
+                282,
+                284,
+                286,
+                288
+              ],
+              "residual_slots": {
+                "dtype": "complex128",
+                "sha256": "a26b2acc61c7514f81858d13eda3c9325b3a34684f3aa1f47149ffcaf28e5af1",
+                "shape": [
+                  20,
+                  6
+                ]
+              },
+              "residual_unique": {
+                "dtype": "complex128",
+                "sha256": "a26b2acc61c7514f81858d13eda3c9325b3a34684f3aa1f47149ffcaf28e5af1",
+                "shape": [
+                  20,
+                  6
+                ]
+              },
+              "source_amplitude": 1599.9999999999998,
+              "source_indices": [
+                250,
+                258,
+                266,
+                272,
+                280,
+                288
+              ],
+              "transpose_symmetric": true,
+              "unique_receiver_indices": [
+                250,
+                252,
+                254,
+                256,
+                258,
+                260,
+                262,
+                264,
+                266,
+                268,
+                270,
+                272,
+                274,
+                276,
+                278,
+                280,
+                282,
+                284,
+                286,
+                288
+              ]
+            },
+            {
+              "block_indices": [
+                18,
+                19,
+                20,
+                21,
+                22,
+                23
+              ],
+              "cache_kind": "forward_states",
+              "cached_field": {
+                "dtype": "complex128",
+                "sha256": "307a18a8e51006588dcd2fc4bf832ac6cbc97cab93c62b7d2d011beb4c7a9deb",
+                "shape": [
+                  2401,
+                  6
+                ]
+              },
+              "frequency_hz": 4.0,
+              "observed_slots": {
+                "dtype": "complex128",
+                "sha256": "a21d776562fedd41c1cc4c8226d64c24f0d9a01972f04eb85771debcb3222249",
+                "shape": [
+                  20,
+                  6
+                ]
+              },
+              "receiver_expand_indices": {
+                "dtype": "int64",
+                "sha256": "f5c4cb24f4c9b43e624e0a83cb11934f932dbd5db24eee67fed696354ac88a61",
+                "shape": [
+                  20
+                ]
+              },
+              "receiver_indices": [
+                250,
+                252,
+                254,
+                256,
+                258,
+                260,
+                262,
+                264,
+                266,
+                268,
+                270,
+                272,
+                274,
+                276,
+                278,
+                280,
+                282,
+                284,
+                286,
+                288
+              ],
+              "residual_slots": {
+                "dtype": "complex128",
+                "sha256": "1e4c0e4facefc85c2059abecb5f0e34dd27ad7d7ead8ca48c4b32b2a49b42e85",
+                "shape": [
+                  20,
+                  6
+                ]
+              },
+              "residual_unique": {
+                "dtype": "complex128",
+                "sha256": "1e4c0e4facefc85c2059abecb5f0e34dd27ad7d7ead8ca48c4b32b2a49b42e85",
+                "shape": [
+                  20,
+                  6
+                ]
+              },
+              "source_amplitude": 1599.9999999999998,
+              "source_indices": [
+                250,
+                258,
+                266,
+                272,
+                280,
+                288
+              ],
+              "transpose_symmetric": true,
+              "unique_receiver_indices": [
+                250,
+                252,
+                254,
+                256,
+                258,
+                260,
+                262,
+                264,
+                266,
+                268,
+                270,
+                272,
+                274,
+                276,
+                278,
+                280,
+                282,
+                284,
+                286,
+                288
+              ]
+            }
+          ],
+          "geometry_sha256": "10234b11eefa78e46ed851726a92536698cfa24c032ad38099c6d15ce4d2d8b2",
+          "model": {
+            "dtype": "float64",
+            "sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+            "shape": [
+              2401
+            ]
+          },
+          "model_sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+          "operator_sha256": "047d8a88da53f9ddce01b79d3a55f0f291fdaa2d3b933796bb92d8b093fbe521",
+          "physics_config": {
+            "damping_strength": 2.0,
+            "damping_width": 6,
+            "shape": [
+              49,
+              49
+            ],
+            "spacing": 0.025
+          },
+          "receipt_key": "5f5a94b5020f5b9320974b54bba895e43e5bd6e43108d4813f6afb89700b519a"
+        },
+        "certified_descent": true,
+        "certified_upper_derivative": -149.0445132062087,
+        "costs": {
+          "dispatches": {
+            "coarse_lift_dispatches": 16,
+            "coarse_projection_dispatches": 16,
+            "coarse_solve_dispatches": 8,
+            "column_norm_dispatches": 52,
+            "dst_I_dispatches": 16,
+            "full_operator_dispatches": 8,
+            "idst_I_dispatches": 16
+          },
+          "local": {
+            "affine_data_defect_columns": 24,
+            "diagnostic_frobenius_norm_calls": 4,
+            "directional_bound_columns": 24,
+            "directional_dot_products": 5,
+            "injection_columns": 48,
+            "missing_field_residual_columns": 24,
+            "paid_field_residual_columns": 24,
+            "physical_gradient_contractions": 24,
+            "survey_vector_norm_calls": 2
+          },
+          "merit_costs_included": false,
+          "proposal_costs_included": false,
+          "setup_costs_included": false,
+          "stability_query": {
+            "coarse_correction_rhs": 0,
+            "coarse_inverse_rhs": 0,
+            "coarse_lift_calls": 96,
+            "coarse_lu_factorizations": 0,
+            "coarse_multiplication_matrices": 0,
+            "coarse_oriented_rhs": 48,
+            "coarse_projection_calls": 96,
+            "coarse_receiver_rhs": 80,
+            "coarse_rhs": 0,
+            "coarse_solve_calls": 12,
+            "coarse_solve_rhs": 128,
+            "dst_I_real_transforms": 192,
+            "fine_grid_dense_svd": 0,
+            "fine_grid_factorizations": 0,
+            "fine_grid_rhs": 0,
+            "full_operator_applications": 48,
+            "idst_I_real_transforms": 192,
+            "model_cache_hits": 0,
+            "offline_dct_I_real_transforms": 0,
+            "online_dct_I_real_transforms": 0,
+            "receiver_cache_hits": 0,
+            "receiver_geometry_evaluations": 4,
+            "small_hermitian_eigenproblems": 8,
+            "small_svd_evaluations": 4
+          }
+        },
+        "direction_sha256": "2acac87e97d81f7af6fe4cc31dd75d993587c44af73c431d45f240dba9ee5861",
+        "directional_error_bound": 0.02498710518075192,
+        "evaluation_complete": true,
+        "exact_fallback_required": false,
+        "formally_verified_roundoff_enclosure": false,
+        "frequency_records": [
+          {
+            "affine_data_defect_norm": 0.0,
+            "approximate_directional_derivative": -160.89873932844046,
+            "cache_kind": "forward_states",
+            "directional_bound_terms": [
+              [
+                1.635532903517799e-05,
+                1.3763561249552787e-05,
+                1.1206357543231609e-06,
+                1.2165099479326975e-05,
+                1.2272354552574544e-05,
+                3.1859968120865773e-06
+              ],
+              [
+                1.6238947241118901e-12,
+                1.3980542841023487e-12,
+                2.549877775913856e-13,
+                1.5426590815106817e-12,
+                1.4593004758952485e-12,
+                3.760087467692336e-13
+              ],
+              [
+                5.676291851079778e-19,
+                5.007259702303842e-19,
+                7.743570177510797e-20,
+                5.048905077694207e-19,
+                4.840290507106989e-19,
+                1.2513282022678972e-19
+              ]
+            ],
+            "directional_error_bound": 5.886298353794938e-05,
+            "frequency_hz": 2.5,
+            "missing_effective_residual_components": [
+              [
+                3.688942425339908e-14,
+                2.945161759080481e-14,
+                1.4665234562452094e-14,
+                3.358603262775338e-14,
+                3.322530999604768e-14,
+                1.5748131816150732e-14
+              ],
+              [
+                1.4030016375373528e-05,
+                1.2566965219825947e-05,
+                4.237383823354268e-06,
+                1.334671036214225e-05,
+                1.3360823746442518e-05,
+                6.771583542510545e-06
+              ]
+            ],
+            "missing_field_error_components": [
+              [
+                5.085658568981885e-08,
+                4.555325754927171e-08,
+                1.535984684768404e-08,
+                4.837970599630935e-08,
+                4.8430870612374206e-08,
+                2.454591541625795e-08
+              ],
+              [
+                3.164738337176255e-08,
+                2.834719194067259e-08,
+                9.558229249008281e-09,
+                3.0106055808473254e-08,
+                3.0137891578881034e-08,
+                1.5274600753082046e-08
+              ]
+            ],
+            "missing_raw_residual_norms": [
+              1.4030016375373559e-05,
+              1.2566965219825935e-05,
+              4.237383823354271e-06,
+              1.334671036214226e-05,
+              1.3360823746442486e-05,
+              6.77158354251056e-06
+            ],
+            "paid_field_error_components": [
+              [
+                4.914357577961078e-13,
+                4.83829656330209e-13,
+                2.2374559941176206e-13,
+                4.625389801138981e-13,
+                4.4198325159753876e-13,
+                2.2554332387446199e-13
+              ],
+              [
+                1.0418201870791227e-13,
+                1.0332171011728681e-13,
+                3.775074744957535e-14,
+                8.175974237468184e-14,
+                8.363112419975304e-14,
+                4.215839240249521e-14
+              ]
+            ],
+            "paid_field_residual_components": [
+              [
+                4.463897634205116e-12,
+                4.069996332486397e-12,
+                1.5732243801982263e-12,
+                3.207516511357446e-12,
+                3.5268759669248958e-12,
+                1.8795877655140927e-12
+              ],
+              [
+                3.684212733441388e-11,
+                3.664021180693539e-11,
+                1.2032774138090337e-11,
+                2.6696043428118418e-11,
+                2.820519048726835e-11,
+                1.4139203604249862e-11
+              ]
+            ],
+            "stability": {
+              "M": [
+                [
+                  0.7238047795827844,
+                  0.003624839696381551
+                ],
+                [
+                  0.04262786484404427,
+                  0.002255690978903119
+                ]
+              ],
+              "a": 0.6553028535193935,
+              "available": true,
+              "beta_lower_bound": 1.3791797270193655,
+              "ell": 28.838450265155984,
+              "frequency_hz": 2.5,
+              "gamma": 489.66581399388656,
+              "k": 1.6069753039240384,
+              "model_sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+              "model_sha256_encoding": "C-order flat little-endian float64 squared slowness",
+              "n": 2401,
+              "numerical_diagnostics": {
+                "coarse_singular_value_threshold": 7.508825993491385e-12,
+                "floating_point_scope": "ordinary floating point; heuristic PSD allowance",
+                "formally_verified_roundoff_enclosure": false,
+                "gram_diagonal_shift": 2.0884414050259536e-07,
+                "gram_psd_allowance": 2.0884414050259536e-07,
+                "gram_scale": 114813.28043774414,
+                "offline_damping_real_dct_I_transforms": 2,
+                "raw_gram_minimum_eigenvalue": 0.001606274165133601,
+                "strong_indefiniteness_threshold": -2.0884414050259535e-06
+              },
+              "operator_signature": {
+                "damping_float64_le_sha256": "7858b903b77991e6ece7b9e41482fbb39958c98fd6fe3fe83f0932827d86e730",
+                "first_omitted_laplacian_eigenvalue": 598.6845227819323,
+                "formally_verified_roundoff_enclosure": false,
+                "method": "real-low-Dirichlet-Laplacian-DCT-I-DST-I-v1",
+                "n": 2401,
+                "ordered_eigenvalues_float64_le_sha256": "4ed7032d4d8089a03bad3c537b66c8b78b79e8e5f1a827dd89b085b33f001505",
+                "physics_config_sha256": "2eee38066e85d2fa678323a3f7cf5de42f16162f42b72d371f665fd03a4be29b",
+                "rank": 64,
+                "selected_modes_int64_le_sha256": "a4f98963ffae22884d40321a2cd189c5b15cf616d4c24f750b87aeaa061dcb3c"
+              },
+              "physics_config": {
+                "damping_strength": 2.0,
+                "damping_width": 6,
+                "shape": [
+                  49,
+                  49
+                ],
+                "spacing": 0.025
+              },
+              "rank": 64,
+              "reason": "available (ordinary floating point)",
+              "tau": 0.09464143923293344
+            },
+            "stability_available": true
+          },
+          {
+            "affine_data_defect_norm": 0.0,
+            "approximate_directional_derivative": 4.765547286923676,
+            "cache_kind": "forward_states",
+            "directional_bound_terms": [
+              [
+                4.5328242102473035e-06,
+                2.488115840479968e-07,
+                4.186274443284321e-06,
+                8.783476933502173e-07,
+                3.0977949548742806e-06,
+                1.9703736461885653e-06
+              ],
+              [
+                2.371656383665277e-14,
+                3.759233810807889e-15,
+                4.5057731765900273e-14,
+                1.1665505104263407e-14,
+                3.4716377897475104e-14,
+                1.774820456066523e-14
+              ],
+              [
+                9.358893922560303e-20,
+                1.3326890450563991e-20,
+                1.6991463487679179e-19,
+                3.7141499646454406e-20,
+                1.3364810287007073e-19,
+                6.855602219698029e-20
+              ]
+            ],
+            "directional_error_bound": 1.4914426668656818e-05,
+            "frequency_hz": 3.0,
+            "missing_effective_residual_components": [
+              [
+                2.973052540830901e-15,
+                4.102597898147029e-16,
+                3.7880968797746405e-15,
+                9.637793562404763e-16,
+                4.224561170463704e-15,
+                3.653161677217217e-15
+              ],
+              [
+                2.200108158854014e-05,
+                1.8997260703286102e-06,
+                2.2791524630473276e-05,
+                5.3448299261706394e-06,
+                2.2088779656389043e-05,
+                2.023819737797319e-05
+              ]
+            ],
+            "missing_field_error_components": [
+              [
+                3.171276728190758e-08,
+                2.738301447856547e-09,
+                3.285212687615178e-08,
+                7.70413794770613e-09,
+                3.183917701925481e-08,
+                2.9171713090946417e-08
+              ],
+              [
+                5.274414234841349e-08,
+                4.554295503982958e-09,
+                5.463910562925445e-08,
+                1.281339162470877e-08,
+                5.295438473034743e-08,
+                4.851790391032699e-08
+              ]
+            ],
+            "missing_raw_residual_norms": [
+              2.200108158854011e-05,
+              1.8997260703286087e-06,
+              2.2791524630473283e-05,
+              5.344829926170643e-06,
+              2.2088779656389047e-05,
+              2.0238197377973173e-05
+            ],
+            "paid_field_error_components": [
+              [
+                4.746039396277792e-14,
+                8.728167416638125e-14,
+                9.217433005781375e-14,
+                8.605475033920504e-14,
+                7.541566900282899e-14,
+                4.1546531903846006e-14
+              ],
+              [
+                2.969005994070097e-14,
+                3.008807740860897e-14,
+                3.3615656255079776e-14,
+                3.095268763357176e-14,
+                2.5552005468245658e-14,
+                1.6164152171548994e-14
+              ]
+            ],
+            "paid_field_residual_components": [
+              [
+                1.5588913785520178e-12,
+                1.4974627630514576e-12,
+                1.7558928405827587e-12,
+                1.7302097580257536e-12,
+                1.2626827712606038e-12,
+                8.050164692796874e-13
+              ],
+              [
+                1.1174654051713914e-11,
+                9.723240802156568e-12,
+                1.1081435297196672e-11,
+                1.0155272824949318e-11,
+                8.204549252433795e-12,
+                5.4419513843428974e-12
+              ]
+            ],
+            "stability": {
+              "M": [
+                [
+                  0.14506148310068087,
+                  0.0014414185148803773
+                ],
+                [
+                  0.013420145989680101,
+                  0.00239734314658112
+                ]
+              ],
+              "a": 0.13699253104869394,
+              "available": true,
+              "beta_lower_bound": 6.863872663123476,
+              "ell": 40.862990703885885,
+              "frequency_hz": 3.0,
+              "gamma": 441.69758212714646,
+              "k": 0.601256652363681,
+              "model_sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+              "model_sha256_encoding": "C-order flat little-endian float64 squared slowness",
+              "n": 2401,
+              "numerical_diagnostics": {
+                "coarse_singular_value_threshold": 7.373223488696182e-12,
+                "floating_point_scope": "ordinary floating point; heuristic PSD allowance",
+                "formally_verified_roundoff_enclosure": false,
+                "gram_diagonal_shift": 4.302051309238315e-07,
+                "gram_psd_allowance": 4.302051309238315e-07,
+                "gram_scale": 236507.7718898246,
+                "offline_damping_real_dct_I_transforms": 2,
+                "raw_gram_minimum_eigenvalue": 0.003007499288618135,
+                "strong_indefiniteness_threshold": -4.302051309238315e-06
+              },
+              "operator_signature": {
+                "damping_float64_le_sha256": "7858b903b77991e6ece7b9e41482fbb39958c98fd6fe3fe83f0932827d86e730",
+                "first_omitted_laplacian_eigenvalue": 598.6845227819323,
+                "formally_verified_roundoff_enclosure": false,
+                "method": "real-low-Dirichlet-Laplacian-DCT-I-DST-I-v1",
+                "n": 2401,
+                "ordered_eigenvalues_float64_le_sha256": "4ed7032d4d8089a03bad3c537b66c8b78b79e8e5f1a827dd89b085b33f001505",
+                "physics_config_sha256": "2eee38066e85d2fa678323a3f7cf5de42f16162f42b72d371f665fd03a4be29b",
+                "rank": 64,
+                "selected_modes_int64_le_sha256": "a4f98963ffae22884d40321a2cd189c5b15cf616d4c24f750b87aeaa061dcb3c"
+              },
+              "physics_config": {
+                "damping_strength": 2.0,
+                "damping_width": 6,
+                "shape": [
+                  49,
+                  49
+                ],
+                "spacing": 0.025
+              },
+              "rank": 64,
+              "reason": "available (ordinary floating point)",
+              "tau": 0.0556243592683154
+            },
+            "stability_available": true
+          },
+          {
+            "affine_data_defect_norm": 0.0,
+            "approximate_directional_derivative": 20.906145009854207,
+            "cache_kind": "forward_states",
+            "directional_bound_terms": [
+              [
+                0.00029365829550475145,
+                0.0009399117373619468,
+                0.0003156633380395775,
+                0.0006643820531779433,
+                0.0017007246489596803,
+                0.0008358203875966017
+              ],
+              [
+                1.4308196544141594e-13,
+                6.495693165728164e-13,
+                1.6242274960993136e-13,
+                4.1261029056159665e-13,
+                1.1416114323880485e-12,
+                5.141490686384301e-13
+              ],
+              [
+                2.8743939445617533e-17,
+                1.2360851334676302e-16,
+                3.016279287654615e-17,
+                8.06813373392938e-17,
+                2.0478439210322522e-16,
+                9.224482236564225e-17
+              ]
+            ],
+            "directional_error_bound": 0.004750160463664506,
+            "frequency_hz": 3.5,
+            "missing_effective_residual_components": [
+              [
+                2.5474363791242438e-15,
+                9.26131993475142e-15,
+                3.447207980451724e-15,
+                6.025825687918277e-15,
+                1.5027890031562093e-14,
+                1.1316519334325941e-14
+              ],
+              [
+                0.0001231636946115787,
+                0.0003567254700605471,
+                0.000187596569360882,
+                0.0002717119990237532,
+                0.0004874873428674843,
+                0.00038388840696689625
+              ]
+            ],
+            "missing_field_error_components": [
+              [
+                1.6503983864185437e-06,
+                4.780135397197962e-06,
+                2.513801442147488e-06,
+                3.640951528835414e-06,
+                6.5323496552973996e-06,
+                5.144119812316574e-06
+              ],
+              [
+                5.559061456971247e-07,
+                1.6101001281158401e-06,
+                8.467274854885683e-07,
+                1.2263871278180788e-06,
+                2.200301068351644e-06,
+                1.732701543171735e-06
+              ]
+            ],
+            "missing_raw_residual_norms": [
+              0.0001231636946115788,
+              0.00035672547006054703,
+              0.0001875965693608818,
+              0.0002717119990237532,
+              0.00048748734286748466,
+              0.0003838884069668961
+            ],
+            "paid_field_error_components": [
+              [
+                4.3587867571552627e-13,
+                6.462146109825714e-13,
+                2.9886877881806125e-13,
+                5.523943015413306e-13,
+                7.828500468031896e-13,
+                4.474502705711658e-13
+              ],
+              [
+                9.640449886088609e-14,
+                1.4737546138288534e-13,
+                7.256742692948583e-14,
+                1.3216517620897553e-13,
+                1.8115867095358618e-13,
+                1.0511556034797378e-13
+              ]
+            ],
+            "paid_field_residual_components": [
+              [
+                1.7212261689128618e-12,
+                3.138864080992796e-12,
+                1.993250937954462e-12,
+                3.0638337518450223e-12,
+                4.838484632180352e-12,
+                2.552990703974495e-12
+              ],
+              [
+                1.3118699054390336e-11,
+                2.1162638736812567e-11,
+                1.1484472935441577e-11,
+                2.047194201707878e-11,
+                2.6646822334682142e-11,
+                1.5835438986291033e-11
+              ]
+            ],
+            "stability": {
+              "M": [
+                [
+                  0.7277247260867122,
+                  0.013400039422774021
+                ],
+                [
+                  0.10406463633539476,
+                  0.004513555261212119
+                ]
+              ],
+              "a": 0.4187731017664097,
+              "available": true,
+              "beta_lower_bound": 1.3600646384787893,
+              "ell": 55.05612332587394,
+              "frequency_hz": 3.5,
+              "gamma": 385.00785355736264,
+              "k": 2.96884354954711,
+              "model_sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+              "model_sha256_encoding": "C-order flat little-endian float64 squared slowness",
+              "n": 2401,
+              "numerical_diagnostics": {
+                "coarse_singular_value_threshold": 7.226181048744002e-12,
+                "floating_point_scope": "ordinary floating point; heuristic PSD allowance",
+                "formally_verified_roundoff_enclosure": false,
+                "gram_diagonal_shift": 7.938250997262535e-07,
+                "gram_psd_allowance": 7.938250997262535e-07,
+                "gram_scale": 436409.96378472925,
+                "offline_damping_real_dct_I_transforms": 2,
+                "raw_gram_minimum_eigenvalue": 0.005136783757508377,
+                "strong_indefiniteness_threshold": -7.938250997262534e-06
+              },
+              "operator_signature": {
+                "damping_float64_le_sha256": "7858b903b77991e6ece7b9e41482fbb39958c98fd6fe3fe83f0932827d86e730",
+                "first_omitted_laplacian_eigenvalue": 598.6845227819323,
+                "formally_verified_roundoff_enclosure": false,
+                "method": "real-low-Dirichlet-Laplacian-DCT-I-DST-I-v1",
+                "n": 2401,
+                "ordered_eigenvalues_float64_le_sha256": "4ed7032d4d8089a03bad3c537b66c8b78b79e8e5f1a827dd89b085b33f001505",
+                "physics_config_sha256": "2eee38066e85d2fa678323a3f7cf5de42f16162f42b72d371f665fd03a4be29b",
+                "rank": 64,
+                "selected_modes_int64_le_sha256": "a4f98963ffae22884d40321a2cd189c5b15cf616d4c24f750b87aeaa061dcb3c"
+              },
+              "physics_config": {
+                "damping_strength": 2.0,
+                "damping_width": 6,
+                "shape": [
+                  49,
+                  49
+                ],
+                "spacing": 0.025
+              },
+              "rank": 64,
+              "reason": "available (ordinary floating point)",
+              "tau": 0.4245446296454263
+            },
+            "stability_available": true
+          },
+          {
+            "affine_data_defect_norm": 0.0,
+            "approximate_directional_derivative": -13.84245327972684,
+            "cache_kind": "forward_states",
+            "directional_bound_terms": [
+              [
+                0.002415326138595835,
+                0.003366280061567114,
+                0.0008884026636415976,
+                0.0028197380304419133,
+                0.0027933047745508596,
+                0.007880115635683667
+              ],
+              [
+                2.7572499305403027e-13,
+                3.6430025788515893e-13,
+                8.441252036264358e-14,
+                3.478792321876781e-13,
+                2.783303808686313e-13,
+                1.0470324169315022e-12
+              ],
+              [
+                2.538755143939461e-16,
+                3.4694269977743486e-16,
+                9.984091219068468e-17,
+                2.970088393727559e-16,
+                2.652722533988538e-16,
+                8.798079660822359e-16
+              ]
+            ],
+            "directional_error_bound": 0.020163167306880808,
+            "frequency_hz": 4.0,
+            "missing_effective_residual_components": [
+              [
+                2.8533443761799674e-15,
+                4.477468253859625e-15,
+                1.2424158275459393e-15,
+                4.7049287976122434e-15,
+                3.881607160270957e-15,
+                1.001413513101355e-14
+              ],
+              [
+                0.000727910711902936,
+                0.0009156933462579831,
+                0.0003909527164387051,
+                0.0008996223539027163,
+                0.0008298441116926372,
+                0.001723756476157977
+              ]
+            ],
+            "missing_field_error_components": [
+              [
+                1.2043179382493476e-05,
+                1.5150016404074194e-05,
+                6.468257191296738e-06,
+                1.4884124115470048e-05,
+                1.372965300593048e-05,
+                2.8519306149414484e-05
+              ],
+              [
+                4.96894352938891e-06,
+                6.2508058375578434e-06,
+                2.6687640937322835e-06,
+                6.141100275442892e-06,
+                5.664772424699799e-06,
+                1.176689454520951e-05
+              ]
+            ],
+            "missing_raw_residual_norms": [
+              0.0007279107119029356,
+              0.0009156933462579841,
+              0.000390952716438705,
+              0.0008996223539027156,
+              0.0008298441116926363,
+              0.0017237564761579762
+            ],
+            "paid_field_error_components": [
+              [
+                3.844771475517779e-13,
+                4.179097187376176e-13,
+                2.8037491743552737e-13,
+                3.6282913236266423e-13,
+                3.5230121303906995e-13,
+                5.64674370578995e-13
+              ],
+              [
+                1.2252710895727526e-13,
+                1.3235809093173468e-13,
+                9.323931892581353e-14,
+                1.1943215657276001e-13,
+                1.1257840856985025e-13,
+                1.728342043397443e-13
+              ]
+            ],
+            "paid_field_residual_components": [
+              [
+                1.7978982934791816e-12,
+                1.940341325539816e-12,
+                1.4711537140229505e-12,
+                1.9320869586087788e-12,
+                1.7727126296225833e-12,
+                2.830419925574225e-12
+              ],
+              [
+                1.1699158282915388e-11,
+                1.2453288851002916e-11,
+                9.774059553030903e-12,
+                1.2256164550247507e-11,
+                1.0817653914331575e-11,
+                1.4907106320769824e-11
+              ]
+            ],
+            "stability": {
+              "M": [
+                [
+                  0.31603947652582415,
+                  0.016544857998714014
+                ],
+                [
+                  0.07062697590240725,
+                  0.006826309110869422
+                ]
+              ],
+              "a": 0.14486157230180952,
+              "available": true,
+              "beta_lower_bound": 3.0834229343312125,
+              "ell": 71.42191099819159,
+              "frequency_hz": 4.0,
+              "gamma": 319.5966282845352,
+              "k": 2.423690127417451,
+              "model_sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+              "model_sha256_encoding": "C-order flat little-endian float64 squared slowness",
+              "n": 2401,
+              "numerical_diagnostics": {
+                "coarse_singular_value_threshold": 7.068220346909359e-12,
+                "floating_point_scope": "ordinary floating point; heuristic PSD allowance",
+                "formally_verified_roundoff_enclosure": false,
+                "gram_diagonal_shift": 1.3507098536773688e-06,
+                "gram_psd_allowance": 1.3507098536773688e-06,
+                "gram_scale": 742560.5949349432,
+                "offline_damping_real_dct_I_transforms": 2,
+                "raw_gram_minimum_eigenvalue": 0.008186131108108176,
+                "strong_indefiniteness_threshold": -1.3507098536773687e-05
+              },
+              "operator_signature": {
+                "damping_float64_le_sha256": "7858b903b77991e6ece7b9e41482fbb39958c98fd6fe3fe83f0932827d86e730",
+                "first_omitted_laplacian_eigenvalue": 598.6845227819323,
+                "formally_verified_roundoff_enclosure": false,
+                "method": "real-low-Dirichlet-Laplacian-DCT-I-DST-I-v1",
+                "n": 2401,
+                "ordered_eigenvalues_float64_le_sha256": "4ed7032d4d8089a03bad3c537b66c8b78b79e8e5f1a827dd89b085b33f001505",
+                "physics_config_sha256": "2eee38066e85d2fa678323a3f7cf5de42f16162f42b72d371f665fd03a4be29b",
+                "rank": 64,
+                "selected_modes_int64_le_sha256": "a4f98963ffae22884d40321a2cd189c5b15cf616d4c24f750b87aeaa061dcb3c"
+              },
+              "physics_config": {
+                "damping_strength": 2.0,
+                "damping_width": 6,
+                "shape": [
+                  49,
+                  49
+                ],
+                "spacing": 0.025
+              },
+              "rank": 64,
+              "reason": "available (ordinary floating point)",
+              "tau": 0.5416345644719716
+            },
+            "stability_available": true
+          }
+        ],
+        "reason": "available (ordinary floating point)",
+        "receipt_key": "5f5a94b5020f5b9320974b54bba895e43e5bd6e43108d4813f6afb89700b519a",
+        "scope": "ordinary floating point; existing unverified stability allowance; pointwise derivative only",
+        "stationarity_claim": false
+      },
+      "field_sha256": {
+        "2.5": "027d9768a166c50042f07614a098174ada813ad479d962cf56a75655088f325d",
+        "3.0": "d80049bb1c94585fd6967cfdff5a1edd4d5904a1df79f2805eb39d3395303cd6",
+        "3.5": "977f12065ac46e17d8b53156264459b4f21718f1157753a1a16b9dfebf3e14a0",
+        "4.0": "3a2d7ecf6d6b74f114198e1255fb89a578061aa7997bdf06fbc4bc58942c5bbc"
+      },
+      "fixed_sweep_receipt": {
+        "field_sha256": {
+          "2.5": "027d9768a166c50042f07614a098174ada813ad479d962cf56a75655088f325d",
+          "3.0": "d80049bb1c94585fd6967cfdff5a1edd4d5904a1df79f2805eb39d3395303cd6",
+          "3.5": "977f12065ac46e17d8b53156264459b4f21718f1157753a1a16b9dfebf3e14a0",
+          "4.0": "3a2d7ecf6d6b74f114198e1255fb89a578061aa7997bdf06fbc4bc58942c5bbc"
+        },
+        "initializer": "coarse",
+        "query_costs": {
+          "adjoint_operator_columns": 192,
+          "arnoldi_axpy_updates": 0,
+          "arnoldi_dot_products": 0,
+          "arnoldi_iterations": 0,
+          "arnoldi_norm_evaluations": 0,
+          "basis_setups": 0,
+          "certificate_eigenproblems": 0,
+          "certificate_inverse_rhs": 0,
+          "certificate_svd_evaluations": 0,
+          "coarse_adjoint_rhs": 120,
+          "coarse_forward_rhs": 0,
+          "coarse_lu_factorizations": 0,
+          "coarse_solve_dispatches": 20,
+          "context_cache_hits": 0,
+          "dst_I_dispatches": 36,
+          "dst_I_real_column_transforms": 432,
+          "fine_direct_rhs": 0,
+          "fine_factorizations": 0,
+          "forward_operator_columns": 0,
+          "givens_constructions": 0,
+          "givens_rotations": 0,
+          "high_denominator_builds": 0,
+          "high_inverse_columns": 96,
+          "idst_I_dispatches": 36,
+          "idst_I_real_column_transforms": 432,
+          "krylov_solution_update_columns": 0,
+          "laplacian_eigenvalue_entries": 0,
+          "lift_columns": 120,
+          "linear_solve_columns": 0,
+          "model_moment_cache_hits": 0,
+          "moment_matrices": 0,
+          "offline_dct_I_real_transforms": 0,
+          "online_dct_I_real_transforms": 0,
+          "operator_columns": 192,
+          "operator_dispatches": 32,
+          "preconditioner_columns": 96,
+          "preconditioner_dispatches": 16,
+          "projected_triangular_solves": 0,
+          "projection_columns": 120,
+          "reduced_operator_assemblies": 0,
+          "restart_cycles": 0,
+          "true_residual_checks": 0
+        },
+        "setup_costs_included": false,
+        "sweeps": 4
+      },
+      "fixed_sweeps": 4,
+      "formally_verified_roundoff_enclosure": false,
+      "gmres_reports": [],
+      "initializer": "same coarse Galerkin missing field",
+      "policy": "fixed_sweeps_certified",
+      "rank": 64,
+      "same_paid_lu_merit": true
+    },
+    "proposal_flags": {
+      "certified_descent": true,
+      "direction_available": true,
+      "fallback_required": false
+    },
+    "snapshot": {
+      "accuracy_scope": "native sparse LU; ordinary floating point; PDE residuals not analytically zero; not a verified roundoff enclosure",
+      "damping": {
+        "dtype": "float64",
+        "sha256": "7858b903b77991e6ece7b9e41482fbb39958c98fd6fe3fe83f0932827d86e730",
+        "shape": [
+          2401
+        ]
+      },
+      "data_sha256": "ba4e762eaebaef3d5a7123d5502aa43c1df82b3ca6ef66bf70907db968baa751",
+      "frequencies": [
+        {
+          "block_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "cache_kind": "forward_states",
+          "cached_field": {
+            "dtype": "complex128",
+            "sha256": "abdf3fd39cf5c5efc6b3472f1ea3cda5d376bc2a615cc2fd1de1c26146a52c8c",
+            "shape": [
+              2401,
+              6
+            ]
+          },
+          "frequency_hz": 2.5,
+          "observed_slots": {
+            "dtype": "complex128",
+            "sha256": "948ea52f052d78696e9e5b507da651d9a3d5c235548883837887f9247f433da1",
+            "shape": [
+              20,
+              6
+            ]
+          },
+          "receiver_expand_indices": {
+            "dtype": "int64",
+            "sha256": "f5c4cb24f4c9b43e624e0a83cb11934f932dbd5db24eee67fed696354ac88a61",
+            "shape": [
+              20
+            ]
+          },
+          "receiver_indices": [
+            250,
+            252,
+            254,
+            256,
+            258,
+            260,
+            262,
+            264,
+            266,
+            268,
+            270,
+            272,
+            274,
+            276,
+            278,
+            280,
+            282,
+            284,
+            286,
+            288
+          ],
+          "residual_slots": {
+            "dtype": "complex128",
+            "sha256": "0c407ff980fc5c2c5a64754fe4f44e127916c46d0ee6cd3d591687e4e756f643",
+            "shape": [
+              20,
+              6
+            ]
+          },
+          "residual_unique": {
+            "dtype": "complex128",
+            "sha256": "0c407ff980fc5c2c5a64754fe4f44e127916c46d0ee6cd3d591687e4e756f643",
+            "shape": [
+              20,
+              6
+            ]
+          },
+          "source_amplitude": 1599.9999999999998,
+          "source_indices": [
+            250,
+            258,
+            266,
+            272,
+            280,
+            288
+          ],
+          "transpose_symmetric": true,
+          "unique_receiver_indices": [
+            250,
+            252,
+            254,
+            256,
+            258,
+            260,
+            262,
+            264,
+            266,
+            268,
+            270,
+            272,
+            274,
+            276,
+            278,
+            280,
+            282,
+            284,
+            286,
+            288
+          ]
+        },
+        {
+          "block_indices": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "cache_kind": "forward_states",
+          "cached_field": {
+            "dtype": "complex128",
+            "sha256": "c7d93669950e53a9abb0ba1dbb0b137d684c11125783a7e1cc4e4a9601e856e0",
+            "shape": [
+              2401,
+              6
+            ]
+          },
+          "frequency_hz": 3.0,
+          "observed_slots": {
+            "dtype": "complex128",
+            "sha256": "9983f7fc8b27800df06e4c0fb612a06c7b100a53c90c5aeed80acedfdb37b2b7",
+            "shape": [
+              20,
+              6
+            ]
+          },
+          "receiver_expand_indices": {
+            "dtype": "int64",
+            "sha256": "f5c4cb24f4c9b43e624e0a83cb11934f932dbd5db24eee67fed696354ac88a61",
+            "shape": [
+              20
+            ]
+          },
+          "receiver_indices": [
+            250,
+            252,
+            254,
+            256,
+            258,
+            260,
+            262,
+            264,
+            266,
+            268,
+            270,
+            272,
+            274,
+            276,
+            278,
+            280,
+            282,
+            284,
+            286,
+            288
+          ],
+          "residual_slots": {
+            "dtype": "complex128",
+            "sha256": "b8e463f673cb7f85e655960c427db1d9393aa04cfe5a448c64ed94743bf82864",
+            "shape": [
+              20,
+              6
+            ]
+          },
+          "residual_unique": {
+            "dtype": "complex128",
+            "sha256": "b8e463f673cb7f85e655960c427db1d9393aa04cfe5a448c64ed94743bf82864",
+            "shape": [
+              20,
+              6
+            ]
+          },
+          "source_amplitude": 1599.9999999999998,
+          "source_indices": [
+            250,
+            258,
+            266,
+            272,
+            280,
+            288
+          ],
+          "transpose_symmetric": true,
+          "unique_receiver_indices": [
+            250,
+            252,
+            254,
+            256,
+            258,
+            260,
+            262,
+            264,
+            266,
+            268,
+            270,
+            272,
+            274,
+            276,
+            278,
+            280,
+            282,
+            284,
+            286,
+            288
+          ]
+        },
+        {
+          "block_indices": [
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "cache_kind": "forward_states",
+          "cached_field": {
+            "dtype": "complex128",
+            "sha256": "02a55fd320e34a6b8a956f51574b35b73e157d3164ac4c57a56a5c88b7dacf73",
+            "shape": [
+              2401,
+              6
+            ]
+          },
+          "frequency_hz": 3.5,
+          "observed_slots": {
+            "dtype": "complex128",
+            "sha256": "fa1ad8932f6a2cf5fdc99077e02de24c9ee3582b8fd050c5f79fd095da53dbc0",
+            "shape": [
+              20,
+              6
+            ]
+          },
+          "receiver_expand_indices": {
+            "dtype": "int64",
+            "sha256": "f5c4cb24f4c9b43e624e0a83cb11934f932dbd5db24eee67fed696354ac88a61",
+            "shape": [
+              20
+            ]
+          },
+          "receiver_indices": [
+            250,
+            252,
+            254,
+            256,
+            258,
+            260,
+            262,
+            264,
+            266,
+            268,
+            270,
+            272,
+            274,
+            276,
+            278,
+            280,
+            282,
+            284,
+            286,
+            288
+          ],
+          "residual_slots": {
+            "dtype": "complex128",
+            "sha256": "a26b2acc61c7514f81858d13eda3c9325b3a34684f3aa1f47149ffcaf28e5af1",
+            "shape": [
+              20,
+              6
+            ]
+          },
+          "residual_unique": {
+            "dtype": "complex128",
+            "sha256": "a26b2acc61c7514f81858d13eda3c9325b3a34684f3aa1f47149ffcaf28e5af1",
+            "shape": [
+              20,
+              6
+            ]
+          },
+          "source_amplitude": 1599.9999999999998,
+          "source_indices": [
+            250,
+            258,
+            266,
+            272,
+            280,
+            288
+          ],
+          "transpose_symmetric": true,
+          "unique_receiver_indices": [
+            250,
+            252,
+            254,
+            256,
+            258,
+            260,
+            262,
+            264,
+            266,
+            268,
+            270,
+            272,
+            274,
+            276,
+            278,
+            280,
+            282,
+            284,
+            286,
+            288
+          ]
+        },
+        {
+          "block_indices": [
+            18,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          "cache_kind": "forward_states",
+          "cached_field": {
+            "dtype": "complex128",
+            "sha256": "307a18a8e51006588dcd2fc4bf832ac6cbc97cab93c62b7d2d011beb4c7a9deb",
+            "shape": [
+              2401,
+              6
+            ]
+          },
+          "frequency_hz": 4.0,
+          "observed_slots": {
+            "dtype": "complex128",
+            "sha256": "a21d776562fedd41c1cc4c8226d64c24f0d9a01972f04eb85771debcb3222249",
+            "shape": [
+              20,
+              6
+            ]
+          },
+          "receiver_expand_indices": {
+            "dtype": "int64",
+            "sha256": "f5c4cb24f4c9b43e624e0a83cb11934f932dbd5db24eee67fed696354ac88a61",
+            "shape": [
+              20
+            ]
+          },
+          "receiver_indices": [
+            250,
+            252,
+            254,
+            256,
+            258,
+            260,
+            262,
+            264,
+            266,
+            268,
+            270,
+            272,
+            274,
+            276,
+            278,
+            280,
+            282,
+            284,
+            286,
+            288
+          ],
+          "residual_slots": {
+            "dtype": "complex128",
+            "sha256": "1e4c0e4facefc85c2059abecb5f0e34dd27ad7d7ead8ca48c4b32b2a49b42e85",
+            "shape": [
+              20,
+              6
+            ]
+          },
+          "residual_unique": {
+            "dtype": "complex128",
+            "sha256": "1e4c0e4facefc85c2059abecb5f0e34dd27ad7d7ead8ca48c4b32b2a49b42e85",
+            "shape": [
+              20,
+              6
+            ]
+          },
+          "source_amplitude": 1599.9999999999998,
+          "source_indices": [
+            250,
+            258,
+            266,
+            272,
+            280,
+            288
+          ],
+          "transpose_symmetric": true,
+          "unique_receiver_indices": [
+            250,
+            252,
+            254,
+            256,
+            258,
+            260,
+            262,
+            264,
+            266,
+            268,
+            270,
+            272,
+            274,
+            276,
+            278,
+            280,
+            282,
+            284,
+            286,
+            288
+          ]
+        }
+      ],
+      "geometry_sha256": "10234b11eefa78e46ed851726a92536698cfa24c032ad38099c6d15ce4d2d8b2",
+      "model": {
+        "dtype": "float64",
+        "sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+        "shape": [
+          2401
+        ]
+      },
+      "model_sha256": "2a4230eb5d5891e36e5c89d9c126ac1900a14be39176b8daefc44d52f895b9f7",
+      "operator_sha256": "047d8a88da53f9ddce01b79d3a55f0f291fdaa2d3b933796bb92d8b093fbe521",
+      "physics_config": {
+        "damping_strength": 2.0,
+        "damping_width": 6,
+        "shape": [
+          49,
+          49
+        ],
+        "spacing": 0.025
+      },
+      "receipt_key": "5f5a94b5020f5b9320974b54bba895e43e5bd6e43108d4813f6afb89700b519a"
+    },
+    "unknown_fields_are_not_zero": true
+  },
+  "production_observation_preparation_costs": {
+    "adjoint_rhs": 0,
+    "analytic_bound_evaluations": 0,
+    "cache_hits": 0,
+    "dense_inverse_rhs": 0,
+    "factorizations": 4,
+    "forward_rhs": 24,
+    "stability_rhs": 0,
+    "svd_evaluations": 0,
+    "tangent_rhs": 0
+  },
+  "raw_arrays_artifact": "case_01_arrays.npz",
+  "raw_arrays_available": true,
+  "raw_arrays_file_sha256": "52c63cf162370684129c25ca3642b765efaebad0f2751e360ea5e02b3b0838f2",
+  "raw_vector_scope": "initial-model pointwise raw direction only; no clipped/finite-step certificate",
+  "raw_witness_complete": true,
+  "reconstructed_approximate_center": -149.06950031138948,
+  "scope": "AI-authored SOFTWARE verification of one newly recomputed cached-merit certified proposal at each of the eight fixed original initial models; no optimizer trajectories, performance comparison, model/rank/tolerance selection, new geology or student final design.",
+  "status": "complete"
+}

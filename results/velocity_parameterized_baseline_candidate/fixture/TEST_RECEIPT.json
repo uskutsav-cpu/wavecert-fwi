@@ -1,0 +1,53 @@
+{
+  "status": "MANUFACTURED_SOFTWARE_TESTS_PASS_PENDING_INDEPENDENT_REVIEW_NO_PROJECT_EXECUTION",
+  "role": "AI standard-coordinate engineering candidate; not novelty, recovery evidence, student final design or a controlled project benchmark",
+  "candidate_files": {
+    "velocity_oracle.py": "61dc9b2c80f7adba64154a92e4e63d716c127b81cdfb161c8267e43a08734d5c",
+    "test_velocity_oracle.py": "d0396b1c27117612b53e65b966ba46573f6e81b24838e8da3bab4287124dcc5e",
+    "SCOPE.md": "482ce254e48007b04b0cbdcd83b4f416c03f4c3317d582aec7c954b7f41d4b20",
+    "SOURCE_PINS.json": "4bb1ad6716118ebf0251ca59434dd92b901ab570e2b70b7b9b1777023df25d27"
+  },
+  "pytest": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/src OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 OMP_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest -q -W error -p no:cacheprovider --basetemp /tmp/wavecert-velocity-baseline-puretests-01 test_velocity_oracle.py",
+    "exec_session": 52380,
+    "initial_tool_chunk_id": "4ae5a6",
+    "terminal_tool_chunk_id": "e000e1",
+    "exit_code": 0,
+    "passed": 30,
+    "log": "puretests_01.log",
+    "log_sha256": "f45a9494220b7f53a54d10f2b5f8b198f6124e8240dd17899df4d2f4101c9901",
+    "duration_scope": "Pytest duration is not project runtime or performance evidence."
+  },
+  "checks_covered": [
+    "Manufactured5x6 complex damped native survey, repeated receivers and two frequencies; central scalar-objective FD agrees with the velocity pullback at1e-6 relative/1e-9 absolute tolerance.",
+    "Mapped velocity direction agrees with independent native field central FD below1e-6 relative error and gradient/tangent duality at1e-13; the mapping helper itself performs no solve.",
+    "Forward-state and receiver-map native merit/gradient strategies, additional RHS, accepted LU reuse after two rejected trials, cache hits and full native physics/oracle counter maps exactly match a separate native oracle given the same actual mapped models/call sequence.",
+    "Actual m-to-v-to-m mismatch and both initial hashes are exposed; distinct velocity bytes mapping to the same subnormal native model retain distinct coordinate receipts. Unrepresentable derivative fails instead of returning zero.",
+    "Reversed scalar/vector velocity bounds, fixed coordinates, immutable arrays, foreign/copied/mutated receipts, fresh native ownership, invalid inputs and native failure counters.",
+    "Explicit units/problem/source fingerprints, actual native endpoint conversion/hash and first-issued initial native metadata.",
+    "Existing paid exact L-BFGS-B engine accepts the structural wrapper at zero steps, preserving velocity in initial/final/checkpoint models and native costs. This is only initialization under a constant abstract clock; no optimizer step or measured trajectory."
+  ],
+  "ruff": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -m ruff check --no-cache --config ../../wavecert-fwi/pyproject.toml velocity_oracle.py test_velocity_oracle.py",
+    "result": "PASS",
+    "exit_code": 0,
+    "tool_output_chunk_id": "1ec790",
+    "log": "ruff_01.log",
+    "authoring_note": "An initial un-frozen import-group I001 finding was fixed before any test execution; no algorithm or numerical settings changed."
+  },
+  "python310_grammar": "Both sources parsed with ast feature_version(3,10); tool chunkabfc23.",
+  "production_integrity": {
+    "before": "SOURCE_BEFORE.json",
+    "after": "SOURCE_AFTER.json",
+    "both_file_sha256": "fe74269bf569daa4e45cc090511f219c7856bc0d56ddb508bc4df5efd5985949",
+    "all161_file_entries_byte_identical": true,
+    "source_digest_before_after": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da"
+  },
+  "important_API_scope": "Receipt/engine checkpoint/final_model coordinates are VELOCITY. Existing m-based budget_endpoints/offline quality helpers must not consume them directly. A future adapter must explicitly convert/rehash native endpoints, include output conversion/provenance before actual API return, refresh cost snapshots and perform truth audits afterward. No such project adapter/protocol is supplied here.",
+  "actions_not_performed": [
+    "No project dataset or saved benchmark model arrays loaded.",
+    "No validation-case trajectory, benchmark timing, hyperparameter selection, prior/regularizer, new optimizer, certificate-coordinate proof or scientific experiment performed.",
+    "No repository, production source, old benchmark artifacts or workflow edits."
+  ],
+  "remaining_gate": "Independent source review and freeze. Any project execution requires a separate controlled protocol and root decision; no improvement claim follows from these software tests."
+}

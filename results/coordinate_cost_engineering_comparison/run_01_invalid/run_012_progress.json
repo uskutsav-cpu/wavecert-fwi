@@ -1,0 +1,42 @@
+{
+  "case_index": 6,
+  "common_binding": {
+    "actual_common_m_sha256": "9ef8a4f5eaf67ebf5aa41131fb3198586f585cfa71af6abac6bfed653e23788b",
+    "initial_velocity_sha256": "f3717dda61f41d936d8c235b5d0c87b2067e8b3f440a70fd4a63fb3ac28bc8a0",
+    "observations_sha256": "bd4f63dbb1cccb6b4a377573748e76b27aa6d13dff422f283a0b607db5305ee6",
+    "raw_model_sha256": "11932f843e820cf9e1ffb84d5fb04e1b5d92dd65fe311abc5783e3248da772f6",
+    "requested_m_sha256": "d2d7a8d53909bc5a24846b1bd3b8a468df6b046272cc6b1de4727eb1555f42f8",
+    "truth_sha256": "eca9b1fe5c35f00593bfb4ace523374e350723ab29ae0b06ebe397fafa65f088"
+  },
+  "common_start_record": {
+    "actual_native_model_sha256": "9ef8a4f5eaf67ebf5aa41131fb3198586f585cfa71af6abac6bfed653e23788b",
+    "convention": "v=1/sqrt(requested_m), actual_m=np.power(v,-2); no ULP search, replacement or cached-receipt borrowing",
+    "native_roundtrip_bitwise_equal": false,
+    "native_roundtrip_max_abs_difference": 1.1102230246251565e-16,
+    "requested_native_model_sha256": "d2d7a8d53909bc5a24846b1bd3b8a468df6b046272cc6b1de4727eb1555f42f8",
+    "velocity_model_sha256": "f3717dda61f41d936d8c235b5d0c87b2067e8b3f440a70fd4a63fb3ac28bc8a0"
+  },
+  "error": "NameError: name 'np' is not defined",
+  "finished_utc": "2026-11-08T07:07:58.219500+00:00",
+  "global_started_perf_counter": 18221.353100041,
+  "method": "physical_v_lbfgsb",
+  "optimizer_coordinates": "physical_velocity",
+  "order_position": 0,
+  "phase": "offline_independent_audit",
+  "preparation_physics_costs": {
+    "adjoint_rhs": 0,
+    "analytic_bound_evaluations": 0,
+    "cache_hits": 0,
+    "dense_inverse_rhs": 0,
+    "factorizations": 4,
+    "forward_rhs": 24,
+    "stability_rhs": 0,
+    "svd_evaluations": 0,
+    "tangent_rhs": 0
+  },
+  "repetition": 0,
+  "run_index": 12,
+  "scope": "bounded current-run metadata only; no growing cohort or trajectory arrays",
+  "started_utc": "2026-11-08T07:07:50.386019+00:00",
+  "status": "failed"
+}

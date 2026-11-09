@@ -1,0 +1,1941 @@
+{
+  "schema_version": 1,
+  "created_before_computation_utc": "2026-11-07T21:44:14.714097+00:00",
+  "scope": "Private fixed four train/validation model physical low-mode Galerkin state/adjoint feasibility. No held-out data, NN/JVP, public source, optimizer, or timings.",
+  "observed_data": "Fine reference state at the original unsmoothed model, evaluated with the same fixed source/receivers/operator",
+  "evaluation_model": "Gaussian-smoothed original velocity, sigma1.6 reflect, then squared-slowness transform",
+  "shape": [
+    24,
+    24
+  ],
+  "spacing": 0.05,
+  "source_index": 54,
+  "receiver_indices": [
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69
+  ],
+  "ranks": [
+    32,
+    64,
+    96
+  ],
+  "frequencies_hz": [
+    3.0,
+    4.0
+  ],
+  "direction": "normalized negative physical approximate adjoint-form gradient; zero if its norm <=1e-14",
+  "summary_by_rank": {
+    "32": {
+      "cases": 8,
+      "stability_available": 5,
+      "true_descent": 8,
+      "certified_descent": 0,
+      "false_certified_descent": 0,
+      "all_available_covered": true,
+      "median_gradient_cosine": 0.865206744001208,
+      "median_receiver_relative_error": 0.43460409447870585,
+      "median_effectivity_available": 5173.480784127632,
+      "median_bound_to_descent_margin_available": 983.4886729632154
+    },
+    "64": {
+      "cases": 8,
+      "stability_available": 8,
+      "true_descent": 8,
+      "certified_descent": 0,
+      "false_certified_descent": 0,
+      "all_available_covered": true,
+      "median_gradient_cosine": 0.9730007648509382,
+      "median_receiver_relative_error": 0.23433233131438075,
+      "median_effectivity_available": 349.3133823230502,
+      "median_bound_to_descent_margin_available": 87.67175472529925
+    },
+    "96": {
+      "cases": 8,
+      "stability_available": 8,
+      "true_descent": 8,
+      "certified_descent": 0,
+      "false_certified_descent": 0,
+      "all_available_covered": true,
+      "median_gradient_cosine": 0.9822663683002779,
+      "median_receiver_relative_error": 0.20749809339885766,
+      "median_effectivity_available": 93.60892690257148,
+      "median_bound_to_descent_margin_available": 29.735969830144192
+    }
+  },
+  "cases": [
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 3.0,
+      "rank": 32,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.3028235981750057,
+      "stability_beta_lower": 2.5851078283268984,
+      "exact_objective": 0.12672973242168512,
+      "approximate_objective": 0.17987779673003118,
+      "exact_gradient_norm": 4.814582324352405,
+      "approximate_gradient_norm": 4.346638875183884,
+      "gradient_cosine": 0.9944184510349187,
+      "exact_directional_derivative": -4.787709497362617,
+      "independent_tangent_directional_derivative": -4.787709497362619,
+      "approximate_directional_derivative": -4.346638875183882,
+      "actual_directional_error": 0.44107062217873505,
+      "approximate_state_relative_error": 0.07211431874262056,
+      "approximate_receiver_relative_error": 0.19846232155227192,
+      "primal_residual_components": [
+        3.5888937652471484e-13,
+        393.68675772059504
+      ],
+      "approximate_adjoint_residual_components": [
+        1.2074683374694722e-15,
+        0.6053573236501207
+      ],
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 977.5889484050564,
+      "certified_upper_derivative": 973.2423095298725,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 2216.40004853669,
+      "eta_u_components": [
+        7.210847055833811,
+        3.320532761390096
+      ],
+      "eta_lambda_components": [
+        1.790522367775491,
+        0.29714901845174707
+      ],
+      "eta_receiver_state": 7.46648666273885,
+      "actual_u_error_components": [
+        0.28322688403667773,
+        0.49812990925278383
+      ],
+      "actual_lambda_error_components": [
+        0.0095960223151835,
+        0.0009511195599880326
+      ],
+      "multiplier_state_components": [
+        0.5168031688695742,
+        0.1791882966820886
+      ],
+      "multiplier_adjoint_components": [
+        0.0019935267494871063,
+        0.0006608187016478432
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 347.6998204745781,
+        "adjoint_approx_times_state_error": 5.887162956573336,
+        "cross_error": 624.0019649739049
+      },
+      "bound_to_descent_margin": 224.90687091268882
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 3.0,
+      "rank": 64,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.06135452679695385,
+      "stability_beta_lower": 3.6428360225800986,
+      "exact_objective": 0.12672973242168512,
+      "approximate_objective": 0.14318559505722625,
+      "exact_gradient_norm": 4.814582324352405,
+      "approximate_gradient_norm": 4.074984376997465,
+      "gradient_cosine": 0.9960403006030408,
+      "exact_directional_derivative": -4.795518025626058,
+      "independent_tangent_directional_derivative": -4.795518025626056,
+      "approximate_directional_derivative": -4.074984376997465,
+      "actual_directional_error": 0.7205336486285931,
+      "approximate_state_relative_error": 0.04425601768669167,
+      "approximate_receiver_relative_error": 0.1481835557258997,
+      "primal_residual_components": [
+        7.329023784556409e-13,
+        380.99846084936564
+      ],
+      "approximate_adjoint_residual_components": [
+        2.622512296824061e-15,
+        0.5030531726381053
+      ],
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 62.486638562310446,
+      "certified_upper_derivative": 58.41165418531298,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 86.72272097388176,
+      "eta_u_components": [
+        0.9785738886454671,
+        0.959993890265412
+      ],
+      "eta_lambda_components": [
+        0.2488407709030591,
+        0.01978367565240512
+      ],
+      "eta_receiver_state": 1.529029510507709,
+      "actual_u_error_components": [
+        0.1110888072935942,
+        0.3336499541629773
+      ],
+      "actual_lambda_error_components": [
+        0.007524965485348445,
+        0.0006139686694546308
+      ],
+      "multiplier_state_components": [
+        0.5215069623329753,
+        0.11340634447290741
+      ],
+      "multiplier_adjoint_components": [
+        0.0019023346236427057,
+        0.0003985582025269824
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 46.90596999190879,
+        "adjoint_approx_times_state_error": 0.7973730720254414,
+        "cross_error": 14.783295498376216
+      },
+      "bound_to_descent_margin": 15.334203221743866
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 3.0,
+      "rank": 96,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.02657155849976185,
+      "stability_beta_lower": 3.7765298132052094,
+      "exact_objective": 0.12672973242168512,
+      "approximate_objective": 0.14027176345862225,
+      "exact_gradient_norm": 4.814582324352405,
+      "approximate_gradient_norm": 4.285968530911446,
+      "gradient_cosine": 0.9977532124842284,
+      "exact_directional_derivative": -4.803764980892395,
+      "independent_tangent_directional_derivative": -4.803764980892396,
+      "approximate_directional_derivative": -4.285968530911447,
+      "actual_directional_error": 0.5177964499809482,
+      "approximate_state_relative_error": 0.035788329616790224,
+      "approximate_receiver_relative_error": 0.1240915688506435,
+      "primal_residual_components": [
+        1.137022224302245e-12,
+        369.49326409776097
+      ],
+      "approximate_adjoint_residual_components": [
+        4.06429839139492e-15,
+        0.449529454016132
+      ],
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 33.374032768484184,
+      "certified_upper_derivative": 29.088064237572738,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 64.45396211138981,
+      "eta_u_components": [
+        0.38316235032748314,
+        0.611669892102769
+      ],
+      "eta_lambda_components": [
+        0.14943792469621703,
+        0.00845041898808655
+      ],
+      "eta_receiver_state": 0.8608156613274814,
+      "actual_u_error_components": [
+        0.051456025987120284,
+        0.2796793225887908
+      ],
+      "actual_lambda_error_components": [
+        0.005486756220879951,
+        0.0004443990844844835
+      ],
+      "multiplier_state_components": [
+        0.5318120347327049,
+        0.03513792197626648
+      ],
+      "multiplier_adjoint_components": [
+        0.0019933452648663898,
+        0.00011956924703009864
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 28.342675316240225,
+        "adjoint_approx_times_state_error": 0.2973595694562451,
+        "cross_error": 4.733997882787716
+      },
+      "bound_to_descent_margin": 7.786812368728922
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 4.0,
+      "rank": 32,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.9644658146810426,
+      "stability_beta_lower": 0.27341260766099484,
+      "exact_objective": 0.008712630261105858,
+      "approximate_objective": 0.11642999974107719,
+      "exact_gradient_norm": 0.19288909702748225,
+      "approximate_gradient_norm": 0.5679239676755021,
+      "gradient_cosine": 0.7893234871645622,
+      "exact_directional_derivative": -0.15225189470175587,
+      "independent_tangent_directional_derivative": -0.15225189470175582,
+      "approximate_directional_derivative": -0.5679239676755019,
+      "actual_directional_error": 0.41567207297374603,
+      "approximate_state_relative_error": 0.19952157699576323,
+      "approximate_receiver_relative_error": 0.6237600050583008,
+      "primal_residual_components": [
+        2.4551713383378165e-13,
+        390.9430331112768
+      ],
+      "approximate_adjoint_residual_components": [
+        3.5143803102644817e-16,
+        0.4711970914289268
+      ],
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 38129158.885970876,
+      "certified_upper_derivative": 38129158.318046905,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 91728940.58817159,
+      "eta_u_components": [
+        270.3353570386455,
+        170.15009319639077
+      ],
+      "eta_lambda_components": [
+        795.9505444614183,
+        488.21515501231045
+      ],
+      "eta_receiver_state": 325.58230795680765,
+      "actual_u_error_components": [
+        0.2759445710544032,
+        0.651155822189294
+      ],
+      "actual_lambda_error_components": [
+        0.004131830658232695,
+        0.00027604955455662843
+      ],
+      "multiplier_state_components": [
+        0.21575894015976402,
+        0.12993233450560043
+      ],
+      "multiplier_adjoint_components": [
+        0.0003611835930583888,
+        0.00020927437708024291
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 148545.20866521992,
+        "adjoint_approx_times_state_error": 84.16719698506571,
+        "cross_error": 37980529.51010867
+      },
+      "bound_to_descent_margin": 67137787.90149064
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 4.0,
+      "rank": 64,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.1307194987263601,
+      "stability_beta_lower": 8.142886742572507,
+      "exact_objective": 0.008712630261105858,
+      "approximate_objective": 0.05351435834134797,
+      "exact_gradient_norm": 0.19288909702748225,
+      "approximate_gradient_norm": 0.431685784756542,
+      "gradient_cosine": 0.8067675206732657,
+      "exact_directional_derivative": -0.1556166585737669,
+      "independent_tangent_directional_derivative": -0.15561665857376683,
+      "approximate_directional_derivative": -0.4316857847565419,
+      "actual_directional_error": 0.276069126182775,
+      "approximate_state_relative_error": 0.1085471491969388,
+      "approximate_receiver_relative_error": 0.4179375859089441,
+      "primal_residual_components": [
+        4.3088499740126674e-13,
+        379.17346655608026
+      ],
+      "approximate_adjoint_residual_components": [
+        4.41229307834665e-16,
+        0.3052339063797691
+      ],
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 67.827233530915,
+      "certified_upper_derivative": 67.39554774615846,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 245.68931147342107,
+      "eta_u_components": [
+        1.3727207706379199,
+        1.3741876532094568
+      ],
+      "eta_lambda_components": [
+        0.16270958360668195,
+        0.029097679000916733
+      ],
+      "eta_receiver_state": 2.172417632777644,
+      "actual_u_error_components": [
+        0.09443013465330007,
+        0.37298170198751024
+      ],
+      "actual_lambda_error_components": [
+        0.002958743691276715,
+        0.00015044876969548922
+      ],
+      "multiplier_state_components": [
+        0.23766239375597784,
+        0.10149509756064312
+      ],
+      "multiplier_adjoint_components": [
+        0.0002779954323718305,
+        0.00011412500722440422
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 26.291502345124172,
+        "adjoint_approx_times_state_error": 0.34010769201287167,
+        "cross_error": 41.195623493777944
+      },
+      "bound_to_descent_margin": 157.12176755870607
+    },
+    {
+      "role": "train",
+      "array_index": 0,
+      "model_id": "f3_044",
+      "slice_id": "f3_044_il_0120",
+      "model_type": "f3",
+      "raw_m_sha256": "cd72280a9999a2447c8c4b9065e9835c4ce79080e2f21b1f4f6b8dd30385dac4",
+      "frequency_hz": 4.0,
+      "rank": 96,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.04890409060984864,
+      "stability_beta_lower": 9.048557226301062,
+      "exact_objective": 0.008712630261105858,
+      "approximate_objective": 0.03953761677589149,
+      "exact_gradient_norm": 0.19288909702748225,
+      "approximate_gradient_norm": 0.37779689941967626,
+      "gradient_cosine": 0.8363912290906829,
+      "exact_directional_derivative": -0.16133074894100785,
+      "independent_tangent_directional_derivative": -0.16133074894100774,
+      "approximate_directional_derivative": -0.3777968994196763,
+      "actual_directional_error": 0.21646615047866846,
+      "approximate_state_relative_error": 0.08695897157052124,
+      "approximate_receiver_relative_error": 0.34986227418385096,
+      "primal_residual_components": [
+        6.858738964595342e-13,
+        368.63540971121364
+      ],
+      "approximate_adjoint_residual_components": [
+        6.195621421224339e-16,
+        0.25406348640380827
+      ],
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 20.72951909138449,
+      "certified_upper_derivative": 20.351722191964814,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 95.76332856451506,
+      "eta_u_components": [
+        0.44438606607256226,
+        0.7523642612240545
+      ],
+      "eta_lambda_components": [
+        0.0761306197681794,
+        0.008817874525399236
+      ],
+      "eta_receiver_state": 1.0413198649512065,
+      "actual_u_error_components": [
+        0.0476747340664487,
+        0.30452030340770014
+      ],
+      "actual_lambda_error_components": [
+        0.002335557573199286,
+        0.00011665473059260547
+      ],
+      "multiplier_state_components": [
+        0.24317789899650727,
+        0.08189822894323585
+      ],
+      "multiplier_adjoint_components": [
+        0.00024842357474668254,
+        8.464110761910303e-05
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 12.150163607469919,
+        "adjoint_approx_times_state_error": 0.10995650117559298,
+        "cross_error": 8.469398982738976
+      },
+      "bound_to_descent_margin": 54.86947913872916
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 3.0,
+      "rank": 32,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.3559872256372834,
+      "stability_beta_lower": 3.4776167912904823,
+      "exact_objective": 2.4225575298874333,
+      "approximate_objective": 2.595046683554645,
+      "exact_gradient_norm": 1.8990037217157816,
+      "approximate_gradient_norm": 2.087923849365789,
+      "gradient_cosine": 0.9864149550840029,
+      "exact_directional_derivative": -1.873205670860627,
+      "independent_tangent_directional_derivative": -1.873205670860626,
+      "approximate_directional_derivative": -2.087923849365788,
+      "actual_directional_error": 0.21471817850516084,
+      "approximate_state_relative_error": 0.11409611741752212,
+      "approximate_receiver_relative_error": 0.30511886433336605,
+      "primal_residual_components": [
+        2.6742115301763837e-13,
+        391.2592670933584
+      ],
+      "approximate_adjoint_residual_components": [
+        2.8025415144818767e-15,
+        2.135497836461696
+      ],
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 616.109001756567,
+      "certified_upper_derivative": 614.0210779072012,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 2869.3844463744763,
+      "eta_u_components": [
+        5.164305329518392,
+        3.9623276838835255
+      ],
+      "eta_lambda_components": [
+        1.2236101027406343,
+        0.39334284926578206
+      ],
+      "eta_receiver_state": 6.931600456262018,
+      "actual_u_error_components": [
+        0.15141798798200234,
+        0.47525248158618966
+      ],
+      "actual_lambda_error_components": [
+        0.0036379093320484486,
+        0.003877807506397188
+      ],
+      "multiplier_state_components": [
+        0.31189204253562897,
+        0.06786794496213576
+      ],
+      "multiplier_adjoint_components": [
+        0.0030546747501227667,
+        0.0008689341498592007
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 145.0818671238038,
+        "adjoint_approx_times_state_error": 6.828363749706301,
+        "cross_error": 464.1987708830569
+      },
+      "bound_to_descent_margin": 295.0821228196189
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 3.0,
+      "rank": 64,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.06737481179812112,
+      "stability_beta_lower": 5.246180683872511,
+      "exact_objective": 2.4225575298874333,
+      "approximate_objective": 2.4881884016388334,
+      "exact_gradient_norm": 1.8990037217157816,
+      "approximate_gradient_norm": 2.138897541491654,
+      "gradient_cosine": 0.9891648546316266,
+      "exact_directional_derivative": -1.8784277403359098,
+      "independent_tangent_directional_derivative": -1.8784277403359084,
+      "approximate_directional_derivative": -2.138897541491654,
+      "actual_directional_error": 0.26046980115574403,
+      "approximate_state_relative_error": 0.07542648058242304,
+      "approximate_receiver_relative_error": 0.2184548460190512,
+      "primal_residual_components": [
+        4.979885642565736e-13,
+        378.7725105520884
+      ],
+      "approximate_adjoint_residual_components": [
+        3.86257628840331e-15,
+        1.8250407077319795
+      ],
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 29.526555335874754,
+      "certified_upper_derivative": 27.3876577943831,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 113.3588431551794,
+      "eta_u_components": [
+        0.63974306675851,
+        1.0001231860543223
+      ],
+      "eta_lambda_components": [
+        0.15664439953733864,
+        0.024372245172711735
+      ],
+      "eta_receiver_state": 1.3721304478590841,
+      "actual_u_error_components": [
+        0.06012947461539003,
+        0.32421109175925494
+      ],
+      "actual_lambda_error_components": [
+        0.0032789359165345073,
+        0.001928214830054679
+      ],
+      "multiplier_state_components": [
+        0.3241057895759963,
+        0.03788696313179326
+      ],
+      "multiplier_adjoint_components": [
+        0.003255184845636413,
+        0.0005759357757084034
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 18.36673073158372,
+        "adjoint_approx_times_state_error": 0.9445763292800295,
+        "cross_error": 10.215248275011003
+      },
+      "bound_to_descent_margin": 13.804567429294963
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 3.0,
+      "rank": 96,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.027157813745902686,
+      "stability_beta_lower": 5.485464704555379,
+      "exact_objective": 2.4225575298874333,
+      "approximate_objective": 2.472289915038856,
+      "exact_gradient_norm": 1.8990037217157816,
+      "approximate_gradient_norm": 2.0796378688919233,
+      "gradient_cosine": 0.9929166911997055,
+      "exact_directional_derivative": -1.885552491941961,
+      "independent_tangent_directional_derivative": -1.8855524919419613,
+      "approximate_directional_derivative": -2.0796378688919237,
+      "actual_directional_error": 0.19408537694996264,
+      "approximate_state_relative_error": 0.06312123342148054,
+      "approximate_receiver_relative_error": 0.18599268709448807,
+      "primal_residual_components": [
+        6.67960240966909e-13,
+        368.52679063761104
+      ],
+      "approximate_adjoint_residual_components": [
+        6.977273670392422e-15,
+        1.7329012909483685
+      ],
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 14.74612028702103,
+      "certified_upper_derivative": 12.666482418129107,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 75.97749257958132,
+      "eta_u_components": [
+        0.2359688126753195,
+        0.6273525781048108
+      ],
+      "eta_lambda_components": [
+        0.09392137187452923,
+        0.010944258263871524
+      ],
+      "eta_receiver_state": 0.7807878811735677,
+      "actual_u_error_components": [
+        0.03252084470261609,
+        0.27402233269889553
+      ],
+      "actual_lambda_error_components": [
+        0.002630328614094255,
+        0.0016215780065832438
+      ],
+      "multiplier_state_components": [
+        0.32199035849162627,
+        0.026203049604788257
+      ],
+      "multiplier_adjoint_components": [
+        0.003238911923392392,
+        0.0003630222256662802
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 10.846969306975941,
+        "adjoint_approx_times_state_error": 0.3524722412423381,
+        "cross_error": 3.546678738802752
+      },
+      "bound_to_descent_margin": 7.090715411370194
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 4.0,
+      "rank": 32,
+      "source_index": 54,
+      "stability_available": false,
+      "stability_reason": "Schur small-gain condition unavailable",
+      "stability_tau": 11.493356772997478,
+      "stability_beta_lower": null,
+      "exact_objective": 1.296081559967283,
+      "approximate_objective": 1.6695019085696146,
+      "exact_gradient_norm": 1.2017768640219475,
+      "approximate_gradient_norm": 1.078246169149969,
+      "gradient_cosine": 0.4996239473971835,
+      "exact_directional_derivative": -0.6004365006932537,
+      "independent_tangent_directional_derivative": -0.6004365006932537,
+      "approximate_directional_derivative": -1.0782461691499687,
+      "actual_directional_error": 0.477809668456715,
+      "approximate_state_relative_error": 0.31769075212707265,
+      "approximate_receiver_relative_error": 0.607966458608022,
+      "primal_residual_components": [
+        2.785918766418317e-13,
+        402.3179387079554
+      ],
+      "approximate_adjoint_residual_components": [
+        1.4032165987079626e-15,
+        2.0024404038227797
+      ],
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": null,
+      "certified_upper_derivative": null,
+      "certified_descent": false,
+      "covers_directional_error": null,
+      "effectivity": null
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 4.0,
+      "rank": 64,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.6509698090833335,
+      "stability_beta_lower": 1.3434690612835376,
+      "exact_objective": 1.296081559967283,
+      "approximate_objective": 1.3890001972475128,
+      "exact_gradient_norm": 1.2017768640219475,
+      "approximate_gradient_norm": 1.2712639216380501,
+      "gradient_cosine": 0.9236102365859234,
+      "exact_directional_derivative": -1.1099734137028001,
+      "independent_tangent_directional_derivative": -1.1099734137028003,
+      "approximate_directional_derivative": -1.2712639216380501,
+      "actual_directional_error": 0.16129050793525002,
+      "approximate_state_relative_error": 0.11324719004847227,
+      "approximate_receiver_relative_error": 0.3389428995075459,
+      "primal_residual_components": [
+        4.791483227440636e-13,
+        386.61984995095366
+      ],
+      "approximate_adjoint_residual_components": [
+        3.105006921617273e-15,
+        1.4634156031909284
+      ],
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 8190.8699280100245,
+      "certified_upper_derivative": 8189.598664088387,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 50783.33519352698,
+      "eta_u_components": [
+        9.81379686765623,
+        3.8505474665561126
+      ],
+      "eta_lambda_components": [
+        4.2850839926054345,
+        1.1327840169028276
+      ],
+      "eta_receiver_state": 9.55721923893351,
+      "actual_u_error_components": [
+        0.31051553537606813,
+        0.39257585922237487
+      ],
+      "actual_lambda_error_components": [
+        0.005880916194315852,
+        0.0016821310619340847
+      ],
+      "multiplier_state_components": [
+        0.20467911508552228,
+        0.08573334069674386
+      ],
+      "multiplier_adjoint_components": [
+        0.001863704155767662,
+        0.0009031190714419063
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 615.3482367008611,
+        "adjoint_approx_times_state_error": 13.74955393209063,
+        "cross_error": 7561.772137377073
+      },
+      "bound_to_descent_margin": 6443.091626053477
+    },
+    {
+      "role": "train",
+      "array_index": 96,
+      "model_id": "gom_142",
+      "slice_id": "gom_142_il_0315",
+      "model_type": "gom",
+      "raw_m_sha256": "25186a9ac76fec22a3baba745dd6a157925c744f03bbe31bf219cc317c650482",
+      "frequency_hz": 4.0,
+      "rank": 96,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.1966500700127472,
+      "stability_beta_lower": 3.234664501040466,
+      "exact_objective": 1.296081559967283,
+      "approximate_objective": 1.3410397100246974,
+      "exact_gradient_norm": 1.2017768640219475,
+      "approximate_gradient_norm": 1.1669829016562825,
+      "gradient_cosine": 0.9346359778536536,
+      "exact_directional_derivative": -1.12322389446705,
+      "independent_tangent_directional_derivative": -1.1232238944670503,
+      "approximate_directional_derivative": -1.1669829016562825,
+      "actual_directional_error": 0.043759007189232424,
+      "approximate_state_relative_error": 0.07441242689629805,
+      "approximate_receiver_relative_error": 0.27205052979674044,
+      "primal_residual_components": [
+        6.138167899912801e-13,
+        372.88378863798874
+      ],
+      "approximate_adjoint_residual_components": [
+        4.07352022205573e-15,
+        1.3335939872692983
+      ],
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 145.20319709120866,
+      "certified_upper_derivative": 144.0362141895524,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 3318.2470631312253,
+      "eta_u_components": [
+        1.2244624651144453,
+        0.9562104340966148
+      ],
+      "eta_lambda_components": [
+        0.35829692773525584,
+        0.061380520094733486
+      ],
+      "eta_receiver_state": 1.7523994189929324,
+      "actual_u_error_components": [
+        0.1133489695757333,
+        0.30874217049272507
+      ],
+      "actual_lambda_error_components": [
+        0.003805961499981005,
+        0.001273027334710385
+      ],
+      "multiplier_state_components": [
+        0.2041180048639973,
+        0.07187803131334888
+      ],
+      "multiplier_adjoint_components": [
+        0.001859557595916621,
+        0.0007305127463327006
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 48.98277715024445,
+        "adjoint_approx_times_state_error": 1.879477380733753,
+        "cross_error": 94.34094256023046
+      },
+      "bound_to_descent_margin": 124.4261564459289
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 3.0,
+      "rank": 32,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.7378589104120677,
+      "stability_beta_lower": 0.8892504949822392,
+      "exact_objective": 4.040474630798203,
+      "approximate_objective": 4.129013435826436,
+      "exact_gradient_norm": 15.733241797926533,
+      "approximate_gradient_norm": 14.579835462358236,
+      "gradient_cosine": 0.9821630789005179,
+      "exact_directional_derivative": -15.452609205337843,
+      "independent_tangent_directional_derivative": -15.45260920533784,
+      "approximate_directional_derivative": -14.579835462358236,
+      "actual_directional_error": 0.8727737429796072,
+      "approximate_state_relative_error": 0.11092943553274544,
+      "approximate_receiver_relative_error": 0.148874589171399,
+      "primal_residual_components": [
+        4.686575378684198e-13,
+        406.6373218112378
+      ],
+      "approximate_adjoint_residual_components": [
+        8.612955225457312e-15,
+        3.6655707140807796
+      ],
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 54925.372019878625,
+      "certified_upper_derivative": 54910.79218441627,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 62931.97115711349,
+      "eta_u_components": [
+        29.716664034330226,
+        10.278061674468514
+      ],
+      "eta_lambda_components": [
+        19.370528578079128,
+        5.148998322884512
+      ],
+      "eta_receiver_state": 27.363976579365243,
+      "actual_u_error_components": [
+        0.669161065894961,
+        0.5973285390832738
+      ],
+      "actual_lambda_error_components": [
+        0.014499843728749942,
+        0.008697756913787852
+      ],
+      "multiplier_state_components": [
+        0.5611483317976113,
+        0.25568861668570264
+      ],
+      "multiplier_adjoint_components": [
+        0.014342976859682156,
+        0.0064387335826617325
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 4329.855477893272,
+        "adjoint_approx_times_state_error": 174.95366594919878,
+        "cross_error": 50420.56287603615
+      },
+      "bound_to_descent_margin": 3767.214805796899
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 3.0,
+      "rank": 64,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.12396979237237143,
+      "stability_beta_lower": 3.120056752129273,
+      "exact_objective": 4.040474630798203,
+      "approximate_objective": 3.892619326225192,
+      "exact_gradient_norm": 15.733241797926533,
+      "approximate_gradient_norm": 15.32866455123515,
+      "gradient_cosine": 0.9933843005769092,
+      "exact_directional_derivative": -15.629155399240634,
+      "independent_tangent_directional_derivative": -15.629155399240647,
+      "approximate_directional_derivative": -15.328664551235153,
+      "actual_directional_error": 0.30049084800548087,
+      "approximate_state_relative_error": 0.04418786161595709,
+      "approximate_receiver_relative_error": 0.10953471331998188,
+      "primal_residual_components": [
+        8.053218115454483e-13,
+        383.19879950197463
+      ],
+      "approximate_adjoint_residual_components": [
+        1.518441670627173e-14,
+        2.7527821246629562
+      ],
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 136.10355939730118,
+      "certified_upper_derivative": 120.77489484606603,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 452.9374531726793,
+      "eta_u_components": [
+        1.349130246557782,
+        1.0835881631168836
+      ],
+      "eta_lambda_components": [
+        0.36269523545163795,
+        0.04756017732156224
+      ],
+      "eta_receiver_state": 1.8681003757820895,
+      "actual_u_error_components": [
+        0.11954441126587892,
+        0.3367145206793653
+      ],
+      "actual_lambda_error_components": [
+        0.006333935265289951,
+        0.003604649534123816
+      ],
+      "multiplier_state_components": [
+        0.587217613463832,
+        0.17605967664966166
+      ],
+      "multiplier_adjoint_components": [
+        0.013983504130890263,
+        0.004186496653917326
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 78.64851430033173,
+        "adjoint_approx_times_state_error": 8.314867702222884,
+        "cross_error": 49.14017739474656
+      },
+      "bound_to_descent_margin": 8.879022627338676
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 3.0,
+      "rank": 96,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.05155881395767803,
+      "stability_beta_lower": 3.3975948045883175,
+      "exact_objective": 4.040474630798203,
+      "approximate_objective": 3.888805537128519,
+      "exact_gradient_norm": 15.733241797926533,
+      "approximate_gradient_norm": 15.058751645293174,
+      "gradient_cosine": 0.9955156889068875,
+      "exact_directional_derivative": -15.66268904720146,
+      "independent_tangent_directional_derivative": -15.66268904720147,
+      "approximate_directional_derivative": -15.05875164529317,
+      "actual_directional_error": 0.6039374019082917,
+      "approximate_state_relative_error": 0.03558545016942346,
+      "approximate_receiver_relative_error": 0.0922615352490627,
+      "primal_residual_components": [
+        1.2801729042797938e-12,
+        371.51473298868757
+      ],
+      "approximate_adjoint_residual_components": [
+        2.8133336260121022e-14,
+        2.4274027817807404
+      ],
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 55.232808366581104,
+      "certified_upper_derivative": 40.17405672128793,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 91.4545252406279,
+      "eta_u_components": [
+        0.48771829258888794,
+        0.6513014570841748
+      ],
+      "eta_lambda_components": [
+        0.1893578982575562,
+        0.018683940130499507
+      ],
+      "eta_receiver_state": 0.9684332135528532,
+      "actual_u_error_components": [
+        0.05739875376508466,
+        0.28196330198461717
+      ],
+      "actual_lambda_error_components": [
+        0.005713527647517087,
+        0.0025751371528541923
+      ],
+      "multiplier_state_components": [
+        0.5996289252995199,
+        0.06446924578697907
+      ],
+      "multiplier_adjoint_components": [
+        0.014280315139212156,
+        0.0015089814957228466
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 40.77098493696363,
+        "adjoint_approx_times_state_error": 2.8238183687367733,
+        "cross_error": 11.638005060880705
+      },
+      "bound_to_descent_margin": 3.6678211891385377
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 4.0,
+      "rank": 32,
+      "source_index": 54,
+      "stability_available": false,
+      "stability_reason": "Schur small-gain condition unavailable",
+      "stability_tau": 9.719891009135296,
+      "stability_beta_lower": null,
+      "exact_objective": 1.0755795630385223,
+      "approximate_objective": 1.2670375585896778,
+      "exact_gradient_norm": 1.9774597747549625,
+      "approximate_gradient_norm": 1.3799781714221637,
+      "gradient_cosine": 0.5135216052664783,
+      "exact_directional_derivative": -1.0154683178820565,
+      "independent_tangent_directional_derivative": -1.0154683178820565,
+      "approximate_directional_derivative": -1.3799781714221637,
+      "actual_directional_error": 0.36450985354010723,
+      "approximate_state_relative_error": 0.33701025002145246,
+      "approximate_receiver_relative_error": 0.5595350678859389,
+      "primal_residual_components": [
+        2.5699007322836516e-13,
+        401.7025334815616
+      ],
+      "approximate_adjoint_residual_components": [
+        1.3992024400771379e-15,
+        1.7633250982479773
+      ],
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": null,
+      "certified_upper_derivative": null,
+      "certified_descent": false,
+      "covers_directional_error": null,
+      "effectivity": null
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 4.0,
+      "rank": 64,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.46768548836527674,
+      "stability_beta_lower": 2.5918531937686518,
+      "exact_objective": 1.0755795630385223,
+      "approximate_objective": 1.0889081690947942,
+      "exact_gradient_norm": 1.9774597747549625,
+      "approximate_gradient_norm": 1.8153480255104302,
+      "gradient_cosine": 0.9679603559254999,
+      "exact_directional_derivative": -1.914102667400172,
+      "independent_tangent_directional_derivative": -1.9141026674001722,
+      "approximate_directional_derivative": -1.8153480255104295,
+      "actual_directional_error": 0.09875464188974248,
+      "approximate_state_relative_error": 0.09684673229599611,
+      "approximate_receiver_relative_error": 0.327670548399299,
+      "primal_residual_components": [
+        3.979746196611257e-13,
+        384.7211010804945
+      ],
+      "approximate_adjoint_residual_components": [
+        4.313401302249392e-15,
+        1.3116889015936253
+      ],
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 1420.2593782912616,
+      "certified_upper_derivative": 1418.444030265751,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 14381.697418101641,
+      "eta_u_components": [
+        4.908382476453355,
+        2.550206651898149
+      ],
+      "eta_lambda_components": [
+        1.2631334699096057,
+        0.33062869918513
+      ],
+      "eta_receiver_state": 5.404405501145149,
+      "actual_u_error_components": [
+        0.21585273219224707,
+        0.39036430419525664
+      ],
+      "actual_lambda_error_components": [
+        0.004289269448627478,
+        0.0016171186663334535
+      ],
+      "multiplier_state_components": [
+        0.21682761100337553,
+        0.12024675582263071
+      ],
+      "multiplier_adjoint_components": [
+        0.0020020634179494594,
+        0.0011737477271056987
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 198.11169500737867,
+        "adjoint_approx_times_state_error": 8.097934460130622,
+        "cross_error": 1214.0497488237522
+      },
+      "bound_to_descent_margin": 782.3620365532504
+    },
+    {
+      "role": "validation",
+      "array_index": 0,
+      "model_id": "gom_148",
+      "slice_id": "gom_148_il_0236",
+      "model_type": "gom",
+      "raw_m_sha256": "07a1cdbb412761bbe91cebd766b67c715f4725558b16ac9f686863833f02c9e7",
+      "frequency_hz": 4.0,
+      "rank": 96,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.1506275219038062,
+      "stability_beta_lower": 4.266624307845789,
+      "exact_objective": 1.0755795630385223,
+      "approximate_objective": 1.0651218497856785,
+      "exact_gradient_norm": 1.9774597747549625,
+      "approximate_gradient_norm": 1.8104424856001586,
+      "gradient_cosine": 0.98173985699083,
+      "exact_directional_derivative": -1.9413510764730562,
+      "independent_tangent_directional_derivative": -1.9413510764730557,
+      "approximate_directional_derivative": -1.8104424856001584,
+      "actual_directional_error": 0.13090859087289775,
+      "approximate_state_relative_error": 0.07113885209784616,
+      "approximate_receiver_relative_error": 0.26904998097124855,
+      "primal_residual_components": [
+        7.647570991807699e-13,
+        372.244369563868
+      ],
+      "approximate_adjoint_residual_components": [
+        6.351554102912871e-15,
+        1.2211651032759672
+      ],
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 91.84745914568158,
+      "certified_upper_derivative": 90.03701666008142,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 701.6152151149382,
+      "eta_u_components": [
+        0.9341537128588753,
+        0.9108626097656519
+      ],
+      "eta_lambda_components": [
+        0.23578885838243469,
+        0.04032435602561685
+      ],
+      "eta_receiver_state": 1.5182825328489762,
+      "actual_u_error_components": [
+        0.10527621665692131,
+        0.3102866015019501
+      ],
+      "actual_lambda_error_components": [
+        0.003532364609790835,
+        0.0012783423865249137
+      ],
+      "multiplier_state_components": [
+        0.2285331195444268,
+        0.09793524456516206
+      ],
+      "multiplier_adjoint_components": [
+        0.0021198874530326582,
+        0.0009750399933887998
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 36.53158367097743,
+        "adjoint_approx_times_state_error": 1.8118561066782106,
+        "cross_error": 53.50401936802593
+      },
+      "bound_to_descent_margin": 50.732050245293664
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 3.0,
+      "rank": 32,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.4767619256764999,
+      "stability_beta_lower": 4.365658970193818,
+      "exact_objective": 0.8948118916425306,
+      "approximate_objective": 0.9351806384313779,
+      "exact_gradient_norm": 1.614866465377472,
+      "approximate_gradient_norm": 1.2769785907801978,
+      "gradient_cosine": 0.9410900008378538,
+      "exact_directional_derivative": -1.519734683255107,
+      "independent_tangent_directional_derivative": -1.5197346832551064,
+      "approximate_directional_derivative": -1.2769785907801978,
+      "actual_directional_error": 0.24275609247490926,
+      "approximate_state_relative_error": 0.14031918014546338,
+      "approximate_receiver_relative_error": 0.30967312107147277,
+      "primal_residual_components": [
+        2.7975762168825817e-13,
+        390.41126468050464
+      ],
+      "approximate_adjoint_residual_components": [
+        2.3940871660498918e-15,
+        1.458505201897266
+      ],
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 1255.8939796488537,
+      "certified_upper_derivative": 1254.6170010580736,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 5173.480784127632,
+      "eta_u_components": [
+        7.648369917161859,
+        5.0531472672569775
+      ],
+      "eta_lambda_components": [
+        1.3950911414601028,
+        0.5133182104404359
+      ],
+      "eta_receiver_state": 9.450659633208687,
+      "actual_u_error_components": [
+        0.18166792571187843,
+        0.48074716851623084
+      ],
+      "actual_lambda_error_components": [
+        0.004620102449498738,
+        0.003514366101537544
+      ],
+      "multiplier_state_components": [
+        0.298296345549821,
+        0.16062102424784697
+      ],
+      "multiplier_adjoint_components": [
+        0.0020509574020136094,
+        0.0011865597431679623
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 177.15555275125436,
+        "adjoint_approx_times_state_error": 7.703860975645684,
+        "cross_error": 1071.0345659219536
+      },
+      "bound_to_descent_margin": 983.4886729632154
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 3.0,
+      "rank": 64,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.07640017644214275,
+      "stability_beta_lower": 8.033582998143068,
+      "exact_objective": 0.8948118916425306,
+      "approximate_objective": 0.9005640819089086,
+      "exact_gradient_norm": 1.614866465377472,
+      "approximate_gradient_norm": 1.3932327466713503,
+      "gradient_cosine": 0.9780411737763766,
+      "exact_directional_derivative": -1.5794058932898913,
+      "independent_tangent_directional_derivative": -1.5794058932898911,
+      "approximate_directional_derivative": -1.3932327466713497,
+      "actual_directional_error": 0.18617314661854167,
+      "approximate_state_relative_error": 0.08712282671681396,
+      "approximate_receiver_relative_error": 0.22372081972450253,
+      "primal_residual_components": [
+        4.760255207665182e-13,
+        376.46675408623526
+      ],
+      "approximate_adjoint_residual_components": [
+        4.420968711605896e-15,
+        1.2022502421681605
+      ],
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 25.387127505177673,
+      "certified_upper_derivative": 23.993894758506325,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 136.3629930861859,
+      "eta_u_components": [
+        0.6511060952308503,
+        1.0179569641980568
+      ],
+      "eta_lambda_components": [
+        0.1048557922080209,
+        0.01901489271978679
+      ],
+      "eta_receiver_state": 1.3965717678855671,
+      "actual_u_error_components": [
+        0.04936552853213282,
+        0.31525069113276827
+      ],
+      "actual_lambda_error_components": [
+        0.002320401793455514,
+        0.0014044608082055046
+      ],
+      "multiplier_state_components": [
+        0.33194626363691115,
+        0.1319672724782415
+      ],
+      "multiplier_adjoint_components": [
+        0.0024680237914366226,
+        0.0010841141669539888
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 13.258529980899413,
+        "adjoint_approx_times_state_error": 0.9630658159799869,
+        "cross_error": 11.165531708298271
+      },
+      "bound_to_descent_margin": 18.22174189189242
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 3.0,
+      "rank": 96,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.032162482644404015,
+      "stability_beta_lower": 8.442231643132976,
+      "exact_objective": 0.8948118916425306,
+      "approximate_objective": 0.8803100338009062,
+      "exact_gradient_norm": 1.614866465377472,
+      "approximate_gradient_norm": 1.4079650028465993,
+      "gradient_cosine": 0.9827928796097258,
+      "exact_directional_derivative": -1.5870792636935054,
+      "independent_tangent_directional_derivative": -1.5870792636935054,
+      "approximate_directional_derivative": -1.4079650028465993,
+      "actual_directional_error": 0.17911426084690607,
+      "approximate_state_relative_error": 0.07508021821952943,
+      "approximate_receiver_relative_error": 0.19616979817255395,
+      "primal_residual_components": [
+        6.454290956531682e-13,
+        367.7441137448947
+      ],
+      "approximate_adjoint_residual_components": [
+        5.521422668472899e-15,
+        1.095437822299711
+      ],
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 12.305458425062005,
+      "certified_upper_derivative": 10.897493422215405,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 68.70172350810091,
+      "eta_u_components": [
+        0.25480757341316906,
+        0.6352200087511819
+      ],
+      "eta_lambda_components": [
+        0.06280223207907154,
+        0.008205709867308276
+      ],
+      "eta_receiver_state": 0.8009049431609624,
+      "actual_u_error_components": [
+        0.03416510598222799,
+        0.2728549945189222
+      ],
+      "actual_lambda_error_components": [
+        0.0022973329809066055,
+        0.00107179404359157
+      ],
+      "multiplier_state_components": [
+        0.3376217423138066,
+        0.11682086577770358
+      ],
+      "multiplier_adjoint_components": [
+        0.0025088195070286827,
+        0.0010296181465933281
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 7.874285204754399,
+        "adjoint_approx_times_state_error": 0.45951702934505356,
+        "cross_error": 3.9716561909625523
+      },
+      "bound_to_descent_margin": 8.739889414994721
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 4.0,
+      "rank": 32,
+      "source_index": 54,
+      "stability_available": false,
+      "stability_reason": "Schur small-gain condition unavailable",
+      "stability_tau": 9.311996447030165,
+      "stability_beta_lower": null,
+      "exact_objective": 1.7171740517089542,
+      "approximate_objective": 1.3413193575146074,
+      "exact_gradient_norm": 1.43731877318446,
+      "approximate_gradient_norm": 0.5427007484441297,
+      "gradient_cosine": 0.753322233615331,
+      "exact_directional_derivative": -1.0827641886325643,
+      "independent_tangent_directional_derivative": -1.0827641886325632,
+      "approximate_directional_derivative": -0.5427007484441297,
+      "actual_directional_error": 0.5400634401884346,
+      "approximate_state_relative_error": 0.579551742302054,
+      "approximate_receiver_relative_error": 0.7319880445469846,
+      "primal_residual_components": [
+        1.8792530676619133e-13,
+        400.23531971379407
+      ],
+      "approximate_adjoint_residual_components": [
+        9.409842560147473e-16,
+        1.7562295176290155
+      ],
+      "pB": 0.574960731970392,
+      "pQ": 1.0000000000000002,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": null,
+      "certified_upper_derivative": null,
+      "certified_descent": false,
+      "covers_directional_error": null,
+      "effectivity": null
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 4.0,
+      "rank": 64,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.36064143007363925,
+      "stability_beta_lower": 3.9368166920007583,
+      "exact_objective": 1.7171740517089542,
+      "approximate_objective": 1.5878017272171907,
+      "exact_gradient_norm": 1.43731877318446,
+      "approximate_gradient_norm": 1.2961521499027593,
+      "gradient_cosine": 0.8993400562384004,
+      "exact_directional_derivative": -1.292638346308221,
+      "independent_tangent_directional_derivative": -1.2926383463082203,
+      "approximate_directional_derivative": -1.2961521499027597,
+      "actual_directional_error": 0.003513803594538789,
+      "approximate_state_relative_error": 0.13389025848836106,
+      "approximate_receiver_relative_error": 0.244943842904259,
+      "primal_residual_components": [
+        4.180787173938413e-13,
+        377.92576921331124
+      ],
+      "approximate_adjoint_residual_components": [
+        4.394652584725731e-15,
+        1.6274199214037932
+      ],
+      "pB": 0.5814947924166974,
+      "pQ": 1.0000000000000007,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 525.7720297239846,
+      "certified_upper_derivative": 524.4758775740818,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 149630.4547417357,
+      "eta_u_components": [
+        2.5616338159661067,
+        2.1293567745600344
+      ],
+      "eta_lambda_components": [
+        0.5473276384049859,
+        0.18297874542283457
+      ],
+      "eta_receiver_state": 3.618933498622839,
+      "actual_u_error_components": [
+        0.13367474810253274,
+        0.3582778704615628
+      ],
+      "actual_lambda_error_components": [
+        0.0015756936662689688,
+        0.0021979849526118033
+      ],
+      "multiplier_state_components": [
+        0.2760807983245824,
+        0.16691486995263444
+      ],
+      "multiplier_adjoint_components": [
+        0.0026411214008514204,
+        0.001561022365491295
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 114.73914114135704,
+        "adjoint_approx_times_state_error": 6.3731174573292835,
+        "cross_error": 404.6597711252983
+      },
+      "bound_to_descent_margin": 405.64067248079573
+    },
+    {
+      "role": "validation",
+      "array_index": 48,
+      "model_id": "seam_011",
+      "slice_id": "seam_011_il_0522",
+      "model_type": "seam",
+      "raw_m_sha256": "5cf6fa0338c0f5161f667bb9c357d309011d32d2f94cbae26a2d2cafb48403b6",
+      "frequency_hz": 4.0,
+      "rank": 96,
+      "source_index": 54,
+      "stability_available": true,
+      "stability_reason": null,
+      "stability_tau": 0.12372094595773196,
+      "stability_beta_lower": 5.554697202306619,
+      "exact_objective": 1.7171740517089542,
+      "approximate_objective": 1.564445824939547,
+      "exact_gradient_norm": 1.43731877318446,
+      "approximate_gradient_norm": 1.2569072325542856,
+      "gradient_cosine": 0.9148776812762586,
+      "exact_directional_derivative": -1.3149708664658353,
+      "independent_tangent_directional_derivative": -1.3149708664658353,
+      "approximate_directional_derivative": -1.2569072325542852,
+      "actual_directional_error": 0.05806363391155012,
+      "approximate_state_relative_error": 0.10652569970088355,
+      "approximate_receiver_relative_error": 0.2188263886251614,
+      "primal_residual_components": [
+        5.789451297012598e-13,
+        368.23824322142906
+      ],
+      "approximate_adjoint_residual_components": [
+        5.1004763089241194e-15,
+        1.5204295765247673
+      ],
+      "pB": 0.6502355176905328,
+      "pQ": 1.0000000000000002,
+      "neural_or_jvp_used": false,
+      "true_descent": true,
+      "directional_error_bound": 65.40323226768132,
+      "certified_upper_derivative": 64.14632503512703,
+      "certified_descent": false,
+      "covers_directional_error": true,
+      "effectivity": 1126.406114493485,
+      "eta_u_components": [
+        0.6277183265916796,
+        0.8840591599282445
+      ],
+      "eta_lambda_components": [
+        0.15380754373835104,
+        0.03271728996744524
+      ],
+      "eta_receiver_state": 1.2922239109834204,
+      "actual_u_error_components": [
+        0.06176439111721203,
+        0.29791192528973653
+      ],
+      "actual_lambda_error_components": [
+        0.0017476359238833793,
+        0.001721262407219851
+      ],
+      "multiplier_state_components": [
+        0.27302729584694424,
+        0.146993915289479
+      ],
+      "multiplier_adjoint_components": [
+        0.0026420075802543724,
+        0.0013590706185999104
+      ],
+      "directional_bound_terms": {
+        "state_approx_times_adjoint_error": 29.563271088775004,
+        "adjoint_approx_times_state_error": 1.8064915887776007,
+        "cross_error": 34.03346959012871
+      },
+      "bound_to_descent_margin": 52.035051254155775
+    }
+  ],
+  "offline_verification_costs_per_model_frequency": {
+    "fine_factorizations": 2,
+    "fine_rhs": 6,
+    "detail": "1 truth observation +1 current state +1 exact adjoint +3 exact directional tangents; all offline verification, shared across ranks"
+  },
+  "candidate_cost_scope": "Only reduced state/adjoint solves, field reconstruction, sparse residual applications, component projections, small receiver Gram/norm operations and the previously validated fast stability bound. No fine solve/map or neural JVP is part of the candidate certificate.",
+  "limitations": [
+    "Ordinary floating-point stability with an explicit unverified engineering allowance, not a formal roundoff enclosure.",
+    "Correlated development feasibility on four fixed train/validation models only; unavailable cases and failed acceptance retained.",
+    "Approximate derivative is the physical state/adjoint formula; no new ROM-autograd claim, finite-step guarantee, trajectory guarantee, or acceleration claim."
+  ],
+  "stability_evidence_sha256": "f787a7bff0a96655ee79e63daa41df7e21423087b3e51b9f49354feb9fb0d17e",
+  "original_selection_sha256": "48693b69756240c9e09fb1e03ed2c26200703d67613d2897ee13b595df6f6864",
+  "input_sha256": {
+    "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/data/reference/subsurfacegen_parent_split/train.npz": "5cd86a6af207190f242ec372ae28ea4872c825c8a9bc4dee7e0cdb2637fb590b",
+    "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/data/reference/subsurfacegen_parent_split/validation.npz": "36d11aba94ae9093cac888e9b28a2d01edcef1aa3a54b12f8e10269b963db2fc"
+  },
+  "scratch_script_sha256": "b85b1db2acba27c64ff02532b835599c81217b837a61e4c67ca077b15f61ebb8",
+  "provenance": {
+    "git_revision": "be6e51e090b4722d0610baaf812b56d4d355ae40",
+    "working_tree_dirty": false,
+    "source_sha256": "5e56226791eb0d2297667bc3502f3d24813c81e27c4e4d3ed317b9f556871f98",
+    "source_hash_schema": "sha256-of-path-and-file-sha256-v2",
+    "source_files": {
+      ".github/workflows/ci.yml": "416a6055e3e7983ba76b3720f30a17c78833d52005eccf9368fbe53a4181c6bf",
+      ".github/workflows/research-evidence.yml": "5a5a84a3a115006aaa2a24a3ff3ceaf79b0ef4652e98f4df7dc7c7d937c535ca",
+      "configs/demo.yaml": "fdc2afa3a4f023c0b1b058b8fd3dac9624b4346ae87cfccd3456375f2c51913a",
+      "configs/final_subsurfacegen_protocol.json": "67aca3b512c5dc6f5c0ab2a844722b638dd97744c0050c59dd312c0859b7309b",
+      "configs/final_subsurfacegen_split.csv": "c4c1cb9a46bac7473f31792e2c468f94f4c613247f06641614593b18983ad25c",
+      "configs/gradient_development_protocol.json": "9262ab19fc87c3d04f4bad1bcc2da5b6978babc10c55ee2e461c981c8fdefe82",
+      "configs/grouped_subsurfacegen_manifest.csv": "95cb3c030f1b38f0cfeb5e920d5c8746a58a0c35bd61aa18c55323772c86a027",
+      "configs/marmousi2d.yaml": "757ad04fafc3ba76ba9abbd0f88ff705348efdebbe07b72a49e8225e44c26f51",
+      "configs/openfwi_external_stress.json": "6578df1b931b9fe472192fd69c9f5050531f7214c0d1777e832296b55a3ecc77",
+      "configs/openfwi_external_stress_analysis_addendum.json": "f4370f1a0cd0a9b1a3b3a0dab513fac99bca143c30cdbf27560d222d211bb736",
+      "configs/phase7_end_to_end.yaml": "560a69540296cbbb0b2ccb1f227d24154e9bb414d2940ae421be8af1f5cbe2af",
+      "configs/phase9_ood.yaml": "917f1f8ba3c71531e184a9e5e33d370f7f33dc0f481975054331bfbfde1c08d8",
+      "configs/remote_evidence_run.json": "a09c0ce648112e5bab1d9716e9fc01117438e6b37050494411dd2236083fbbcc",
+      "configs/strengthening_protocol.json": "9ceda571a1b46e77c0c17d51e84af4618ce658711cbc3465d14811991e785888",
+      "configs/subsurfacegen.yaml": "f9a799da5b16971deda2a2c0987408adefc1a3746ae37d9773c52683b26711f2",
+      "pyproject.toml": "81e00bf085f2054bb992fdb22706a37a1970e9dce3fdece67a4de284897092e5",
+      "requirements-reproduction.txt": "7b87ebf39610d946659a1f59aa98872cd24712730df75d7d18df9289ee8566dc",
+      "scripts/audit_evidence_study.py": "2a9ab6b87032eb623f7f7b936b5ea3e1eff8a84904a3b387ba3b0988e7f41d88",
+      "scripts/benchmark_batched_neural.py": "73d07c8988563f3a0e4c825a1869b60c6c45b0c1a0fd9f4c48d04d85edfab5be",
+      "scripts/benchmark_reference_cache.py": "ffce9fa1f1bf2f0e6e19e3ec03a8dddc0720f6147e48785a18a8fe19f3d7a6bf",
+      "scripts/build_subsurfacegen_wavecert.py": "880e3659672e50cd3d85186b491c410761ac59ceebf8b45d97828f60e6d7d237",
+      "scripts/check_repo.sh": "48838e71d5a920ff9d453319640772897c22a709943f3b288c8ce36bef5a1a3c",
+      "scripts/diagnose_development_generalization.py": "11898494cacce97689f8374b0a2be2e89ffe73b14a1c5e150591b5cf52ff883c",
+      "scripts/diagnose_tolerance_calibration.py": "9c49a1ffed7ac547d33ffa6b3592617ff5be672d55043a61d09756c2426fcee5",
+      "scripts/download_marmousi_public.sh": "23f1a7412e4e7507adb2970d1b5c64a4aba2b3f0f1209796b62a0e54f151c85e",
+      "scripts/evaluate_openfwi_stress.py": "318627c883ac54da52158e05aa742b3f1fd01f9165d5068274928ff44f28241b",
+      "scripts/make_grouped_split.py": "c759ce122e3c41d639f8a0e00dbc6cf1edaa55bd8d71a0e73aa669110e74d2f0",
+      "scripts/prepare_grouped_subsurfacegen.py": "40f07f3e6c44c7bcdf5aad67393f39a411aff4b6bbf30552664c38d94c360b21",
+      "scripts/prepare_openfwi_stress.py": "3eed3bb6c797644edc979dc3f49252d93c052461c710c6f9536f9247f4a99b63",
+      "scripts/reproduce_strengthening.sh": "48dbb98e9fb95b46936dc2db27befb2d27781b937ad8151bd44ddd5b5534cfb0",
+      "scripts/run_baseline_study.py": "76dd43504632c230286b0b8c99286a3fe44d7a517af73efbcb3da1a851834ff2",
+      "scripts/run_cost_break_even.py": "a03e88003da29ced2af4ed2376e179b5ffcbf13e772196ed5311c21bdaba82a3",
+      "scripts/run_demo.sh": "de363dde3a78278a8c14900a63ebfe6974b8d12c567f6e7a192be047a8a110d0",
+      "scripts/run_devito_real.py": "e899961a9c61d50c0efbd7c5287fe9a96b7d47829d5bd4e929daa67a9aa3f182",
+      "scripts/run_gradient_development.py": "0e3d4456fe62e4ee9571599258ba27b6b813f7ce30a64b79678421e3669bd33a",
+      "scripts/run_heuristic_baselines.py": "987424ddfde41152b6f907e82a19ee58418b79c8b2512b80d9790320d5e4cad6",
+      "scripts/run_openfwi_study.py": "590d432c9b1e05ec8a3168203444a4bef407a357584e56425dca46f120a75fad",
+      "scripts/run_phase1_verification.py": "8aabcd0d0e9272c7eb8ec646c333522ea297f54970e55f61cdff079a61f69acb",
+      "scripts/run_phase2_train_fno.py": "e10fb0dcacb0c83f92c40a74061a0037aa141b6381684e8403a02ee84f433242",
+      "scripts/run_phase2_validate.py": "6ccabc08f8d37048183466af1e87a922d5754ae7071b06c867466dd9f0935b33",
+      "scripts/run_phase3_failure_study.py": "71df1d686dc41bf5946fc5adab4d7a21bcf352a76c7bdd521231dbad35727fac",
+      "scripts/run_phase4_certificate_study.py": "a7012a525af132322d317c2448205c189c55bbb8b6798407e5d421baff60b6cc",
+      "scripts/run_phase5_calibration.py": "f240b218b7dc9bb948e1e3830daee30cc0da199ec012a5d02738c065817b7169",
+      "scripts/run_phase6_adaptive_study.py": "a263f389ceedd7f186f84354cfec74e6644d8cdede687dcd96007de42f517b8e",
+      "scripts/run_phase7_end_to_end.py": "b04016425edd864466b0f1348b71f4d593047af79cd3e26b934054c3c3ec6e8e",
+      "scripts/run_phase8_production_study.py": "c0aefe51b490c9af020f4c2be1bf77c43111384373d98569c1d769caace64501",
+      "scripts/run_phase9_ood_study.py": "f09b1f3d48de72cbe43e838d723080a7e3e8630fee1e36b6af60d9b41fe03254",
+      "scripts/run_real_adaptive_matched_mc.py": "79a7e2291180ca9bc01d65cfc14f3c4bf3266363ab9caa1bac44dddd2c64857b",
+      "scripts/run_real_adaptive_pathwise.py": "4373997e04d3a4c8642b750bf8aca4ecb0158ac6575f0c9fdb3ffcdd60a50ef5",
+      "scripts/run_real_geology_training.py": "43142b67006c77840490cf075e8a36ac9e6e280a91e168e8cbb63aae5512654b",
+      "scripts/run_real_wavecert.py": "caff9e9387bdbabc0aa912faf1ec198b50540e46e74adcf2ec0a94026b11a751",
+      "scripts/run_receiver_controls.py": "ea07011cdea457a785d8bddbcb1f3e3c46caf0fbd42117084dfdb2fc299d6276",
+      "scripts/run_research_audit.py": "c580c1371747e0b81d9cf6c7613241bef7aceb664d0910fa6cefcea380d1b4e8",
+      "scripts/run_stability_benchmark.py": "03928837cd54cde745257769165750e43ee70f8f9c25f58d082a62fd965c9a33",
+      "scripts/select_subsurfacegen_slices.py": "a2e2e658273e9fac723c815bcb5f4269136569c00e87f28a3a129b7f826006ae",
+      "src/wavecert/__init__.py": "de0bb59120c27a66e8c3914a3fda8a53de1b89a30fb2db9e8bcf0052af0df054",
+      "src/wavecert/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "src/wavecert/_version.py": "7080f58cb9c2fef8f8f0680c37a61bd4503726c43de73366087991604f131616",
+      "src/wavecert/benchmarks/__init__.py": "3315b356ba8f46b155886b93c79e8c34c293dd65b900cb229ca23d48f6d3b78c",
+      "src/wavecert/benchmarks/marmousi.py": "4e574b062a0cd24bf4f18a2579a26bbb89cb662dfdb58c1e9c1a85624f461822",
+      "src/wavecert/benchmarks/openfwi.py": "e4c83e6075404a79fe3a12ad97e6fd9eafcef9f63ad1ad48e95fa3a5a0e598e0",
+      "src/wavecert/benchmarks/procedural.py": "696666b77bf70f38bc109c9a2fec21e48931b00b14171b8d238f96e79bbef4d0",
+      "src/wavecert/benchmarks/subsurfacegen.py": "1a3e9f754a387a957a467cd19d76446f98c0e845f65044f9a6557c7c9a51d5be",
+      "src/wavecert/certificates/__init__.py": "58f29c2df2190b203a67eeb5f831bc500262c7571763b9caf046c1dbcc893df4",
+      "src/wavecert/certificates/directional.py": "fec69f8a712c1108782449047e8f366d3c562546ebde55be75a26d843d5987b2",
+      "src/wavecert/cli.py": "7b02e01dbb7507345199d97a227d1d90637324ac3da5a6ed6d762545caa74223",
+      "src/wavecert/data/__init__.py": "fca09028afa34083f1b92b0c09b4ad98058417f72f0671c930a201146ff7c981",
+      "src/wavecert/data/real_geology.py": "ceb7ef296f5d6f46ad344b22bde38d4c0919b9849b3d440d4d70af11e8d943d1",
+      "src/wavecert/data/splits.py": "e255e4b329f28169d4ab762fbf45218318487db72fe14adee63bf48f73152a62",
+      "src/wavecert/data/subsurfacegen_selection.py": "934a7bab3712bd5d1462f73bac34cecd46a8da90bf95d4d40b706a3caeceed65",
+      "src/wavecert/data/wavefields.py": "44a023b8062144c572233e12acb72bb8149a6566880adc50179902312e0e112a",
+      "src/wavecert/experiments/__init__.py": "cc6d3a87568c3d6f4890e39f076d861ce60158fbd1405447f3160211dbcec895",
+      "src/wavecert/experiments/ablation.py": "dd49f3a3e489d69823681a488daaa14332628a2f4765b445a9d06957f46f81b5",
+      "src/wavecert/experiments/adaptive_study.py": "3ee233e8cf38bedee5b3d638cd2858715f08246e4b8f6a066197699029fe4320",
+      "src/wavecert/experiments/baseline_study.py": "77bda36229ba2e04e969b3dd02151f2c83dd380514a6eedb10918fb6ca3bbc06",
+      "src/wavecert/experiments/batched_neural_controls.py": "259327cf368937b95d8537b07b97bf49d55d70f85975f41d7059a42c81d1cd72",
+      "src/wavecert/experiments/certificate_calibration.py": "e0ba7288d33d8e7dad8dc7e0c429a8361a085fdfa7b3e0d71caa3206f4f8af2d",
+      "src/wavecert/experiments/certificate_study.py": "55f1f52d0ce77069454c005c17b1f9a28ca807b80f7528328a50fdc82bb24072",
+      "src/wavecert/experiments/cost_break_even.py": "fd6f3a1bac36eb7a04691bda5c2139e54ac695f08b0dd85e495513f1da4c1da0",
+      "src/wavecert/experiments/derivative_training.py": "c82c7e32a27e5cf4dcfa9814fe5b4c8438ad1023331e0ae3a24b0c3d0cc45522",
+      "src/wavecert/experiments/devito_study.py": "ad5ae5123607ba92fe573bf6c56616509e6055d28750ab12c237de84a5d5f4b8",
+      "src/wavecert/experiments/end_to_end.py": "b2e37b6f96671be11ec7125a35a1c5dfeeaf0e9e005bdde9403def3f5ed6ded1",
+      "src/wavecert/experiments/evidence_study.py": "e14f9013bd71a11b454a4a8f5e84e8df79c5c449da440adbe173b18b5701629f",
+      "src/wavecert/experiments/failure_study.py": "bc59a3ff119473f142f8d6dcd7e98595713ac21ba22c6656af56fd1b083c14b1",
+      "src/wavecert/experiments/gradient_development.py": "993670de7902a2ae0b867344803bc950ddbd0c627440c83ce8f74e42f17dcf1b",
+      "src/wavecert/experiments/heuristic_baselines.py": "677ea77c09f7d645c2a4f403e49dedd236f2da216f3d84c95631239b37a82d61",
+      "src/wavecert/experiments/ood_study.py": "396fbc2ca081ccee5a9759c325b128cd411bd20a06faa310551251bddcd1d4b8",
+      "src/wavecert/experiments/openfwi_stress.py": "03711c5f6757b59008c5a9d51c65ab684ac7fadc104df5e6b4a71997d849b97a",
+      "src/wavecert/experiments/openfwi_study.py": "124c61847c03ae4a3df61c41598888301a1fbe9b2eae86df1aacee98d596e70a",
+      "src/wavecert/experiments/production_study.py": "5f64317e2ed89ab52630564af195531cd3c2f5769a4324faa1e34afcad8a801c",
+      "src/wavecert/experiments/real_geology_training.py": "b48dd5ac253478bb6e898a45eb88d3e029708f314d875eef1744624cf201d2c7",
+      "src/wavecert/experiments/real_wavecert.py": "5fa2baa9e1364230b57f3f8e2ea31befea2ea538de86425f512f8c701705625f",
+      "src/wavecert/experiments/receiver_controls.py": "b5d47bfe30fc4cf566563db5fb0a86f6df4bbc86635ecd863f417da0cced4df1",
+      "src/wavecert/experiments/runner.py": "c10ed7ce2b93db806a05d284c04dc09e8618073fad5d9ee59e6d425563151dff",
+      "src/wavecert/experiments/synthetic.py": "1cc5746f72649daf5ee744123de8dc6d754fca78f3a5ff98ed6bfcbf7ac5974a",
+      "src/wavecert/experiments/train_fno.py": "283d473b7420904170bac939be96e6dfb3014367fc38bb1b52ee397bf7c4bf4a",
+      "src/wavecert/metrics.py": "aff3cceddf52c634e39a31a864e4705e8389acba4d79d09badbedd9ca04f6382",
+      "src/wavecert/optimization/__init__.py": "e3a133b64f85ed832fff5967a81ad0d5cf74de8106a1e48ec46e6a90ae7ed506",
+      "src/wavecert/optimization/fwi.py": "a4ccc550aa597d8e8ba630ecde82cd338bc64dbc5538936998ffafff4e618756",
+      "src/wavecert/physics/__init__.py": "68248d95659de7888efbf10dc8f410e3ecf21c609e93407bbdfa82f93ec3f592",
+      "src/wavecert/physics/certified_stability.py": "350db67a2d24cbfcf1258e68ec0c8c6521df6114c975298e9dd672bef88a8ce3",
+      "src/wavecert/physics/devito_backend.py": "67b91aa2f7ed8c653c1f92b99e4c6e48591b8e47d31588d9e2b19445d6b6060a",
+      "src/wavecert/physics/helmholtz.py": "caf51b58da24ed6d3633bda4eaaab804714f5c7932d9d5f343644763bc158131",
+      "src/wavecert/physics/independent_verification.py": "a56d932aff9acd9ffb3391e55e73fe9e7407a306e07f37c52522b82794d9db28",
+      "src/wavecert/physics/production.py": "f0eb2854a4d07a0d82ac41b2c28fe04052826f5b4ced3b71548df9151c6fa138",
+      "src/wavecert/physics/receiver_oracle.py": "918ceaf5596fa8452b1e29357c8e694e7ea83b0e9a162f86f6a03f28714c3e6b",
+      "src/wavecert/physics/verification.py": "518c3b249957f23a9754b9482437309fda96a50548726a577e4486aad17cafb2",
+      "src/wavecert/provenance.py": "9e54e51a311aa9adab6a4572c45456695bc7f228149495779e556a101345e63c",
+      "src/wavecert/repair/__init__.py": "a60d11f7e6d9b180193b542c62bce2aad0c6e87f9f2eeffcc570e8e5afbe4401",
+      "src/wavecert/repair/adaptive.py": "39ccc9fa14610558aeca2d3bd4020511fd9a59ab65984ce29b51867b6ed4c405",
+      "src/wavecert/repair/policies.py": "ae59f2e9e290c3795aa81bef4198510e894d40ee8a02764524e96b213e24bc2d",
+      "src/wavecert/statistics/__init__.py": "c28a5e0deb7a2808b35b8f54e2f7f401c11424be8f8955ab263b9a78f6738364",
+      "src/wavecert/statistics/audit.py": "fe2751439a2b9554daaeebd075072e39b727fbf094c5b722370da34b7a6175bb",
+      "src/wavecert/statistics/conformal.py": "50a983a6f5560e12374ddd7461605f3600f18852f6d19abd6093f1cfae8a2fdb",
+      "src/wavecert/statistics/finite_population.py": "590c7f9d61dffdf4e3308516854f2f6e718e05e22870be274393db7559ab44a1",
+      "src/wavecert/statistics/inference.py": "75bd6e9a82dc2d0802097710b1161cb1799b22692fb41de1eb088d7d7040d608",
+      "src/wavecert/statistics/pathwise.py": "87181a6e818a29fcbd30ecda30f40985edd300b1590b5badb418396e2b6c0863",
+      "src/wavecert/statistics/tolerance.py": "e67c7274a4949a5bb1b724844d811e3da948278600b98a81d40d83eeaeb1c2c2",
+      "src/wavecert/surrogates/__init__.py": "fc6e735e3c35edfa11fe9faa5b19fc13a6691778856c0ae12123f6c03f418c3b",
+      "src/wavecert/surrogates/base.py": "6a128b568254bda4e4c384547f6ccdcc8795d689925c507ebdcb4db29785307e",
+      "src/wavecert/surrogates/fno.py": "56760590e3ac351180643f7bbd2f5decfe91cb21265775ee61cbd8721020f8cc",
+      "src/wavecert/surrogates/low_fidelity.py": "b766ec44d7667c4a4bbc9f8837d586e7f391ffb91e97533917aeb68bba8b5f5c",
+      "src/wavecert/surrogates/torch_adapter.py": "e8274a119af40ea3aa7962f235be777eaacc6d4e7cc81aeffd1ce9c7d35caf46"
+    },
+    "python": "3.13.13",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "packages": {
+      "numpy": "2.4.3",
+      "scipy": "1.18.1",
+      "torch": "2.14.0",
+      "matplotlib": "3.11.2",
+      "pandas": "3.0.5",
+      "pytest": "9.1.1",
+      "h5py": "3.16.0",
+      "hdf5plugin": "7.1.0",
+      "pyarrow": "25.0.1",
+      "devito": "4.8.23"
+    },
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": null,
+      "NUMEXPR_NUM_THREADS": null
+    },
+    "torch_threads": null
+  },
+  "main_source_unchanged": true
+}

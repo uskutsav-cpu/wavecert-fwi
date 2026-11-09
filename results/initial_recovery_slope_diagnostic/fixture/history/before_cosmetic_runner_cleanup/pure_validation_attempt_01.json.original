@@ -1,0 +1,35 @@
+{
+  "scope": "Root-authorized pure manufactured arrays and mocked provenance/output-state guard controls; no original8/360 arrays/outcomes, production imports, PDE or optimizer",
+  "source_sha256": "0eee6af51a09055cb0fac2c972dc7159092af15ede6558ba844cd1ea42596ee0",
+  "protocol_sha256": "b1104b4159ffc0065fb5b3a47a1c552a8cb94fc329daa8f7b315418452d7a8d2",
+  "pytest": {
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "08b3b6",
+      "wall_time_seconds": 0.352204541,
+      "exit_code": 0,
+      "original_token_count": 25,
+      "output": "............                                                             [100%]\n12 passed in 0.12s\n"
+    }
+  },
+  "ruff": {
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "7ab170",
+      "wall_time_seconds": 0.009151833,
+      "exit_code": 1,
+      "original_token_count": 271,
+      "output": "B007 Loop control variable `name` not used within loop body\n   --> diagnose_initial_slopes.py:262:9\n    |\n260 |     data_derivative = dot(true_gradient, direction)\n261 |     derivatives = metric_derivatives(model, truth, direction)\n262 |     for name, row in derivatives.items():\n    |         ^^^^\n263 |         row[\"sign\"] = sign_record(row[\"analytic\"], row[\"uncancelled_derivative_scale\"], protocol)\n264 |     correction_dot = dot(direction, correction)\n    |\nhelp: Rename unused `name` to `_name`\n\nI001 [*] Import block is un-sorted or un-formatted\n  --> test_diagnostic_formulas.py:3:1\n   |\n 1 |   \"\"\"Focused manufactured-array/mock guards; no original arrays, PDE or outcomes.\"\"\"\n 2 |\n 3 | / import hashlib\n 4 | | import importlib.util\n 5 | | import json\n 6 | | import sys\n 7 | | from pathlib import Path\n 8 | |\n 9 | | import numpy as np\n10 | | import pytest\n   | |_____________^\nhelp: Organize imports\n   |\n11 |\n   -\n12 | HERE = Path(__file__).parent\n   |\n\nFound 2 errors.\n[*] 1 fixable with the `--fix` option (1 hidden fix can be enabled with the `--unsafe-fixes` option).\n"
+    }
+  },
+  "python310_grammar": {
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "7bc458",
+      "wall_time_seconds": 0.000007875,
+      "exit_code": 0,
+      "original_token_count": 27,
+      "output": "diagnose_initial_slopes.py: Python3.10 grammar clear\ntest_diagnostic_formulas.py: Python3.10 grammar clear\n"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "recorded_utc": "2026-11-08T19:09:03Z",
+  "status": "SOURCE_METADATA_ENUMERATION_CLEAR_INDEPENDENT_MATH_REVIEW_PENDING",
+  "role": "AI post-outcome source/math explanation only, per one unrestricted49x49real-m forward map",
+  "source_sha256": "2e81e4e5c8e56fd3350a76180e4d2838d3fdf3a6032dbf33b4b5c446f0bd027a",
+  "metadata_sha256": "26768eda6b882228e783b85da2470334f0db945d83e673287eddba5933ed7c5d",
+  "math_review_sha256": "54f101367b59fc58c27108d23bada3ab3e17522e9d549b3a3384c6f3b0962898",
+  "execution": {
+    "cwd": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi",
+    "command": "env PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -I work/new-phase-staging/frequency_acquisition_information_ceiling/enumerate_geometry.py > work/new-phase-staging/frequency_acquisition_information_ceiling/source_metadata_execution_01.log 2>&1",
+    "actual_tool_chunk": "a8762b",
+    "actual_exit_code": 0,
+    "full_log_sha256": "42919326fe5a04e60e8e321888161f65cb3ca642dd89cb9d2fa3938a45447b76",
+    "imports": "stdlib only; no NumPy/SciPy/production imports"
+  },
+  "static_checks": {
+    "ruff_actual_tool_chunk": "ac0907",
+    "ruff_actual_exit_code": 0,
+    "ruff_log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "python310_grammar_actual_tool_chunk": "b239cd",
+    "python310_grammar_actual_exit_code": 0,
+    "grammar_log_sha256": "906a4fe69c812656739649fc445df5a849c39c0a2ee59d7f649a9235359dc077"
+  },
+  "source_scope": {
+    "production_manifest_files": 161,
+    "production_manifest_before_after": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "six_individually_pinned_files": true,
+    "protocol": "5c2838eaa1142ae7497717d7a4dfc46c76df4fb5ff8b3e016d5479eb4b51af1e",
+    "native_operator_source": "caf51b58da24ed6d3633bda4eaaab804714f5c7932d9d5f343644763bc158131"
+  },
+  "conditional_exact_arithmetic_counts": {
+    "unrestricted_real_parameters_per_model": 2401,
+    "source_count": 6,
+    "distinct_receiver_count": 20,
+    "sources_are_subset_of_receivers": true,
+    "source_receiver_reciprocal_integer_pairs_per_frequency": 15,
+    "potentially_distinct_complex_slots_per_frequency": 105,
+    "all8_real_Jacobian_rank_upper_bound": 1680,
+    "all8_real_linearized_nullity_lower_bound": 721,
+    "original4_submap_real_Jacobian_rank_upper_bound": 840,
+    "original4_submap_real_linearized_nullity_lower_bound": 1561
+  },
+  "mandatory_conditions_and_limits": [
+    "All selected A(m,omega) nonsingular so the real-parameter forward map is differentiable; plain transpose reciprocity A^T=A, not Hermitian symmetry.",
+    "Fixed symmetric stencil, diagonal real mass/fixed imaginary damping, common known nonzero point-source normalization and matching point receiver/source positions.",
+    "Upper bounds only: no numerical Jacobian/rank/singular value/condition number or actual array reciprocity equality computed.",
+    "Ambient linearized nullity is not an asserted feasible nullity at active box constraints, a finite nonlinear nullspace, a uniqueness theorem or a cause of observed errors.",
+    "Restricted priors/parameterizations or changed acquisition can change effective dimension; an invertible positive-velocity coordinate change alone preserves local rank.",
+    "All original loss terms and their weights remain; no reciprocity-based measurement removal, compression or method selection implemented.",
+    "Independent math/source review required before final publication claim; metadata status remains pending rather than silently upgraded."
+  ],
+  "project_array_reads": 0,
+  "PDE_optimizer_or_numerical_rank_calls": 0,
+  "production_or_protocol_modified": false,
+  "physical_acceptance": null,
+  "all_four_scientific_goals_complete": false,
+  "student_final_design_ownership_or_novelty_claim": false
+}

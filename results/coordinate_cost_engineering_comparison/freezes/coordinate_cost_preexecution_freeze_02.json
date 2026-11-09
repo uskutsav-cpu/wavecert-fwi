@@ -1,0 +1,50 @@
+{
+  "recorded_utc": "2026-11-08T07:15:27.394660+00:00",
+  "decision": "ROOT_GO separate fresh48-run AI provisional engineering attempt after minimal import-interface fix; no auto-resume",
+  "bundle": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/coordinate_cost_engineering_benchmark_v2",
+  "output": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/coordinate_cost_run_02",
+  "source_sha256": {
+    "SCOPE.md": "22625a94d1403f9603d1d55299249016bb5dc50e2059497d7fadb5d33c28d8fd",
+    "independent_saved_models.py": "807f4f2f0e0aeea1d2f61b64ee5f64a99819c38d4f6164529e664f0a235edeae",
+    "protocol.json": "f0306803ed34c03318e9a64d2848a8ce57900a6b4e5998c05d88d2bcbfa523f4",
+    "run_coordinate_comparison.py": "351b527170751d958939dfbc1f17b091770696ba043cf522be0db5f238e19c63",
+    "test_coordinate_comparison.py": "78fccdfaa378709f6cd02e99379d254d9e464ce30897f1c1797cb89b87af1632",
+    "velocity_oracle.py": "61dc9b2c80f7adba64154a92e4e63d716c127b81cdfb161c8267e43a08734d5c"
+  },
+  "test_receipt_sha256": "ed106f356d51855862238a874b82efc3243c3f954fda24ae07b5b23663e868e9",
+  "review_sha256": "36c0412fe1438684bee7ac7bb8c5b8fa00ea34bcbc563102aa9252e6d2e6baa2",
+  "production": {
+    "sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "files": 161
+  },
+  "prior_attempt": {
+    "output": "work/coordinate_cost_run_01",
+    "exit_code": 130,
+    "planned": 48,
+    "failed": 14,
+    "interrupted": 1,
+    "unattempted": 33,
+    "primary_credit": 0,
+    "reason": "NameError in imported offline checker; source unchanged during first attempt"
+  },
+  "change_scope": "Only five numerical-library aliases initialized at shared bootstrap; old807/61dc/numerical protocol bytes and all thresholds/data/options/budgets unchanged",
+  "fresh_planned_runs": 48,
+  "threads": {
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "free_bytes": 549584896,
+  "hardware_software_preflight": "work/coordinate_cost_preexecution_freeze.json",
+  "timing_caveat": "Local observed wallclock, no exclusive-machine/CPU-affinity/OS-cold-filecache guarantee. No concurrent local project computation/tests/plotting/git compression/source edits during live timings. Shared bootstrap outside per-call windows reported.",
+  "no_project_array_read_by_this_preflight": true,
+  "input_hashes_to_be_checked_inside_actual_runs": {
+    "data/reference/subsurfacegen_parent_split/split_manifest.csv": "30fed6e30e07a1b54d17f3ae9511d06eac6f44c69fcb57b6ee588f2ade65ef14",
+    "data/reference/subsurfacegen_parent_split/validation.npz": "36d11aba94ae9093cac888e9b28a2d01edcef1aa3a54b12f8e10269b963db2fc",
+    "data/reference/subsurfacegen_parent_split/validation_metadata.csv": "d3ce8ab6a3474a6bc17595f26b68940e7c7ad9481d8c80fb89fe04833e6996e6"
+  },
+  "student_final_design": false,
+  "research_goal_completed": false
+}

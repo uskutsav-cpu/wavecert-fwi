@@ -1,0 +1,77 @@
+{
+  "created_utc": "2026-11-08T01:13:02.281116+00:00",
+  "phase": "Isolated norm-free same-coarse/DST tolerance-converged right-GMRES baseline",
+  "scope": "Classical finite five-point constant-spacing Dirichlet K with real positive squared slowness m and arbitrary finite real diagonal damping d. No certificate/convergence theorem or generic PML/backend claim.",
+  "source_files_sha256": {
+    "coarse_dst_reference.py": "b62e9dd0845c4b0e57a8ef52927a01d7f3b289b9d3c8d290e3d4f124a46b400f",
+    "test_coarse_dst_reference.py": "b06f8ddac7ef9b89230ad8b4ade4827134becb0473efcccb7b8cb14869550d71"
+  },
+  "main_head_readonly": "be56a4a08087f7aadd0bf47b11510404999d0a00",
+  "main_original_physics_sha256": "caf51b58da24ed6d3633bda4eaaab804714f5c7932d9d5f343644763bc158131",
+  "source_access": "Only staged new files changed. Synthetic tests import frozen public reference classes for independent parity. No project NPZ, checkpoints, calibration, validation, test or confirmation arrays read/evaluated.",
+  "api": {
+    "factory": "CoarseDSTEngine(shape,spacing,damping,rank,model_cache_size=4,context_cache_size=8); optional from_helmholtz snapshots current declared configuration.",
+    "prepare": "factory.prepare(model,frequency_hz)->CoarseDSTContext; bounded content caches immutable m moments and per-model/frequency LU.",
+    "core": "context.apply_operator, project, lift, solve_coarse, high_inverse, apply_preconditioner accept vector or n×k columns (appropriate rank rows for coarse operations).",
+    "report": "context.solve_report(rhs,adjoint=False,x0=None,rtol=1e-10,atol=1e-12,maxiter=None,restart=None) returns solution+per-column convergence diagnostics and actual query-cost delta.",
+    "solve": "context.solve(rhs,adjoint=False,...) returns ndarray ONLY if every column meets true residual; otherwise raises LinearSolveFailure carrying full result. No LU fallback is silently performed. PreparationUnavailable is explicit for unrepresentable/failed setup.",
+    "default_maxiter": "n total Arnoldi iterations per column; restart=None means bounded restart=min(n,50), so Krylov storage is O(n*min(n,50)). Explicit restart=n requests unrestarted GMRES when storage permits. A smaller declared restart or different cap is recorded; maxiter0 remains a bounded no-update query."
+  },
+  "algebra": {
+    "operator": "A=K−omega²diag(m)+i*omega*diag(d); adjoint conjugates diagonal damping.",
+    "basis": "First rank real tensor Dirichlet sine modes sorted (eigenvalue,z,x), identical ordering to current stability foundation; orthonormal DST-I project/lift.",
+    "galerkin": "One DCT-I of damping at engine construction; one DCT-I of m per content miss, exact product-of-sines grid moment identity for Ar=BᵀAB; one reduced LU per uncached(m,freq), shared forward/adjoint RHS.",
+    "excluded_certificate_work": "No m²/d² moments, coupling Gram, PSD shift, inverse matrix columns, norm bounds, SVD/eigenproblems, gamma/tau tests or derivative-bound evaluation.",
+    "high_inverse": "H=Q DST^-1 diag(1/(lambda−omega²*m_mid+i*omega*d_mid)) DST Q, where both midpoints are half-min+half-max; low spectral slots masked zero. No positive-high-coercivity condition is needed by GMRES; a zero/nonfinite high denominator fails setup.",
+    "preconditioner": "M r=H r+B Ar^-1 Bᵀ(r−A H r). Adjoint action N uses Aᴴ, Ar^-H, conjugated high denominator. N is generally NOT Mᴴ because correction ordering differs.",
+    "right_gmres": "Arnoldi applies A M to basis vectors and reconstructs x=x0+M V y using stored preconditioned directions; two-pass modified Gram-Schmidt and complex Givens QR, no projected least-squares SVD. Columns solved independently; honest baseline, no block/recycling acceleration claim.",
+    "true_stop": "An estimate triggers a candidate check. Explicit ||b−A x||2<=max(atol,rtol*||b||2) is the sole convergence criterion. Initial warm starts also checked. Happy breakdown, cap/restart, invalid arithmetic and tiny unreachable tolerance never bypass it.",
+    "gradient_scope": "Generic complex q columns and arbitrary complex rectangular P are supported by the linear solves. Tests verify physical g=omega² Re sum(conj(lambda)*u), lambda=A^-H Pᴴ(Pu−d), including repeated point receivers. The core does not perform or count receiver/gradient algebra; the owning oracle must charge that work.",
+    "unrestarted_dominance_scope": "The exact-arithmetic same-preconditioner GMRES residual-minimization comparison with k Richardson sweeps holds for an unrestarted search (explicit restart=n) or a common initial cycle. It is not a dominance theorem across restarted cycles. The public resource-safe default is restart=min(n,50)."
+  },
+  "identity_and_immutability": "Array snapshots are independent, readonly copies; public config properties have no setter; public model/operator identities are copies. SHA256 binds canonical little-endian m,d,basis/eigenvalues/Ar/frequency plus operator config. The solver snapshots RHS/warm starts and records their hashes. This is provenance, not cryptographic protection against malicious modification of Python private attributes.",
+  "cost_units": {
+    "setup": "basis_setups; computed Laplacian eigenvalue entries; real2D DCT-I transforms; moment matrices; model/context cache hits; reduced operator assemblies; reduced LU factorization attempts; high-denominator builds.",
+    "transforms": "dispatches count actual scipy FFT calls. real_column_transforms counts logical real2D transforms: two per complex column, one per real column. Generic public field inputs are canonicalized complex128, so normally two. This is not a FLOP count.",
+    "linear_algebra": "Coarse solve dispatches separate from actual forward/adjoint RHS columns. No reduced inverse matrix is formed.",
+    "stencil": "operator_dispatches separate from logical columns, with forward/adjoint split. Each inverse action pays A H r and each Arnoldi step pays A M v; true residual checks pay actual full operator application.",
+    "krylov": "Per-column solve count; Arnoldi iterations, all Gram-Schmidt dot/AXPY updates, vector norm evaluations (field named arnoldi_norm_evaluations also includes rhs/true-residual norms), Givens construction/rotation, projected triangular solve, solution-update columns and restart cycles. Counters are work categories, not complete floating-operation counts or wall-time equivalents.",
+    "fine_and_certificate": "Fine factorization/direct-RHS and certificate SVD/eig/inverse counters stay zero. A consumer’s explicit fallback must charge its own fine work and preserve the failure report.",
+    "ledger": "Factory/context snapshots are shared cumulative engine counts. solve_report.costs includes solve query delta only; constructor+prepare costs MUST be included by the owner’s before/after snapshot and not counted twice from static provenance. Cache reuse is content safe and must be allowed equally for exact controls."
+  },
+  "optional_paired_2N_design_only": {
+    "implemented": false,
+    "operator": "K=[[A,0],[-W,Aᴴ]], W=PᴴP, b=[q;−Pᴴd].",
+    "inverse_action": "T=[[M,0],[N W M,N]], matching u+=M ru followed by lambda+=N(rlambda+W*delta_u), with updated-state RHS.",
+    "reason_to_defer": "Root approved generic core first. Independent solves to tolerance are sufficient for the current strong exact control. Optional paired norm scaling, source handling and cost accounting need a separate frozen design before adding scope."
+  },
+  "validation": {
+    "tests": "15 passed -Werror in0.56s; repo-config Ruff passed. Added n72 actual allocation guard for defaultrestart50, explicit72 override, true-residual checks, iteration-limit and unattainable-tolerance failure statuses.",
+    "coverage": [
+      "Independent sparse-Kronecker LU on a non-square grid, arbitrary complex multi-RHS and both adjoints",
+      "Analytical sine Galerkin equality and same inverse action as existing coarse correction",
+      "No certificate SVD/eig; ONE damping/model DCT and shared forward/adjoint LU; cache/content identity",
+      "Scalar/matrix shape and exact initial warm start/zero RHS",
+      "Arbitrary complex rectangular P and repeated point receiver multi-source physical-gradient finite differences",
+      "Same-inverse fixed-work GMRES residual vs unit Richardson",
+      "Iteration cap, restarted convergence and tiny-tolerance true-residual-floor rejection",
+      "Nonfinite internal action/overflow report and strict JSON; invalid real/model/frequency/shape checks",
+      "Actual matrix transform/solve dispatch vs RHS-column counts and GMRES stencil-work invariant"
+    ],
+    "not_run": "No project outcomes, PDE benchmark/timings, training or original experiment replay."
+  },
+  "runtime": {
+    "python": "3.13.13",
+    "numpy": "2.4.3",
+    "scipy": "1.18.1",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "test_threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  },
+  "status": "Ready for independent read-only review; no main source mutation, commit, push or actual project evaluation authorized/performed by this staging implementation.",
+  "nominal_operator_scope": "from_helmholtz reconstructs declared configuration only, ignoring patched actual stiffness/damping/operator methods. The consuming oracle must independently bind actual queried A to this nominal operator.",
+  "merit_semantics": "Tolerance-converged fields and derived merits/gradients are approximations, not mathematically exact arithmetic. Integration must preserve backend/tolerances/diagnostics/costs and common paid-reference acceptance."
+}

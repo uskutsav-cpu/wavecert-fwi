@@ -1,0 +1,81 @@
+{
+  "created_utc": "2026-11-08T09:17:32.442975+00:00",
+  "result": "PASS",
+  "role": "AI authored/reviewed known-fixture portable regression; no new native physics or research design",
+  "test_path": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/tests/test_bp_numpy_tangent_reproduction.py",
+  "test_sha256": "2bb3b01039ef9373bfd62e71e5e3b3444a8a6c2f7548afe3b0ef6d4286648ca6",
+  "preexecution_review_sha256": "01b330fc7860ca02be36990262eecb991c5b03761d5ea188ac886ff924ecd085",
+  "production_files": 161,
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "actual_pytest": {
+    "tool_chunk": "df0390",
+    "exit_code": 0,
+    "tool_wall_seconds": 9.938093,
+    "pytest_seconds": 8.05,
+    "passed": 1,
+    "command": "env PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/src OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest tests/test_bp_numpy_tangent_reproduction.py -W error -s --basetemp=/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/bp_numpy_ci_validation_01/pytest_tmp > /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/bp_numpy_ci_validation_01/pytest_execution_01.log 2>&1",
+    "cwd": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi",
+    "log_sha256": "56ddddde28a32dde47bd98cc91ef6fe0def457281c7acdbd89649cbb6040f7ff"
+  },
+  "actual_ruff": {
+    "tool_chunk": "0d51bb",
+    "exit_code": 0,
+    "command": "/opt/miniconda3/bin/python -m ruff check tests/test_bp_numpy_tangent_reproduction.py > /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/bp_numpy_ci_validation_01/ruff_execution_01.log 2>&1",
+    "cwd": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi",
+    "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  },
+  "known_fixture_reproduction": {
+    "all_own_solves_before_native_numeric_witnesses": true,
+    "cases": [
+      {
+        "case_id": "upper_left",
+        "informative_direction_relative_errors": {
+          "edge": 1.7430968033371306e-14,
+          "interior": 2.6493167812001604e-15
+        },
+        "source_relative_L2": 0.0,
+        "trace_relative_L2": 4.871289597762567e-14
+      },
+      {
+        "case_id": "middle_center",
+        "informative_direction_relative_errors": {
+          "edge": 6.475897255156544e-14,
+          "interior": 2.686195760953833e-14
+        },
+        "source_relative_L2": 0.0,
+        "trace_relative_L2": 2.666981482282763e-14
+      },
+      {
+        "case_id": "lower_right",
+        "informative_direction_relative_errors": {
+          "edge": 5.4138618386143267e-14,
+          "interior": 3.260619695090479e-14
+        },
+        "source_relative_L2": 0.0,
+        "trace_relative_L2": 2.3527419977182974e-14
+      }
+    ],
+    "check": "bp_numpy_tangent_reproduction",
+    "directional_tolerance": 0.001,
+    "informative_directions": 6,
+    "installed_devito_required": false,
+    "maximum_directional_relative_error": 6.475897255156544e-14,
+    "maximum_trace_relative_L2": 4.871289597762567e-14,
+    "numpy": "2.4.3",
+    "physical_acceptance": null,
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "python": "3.13.13",
+    "scope": "known source-informed discrete fixture regression; no new physics, independent sites or student conclusions",
+    "trace_tolerance": 1e-09,
+    "traces": 3
+  },
+  "retained_temporary_output": {
+    "files": 5,
+    "bytes": 2045775,
+    "path": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/bp_numpy_ci_validation_01/pytest_tmp"
+  },
+  "no_native_Devito_or_PDE": true,
+  "production_workflow_edits": false,
+  "first_test_and_lint_attempt_pass": true,
+  "limitations": "Local actual environment is macOS ARM64/Python3.13.13/NumPy2.4.3 only. Existing Linux CI will separately establish cross-environment reproduction if it passes. All3 crops share one ancestor; this is source-informed discrete software reproduction, not continuum/field accuracy, physical acceptance, inverse recovery, certificate transfer, new student conclusions or a research-goal completion."
+}

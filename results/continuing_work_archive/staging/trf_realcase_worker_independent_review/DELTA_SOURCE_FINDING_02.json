@@ -1,0 +1,43 @@
+{
+  "actions": {
+    "GO_created": false,
+    "PDE_native_jobs": 0,
+    "candidate_edits": 0,
+    "candidate_imports": 0,
+    "only_own_review_receipt_written": true,
+    "tests_retests": 0
+  },
+  "manifest_sha256": "b06b12cd06dea14373234abaeb574b4bcc39f39414dfe443265157e593cbcd6d",
+  "material_findings": [
+    {
+      "control_gap": "New ninth test replaces execute_one with lambda prepare(attempt), bypassing the actual API catch-and-serialize path. Its raw-array assertions therefore do not test this integration contract.",
+      "effect": "Previously serializable failed-policy returns now become an unrelated serialization failure even if saving partial observations succeeds. The nested original cause survives, so no false success is introduced, but the fixed API failure-payload contract is broken and outer original_case_exception can again name a secondary serialization cause.",
+      "file": "case_runtime.py",
+      "lines_inclusive": [
+        222,
+        236
+      ],
+      "minimal_fix": "Retain actual chunks in worker-private gate.context rather than the API preparation_prefix. Keep only ordinary JSON-safe chunk identity metadata, completed block IDs and original/secondary errors in the prefix. Verify the targeted control can feed the real failure prefix to unchanged driver encoded; optionally exercise actual execute_one with a manufactured preparation exception, which needs no native owner or optimizer dispatch.",
+      "priority": "P2",
+      "scope": "No math, criteria, protocol, accepted-point selection or native execution change required.",
+      "source_integration": "prepare_case assigns prefix to attempt[preparation_prefix]. Unchanged matched_driver.py payload351 directly includes attempt.get(preparation_prefix), and encoded at56-57/json serialization363 has no NumPy adapter. execute_one catches the observation Exception as a failed policy payload, then raises TypeError trying to serialize this raw-array prefix.",
+      "title": "Keep failed preparation prefix JSON-safe for the unchanged API serializer",
+      "trigger": "An ordinary observation exception occurs after at least one completed batch. The new fix sets prefix[available_completed_observation_arrays] to a list of NumPy ndarrays."
+    }
+  ],
+  "metadata_binding_sha256": "4dee880ae7b490b844137cd6bba1ff0d146b75f64a1c763bd9e55fe48b8b4ba1",
+  "metadata_checks": 172,
+  "metadata_issues": [],
+  "original_finding": {
+    "finding_sha256": "6316f1f46de4bbb92e2889d040ac889975023be90ed32f1d72109cc72df6ea50",
+    "source_fix": "The original observation cause is recorded before diagnostic work and secondary partial-save errors are now guarded; that narrow source behavior is fixed."
+  },
+  "scientific_goals_complete": false,
+  "source_sha256": {
+    "case_runtime.py": "09d31cbb64724a8ceaa96e547361629120d6bb2e13f05e02e3cd8a34e2cbdd50",
+    "matched_driver.py": "0558a0e08e3994b78a77800c79416c51fe56eb3cb3be6d90a62daaad62918497",
+    "test_worker.py": "d50c52614a6df791b4730095e4bfda9c83a252e6c220d29115ca9ab797fd30e0"
+  },
+  "status": "NARROW_FIX_ORIGINAL_CAUSE_PRESERVED_NEW_FAILURE_PAYLOAD_COMPATIBILITY_ISSUE_PENDING",
+  "student_final_design": false
+}

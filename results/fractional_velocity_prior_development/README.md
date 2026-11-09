@@ -1,0 +1,9 @@
+# Frozen 48-run classical-prior development archive
+
+The fixed recovery continuation gate fails:0/8 successful cases, six required. All 48 returns are eligible; actual child exit 0. The classical prior limits large baseline drift but reaches only 4.10%best case-median improvement over initialization. All raw planned slots remain.
+
+Read [the technical report](../../docs/fractional_velocity_prior_development.md), [the figure](presentation/prior48_recovery_comparison.png), [all 48 returns](presentation/prior48_all_returns.csv), [the retained audit](retained_audit/report.json) and [the independent actual-model review](independent_actual_review/FINAL_ACTUAL_EVIDENCE_REVIEW_01.json).
+
+`cohort_01` is the actual 48 study. `controls/cohort_01` is a failed setup-only predecessor; `controls/cohort_02` is the corrected 162-control success. They are distinct from both prior 96-run contexts. `source_bundle` is the V2 control/source commit with its original false registration; `activation` holds the separate actual GO and activation. Earlier in-progress/pending fields are immutable historical snapshots, qualified by the final terminal/audit/review records. `source_history_v1_delta` plus 23 unchanged V2 files reconstructs all 26 V1 files. `portable_controls` contains the exact 16-file manufactured fixture, descriptors and source/75-control history; subdirectories/duplicates beyond that minimal fixture are evidence only. Nested workflow files never act as this repository's live workflow.
+
+The archive manifest excludes itself and generated caches. COPY_RECEIPT and SUPPLEMENTAL_COPY_RECEIPT bind exact source-to-copy content for the documented copying passes. A later root manifest also binds generated documentation/reproduction files. No private Marmousi payload is included. No source 9f solver or live workflow is changed by this evidence archive. All four scientific goals remain incomplete.

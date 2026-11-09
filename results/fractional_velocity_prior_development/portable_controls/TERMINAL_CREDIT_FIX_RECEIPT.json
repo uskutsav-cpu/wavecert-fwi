@@ -1,0 +1,48 @@
+{
+  "Python310_grammar": "PASS for changedsource/test",
+  "Ruff": "PASS4491f7",
+  "actual_PDE_calls": 0,
+  "actual_controls": {
+    "errors": 0,
+    "exit_code": 0,
+    "failures": 0,
+    "pytest_seconds": 3.46,
+    "skipped": 0,
+    "tests": 75,
+    "tool_chunk": "4491f7"
+  },
+  "actual_project_arrays_decoded": 0,
+  "actual_project_run_outcomes_read": 0,
+  "changed_top_level_AST_objects_only": [
+    "apply_global_integrity_gate",
+    "execute"
+  ],
+  "criteria_sha256": "b06e9618b4d980ed0aa08c05a0da136d0ba3e37ecc422be4df411a5f3b96edf6",
+  "frozen_other_sources_unchanged": {
+    "criteria.json": true,
+    "export_manufactured_producer_schema.py": true,
+    "test_producer_schema_interop.py": true,
+    "test_trace_checks.py": true,
+    "trace_checks.py": true
+  },
+  "independent_final_source_review_pending": true,
+  "new_controls": [
+    "Actual exit unknownNone with otherwise arithmetic-good complete records -> no unqualified credit",
+    "Nonzero actualexit2 with otherwise arithmetic-good complete records -> no unqualified credit",
+    "Actualexit0 but missingcomplete receipt -> no unqualified credit",
+    "BooleanFalse cannot masquerade as integerzero actualexit",
+    "Positive actualinteger0+complete+integrity+all48eligible can still qualify arithmeticgate"
+  ],
+  "old70_receipt_sha256": "dbe0b78a3e61e2e3aa560e5ab243949eb3d20bbeeb5dc2ccd2defb138303d986",
+  "old_source_sha256": "5318cb9866b03e60e2de43e1d5ca907df3e590da3890c496c8074f44554e0024",
+  "patch_sha256": "814ec347b305919f2ab450e385e3bbc1fe912e1f09ac05e4f175476105105888",
+  "preserved_source_results_path": "work/new-phase-staging/fractional_velocity_prior48_post_audit/history_before_terminal_credit_fix_70",
+  "producer_engine_or_protocol_modified": false,
+  "reporting_change": "Original arithmetic continuation boolean retained as arithmetic_only_conditional_continuation_gate_pass before terminal/global gating. verified_full_study_credit derived once from noissues+all48eligible+actual int exit0+present complete receipt. Both exported unqualified proposed gate and report verified flag use that same derived credit. Row/case arithmetic and all48eligible semantics unchanged except pre-existing source-integrity invalidation.",
+  "role": "Minimal pre-outcome software reporting repair requested by root/independent reviewer; no scientific criterion/row/case arithmetic change",
+  "scientific_goals_complete": false,
+  "source_sha256": "57946398ebd6d3eaad35ea73491ee50f3bf00c64ef42d6067a1a2fd522c040a4",
+  "status": "PROSPECTIVE_TERMINAL_CREDIT_REPORTING_FIX;75_MANUFACTURED_CONTROLS_PASS;ACTUAL_AUDIT_UNEXECUTED",
+  "tests_sha256": "abeee39e10a00a52783ca27f0590cce629edb9f4635ada907fb7470afe61906d",
+  "trace_sha256": "f2eaf67a296aa00e22e21d8ce410d72f715b317097da4f2b486fc3b2ff6235cc"
+}

@@ -1,0 +1,145 @@
+{
+  "status": "PINNED_PRIMARY_SOFTWARE_CONTEXT_SUPPORTS_CONDITIONAL_INTERPRETATION",
+  "role": "Independent metadata and primary-source review; live model acquisition files were neither read nor modified.",
+  "primary_HDF5_assets": [
+    {
+      "repository": "JuliaIO/HDF5.jl",
+      "commit": "9e003dc6df12b5b97722634e7b4798a69f94bc94",
+      "remote_path": "docs/src/index.md",
+      "local_name": "HDF5_index.md",
+      "url": "https://github.com/JuliaIO/HDF5.jl/blob/9e003dc6df12b5b97722634e7b4798a69f94bc94/docs/src/index.md",
+      "bytes": 27114,
+      "decoded_characters": 27113,
+      "sha256": "1605992f55c4110ce4c816dbc1e1da8f4d8ce8b33c5b7c555826516686ff5861"
+    },
+    {
+      "repository": "JuliaIO/HDF5.jl",
+      "commit": "9e003dc6df12b5b97722634e7b4798a69f94bc94",
+      "remote_path": "src/dataspaces.jl",
+      "local_name": "HDF5_dataspaces.jl",
+      "url": "https://github.com/JuliaIO/HDF5.jl/blob/9e003dc6df12b5b97722634e7b4798a69f94bc94/src/dataspaces.jl",
+      "bytes": 12595,
+      "decoded_characters": 12583,
+      "sha256": "bf653df7bef06ebcaa0aeab39669afa3d22bce12b19ae58c60e1cad051886d43"
+    },
+    {
+      "repository": "JuliaIO/HDF5.jl",
+      "commit": "9e003dc6df12b5b97722634e7b4798a69f94bc94",
+      "remote_path": "LICENSE.txt",
+      "local_name": "HDF5_LICENSE.txt",
+      "url": "https://github.com/JuliaIO/HDF5.jl/blob/9e003dc6df12b5b97722634e7b4798a69f94bc94/LICENSE.txt",
+      "bytes": 1171,
+      "decoded_characters": 1171,
+      "sha256": "5f0747fbdd10864ddd1ccfd8d21deb495a6b85e6cab8d9c3f7f0406b550578ce"
+    }
+  ],
+  "HDF5_commit_date_UTC_from_GitHub": "2026-10-27T17:37:21Z",
+  "source_retrieval": "GitHub connector fetched the three pinned text files. Source text was stored with the tool-added extra terminal newline removed to match decoded response character counts. MIT license is included. No remote source was executed.",
+  "JUDI_context_receipt_sha256": "0605330518fb54a0264a6d2abcf7c1fbd6549d14850bbc010c1f13b9b5cfab62",
+  "JUDI_context": {
+    "repository": "slimgroup/JUDI.jl",
+    "commit": "655cc4400514fae01bbfb368ce80d96bcd5bb20b",
+    "source_files": [
+      {
+        "local": "generate_data_overthrust_3D.jl",
+        "sha256": "43ac1cc3d382700cdf1b2f0abaa0a14eb939b66c48c30426078740532ab3c5fe",
+        "url": "https://github.com/slimgroup/JUDI.jl/blob/655cc4400514fae01bbfb368ce80d96bcd5bb20b/examples/software_paper/generate_data_overthrust_3D.jl"
+      },
+      {
+        "local": "ModelStructure.jl",
+        "sha256": "531949e5b4a79b747578a039889aa1ec2a210097326710fead21a463d6fa6b77",
+        "url": "https://github.com/slimgroup/JUDI.jl/blob/655cc4400514fae01bbfb368ce80d96bcd5bb20b/src/TimeModeling/Types/ModelStructure.jl"
+      }
+    ]
+  },
+  "verified_library_behavior": [
+    {
+      "claim": "HDF5.jl maps Julia dimension tuples to reversed HDF5 dimensions and maps HDF5 dimensions back by reversal.",
+      "source": "https://github.com/JuliaIO/HDF5.jl/blob/9e003dc6df12b5b97722634e7b4798a69f94bc94/src/dataspaces.jl#L58",
+      "source_lines": [
+        58,
+        63
+      ]
+    },
+    {
+      "claim": "Base.size of a dataspace gets native HDF5 extent dimensions and returns _from_h5_dims; get_extent_dims uses the same conversion.",
+      "source": "https://github.com/JuliaIO/HDF5.jl/blob/9e003dc6df12b5b97722634e7b4798a69f94bc94/src/dataspaces.jl#L151",
+      "source_lines": [
+        151,
+        155,
+        218,
+        223
+      ]
+    },
+    {
+      "claim": "Official HDF5.jl documentation explains Julia column-major versus common C/Python row-major array interoperability and dimension reversal.",
+      "source": "https://github.com/JuliaIO/HDF5.jl/blob/9e003dc6df12b5b97722634e7b4798a69f94bc94/docs/src/index.md#L623",
+      "source_lines": [
+        623,
+        632
+      ]
+    }
+  ],
+  "independently_verified_local_metadata": {
+    "m_stored_HDF5_shape": [
+      207,
+      801,
+      801
+    ],
+    "n_stored_vector_values": [
+      801,
+      801,
+      207
+    ],
+    "d_stored_vector_values": [
+      25,
+      25,
+      25
+    ],
+    "o_stored_vector_values": [
+      0,
+      0,
+      0
+    ],
+    "m_unit_attribute_observed": false,
+    "named_axis_attribute_observed": false,
+    "basis": "Prior independent geometry metadata review; no live acquisition read."
+  },
+  "conditional_interpretation": {
+    "condition": "If the versioned Zenodo HDF5 file uses the semantics of the same-basename Overthrust file read by the pinned JUDI example, with HDF5.jl dimension-reversal convention.",
+    "Julia_model_shape_order": "(x,y,z) = (801,801,207), matching the stored one-dimensional n vector; reversing dimensions does not reverse the values of a 1D vector.",
+    "stored_C_shape_order": "(z,y,x) = (207,801,801). The middle y/x dimensions are equal, so shape alone cannot distinguish their names; JUDI convention supplies the conditional names.",
+    "selected_plane": "For zero-based z,x, stored-plane[z,x] equals Julia_m[x+1,401,z+1] under this convention. Julia_m[:,401,:] has x-by-z axes; the acquired NumPy plane already has z-by-x axes. It requires no additional transpose for a z-by-x output.",
+    "coordinates_if_JUDI_geometry_applies": "d is 25 metres in x,y,z and o is zero; plane y=10,000m, x=0..20,000m, z=0..5,150m at node coordinates. These are interpreted coordinates, not new embedded HDF5 unit metadata.",
+    "stored_m_units_if_JUDI_semantics_apply": "Squared slowness s^2/km^2, numerically equivalent to ms^2/m^2. Physical velocity would be 1/sqrt(m) km/s or 1000/sqrt(m) m/s.",
+    "conversion_performed_in_this_review": false,
+    "water_rows_removed": 0,
+    "water_padding_claim_verified": false
+  },
+  "manufactured_index_arithmetic": {
+    "checks_passed": 24,
+    "synthetic_shape_HDF5": [
+      2,
+      3,
+      4
+    ],
+    "identity": "C-offset(z,y,x)=(z*ny+y)*nx+x equals Julia column-major offset(x,y,z)=x+nx*(y+ny*z).",
+    "project_row_interval_index_checks": {
+      "first_row_start": 1283792,
+      "last_row_start": 529963016,
+      "row_body_bytes": 3204
+    },
+    "downloaded_Julia_code_executed": false,
+    "cross_language_HDF5_runtime_executed": false,
+    "model_values_used": 0
+  },
+  "explicit_limits": [
+    "JUDI example names an FTP URL and the same basename; no checksum or immutable file identity links that FTP file to Zenodo file UUID 436595b8-ed4b-4e1d-8991-e63608dcc169.",
+    "No original CD1 velocity-grid equality or rounding identity is established. The original grid has 187 rows in its README while this stored HDF5 grid has 207; dimension reversal alone does not explain those 20 additional rows.",
+    "No Julia package installation, reader execution, exact writer/version provenance or runtime validation of the pinned JUDI example was performed. The example was authored in 2017 and retained at the pinned current repository commit; compatibility with the current constructor API was not tested.",
+    "Physical unit/axis interpretation is supported by primary software-use context and an explicit consistency check, not directly encoded unit/axis attributes in the inspected HDF5 metadata.",
+    "No live plane artifact was read, converted, cropped, smoothed or used for a wave/PDE run. No independent geological site, untouched confirmation, recovery advantage or physics-acceptance claim follows.",
+    "A later derivative model must retain the exact acquired stored plane and separately identify the interpretation assumption, arithmetic transformation, row selection, units and hashes."
+  ],
+  "acquisition_operation_affected": false
+}

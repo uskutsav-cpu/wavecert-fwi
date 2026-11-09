@@ -1,0 +1,58 @@
+{
+  "status": "ONE_MATERIAL_REPORTING_CHANGE_REQUESTED_BEFORE_ACTUAL_OUTCOMES",
+  "created_utc": "2026-11-09T01:57:14.637848+00:00",
+  "reviewer": "/root/prior48_auditor_review",
+  "role": "Independent source-informed AI static review of auditor/runtime and retained manufactured-control evidence; not a human reproduction or study execution authorization",
+  "source_bindings": {
+    "work/new-phase-staging/fractional_velocity_prior48_post_audit/audit_retained.py": "5318cb9866b03e60e2de43e1d5ca907df3e590da3890c496c8074f44554e0024",
+    "work/new-phase-staging/fractional_velocity_prior48_post_audit/trace_checks.py": "f2eaf67a296aa00e22e21d8ce410d72f715b317097da4f2b486fc3b2ff6235cc",
+    "work/new-phase-staging/fractional_velocity_prior48_post_audit/criteria.json": "b06e9618b4d980ed0aa08c05a0da136d0ba3e37ecc422be4df411a5f3b96edf6",
+    "work/new-phase-staging/fractional_velocity_prior48_post_audit/STAGED_AUDITOR_VALIDATION_RECEIPT.json": "4c1c318b8f41641b05c28454cff501fb81aaf66c1f9147fd3dc7f5773dd1fd76",
+    "work/new-phase-staging/fractional_velocity_prior48_post_audit/PRODUCER_SCHEMA_INTEROP_RECEIPT.json": "dbe0b78a3e61e2e3aa560e5ab243949eb3d20bbeeb5dc2ccd2defb138303d986",
+    "work/new-phase-staging/fractional_velocity_prior48_post_audit/test_scalar_audit_manufactured.py": "b0f5cb0e7a434910ce0cf2490e9bac62b7e9f3c43e7a138d31b1799a59edc676",
+    "work/new-phase-staging/fractional_velocity_prior48_post_audit/test_trace_checks.py": "85c28477e3ac64a051c401584f86355144bace2c1310c77571d89d2b3fa385d3",
+    "work/new-phase-staging/fractional_velocity_prior48_post_audit/test_producer_schema_interop.py": "a1d940998bb9f7b45ed124d2d718be966d15f46e7a14e58a974d5c42a2823335",
+    "work/new-phase-staging/fractional_velocity_prior48_post_audit/combined_controls_attempt_08.xml": "fc10ffe730f327dc71ffc0531c315e4f49e24be520cafde146bf00cbf203180f",
+    "work/new-phase-staging/fractional_velocity_prior48_driver_candidate/run_prior48.py": "7c7fc525894dbd38899ad6ee46bff8a0a0d996ea2ef61d5da2e6ce8b4320d882",
+    "work/new-phase-staging/fractional_velocity_prior48_driver_candidate/protocol.json": "92433c9d7b9d2990799f3a81707f6d04f63784a1820d3f109804a83b484ccfa6",
+    "work/new-phase-staging/fractional_velocity_prior48_driver_candidate/FROZEN48_SCHEDULE.json": "930e8ecf6bdbb78901b2330c0e1e71a470c7b914067feaf3c0ba3316442be150"
+  },
+  "source_controls_evidence": {
+    "retained_XML_tests": 70,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "unique_testcase_identities": 70,
+    "reviewer_reran_controls": false,
+    "read_only_verification_tool_chunk": "ab7fb3"
+  },
+  "findings": [
+    {
+      "priority": 2,
+      "file": "audit_retained.py",
+      "start": 1267,
+      "end": 1287,
+      "title": "Require verified terminal completion for positive continuation credit",
+      "trigger": "All48 retained rows satisfy recovery arithmetic and source checks, but actual_exit_code is null/nonzero or complete receipt absent.",
+      "behavior": "verified_full_study_credit can be false while summary.proposed_development_continuation_gate_pass remains true because apply_global_integrity_gate(lines706\u2013710) only checks integrity failures.",
+      "criterion": "criteria.json line31: incomplete study cannot obtain complete-study or continuation credit.",
+      "recommendation": "Derive verified completion once; export the existing arithmetic gate under an explicit diagnostic name and require verified_full_study_credit for the unqualified proposed_development_continuation_gate_pass. Preserve criteria, row/case arithmetic, all48 denominators and all prior source/results. Add small missing/unknown/nonzero terminal evidence controls before outcomes."
+    }
+  ],
+  "other_reviewed_checks": [
+    "Scalar raw24 squared-slowness to velocity half-index interpolation and clamped edge indexing match frozen source; initializer shares disclosed generic Gaussian filter.",
+    "Scalar quality sqrt/fsum and edge priorR match frozen definitions; composedF uses actual positive paidPhi0 after stored graph initialPhi comparison.",
+    "Strict7.5 engine and8 caller clocks have no tolerance; invalid/late/incomplete rows get no primary recovery credit.",
+    "Complete48/16groups/8case medians and fixed six-success/no-harm/fit criteria, crossarm binding invalidation and global integrity failure checks are consistent.",
+    "Production9f/161, driver7c7/protocol924/schedule930, localhelper/dependency hashes, perartifact complete denominator, rootterminal/status/complete identities are checked.",
+    "Relocated local directory must be root hash-bound; original runner paths/remote evidence remain explicitly root-reported context.",
+    "Trace module uses only stdlib; main runtime does not import producer/controller/WaveCert or solve PDE.",
+    "Retained head/tail chains are recomputed only with no omissions; omitted middle/native ownership/observation reconstruction limits are explicit.",
+    "Preparation8LU48RHS, one finalnative cumulative snapshot, adapter/prior/metric/postgraph units remain distinct; incomplete unknown work is not zeroed."
+  ],
+  "project_arrays_decoded": 0,
+  "project_run_artifacts_read": 0,
+  "project_PDE_calls": 0,
+  "source_edits_by_reviewer": false,
+  "actual_study_GO": false
+}

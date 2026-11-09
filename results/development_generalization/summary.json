@@ -1,0 +1,1261 @@
+{
+  "schema_version": 1,
+  "study_status": "training/model-selection development diagnostic; no untouched confirmation claim",
+  "roles_loaded": [
+    "train",
+    "validation"
+  ],
+  "calibration_or_test_wavefields_loaded": false,
+  "seed": 2026110709,
+  "sampling": {
+    "tangent_examples_per_role": 48,
+    "smoothed_examples_per_role": 24,
+    "selection": "uniform block sampling without replacement, identical across checkpoints",
+    "direction_distribution": "fresh independent Gaussian directions in physical squared slowness, unit L2",
+    "direction_seed": "SeedSequence([seed, role_code, 1]); role_code train=0, validation=1",
+    "selection_seed": "SeedSequence([seed, role_code, stream]); tangent stream=0, smoothing stream=2",
+    "smoothing": {
+      "variable": "velocity",
+      "sigma_grid_cells": 1.6,
+      "mode": "reflect"
+    },
+    "relative_error_denominator_floor": 1e-15,
+    "zero_norm_cosine": 0.0
+  },
+  "identities": {
+    "actual": "g=J* r compared with g_hat=J_hat* r_hat",
+    "fixed_true_residual": "g=J* r compared with J_hat* r",
+    "fixed_exact_jacobian": "g=J* r compared with J* r_hat",
+    "adjoint": "real model-space adjoint under Re<v,w> for complex data"
+  },
+  "dataset_manifest_sha256": "e297ab5196bd50142db76a575c78355587bba04f6b381a0ef8700c950d04155a",
+  "role_manifest_sha256": "30fed6e30e07a1b54d17f3ae9511d06eac6f44c69fcb57b6ee588f2ade65ef14",
+  "dataset_directory": "data/reference/subsurfacegen_parent_split",
+  "loaded_array_sha256": {
+    "train": "5cd86a6af207190f242ec372ae28ea4872c825c8a9bc4dee7e0cdb2637fb590b",
+    "validation": "36d11aba94ae9093cac888e9b28a2d01edcef1aa3a54b12f8e10269b963db2fc"
+  },
+  "checkpoints": {
+    "fno_parent_grouped.pt": {
+      "path": "checkpoints/fno_parent_grouped.pt",
+      "sha256": "0d75cb6b1c821c91cb422cffaa4ef2cdcfd98631de0b5fd3935fa894b10bdf2b",
+      "roles": {
+        "train": {
+          "raw_forward": {
+            "n_blocks": 816,
+            "n_parent_models": 17,
+            "block_medians": {
+              "wavefield_relative_l2": 0.504094660282135,
+              "receiver_relative_l2": 0.2332806959748268
+            },
+            "parent_medians": {
+              "f3_044": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.42170457541942596,
+                "receiver_relative_l2": 0.21933548897504807
+              },
+              "f3_045": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.4965292662382126,
+                "receiver_relative_l2": 0.25705933570861816
+              },
+              "f3_047": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.4375000596046448,
+                "receiver_relative_l2": 0.2536650225520134
+              },
+              "f3_049": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.45519793033599854,
+                "receiver_relative_l2": 0.22493135929107666
+              },
+              "f3_050": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.4950401484966278,
+                "receiver_relative_l2": 0.27845849096775055
+              },
+              "gom_142": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.4176819622516632,
+                "receiver_relative_l2": 0.15834658592939377
+              },
+              "gom_143": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.44483470916748047,
+                "receiver_relative_l2": 0.16995438188314438
+              },
+              "gom_145": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.523369699716568,
+                "receiver_relative_l2": 0.18667910993099213
+              },
+              "gom_146": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.5764563977718353,
+                "receiver_relative_l2": 0.2568671405315399
+              },
+              "gom_147": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.6501908004283905,
+                "receiver_relative_l2": 0.3254184126853943
+              },
+              "gom_150": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.6047236025333405,
+                "receiver_relative_l2": 0.2318389043211937
+              },
+              "salt_canopy_000": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.4207289516925812,
+                "receiver_relative_l2": 0.18517079949378967
+              },
+              "salt_canopy_001": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.4445545971393585,
+                "receiver_relative_l2": 0.18965155631303787
+              },
+              "seam_003": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.5813650190830231,
+                "receiver_relative_l2": 0.38760215044021606
+              },
+              "seam_006": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.5940519273281097,
+                "receiver_relative_l2": 0.39764365553855896
+              },
+              "seam_007": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.515920102596283,
+                "receiver_relative_l2": 0.23097243160009384
+              },
+              "seam_010": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.49723653495311737,
+                "receiver_relative_l2": 0.3415907174348831
+              }
+            }
+          },
+          "fresh_random_tangent": {
+            "n_blocks": 48,
+            "n_parent_models": 17,
+            "block_medians": {
+              "full_relative_l2": 1.6847711149767228,
+              "full_real_cosine": 0.014553627630795221,
+              "receiver_relative_l2": 1.642839846578767,
+              "receiver_real_cosine": -0.005253072227670841
+            },
+            "parent_medians": {
+              "f3_044": {
+                "n_blocks": 3,
+                "full_relative_l2": 1.5091252632670185,
+                "full_real_cosine": 0.033798160683076284,
+                "receiver_relative_l2": 1.474114272757461,
+                "receiver_real_cosine": -0.09808493949954865
+              },
+              "f3_045": {
+                "n_blocks": 1,
+                "full_relative_l2": 2.1128906815470754,
+                "full_real_cosine": 0.15225097039870558,
+                "receiver_relative_l2": 1.5160989284240702,
+                "receiver_real_cosine": 0.4107849168099491
+              },
+              "f3_047": {
+                "n_blocks": 2,
+                "full_relative_l2": 1.4391490998103387,
+                "full_real_cosine": 0.01842446977507669,
+                "receiver_relative_l2": 1.4638941235036431,
+                "receiver_real_cosine": -0.07333235836471777
+              },
+              "f3_049": {
+                "n_blocks": 2,
+                "full_relative_l2": 1.3931742541399044,
+                "full_real_cosine": 0.03560153842253441,
+                "receiver_relative_l2": 1.3842918979323326,
+                "receiver_real_cosine": -0.004325934012619036
+              },
+              "f3_050": {
+                "n_blocks": 5,
+                "full_relative_l2": 1.6113055506744722,
+                "full_real_cosine": 0.008818570624819928,
+                "receiver_relative_l2": 1.3886972824587474,
+                "receiver_real_cosine": 0.0417749352727559
+              },
+              "gom_142": {
+                "n_blocks": 5,
+                "full_relative_l2": 2.3200173595076232,
+                "full_real_cosine": -0.014279008439906088,
+                "receiver_relative_l2": 2.0186494315415904,
+                "receiver_real_cosine": -0.013430905252434908
+              },
+              "gom_143": {
+                "n_blocks": 2,
+                "full_relative_l2": 1.6449032702745008,
+                "full_real_cosine": 0.15292502107429598,
+                "receiver_relative_l2": 1.2090879177574232,
+                "receiver_real_cosine": 0.5299442940789333
+              },
+              "gom_145": {
+                "n_blocks": 3,
+                "full_relative_l2": 1.3472891669692866,
+                "full_real_cosine": -0.05106826614167765,
+                "receiver_relative_l2": 1.6751214200332645,
+                "receiver_real_cosine": -0.11610626741616784
+              },
+              "gom_146": {
+                "n_blocks": 5,
+                "full_relative_l2": 2.677981726405742,
+                "full_real_cosine": 0.06182049614146368,
+                "receiver_relative_l2": 3.0678667465324576,
+                "receiver_real_cosine": 0.043612084466052435
+              },
+              "gom_147": {
+                "n_blocks": 3,
+                "full_relative_l2": 2.09550928014946,
+                "full_real_cosine": -0.04602447370905087,
+                "receiver_relative_l2": 2.780815047617246,
+                "receiver_real_cosine": -0.11659894736492132
+              },
+              "gom_150": {
+                "n_blocks": 4,
+                "full_relative_l2": 2.425932937148504,
+                "full_real_cosine": -0.03208090039809899,
+                "receiver_relative_l2": 2.0740042884787773,
+                "receiver_real_cosine": 0.004707068976730986
+              },
+              "salt_canopy_000": {
+                "n_blocks": 2,
+                "full_relative_l2": 1.155650643096949,
+                "full_real_cosine": -0.0016624511768386294,
+                "receiver_relative_l2": 1.1095751944682666,
+                "receiver_real_cosine": 0.15881503382996223
+              },
+              "salt_canopy_001": {
+                "n_blocks": 2,
+                "full_relative_l2": 5.624462209596253,
+                "full_real_cosine": 0.00838608927550459,
+                "receiver_relative_l2": 5.071677007977735,
+                "receiver_real_cosine": -0.027739244833020482
+              },
+              "seam_003": {
+                "n_blocks": 2,
+                "full_relative_l2": 2.56015586448929,
+                "full_real_cosine": -0.010265868779958588,
+                "receiver_relative_l2": 2.6384306588506,
+                "receiver_real_cosine": 0.14545264113742415
+              },
+              "seam_006": {
+                "n_blocks": 2,
+                "full_relative_l2": 1.9419008111439615,
+                "full_real_cosine": 0.014700402694285752,
+                "receiver_relative_l2": 1.518196958733919,
+                "receiver_real_cosine": 0.1551566225513048
+              },
+              "seam_007": {
+                "n_blocks": 3,
+                "full_relative_l2": 1.9870769538368882,
+                "full_real_cosine": -0.03664432882139451,
+                "receiver_relative_l2": 2.2155169340031007,
+                "receiver_real_cosine": -0.15900912343901547
+              },
+              "seam_010": {
+                "n_blocks": 2,
+                "full_relative_l2": 1.263875751496699,
+                "full_real_cosine": -0.0132936139690846,
+                "receiver_relative_l2": 1.1768646810290733,
+                "receiver_real_cosine": -0.0169842985191095
+              }
+            }
+          },
+          "smoothed_gradient_decomposition": {
+            "n_blocks": 24,
+            "n_parent_models": 13,
+            "block_medians": {
+              "model_relative_shift": 0.11234767092408193,
+              "true_residual_relative_norm": 0.32329666025680637,
+              "receiver_prediction_relative_l2": 0.59236425355802,
+              "actual_gradient_cosine": 0.034341858552636446,
+              "fixed_true_residual_gradient_cosine": 0.079487769900178,
+              "fixed_exact_jacobian_gradient_cosine": 0.5170520908831162,
+              "neural_vjp_identity_relative_error": 0.0
+            },
+            "parent_medians": {
+              "f3_044": {
+                "n_blocks": 1,
+                "model_relative_shift": 0.21216693058995606,
+                "true_residual_relative_norm": 0.3247864894754019,
+                "receiver_prediction_relative_l2": 0.39858249451679345,
+                "actual_gradient_cosine": -0.045754357891391415,
+                "fixed_true_residual_gradient_cosine": 0.07112755938499253,
+                "fixed_exact_jacobian_gradient_cosine": 0.44636447286956793,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "f3_045": {
+                "n_blocks": 5,
+                "model_relative_shift": 0.10925285421304616,
+                "true_residual_relative_norm": 0.1545393931539849,
+                "receiver_prediction_relative_l2": 0.5872458928218022,
+                "actual_gradient_cosine": -0.0943974623194826,
+                "fixed_true_residual_gradient_cosine": 0.16167357878115848,
+                "fixed_exact_jacobian_gradient_cosine": -0.2804525981703295,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "f3_047": {
+                "n_blocks": 2,
+                "model_relative_shift": 0.08526792460247401,
+                "true_residual_relative_norm": 0.09310463500021143,
+                "receiver_prediction_relative_l2": 0.383789679579585,
+                "actual_gradient_cosine": -0.12292985313522989,
+                "fixed_true_residual_gradient_cosine": 0.08041347283801932,
+                "fixed_exact_jacobian_gradient_cosine": -0.5138379676267978,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "f3_050": {
+                "n_blocks": 3,
+                "model_relative_shift": 0.11693541733823065,
+                "true_residual_relative_norm": 0.3252077073420059,
+                "receiver_prediction_relative_l2": 0.39094973604997396,
+                "actual_gradient_cosine": 0.05174020489484336,
+                "fixed_true_residual_gradient_cosine": 0.10742978072658434,
+                "fixed_exact_jacobian_gradient_cosine": 0.9606807512613181,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "gom_142": {
+                "n_blocks": 1,
+                "model_relative_shift": 0.34581772613200834,
+                "true_residual_relative_norm": 1.4236009069823297,
+                "receiver_prediction_relative_l2": 1.234084083261792,
+                "actual_gradient_cosine": 0.05330843164055928,
+                "fixed_true_residual_gradient_cosine": 0.031916562444234034,
+                "fixed_exact_jacobian_gradient_cosine": 0.4754658741605679,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "gom_143": {
+                "n_blocks": 1,
+                "model_relative_shift": 0.3151699309493086,
+                "true_residual_relative_norm": 1.1786003936526386,
+                "receiver_prediction_relative_l2": 1.07453498199244,
+                "actual_gradient_cosine": 0.026185858266718074,
+                "fixed_true_residual_gradient_cosine": 0.04139405007027161,
+                "fixed_exact_jacobian_gradient_cosine": 0.8578235399740678,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "gom_145": {
+                "n_blocks": 1,
+                "model_relative_shift": 0.432384218418278,
+                "true_residual_relative_norm": 0.9329369633392709,
+                "receiver_prediction_relative_l2": 0.8414702103505158,
+                "actual_gradient_cosine": 0.003112852754971164,
+                "fixed_true_residual_gradient_cosine": 0.03780426539922958,
+                "fixed_exact_jacobian_gradient_cosine": 0.9860819209143145,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "gom_146": {
+                "n_blocks": 2,
+                "model_relative_shift": 0.20404511331146227,
+                "true_residual_relative_norm": 0.9584242997262462,
+                "receiver_prediction_relative_l2": 0.6125385119363765,
+                "actual_gradient_cosine": 0.17233644962580644,
+                "fixed_true_residual_gradient_cosine": 0.15156523975785915,
+                "fixed_exact_jacobian_gradient_cosine": 0.9452910975750783,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "salt_canopy_000": {
+                "n_blocks": 2,
+                "model_relative_shift": 0.25101763188253534,
+                "true_residual_relative_norm": 2.323625856074786,
+                "receiver_prediction_relative_l2": 0.9388018388156958,
+                "actual_gradient_cosine": 0.12588963419788915,
+                "fixed_true_residual_gradient_cosine": 0.11183457452007017,
+                "fixed_exact_jacobian_gradient_cosine": 0.49191972747536505,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "seam_003": {
+                "n_blocks": 1,
+                "model_relative_shift": 0.03493583054699968,
+                "true_residual_relative_norm": 0.11486187862642272,
+                "receiver_prediction_relative_l2": 0.4420270626204317,
+                "actual_gradient_cosine": 0.17680581235626627,
+                "fixed_true_residual_gradient_cosine": 0.08784798041536347,
+                "fixed_exact_jacobian_gradient_cosine": 0.8188057173969011,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "seam_006": {
+                "n_blocks": 3,
+                "model_relative_shift": 0.03864456910016068,
+                "true_residual_relative_norm": 0.21465030739610333,
+                "receiver_prediction_relative_l2": 0.6044543214840453,
+                "actual_gradient_cosine": 0.042497858838554815,
+                "fixed_true_residual_gradient_cosine": -0.03216380944119003,
+                "fixed_exact_jacobian_gradient_cosine": -0.35853875531016194,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "seam_007": {
+                "n_blocks": 1,
+                "model_relative_shift": 0.19520682686634508,
+                "true_residual_relative_norm": 0.897748972144096,
+                "receiver_prediction_relative_l2": 0.8118283506070478,
+                "actual_gradient_cosine": 0.11546896452294562,
+                "fixed_true_residual_gradient_cosine": 0.01601421335804221,
+                "fixed_exact_jacobian_gradient_cosine": 0.7591152314210505,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "seam_010": {
+                "n_blocks": 1,
+                "model_relative_shift": 0.04102235344755084,
+                "true_residual_relative_norm": 0.26782533681664894,
+                "receiver_prediction_relative_l2": 0.27440153757568053,
+                "actual_gradient_cosine": 0.16463823581539136,
+                "fixed_true_residual_gradient_cosine": 0.29212132364558596,
+                "fixed_exact_jacobian_gradient_cosine": 0.9575514640958012,
+                "neural_vjp_identity_relative_error": 0.0
+              }
+            }
+          },
+          "offline_diagnostic_physics_cost": {
+            "factorizations": 61,
+            "forward_rhs": 96,
+            "tangent_rhs": 48,
+            "adjoint_rhs": 48,
+            "stability_rhs": 0,
+            "dense_inverse_rhs": 0,
+            "svd_evaluations": 0,
+            "cache_hits": 131,
+            "analytic_bound_evaluations": 0
+          }
+        },
+        "validation": {
+          "raw_forward": {
+            "n_blocks": 192,
+            "n_parent_models": 4,
+            "block_medians": {
+              "wavefield_relative_l2": 0.7911613285541534,
+              "receiver_relative_l2": 0.6352229714393616
+            },
+            "parent_medians": {
+              "gom_148": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.8057156801223755,
+                "receiver_relative_l2": 0.6602600812911987
+              },
+              "gom_151": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.8945228159427643,
+                "receiver_relative_l2": 0.6652217507362366
+              },
+              "seam_005": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.6587038338184357,
+                "receiver_relative_l2": 0.5699850916862488
+              },
+              "seam_011": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.8214166760444641,
+                "receiver_relative_l2": 0.6909007430076599
+              }
+            }
+          },
+          "fresh_random_tangent": {
+            "n_blocks": 48,
+            "n_parent_models": 4,
+            "block_medians": {
+              "full_relative_l2": 1.5872898512715732,
+              "full_real_cosine": 0.034900309116233055,
+              "receiver_relative_l2": 1.5077266873932142,
+              "receiver_real_cosine": 0.08999190295453316
+            },
+            "parent_medians": {
+              "gom_148": {
+                "n_blocks": 15,
+                "full_relative_l2": 2.155088752940425,
+                "full_real_cosine": 0.033406697900939746,
+                "receiver_relative_l2": 2.165691183651166,
+                "receiver_real_cosine": 0.17058974595195078
+              },
+              "gom_151": {
+                "n_blocks": 9,
+                "full_relative_l2": 1.8630555528479442,
+                "full_real_cosine": 0.00829279231907651,
+                "receiver_relative_l2": 1.461582330848042,
+                "receiver_real_cosine": 0.22208562864215628
+              },
+              "seam_005": {
+                "n_blocks": 8,
+                "full_relative_l2": 1.345886085996581,
+                "full_real_cosine": 0.11686707164775342,
+                "receiver_relative_l2": 1.433198795371835,
+                "receiver_real_cosine": 0.042098370359422405
+              },
+              "seam_011": {
+                "n_blocks": 16,
+                "full_relative_l2": 1.6841574354678241,
+                "full_real_cosine": 0.022312859550196913,
+                "receiver_relative_l2": 1.498522485144472,
+                "receiver_real_cosine": -0.0668513500138182
+              }
+            }
+          },
+          "smoothed_gradient_decomposition": {
+            "n_blocks": 24,
+            "n_parent_models": 4,
+            "block_medians": {
+              "model_relative_shift": 0.0414992084322601,
+              "true_residual_relative_norm": 0.3720300665376579,
+              "receiver_prediction_relative_l2": 0.7576130424403048,
+              "actual_gradient_cosine": 0.016333384693900638,
+              "fixed_true_residual_gradient_cosine": 0.04317405395272848,
+              "fixed_exact_jacobian_gradient_cosine": 0.15120566071290187,
+              "neural_vjp_identity_relative_error": 0.0
+            },
+            "parent_medians": {
+              "gom_148": {
+                "n_blocks": 5,
+                "model_relative_shift": 0.2192495620852096,
+                "true_residual_relative_norm": 1.0961564508018111,
+                "receiver_prediction_relative_l2": 0.7818801559286134,
+                "actual_gradient_cosine": 0.07646460199787894,
+                "fixed_true_residual_gradient_cosine": 0.04613047890843448,
+                "fixed_exact_jacobian_gradient_cosine": 0.7000591752379423,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "gom_151": {
+                "n_blocks": 4,
+                "model_relative_shift": 0.25704646706045053,
+                "true_residual_relative_norm": 0.9762346985206192,
+                "receiver_prediction_relative_l2": 1.0016014259675814,
+                "actual_gradient_cosine": 0.06773208236277029,
+                "fixed_true_residual_gradient_cosine": 0.05385069020682151,
+                "fixed_exact_jacobian_gradient_cosine": 0.9273525788839909,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "seam_005": {
+                "n_blocks": 6,
+                "model_relative_shift": 0.0414992084322601,
+                "true_residual_relative_norm": 0.17597868316106577,
+                "receiver_prediction_relative_l2": 0.6107747855427398,
+                "actual_gradient_cosine": -0.003444917691291776,
+                "fixed_true_residual_gradient_cosine": -0.014242128618048966,
+                "fixed_exact_jacobian_gradient_cosine": -0.49722368041730347,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "seam_011": {
+                "n_blocks": 9,
+                "model_relative_shift": 0.03983838299278574,
+                "true_residual_relative_norm": 0.22430885965311864,
+                "receiver_prediction_relative_l2": 0.49658642889397553,
+                "actual_gradient_cosine": -0.03887303389651507,
+                "fixed_true_residual_gradient_cosine": 0.07257240581875232,
+                "fixed_exact_jacobian_gradient_cosine": 0.15605378553740257,
+                "neural_vjp_identity_relative_error": 0.0
+              }
+            }
+          },
+          "offline_diagnostic_physics_cost": {
+            "factorizations": 46,
+            "forward_rhs": 96,
+            "tangent_rhs": 48,
+            "adjoint_rhs": 48,
+            "stability_rhs": 0,
+            "dense_inverse_rhs": 0,
+            "svd_evaluations": 0,
+            "cache_hits": 146,
+            "analytic_bound_evaluations": 0
+          }
+        }
+      }
+    },
+    "fno_parent_grouped_jvp.pt": {
+      "path": "checkpoints/fno_parent_grouped_jvp.pt",
+      "sha256": "300b75c7feefb9689e172adb10967326a646b89c274e35c388cf8cc3447e4611",
+      "roles": {
+        "train": {
+          "raw_forward": {
+            "n_blocks": 816,
+            "n_parent_models": 17,
+            "block_medians": {
+              "wavefield_relative_l2": 0.49821509420871735,
+              "receiver_relative_l2": 0.2325599268078804
+            },
+            "parent_medians": {
+              "f3_044": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.4147512912750244,
+                "receiver_relative_l2": 0.21575146168470383
+              },
+              "f3_045": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.4902894049882889,
+                "receiver_relative_l2": 0.2563043236732483
+              },
+              "f3_047": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.4348836988210678,
+                "receiver_relative_l2": 0.2432345524430275
+              },
+              "f3_049": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.45419448614120483,
+                "receiver_relative_l2": 0.2235630452632904
+              },
+              "f3_050": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.48927512764930725,
+                "receiver_relative_l2": 0.27477042376995087
+              },
+              "gom_142": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.4082009047269821,
+                "receiver_relative_l2": 0.1510687842965126
+              },
+              "gom_143": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.44121432304382324,
+                "receiver_relative_l2": 0.16870887577533722
+              },
+              "gom_145": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.5194140672683716,
+                "receiver_relative_l2": 0.18714048713445663
+              },
+              "gom_146": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.5622383654117584,
+                "receiver_relative_l2": 0.26217833161354065
+              },
+              "gom_147": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.6445553302764893,
+                "receiver_relative_l2": 0.31380270421504974
+              },
+              "gom_150": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.610450029373169,
+                "receiver_relative_l2": 0.22242679446935654
+              },
+              "salt_canopy_000": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.42107708752155304,
+                "receiver_relative_l2": 0.19038841128349304
+              },
+              "salt_canopy_001": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.4389699846506119,
+                "receiver_relative_l2": 0.1801532283425331
+              },
+              "seam_003": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.5778891742229462,
+                "receiver_relative_l2": 0.38107340037822723
+              },
+              "seam_006": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.5974428057670593,
+                "receiver_relative_l2": 0.4067246913909912
+              },
+              "seam_007": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.5128267705440521,
+                "receiver_relative_l2": 0.2397671416401863
+              },
+              "seam_010": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.48713818192481995,
+                "receiver_relative_l2": 0.3325323760509491
+              }
+            }
+          },
+          "fresh_random_tangent": {
+            "n_blocks": 48,
+            "n_parent_models": 17,
+            "block_medians": {
+              "full_relative_l2": 1.4653908643865332,
+              "full_real_cosine": 0.02377494690757976,
+              "receiver_relative_l2": 1.484288365601631,
+              "receiver_real_cosine": -0.013560372036904697
+            },
+            "parent_medians": {
+              "f3_044": {
+                "n_blocks": 3,
+                "full_relative_l2": 1.3816005173560366,
+                "full_real_cosine": 0.026491595632295407,
+                "receiver_relative_l2": 1.4065862171264456,
+                "receiver_real_cosine": -0.11080447933705988
+              },
+              "f3_045": {
+                "n_blocks": 1,
+                "full_relative_l2": 1.7645593751609845,
+                "full_real_cosine": 0.13529566536637835,
+                "receiver_relative_l2": 1.3025935280351113,
+                "receiver_real_cosine": 0.4651394544875041
+              },
+              "f3_047": {
+                "n_blocks": 2,
+                "full_relative_l2": 1.2970747106007394,
+                "full_real_cosine": 0.03624137731224349,
+                "receiver_relative_l2": 1.33658936178676,
+                "receiver_real_cosine": -0.05913711736183051
+              },
+              "f3_049": {
+                "n_blocks": 2,
+                "full_relative_l2": 1.2588542496347053,
+                "full_real_cosine": 0.03890481025925805,
+                "receiver_relative_l2": 1.3041025927406475,
+                "receiver_real_cosine": -0.06519585966162152
+              },
+              "f3_050": {
+                "n_blocks": 5,
+                "full_relative_l2": 1.3974595165268169,
+                "full_real_cosine": 0.0604814788708075,
+                "receiver_relative_l2": 1.3282550796260149,
+                "receiver_real_cosine": 0.010661170360213294
+              },
+              "gom_142": {
+                "n_blocks": 5,
+                "full_relative_l2": 1.972918111496909,
+                "full_real_cosine": -0.038532979263532136,
+                "receiver_relative_l2": 1.8266274933341322,
+                "receiver_real_cosine": 0.023519074428086185
+              },
+              "gom_143": {
+                "n_blocks": 2,
+                "full_relative_l2": 1.4854075587670703,
+                "full_real_cosine": 0.14626327413063303,
+                "receiver_relative_l2": 1.0557838752019828,
+                "receiver_real_cosine": 0.5581640359298209
+              },
+              "gom_145": {
+                "n_blocks": 3,
+                "full_relative_l2": 1.2402971552026658,
+                "full_real_cosine": -0.08382860369447644,
+                "receiver_relative_l2": 1.518854865561152,
+                "receiver_real_cosine": -0.26978317379413025
+              },
+              "gom_146": {
+                "n_blocks": 5,
+                "full_relative_l2": 2.297643215954173,
+                "full_real_cosine": 0.08236150191979846,
+                "receiver_relative_l2": 2.8220104386376152,
+                "receiver_real_cosine": -0.004110495738267963
+              },
+              "gom_147": {
+                "n_blocks": 3,
+                "full_relative_l2": 1.760302217440469,
+                "full_real_cosine": -0.070090874032505,
+                "receiver_relative_l2": 2.5396414736439943,
+                "receiver_real_cosine": -0.15569437323328256
+              },
+              "gom_150": {
+                "n_blocks": 4,
+                "full_relative_l2": 1.863570468737778,
+                "full_real_cosine": -0.03665001180637888,
+                "receiver_relative_l2": 1.7533822895988802,
+                "receiver_real_cosine": 0.04302286612203729
+              },
+              "salt_canopy_000": {
+                "n_blocks": 2,
+                "full_relative_l2": 1.1102686537346318,
+                "full_real_cosine": 0.00967318789801921,
+                "receiver_relative_l2": 1.0905255395175688,
+                "receiver_real_cosine": 0.1332772544481055
+              },
+              "salt_canopy_001": {
+                "n_blocks": 2,
+                "full_relative_l2": 4.345403310659375,
+                "full_real_cosine": 0.0004356892209293334,
+                "receiver_relative_l2": 3.9087140302063488,
+                "receiver_real_cosine": -0.018280975156318796
+              },
+              "seam_003": {
+                "n_blocks": 2,
+                "full_relative_l2": 2.2093282712258113,
+                "full_real_cosine": -0.027616753359179062,
+                "receiver_relative_l2": 2.2748242657545013,
+                "receiver_real_cosine": 0.05843279501550909
+              },
+              "seam_006": {
+                "n_blocks": 2,
+                "full_relative_l2": 1.667482209448098,
+                "full_real_cosine": -0.00831947459673239,
+                "receiver_relative_l2": 1.309582181120247,
+                "receiver_real_cosine": 0.1590597820645719
+              },
+              "seam_007": {
+                "n_blocks": 3,
+                "full_relative_l2": 1.6979016579265678,
+                "full_real_cosine": -0.05047711643168002,
+                "receiver_relative_l2": 1.8991099817214847,
+                "receiver_real_cosine": -0.2428329454874919
+              },
+              "seam_010": {
+                "n_blocks": 2,
+                "full_relative_l2": 1.1560057037965787,
+                "full_real_cosine": 0.020639003573003804,
+                "receiver_relative_l2": 1.1558111185817048,
+                "receiver_real_cosine": -0.08644063098055278
+              }
+            }
+          },
+          "smoothed_gradient_decomposition": {
+            "n_blocks": 24,
+            "n_parent_models": 13,
+            "block_medians": {
+              "model_relative_shift": 0.11234767092408193,
+              "true_residual_relative_norm": 0.32329666025680637,
+              "receiver_prediction_relative_l2": 0.5979640212750732,
+              "actual_gradient_cosine": 0.05500514496521028,
+              "fixed_true_residual_gradient_cosine": 0.09842842092919776,
+              "fixed_exact_jacobian_gradient_cosine": 0.5199741638434563,
+              "neural_vjp_identity_relative_error": 0.0
+            },
+            "parent_medians": {
+              "f3_044": {
+                "n_blocks": 1,
+                "model_relative_shift": 0.21216693058995606,
+                "true_residual_relative_norm": 0.3247864894754019,
+                "receiver_prediction_relative_l2": 0.38927236715119845,
+                "actual_gradient_cosine": -0.060274919096428604,
+                "fixed_true_residual_gradient_cosine": 0.0921353065751843,
+                "fixed_exact_jacobian_gradient_cosine": 0.4080441648518774,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "f3_045": {
+                "n_blocks": 5,
+                "model_relative_shift": 0.10925285421304616,
+                "true_residual_relative_norm": 0.1545393931539849,
+                "receiver_prediction_relative_l2": 0.5982220868741035,
+                "actual_gradient_cosine": -0.12461798856542326,
+                "fixed_true_residual_gradient_cosine": 0.20277917005203222,
+                "fixed_exact_jacobian_gradient_cosine": -0.3334716997394051,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "f3_047": {
+                "n_blocks": 2,
+                "model_relative_shift": 0.08526792460247401,
+                "true_residual_relative_norm": 0.09310463500021143,
+                "receiver_prediction_relative_l2": 0.383833084099205,
+                "actual_gradient_cosine": -0.14832394614697078,
+                "fixed_true_residual_gradient_cosine": 0.09460169150866488,
+                "fixed_exact_jacobian_gradient_cosine": -0.5309003065751509,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "f3_050": {
+                "n_blocks": 3,
+                "model_relative_shift": 0.11693541733823065,
+                "true_residual_relative_norm": 0.3252077073420059,
+                "receiver_prediction_relative_l2": 0.380089094143547,
+                "actual_gradient_cosine": 0.067831680185696,
+                "fixed_true_residual_gradient_cosine": 0.1406978950612426,
+                "fixed_exact_jacobian_gradient_cosine": 0.9606855758329363,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "gom_142": {
+                "n_blocks": 1,
+                "model_relative_shift": 0.34581772613200834,
+                "true_residual_relative_norm": 1.4236009069823297,
+                "receiver_prediction_relative_l2": 1.2468147616351861,
+                "actual_gradient_cosine": 0.06055629173610158,
+                "fixed_true_residual_gradient_cosine": 0.0470252212777277,
+                "fixed_exact_jacobian_gradient_cosine": 0.4685667978725313,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "gom_143": {
+                "n_blocks": 1,
+                "model_relative_shift": 0.3151699309493086,
+                "true_residual_relative_norm": 1.1786003936526386,
+                "receiver_prediction_relative_l2": 1.0815885050873775,
+                "actual_gradient_cosine": 0.049453998194318984,
+                "fixed_true_residual_gradient_cosine": 0.05059701608498682,
+                "fixed_exact_jacobian_gradient_cosine": 0.8213036867421835,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "gom_145": {
+                "n_blocks": 1,
+                "model_relative_shift": 0.432384218418278,
+                "true_residual_relative_norm": 0.9329369633392709,
+                "receiver_prediction_relative_l2": 0.8366178282083632,
+                "actual_gradient_cosine": -0.0022702673603247907,
+                "fixed_true_residual_gradient_cosine": 0.051210507422437615,
+                "fixed_exact_jacobian_gradient_cosine": 0.985369762737942,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "gom_146": {
+                "n_blocks": 2,
+                "model_relative_shift": 0.20404511331146227,
+                "true_residual_relative_norm": 0.9584242997262462,
+                "receiver_prediction_relative_l2": 0.6266932010048977,
+                "actual_gradient_cosine": 0.19866922106198015,
+                "fixed_true_residual_gradient_cosine": 0.17568866200543237,
+                "fixed_exact_jacobian_gradient_cosine": 0.9043963396542476,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "salt_canopy_000": {
+                "n_blocks": 2,
+                "model_relative_shift": 0.25101763188253534,
+                "true_residual_relative_norm": 2.323625856074786,
+                "receiver_prediction_relative_l2": 0.9080598053483611,
+                "actual_gradient_cosine": 0.15382862202470093,
+                "fixed_true_residual_gradient_cosine": 0.13958460555246824,
+                "fixed_exact_jacobian_gradient_cosine": 0.5029226727445871,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "seam_003": {
+                "n_blocks": 1,
+                "model_relative_shift": 0.03493583054699968,
+                "true_residual_relative_norm": 0.11486187862642272,
+                "receiver_prediction_relative_l2": 0.4553462789784273,
+                "actual_gradient_cosine": 0.18141953505587624,
+                "fixed_true_residual_gradient_cosine": 0.10472153528321124,
+                "fixed_exact_jacobian_gradient_cosine": 0.8551518456384253,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "seam_006": {
+                "n_blocks": 3,
+                "model_relative_shift": 0.03864456910016068,
+                "true_residual_relative_norm": 0.21465030739610333,
+                "receiver_prediction_relative_l2": 0.597705955676043,
+                "actual_gradient_cosine": 0.07229099477720355,
+                "fixed_true_residual_gradient_cosine": -0.06267100802047525,
+                "fixed_exact_jacobian_gradient_cosine": -0.45230813832480066,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "seam_007": {
+                "n_blocks": 1,
+                "model_relative_shift": 0.19520682686634508,
+                "true_residual_relative_norm": 0.897748972144096,
+                "receiver_prediction_relative_l2": 0.7970609861129674,
+                "actual_gradient_cosine": 0.1544955679477867,
+                "fixed_true_residual_gradient_cosine": 0.04279852564746401,
+                "fixed_exact_jacobian_gradient_cosine": 0.796211697487223,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "seam_010": {
+                "n_blocks": 1,
+                "model_relative_shift": 0.04102235344755084,
+                "true_residual_relative_norm": 0.26782533681664894,
+                "receiver_prediction_relative_l2": 0.2710674539003983,
+                "actual_gradient_cosine": 0.19337308756746252,
+                "fixed_true_residual_gradient_cosine": 0.31921048280428116,
+                "fixed_exact_jacobian_gradient_cosine": 0.9540768139326434,
+                "neural_vjp_identity_relative_error": 0.0
+              }
+            }
+          },
+          "offline_diagnostic_physics_cost": {
+            "factorizations": 61,
+            "forward_rhs": 96,
+            "tangent_rhs": 48,
+            "adjoint_rhs": 48,
+            "stability_rhs": 0,
+            "dense_inverse_rhs": 0,
+            "svd_evaluations": 0,
+            "cache_hits": 131,
+            "analytic_bound_evaluations": 0
+          }
+        },
+        "validation": {
+          "raw_forward": {
+            "n_blocks": 192,
+            "n_parent_models": 4,
+            "block_medians": {
+              "wavefield_relative_l2": 0.7831418216228485,
+              "receiver_relative_l2": 0.6124911308288574
+            },
+            "parent_medians": {
+              "gom_148": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.7969836294651031,
+                "receiver_relative_l2": 0.6317446231842041
+              },
+              "gom_151": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.8883119225502014,
+                "receiver_relative_l2": 0.661540150642395
+              },
+              "seam_005": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.659164160490036,
+                "receiver_relative_l2": 0.5816635489463806
+              },
+              "seam_011": {
+                "n_blocks": 48,
+                "wavefield_relative_l2": 0.8124125599861145,
+                "receiver_relative_l2": 0.685084730386734
+              }
+            }
+          },
+          "fresh_random_tangent": {
+            "n_blocks": 48,
+            "n_parent_models": 4,
+            "block_medians": {
+              "full_relative_l2": 1.4503063869551163,
+              "full_real_cosine": 0.028288326780477515,
+              "receiver_relative_l2": 1.386084669790066,
+              "receiver_real_cosine": 0.09958507626172461
+            },
+            "parent_medians": {
+              "gom_148": {
+                "n_blocks": 15,
+                "full_relative_l2": 1.701545269995021,
+                "full_real_cosine": 0.005408480949697535,
+                "receiver_relative_l2": 1.796443129647361,
+                "receiver_real_cosine": 0.2566267691503004
+              },
+              "gom_151": {
+                "n_blocks": 9,
+                "full_relative_l2": 1.5891616356262936,
+                "full_real_cosine": 0.00205731000713303,
+                "receiver_relative_l2": 1.3118771174856148,
+                "receiver_real_cosine": 0.21381510726835026
+              },
+              "seam_005": {
+                "n_blocks": 8,
+                "full_relative_l2": 1.228446586724596,
+                "full_real_cosine": 0.11380992299658128,
+                "receiver_relative_l2": 1.3231840789729215,
+                "receiver_real_cosine": 0.08578676480975864
+              },
+              "seam_011": {
+                "n_blocks": 16,
+                "full_relative_l2": 1.497428271652307,
+                "full_real_cosine": 0.0108040249523982,
+                "receiver_relative_l2": 1.391042133065613,
+                "receiver_real_cosine": -0.03371041583536805
+              }
+            }
+          },
+          "smoothed_gradient_decomposition": {
+            "n_blocks": 24,
+            "n_parent_models": 4,
+            "block_medians": {
+              "model_relative_shift": 0.0414992084322601,
+              "true_residual_relative_norm": 0.3720300665376579,
+              "receiver_prediction_relative_l2": 0.738879802638353,
+              "actual_gradient_cosine": 0.015362242087419974,
+              "fixed_true_residual_gradient_cosine": 0.06021657740722628,
+              "fixed_exact_jacobian_gradient_cosine": 0.1958923586935568,
+              "neural_vjp_identity_relative_error": 0.0
+            },
+            "parent_medians": {
+              "gom_148": {
+                "n_blocks": 5,
+                "model_relative_shift": 0.2192495620852096,
+                "true_residual_relative_norm": 1.0961564508018111,
+                "receiver_prediction_relative_l2": 0.8048856672505653,
+                "actual_gradient_cosine": 0.09704772175994981,
+                "fixed_true_residual_gradient_cosine": 0.05297827824747567,
+                "fixed_exact_jacobian_gradient_cosine": 0.6855344860380389,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "gom_151": {
+                "n_blocks": 4,
+                "model_relative_shift": 0.25704646706045053,
+                "true_residual_relative_norm": 0.9762346985206192,
+                "receiver_prediction_relative_l2": 0.9529236530542938,
+                "actual_gradient_cosine": 0.0914695272304328,
+                "fixed_true_residual_gradient_cosine": 0.08164706155313864,
+                "fixed_exact_jacobian_gradient_cosine": 0.9273700027026246,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "seam_005": {
+                "n_blocks": 6,
+                "model_relative_shift": 0.0414992084322601,
+                "true_residual_relative_norm": 0.17597868316106577,
+                "receiver_prediction_relative_l2": 0.6295054949009957,
+                "actual_gradient_cosine": -0.004298572750684276,
+                "fixed_true_residual_gradient_cosine": -0.01773726200583676,
+                "fixed_exact_jacobian_gradient_cosine": -0.554394476362321,
+                "neural_vjp_identity_relative_error": 0.0
+              },
+              "seam_011": {
+                "n_blocks": 9,
+                "model_relative_shift": 0.03983838299278574,
+                "true_residual_relative_norm": 0.22430885965311864,
+                "receiver_prediction_relative_l2": 0.508810222833214,
+                "actual_gradient_cosine": -0.05912120665198816,
+                "fixed_true_residual_gradient_cosine": 0.08009027592758271,
+                "fixed_exact_jacobian_gradient_cosine": 0.25030294086148286,
+                "neural_vjp_identity_relative_error": 0.0
+              }
+            }
+          },
+          "offline_diagnostic_physics_cost": {
+            "factorizations": 46,
+            "forward_rhs": 96,
+            "tangent_rhs": 48,
+            "adjoint_rhs": 48,
+            "stability_rhs": 0,
+            "dense_inverse_rhs": 0,
+            "svd_evaluations": 0,
+            "cache_hits": 146,
+            "analytic_bound_evaluations": 0
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Training errors are in-sample; validation errors use the same parents used for model selection.",
+    "Samples and blocks are correlated within parents. Block medians are descriptive and no population confidence interval is asserted.",
+    "This diagnostic computes no calibration/test scores and does not modify checkpoint settings; it was designed after earlier development outcomes had been inspected.",
+    "The evaluated checkpoints and held-out results were already inspected in development; this does not reset a final-test boundary.",
+    "Fresh random tangents differ from the fixed training-supervision directions and are not a full Jacobian norm estimate.",
+    "Stored float32 synthetic truth observations and float32 neural derivatives are numerical approximations.",
+    "These are small Dirichlet reference-operator diagnostics, not time-domain or field-data validation."
+  ],
+  "provenance": {
+    "git_revision": "85f457490e45dd14541168b525ddbaa25cf4edb7",
+    "working_tree_dirty": false,
+    "source_sha256": "5e56226791eb0d2297667bc3502f3d24813c81e27c4e4d3ed317b9f556871f98",
+    "source_hash_schema": "sha256-of-path-and-file-sha256-v2",
+    "source_files": {
+      ".github/workflows/ci.yml": "416a6055e3e7983ba76b3720f30a17c78833d52005eccf9368fbe53a4181c6bf",
+      ".github/workflows/research-evidence.yml": "5a5a84a3a115006aaa2a24a3ff3ceaf79b0ef4652e98f4df7dc7c7d937c535ca",
+      "configs/demo.yaml": "fdc2afa3a4f023c0b1b058b8fd3dac9624b4346ae87cfccd3456375f2c51913a",
+      "configs/final_subsurfacegen_protocol.json": "67aca3b512c5dc6f5c0ab2a844722b638dd97744c0050c59dd312c0859b7309b",
+      "configs/final_subsurfacegen_split.csv": "c4c1cb9a46bac7473f31792e2c468f94f4c613247f06641614593b18983ad25c",
+      "configs/gradient_development_protocol.json": "9262ab19fc87c3d04f4bad1bcc2da5b6978babc10c55ee2e461c981c8fdefe82",
+      "configs/grouped_subsurfacegen_manifest.csv": "95cb3c030f1b38f0cfeb5e920d5c8746a58a0c35bd61aa18c55323772c86a027",
+      "configs/marmousi2d.yaml": "757ad04fafc3ba76ba9abbd0f88ff705348efdebbe07b72a49e8225e44c26f51",
+      "configs/openfwi_external_stress.json": "6578df1b931b9fe472192fd69c9f5050531f7214c0d1777e832296b55a3ecc77",
+      "configs/openfwi_external_stress_analysis_addendum.json": "f4370f1a0cd0a9b1a3b3a0dab513fac99bca143c30cdbf27560d222d211bb736",
+      "configs/phase7_end_to_end.yaml": "560a69540296cbbb0b2ccb1f227d24154e9bb414d2940ae421be8af1f5cbe2af",
+      "configs/phase9_ood.yaml": "917f1f8ba3c71531e184a9e5e33d370f7f33dc0f481975054331bfbfde1c08d8",
+      "configs/remote_evidence_run.json": "a09c0ce648112e5bab1d9716e9fc01117438e6b37050494411dd2236083fbbcc",
+      "configs/strengthening_protocol.json": "9ceda571a1b46e77c0c17d51e84af4618ce658711cbc3465d14811991e785888",
+      "configs/subsurfacegen.yaml": "f9a799da5b16971deda2a2c0987408adefc1a3746ae37d9773c52683b26711f2",
+      "pyproject.toml": "81e00bf085f2054bb992fdb22706a37a1970e9dce3fdece67a4de284897092e5",
+      "requirements-reproduction.txt": "7b87ebf39610d946659a1f59aa98872cd24712730df75d7d18df9289ee8566dc",
+      "scripts/audit_evidence_study.py": "2a9ab6b87032eb623f7f7b936b5ea3e1eff8a84904a3b387ba3b0988e7f41d88",
+      "scripts/benchmark_batched_neural.py": "73d07c8988563f3a0e4c825a1869b60c6c45b0c1a0fd9f4c48d04d85edfab5be",
+      "scripts/benchmark_reference_cache.py": "ffce9fa1f1bf2f0e6e19e3ec03a8dddc0720f6147e48785a18a8fe19f3d7a6bf",
+      "scripts/build_subsurfacegen_wavecert.py": "880e3659672e50cd3d85186b491c410761ac59ceebf8b45d97828f60e6d7d237",
+      "scripts/check_repo.sh": "48838e71d5a920ff9d453319640772897c22a709943f3b288c8ce36bef5a1a3c",
+      "scripts/diagnose_development_generalization.py": "11898494cacce97689f8374b0a2be2e89ffe73b14a1c5e150591b5cf52ff883c",
+      "scripts/diagnose_tolerance_calibration.py": "9c49a1ffed7ac547d33ffa6b3592617ff5be672d55043a61d09756c2426fcee5",
+      "scripts/download_marmousi_public.sh": "23f1a7412e4e7507adb2970d1b5c64a4aba2b3f0f1209796b62a0e54f151c85e",
+      "scripts/evaluate_openfwi_stress.py": "318627c883ac54da52158e05aa742b3f1fd01f9165d5068274928ff44f28241b",
+      "scripts/make_grouped_split.py": "c759ce122e3c41d639f8a0e00dbc6cf1edaa55bd8d71a0e73aa669110e74d2f0",
+      "scripts/prepare_grouped_subsurfacegen.py": "40f07f3e6c44c7bcdf5aad67393f39a411aff4b6bbf30552664c38d94c360b21",
+      "scripts/prepare_openfwi_stress.py": "3eed3bb6c797644edc979dc3f49252d93c052461c710c6f9536f9247f4a99b63",
+      "scripts/reproduce_strengthening.sh": "48dbb98e9fb95b46936dc2db27befb2d27781b937ad8151bd44ddd5b5534cfb0",
+      "scripts/run_baseline_study.py": "76dd43504632c230286b0b8c99286a3fe44d7a517af73efbcb3da1a851834ff2",
+      "scripts/run_cost_break_even.py": "a03e88003da29ced2af4ed2376e179b5ffcbf13e772196ed5311c21bdaba82a3",
+      "scripts/run_demo.sh": "de363dde3a78278a8c14900a63ebfe6974b8d12c567f6e7a192be047a8a110d0",
+      "scripts/run_devito_real.py": "e899961a9c61d50c0efbd7c5287fe9a96b7d47829d5bd4e929daa67a9aa3f182",
+      "scripts/run_gradient_development.py": "0e3d4456fe62e4ee9571599258ba27b6b813f7ce30a64b79678421e3669bd33a",
+      "scripts/run_heuristic_baselines.py": "987424ddfde41152b6f907e82a19ee58418b79c8b2512b80d9790320d5e4cad6",
+      "scripts/run_openfwi_study.py": "590d432c9b1e05ec8a3168203444a4bef407a357584e56425dca46f120a75fad",
+      "scripts/run_phase1_verification.py": "8aabcd0d0e9272c7eb8ec646c333522ea297f54970e55f61cdff079a61f69acb",
+      "scripts/run_phase2_train_fno.py": "e10fb0dcacb0c83f92c40a74061a0037aa141b6381684e8403a02ee84f433242",
+      "scripts/run_phase2_validate.py": "6ccabc08f8d37048183466af1e87a922d5754ae7071b06c867466dd9f0935b33",
+      "scripts/run_phase3_failure_study.py": "71df1d686dc41bf5946fc5adab4d7a21bcf352a76c7bdd521231dbad35727fac",
+      "scripts/run_phase4_certificate_study.py": "a7012a525af132322d317c2448205c189c55bbb8b6798407e5d421baff60b6cc",
+      "scripts/run_phase5_calibration.py": "f240b218b7dc9bb948e1e3830daee30cc0da199ec012a5d02738c065817b7169",
+      "scripts/run_phase6_adaptive_study.py": "a263f389ceedd7f186f84354cfec74e6644d8cdede687dcd96007de42f517b8e",
+      "scripts/run_phase7_end_to_end.py": "b04016425edd864466b0f1348b71f4d593047af79cd3e26b934054c3c3ec6e8e",
+      "scripts/run_phase8_production_study.py": "c0aefe51b490c9af020f4c2be1bf77c43111384373d98569c1d769caace64501",
+      "scripts/run_phase9_ood_study.py": "f09b1f3d48de72cbe43e838d723080a7e3e8630fee1e36b6af60d9b41fe03254",
+      "scripts/run_real_adaptive_matched_mc.py": "79a7e2291180ca9bc01d65cfc14f3c4bf3266363ab9caa1bac44dddd2c64857b",
+      "scripts/run_real_adaptive_pathwise.py": "4373997e04d3a4c8642b750bf8aca4ecb0158ac6575f0c9fdb3ffcdd60a50ef5",
+      "scripts/run_real_geology_training.py": "43142b67006c77840490cf075e8a36ac9e6e280a91e168e8cbb63aae5512654b",
+      "scripts/run_real_wavecert.py": "caff9e9387bdbabc0aa912faf1ec198b50540e46e74adcf2ec0a94026b11a751",
+      "scripts/run_receiver_controls.py": "ea07011cdea457a785d8bddbcb1f3e3c46caf0fbd42117084dfdb2fc299d6276",
+      "scripts/run_research_audit.py": "c580c1371747e0b81d9cf6c7613241bef7aceb664d0910fa6cefcea380d1b4e8",
+      "scripts/run_stability_benchmark.py": "03928837cd54cde745257769165750e43ee70f8f9c25f58d082a62fd965c9a33",
+      "scripts/select_subsurfacegen_slices.py": "a2e2e658273e9fac723c815bcb5f4269136569c00e87f28a3a129b7f826006ae",
+      "src/wavecert/__init__.py": "de0bb59120c27a66e8c3914a3fda8a53de1b89a30fb2db9e8bcf0052af0df054",
+      "src/wavecert/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "src/wavecert/_version.py": "7080f58cb9c2fef8f8f0680c37a61bd4503726c43de73366087991604f131616",
+      "src/wavecert/benchmarks/__init__.py": "3315b356ba8f46b155886b93c79e8c34c293dd65b900cb229ca23d48f6d3b78c",
+      "src/wavecert/benchmarks/marmousi.py": "4e574b062a0cd24bf4f18a2579a26bbb89cb662dfdb58c1e9c1a85624f461822",
+      "src/wavecert/benchmarks/openfwi.py": "e4c83e6075404a79fe3a12ad97e6fd9eafcef9f63ad1ad48e95fa3a5a0e598e0",
+      "src/wavecert/benchmarks/procedural.py": "696666b77bf70f38bc109c9a2fec21e48931b00b14171b8d238f96e79bbef4d0",
+      "src/wavecert/benchmarks/subsurfacegen.py": "1a3e9f754a387a957a467cd19d76446f98c0e845f65044f9a6557c7c9a51d5be",
+      "src/wavecert/certificates/__init__.py": "58f29c2df2190b203a67eeb5f831bc500262c7571763b9caf046c1dbcc893df4",
+      "src/wavecert/certificates/directional.py": "fec69f8a712c1108782449047e8f366d3c562546ebde55be75a26d843d5987b2",
+      "src/wavecert/cli.py": "7b02e01dbb7507345199d97a227d1d90637324ac3da5a6ed6d762545caa74223",
+      "src/wavecert/data/__init__.py": "fca09028afa34083f1b92b0c09b4ad98058417f72f0671c930a201146ff7c981",
+      "src/wavecert/data/real_geology.py": "ceb7ef296f5d6f46ad344b22bde38d4c0919b9849b3d440d4d70af11e8d943d1",
+      "src/wavecert/data/splits.py": "e255e4b329f28169d4ab762fbf45218318487db72fe14adee63bf48f73152a62",
+      "src/wavecert/data/subsurfacegen_selection.py": "934a7bab3712bd5d1462f73bac34cecd46a8da90bf95d4d40b706a3caeceed65",
+      "src/wavecert/data/wavefields.py": "44a023b8062144c572233e12acb72bb8149a6566880adc50179902312e0e112a",
+      "src/wavecert/experiments/__init__.py": "cc6d3a87568c3d6f4890e39f076d861ce60158fbd1405447f3160211dbcec895",
+      "src/wavecert/experiments/ablation.py": "dd49f3a3e489d69823681a488daaa14332628a2f4765b445a9d06957f46f81b5",
+      "src/wavecert/experiments/adaptive_study.py": "3ee233e8cf38bedee5b3d638cd2858715f08246e4b8f6a066197699029fe4320",
+      "src/wavecert/experiments/baseline_study.py": "77bda36229ba2e04e969b3dd02151f2c83dd380514a6eedb10918fb6ca3bbc06",
+      "src/wavecert/experiments/batched_neural_controls.py": "259327cf368937b95d8537b07b97bf49d55d70f85975f41d7059a42c81d1cd72",
+      "src/wavecert/experiments/certificate_calibration.py": "e0ba7288d33d8e7dad8dc7e0c429a8361a085fdfa7b3e0d71caa3206f4f8af2d",
+      "src/wavecert/experiments/certificate_study.py": "55f1f52d0ce77069454c005c17b1f9a28ca807b80f7528328a50fdc82bb24072",
+      "src/wavecert/experiments/cost_break_even.py": "fd6f3a1bac36eb7a04691bda5c2139e54ac695f08b0dd85e495513f1da4c1da0",
+      "src/wavecert/experiments/derivative_training.py": "c82c7e32a27e5cf4dcfa9814fe5b4c8438ad1023331e0ae3a24b0c3d0cc45522",
+      "src/wavecert/experiments/devito_study.py": "ad5ae5123607ba92fe573bf6c56616509e6055d28750ab12c237de84a5d5f4b8",
+      "src/wavecert/experiments/end_to_end.py": "b2e37b6f96671be11ec7125a35a1c5dfeeaf0e9e005bdde9403def3f5ed6ded1",
+      "src/wavecert/experiments/evidence_study.py": "e14f9013bd71a11b454a4a8f5e84e8df79c5c449da440adbe173b18b5701629f",
+      "src/wavecert/experiments/failure_study.py": "bc59a3ff119473f142f8d6dcd7e98595713ac21ba22c6656af56fd1b083c14b1",
+      "src/wavecert/experiments/gradient_development.py": "993670de7902a2ae0b867344803bc950ddbd0c627440c83ce8f74e42f17dcf1b",
+      "src/wavecert/experiments/heuristic_baselines.py": "677ea77c09f7d645c2a4f403e49dedd236f2da216f3d84c95631239b37a82d61",
+      "src/wavecert/experiments/ood_study.py": "396fbc2ca081ccee5a9759c325b128cd411bd20a06faa310551251bddcd1d4b8",
+      "src/wavecert/experiments/openfwi_stress.py": "03711c5f6757b59008c5a9d51c65ab684ac7fadc104df5e6b4a71997d849b97a",
+      "src/wavecert/experiments/openfwi_study.py": "124c61847c03ae4a3df61c41598888301a1fbe9b2eae86df1aacee98d596e70a",
+      "src/wavecert/experiments/production_study.py": "5f64317e2ed89ab52630564af195531cd3c2f5769a4324faa1e34afcad8a801c",
+      "src/wavecert/experiments/real_geology_training.py": "b48dd5ac253478bb6e898a45eb88d3e029708f314d875eef1744624cf201d2c7",
+      "src/wavecert/experiments/real_wavecert.py": "5fa2baa9e1364230b57f3f8e2ea31befea2ea538de86425f512f8c701705625f",
+      "src/wavecert/experiments/receiver_controls.py": "b5d47bfe30fc4cf566563db5fb0a86f6df4bbc86635ecd863f417da0cced4df1",
+      "src/wavecert/experiments/runner.py": "c10ed7ce2b93db806a05d284c04dc09e8618073fad5d9ee59e6d425563151dff",
+      "src/wavecert/experiments/synthetic.py": "1cc5746f72649daf5ee744123de8dc6d754fca78f3a5ff98ed6bfcbf7ac5974a",
+      "src/wavecert/experiments/train_fno.py": "283d473b7420904170bac939be96e6dfb3014367fc38bb1b52ee397bf7c4bf4a",
+      "src/wavecert/metrics.py": "aff3cceddf52c634e39a31a864e4705e8389acba4d79d09badbedd9ca04f6382",
+      "src/wavecert/optimization/__init__.py": "e3a133b64f85ed832fff5967a81ad0d5cf74de8106a1e48ec46e6a90ae7ed506",
+      "src/wavecert/optimization/fwi.py": "a4ccc550aa597d8e8ba630ecde82cd338bc64dbc5538936998ffafff4e618756",
+      "src/wavecert/physics/__init__.py": "68248d95659de7888efbf10dc8f410e3ecf21c609e93407bbdfa82f93ec3f592",
+      "src/wavecert/physics/certified_stability.py": "350db67a2d24cbfcf1258e68ec0c8c6521df6114c975298e9dd672bef88a8ce3",
+      "src/wavecert/physics/devito_backend.py": "67b91aa2f7ed8c653c1f92b99e4c6e48591b8e47d31588d9e2b19445d6b6060a",
+      "src/wavecert/physics/helmholtz.py": "caf51b58da24ed6d3633bda4eaaab804714f5c7932d9d5f343644763bc158131",
+      "src/wavecert/physics/independent_verification.py": "a56d932aff9acd9ffb3391e55e73fe9e7407a306e07f37c52522b82794d9db28",
+      "src/wavecert/physics/production.py": "f0eb2854a4d07a0d82ac41b2c28fe04052826f5b4ced3b71548df9151c6fa138",
+      "src/wavecert/physics/receiver_oracle.py": "918ceaf5596fa8452b1e29357c8e694e7ea83b0e9a162f86f6a03f28714c3e6b",
+      "src/wavecert/physics/verification.py": "518c3b249957f23a9754b9482437309fda96a50548726a577e4486aad17cafb2",
+      "src/wavecert/provenance.py": "9e54e51a311aa9adab6a4572c45456695bc7f228149495779e556a101345e63c",
+      "src/wavecert/repair/__init__.py": "a60d11f7e6d9b180193b542c62bce2aad0c6e87f9f2eeffcc570e8e5afbe4401",
+      "src/wavecert/repair/adaptive.py": "39ccc9fa14610558aeca2d3bd4020511fd9a59ab65984ce29b51867b6ed4c405",
+      "src/wavecert/repair/policies.py": "ae59f2e9e290c3795aa81bef4198510e894d40ee8a02764524e96b213e24bc2d",
+      "src/wavecert/statistics/__init__.py": "c28a5e0deb7a2808b35b8f54e2f7f401c11424be8f8955ab263b9a78f6738364",
+      "src/wavecert/statistics/audit.py": "fe2751439a2b9554daaeebd075072e39b727fbf094c5b722370da34b7a6175bb",
+      "src/wavecert/statistics/conformal.py": "50a983a6f5560e12374ddd7461605f3600f18852f6d19abd6093f1cfae8a2fdb",
+      "src/wavecert/statistics/finite_population.py": "590c7f9d61dffdf4e3308516854f2f6e718e05e22870be274393db7559ab44a1",
+      "src/wavecert/statistics/inference.py": "75bd6e9a82dc2d0802097710b1161cb1799b22692fb41de1eb088d7d7040d608",
+      "src/wavecert/statistics/pathwise.py": "87181a6e818a29fcbd30ecda30f40985edd300b1590b5badb418396e2b6c0863",
+      "src/wavecert/statistics/tolerance.py": "e67c7274a4949a5bb1b724844d811e3da948278600b98a81d40d83eeaeb1c2c2",
+      "src/wavecert/surrogates/__init__.py": "fc6e735e3c35edfa11fe9faa5b19fc13a6691778856c0ae12123f6c03f418c3b",
+      "src/wavecert/surrogates/base.py": "6a128b568254bda4e4c384547f6ccdcc8795d689925c507ebdcb4db29785307e",
+      "src/wavecert/surrogates/fno.py": "56760590e3ac351180643f7bbd2f5decfe91cb21265775ee61cbd8721020f8cc",
+      "src/wavecert/surrogates/low_fidelity.py": "b766ec44d7667c4a4bbc9f8837d586e7f391ffb91e97533917aeb68bba8b5f5c",
+      "src/wavecert/surrogates/torch_adapter.py": "e8274a119af40ea3aa7962f235be777eaacc6d4e7cc81aeffd1ce9c7d35caf46"
+    },
+    "python": "3.13.13",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "packages": {
+      "numpy": "2.4.3",
+      "scipy": "1.18.1",
+      "torch": "2.14.0",
+      "matplotlib": "3.11.2",
+      "pandas": "3.0.5",
+      "pytest": "9.1.1",
+      "h5py": "3.16.0",
+      "hdf5plugin": "7.1.0",
+      "pyarrow": "25.0.1",
+      "devito": "4.8.23"
+    },
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": null,
+      "NUMEXPR_NUM_THREADS": null
+    },
+    "torch_threads": 1
+  },
+  "source_sha256_at_end": "5e56226791eb0d2297667bc3502f3d24813c81e27c4e4d3ed317b9f556871f98",
+  "source_unchanged_during_run": true
+}

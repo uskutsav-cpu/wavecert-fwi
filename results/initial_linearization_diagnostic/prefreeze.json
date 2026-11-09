@@ -1,0 +1,49 @@
+{
+  "created_utc": "2026-11-08T08:58:01.016823+00:00",
+  "decision": "ROOT_GO for small bounded initial-linearization development diagnostic only",
+  "files_sha256": {
+    "run_probe.py": "44e07c0a846847e396a8db9d213c3346cfa654724ae0f55862fb668d6dde62d5",
+    "protocol.json": "736d6136c97c84de9dccb240d492c788684e59887675e303fe69a1b2e0a92cf3",
+    "test_probe.py": "7d8d42bca016f219db7408f07ee38d30fd530a9cfa860f5fafed2fff33ab24b1",
+    "TEST_RECEIPT.json": "0b4d7a55a8f226c1079ea9a50c5747c2cbbcf008ee35ab0a6765df10a5b2d409"
+  },
+  "production_source": {
+    "sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "files": 161
+  },
+  "primary_review": {
+    "source_read": true,
+    "reviewers": [
+      "root",
+      "realistic_physics_gap"
+    ],
+    "clear": true,
+    "checks": [
+      "positive tangent RHS follows derivative of negative omega-squared mass",
+      "fixed graph/damping/old source normalization and receiver ordering",
+      "six source columns/8cases/8frequencies/128LU/1152RHS fixed",
+      "all stages prepopulated and receiver prefixes retained on failures",
+      "original-band residual contraction versus independent saved gradient",
+      "full-band/full8 pooling and null zero denominators",
+      "not optimization, causal proof, independent geology or physical acceptance"
+    ]
+  },
+  "resources": {
+    "disk_free_bytes": 135557120,
+    "available_memory_bytes": 2948694016,
+    "minimum_disk_for_this_small_diagnostic_bytes": 67108864,
+    "minimum_available_memory_bytes": 1073741824,
+    "BP_disk_guard_unchanged_bytes": 268435456,
+    "expected_receiver_artifacts_under_bytes": 2097152,
+    "large_saved_fields": false
+  },
+  "output": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/initial_linearization_probe_run_01",
+  "plan": {
+    "cases": 8,
+    "frequency_rows": 64,
+    "LU_factorizations": 128,
+    "RHS_solves": 1152
+  },
+  "student_final_design_or_confirmation": false,
+  "all_four_goals_complete": false
+}

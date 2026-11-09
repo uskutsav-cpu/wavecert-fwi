@@ -1,0 +1,151 @@
+{
+  "caps": {
+    "KILL_grace_seconds": 0.5,
+    "TERM_grace_seconds": 0.15,
+    "cleanup_poll_seconds": 0.01,
+    "complete_process_seconds": 8.0,
+    "failure_reserve_bytes": 1048576,
+    "individual_file_bytes": 16777216,
+    "inventory_file_count": 256,
+    "optimizer_seconds": 7.5,
+    "packet_bytes": 50331648,
+    "per_child_log_bytes": 1048576,
+    "per_child_output_bytes": 16777216,
+    "poll_seconds": 0.02
+  },
+  "cost_boundary": "Per-slot absolute_started is sampled before per-slot source/input checks, request serialization, command/Popen, all worker imports/setup/preparation/optimization/selection/serialization, actual wait, owned cleanup and logclose. Complete-return age is sampled by the serial caller immediately after run_slot returns its fullyserialized slot result: includes known child/group terminal, logclose, actualwait receipt, postwait validation/sourcechecks and slotreturn serialization. Earlier wait_cleanup_logclose age is separatelyrecorded and cannotconfer8eligibility. Common stdlib parent startup/admission/plan/control verification and postwait audit/packaging are separately measured prehistory/tail and cannot silently receive full-total-cost credit; a future external caller must observe actual parent terminal/cold-start overhead. No old timing pooling.",
+  "criteria_sha256": "d0c14a6c5aa3f8b5cde42daf1e1e2826f3be07d3e0b3d207e7098596d693dc81",
+  "eligibility": "Only actualwait0, observedownedPGID==PID, knownnoownedgroup, closedlog, no stop/error/unknown prefix, actualcompleteprocessage<=8, worker and returnedpayload matching fixedslots/source, policy_valid and notunknown, selected before7.5, plus identicalnew6fieldcasebindings may advance. APIreturnflag necessary but never OSproof. Independent auditor and future external parentwait remain mandatory.",
+  "execution_authorized": false,
+  "failure_policy": "No retry/resume/skip/fallback/additionalslots. Persist full2plan/source/GO/admission beforefirstchild, each attemptedrequest/spawn/wait/partial failure and unattempted remainder. Nonraising TERM/INT recorder covers Popen return->ownership receipt and repeatedsignalcleanup. Failed/nohandle Popen is ambiguous; no stable childlog/artifact hashes unless knownterminal. Postwait persistence errors retain in-memory actualexit and best-effort failuremetadata, never replace actualreturncode. Unknowncounts remainunknown; cumulativeRUSAGE_CHILDREN peak is not per-worker RSS.",
+  "full48_authorized": false,
+  "held_gates": [
+    "Source-only parent +9 tiny stdlib dummycontrol review and exactfreeze.",
+    "New independent postreturn auditor source/controls/criteria and review.",
+    "Exact targetLinux runtime and registeredcontrol reports with actualcounts/source/exit/wait proof.",
+    "Separate explicit source-bound rootpilotGO; nonecreated here.",
+    "Future publishedLinuxroute/actualparentexternalwait + independentpilot audit."
+  ],
+  "manufactured_controls_scope": "9stdlib unittestgroups. Only tiny dummyOSchildren and JSONfixtures, no realworker/NumPy/SciPy/wavecert/native/PDE. Genericcorecallbacks are injected for controls only; CLIhas no dummyworker/clock/cap/validator override and always requires exactrootGO/sources/runtime. Test-onlycaps are shorter than fixedreal8s.",
+  "mode": "case0_two_return_integration_pilot",
+  "packet_schema": {
+    "actual_wait_fields": [
+      "actual_pid",
+      "observed_pgid",
+      "launch_state",
+      "actual_wait_returncode",
+      "wait_observed",
+      "terminal_state_known",
+      "owned_process_group_alive_after_cleanup",
+      "closed_log",
+      "post_wait_IO_errors",
+      "deferred_parent_signals",
+      "external_wait_cleanup_logclose_seconds"
+    ],
+    "attempts_caller_fields": [
+      "external_return_observed_perf_counter",
+      "external_complete_return_seconds",
+      "actual_wait_receipt_sha256",
+      "worker_result_sha256",
+      "returned_payload_sha256",
+      "eligible",
+      "unknown_work",
+      "case_binding"
+    ],
+    "external_parent_observation": "Supplied separately by future Linuxroute, not generated or inferred by thisparent.",
+    "root": [
+      "project_plan.json",
+      "supplied_root_go.json",
+      "admission.json",
+      "source_before.json",
+      "source_after.json",
+      "attempts.json",
+      "pilot_result.json",
+      "artifact_inventory.json"
+    ],
+    "slot": [
+      "slot_00/request.json",
+      "slot_00/launch_requested.json",
+      "slot_00/spawned.json",
+      "slot_00/actual_wait.json",
+      "slot_00/child.log",
+      "slot_00/worker/"
+    ],
+    "unknown_terminal": "UNSTABLE_CHILD_PREFIX_ONLY.json; no childwrittenfile inventory"
+  },
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "raw_input_sha256": {
+    "data/reference/subsurfacegen_parent_split/split_manifest.csv": "30fed6e30e07a1b54d17f3ae9511d06eac6f44c69fcb57b6ee588f2ade65ef14",
+    "data/reference/subsurfacegen_parent_split/validation.npz": "36d11aba94ae9093cac888e9b28a2d01edcef1aa3a54b12f8e10269b963db2fc",
+    "data/reference/subsurfacegen_parent_split/validation_metadata.csv": "d3ce8ab6a3474a6bc17595f26b68940e7c7ad9481d8c80fb89fe04833e6996e6"
+  },
+  "required_controls": {
+    "API": 18,
+    "component": 46,
+    "parent": 9,
+    "worker": 10
+  },
+  "runtime": {
+    "numpy": "2.4.6",
+    "platform": "Linux",
+    "python": "3.11.18",
+    "scipy": "1.17.1"
+  },
+  "scientific_goals_complete": false,
+  "slots": [
+    {
+      "arm": "data_only_normalized_exact_lbfgsb",
+      "case_index": 0,
+      "identity": {
+        "array_index": 0,
+        "parent_id": "gom_148",
+        "slice_id": "gom_148_il_0236",
+        "source_file": "slices/slice_gom_148_il_0236.h5",
+        "source_sha256": "3a693c7aab525351aca671cc640afa4bed4ffb3be14b8039c40f59f2905209db"
+      },
+      "order_position": 0,
+      "repetition": 0,
+      "run_index": 0,
+      "status": "unattempted"
+    },
+    {
+      "arm": "data_only_normalized_cached_j_trf_lsmr",
+      "case_index": 0,
+      "identity": {
+        "array_index": 0,
+        "parent_id": "gom_148",
+        "slice_id": "gom_148_il_0236",
+        "source_file": "slices/slice_gom_148_il_0236.h5",
+        "source_sha256": "3a693c7aab525351aca671cc640afa4bed4ffb3be14b8039c40f59f2905209db"
+      },
+      "order_position": 1,
+      "repetition": 0,
+      "run_index": 1,
+      "status": "unattempted"
+    }
+  ],
+  "standard_baseline_not_new_method": true,
+  "status": "HELD_SOURCE_ONLY_OWNED_SERIAL_CASE0_PILOT_NO_GO",
+  "student_final_design": false,
+  "threads": {
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "worker_contract": {
+    "FROZEN_PRODUCTION_SOURCE.json": "e7ba5deef7a651f42d02b9f8e0bcbee9624291b8217ab378bdde7586c57cd4de",
+    "api/FROZEN48_SCHEDULE.json": "3c21717474a32de5ae660812210c5b1993c32d3f2953a2da639886d6bbd49f89",
+    "api/STAGED_FILE_MANIFEST.json": "b6514a9060bc1688329b59161546031cb790c0892c594e383f0dfc2c7618f526",
+    "api/protocol.json": "e967fdf4096ab820b3fa68b37ce711b99dbfd752b3fe5a88e100589a9a30a41e",
+    "case_runtime.py": "7e8bcf12df49fffac27bb0011570550b67bb9cd6382d844503f8a24ba299c38f",
+    "inputs/FROZEN_INITIAL_INPUT_RECEIPT.json": "96b9eb330ffbf79a7623116cb842639ed501a814f0774f9c674016ee60244572",
+    "inputs/RETAINED_INPUTS_01.json": "80df79e5d2240553e26b713e884096716897caf598268b105746a511fa1ec699",
+    "inputs/frozen_initials.npz": "73d3e5b42ee3df6d40c0a9d8dc872c7603ad65d25ccbb459e0c0bbd40cdb4fc1",
+    "project_protocol.json": "537cb3914c2e47e5d9afa327607bbfacd992ecec8f2020b8128a5005c9b59272",
+    "realcase_worker.py": "9a7a5199b00d9ae28ac000a3998215a9b85d13bee209e2ec6ca2f1f7c50f7f12"
+  },
+  "worker_inventory_sha256": "3174d872c4426a27ce5b70fc8ae91dcc5e1973dc302a0928051ed5e8ac499b32",
+  "worker_review_sha256": "77514be4084170c3d098dad784af5c03a01f370a87361d9d3654391778792395"
+}

@@ -13,6 +13,7 @@ from wavecert.data.wavefields import random_velocity_model
 from wavecert.experiments.synthetic import velocity_to_m
 from wavecert.optimization.fwi import InversionRun, run_inversion, velocity_from_m
 from wavecert.physics.helmholtz import Helmholtz2D, SurveyBlock, SurveyGeometry
+from wavecert.provenance import sha256_file
 from wavecert.surrogates.fno import TrainedFNOWavefieldSurrogate
 
 
@@ -62,8 +63,19 @@ def run_end_to_end_study(
     iterations: int = 8,
     seed: int = 20261101,
     initial_step: float = 0.02,
+    step_acceptance: str = "surrogate",
 ) -> dict:
-    """Run complete multi-iteration inversion trajectories for four policies."""
+    """Run four policies with explicit step verification and full solve costs.
+
+    Historical ``surrogate`` merit acceptance is the default. Use
+    ``exact-decrease`` for true-objective monotonicity or ``exact-armijo`` for
+    true-gradient sufficient decrease; their online verification costs are
+    included. Calibration of initial-state directions is not a trajectory-wide
+    coverage guarantee.
+    """
+
+    if n_cases < 1 or int(n_cases) != n_cases or iterations < 1 or int(iterations) != iterations:
+        raise ValueError("n_cases and iterations must be positive integers")
 
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
@@ -113,6 +125,7 @@ def run_end_to_end_study(
                 initial_step=initial_step,
                 case_scale=case_scale,
                 block_scales=block_scales,
+                step_acceptance=step_acceptance,
             )
             all_runs[(case_id, policy)] = run
             for record in run.records:
@@ -151,6 +164,23 @@ def run_end_to_end_study(
             "mean_exact_gradient_blocks": float(np.mean(exact_blocks)),
             "mean_algorithm_seconds": float(np.mean(seconds)),
             "accepted_step_fraction_mean": float(np.mean(accepted)),
+            "mean_verification_gradient_blocks": float(np.mean([
+                r.total_verification_gradient_blocks for r in runs
+            ])),
+            "mean_online_exact_cost": {
+                key: float(np.mean([r.total_online_exact_cost.get(key, 0) for r in runs]))
+                for key in sorted({key for r in runs for key in r.total_online_exact_cost})
+            },
+            "mean_validation_exact_cost": {
+                key: float(np.mean([r.total_validation_exact_cost.get(key, 0) for r in runs]))
+                for key in sorted({key for r in runs for key in r.total_validation_exact_cost})
+            },
+            "mean_validation_seconds": float(np.mean([r.total_validation_seconds for r in runs])),
+            "true_objective_increases": int(sum(
+                np.count_nonzero(np.diff([rec.true_objective for rec in r.records]) >
+                                 1e-10 * max(r.records[0].true_objective, 1e-15))
+                for r in runs
+            )),
         }
 
     exact_cost = policy_summary["exact"]["mean_exact_gradient_blocks"]
@@ -160,19 +190,37 @@ def run_end_to_end_study(
         "n_cases": n_cases,
         "iterations": iterations,
         "blocks_per_iteration": 4,
+        "checkpoint_sha256": sha256_file(checkpoint_path),
+        "conformal_scales_sha256": sha256_file(conformal_scales_path),
+        "step_acceptance": step_acceptance,
         "validation_cost_semantics": (
-            "true objectives are computed offline for every recorded iterate and are excluded "
-            "from policy exact-gradient-block budgets"
+            "Offline true-objective evaluations use an independent solver/cache and are "
+            "reported separately. Every exact solve used by online certification or "
+            "step acceptance is included in online solve counters and runtime. Repaired "
+            "gradient blocks alone are not a complete computation budget."
         ),
-        "step_policy": (
-            "normalised descent direction with backtracking on each policy's own merit objective; "
-            "true PDE objective is not used to choose neural/WaveCert steps"
-        ),
+        "step_policy": {
+            "surrogate": "Backtracking on each policy's own merit; neural/WaveCert steps have no true finite-step guarantee.",
+            "exact-decrease": "Backtracking requires strict decrease of the true discrete objective; online forward costs are counted.",
+            "exact-armijo": "True-gradient Armijo test along actual projected displacement; online forward and verification-gradient costs are counted.",
+        }[step_acceptance],
+        "guarantee_semantics": {
+            "direction": "Conformal directional acceptance requires exchangeability; it is not a deterministic PDE certificate.",
+            "legacy_calibration": "The default Phase5 per-block scales were calibrated along fixed original neural directions. They provide no nominal guarantee for adaptively changed hybrid directions, including the initial-state repair path; this legacy trajectory gate is exploratory.",
+            "trajectory": "No nominal conformal coverage is asserted for adaptive later iterates or the entire trajectory.",
+            "finite_step": "Exact-decrease and exact-armijo verify finite-step behavior using online exact physics; surrogate mode does not.",
+            "numerics": "Verification concerns this finite discrete objective in floating-point arithmetic, not continuous physics or measured data.",
+        },
         "policies": policy_summary,
         "savings": {
             "selective_exact_gradient_block_reduction_vs_exact": float(
                 1.0 - selective_cost / max(exact_cost, 1e-15)
-            )
+            ),
+            "selective_runtime_ratio_to_exact": float(
+                policy_summary["conformal-selective"]["mean_algorithm_seconds"] /
+                max(policy_summary["exact"]["mean_algorithm_seconds"], 1e-15)
+            ),
+            "interpretation": "A reduction in repaired gradient blocks does not establish a reduction in total solves or wall time.",
         },
         "exit_criteria": {
             "all_four_policies_completed": len(all_runs) == 4 * n_cases,

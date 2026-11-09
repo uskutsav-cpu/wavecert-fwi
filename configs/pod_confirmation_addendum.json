@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-07T21:45:15.725175+00:00",
+  "status": "Prospective assistant-development POD comparator addendum before any fresh confirmation outcomes; not student preregistration",
+  "original_three_fno_plan_path": "configs/gradient_confirmation_plan.json",
+  "original_three_fno_plan_sha256": "8330f33ee38255dbb14f54e2ddcd6f154bbe7d5f4a40b11f2560b652f563eb41",
+  "change": "Add exactly the validation-selected classical POD Galerkin comparator to a separate joint evaluation wrapper; the original three-FNO plan, folds and neural selection rule stay unchanged",
+  "choice_timing": "POD family/rank chosen AFTER observing the completed eight-candidate validation comparison. This comparator was not in the original four-FNO training grid or original three-FNO confirmation plan. No fresh confirmation outcomes have been evaluated",
+  "fno_winner_frozen_at_creation": false,
+  "cohort": "Exactly the same fresh100 original-index slots from each fixed400 complement specified in the original plan; no resampling or new family pooling",
+  "pod_study_path": "results/pod_development",
+  "pod_study_files_sha256": {
+    "protocol.json": "55df03ceea558b477b12a22a7e7c43dbf494590b022e3e852f90d9ad85c07f92",
+    "summary.json": "872d7f557f4d1a2c18401ce86278132f24e8bfe37bef2536e872922f648603c6",
+    "selection.json": "685e48bc4cd0face08dff3d4161a6e15c5f2d1a005e7eea8655422b203aff52d",
+    "candidates.json": "2231d89ecabb45e0c943dff27e1c7cdfae71b7a66fc1eea4b3c3308645271b5a",
+    "input_provenance.json": "8e835f911df2525fd159ffceaa8213fd4bf647fc2c71a920af9baa95086a23ad",
+    "status.json": "c53e9111a25e1bc7a3e3d99467432279ee5267848114b84deb069d59b0f8429d",
+    "bases/state_rank64.npz": "7ee4552c27032dc0aa9f6d362546572fe09c28d0edccb69ade698f30b067c3d9",
+    "bases/state_tangent_rank64.npz": "f2ae08cbcb251802ba7be92d69e87c28f425c5b1dfeede02fd94d6720c484447"
+  },
+  "pod_source_commit": "6470e4d41052eb4537a38fc23cd65452540a9e6e",
+  "pod_source_sha256": "a0413eab2da92d56a0f051ed795d8cb24c61523dcba4c9e50c1993e514a04162",
+  "pod_source_receipt_scope": "Original source commit and file manifest are retained. The local cherry-pick has identical recorded POD source bytes plus unrelated confirmation files; it has not yet been published. Eventual publication must retain original 6470e4d source history. No claim of existing public availability.",
+  "selected_pod": {
+    "family": "state+tangent",
+    "rank": 64,
+    "basis_artifact": "bases/state_tangent_rank64.npz",
+    "basis_artifact_sha256": "f2ae08cbcb251802ba7be92d69e87c28f425c5b1dfeede02fd94d6720c484447",
+    "basis_prefix_sha256": "1fdfa88c2e07700a31bf34d7d41c5cfc46b0580cfd462b82d51faca35f905bcc",
+    "validation_selection_score": 0.012253685445710857
+  },
+  "selection_rule": "Lowest identical physical three-component equal-parent validation score among all8 fixed POD candidates; frozen family order then lower rank on ties",
+  "model_labels": [
+    "legacy_forward",
+    "legacy_jvp",
+    "development_winner",
+    "classical_pod"
+  ],
+  "source_calibration": {
+    "pod_calibration_performed": false,
+    "pod_source_calibrated_gate": "not evaluated",
+    "rule": "No FNO calibration scale is transferred to the POD model. POD reports deterministic block bounds and actual aggregate-gradient quality; any later POD source-calibrated gate needs its own separate prospective protocol and calibration freeze"
+  },
+  "staging": "Require completed all4-FNO StageB freeze, completed all8-POD source/teacher/selection audit and new immutable POD freeze BEFORE joint fresh predictions. Require existing FNO calibration StageC before joint evaluation. Preserve original artifacts",
+  "reporting": {
+    "primary": "Actual aggregate4-block gradient cosine, true descent, objectives and norms; no mean-block-cosine substitute",
+    "secondary": "All per-block deterministic directional bounds, errors, acceptance and false acceptance for POD; FNO source-calibrated outcomes remain in the unchanged three-FNO report",
+    "uncertainty": "N400/n100 fixed-complement hypergeometric model-event bounds per family/model; no generalization to sites or another batch, no simultaneous group guarantee",
+    "all_outcomes": "Retain all4model labels and both families; failures keep incomplete status, never drop a model from a claimed complete comparison",
+    "timing": "No full-inversion, acceleration or field-scale claim; reduced work and fine-PDE validation work reported separately"
+  },
+  "limits": [
+    "POD validation selection is model development on four source parents, not independent confirmation",
+    "The newly selected POD basis is trained only on the pinned training labels; no calibration/test/external arrays fit it",
+    "The original fixed3-FNO plan is preserved; this addendum explicitly documents the additional comparator and its later selection timing"
+  ],
+  "pod_equivalent_local_cherry_pick_commit": "4ad72a5e4dc7e7f82d4e308d0b0fe7d5b318e6a4"
+}

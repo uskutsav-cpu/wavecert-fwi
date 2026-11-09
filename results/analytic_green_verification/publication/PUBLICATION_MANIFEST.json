@@ -1,0 +1,69 @@
+{
+  "actual_render": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 OMP_NUM_THREADS=1 MPLCONFIGDIR=/tmp/wavecert-green-publication-mpl /opt/miniconda3/bin/python -W error render_publication.py --run ../../analytic_green_run_01 --independent-audit ../../analytic_green_independent_post_audit_01/receipt.json --output artifacts_01",
+    "exec_session": 22351,
+    "exit_code": 0,
+    "ruff": "Repository-config Ruff PASS; tool476914 initially found unused local variable, corrected before render; final tool6fc7a9 PASS. No metric or data changes.",
+    "terminal_tool_chunk": "2737d2"
+  },
+  "files": {
+    "TECHNICAL_SCOPE.md": {
+      "bytes": 4224,
+      "sha256": "df7eb936af102b211a46cb5e680d56bf617235ee8278e23b97cae7c4a8911bb7"
+    },
+    "artifacts_01/all_seven_recorded_metrics.csv": {
+      "bytes": 1862,
+      "sha256": "13e272db7c4210583fc80117c9bde34d1c7deb7512de177cca215b8635d8e4f2"
+    },
+    "artifacts_01/analytic_green_all_seven.png": {
+      "bytes": 376612,
+      "sha256": "2b2b410d8ad6476f7672107b4ce2ae880adf9c9de4907bd51d96f1f1cfb20fa6"
+    },
+    "artifacts_01/analytic_green_all_seven.svg": {
+      "bytes": 89662,
+      "sha256": "8fc608ca400958def81e94d37ddcd28f0058dda6c5f6e79174aaf876498ef9f1"
+    },
+    "artifacts_01/caption.txt": {
+      "bytes": 1528,
+      "sha256": "59d61909293299127ecc26eb289ab59a0189e1a2e8eae8cb547e7c5331f81ca3"
+    },
+    "artifacts_01/render_manifest.json": {
+      "bytes": 5220,
+      "sha256": "6b84e7a14b6b607d752ce96258548befaca11cbd31dc115aac06ccbddd818d7e"
+    },
+    "render_01.exit": {
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    "render_01.log": {
+      "bytes": 419,
+      "sha256": "67b95673a3e1395f8491d4afcf67c0a92e7c75c8e6b02b0a5da2b87e7a007f31"
+    },
+    "render_publication.py": {
+      "bytes": 11297,
+      "sha256": "a0031a10072a9006244447ee9aa1e7cd695b7d91b1ea45db1ced26ed048aac85"
+    }
+  },
+  "input_files_unchanged": true,
+  "protocol_sha256": "729e23e1a8a5373ba5492a47f2259d0bcb9a0618b25ddc87f3d73e0ea44337e5",
+  "recorded_values": {
+    "GL512_alternate_QUADPACK_relative_L2": 1.851515462546795e-15,
+    "reference_321_percent": 0.03051417025013522,
+    "reference_321_relative_L2": 0.0003051417025013522,
+    "small_nbl40_percent": 24.950424068601436,
+    "small_nbl40_relative_L2": 0.24950424068601434
+  },
+  "role": "AI publication handoff for stored analytical homogeneous verification; no new solve or analytical evaluation",
+  "root_publication_pending": true,
+  "runner_sha256": "ba7b03027d837f6e834e47ebf13c79768287d6d2963b1df3b898a6cbce822b69",
+  "scope": "Valid1..1099 only; full1101 arrays retained with original0/1100uncomputed. No amplitude/time fit, no physical pass threshold, known startup/finite-grid effects. One homogeneous scene; old7+14 immutable; not independent geology, certificate/adjoint/PML/inversion validation, goal2 completion or student contribution.",
+  "visual_QA": {
+    "dimensions_pixels": [
+      2600,
+      2100
+    ],
+    "path": "artifacts_01/analytic_green_all_seven.png",
+    "status": "INSPECTED: all7traces plus analytical line in native units; all7logbars/labels visible, distinct enlarged-reference markers, readable axes/legend, no clipping observed.",
+    "tool": "view_image"
+  }
+}

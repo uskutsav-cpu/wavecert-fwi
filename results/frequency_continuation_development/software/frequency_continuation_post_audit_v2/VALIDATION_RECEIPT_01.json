@@ -1,0 +1,47 @@
+{
+  "recorded_utc": "2026-11-08T19:00:32Z",
+  "result": "V2_37_MANUFACTURED_CONTROLS_RUFF_GRAMMAR_DEFAULT_CLEAR",
+  "cwd": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi",
+  "source_sha256_before_after": "c5b0ddaebb20aa39bece11894cb23edb26bcda6600d1c8beb8004115484ae45b",
+  "test_sha256_before_after": "7311ed409abc48ddf02efb77cc1f965b2096e2844269076ba1295f03561a52ca",
+  "criteria_sha256_before_after": "3f3f91aa283c56d42cdcd7947996e82d717e478f445db9092de193ea64dd9240",
+  "recorder_asset_sha256": "d5fb6326bcd252efc3a7672dba993311fb0ba724b90039e7fda317bcf8bb770c",
+  "executions": [
+    {
+      "label": "pure_manufactured_pytest",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest -q -Werror -p no:cacheprovider -o addopts='' work/new-phase-staging/frequency_continuation_post_audit_v2/test_audit_scalar.py > work/new-phase-staging/frequency_continuation_post_audit_v2/pure_controls_01.log 2>&1",
+      "tool_chunk": "63dbc4",
+      "actual_exit_code": 0,
+      "result": "37 passed in 1.23s",
+      "log_sha256": "a7fa47c254c92886be11c5de3044aaf12b0166058a76a8c226f15ca7bc5da5a1"
+    },
+    {
+      "label": "ruff",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -m ruff check --config work/wavecert-fwi/pyproject.toml work/new-phase-staging/frequency_continuation_post_audit_v2/audit_scalar.py work/new-phase-staging/frequency_continuation_post_audit_v2/test_audit_scalar.py > work/new-phase-staging/frequency_continuation_post_audit_v2/ruff_01.log 2>&1",
+      "tool_chunk": "72ea78",
+      "actual_exit_code": 0,
+      "result": "All checks passed",
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "label": "python310_grammar",
+      "tool_chunk": "ef287e",
+      "actual_exit_code": 0,
+      "method": "stdlib ast.parse feature_version=(3,10) on auditor and tests; no project execution",
+      "log_sha256": "c3704778e49a626d5754e2f2d7d9ba7d2c62be99c613736b157676446329844b"
+    },
+    {
+      "label": "metadata_only_default_cli",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -I work/new-phase-staging/frequency_continuation_post_audit_v2/audit_scalar.py > work/new-phase-staging/frequency_continuation_post_audit_v2/default_cli_01.log 2>&1",
+      "tool_chunk": "f9f1f2",
+      "actual_exit_code": 0,
+      "result": "metadata_only_no_project_arrays_or_solves; exact c5b0/3f3f pins; planned96",
+      "log_sha256": "a720ff939b40daacb8347c8031e141fed9c3b1b9158d43e84d17452f0193d430"
+    }
+  ],
+  "old_failed_actual_audit_retained": true,
+  "new_native_PDE_or_optimizer_calls": 0,
+  "criteria_thresholds_producer_data_or_algorithm_changed": false,
+  "physical_acceptance": null,
+  "student_final_design_or_confirmation": false
+}

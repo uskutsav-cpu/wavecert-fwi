@@ -1,0 +1,44 @@
+B023 Function definition does not bind loop variable `row`
+   --> run_replay.py:300:21
+    |
+298 |                 own_arrays=read_npz(output/row["artifact"],row["artifact_sha256"],np)
+299 |                 def on_trace(record):
+300 |                     row["comparison_prefix"]=record
+    |                     ^^^
+301 |                     atomic_json(output/"status.json",status)
+302 |                 def on_direction(record):
+    |
+
+B023 Function definition does not bind loop variable `row`
+   --> run_replay.py:303:44
+    |
+301 |                     atomic_json(output/"status.json",status)
+302 |                 def on_direction(record):
+303 |                     target=next(d for d in row["directions"] if d["direction"]==record["direction"])
+    |                                            ^^^
+304 |                     target.update(status="complete",**record)
+305 |                     atomic_json(output/"status.json",status)
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> test_replay_guards.py:2:1
+  |
+1 |   """Pure reader/phase-prefix controls; synthetic files, never BP inputs."""
+2 | / import importlib.util
+3 | | import json
+4 | | import sys
+5 | | from pathlib import Path
+6 | | from types import SimpleNamespace
+7 | |
+8 | | import numpy as np
+9 | | import pytest
+  | |_____________^
+help: Organize imports
+   |
+10 |
+   -
+11 | HERE = Path(__file__).resolve().parent
+   |
+
+Found 3 errors.
+[*] 1 fixable with the `--fix` option.

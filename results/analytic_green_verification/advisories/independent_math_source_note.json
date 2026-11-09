@@ -1,0 +1,23 @@
+{
+  "role": "Independent AI pre-outcome mathematical source note, not executed numerical verification",
+  "primary_source": "https://www.math.toronto.edu/courses/apm346h1/20181/PDE-textbook/Chapter9/S9.1.html",
+  "primary_location": "Section2D-wave equation: method of descent, final inhomogeneous formula, source definition utt-c^2 Delta u=f",
+  "derivation": [
+    "The primary formula gives D=utt-c^2 Delta a causal point kernel1/[2pi c sqrt(c^2 s^2-r^2)]. For L=c^-2 D, multiply this byc^2, obtaining H(s-r/c)/[2pi sqrt(s^2-(r/c)^2)]. This transformation concerns the stated scalar2D infinite-plane equation with zero initial conditions.",
+    "The original Devito point injection is dt^2 q/m at one node, without a1/h^2 source normalization. Its continuum point strength under cell-area quadrature is thereforeh^2 q, notq orc^2h^2q in the L equation.",
+    "For a=r/c>0 and causalq(t)=0 for t<0, u(r,t)=0 for t<=a and u=h^2/(2pi) integral_a^t q(t-s)/sqrt(s^2-a^2) ds for t>a.",
+    "Substituting s=a cosh(v) exactly cancels the square-root singularity: u=h^2/(2pi) integral_0^acosh(t/a) q(t-a cosh(v)) dv. For constant causal unit forcing this reduces to the independent closed formh^2 acosh(t/a)/(2pi).",
+    "For the existing geometryr=50m, c=2m/ms, h=10m, a=25ms andh^2=100m^2. Devito vp2km/s has the same numerical speed2m/ms under its metre/millisecond convention. The Ricker formula usesf0=.005/ms, t0=1/f0=200ms, not5/ms or an extra1000 time factor."
+  ],
+  "startup_and_recorder_scope": [
+    "Causal continuum forcing starts at0 with zero continuum initial conditions. The frozen discrete operator hasu0=u1=0, loop1..1099, source0unused despite nonzero Rickerq0. This known startup discretization difference must remain disclosed; no fitted shift/amplitude or posthoc alternative forcing is licensed.",
+    "Original receiver0 and1100 are uncomputed zero sentinels. Compare genuinely recorded indices1..1099, retain/report full original arrays, and do not treat sentinel0/1100 as waveform error observations.",
+    "Continuum finite propagation and geometric boundary arrival reasoning do not imply strict finite support for a centered finite-difference stencil; its weak early tails must not be deleted by posthoc windowing."
+  ],
+  "review_checks_for_ready_code": [
+    "All fixed128/256/512 quadrature orders and step-forcing control retained; no selecting an order from trace agreement.",
+    "All7 existing traces retain their original geometry/source/time bindings; same relative50m separation permits the same continuum response, not a per-trace fitted response.",
+    "No source/frequency/time rescaling, arbitrary physical-quality pass threshold, new PDE, coarse-gradient certificate transfer, independent-geology or student ownership conclusion."
+  ],
+  "activities": {"primary_source_read": true, "project_arrays_or_new_outcomes": false, "numeric_execution": false, "repository_edits": false}
+}

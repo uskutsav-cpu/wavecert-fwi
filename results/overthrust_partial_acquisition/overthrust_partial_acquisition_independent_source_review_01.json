@@ -1,0 +1,32 @@
+{
+  "status": "CLEAR_FOR_ROOT_DECISION_ON_BOUNDED_PARTIAL_ACQUISITION",
+  "role": "Independent AI source and existing manufactured-control receipt review; no network, model acquisition, decoding, or PDE execution",
+  "source_sha256": "e78c3f185d912c39d223c9414093a2f1831b3a30a09331571b6f7ac9c81c8e9f",
+  "proposal_sha256": "f2cea059ad3c116ad08131d7b874eab193f30929297f3068544bbd5fa64a64e6",
+  "geometry_review_sha256": "d0499c4b387ec8955e3aecb910840eac6b9c81ff33e2775b45c5ef7949fb2ad2",
+  "controls_source_sha256": "1b9aabdf1b575391176c267838d1f3742cd287ef902c0e5f9b918ee67258a946",
+  "existing_controls_receipt_sha256": "a5668f3db8698b39c5fea717d9519e5b2ab9fd85cb33daecb0d029ed791f5479",
+  "actual_readonly_verification_tool_chunk": "d64127",
+  "actual_readonly_verification_exit_code": 0,
+  "material_blockers": [],
+  "verified_findings": [
+    "Exact all207 stored rows at anonymous middle axis index400 and all801 final-axis elements. Every range independently reconstructed as2192+4*((row*801+400)*801), length3204; no overlap, omission, conversion, transpose or smoothing.",
+    "Proposal and487-check geometry-review byte pins exact; all reviewed source-asset hashes exact. Existing29-control receipt pins exact current driver/control source. Reviewer inspected those controls but did not independently rerun them.",
+    "Primary record4252588 revision2, immutable file UUID/key/531253092-byte length/publisher MD5 declaration and CC-BY4 metadata checked against exact proposal before and after model requests. Whole-file digest is explicitly unverified.",
+    "NoRedirect opener, exact final endpoint, identity encoding, exactHTTP206 and Content-Range byteslo-hi/531253092 plus exactContent-Length3204 before range body reads. HTTP200, changed interval/total, redirects and missing/wrong lengths reject before reads. No whole-file fallback or retry/resume path.",
+    "Aggregate8MiB body admission cap covers every attempted read; bounded read chunks and ledger byte count. Fixed259-request success path admits at most804444 response body bytes including record65536 maxima and25 metadata ranges before/after; actual model row bodies fixed663228 bytes.",
+    "On a short response, exact consumed prefix file/hash/count retained; failed acquisition preserves completed rows, marks no dataset credit and creates no complete receipt. Existing controls inspect row1 failure after row0, metadata drift before first model row, and original output no-resume refusal.",
+    "Raw concatenation row order and hand-writtenNPY header agree on<f4 C-order207x801. Existing control independently parsesNPY header and compares payload bytes.",
+    "Receipt/notice explicitly leave physical units and named axes unverified, whole-file immutability/checksum unverified, physics acceptanceNone, independent site and untouched confirmation claimsFalse. Metadata n801,801,207 and d25,25,25 are not promoted to named physical geometry."
+  ],
+  "scope_limits": [
+    "Source-and-existing-receipt review only; actual network transport outcome remains unexecuted by reviewer.",
+    "Repeated exact metadata without ETag does not prove immutable model bytes or whole-file checksum.",
+    "A successful partial acquisition would supply only raw anonymous stored values, not velocity interpretation or validated wave physics."
+  ],
+  "network_requests_by_reviewer": 0,
+  "model_values_acquired_or_decoded_by_reviewer": 0,
+  "project_PDE_calls_by_reviewer": 0,
+  "author_source_edited": false,
+  "root_GO_still_required": true
+}

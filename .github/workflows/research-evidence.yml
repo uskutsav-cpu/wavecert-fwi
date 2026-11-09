@@ -1,0 +1,65 @@
+name: Frozen research evidence
+
+on:
+  push:
+    branches: [research-strengthening]
+    paths:
+      - .github/workflows/research-evidence.yml
+      - configs/remote_evidence_run.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: frozen-evidence-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  reproduce:
+    if: github.repository == 'uskutsav-cpu/wavecert-fwi' && github.ref == 'refs/heads/research-strengthening'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      PYTHONPATH: src
+      MPLBACKEND: Agg
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install CPU scientific runtime
+        run: |
+          python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -e '.[dev,data]'
+      - name: Verify source and independent physics
+        run: |
+          pytest -ra
+          python -m wavecert verify-physics --output results/independent_physics
+          python scripts/run_cost_break_even.py
+          python scripts/run_stability_benchmark.py
+          python scripts/benchmark_reference_cache.py
+      - name: Run frozen 60-model trajectory comparison
+        run: python -m wavecert evidence-study --cases-per-seed 20 --iterations 12 --output results/evidence_study
+      - name: Reproduce parent-held-out comparisons
+        run: |
+          python -m wavecert real-wavecert-study --dataset data/reference/subsurfacegen_parent_split --checkpoint checkpoints/fno_parent_grouped.pt --output results/grouped_wavecert
+          python -m wavecert real-wavecert-study --dataset data/reference/subsurfacegen_parent_split --checkpoint checkpoints/fno_parent_grouped_jvp.pt --output results/grouped_wavecert_jvp
+          python scripts/run_research_audit.py
+      - name: Verify completion and publish only evidence to the research branch
+        run: |
+          python -c 'import json; from pathlib import Path; r=json.loads(Path("results/evidence_study/summary.json").read_text()); s=json.loads(Path("results/evidence_study/status.json").read_text()); assert r["source_unchanged_during_run"] and s["status"] == "complete"; assert r["comparisons"]["clean"]["exact"]["n_models"] == 60'
+          git fetch origin research-strengthening
+          test "$(git rev-parse FETCH_HEAD)" = "$GITHUB_SHA"
+          git config user.name "WaveCert evidence runner"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/evidence_study results/independent_physics results/cost_break_even results/stability_benchmark results/reference_cache_benchmark results/grouped_wavecert results/grouped_wavecert_jvp results/research_audit
+          if ! git diff --cached --quiet; then
+            git commit -m "Record frozen-source 60-model research evidence"
+            git push origin HEAD:research-strengthening
+          fi

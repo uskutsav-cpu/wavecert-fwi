@@ -1,0 +1,98 @@
+{
+  "role": "read-only physical interpretation and independent raw-arithmetic audit; AI support, not student scientific interpretation",
+  "recorded_utc": "2026-11-08T02:53:39.676736+00:00",
+  "PDE_reruns": 0,
+  "source_or_protocol_changes": false,
+  "data_location_at_audit": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/devito_boundary_verification_run_01",
+  "receipt_sha256": "a182454fdb8925997dea44d67b98871635e2cf537a0bb30ae6b15e229065fc04",
+  "metrics_sha256": "13d9f3789c097fe2fc872d31b5a76700b302776cef43afc00487d577fcf8de3f",
+  "raw_checks": {
+    "small_nbl0": {
+      "raw_sha_matches": true,
+      "all_software_invariants": true
+    },
+    "small_nbl20": {
+      "raw_sha_matches": true,
+      "all_software_invariants": true
+    },
+    "small_nbl40": {
+      "raw_sha_matches": true,
+      "all_software_invariants": true
+    },
+    "matched_exterior_20_undamped": {
+      "raw_sha_matches": true,
+      "all_software_invariants": true
+    },
+    "matched_exterior_40_undamped": {
+      "raw_sha_matches": true,
+      "all_software_invariants": true
+    },
+    "reference_241": {
+      "raw_sha_matches": true,
+      "all_software_invariants": true
+    },
+    "reference_321": {
+      "raw_sha_matches": true,
+      "all_software_invariants": true
+    }
+  },
+  "independent_arithmetic": {
+    "small_nbl0": {
+      "full_relative": 2.4070732630210894,
+      "early_relative": 6.088866917752294e-09,
+      "late_over_full_reference": 2.4070732630210894
+    },
+    "small_nbl20": {
+      "full_relative": 0.5693635321563194,
+      "early_relative": 1.2093393863023149e-11,
+      "late_over_full_reference": 0.5693635321563194
+    },
+    "small_nbl40": {
+      "full_relative": 0.24948929358673055,
+      "early_relative": 7.606998601127173e-13,
+      "late_over_full_reference": 0.2494892935867306
+    },
+    "matched_exterior_20_undamped": {
+      "full_relative": 1.037217034165366,
+      "early_relative": 5.678160966526723e-15,
+      "late_over_full_reference": 1.0372170341653657
+    },
+    "matched_exterior_40_undamped": {
+      "full_relative": 0.6866024997087118,
+      "early_relative": 5.678160966526723e-15,
+      "late_over_full_reference": 0.6866024997087118
+    },
+    "reference_241": {
+      "full_relative": 4.224306702314861e-16,
+      "early_relative": 0.0,
+      "late_over_full_reference": 4.224306702314861e-16
+    }
+  },
+  "scope_verified": [
+    "All seven raw NPZ files match their completed-run SHA256; all seven recorded software invariants true.",
+    "Full, early and late mismatch ratios independently recomputed from saved traces agree with metrics.json; this is arithmetic replay, not a separate PDE solver.",
+    "Matched-exterior controls have matching padded grid/background and computational source/receiver nodes, so their pairwise change isolates damping for this discrete fixture."
+  ],
+  "physical_interpretation": [
+    "The small undamped box full-record mismatch is2.40707 times the large-reference trace norm; padding20/40 with damping leaves0.56936/0.24949. These are large finite-record truncation diagnostics, not a physical-fidelity pass.",
+    "At the same exterior grids, the undamped controls leave1.03722/0.68660 mismatch. Thus damping reduces the measured truncation discrepancy in each matched comparison, while substantial discrepancy remains.",
+    "The241 and321 references agree at4.2243e-16 relative trace norm; this supports this record as empirically insensitive to further exterior enlargement within the tested trace/window. It is not an independent continuum solution or proof of zero common dispersion/source errors.",
+    "Early<=250ms discrepancies are small (damped20~1.21e-11; damped40~7.61e-13), consistent with the direct portion being much less affected. The window is geometric and empirical; fourth-order stencil tails and noncompact Ricker samples forbid a rigorous clean/causal-window claim.",
+    "Changing nbl alone also moves the outer boundary and changes paths/spreading. The added matched-exterior controls avoid attributing that geometric effect entirely to damping. Neither comparison measures a single intrinsic absorber reflection coefficient.",
+    "A receiver difference over a broad Ricker band in2D sums arrivals, phases, interference, finite outer-boundary effects and absorber-interface effects. Its L2 normalization by a whole receiver trace is not incident/reflected plane-wave amplitude, energy flux or angle/frequency resolved reflectivity.",
+    "No quality threshold was registered. Software invariants being true establishes sampling/source/provenance checks, not adequate boundary fidelity. Do not choose a new threshold/profile, drop cases, or relabel this negative diagnostic as successful realistic-physics validation."
+  ],
+  "normalizer_warning": "The matched_exterior_contrasts map calls the undamped control its reference: its late_mismatch_over_full_reference denominator is the UNDAMPED CONTROL full trace norm (243.21025/204.83272), not the large-box168.87344 norm. All stored numerators/denominators are explicit and correct; do not compare those0.91590/0.60785 ratios as if they were the0.56936/0.24949 residual-to-large-reference ratios.",
+  "legitimate_following_software_correctness_check": {
+    "proposal": "Independently implement the pinned constant-coefficient OT2/fourth-order-spatial finite-grid recurrence and sparse source/receiver sample placement in a short standalone NumPy reference, with the SAME seven fixed boxes, damping samples, dt/source values and edge/halo conventions. Compare raw traces and explicitly retain all discrepancies. Freeze its derivation/source before any new propagation.",
+    "purpose": "Test whether the observed discrepancy is produced by the intended discrete damping/stencil/source implementation rather than an adapter or units error. A separate recurrence is independent implementation verification, not a new absorber/physics model or a positive-fidelity claim.",
+    "required_care": [
+      "Derive the actual Devito dt derivative and stepping start/stop, source injection/update order and receiver interpolation before coding; do not assume continuum omega symbols.",
+      "Use exact installed damping arrays or an independently checked reconstruction, preserving hashes/units; do not fit damping to the observed traces.",
+      "Keep original7-case evidence immutable and label any new propagation a separate verification, not a rerun replacing these outcomes."
+    ],
+    "executed": false
+  },
+  "student_final_choice_boundary": "Selecting a different absorber/PML/free surface, bandwidth/domain adequacy target, acceptable truncation tolerance, or the final research question/comparison is a scientific design choice for the student. These negative data alone do not authorize tuning those choices on this fixture and presenting the result as untouched confirmation.",
+  "goal2_complete": false
+}

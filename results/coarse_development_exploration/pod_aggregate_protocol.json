@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "created_utc_before_aggregate_outcomes": "2026-11-07T21:55:14.951137+00:00",
+  "scope": "Private exploratory aggregate development check after four-case orientation/correction feasibility; not confirmation, student preregistration, held-out evaluation, or acceleration evidence",
+  "rank": 96,
+  "pod_rank": 64,
+  "methods": [
+    "uncorrected_generic_M",
+    "uncorrected_oriented",
+    "coarse_corrected_oriented"
+  ],
+  "selection": "All eight pinned original validation inverse slices, all 24 original source/frequency blocks per slice, four parent groups; no exclusions or rank search",
+  "identities": [
+    {
+      "slice_id": "gom_148_il_0236",
+      "parent_id": "gom_148"
+    },
+    {
+      "slice_id": "gom_148_xl_0768",
+      "parent_id": "gom_148"
+    },
+    {
+      "slice_id": "gom_151_il_0247",
+      "parent_id": "gom_151"
+    },
+    {
+      "slice_id": "gom_151_xl_0857",
+      "parent_id": "gom_151"
+    },
+    {
+      "slice_id": "seam_005_il_0596",
+      "parent_id": "seam_005"
+    },
+    {
+      "slice_id": "seam_005_xl_0795",
+      "parent_id": "seam_005"
+    },
+    {
+      "slice_id": "seam_011_il_0522",
+      "parent_id": "seam_011"
+    },
+    {
+      "slice_id": "seam_011_xl_0866",
+      "parent_id": "seam_011"
+    }
+  ],
+  "sources": [
+    50,
+    54,
+    58,
+    61,
+    65,
+    69
+  ],
+  "frequencies_hz": [
+    2.5,
+    3.0,
+    3.5,
+    4.0
+  ],
+  "geometry": {
+    "shape": [
+      24,
+      24
+    ],
+    "spacing": 0.05,
+    "damping_width": 3,
+    "damping_strength": 2.0,
+    "n_receivers": 20
+  },
+  "direction": "For each method/slice, negative SUM of all 24 physical approximate block gradients, normalized by one common L2 norm; zero if norm<=1e-14",
+  "acceptance": "SUM approximate Dphi + SUM all24 block error bounds <0, only if every block stability is available; otherwise retain fallback-required case",
+  "coverage": "Absolute aggregate error <= SUM24 bounds +1e-12; retain all individual block errors and bound checks with the same shared aggregate direction",
+  "uncertainty": "Equal-parent descriptive summaries across four parents; no IID-eight-slice or inferential coverage claim",
+  "gram_allowance": "Same private feasibility formula: max(0,-lambda_min(G))+128*eps*rank*max(||H||2+||Vr||2^2,1) added to G diagonal; explicitly not a formally verified rounding enclosure",
+  "input_sha256": {
+    "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/results/gradient_development/labels/validation_inverse_cases.npz": "be429def325b741d415546167b8e13b5d52a3304d79f36efd3945a58363177db",
+    "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-pod-controls/results/pod_development/bases/state_tangent_rank64.npz": "f2ae08cbcb251802ba7be92d69e87c28f425c5b1dfeede02fd94d6720c484447",
+    "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/configs/gradient_development_protocol.json": "9262ab19fc87c3d04f4bad1bcc2da5b6978babc10c55ee2e461c981c8fdefe82",
+    "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-pod-controls/configs/pod_development_protocol.json": "55df03ceea558b477b12a22a7e7c43dbf494590b022e3e852f90d9ad85c07f92",
+    "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/pod_oriented_corrected_feasibility.json": "64a2ada80127628053dafa4f5763807ef33b3fd6be8509dd726d06dcefced2cb"
+  },
+  "main_source_sha256": "5e56226791eb0d2297667bc3502f3d24813c81e27c4e4d3ed317b9f556871f98",
+  "teacher_inverse_path": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/results/gradient_development/labels/validation_inverse_cases.npz",
+  "pod_path": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-pod-controls/results/pod_development/bases/state_tangent_rank64.npz",
+  "script_sha256": "eba903a98fbf059d51cfc66eea6641cb3531b821941b0d8d24968b7ea2061654",
+  "timings": false,
+  "output_contract": {
+    "aggregate_rows": 24,
+    "block_rows": 576,
+    "families_or_parent_pooling": "Retain parent identity; report every method and slice separately plus equal-parent descriptions"
+  }
+}

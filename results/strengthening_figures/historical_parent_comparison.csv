@@ -1,0 +1,6 @@
+model,display_name,ID_n_parents,ID_n_slices,ID_equal_parent_mean_cosine,ID_equal_parent_true_descent_fraction,OOD_n_parents,OOD_n_slices,OOD_equal_parent_mean_cosine,OOD_equal_parent_true_descent_fraction
+legacy_forward,Legacy FNO: forward,8,16,-0.0445274751568417,0.4375,1,4,-0.07316543139648571,0.0
+legacy_jvp,Legacy FNO: JVP,8,16,-0.05811168237106368,0.375,1,4,-0.08087832779694665,0.0
+development_winner,New FNO: validation selected,8,16,0.3553518496234141,0.875,1,4,-0.4542533588516193,0.0
+classical_pod,POD64: uncorrected,8,16,0.9997676135974001,1.0,1,4,0.9999100712805206,1.0
+coarse_corrected_pod,POD64 + coarse96: corrected,8,16,0.999841127330003,1.0,1,4,0.9999206262771825,1.0

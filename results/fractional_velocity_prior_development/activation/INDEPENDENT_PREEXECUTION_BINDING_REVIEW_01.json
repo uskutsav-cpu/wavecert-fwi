@@ -1,0 +1,93 @@
+{
+  "actual_api_changed_paths": [
+    "research/prior48/RUN_REGISTRATION_01.json"
+  ],
+  "actual_api_parent_shas": [
+    "9778fd3e998c8eb7dde8915789f5ea612ab71422"
+  ],
+  "actual_control_run": {
+    "conclusion": "success",
+    "event": "push",
+    "head_branch": "research-prior48-remote-01",
+    "head_sha": "9778fd3e998c8eb7dde8915789f5ea612ab71422",
+    "id": 42549126689,
+    "name": "Prior48 remote development",
+    "path": ".github/workflows/ci.yml",
+    "run_attempt": 1,
+    "status": "completed"
+  },
+  "created_utc": "2026-11-09T02:15:55.810788+00:00",
+  "fresh_file_sha256": {
+    "PREEXECUTION_FREEZE.json": "e0f194f077c2dbf56293ce18b1ee3514219d0660e300e52ac42c74f7412a1c7a",
+    "ROOT_GO.json": "44234fe02f29956a74b61850e8cb7752841aff97545ea9c1e5e2039df5efa1e1",
+    "RUN_REGISTRATION_01.json": "57c159609d7b8beeb0ba6f5c50e0bfe0e38717a060d945209ecf0fc3e2645e60",
+    "actual_control_run_api.json": "52a8734c83e5cdaa4ac1840e570fe85eb8b27c74ddd1026058ad82e98dd1805e",
+    "prospective_activation_commit_api.json": "587a4a2dfafac684763edd01fbc4a10c60ed2856e0edc4e243bd14312d00bde7"
+  },
+  "fresh_source_hash_check_chunk": "1131d2",
+  "fresh_source_hash_check_exit_code": 0,
+  "frozen_science_auditor_pins": {
+    "driver_sha256": "7c7fc525894dbd38899ad6ee46bff8a0a0d996ea2ef61d5da2e6ce8b4320d882",
+    "independent_post_auditor_sha256": "57946398ebd6d3eaad35ea73491ee50f3bf00c64ef42d6067a1a2fd522c040a4",
+    "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "prospective_criteria_sha256": "b06e9618b4d980ed0aa08c05a0da136d0ba3e37ecc422be4df411a5f3b96edf6",
+    "protocol_sha256": "92433c9d7b9d2990799f3a81707f6d04f63784a1820d3f109804a83b484ccfa6",
+    "schedule_sha256": "930e8ecf6bdbb78901b2330c0e1e71a470c7b914067feaf3c0ba3316442be150"
+  },
+  "go_scope": {
+    "scientific_goals_complete": false,
+    "student_final_design": false
+  },
+  "material_blockers": [],
+  "no_pde_or_study_launch": true,
+  "no_project_arrays_or_outcomes_read": true,
+  "no_source_mutation": true,
+  "production_digest_scope": "9f/161 baseline contract checked by frozen admission and previous actual Linux-control/root receipts; no production checkout execution or fresh digest computation by reviewer in this check.",
+  "prospective_activation_commit": "e8c144c69e5a5d7b71668329427bd3c88cba26b1",
+  "pure_gate": {
+    "invocation_exit_code": 0,
+    "limitation": "Parent/files and prior actual control evidence are saved actual GitHub API objects. Push event/attempt context is prospective; actual remote workflow must independently gate its own real context.",
+    "result": "study",
+    "source_sha256": "65e99bd7b862f8e572527744cb9f77af49867557ad50e4ea53c2c32d4c9eae71",
+    "supplied_prospective_context": {
+      "attempt": 1,
+      "deleted": false,
+      "event": "push",
+      "forced": false,
+      "public": true,
+      "ref": "refs/heads/research-prior48-remote-01",
+      "repository": "uskutsav-cpu/wavecert-fwi"
+    },
+    "tool_chunk": "2e2a9c"
+  },
+  "review": "CLEAR",
+  "reviewer": "/root/canonical_input_controls",
+  "schema_version": 1,
+  "scope": "Independent readonly preexecution activation binding review; no actual study execution or outcomes read.",
+  "six_referenced_review_receipts_checked_bytewise": {
+    "independent_driver_review": {
+      "path": "work/new-phase-staging/fractional_velocity_prior48_driver_independent_review/FINAL_BOUND_SOURCE_REVIEW_01.json",
+      "sha256": "684dec72cabc9cf637aece9dd6ed6dea060d3c34e2749f2f48754c0074e3f431"
+    },
+    "independent_final_auditor_review": {
+      "path": "work/new-phase-staging/prior48_auditor_independent_source_review/FINAL_BOUND_SOURCE_REVIEW_02.json",
+      "sha256": "bbc0d39ed11a32a43cd9781b841876dcac8984d70418b0e59940cd0009c31147"
+    },
+    "independent_v2_workflow_delta_review": {
+      "path": "work/new-phase-staging/prior48_remote_orchestration_independent_review/V2_MINIMAL_CONTROL_PARENT_FIX_REVIEW_01.json",
+      "sha256": "998f091e6fac093d96901e0605baa2d93b41fb960f340a9f6d7b686d13cbec60"
+    },
+    "independent_workflow_launcher_review": {
+      "path": "work/new-phase-staging/prior48_remote_orchestration_independent_review/FINAL_BOUND_WORKFLOW_LAUNCHER_REVIEW_01.json",
+      "sha256": "fa70a7f9e3c5d302f306cc77bb181365a5d06086c287cd2dc02eecbfcf17ce34"
+    },
+    "root_initial_source_review": {
+      "path": "work/prior48_root_source_review_01.json",
+      "sha256": "a5819d77ea1c115931416311fc6644a6acbeda9bdcb3fec33c1aef639b1fe86d"
+    },
+    "verified_actual_control_evidence": {
+      "path": "work/prior48_remote_controls_02/ROOT_TERMINAL_REVIEW.json",
+      "sha256": "bd231f51b796d2d66727afc1eb63aff6271e508cfcd6fda4eb1129798b9601e3"
+    }
+  }
+}

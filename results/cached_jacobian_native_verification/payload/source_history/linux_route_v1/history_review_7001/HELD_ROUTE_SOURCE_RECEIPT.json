@@ -1,0 +1,54 @@
+{
+  "status": "SOURCE_ROUTE_MANUFACTURED_PROCESS_CONTROLS_PASS_NATIVE_UNEXECUTED",
+  "orchestrator_sha256": "7001b7089f64782ad4f273fcf671a68790a1cb13460446b7487827dca7253f90",
+  "control_source_sha256": "d1fc97c438438dd820969ed544d42f6d58d4f12eaf9b13145fce6ee9520e2e7f",
+  "route_manifest_sha256": "00afd00ba969332c753b0453d51c5099b9cf2f083d64c4355b6820731c474e4c",
+  "registration_sha256": "4466c19029329a9b3df9b67bf4b9f836c325c6a986aa08767e145689da4e86fd",
+  "registration_false_root_go_null": true,
+  "scope_sha256": "17ae962916d99ef147551273f16a08f2e6d70745f1ab5780a758ec37342e75b5",
+  "workflow_sha256": {
+    ".github/workflows/ci.yml": "3d4487b872330d5906b52abaf848c80c7c9ebb56a5417578fa1ab11dd3e6f96b",
+    ".github/workflows/cached-j-native.yml": "92387dddc314df98e4e6103942ff424691e3941a5a8ac95b1a4bf403b522326c"
+  },
+  "actual_final_stdlib_controls": {
+    "tests": 12,
+    "errors": 0,
+    "failures": 0,
+    "exit_code": 0,
+    "terminal_chunk": "6eae86",
+    "seconds": 0.366,
+    "log_sha256": "af2bf0ed03f16f6d7d01e1f4e5d2dca8ccc7fae45fbae1d74f12bcc340c992c7",
+    "scope": "manufacturedevent/GO/count XML inputs and actual tiny stdlibdummy PIDs/waits/signals/timeouts; no numerical/native call or remote job"
+  },
+  "static_checks": {
+    "ruff": "actualPASS dd4e9a, maintainedcontroller/tests --no-cache",
+    "python310grammar": "actualPASS dd4e9a"
+  },
+  "earlier_controls": {
+    "attempt01": "10passed rawlog retained; source reconstructedpre-delta and not independentlyprehashed, as historyNOTE says",
+    "attempt02": "12passed actual239009, exact pre-execution source/history retained",
+    "no_failed_process_controls": true
+  },
+  "production_read_only_verification": {
+    "actual_head": "2918a47c68ac8bee3d33e532c21a96d335d1718a",
+    "worktree_clean": true,
+    "all161source_hashes_match": true,
+    "source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da"
+  },
+  "reviewed_runtime_manifest": {
+    "FROZEN_PRODUCTION_SOURCE.json": "e7ba5deef7a651f42d02b9f8e0bcbee9624291b8217ab378bdde7586c57cd4de",
+    "cached_jacobian.py": "f613370617d7e0bd7815cf441dd8ba5f41816ad4791275e86f33de228657c79b",
+    "protocol.json": "3b608f942f3d08f40705e8203375fc7e24763592bd27d7cc70bac12b351391e6",
+    "public_map_builder.py": "622a624f54b17d9d882da9d88af547c516b26ee42c87d80ec68d5fe99a687ec1",
+    "test_lifecycle.py": "2526a76b539af952a9a9707f6723493ad571723012ed48c8e3738b8432a80414",
+    "test_manufactured.py": "c7d7d9d9e152b4b0c037b5cd2efc411356d2c1206b5ce3824ed8a351acda3104",
+    "verify_native_fields.py": "c660a025badbebd5e9d9a4d6ddbfc684c95193c6111f2de349f25112976d1d6b"
+  },
+  "local_test_runtime": {
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O"
+  },
+  "no_current_native_authorization": true,
+  "remote_controls58_unexecuted": true,
+  "scientific_goals_complete": false
+}

@@ -1,0 +1,106 @@
+{
+  "dataset_manifest_sha256": "e297ab5196bd50142db76a575c78355587bba04f6b381a0ef8700c950d04155a",
+  "role_manifest_sha256": "30fed6e30e07a1b54d17f3ae9511d06eac6f44c69fcb57b6ee588f2ade65ef14",
+  "opened_array_roles": [
+    "train",
+    "validation"
+  ],
+  "input_file_sha256": {
+    "data/reference/subsurfacegen_parent_split/train.npz": "5cd86a6af207190f242ec372ae28ea4872c825c8a9bc4dee7e0cdb2637fb590b",
+    "data/reference/subsurfacegen_parent_split/train_metadata.csv": "f41a30ae3039534665830c1e62a1f4e3d03aca2a73bfa2c69d89e9be4eb9e1f6",
+    "data/reference/subsurfacegen_parent_split/validation.npz": "36d11aba94ae9093cac888e9b28a2d01edcef1aa3a54b12f8e10269b963db2fc",
+    "data/reference/subsurfacegen_parent_split/validation_metadata.csv": "d3ce8ab6a3474a6bc17595f26b68940e7c7ad9481d8c80fb89fe04833e6996e6"
+  },
+  "parent_and_slice_audit": {
+    "roles": {
+      "train": {
+        "rows": 816,
+        "unique_slices": 34,
+        "unique_parent_models": 17,
+        "parent_models": [
+          "f3_044",
+          "f3_045",
+          "f3_047",
+          "f3_049",
+          "f3_050",
+          "gom_142",
+          "gom_143",
+          "gom_145",
+          "gom_146",
+          "gom_147",
+          "gom_150",
+          "salt_canopy_000",
+          "salt_canopy_001",
+          "seam_003",
+          "seam_006",
+          "seam_007",
+          "seam_010"
+        ],
+        "rows_per_parent": {
+          "f3_044": 48,
+          "f3_045": 48,
+          "f3_047": 48,
+          "f3_049": 48,
+          "f3_050": 48,
+          "gom_142": 48,
+          "gom_143": 48,
+          "gom_145": 48,
+          "gom_146": 48,
+          "gom_147": 48,
+          "gom_150": 48,
+          "salt_canopy_000": 48,
+          "salt_canopy_001": 48,
+          "seam_003": 48,
+          "seam_006": 48,
+          "seam_007": 48,
+          "seam_010": 48
+        },
+        "geology_counts": {
+          "f3": 240,
+          "gom": 288,
+          "salt_canopy": 96,
+          "seam": 192
+        }
+      },
+      "validation": {
+        "rows": 192,
+        "unique_slices": 8,
+        "unique_parent_models": 4,
+        "parent_models": [
+          "gom_148",
+          "gom_151",
+          "seam_005",
+          "seam_011"
+        ],
+        "rows_per_parent": {
+          "gom_148": 48,
+          "gom_151": 48,
+          "seam_005": 48,
+          "seam_011": 48
+        },
+        "geology_counts": {
+          "gom": 96,
+          "seam": 96
+        }
+      }
+    },
+    "pairwise_overlap": [
+      {
+        "roles": [
+          "train",
+          "validation"
+        ],
+        "overlapping_slices": [],
+        "overlapping_parent_models": []
+      }
+    ],
+    "conflicting_slice_parent_ids": [],
+    "slice_isolation_passed": true,
+    "parent_isolation_passed": true,
+    "exchangeability_established": false,
+    "statistical_scope": "Parent isolation is necessary but not sufficient for pooled conformal coverage; fixed geology quotas and unequal within-parent sampling require separate justification.",
+    "scope": "Manifest isolation only; does not prove independent sampling, unseen data, or checkpoint provenance."
+  },
+  "calibration_or_test_arrays_loaded": false,
+  "external_test_arrays_loaded": false
+}

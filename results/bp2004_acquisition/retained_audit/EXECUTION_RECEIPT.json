@@ -1,0 +1,32 @@
+{
+  "scope": "Post-terminal read-only retained BP2004 artifact audit; no acquisition restart or scientific evaluation",
+  "working_directory": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/bp2004_acquisition_post_audit",
+  "auditor_source": "audit_retained_bp2004.py",
+  "auditor_source_sha256": "ee6b47136cbbd7c28b612e27b46320a4466879f891461380d24a480fe5a5747b",
+  "lint": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -m ruff check --no-cache --config ../../wavecert-fwi/pyproject.toml audit_retained_bp2004.py",
+    "exit_code": 0,
+    "tool_output_chunk_id": "c613a2",
+    "result": "All checks passed!"
+  },
+  "audit": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 OMP_NUM_THREADS=1 /opt/miniconda3/bin/python -W error audit_retained_bp2004.py --run ../../bp2004_acquisition_run_01 --frozen ../bp2004_acquisition_v2 --freeze ../../bp2004_acquisition_preexecution_freeze_v2.json --log ../../bp2004_acquisition_execution_01.log --report retained_audit_01.json",
+    "exit_code": 0,
+    "tool_output_chunk_id": "61032f",
+    "unified_exec_session_id": null,
+    "session_note": "Completed synchronously; no ongoing session ID returned.",
+    "log": "retained_audit_01.log",
+    "exit_file": "retained_audit_01.exit",
+    "report": "retained_audit_01.json",
+    "report_sha256": "ca60a313a3a679cea68b752c424bdfe74dc5beed8d127f416af1d1d9377f9448",
+    "result": "PASS_RETAINED_ARTIFACT_AUDIT_WITH_EXPLICIT_STREAM_LIMITS",
+    "checks": 84,
+    "failed": 0,
+    "first_attempt_no_mismatch_or_fix": true
+  },
+  "limits": [
+    "No whole compressed/uncompressed payload was retained; complete stream SHA256/CRC/ISIZE and raw crop-parent decoding are collector-supported records, not independently re-decoded or recomputed by this retained-artifact audit.",
+    "Independent verification here covers retained files, headers, NPY arrays, exact stride equality, fixed-index arithmetic, source snapshots, original PDF, attribution and one-ancestor provenance.",
+    "No duplicate network request, file mutation in the run/frozen candidate/repository, PDE, plot, physical inference or scientific outcome analysis."
+  ]
+}

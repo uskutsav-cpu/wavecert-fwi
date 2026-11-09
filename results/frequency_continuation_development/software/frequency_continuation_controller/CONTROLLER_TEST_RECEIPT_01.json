@@ -1,0 +1,40 @@
+{
+  "created_utc": "2026-11-08T17:26:04.526601+00:00",
+  "result": "20_MANUFACTURED_CONTROLS_PASS",
+  "files_sha256": {
+    "controller.py": "a23210c8ced0988019d3400119ba918ae4925e8185c21ea384f9ec109bf52e1b",
+    "test_controller.py": "4fac221475fa117ac9e5acfe593eeca7260a14255fb41b6a06298f1cc3785af6",
+    "bounded_exact.py": "dd5c1e1bf2745ba34d4e8fa165617037cb23602523d5d55419f76cd34999d8ad",
+    "CONTROLLER_PRECONTROL_FREEZE_01.json": "056cea3195647a7df1656b33a90198e2b0caee63c0bb1654a52dd9ef6824e04b",
+    "controller_controls_01.log": "eb4850d7dec9506dca7f0cce60dd3144b067bacacb5dc55eb41161af46c8d1f9",
+    "controller_tests_ruff_02.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  },
+  "actual_execution": {
+    "tool_chunk": "c5bed1",
+    "exit_code": 0,
+    "pytest_passed": 20,
+    "pytest_seconds": 7.64,
+    "tool_wall_seconds": 9.695351667,
+    "command": "env PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest work/new-phase-staging/frequency_continuation_controller/test_controller.py -W error -q -s > work/new-phase-staging/frequency_continuation_controller/controller_controls_01.log 2>&1",
+    "scope": "All20 manufactured controls;4real tiny4x5 Helmholtz/nativeExactMeritOracle/boundedSciPy arm integrations. Frozen/scripted clocks are correctness controls, not measured performance evidence. No projectarrays,49-grid study or projecttrajectories."
+  },
+  "ruff": {
+    "tool_chunk": "c43f38",
+    "exit_code": 0,
+    "result": "PASS"
+  },
+  "independent_source_review": {
+    "agent": "/root/realistic_physics_gap",
+    "result": "CLEAR",
+    "source_sha256": "a23210c8ced0988019d3400119ba918ae4925e8185c21ea384f9ec109bf52e1b",
+    "no_execution_by_reviewer": true,
+    "open_issue": "Separate bounded-engine metadata/output-envelope decision pending root. No controller-accounting blocker found."
+  },
+  "preserved_failures": [
+    "InitialsourcewriteENOSPC; old9d039 draft remained intact, laterfree-space recoverycause unverified.",
+    "Initialcontroller staticRuff parse failure from missingclosingparenthesis atline305; exactsource/failure receipt preserved inhistory/first_static_check. No numeric execution before correction."
+  ],
+  "no_project_GO": true,
+  "student_final_design": false,
+  "physical_or_recovery_acceptance": null
+}

@@ -1,0 +1,29 @@
+{
+  "scope": "Tiny dummy subprocess controls only; no project reads/solves",
+  "source_sha256": {
+    "launch_cohort.py": "8eadff39dbed6b6ed2c534e66dbdcc0f08e5c860145bacee65b513e5e9428f29",
+    "test_launcher.py": "2c41e3b483390f1f6f1bc11be6dddc8594088a99538bd4fc189cd58df20f8f21"
+  },
+  "pytest": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -m pytest work/new-phase-staging/frequency_continuation_launcher/test_launcher.py -q -W error -p no:cacheprovider",
+    "session": 61772,
+    "initial_chunk": "2e7e02",
+    "terminal_chunk": "eb4ced",
+    "exit": 0,
+    "passed": 10,
+    "seconds": 1.85
+  },
+  "ruff": {
+    "exit": 1,
+    "finding": "Two I001 import-order issues only",
+    "chunk": "06c316"
+  },
+  "default": {
+    "exit": 0,
+    "chunk": "4b732d"
+  },
+  "Python310_AST": {
+    "exit": 0,
+    "chunk": "56795c"
+  }
+}

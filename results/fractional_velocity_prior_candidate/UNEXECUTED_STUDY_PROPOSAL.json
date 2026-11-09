@@ -1,0 +1,84 @@
+{
+  "schema_version": "fractional_velocity_prior_candidate_proposal_v1",
+  "status": "unexecuted AI engineering development proposal; not an execution registration or student final design",
+  "project_array_decode_performed_in_this_component_phase": false,
+  "project_PDE_or_inversion_performed_in_this_component_phase": false,
+  "actual_48_run_driver_implemented": false,
+  "execution_authorized_by_this_file": false,
+  "hypothesis": "A fixed truth-blind fractional-velocity-update penalty permits meaningful returned velocity recovery beyond the supplied initialization and unregularized exact inversion at the same complete time allowance, rather than merely suppressing damaging drift.",
+  "production_source_contract_to_preserve": {
+    "sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+    "file_count": 161,
+    "note": "This staging component does not mutate production source. A future driver requires independent review and an explicit execution freeze."
+  },
+  "proposed_development_scope": {
+    "case_count": 8,
+    "case_order": ["gom_148_il_0236", "gom_148_xl_0768", "seam_011_il_0522", "seam_011_xl_0866", "gom_151_il_0247", "gom_151_xl_0857", "seam_005_il_0596", "seam_005_xl_0795"],
+    "case_identity_status": "Proposed same inspected development slices; a future registration must bind input hashes and confirm the exact existing order.",
+    "arms": [
+      {"name": "normalized_exact_data_only", "lambda": 0.0},
+      {"name": "normalized_exact_fractional_update_prior", "lambda": 100.0}
+    ],
+    "timing_repetitions_per_case_arm": 3,
+    "total_planned_slots_if_approved": 48,
+    "order": "Shuffle two arms inside every case/repetition; exact seed and full 48-slot order must be saved in a later reviewed execution registration before project array decode.",
+    "independent_geological_sample_claim": false,
+    "frequencies_Hz": [0.25, 0.5, 1.0, 2.0, 2.5, 3.0, 3.5, 4.0],
+    "grid_shape": [49, 49],
+    "grid_spacing_km": 0.025,
+    "sources": 6,
+    "receivers": 20,
+    "initialization": "Identical native-m bytes in both arms; no velocity roundtrip. Existing truth-derived synthetic smoothing initializer must be disclosed as a supplied-prior assumption."
+  },
+  "objective": {
+    "formula": "F_lambda = Phi(m)/Phi(m0) + lambda*R(m)",
+    "normalization": "Phi(m0) must be positive finite and evaluated under the run clock. Both arms use identical normalization; no floor and no reuse of historical unnormalized baseline outcomes.",
+    "q": "q_i = m_i^(-1/2)/m0_i^(-1/2)-1",
+    "R": "[sum_i q_i^2 + (ell/h)^2 sum_horizontal_and_vertical_edges (q_i-q_j)^2]/(2*N)",
+    "N": 2401,
+    "h_km": 0.025,
+    "ell_km": 0.1,
+    "edge_rule": "Each nearest-neighbour edge once; no periodic edges, ghosts, or edge-count normalization.",
+    "gradient": "diag(-0.5*m^(-3/2)/v0) * [q+(ell/h)^2*L_graph*q]/N",
+    "weight_interpretation": "A spatially constant 10% fractional velocity update has R=0.005 and lambda*R=0.5 at lambda=100.",
+    "prior_scale_status": "Fixed engineering values, not noise-estimated, physically calibrated, truth-tuned, or guaranteed optimal. Noiseless observations do not support a discrepancy-principle claim.",
+    "lambda_zero_behavior": "Return Phi/Phi0 and g/Phi0 without evaluating R; all actually incurred constructor and validation costs remain paid.",
+    "initial_gradient_limitation": "R and its gradient equal zero at m0; this prior does not change the already inspected initial data-gradient direction."
+  },
+  "proposed_matched_allowance_contract": {
+    "complete_return_cap_seconds": 8.0,
+    "absolute_solver_deadline_seconds": 7.5,
+    "reserve_is_guarantee": false,
+    "proposed_callback_safety_cap": 4096,
+    "solver": "Exact native-m L-BFGS-B for both arms; maxcor10, maxls12, ftol1e-12, gtol1e-10. Later implementation must retain complete library-default and query accounting.",
+    "box": [0.027777777777777776, 1.0],
+    "paid": ["input and source checks", "refinement and synthetic initializer", "fresh all-eight observations", "cold owner construction", "prior anchor construction", "positive initial-data normalization", "regularizer values and gradients", "exact reference values and gradients", "rejected trials", "bounded progress and policy queries", "common-eight final objective", "return payload validation/serialization", "complete caller-observed return"],
+    "work_reuse": "No cross-arm/cross-run factor, field, normalization, receipt or optimizer-history sharing.",
+    "quality_selection": "Only the last chronologically eligible model, with no truth-based checkpoint choice. Late/failed returns retain outcomes and receive no success credit.",
+    "after_return": ["truth/recovery metrics without policy feedback", "independent scalar/objective audits", "archival compression", "figures"],
+    "cost_claim_limit": "Shared allowance is not exact equality of actual consumed time. Record actual times and work; report shared bootstrap and all development cost separately, with no free tuning or training claim."
+  },
+  "fixed_proposed_development_continuation_gates": {
+    "complete_eligible_repetitions_required_per_case_arm": 3,
+    "successful_case_requires_all": ["regularized case-median velocity error <=0.90*initial velocity error", "regularized case-median velocity error <=0.90*paired normalized exact data-only case median", "regularized case-median returned common-eight Phi/Phi0 <=0.75"],
+    "successful_cases_required_of_eight": 6,
+    "no_case_may_exceed_initial_error_factor": 1.1,
+    "failures": "Any incomplete eligibility group fails the continuation gate; preserve every planned slot without replacing, omitting, selecting repetitions or imputing a successful deadline.",
+    "near_initial_model_is_success": false,
+    "interpretation": "Heuristic preregisterable development gates, not IID inference, geological confirmation, method novelty, competition readiness, or a final student design."
+  },
+  "truth_access_contract_for_future_driver": {
+    "prior_inputs": ["supplied initial m", "grid spacing", "fixed smoothing length", "fixed lambda"],
+    "forbidden_policy_inputs": ["true model or truth metrics", "initial-to-truth distance", "truth TV or roughness radius", "post-outcome best lambda", "post-outcome best checkpoint"],
+    "future_controls_required": ["prove regularizer construction is unchanged when an unavailable truth label changes while supplied initializer stays fixed", "keep truth metric computation strictly after return without feedback", "bind exact observed-data and initializer source hashes", "independently review source/dataflow before project execution"]
+  },
+  "stop_go": {
+    "if_failed": "Preserve the negative result. Do not promote best-looking cases or retrospectively select a different lambda as confirmation.",
+    "if_passed": "Freeze this candidate before independent-ancestry, physically accepted confirmation. Only then assess certificate acceleration against the useful exact baseline at fully paid total cost.",
+    "novelty": "Classical Tikhonov-style update regularization. Positive recovery would strengthen the baseline/task, not establish a distinct certification contribution."
+  },
+  "primary_references": [
+    "https://comptes-rendus.academie-sciences.fr/mecanique/item/10.1016/j.crme.2010.07.002.pdf",
+    "https://doi.org/10.1137/17M111328X"
+  ]
+}

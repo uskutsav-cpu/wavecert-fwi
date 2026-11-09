@@ -1,0 +1,309 @@
+[
+  {
+    "bytes": 408409,
+    "filename": "pyrevolve-2.2.8-cp311-cp311-linux_x86_64.whl",
+    "name": "pyrevolve",
+    "requires_dist": [
+      "contexttimer",
+      "numpy",
+      "blosc2; extra == \"compression\"",
+      "pyzfp; extra == \"compression\""
+    ],
+    "sha256": "315864d828a007325081738c3acec7184f9371fed2bfac0e1bbcb275f73e32b1",
+    "version": "2.2.8"
+  },
+  {
+    "bytes": 5850,
+    "filename": "contexttimer-0.3.3-py3-none-any.whl",
+    "name": "contexttimer",
+    "requires_dist": [],
+    "sha256": "fc2a9a89b65dbe8024c3c5b0cdcc1720ab22fac064d9c7d38092261d51bdccd9",
+    "version": "0.3.3"
+  },
+  {
+    "bytes": 19880,
+    "filename": "cgen-2025.1-py3-none-any.whl",
+    "name": "cgen",
+    "requires_dist": [
+      "numpy>=1.6",
+      "pytools>=2022.1.14",
+      "typing-extensions>=4.5",
+      "pytest; extra == 'test'",
+      "ruff; extra == 'test'"
+    ],
+    "sha256": "3b73d2e1072e3ef19688c4e3465ac88bcc10d9ad83aa25a7bddf996d7bbc1d73",
+    "version": "2025.1"
+  },
+  {
+    "bytes": 24953,
+    "filename": "codepy-2023.1-py3-none-any.whl",
+    "name": "codepy",
+    "requires_dist": [
+      "pytools>=2015.1.2",
+      "numpy>=1.6",
+      "platformdirs>=2.2.0",
+      "cgen"
+    ],
+    "sha256": "4a47dcc52e9b1e843ee981ba0771c9390a24c4f78bcd7e7afb1b67d932ac44cc",
+    "version": "2023.1"
+  },
+  {
+    "bytes": 16901035,
+    "filename": "numpy-2.4.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+    "name": "numpy",
+    "requires_dist": [],
+    "sha256": "715de7f82e192e8cae5a507a347d97ad17598f8e026152ca97233e3666daaa71",
+    "version": "2.4.3"
+  },
+  {
+    "bytes": 35349300,
+    "filename": "scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+    "name": "scipy",
+    "requires_dist": [
+      "numpy<2.7,>=1.26.4",
+      "pytest>=8.0.0; extra == \"test\"",
+      "pytest-cov; extra == \"test\"",
+      "pytest-timeout; extra == \"test\"",
+      "pytest-xdist; extra == \"test\"",
+      "asv; extra == \"test\"",
+      "mpmath; extra == \"test\"",
+      "gmpy2; extra == \"test\"",
+      "threadpoolctl; extra == \"test\"",
+      "scikit-umfpack; extra == \"test\"",
+      "pooch; extra == \"test\"",
+      "hypothesis>=6.30; extra == \"test\"",
+      "array-api-strict>=2.3.1; extra == \"test\"",
+      "Cython; extra == \"test\"",
+      "meson; extra == \"test\"",
+      "ninja; sys_platform != \"emscripten\" and extra == \"test\"",
+      "sphinx<8.2.0,>=5.0.0; extra == \"doc\"",
+      "intersphinx_registry; extra == \"doc\"",
+      "pydata-sphinx-theme>=0.15.2; extra == \"doc\"",
+      "sphinx-copybutton; extra == \"doc\"",
+      "sphinx-design>=0.4.0; extra == \"doc\"",
+      "matplotlib>=3.5; extra == \"doc\"",
+      "numpydoc; extra == \"doc\"",
+      "jupytext; extra == \"doc\"",
+      "myst-nb>=1.2.0; extra == \"doc\"",
+      "pooch; extra == \"doc\"",
+      "jupyterlite-sphinx>=0.19.1; extra == \"doc\"",
+      "jupyterlite-pyodide-kernel; extra == \"doc\"",
+      "linkify-it-py; extra == \"doc\"",
+      "tabulate; extra == \"doc\"",
+      "click<8.3.0; extra == \"dev\"",
+      "spin; extra == \"dev\"",
+      "mypy==1.10.0; extra == \"dev\"",
+      "typing_extensions; extra == \"dev\"",
+      "types-psutil; extra == \"dev\"",
+      "pycodestyle; extra == \"dev\"",
+      "ruff>=0.12.0; extra == \"dev\"",
+      "cython-lint>=0.12.2; extra == \"dev\""
+    ],
+    "sha256": "43af8d1f3bea642559019edfe64e9b11192a8978efbd1539d7bc2aaa23d92de4",
+    "version": "1.17.1"
+  },
+  {
+    "bytes": 36104794,
+    "filename": "devito-4.8.23-py3-none-any.whl",
+    "name": "devito",
+    "requires_dist": [
+      "pip<=26.2,>=9.0.1",
+      "numpy<=2.4.3,>=1.26",
+      "sympy<1.15,>=1.12.1",
+      "psutil<8.0,>=5.1.0",
+      "py-cpuinfo<10",
+      "cgen<2026,>=2020.1",
+      "codepy<2025,>=2019.1",
+      "multidict<6.3",
+      "anytree<=2.13.0,>=2.4.3",
+      "packaging<26.3",
+      "mpi4py<4.1.3; extra == \"mpi\"",
+      "ipyparallel<9.3; extra == \"mpi\"",
+      "cupy-cuda12x<14.1.2; extra == \"nvidia\"",
+      "dask-cuda<26.2.1; extra == \"nvidia\"",
+      "jupyterlab<4.4.2,>=3; extra == \"nvidia\"",
+      "jupyterlab-nvdashboard<0.13.1; extra == \"nvidia\"",
+      "dask_labextension<7.0.1; extra == \"nvidia\"",
+      "fsspec<2026.7.1; extra == \"nvidia\"",
+      "pytest<9.2,>=7.2; extra == \"tests\"",
+      "pytest-runner<6.0.2; extra == \"tests\"",
+      "pytest-cov<7.1.1; extra == \"tests\"",
+      "flake8-pyproject<1.2.5,>=1.2.3; extra == \"tests\"",
+      "nbval<0.11.1; extra == \"tests\"",
+      "scipy<1.18.1,>=1.8.0; extra == \"tests\"",
+      "pooch<1.9.1; extra == \"tests\"",
+      "click<9.0; extra == \"tests\"",
+      "cloudpickle<3.1.3; extra == \"tests\"",
+      "ipympl<0.10.1; extra == \"tests\"",
+      "ipykernel<7.0.0; extra == \"tests\"",
+      "matplotlib<3.10.10; extra == \"extras\"",
+      "pillow<12.2.1,>11; extra == \"extras\"",
+      "pyrevolve==2.2.8; extra == \"extras\"",
+      "scipy<1.18.1,>=1.8.0; extra == \"extras\"",
+      "distributed<2026.7.2; extra == \"extras\"",
+      "click<9.0; extra == \"extras\"",
+      "cloudpickle<3.1.3; extra == \"extras\""
+    ],
+    "sha256": "de5e7ce9026edefe214295216ecc13e0592139c6942a02a4bbf93c3cc8910a3d",
+    "version": "4.8.23"
+  },
+  {
+    "bytes": 1816475,
+    "filename": "pip-26.2-py3-none-any.whl",
+    "name": "pip",
+    "requires_dist": [],
+    "sha256": "931c303696af6fa3417112103b1cad26890e5a07eccb5b99783700e33f2b8aad",
+    "version": "26.2"
+  },
+  {
+    "bytes": 45077,
+    "filename": "anytree-2.13.0-py3-none-any.whl",
+    "name": "anytree",
+    "requires_dist": [],
+    "sha256": "4cbcf10df36b1f1cba131b7e487ff3edafc9d6e932a3c70071b5b768bab901ff",
+    "version": "2.13.0"
+  },
+  {
+    "bytes": 133312,
+    "filename": "multidict-6.2.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+    "name": "multidict",
+    "requires_dist": [
+      "typing-extensions>=4.1.0; python_version < \"3.11\""
+    ],
+    "sha256": "4ac3fcf9a2d369bd075b2c2965544036a27ccd277fc3c04f708338cc57533081",
+    "version": "6.2.0"
+  },
+  {
+    "bytes": 100195,
+    "filename": "packaging-26.2-py3-none-any.whl",
+    "name": "packaging",
+    "requires_dist": [],
+    "sha256": "5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e",
+    "version": "26.2"
+  },
+  {
+    "bytes": 155560,
+    "filename": "psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl",
+    "name": "psutil",
+    "requires_dist": [
+      "psleak ; extra == 'dev'",
+      "pytest ; extra == 'dev'",
+      "pytest-instafail ; extra == 'dev'",
+      "pytest-xdist ; extra == 'dev'",
+      "setuptools ; extra == 'dev'",
+      "abi3audit ; extra == 'dev'",
+      "black ; extra == 'dev'",
+      "check-manifest ; extra == 'dev'",
+      "coverage ; extra == 'dev'",
+      "packaging ; extra == 'dev'",
+      "pylint ; extra == 'dev'",
+      "pyperf ; extra == 'dev'",
+      "pypinfo ; extra == 'dev'",
+      "pytest-cov ; extra == 'dev'",
+      "requests ; extra == 'dev'",
+      "rstcheck ; extra == 'dev'",
+      "ruff ; extra == 'dev'",
+      "sphinx ; extra == 'dev'",
+      "sphinx-rtd-theme ; extra == 'dev'",
+      "toml-sort ; extra == 'dev'",
+      "twine ; extra == 'dev'",
+      "validate-pyproject[all] ; extra == 'dev'",
+      "virtualenv ; extra == 'dev'",
+      "vulture ; extra == 'dev'",
+      "wheel ; extra == 'dev'",
+      "colorama ; (os_name == \"nt\") and extra == 'dev'",
+      "pyreadline3 ; (os_name == \"nt\") and extra == 'dev'",
+      "pywin32 ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'dev'",
+      "wheel ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'dev'",
+      "wmi ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'dev'",
+      "psleak ; extra == 'test'",
+      "pytest ; extra == 'test'",
+      "pytest-instafail ; extra == 'test'",
+      "pytest-xdist ; extra == 'test'",
+      "setuptools ; extra == 'test'",
+      "pywin32 ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'test'",
+      "wheel ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'test'",
+      "wmi ; (os_name == \"nt\" and implementation_name != \"pypy\") and extra == 'test'"
+    ],
+    "sha256": "076a2d2f923fd4821644f5ba89f059523da90dc9014e85f8e45a5774ca5bc6f9",
+    "version": "7.2.2"
+  },
+  {
+    "bytes": 22335,
+    "filename": "py_cpuinfo-9.0.0-py3-none-any.whl",
+    "name": "py-cpuinfo",
+    "requires_dist": [],
+    "sha256": "859625bc251f64e21f077d099d4162689c762b5d6a4c3c97553d56241c9674d5",
+    "version": "9.0.0"
+  },
+  {
+    "bytes": 6299353,
+    "filename": "sympy-1.14.0-py3-none-any.whl",
+    "name": "sympy",
+    "requires_dist": [
+      "mpmath<1.4,>=1.1.0",
+      "pytest>=7.1.0; extra == \"dev\"",
+      "hypothesis>=6.70.0; extra == \"dev\""
+    ],
+    "sha256": "e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5",
+    "version": "1.14.0"
+  },
+  {
+    "bytes": 536198,
+    "filename": "mpmath-1.3.0-py3-none-any.whl",
+    "name": "mpmath",
+    "requires_dist": [
+      "pytest (>=4.6) ; extra == 'develop'",
+      "pycodestyle ; extra == 'develop'",
+      "pytest-cov ; extra == 'develop'",
+      "codecov ; extra == 'develop'",
+      "wheel ; extra == 'develop'",
+      "sphinx ; extra == 'docs'",
+      "gmpy2 (>=2.1.0a4) ; (platform_python_implementation != \"PyPy\") and extra == 'gmpy'",
+      "pytest (>=4.6) ; extra == 'tests'"
+    ],
+    "sha256": "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c",
+    "version": "1.3.0"
+  },
+  {
+    "bytes": 35402,
+    "filename": "platformdirs-4.14.5-py3-none-any.whl",
+    "name": "platformdirs",
+    "requires_dist": [],
+    "sha256": "8e778c6fa421516f4d3369449f8df3b0e1b72c0e0005fe88e3ec772d0a14e750",
+    "version": "4.14.5"
+  },
+  {
+    "bytes": 99212,
+    "filename": "pytools-2026.1.1-py3-none-any.whl",
+    "name": "pytools",
+    "requires_dist": [
+      "platformdirs>=2.2",
+      "siphash24>=1.6",
+      "typing-extensions>=4.5",
+      "numpy>=1.6; extra == 'numpy'",
+      "basedpyright; extra == 'test'",
+      "optype; extra == 'test'",
+      "pytest; extra == 'test'",
+      "ruff; extra == 'test'"
+    ],
+    "sha256": "1f6d9a39c871b6dc761893373792f10b67886c83e38f2aa09b66e11f8c021436",
+    "version": "2026.1.1"
+  },
+  {
+    "bytes": 103506,
+    "filename": "siphash24-1.9-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+    "name": "siphash24",
+    "requires_dist": [],
+    "sha256": "61eb4ba1cfe4950e89ef0bcaf3588fb554efa5b7ab3f75d17648a0582c204874",
+    "version": "1.9"
+  },
+  {
+    "bytes": 45571,
+    "filename": "typing_extensions-4.16.0-py3-none-any.whl",
+    "name": "typing-extensions",
+    "requires_dist": [],
+    "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+    "version": "4.16.0"
+  }
+]

@@ -281,3 +281,71 @@ The adaptive algorithm consequently follows this loop:
 5. otherwise replace the largest-uncertainty block by its exact gradient and repeat.
 
 This is the central correctness invariant of the Phase-6 implementation.
+
+## 0.6 clarification: statistical gates and finite steps
+
+The historical Phase-5 block scores were measured along the original neural
+direction. Bonferroni over those block labels does not extend them to all
+adaptively changed directions. The new `statistics.pathwise` score instead takes
+the maximum normalized error over every unrepaired block and every round of the
+complete, uniformly scaled greedy repair path **at a fixed inversion state**.
+Strictly positive uniform scaling preserves that ordering. A zero calibration
+quantile uses the conservative deterministic scale one; an unsupported infinite
+quantile rejects deployment. Neither construction covers a later inversion state
+without an additional argument. Parent-level geology calibration additionally
+maximizes over the same predeclared within-parent sampling protocol and requires
+exchangeability of the parent units.
+
+`D Phi(m)[v] < 0` guarantees existence of sufficiently small improving steps for
+a smooth objective. It does not justify an arbitrary step or a box-projected
+displacement. The optimizer therefore exposes three distinct acceptance modes:
+
+- `surrogate`: legacy surrogate-merit decrease; no true finite-step guarantee.
+- `exact-decrease`: strict true discrete-objective decrease, with all current
+  and trial exact-forward evaluations counted online.
+- `exact-armijo`: sufficient decrease using the true gradient and the actual
+  projected displacement; true-gradient verification is counted online.
+
+None proves global convergence from the present finite experiments. An accepted
+decrease can still give poor recovery in a non-identifiable or noisy problem.
+
+## 0.6 analytical stability alternative
+
+This option applies only to the current five-point, constant-spacing Dirichlet
+operator `A=K-omega^2 diag(m)+i omega diag(d)`. Its Laplacian eigenvalues are
+
+`lambda_(j,k) = 4/h^2 [sin^2(j*pi/(2*(nz+1))) + sin^2(k*pi/(2*(nx+1)))]`.
+
+For constants `m0,d0`, the normal matrix
+
+`B=K-omega^2 m0 I+i omega d0 I`
+
+has minimum singular value
+
+`delta = min_(j,k) hypot(lambda_(j,k)-omega^2*m0, omega*d0)`.
+
+The diagonal perturbation has exact norm
+
+`epsilon = max_i hypot(omega^2*(m_i-m0), omega*(d_i-d0))`.
+
+For every vector `x`, the triangle inequality gives
+
+`||A x|| >= ||B x|| - ||(A-B)x|| >= (delta-epsilon)||x||`.
+
+Thus `max(0,delta-epsilon)` lower-bounds `sigma_min(A)`. Maximizing valid lower
+bounds over a fixed small collection of reference centers preserves validity.
+Positive or negative real-part coercivity supplies further candidates
+`lambda_min(K)-omega^2*max(m)` and
+`omega^2*min(m)-lambda_max(K)` when positive.
+
+The implementation evaluates these candidates in linear storage/time for a
+fixed number of centers, without an online factorization, solve, or SVD. It
+subtracts a small downward floating-point allowance, which is **not** a formally
+verified rounding-error enclosure. Near-threshold validity at the machine level
+would require interval arithmetic or another verified numerical treatment.
+
+Zero means the sufficient test is unavailable, not that the PDE is singular.
+The adaptive policy then falls back to exact gradients before neural inference,
+or abstains if the exact budget cannot support that fallback. The tested
+heterogeneous 64-by-64 cases produced zero lower bounds, so this method does not
+resolve practical field-scale Helmholtz stability.

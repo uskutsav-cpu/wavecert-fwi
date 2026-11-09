@@ -1,0 +1,134 @@
+{
+  "comparison_binding": "Root-pinned aggregate57call schedule and per-worker status/completion/case/call identity must match. Required probe/adjoint/observed artifacts use aggregate-root-bound receipts; native source/geometry/model/masks/residual/fold/direction witnesses are checked after all3 own solves. Trace and known first-direction prefixes persist if later comparison fails.",
+  "created_utc": "2026-11-08T08:59:06.548262+00:00",
+  "files_sha256": {
+    "DERIVATION.json": "197c89a0c499ad9bb9e85a84512700e3d86157bcef46891414dc71f5d413a2c5",
+    "SCOPE.json": "93ba24162ffb9cda5049deda7c36f6f1389216ef9dfd3cee8c4282e72f94f896",
+    "default_metadata_execution_final.log": "916e34f7d2445875b5a7393b65bc847af5d809a25204a9e9cd0881eb188edb58",
+    "manufactured_execution_01.log": "593c3e53713ce3321136d4e6a74604db2cadf96a6715b24683aa3db0e09d3096",
+    "manufactured_phase_guards_execution_01.log": "db7f09414dbfd608dbdbc9dc30246e56e6598dc0e7fbf509c46c3bdd43c83e32",
+    "manufactured_phase_guards_execution_02.log": "28f94f35a697eb110a559cd36372f2edb63dbb960fb282482e1dcc485cb9a73e",
+    "manufactured_rolling_execution_01.log": "449f48faab28952069f2e297454c2a3b0f42069bcbc27c7b2b56439fc80297ed",
+    "numpy_bp_tangent.py": "b217dd6d2850f8c264f5910933cb1f4687bed8a7b3e780f7712c750d149328ce",
+    "original_native_protocol.json": "63d8338f6a023f17365b8fa0d706f9f3a04e0b1e96006381e49309c3856444f0",
+    "primary_metadata/operator_metadata.json": "072bb4156bd455ca9b8afe08b90993663b6bb6bdac138fff5af6d582e38275a7",
+    "primary_metadata_execution_01.log": "552cbeb58f07216787936c24569ee742fbdd8b34bd438c021c111901cf5ffd90",
+    "protocol.json": "f0b9db69a434116f212182897f4fa34ffd714782cf0e8dd30adb0410cc139e8c",
+    "query_primary_metadata.py": "e5c22147bd37a5d28c29d227dc8fc6ecdaa1bab6a0e947144c5814b7fa3745c2",
+    "run_replay.py": "c51e570934071eade9e59989cd57daddd064252cd930e410573db0365944d9e0",
+    "source_ruff_attempt_01.log": "36b236aefe67b92abe71e1b307aa09cbc89d14b242dea7a430889edad70bae83",
+    "source_ruff_attempt_02.log": "613dc13c9966788970e5f9b432d76b1f2f4f0d5d66fe1499bdfd0c7fa8d40ca4",
+    "source_ruff_final.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "test_numpy_propagation.py": "bc8a3279ef2f8bd22898f9dfce2c3f8df913aa72847b58cb2322e1057bf2ab32",
+    "test_numpy_tangent.py": "85e0a81ad69dc7559a6bbe58bebe3c71ad89f64ff811a555ab59684fe4ad56f8",
+    "test_replay_guards.py": "e454946c1e258f3f76ecdce7edb552069e31b39b0d3aefeec22adaa51d3665d7"
+  },
+  "fixed_criteria": {
+    "direction_relative_L2": 1e-14,
+    "fold_relative_L2": 1e-13,
+    "gradient_relative_error": 0.001,
+    "near_zero_relative_normscale": 1e-08,
+    "source_relative_L2": 1e-14,
+    "trace_relative_L2": 1e-09
+  },
+  "manufactured_controls": [
+    {
+      "first_log": "manufactured_execution_01.log",
+      "fixed_epsilons": [
+        0.01,
+        0.001,
+        0.0001
+      ],
+      "owner": "verification_helpers_review",
+      "passed": 9,
+      "relative_errors": [
+        5.609367173474379e-07,
+        5.609302308086202e-09,
+        5.604314824557557e-11
+      ],
+      "result": "PASS first attempt,9passed0.06s",
+      "scope": "Independent dense one-step variable-m/damping/source and fixed-history tangent FD, no trajectory/BP inputs"
+    },
+    {
+      "exit_code": 0,
+      "first_log": "manufactured_rolling_execution_01.log",
+      "owner": "candidate_final_review",
+      "passed": 2,
+      "result": "2passed0.11s",
+      "scope": "Short variable-model rolling primal/tangent finite differences at2fixed epsilons per direction, current-slot recording/sentinels; synthetic13x12",
+      "tool_chunk": "b6e5eb"
+    },
+    {
+      "exit_code": 0,
+      "final_log": "manufactured_phase_guards_execution_02.log",
+      "final_tool_chunk": "fb930e",
+      "first_log": "manufactured_phase_guards_execution_01.log",
+      "first_tool_chunk": "c0463c",
+      "owner": "candidate_final_review",
+      "passed": 3,
+      "result": "PASS;14total distinct manufactured/algebra/phase tests across3files",
+      "scope": "Pure synthetic-file/default/terminal-preflight/own-solve-failure controls; no wave propagation"
+    }
+  ],
+  "metadata_query": {
+    "Model_constructor_called": false,
+    "actual_BP_or_native_array_reads": false,
+    "actual_session": 8784,
+    "cached_file_actual_run_ancestry_claim": false,
+    "command": "env PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/miniconda3/bin/python query_primary_metadata.py > primary_metadata_execution_01.log 2>&1",
+    "cwd": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/numpy_bp_tangent_replay",
+    "every_Operator_apply_trapped": true,
+    "exit_code": 0,
+    "fresh_C_equals_cached_C_all3": true,
+    "initial_tool_chunk": "c7061a",
+    "own_analytic_constant_velocity_only": true,
+    "rolling_bounds": {
+      "dt": 0.5,
+      "time_M": 1999,
+      "time_m": 1,
+      "x_M": 271,
+      "x_m": 0,
+      "y_M": 175,
+      "y_m": 0
+    },
+    "saved_wavefield_data_materialized": false,
+    "source_versions": {
+      "devito": "4.8.23",
+      "numpy": "2.4.3",
+      "python": "3.13.13"
+    },
+    "terminal_tool_chunk": "f63fd0"
+  },
+  "project_status": {
+    "actual_execution_authorized": false,
+    "native_BP_numeric_witnesses_read": 0,
+    "native_producer_changed": false,
+    "own_BP_solves": 0,
+    "planned_own_probe_solves": 3,
+    "planned_physical_direction_checks": 6,
+    "source9f_changed": false
+  },
+  "remaining_gate": "Independent source review and exact source/protocol freeze; native57-call producer terminal and separate root GO; every mismatch/uninformative direction retained without retries or tolerance tuning.",
+  "role": "AI reference/source-informed NumPy implementation verification, not student authorship, blind derivation, field truth, novelty or scientific confirmation",
+  "source_checks": {
+    "Python310grammar_files": [
+      "numpy_bp_tangent.py",
+      "run_replay.py",
+      "test_numpy_tangent.py",
+      "test_numpy_propagation.py",
+      "test_replay_guards.py",
+      "query_primary_metadata.py"
+    ],
+    "core_and_first11_test_AST_equal_executed_sources": {
+      "numpy_bp_tangent.py": true,
+      "test_numpy_propagation.py": true,
+      "test_numpy_tangent.py": true
+    },
+    "default_metadata_cli_exit_code": 0,
+    "grammar_pass": true,
+    "ruff_exit_code": 0,
+    "ruff_tool_chunk": "6f494b",
+    "style_history": "Original first successful controls/core/protocol and I001/B007/E701/B023 source-style logs retained in history. Only import layout, unused variable/one-line formatting and explicit synchronous callback binding changed; no numerical coefficient/parameter/tolerance changed."
+  },
+  "status": "SOURCE_AND_MANUFACTURED_CONTROLS_READY_PENDING_INDEPENDENT_REVIEW_NO_PROJECT_EXECUTION"
+}

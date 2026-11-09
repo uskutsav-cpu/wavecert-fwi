@@ -1,0 +1,106 @@
+--- V1/BUNDLE_MANIFEST.json
++++ V2/BUNDLE_MANIFEST.json
+@@ -1,13 +1,13 @@
+ {
+   "files": {
+-    "FROZEN_PLAN23.json": "73432d73bf988a50d3599094f8b09c89e23114450baab3592fb8154c4516626e",
+-    "comparison.py": "379cea02a64509a7e3ec15e3c614d47ed8812863ea41904211376c1b5aa6688b",
++    "FROZEN_PLAN23.json": "d37476a5ee1592a445343ac35de45a45a1de4101ee2fd586e90e465257318a1b",
++    "comparison.py": "b45004ba2cac1030c449695240418de4dae3aaa44f52fc5794d82a19abc398e2",
+     "control_pilot23.py": "ef0b545705fa339659d4ebefecc83bdb9261407418da9c6cce259a78c5d2513c",
+     "controller_policy.json": "4e5e7ba52a6b59a6f792892afedd34c3e6f8dd561be21cf4e542e28fe8fee9cb",
+-    "pilot23_common.py": "89d429ca486691a2f81aaee2e996fda486148c2622f14115127a4cbbe7de151e",
++    "pilot23_common.py": "7586f619ef65ba14ad6a0ea6d2a23e152859633f44fd9fe73f27f1aa4ea05799",
+     "worker/RUNTIME_SOURCE_PINS.json": "bfbc2e31cd4ff7ae2a0f0342dc3633c5e4dc0189daea0d06eaeb12de1040350f",
+     "worker/pilot_accounting.py": "1b0094af99fb57e44966e18808aa80f939a2a83771ed98c53a94a5e1460f33f2",
+-    "worker/protocol.json": "08f262f638da9a72b262d252ba8e3eaab4452d772d8c80606bc44e7137fba866",
++    "worker/protocol.json": "27e5a331d6bd9eff0dd6b4fa0ca1bc666c6014ed70ffb3da01821c62f83fdcbc",
+     "worker/run_checkpoint_pilot.py": "31969bd3e072dcbf554e0cd98f022b0e35dd5438ef12566f9c23fa98eee76e9b",
+     "worker_entry.py": "045abd794d19987deace0b44fe15894d9d49532135f895e5ba46ed923e94cc82"
+   },
+--- V1/ENVIRONMENT_RECEIPT_TEMPLATE.json
++++ V2/ENVIRONMENT_RECEIPT_TEMPLATE.json
+@@ -10,7 +10,7 @@
+   "python_realpath": null,
+   "python_binary_sha256": null,
+   "prefix": null,
+-  "packages": {"devito": "4.8.23", "pyrevolve": "2.2.8", "numpy": "2.4.6", "scipy": "1.17.1"},
++  "packages": {"devito": "4.8.23", "pyrevolve": "2.2.8", "numpy": "2.4.3", "scipy": "1.17.1"},
+   "modules": null,
+   "preparation_requirement": "Separate root-reviewed ephemeral environment preparation and transitive/build evidence first. Record exactly17 selected actual module paths/hashes:13 primary APIs from the frozen worker pins plus pyrevolve package root, pyrevolve.crevolve compiled scheduler, numpy root and scipy root. Each identity row contains exactly path and sha256. Actual source files must match the frozen selected primary hashes and resolve inside the reviewed prefix. This template cannot pass controller admission."
+ }
+--- V1/FROZEN_PLAN23.json
++++ V2/FROZEN_PLAN23.json
+@@ -304,11 +304,11 @@
+       "state": "unattempted"
+     }
+   ],
+-  "worker_protocol_sha256": "08f262f638da9a72b262d252ba8e3eaab4452d772d8c80606bc44e7137fba866",
++  "worker_protocol_sha256": "27e5a331d6bd9eff0dd6b4fa0ca1bc666c6014ed70ffb3da01821c62f83fdcbc",
+   "worker_source_files": {
+     "RUNTIME_SOURCE_PINS.json": "bfbc2e31cd4ff7ae2a0f0342dc3633c5e4dc0189daea0d06eaeb12de1040350f",
+     "pilot_accounting.py": "1b0094af99fb57e44966e18808aa80f939a2a83771ed98c53a94a5e1460f33f2",
+-    "protocol.json": "08f262f638da9a72b262d252ba8e3eaab4452d772d8c80606bc44e7137fba866",
++    "protocol.json": "27e5a331d6bd9eff0dd6b4fa0ca1bc666c6014ed70ffb3da01821c62f83fdcbc",
+     "run_checkpoint_pilot.py": "31969bd3e072dcbf554e0cd98f022b0e35dd5438ef12566f9c23fa98eee76e9b"
+   }
+ }
+--- V1/HELD_REGISTRATION.json
++++ V2/HELD_REGISTRATION.json
+@@ -1,8 +1,8 @@
+ {
+-  "bundle_manifest_sha256": "0a73d9c6f2a536698129712a19adf191b5ad6c0b548404d55850d09870e05237",
++  "bundle_manifest_sha256": "c8f6cd4a69301df8a04f014746a960eb925cb6acb5346fdfc5a7d5e87901ff3c",
+   "cohort_id": "checkpoint23_constant_01",
+   "execution_authorized": false,
+-  "plan_sha256": "73432d73bf988a50d3599094f8b09c89e23114450baab3592fb8154c4516626e",
++  "plan_sha256": "d37476a5ee1592a445343ac35de45a45a1de4101ee2fd586e90e465257318a1b",
+   "policy_sha256": "4e5e7ba52a6b59a6f792892afedd34c3e6f8dd561be21cf4e542e28fe8fee9cb",
+   "resume": false,
+   "retry": false,
+@@ -13,7 +13,7 @@
+   "worker_source_files": {
+     "RUNTIME_SOURCE_PINS.json": "bfbc2e31cd4ff7ae2a0f0342dc3633c5e4dc0189daea0d06eaeb12de1040350f",
+     "pilot_accounting.py": "1b0094af99fb57e44966e18808aa80f939a2a83771ed98c53a94a5e1460f33f2",
+-    "protocol.json": "08f262f638da9a72b262d252ba8e3eaab4452d772d8c80606bc44e7137fba866",
++    "protocol.json": "27e5a331d6bd9eff0dd6b4fa0ca1bc666c6014ed70ffb3da01821c62f83fdcbc",
+     "run_checkpoint_pilot.py": "31969bd3e072dcbf554e0cd98f022b0e35dd5438ef12566f9c23fa98eee76e9b"
+   }
+ }
+--- V1/comparison.py
++++ V2/comparison.py
+@@ -19,10 +19,10 @@
+ SOURCES = {
+     "run_checkpoint_pilot.py": "31969bd3e072dcbf554e0cd98f022b0e35dd5438ef12566f9c23fa98eee76e9b",
+     "pilot_accounting.py": "1b0094af99fb57e44966e18808aa80f939a2a83771ed98c53a94a5e1460f33f2",
+-    "protocol.json": "08f262f638da9a72b262d252ba8e3eaab4452d772d8c80606bc44e7137fba866",
++    "protocol.json": "27e5a331d6bd9eff0dd6b4fa0ca1bc666c6014ed70ffb3da01821c62f83fdcbc",
+     "RUNTIME_SOURCE_PINS.json": "bfbc2e31cd4ff7ae2a0f0342dc3633c5e4dc0189daea0d06eaeb12de1040350f",
+ }
+-PROTOCOL_OBJECT_SHA = "db2a400346ebd1674bd31215730483eea0159e7e8058fa8ab7e7af84bd10e174"
++PROTOCOL_OBJECT_SHA = "7604536e8c4ee136227a336fbb700c938011e1bcd19af92645296f7e272c4dde"
+ RUNTIME_FILES_SHA = "318a09f325468ebdb4c56aa2c1984eaa4bdae2483c55e04ccccd7ab21723541d"
+ VARIANTS = ("saved", "checkpoint2", "checkpoint4")
+ DIRECTIONS = ("interior", "left_edge")
+--- V1/pilot23_common.py
++++ V2/pilot23_common.py
+@@ -13,7 +13,7 @@
+ WORKER_SOURCES = {
+     "run_checkpoint_pilot.py": "31969bd3e072dcbf554e0cd98f022b0e35dd5438ef12566f9c23fa98eee76e9b",
+     "pilot_accounting.py": "1b0094af99fb57e44966e18808aa80f939a2a83771ed98c53a94a5e1460f33f2",
+-    "protocol.json": "08f262f638da9a72b262d252ba8e3eaab4452d772d8c80606bc44e7137fba866",
++    "protocol.json": "27e5a331d6bd9eff0dd6b4fa0ca1bc666c6014ed70ffb3da01821c62f83fdcbc",
+     "RUNTIME_SOURCE_PINS.json": "bfbc2e31cd4ff7ae2a0f0342dc3633c5e4dc0189daea0d06eaeb12de1040350f",
+ }
+ THREADS = {name: "1" for name in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS",
+--- V1/worker/protocol.json
++++ V2/worker/protocol.json
+@@ -9,7 +9,7 @@
+     "python": "3.11.18",
+     "devito": "4.8.23",
+     "pyrevolve": "2.2.8",
+-    "numpy": "2.4.6",
++    "numpy": "2.4.3",
+     "scipy": "1.17.1",
+     "threads": 1,
+     "installation": "Unexecuted. Ephemeral Linux installation and its dependency/build effects require a separate root-reviewed environment step. This driver never installs or downloads."

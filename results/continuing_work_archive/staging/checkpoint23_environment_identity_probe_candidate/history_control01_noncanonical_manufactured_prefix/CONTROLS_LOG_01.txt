@@ -1,0 +1,58 @@
+test_default_main_creates_no_evidence_or_target_import (__main__.ImportProbeControls.test_default_main_creates_no_evidence_or_target_import) ... ok
+test_exact17_synthetic_origin_set_is_returned_without_real_imports (__main__.ImportProbeControls.test_exact17_synthetic_origin_set_is_returned_without_real_imports) ... ERROR
+test_false_authorization_stops_before_metadata_imports_and_output (__main__.ImportProbeControls.test_false_authorization_stops_before_metadata_imports_and_output) ... ok
+test_grid_constructor_body_is_blocked (__main__.ImportProbeControls.test_grid_constructor_body_is_blocked) ... ok
+test_inherited_constructor_self_mro_is_blocked (__main__.ImportProbeControls.test_inherited_constructor_self_mro_is_blocked) ... ok
+test_inherited_new_cls_mro_is_blocked_in_foreign_helper (__main__.ImportProbeControls.test_inherited_new_cls_mro_is_blocked_in_foreign_helper) ... ok
+test_late_import_mutation_of_earlier_file_is_rejected (__main__.ImportProbeControls.test_late_import_mutation_of_earlier_file_is_rejected) ... FAIL
+test_late_import_repointing_earlier_origin_is_rejected (__main__.ImportProbeControls.test_late_import_repointing_earlier_origin_is_rejected) ... FAIL
+test_missing_primary_denominator_rejects_before_any_import (__main__.ImportProbeControls.test_missing_primary_denominator_rejects_before_any_import) ... ok
+test_nondict_go_has_clean_rejection_before_imports (__main__.ImportProbeControls.test_nondict_go_has_clean_rejection_before_imports) ... ok
+test_nondict_nested_go_has_clean_rejection_before_imports (__main__.ImportProbeControls.test_nondict_nested_go_has_clean_rejection_before_imports) ... ok
+test_operator_apply_body_is_blocked_through_self_mro (__main__.ImportProbeControls.test_operator_apply_body_is_blocked_through_self_mro) ... ok
+test_preexisting_profile_hook_is_not_overwritten (__main__.ImportProbeControls.test_preexisting_profile_hook_is_not_overwritten) ... ok
+test_revolver_subclass_name_is_blocked (__main__.ImportProbeControls.test_revolver_subclass_name_is_blocked) ... ok
+test_unrelated_classes_and_foreign_grid_remain_usable (__main__.ImportProbeControls.test_unrelated_classes_and_foreign_grid_remain_usable) ... ok
+test_wrong_go_hash_stops_before_imports (__main__.ImportProbeControls.test_wrong_go_hash_stops_before_imports) ... ok
+test_wrong_protocol_bytes_stop_before_imports (__main__.ImportProbeControls.test_wrong_protocol_bytes_stop_before_imports) ... ok
+
+======================================================================
+ERROR: test_exact17_synthetic_origin_set_is_returned_without_real_imports (__main__.ImportProbeControls.test_exact17_synthetic_origin_set_is_returned_without_real_imports)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/checkpoint23_environment_identity_probe_candidate/test_import_identity_probe.py", line 212, in test_exact17_synthetic_origin_set_is_returned_without_real_imports
+    selected = probe.imported_origins(primary, root)
+  File "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/checkpoint23_environment_identity_probe_candidate/import_identity_probe.py", line 218, in imported_origins
+    raise ValueError("actual imported origin outside canonical reviewed prefix: " + name)
+ValueError: actual imported origin outside canonical reviewed prefix: devito
+
+======================================================================
+FAIL: test_late_import_mutation_of_earlier_file_is_rejected (__main__.ImportProbeControls.test_late_import_mutation_of_earlier_file_is_rejected)
+----------------------------------------------------------------------
+ValueError: actual imported origin outside canonical reviewed prefix: devito
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/checkpoint23_environment_identity_probe_candidate/test_import_identity_probe.py", line 226, in test_late_import_mutation_of_earlier_file_is_rejected
+    with self.assertRaisesRegex(ValueError, "origin changed during imports"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "origin changed during imports" does not match "actual imported origin outside canonical reviewed prefix: devito"
+
+======================================================================
+FAIL: test_late_import_repointing_earlier_origin_is_rejected (__main__.ImportProbeControls.test_late_import_repointing_earlier_origin_is_rejected)
+----------------------------------------------------------------------
+ValueError: actual imported origin outside canonical reviewed prefix: devito
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/checkpoint23_environment_identity_probe_candidate/test_import_identity_probe.py", line 240, in test_late_import_repointing_earlier_origin_is_rejected
+    with self.assertRaisesRegex(ValueError, "origin changed during imports"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "origin changed during imports" does not match "actual imported origin outside canonical reviewed prefix: devito"
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.018s
+
+FAILED (failures=2, errors=1)

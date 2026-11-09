@@ -1,0 +1,78 @@
+{
+  "recorded_utc": "2026-11-08T18:55:39Z",
+  "result": "FINAL34_MANUFACTURED_CONTROLS_RUFF_GRAMMAR_DEFAULT_CLEAR_PROJECT_AUDIT_NOT_EXECUTED",
+  "cwd": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi",
+  "source_sha256_before_after": "f980f99749f93310d30092ccd0dbdbce653ac34daeab36a6a458215fdaf4b6a1",
+  "test_sha256_before_after": "9ae0337a4a7cbd81963cfd2375051caa3487399585d51b529b61719b48dc7157",
+  "criteria_sha256_before_after": "3f3f91aa283c56d42cdcd7947996e82d717e478f445db9092de193ea64dd9240",
+  "precontrol_freeze_sha256": "c68994ea794dd53d7658c53530cd98cc6413a6270841ca99ac1ecaed71a9213e",
+  "peer_source_receipt_sha256": "1ecabccf91f30635ff37de4bdfff183b3d45b0dda28af4c9e2e2660d870d7ab0",
+  "authority": "Root confirmed actual cohort02 terminal exit0 and authorized only final pure/manufactured controls, Ruff, grammar and metadata-only default. No project outcome/array audit GO yet.",
+  "executions": [
+    {
+      "label": "before_test_exact_pin_preflight",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -I -c <stdlib hashlib assertion against the three exact hashes above>",
+      "tool_chunk": "9335b9",
+      "actual_exit_code": 0,
+      "log": "final_pin_02.log",
+      "log_sha256": "afeb090e33aa928411201ded090b4492abba3a4ea56c2061ddeaf7f1131bf28b"
+    },
+    {
+      "label": "pure_manufactured_pytest",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest -q -Werror -p no:cacheprovider -o addopts='' work/new-phase-staging/frequency_continuation_post_audit/test_audit_scalar.py > work/new-phase-staging/frequency_continuation_post_audit/pure_controls_03.log 2>&1",
+      "tool_chunk": "ee1da9",
+      "actual_exit_code": 0,
+      "result": "34 passed in 0.40s",
+      "log": "pure_controls_03.log",
+      "log_sha256": "40fdaac36aab5fc04a78a046c73e88463cbdd70c9592465dec55d3f278796bd4"
+    },
+    {
+      "label": "ruff",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -m ruff check --config work/wavecert-fwi/pyproject.toml work/new-phase-staging/frequency_continuation_post_audit/audit_scalar.py work/new-phase-staging/frequency_continuation_post_audit/test_audit_scalar.py > work/new-phase-staging/frequency_continuation_post_audit/ruff_03.log 2>&1",
+      "tool_chunk": "6bd532",
+      "actual_exit_code": 0,
+      "result": "All checks passed",
+      "log": "ruff_03.log",
+      "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "label": "python310_grammar",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -I -c <stdlib ast.parse feature_version=(3,10) of audit_scalar.py and test_audit_scalar.py> > work/new-phase-staging/frequency_continuation_post_audit/grammar_03.log 2>&1",
+      "tool_chunk": "565e1e",
+      "actual_exit_code": 0,
+      "result": "Python3.10 grammar PASS; no project imports/execution",
+      "log": "grammar_03.log",
+      "log_sha256": "5e9667f42a9a99321fdb342ee6cd70ba096dd3dd8854a35052f7eabde37e456f"
+    },
+    {
+      "label": "metadata_only_default_cli",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -I work/new-phase-staging/frequency_continuation_post_audit/audit_scalar.py > work/new-phase-staging/frequency_continuation_post_audit/default_cli_03.log 2>&1",
+      "tool_chunk": "863e24",
+      "actual_exit_code": 0,
+      "result": "metadata_only_no_project_arrays_or_solves; planned_runs96; exact f980/3f3f pins",
+      "log": "default_cli_03.log",
+      "log_sha256": "66a3657bd12eb81d5b363a94771791d14cd9681c4e262c26a7ec930789cb80df"
+    }
+  ],
+  "controls_scope": [
+    "Full96 schedule and all24 quadruples/32 groups, nonboolean identities, missing-row denominators",
+    "Strict actual8s outer gate; invalid inner cannot be rescued; forged time/eligibility rejected",
+    "Actual producer exit0/allpass or2/numerical-fail, unexpected exits refused for numericdecode",
+    "Missing/incomplete/invalid preflight preserves96 metadata rows and cannot enter reference/model decoding",
+    "Unique owner final counters once, preparation separately, missing snapshots/unknown partials/booleans rejected",
+    "All-retained scalar chain corruption and pending/omitted-middle scopes",
+    "Allfour manufactured scalar stage chronologies, failed engines, missing owners and unsealed/nonreturn/nested-library prefixes",
+    "Missing declared initial/final vectors and reported offline numerical failures cannot earn credit",
+    "Manual edge half-cell interpolation and independently reduced native-m/physical-v errors on manufactured arrays",
+    "Fullthree repetitions required for medians and global fatal gate disables all verified credit"
+  ],
+  "prior_sources_logs_and_failures_preserved": true,
+  "project_run_artifacts_or_outcomes_read": false,
+  "corpus_arrays_PDE_or_optimizer_calls": 0,
+  "producer_controller_engine_or_production_sources_changed": false,
+  "numerical_criteria_changed": false,
+  "project_numeric_audit_executed": false,
+  "separate_root_artifact_check_and_audit_GO_required": true,
+  "physical_acceptance": null,
+  "student_final_design_or_confirmation": false
+}

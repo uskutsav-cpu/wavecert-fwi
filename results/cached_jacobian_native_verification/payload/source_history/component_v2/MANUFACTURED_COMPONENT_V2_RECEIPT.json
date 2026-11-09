@@ -1,0 +1,45 @@
+{
+  "actual_controls": {
+    "XML_sha256": "a8aab4d4e37cb4452c117d6602360cc31aa6fb454340fd77458343a655be47bf",
+    "actual_exit_code": 0,
+    "errors": 0,
+    "executed_sources_prehashed_and_copied": true,
+    "failures": 0,
+    "log_sha256": "51f5e913eda15d1bdfe48f8c65d1e0b6739fd7cd44ea6faffd883fd6609c5216",
+    "session_id": 93409,
+    "skipped": 0,
+    "source_identity_receipt_sha256": "5a577effbbcd06517d6a368f81619a0d993de900dc023008cdbf134374313005",
+    "terminal_chunk": "87b474",
+    "tests": 46,
+    "wall_test_seconds": 1.22
+  },
+  "independent_review_pending": true,
+  "maintained_sources_sha256": {
+    "cached_jacobian.py": "f613370617d7e0bd7815cf441dd8ba5f41816ad4791275e86f33de228657c79b",
+    "public_map_builder.py": "7e1c79f99df6e68dda185552f0ff6f480b5fd4823061e7581952cafbd759cb11",
+    "test_manufactured.py": "e5dfc6db6dde088000064cd8d5c5eaae6668749746f4523f692349032999407e"
+  },
+  "native_integration_for_v2_unexecuted": true,
+  "original_source_hashes_preserved": {
+    "cached_jacobian.py": "f613370617d7e0bd7815cf441dd8ba5f41816ad4791275e86f33de228657c79b",
+    "public_map_builder.py": "622a624f54b17d9d882da9d88af547c516b26ee42c87d80ec68d5fe99a687ec1",
+    "test_manufactured.py": "c7d7d9d9e152b4b0c037b5cd2efc411356d2c1206b5ce3824ed8a351acda3104"
+  },
+  "runtime": {
+    "packages": {
+      "numpy": "2.4.3",
+      "pytest": "9.1.1",
+      "scipy": "1.18.1"
+    },
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]"
+  },
+  "scientific_goals_complete": false,
+  "scope_sha256": "0e3c9cc0043ade68c897c78b7b807bc0f42985fb3abb6750de1730b1d92671d3",
+  "static_checks": {
+    "explicit_ruff_command": "ruff check --no-cache --config 'lint.isort.known-first-party = [\"cached_jacobian\", \"public_map_builder\"]' cached_jacobian.py public_map_builder.py test_manufactured.py",
+    "python310grammar": "actualPASS49ef7f for allthree maintainedsources",
+    "ruff": "actualPASS --no-cache with lint.isort.known-first-party=[cached_jacobian,public_map_builder] for three maintainedsources; first outer-directory classification attempt flagged importgroup only. No code/import-order changes or numerical retest followed."
+  },
+  "status": "VERSION2_MANUFACTURED46_PASS_NATIVE_UNEXECUTED"
+}

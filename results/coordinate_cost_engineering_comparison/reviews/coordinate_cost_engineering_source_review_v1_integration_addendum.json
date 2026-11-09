@@ -1,0 +1,12 @@
+{
+  "result": "V1_INTEGRATION_BLOCKER_AFTER_INTERRUPTED_ENGINEERING_ATTEMPT",
+  "historical_source_review_sha256": "39f10f2f95254cba7f40d1187c1592d057e63047e36869644a1dd2b97f368a7d",
+  "producer_sha256": "fb146673f57f98095ab0239fdc543da9f3b2276362175277617a5b21356c06c8",
+  "protocol_sha256": "f0306803ed34c03318e9a64d2848a8ce57900a6b4e5998c05d88d2bcbfa523f4",
+  "imported_audit_sha256": "807f4f2f0e0aeea1d2f61b64ee5f64a99819c38d4f6164529e664f0a235edeae",
+  "evidence": "Root confirmed first attempt terminal130 after SIGINT PID31824; its first nine rows failed in offline_independent_audit with NameError np not defined. All48 planned rows and interrupted/unattempted states remain retained at work/coordinate_cost_run_01. No primary credit or coordinate-performance conclusion follows.",
+  "source_cause": "The copied807 module initializes global np, scipy, ndi, sp and spla only inside its standalone execute() at lines345-359. The new driver imported it and called IndependentCase directly without that initialization. The pure mocks did not exercise this real imported API path.",
+  "review_correction": "The initial independent source review missed this lazy-global dependency. Its historical receipt remains immutable; it must not be read as clearance of the imported audit integration or as approval to reuse the v1 driver for another project attempt.",
+  "minimal_new_version_requirement": "Preserve v1 and the interrupted run. In a new version only, initialize the five dependency globals during declared shared bootstrap without changing807 source or numerical settings. A focused manufactured real offline_audit/IndependentCase integration control must pass before a fresh freeze and separately authorized48-run attempt.",
+  "scope": "AI engineering failure diagnosis, not an outcome of either coordinate method, scientific confirmation, student design or a change to production source9f. No project trajectory was rerun by this reviewer."
+}

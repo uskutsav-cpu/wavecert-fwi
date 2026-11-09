@@ -1,0 +1,3132 @@
+{
+  "configuration": {
+    "seeds": [
+      731,
+      1907,
+      8101
+    ],
+    "cases_per_seed": 4,
+    "iterations": 12,
+    "calibration_cases": 30,
+    "calibration_seed": 2026110701,
+    "alpha": 0.1,
+    "scenarios": [
+      "clean",
+      "noise-5pct",
+      "sparse-receivers",
+      "frequency-shift"
+    ],
+    "policies": [
+      "exact",
+      "neural-only",
+      "random-repair",
+      "residual-repair",
+      "periodic-exact",
+      "conformal-selective",
+      "deterministic-selective",
+      "analytic-selective"
+    ],
+    "step_acceptance": "exact-decrease",
+    "repair_blocks": 2,
+    "periodic_interval": 2,
+    "torch_threads": 1,
+    "checkpoint": "checkpoints/fno_phase2.pt",
+    "checkpoint_sha256": "70920f1e3b72eaf9cac635547713d45ab6e6d7b7ec713eb2044e04b23f50ddee",
+    "shape": [
+      16,
+      16
+    ],
+    "study_status": "development; not preregistered",
+    "scope": "synthetic 2-D discrete Helmholtz inversion; not field-scale or measured seismic data",
+    "timing_protocol": "warm FNO state/VJP/JVP; fresh policy solver cache; rotated policy order across model/scenario cases; CPU",
+    "provenance": {
+      "git_revision": "7ee700f08609e13c1224a18b75db85fac7b01e82",
+      "working_tree_dirty": true,
+      "source_sha256": "1bd6d49e2465e0b149b9fa5f24cc2f0b42a26391a5d9fa090183e4f0266bdcc4",
+      "python": "3.13.13",
+      "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+      "machine": "arm64",
+      "packages": {
+        "numpy": "2.4.3",
+        "scipy": "1.18.1",
+        "torch": "2.14.0",
+        "matplotlib": "3.11.2",
+        "pandas": "3.0.5",
+        "pytest": "9.1.1"
+      }
+    }
+  },
+  "pathwise_scale": 0.0007159526125962718,
+  "comparisons": {
+    "clean": {
+      "exact": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.02351553399338671,
+          "ci95": [
+            0.012870600646082793,
+            0.03506356416363851
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.03145199580505128,
+          "ci95": [
+            0.026767840315461016,
+            0.036010421340320516
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.0493600559184415,
+          "ci95": [
+            0.042374621068249026,
+            0.058532109006887344
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 48.0,
+        "mean_online_adjoint_rhs": 48.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 137.66666666666666,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 45.666666666666664,
+        "mean_online_forward_rhs": 135.33333333333334,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": -0.006699978639760379,
+          "ci95": [
+            -0.00933785567285858,
+            -0.004259101392992094
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 0.1454230440236921,
+          "ci95": [
+            0.130525254974222,
+            0.1598308369161111
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.007976626232820699,
+          "ci95": [
+            -0.010848883766275828,
+            -0.005753633990343227
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 0.1434502941872212,
+          "ci95": [
+            0.11745488731500407,
+            0.1763615377201783
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "neural-only": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.34265152053530806,
+          "ci95": [
+            0.2106494215786652,
+            0.49086973085173097
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.04324214137883209,
+          "ci95": [
+            0.037478654893249364,
+            0.04861631077644277
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.4652616664170637,
+          "ci95": [
+            0.38393229856145206,
+            0.6016878583930293
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 0.0,
+        "mean_online_adjoint_rhs": 0.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 206.83333333333334,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 185.5,
+        "mean_online_forward_rhs": 392.3333333333333,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 9.31695953859414,
+          "ci95": [
+            8.424576765725345,
+            10.318130260207269
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.011790145573780811,
+          "ci95": [
+            0.007634949005956236,
+            0.016804554863368976
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": 0.005090166934020437,
+          "ci95": [
+            0.002807555357047063,
+            0.008013705336956433
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 1.3230460885160642,
+          "ci95": [
+            1.217860019554944,
+            1.4285146260889334
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": 0.003813519340960115,
+          "ci95": [
+            0.0009408347253321442,
+            0.008155166686120647
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 1.3543997854110972,
+          "ci95": [
+            1.0632473883281335,
+            1.8114149777388475
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "random-repair": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.07830517411953339,
+          "ci95": [
+            0.0503370693071455,
+            0.1091115943752862
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.03815197444481165,
+          "ci95": [
+            0.03373868202048959,
+            0.04188227138910458
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.34851504458310956,
+          "ci95": [
+            0.29611966953567237,
+            0.4309394614408802
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 24.0,
+        "mean_online_adjoint_rhs": 24.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 163.83333333333334,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 77.83333333333333,
+        "mean_online_forward_rhs": 217.66666666666666,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 7.120955488095558,
+          "ci95": [
+            6.399937999228622,
+            7.966146221473687
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.006699978639760379,
+          "ci95": [
+            0.004259101392992093,
+            0.009337855672858579
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.0012766475930603217,
+          "ci95": [
+            -0.002945430647078264,
+            0.0006189643464044066
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 1.0113432638556823,
+          "ci95": [
+            0.8244838163910339,
+            1.2882544138352752
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "residual-repair": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.15172996750403664,
+          "ci95": [
+            0.09159483042908638,
+            0.2187938751841595
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.03942862203787197,
+          "ci95": [
+            0.03490708493193531,
+            0.04372713481304164
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.3538619828311009,
+          "ci95": [
+            0.328047375218974,
+            0.38399720415268346
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 24.0,
+        "mean_online_adjoint_rhs": 24.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 188.0,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 104.0,
+        "mean_online_forward_rhs": 268.0,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 7.687611123988057,
+          "ci95": [
+            6.474829949080212,
+            8.903345865227005
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.007976626232820699,
+          "ci95": [
+            0.005753633990343224,
+            0.010848883766275828
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": 0.0012766475930603217,
+          "ci95": [
+            -0.0006189643464044074,
+            0.0029454306470782622
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 1.09933507326312,
+          "ci95": [
+            0.9295404605854461,
+            1.2594408225898046
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "periodic-exact": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.024496822557413284,
+          "ci95": [
+            0.01637048777821139,
+            0.03324273655400884
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.03410534659924579,
+          "ci95": [
+            0.02959392831071744,
+            0.03817878378167868
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.22535358641774414,
+          "ci95": [
+            0.2105182604705154,
+            0.2425759038405431
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 24.0,
+        "mean_online_adjoint_rhs": 24.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 131.5,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 67.83333333333333,
+        "mean_online_forward_rhs": 175.33333333333334,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 4.905296638215526,
+          "ci95": [
+            4.157740629407561,
+            5.650394520899809
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.0026533507941945184,
+          "ci95": [
+            0.00043556209043683143,
+            0.005228845964490331
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": -0.00404662784556586,
+          "ci95": [
+            -0.005358856961459548,
+            -0.002731098571508491
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 0.7018737801866751,
+          "ci95": [
+            0.5883132726415045,
+            0.7969339980354712
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.005323275438626182,
+          "ci95": [
+            -0.007553319087687261,
+            -0.002873653097363503
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 0.6530952759451355,
+          "ci95": [
+            0.5742529015191992,
+            0.7339917409110364
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "conformal-selective": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.027385093216280614,
+          "ci95": [
+            0.01550116311026139,
+            0.03989582921618877
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.031904589397813016,
+          "ci95": [
+            0.02747019162127717,
+            0.03622715067837809
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 1.869960961582971,
+          "ci95": [
+            1.6939867899509256,
+            2.1105678222254936
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 41.833333333333336,
+        "mean_online_adjoint_rhs": 41.833333333333336,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 261.9166666666667,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 40.833333333333336,
+        "mean_online_forward_rhs": 167.5,
+        "mean_online_stability_rhs": 1121.0,
+        "mean_online_svd_evaluations": 93.41666666666667,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 41.038715731813916,
+          "ci95": [
+            33.83658531999686,
+            50.98148467358934
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.00045259359276174507,
+          "ci95": [
+            -3.100882228787212e-05,
+            0.0009393038060000346
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": -0.006247385046998634,
+          "ci95": [
+            -0.008760539666912856,
+            -0.00402173850391255
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 5.77290244761388,
+          "ci95": [
+            4.905488094068085,
+            6.5504249041167055
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.0075240326400589546,
+          "ci95": [
+            -0.010128799689917674,
+            -0.0054796224315759295
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 5.451100772175978,
+          "ci95": [
+            4.620294440826975,
+            6.4582992566609905
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "deterministic-selective": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.02351553399338671,
+          "ci95": [
+            0.012870600646082793,
+            0.03506356416363851
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.03145199580505128,
+          "ci95": [
+            0.026767840315461016,
+            0.036010421340320516
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 1.9348919300825098,
+          "ci95": [
+            1.7498084894833104,
+            2.177378833690955
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 48.0,
+        "mean_online_adjoint_rhs": 48.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 281.6666666666667,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 45.666666666666664,
+        "mean_online_forward_rhs": 183.33333333333334,
+        "mean_online_stability_rhs": 1152.0,
+        "mean_online_svd_evaluations": 96.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 40.486717950810586,
+          "ci95": [
+            36.74187776227388,
+            44.30532806460829
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": -0.006699978639760379,
+          "ci95": [
+            -0.00933785567285858,
+            -0.004259101392992094
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 5.804975038905819,
+          "ci95": [
+            5.213483449332764,
+            6.3900967556746435
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.007976626232820699,
+          "ci95": [
+            -0.010848883766275828,
+            -0.005753633990343227
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 5.595870072474729,
+          "ci95": [
+            4.855042710004493,
+            6.487137796723639
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "analytic-selective": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.02351553399338671,
+          "ci95": [
+            0.012870600646082793,
+            0.03506356416363851
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.03145199580505128,
+          "ci95": [
+            0.026767840315461016,
+            0.036010421340320516
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.5693519273324151,
+          "ci95": [
+            0.37707949010917524,
+            0.9195358568375693
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 48.0,
+        "mean_online_adjoint_rhs": 48.0,
+        "mean_online_analytic_bound_evaluations": 24.0,
+        "mean_online_cache_hits": 185.66666666666666,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 45.666666666666664,
+        "mean_online_forward_rhs": 183.33333333333334,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 10.506837173773823,
+          "ci95": [
+            8.352903657672332,
+            13.584984104425953
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": -0.006699978639760379,
+          "ci95": [
+            -0.00933785567285858,
+            -0.004259101392992094
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 1.4867161256944748,
+          "ci95": [
+            1.1962187511494016,
+            1.8635580530789457
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.007976626232820699,
+          "ci95": [
+            -0.010848883766275828,
+            -0.005753633990343227
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 1.6790368014404897,
+          "ci95": [
+            1.036651833988203,
+            2.7754932810619013
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      }
+    },
+    "noise-5pct": {
+      "exact": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.09621711448762675,
+          "ci95": [
+            0.057489475921281896,
+            0.1411233876243046
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.031722943057977335,
+          "ci95": [
+            0.027054161867829298,
+            0.03626892585008647
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.050334475250868614,
+          "ci95": [
+            0.03821845753125975,
+            0.07021190505393708
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 48.0,
+        "mean_online_adjoint_rhs": 48.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 135.5,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 43.5,
+        "mean_online_forward_rhs": 131.0,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": -0.006656118156550656,
+          "ci95": [
+            -0.00928607336299258,
+            -0.004239622524885725
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 0.15353458631225786,
+          "ci95": [
+            0.11972116961978688,
+            0.20347069369294013
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.008494534694273428,
+          "ci95": [
+            -0.011352916833965039,
+            -0.006167812514521398
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 0.12848472673667025,
+          "ci95": [
+            0.10516138518251907,
+            0.16029513421852845
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "neural-only": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.38272317226678815,
+          "ci95": [
+            0.2527233174952665,
+            0.5243287405572358
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.04349865766843138,
+          "ci95": [
+            0.03791330475104307,
+            0.04861316315169819
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.48816597208315216,
+          "ci95": [
+            0.3816566831566206,
+            0.6715292073537436
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 0.0,
+        "mean_online_adjoint_rhs": 0.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 203.33333333333334,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 181.33333333333334,
+        "mean_online_forward_rhs": 384.6666666666667,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 9.86993345096945,
+          "ci95": [
+            9.355059931308826,
+            10.396674896090923
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.011775714610454043,
+          "ci95": [
+            0.007794197797920939,
+            0.016568621491793115
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": 0.005119596453903387,
+          "ci95": [
+            0.0028990143807464713,
+            0.0075480833269359485
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 1.4855077825456717,
+          "ci95": [
+            1.2084927449363327,
+            1.9328658896066886
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": 0.0032811799161806127,
+          "ci95": [
+            0.0001667247061101934,
+            0.0072509448484398475
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 1.2484018129266392,
+          "ci95": [
+            1.0516320160679637,
+            1.5354504554610995
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "random-repair": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.14854140943974872,
+          "ci95": [
+            0.09371042992960431,
+            0.21153208984030172
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.038379061214528,
+          "ci95": [
+            0.03395434508624174,
+            0.042096185380587056
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.32326713224908116,
+          "ci95": [
+            0.2981878345988586,
+            0.35118241821098006
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 24.0,
+        "mean_online_adjoint_rhs": 24.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 161.16666666666666,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 74.16666666666667,
+        "mean_online_forward_rhs": 211.33333333333334,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 7.472281380360152,
+          "ci95": [
+            6.240470429037449,
+            8.623324948278393
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.006656118156550656,
+          "ci95": [
+            0.0042396225248857245,
+            0.009286073362992578
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.0018384165377227741,
+          "ci95": [
+            -0.0038895805322760497,
+            0.000360887576655763
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 0.8720153838195731,
+          "ci95": [
+            0.7909069486442473,
+            0.9631648489174397
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "residual-repair": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.20795753604584513,
+          "ci95": [
+            0.13269750956990864,
+            0.28878981948119864
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.04021747775225077,
+          "ci95": [
+            0.035605315422658074,
+            0.04458798182553714
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.37866681916663464,
+          "ci95": [
+            0.3394888987209773,
+            0.4219223806641897
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 24.0,
+        "mean_online_adjoint_rhs": 24.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 195.33333333333334,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 114.0,
+        "mean_online_forward_rhs": 285.3333333333333,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 8.58172446157486,
+          "ci95": [
+            7.3261884474639976,
+            9.738772669801468
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.008494534694273428,
+          "ci95": [
+            0.006167812514521398,
+            0.011352916833965037
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": 0.0018384165377227741,
+          "ci95": [
+            -0.00036088757665576513,
+            0.0038895805322760493
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 1.1809461268069565,
+          "ci95": [
+            1.0660607034257497,
+            1.2951948613689817
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "periodic-exact": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.10488802161222993,
+          "ci95": [
+            0.06347703696009153,
+            0.15321993471360557
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.03441332045249393,
+          "ci95": [
+            0.029701930157471895,
+            0.038541988857489544
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.23700214208201942,
+          "ci95": [
+            0.20853996352188914,
+            0.2762351033897176
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 24.0,
+        "mean_online_adjoint_rhs": 24.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 123.83333333333333,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 58.833333333333336,
+        "mean_online_forward_rhs": 158.66666666666666,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 5.518526064505866,
+          "ci95": [
+            4.462511497626219,
+            6.458132917629799
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.0026903773945165955,
+          "ci95": [
+            0.0007048960591522963,
+            0.004859897517823654
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": -0.003965740762034061,
+          "ci95": [
+            -0.0050607393639278105,
+            -0.00283277447696634
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 0.7528717420383614,
+          "ci95": [
+            0.6316027362257189,
+            0.895048329080886
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.005804157299756834,
+          "ci95": [
+            -0.007958663979304285,
+            -0.003784690237290745
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 0.6451091050809289,
+          "ci95": [
+            0.5429770909270102,
+            0.7534446748008562
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "conformal-selective": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.09892260798011206,
+          "ci95": [
+            0.05865326705238995,
+            0.14625807867611343
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.03210051796915244,
+          "ci95": [
+            0.02762699598304307,
+            0.036440016481841024
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 1.8221355793320981,
+          "ci95": [
+            1.7274584371107722,
+            1.9258853790371857
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 41.583333333333336,
+        "mean_online_adjoint_rhs": 41.583333333333336,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 262.9166666666667,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 42.333333333333336,
+        "mean_online_forward_rhs": 170.25,
+        "mean_online_stability_rhs": 1121.0,
+        "mean_online_svd_evaluations": 93.41666666666667,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 42.25345675814327,
+          "ci95": [
+            35.551342632214805,
+            47.53468717971615
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.00037757491117509635,
+          "ci95": [
+            -1.257932287512911e-05,
+            0.0007465855530888883
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": -0.0062785432453755586,
+          "ci95": [
+            -0.008776755595528547,
+            -0.004061784124830647
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 5.7135508319346995,
+          "ci95": [
+            5.32113507751779,
+            6.101318524007261
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.008116959783098331,
+          "ci95": [
+            -0.01077290635374595,
+            -0.005955187165551112
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 4.932932282708273,
+          "ci95": [
+            4.484997893462903,
+            5.340516856820377
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "deterministic-selective": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.09621711448762675,
+          "ci95": [
+            0.057489475921281896,
+            0.1411233876243046
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.031722943057977335,
+          "ci95": [
+            0.027054161867829298,
+            0.03626892585008647
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 2.0511609834138653,
+          "ci95": [
+            1.6986450162509905,
+            2.7048798685799733
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 48.0,
+        "mean_online_adjoint_rhs": 48.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 279.5833333333333,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 43.5,
+        "mean_online_forward_rhs": 179.0,
+        "mean_online_stability_rhs": 1153.0,
+        "mean_online_svd_evaluations": 96.08333333333333,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 42.65388521010805,
+          "ci95": [
+            39.000202387962105,
+            46.66476453405181
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": -0.006656118156550656,
+          "ci95": [
+            -0.00928607336299258,
+            -0.004239622524885725
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 6.303802866829543,
+          "ci95": [
+            5.210487911583365,
+            7.945710768210258
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.008494534694273428,
+          "ci95": [
+            -0.011352916833965039,
+            -0.006167812514521398
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 5.3151676164689485,
+          "ci95": [
+            4.5321731911207035,
+            6.316371988932933
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "analytic-selective": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.09621711448762675,
+          "ci95": [
+            0.057489475921281896,
+            0.1411233876243046
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.031722943057977335,
+          "ci95": [
+            0.027054161867829298,
+            0.03626892585008647
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.49560836491521815,
+          "ci95": [
+            0.3921709351379074,
+            0.6156352334146732
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 48.0,
+        "mean_online_adjoint_rhs": 48.0,
+        "mean_online_analytic_bound_evaluations": 24.0,
+        "mean_online_cache_hits": 183.5,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 43.5,
+        "mean_online_forward_rhs": 179.0,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 10.878125178514582,
+          "ci95": [
+            8.848529664562415,
+            13.349695386198313
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": -0.006656118156550656,
+          "ci95": [
+            -0.00928607336299258,
+            -0.004239622524885725
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 1.5405511589730585,
+          "ci95": [
+            1.2407936298373008,
+            1.87167737000982
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.008494534694273428,
+          "ci95": [
+            -0.011352916833965039,
+            -0.006167812514521398
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 1.3238185274643384,
+          "ci95": [
+            1.0621252568291786,
+            1.5961005020122587
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      }
+    },
+    "sparse-receivers": {
+      "exact": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.02481782123738328,
+          "ci95": [
+            0.012900546123530341,
+            0.037303246773797274
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.03140816042130476,
+          "ci95": [
+            0.02671850236365596,
+            0.035869210194173905
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.04276517341562188,
+          "ci95": [
+            0.039761395520213225,
+            0.045688051461221825
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 48.0,
+        "mean_online_adjoint_rhs": 48.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 135.16666666666666,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 43.166666666666664,
+        "mean_online_forward_rhs": 130.33333333333334,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": -0.007089237133077465,
+          "ci95": [
+            -0.009286703133985597,
+            -0.005062519627850316
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 0.14666185012425173,
+          "ci95": [
+            0.13107682545226657,
+            0.1616834056045387
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.008535928538774428,
+          "ci95": [
+            -0.011585226085735846,
+            -0.006198287854800428
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 0.12353543332087198,
+          "ci95": [
+            0.10973666527788614,
+            0.13696570806694064
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "neural-only": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.3698219686542708,
+          "ci95": [
+            0.23628380138685312,
+            0.5126085543461039
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.04287293206915655,
+          "ci95": [
+            0.03772570157291189,
+            0.04747382005610627
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.4190544931664893,
+          "ci95": [
+            0.37660320675335396,
+            0.4681705308887785
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 0.0,
+        "mean_online_adjoint_rhs": 0.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 209.16666666666666,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 188.16666666666666,
+        "mean_online_forward_rhs": 397.3333333333333,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 9.868933352654158,
+          "ci95": [
+            8.931025497470612,
+            10.91189893839007
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.01146477164785179,
+          "ci95": [
+            0.008311559425996732,
+            0.015324179302443685
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": 0.004375534514774325,
+          "ci95": [
+            0.0025565864341374448,
+            0.006599330107873831
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 1.427715318858346,
+          "ci95": [
+            1.2622519853017542,
+            1.610820358134053
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": 0.002928843109077362,
+          "ci95": [
+            0.0006698794191492575,
+            0.006112771010905013
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 1.211716562337809,
+          "ci95": [
+            1.0540076225626713,
+            1.4126464181175038
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "random-repair": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.08506947937319247,
+          "ci95": [
+            0.047169566307390325,
+            0.13428552190336138
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.03849739755438222,
+          "ci95": [
+            0.034135483450976306,
+            0.042162626163942125
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.297165104248658,
+          "ci95": [
+            0.2782394879216705,
+            0.32077354198155866
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 24.0,
+        "mean_online_adjoint_rhs": 24.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 146.66666666666666,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 58.333333333333336,
+        "mean_online_forward_rhs": 181.0,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 7.09753785232705,
+          "ci95": [
+            6.321679150073972,
+            7.9296555747631485
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.007089237133077465,
+          "ci95": [
+            0.005062519627850316,
+            0.009286703133985597
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.0014466914056969623,
+          "ci95": [
+            -0.0030526602824635907,
+            0.00010880162326890314
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 0.8485573887918515,
+          "ci95": [
+            0.7835789408811348,
+            0.913586963115494
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "residual-repair": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.1526574360955774,
+          "ci95": [
+            0.09198994547363859,
+            0.21977759551684303
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.039944088960079185,
+          "ci95": [
+            0.03546427138113171,
+            0.04415663035529115
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.3567402355829472,
+          "ci95": [
+            0.32266658803554643,
+            0.3999959401920932
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 24.0,
+        "mean_online_adjoint_rhs": 24.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 191.0,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 108.0,
+        "mean_online_forward_rhs": 275.0,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 8.460416268428697,
+          "ci95": [
+            7.5265054514104675,
+            9.583450337827426
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.008535928538774428,
+          "ci95": [
+            0.006198287854800425,
+            0.011585226085735844
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": 0.0014466914056969623,
+          "ci95": [
+            -0.0001088016232689037,
+            0.0030526602824635894
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 1.2005336807173086,
+          "ci95": [
+            1.1105552562280763,
+            1.2949339607429096
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "periodic-exact": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.022167576330914252,
+          "ci95": [
+            0.014785206652048802,
+            0.029809719610578673
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.034419960177808,
+          "ci95": [
+            0.029883639681440394,
+            0.038301907407595454
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.2526353226676292,
+          "ci95": [
+            0.2148827976804493,
+            0.3053175400534504
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 24.0,
+        "mean_online_adjoint_rhs": 24.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 130.0,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 65.0,
+        "mean_online_forward_rhs": 171.0,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 5.99690651995543,
+          "ci95": [
+            5.053969517061257,
+            7.175245436383726
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.003011799756503239,
+          "ci95": [
+            0.0009838620470127618,
+            0.005301602873779687
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": -0.004077437376574226,
+          "ci95": [
+            -0.0050589945714049735,
+            -0.003088713673045
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 0.8523742353730169,
+          "ci95": [
+            0.7316153979432429,
+            1.0056550467066754
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.0055241287822711885,
+          "ci95": [
+            -0.007503187372382327,
+            -0.003537309677302627
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 0.7117732123344794,
+          "ci95": [
+            0.6242746599504815,
+            0.8181222305356437
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "conformal-selective": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.023114641072970597,
+          "ci95": [
+            0.014529514870593375,
+            0.03332778806314558
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.031962858289296306,
+          "ci95": [
+            0.027562735830709027,
+            0.0362335105831697
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 2.0171667186656728,
+          "ci95": [
+            1.6740540051618304,
+            2.5341668964859383
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 41.333333333333336,
+        "mean_online_adjoint_rhs": 41.333333333333336,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 260.9166666666667,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 40.833333333333336,
+        "mean_online_forward_rhs": 167.0,
+        "mean_online_stability_rhs": 560.5,
+        "mean_online_svd_evaluations": 93.41666666666667,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 46.92325749128477,
+          "ci95": [
+            39.74796194295738,
+            56.569712243800645
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.0005546978679915503,
+          "ci95": [
+            6.126232966682128e-05,
+            0.0010727643364081478
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": -0.006534539265085914,
+          "ci95": [
+            -0.008637691036882049,
+            -0.00467550788040019
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 6.960299180502531,
+          "ci95": [
+            5.541129438482888,
+            9.006582685970024
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.007981230670782876,
+          "ci95": [
+            -0.010826779129588616,
+            -0.005776690937171279
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 5.751787831250482,
+          "ci95": [
+            4.71420213231151,
+            7.087895129188703
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "deterministic-selective": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.02481782123738328,
+          "ci95": [
+            0.012900546123530341,
+            0.037303246773797274
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.03140816042130476,
+          "ci95": [
+            0.02671850236365596,
+            0.035869210194173905
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 1.695040739666183,
+          "ci95": [
+            1.6708862045669548,
+            1.7306574391944118
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 48.0,
+        "mean_online_adjoint_rhs": 48.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 279.25,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 43.166666666666664,
+        "mean_online_forward_rhs": 178.33333333333334,
+        "mean_online_stability_rhs": 576.5,
+        "mean_online_svd_evaluations": 96.08333333333333,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 40.279811771478585,
+          "ci95": [
+            37.485645260194055,
+            43.44421602627853
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": -0.007089237133077465,
+          "ci95": [
+            -0.009286703133985597,
+            -0.005062519627850316
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 5.789448588039698,
+          "ci95": [
+            5.4044258416503625,
+            6.1335733912172365
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.008535928538774428,
+          "ci95": [
+            -0.011585226085735846,
+            -0.006198287854800428
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 4.9063041041808715,
+          "ci95": [
+            4.42430731058808,
+            5.328333704789768
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "analytic-selective": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.02481782123738328,
+          "ci95": [
+            0.012900546123530341,
+            0.037303246773797274
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.03140816042130476,
+          "ci95": [
+            0.02671850236365596,
+            0.035869210194173905
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.48265354191759496,
+          "ci95": [
+            0.38021727957745194,
+            0.6315015662657287
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 48.0,
+        "mean_online_adjoint_rhs": 48.0,
+        "mean_online_analytic_bound_evaluations": 24.0,
+        "mean_online_cache_hits": 183.16666666666666,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 43.166666666666664,
+        "mean_online_forward_rhs": 178.33333333333334,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 11.558822787748165,
+          "ci95": [
+            8.72438706166785,
+            15.03569859271967
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": -0.007089237133077465,
+          "ci95": [
+            -0.009286703133985597,
+            -0.005062519627850316
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 1.6563046477500356,
+          "ci95": [
+            1.2673148523884374,
+            2.182810026711337
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.008535928538774428,
+          "ci95": [
+            -0.011585226085735846,
+            -0.006198287854800428
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 1.415681923205214,
+          "ci95": [
+            1.0445005493523736,
+            1.863329153072357
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      }
+    },
+    "frequency-shift": {
+      "exact": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.031217304064546172,
+          "ci95": [
+            0.018759533733205602,
+            0.044416863751958274
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.03274525267038304,
+          "ci95": [
+            0.02838480454871822,
+            0.03673766411639182
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.04458710033334986,
+          "ci95": [
+            0.03615321036840366,
+            0.05687026378219948
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 48.0,
+        "mean_online_adjoint_rhs": 48.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 132.66666666666666,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 40.666666666666664,
+        "mean_online_forward_rhs": 125.33333333333333,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": -0.012023351313330245,
+          "ci95": [
+            -0.015012951607877818,
+            -0.009351694889668548
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 0.1155093078564337,
+          "ci95": [
+            0.08720407483562144,
+            0.1592972927716172
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.011077157236857703,
+          "ci95": [
+            -0.013622920613947404,
+            -0.008911969411825784
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 0.08939378865310417,
+          "ci95": [
+            0.07886656116721834,
+            0.10162627903129601
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "neural-only": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.7708468068798172,
+          "ci95": [
+            0.5678352438751254,
+            0.9465423094942461
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.0460890140087441,
+          "ci95": [
+            0.039865548435407114,
+            0.052395078836533895
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.46789003783305816,
+          "ci95": [
+            0.4114198939015826,
+            0.5259046289128945
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 0.0,
+        "mean_online_adjoint_rhs": 0.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 261.3333333333333,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 251.33333333333334,
+        "mean_online_forward_rhs": 512.6666666666666,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 11.239613021410483,
+          "ci95": [
+            9.818357065942191,
+            12.837692379330143
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.013343761338361062,
+          "ci95": [
+            0.00905031855870095,
+            0.019064002783404112
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": 0.0013204100250308194,
+          "ci95": [
+            -0.00292151713507978,
+            0.006979704634761812
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 1.177819376347985,
+          "ci95": [
+            1.00518914617127,
+            1.4173862842620109
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": 0.0022666041015033623,
+          "ci95": [
+            2.6942047971257546e-06,
+            0.0054769251639118135
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 0.9539413297699876,
+          "ci95": [
+            0.922699392463873,
+            0.9760774684836253
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "random-repair": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.6159089224537452,
+          "ci95": [
+            0.4212929579883437,
+            0.803404803549441
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.04476860398371329,
+          "ci95": [
+            0.038874730973916236,
+            0.05033570345132483
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.41021428424937767,
+          "ci95": [
+            0.370105251240913,
+            0.4521760550553684
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 24.0,
+        "mean_online_adjoint_rhs": 24.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 265.6666666666667,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 198.66666666666666,
+        "mean_online_forward_rhs": 440.3333333333333,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 10.373793628392468,
+          "ci95": [
+            8.462987262121487,
+            12.279197936595564
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.012023351313330245,
+          "ci95": [
+            0.009351694889668548,
+            0.015012951607877814
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": 0.0009461940764725431,
+          "ci95": [
+            -0.0017153783807710868,
+            0.003515564482050633
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 0.8636434471353652,
+          "ci95": [
+            0.7629976028281769,
+            0.9490122072102207
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "residual-repair": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.7668731814367007,
+          "ci95": [
+            0.568282066954931,
+            0.9465886574193447
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.04382240990724074,
+          "ci95": [
+            0.03860933031669609,
+            0.048177325927086845
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.48791671966713085,
+          "ci95": [
+            0.4381477357735321,
+            0.5424843699088417
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 24.0,
+        "mean_online_adjoint_rhs": 24.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 315.5,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 258.5,
+        "mean_online_forward_rhs": 550.0,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 11.767948718505208,
+          "ci95": [
+            10.355033330919213,
+            13.308476423803837
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.011077157236857703,
+          "ci95": [
+            0.008911969411825784,
+            0.0136229206139474
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": -0.0009461940764725431,
+          "ci95": [
+            -0.0035155644820506356,
+            0.0017153783807710868
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 1.2313427346957062,
+          "ci95": [
+            1.061175824065001,
+            1.4740510704419199
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "periodic-exact": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.026325392865635167,
+          "ci95": [
+            0.019390764250403033,
+            0.033234894238817876
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.034975868092701846,
+          "ci95": [
+            0.0305706782701364,
+            0.039036625279931195
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.2427117601661545,
+          "ci95": [
+            0.2245524117280714,
+            0.26319082105574126
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 24.0,
+        "mean_online_adjoint_rhs": 24.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 150.0,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 89.0,
+        "mean_online_forward_rhs": 215.0,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 5.913854287051511,
+          "ci95": [
+            5.13925652786297,
+            6.656213426099315
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.0022306154223187976,
+          "ci95": [
+            0.001274801194913167,
+            0.0033282972757657293
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": -0.009792735891011447,
+          "ci95": [
+            -0.01281530664996294,
+            -0.007453694365422361
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 0.6136137785606502,
+          "ci95": [
+            0.530861284303832,
+            0.7173106978281757
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.008846541814538905,
+          "ci95": [
+            -0.0108478659111744,
+            -0.007193019481095449
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 0.5041685459188181,
+          "ci95": [
+            0.47599706888770266,
+            0.5463826550832199
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "conformal-selective": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.7727108850322116,
+          "ci95": [
+            0.5722589118238246,
+            0.9465423094942461
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.044933500837088414,
+          "ci95": [
+            0.039287550631026937,
+            0.049888442556806765
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 1.2346225383344063,
+          "ci95": [
+            1.1023950294029117,
+            1.4623922026469625
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 1.0833333333333333,
+        "mean_online_adjoint_rhs": 1.0833333333333333,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 317.3333333333333,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 255.33333333333334,
+        "mean_online_forward_rhs": 521.4166666666666,
+        "mean_online_stability_rhs": 602.0,
+        "mean_online_svd_evaluations": 50.166666666666664,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 31.853959774903174,
+          "ci95": [
+            24.129666668609634,
+            42.63593326932293
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.01218824816670538,
+          "ci95": [
+            0.009023353100211505,
+            0.016075805334157728
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": 0.0001648968533751339,
+          "ci95": [
+            -0.003059872727151922,
+            0.0039729967021417
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 3.068532128120653,
+          "ci95": [
+            2.6250632733245056,
+            3.555626320673966
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": 0.0011110909298476768,
+          "ci95": [
+            2.6942047971257546e-06,
+            0.0025565115720171034
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 2.625785492105938,
+          "ci95": [
+            2.188418616921162,
+            3.2359854136512856
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "deterministic-selective": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.031217304064546172,
+          "ci95": [
+            0.018759533733205602,
+            0.044416863751958274
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.03274525267038304,
+          "ci95": [
+            0.02838480454871822,
+            0.03673766411639182
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 1.8985719684184612,
+          "ci95": [
+            1.7301984892190603,
+            2.0912767578990112
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 48.0,
+        "mean_online_adjoint_rhs": 48.0,
+        "mean_online_analytic_bound_evaluations": 0.0,
+        "mean_online_cache_hits": 276.6666666666667,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 40.666666666666664,
+        "mean_online_forward_rhs": 173.33333333333334,
+        "mean_online_stability_rhs": 1152.0,
+        "mean_online_svd_evaluations": 96.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 47.46890306498238,
+          "ci95": [
+            39.4256780705642,
+            55.652719021656
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": -0.012023351313330245,
+          "ci95": [
+            -0.015012951607877818,
+            -0.009351694889668548
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 4.75390861962046,
+          "ci95": [
+            4.165892909313552,
+            5.3159805222454555
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.011077157236857703,
+          "ci95": [
+            -0.013622920613947404,
+            -0.008911969411825784
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 4.034846227350985,
+          "ci95": [
+            3.473684346354636,
+            4.59233193749562
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      },
+      "analytic-selective": {
+        "n_models": 12,
+        "objective_ratio": {
+          "mean": 0.031217304064546172,
+          "ci95": [
+            0.018759533733205602,
+            0.044416863751958274
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "final_model_error": {
+          "mean": 0.03274525267038304,
+          "ci95": [
+            0.02838480454871822,
+            0.03673766411639182
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "algorithm_seconds": {
+          "mean": 0.3807973504214412,
+          "ci95": [
+            0.366694207806366,
+            0.40038491333035986
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "objective_increases": 0,
+        "mean_exact_gradient_blocks": 48.0,
+        "mean_online_adjoint_rhs": 48.0,
+        "mean_online_analytic_bound_evaluations": 24.0,
+        "mean_online_cache_hits": 180.66666666666666,
+        "mean_online_dense_inverse_rhs": 0.0,
+        "mean_online_factorizations": 40.666666666666664,
+        "mean_online_forward_rhs": 173.33333333333334,
+        "mean_online_stability_rhs": 0.0,
+        "mean_online_svd_evaluations": 0.0,
+        "mean_online_tangent_rhs": 0.0,
+        "paired_runtime_ratio_to_exact": {
+          "mean": 9.379308836378803,
+          "ci95": [
+            8.08106004015643,
+            10.555486394483667
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_final_model_error_difference_to_exact": {
+          "mean": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_random-repair": {
+          "mean": -0.012023351313330245,
+          "ci95": [
+            -0.015012951607877818,
+            -0.009351694889668548
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_random-repair": {
+          "mean": 0.9644861895646587,
+          "ci95": [
+            0.8461174791876381,
+            1.0954592399426286
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_model_error_difference_to_residual-repair": {
+          "mean": -0.011077157236857703,
+          "ci95": [
+            -0.013622920613947404,
+            -0.008911969411825784
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        },
+        "paired_runtime_ratio_to_residual-repair": {
+          "mean": 0.8002158951863776,
+          "ci95": [
+            0.7371718104321565,
+            0.8736446394836755
+          ],
+          "n_independent_models": 12,
+          "method": "model-level percentile bootstrap"
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Conformal interpretation applies only to exchangeable clean initial-state repair paths.",
+    "No trajectory-wide or shifted-distribution conformal coverage is claimed.",
+    "Exact-decrease acceptance pays online true-objective forward costs and prevents increases by construction; this is not evidence that calibration alone guarantees finite-step safety.",
+    "Fixed heuristic budgets are declared in config; these are not matched-cost unless measured total costs match.",
+    "Scenarios share seed/case models; uncertainty is computed within scenario over independent generated model pairs.",
+    "Timing includes online certification and verification; offline validation uses a separate solver/cache.",
+    "This development study does not establish field-scale computational advantage or competition readiness."
+  ],
+  "clean_initial_pathwise_coverage": {
+    "observed_coverage": 0.8333333333333334,
+    "failure_uncertainty": {
+      "n_units": 12,
+      "failures": 2,
+      "observed_failure_rate": 0.16666666666666666,
+      "confidence": 0.95,
+      "one_sided_failure_probability_upper": 0.43810543511531136,
+      "method": "exact one-sided Clopper-Pearson",
+      "assumption": "independent Bernoulli experimental units; not correlated slices or draws"
+    },
+    "scope": "independent generated clean initial models; simultaneous repair path, not inversion trajectory"
+  }
+}

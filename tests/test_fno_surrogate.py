@@ -33,3 +33,25 @@ def test_fno_shapes_and_model_derivative_are_finite():
     loss = y.square().mean()
     (g,) = torch.autograd.grad(loss, m)
     assert torch.isfinite(g).all()
+
+
+def test_combined_state_tangent_and_forward_only_merit_match_adapter():
+    pytest.importorskip("torch")
+    from wavecert.surrogates.fno import TrainedFNOWavefieldSurrogate
+
+    surrogate = TrainedFNOWavefieldSurrogate.load("checkpoints/fno_phase2.pt")
+    n = int(np.prod(surrogate.shape))
+    model = np.full(n, 0.22)
+    direction = np.linspace(-0.01, 0.01, n)
+    source = np.zeros(n)
+    source[22] = 400.0
+    receivers = (3, 5, 5, 10)
+    observed = np.zeros(len(receivers), dtype=complex)
+    state, tangent = surrogate.state_and_jvp(model, direction, source, 3.0)
+    assert np.allclose(state, surrogate.state(model, source, 3.0), rtol=2e-5, atol=1e-6)
+    epsilon = 0.005
+    centered = (surrogate.state(model + epsilon * direction, source, 3.0)
+                - surrogate.state(model - epsilon * direction, source, 3.0)) / (2 * epsilon)
+    assert np.linalg.norm(tangent - centered) / np.linalg.norm(tangent) < 0.01
+    value, _, _, _ = surrogate.objective_and_gradient(model, source, observed, receivers, 3.0)
+    assert np.isclose(value, surrogate.objective(model, source, observed, receivers, 3.0), rtol=2e-6)

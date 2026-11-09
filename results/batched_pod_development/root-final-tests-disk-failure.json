@@ -1,0 +1,10 @@
+{
+  "status": "test-run-failed",
+  "cause": "OSError writing synthetic test NPY under critically low APFS disk space",
+  "test": "tests/test_openfwi_stress.py::test_frozen_input_validation_rejects_changed_selection_checkpoint_calibration_and_payload",
+  "passed_before_failure": 273,
+  "production_source_changed": false,
+  "research_experiment_running": false,
+  "original_log": "root-final-tests.log",
+  "remedy": "Delete completed task-owned scratch and rerun full suite with tmp_path_retention_policy=failed, without changing tests or production code"
+}

@@ -1,0 +1,67 @@
+F821 Undefined name `u`
+   --> work/new-phase-staging/bp_heterogeneous_guard_candidate/run_guards.py:268:53
+    |
+266 |                 time_range=adapter.geometry.time_axis, coordinates=adapter.geometry.rec_positions)
+267 |             residual.data[:] = residual_values
+268 |             adapter.solver.gradient(rec=residual, u=u, src=held, vp=adapter.model.vp, grad=gradient, dt=adapter.dt)
+    |                                                     ^
+269 |             padded = np.array(gradient.data, dtype=np.float64, copy=True)
+270 |             prod = runtime["backend"]._edge_padding_pullback(padded, velocity.shape, 40)
+    |
+
+F821 Undefined name `held`
+   --> work/new-phase-staging/bp_heterogeneous_guard_candidate/run_guards.py:268:60
+    |
+266 |                 time_range=adapter.geometry.time_axis, coordinates=adapter.geometry.rec_positions)
+267 |             residual.data[:] = residual_values
+268 |             adapter.solver.gradient(rec=residual, u=u, src=held, vp=adapter.model.vp, grad=gradient, dt=adapter.dt)
+    |                                                            ^^^^
+269 |             padded = np.array(gradient.data, dtype=np.float64, copy=True)
+270 |             prod = runtime["backend"]._edge_padding_pullback(padded, velocity.shape, 40)
+    |
+
+B023 Function definition does not bind loop variable `epsilon`
+   --> work/new-phase-staging/bp_heterogeneous_guard_candidate/run_guards.py:296:60
+    |
+294 |                 for sign, sign_value in [("plus", 1.), ("minus", -1.)]:
+295 |                     def fd_call(sign=sign, sign_value=sign_value):
+296 |                         requested_m = model + sign_value * epsilon * direction
+    |                                                            ^^^^^^^
+297 |                         trial = 1 / np.sqrt(requested_m)
+298 |                         try:
+    |
+
+B023 Function definition does not bind loop variable `direction`
+   --> work/new-phase-staging/bp_heterogeneous_guard_candidate/run_guards.py:296:70
+    |
+294 |                 for sign, sign_value in [("plus", 1.), ("minus", -1.)]:
+295 |                     def fd_call(sign=sign, sign_value=sign_value):
+296 |                         requested_m = model + sign_value * epsilon * direction
+    |                                                                      ^^^^^^^^^
+297 |                         trial = 1 / np.sqrt(requested_m)
+298 |                         try:
+    |
+
+B023 Function definition does not bind loop variable `label`
+   --> work/new-phase-staging/bp_heterogeneous_guard_candidate/run_guards.py:300:46
+    |
+298 |                         try:
+299 |                             arrays, record, field, source = forward(adapter, trial, 1., False, runtime, protocol)
+300 |                             filename = f"fd_{label}_{step}_{sign}.npz"
+    |                                              ^^^^^
+301 |                             save_arrays(output / filename, arrays, runtime, protocol)
+302 |                             record.update(requested_m_sha256=helpers.array_sha(requested_m),
+    |
+
+B023 Function definition does not bind loop variable `step`
+   --> work/new-phase-staging/bp_heterogeneous_guard_candidate/run_guards.py:300:54
+    |
+298 |                         try:
+299 |                             arrays, record, field, source = forward(adapter, trial, 1., False, runtime, protocol)
+300 |                             filename = f"fd_{label}_{step}_{sign}.npz"
+    |                                                      ^^^^
+301 |                             save_arrays(output / filename, arrays, runtime, protocol)
+302 |                             record.update(requested_m_sha256=helpers.array_sha(requested_m),
+    |
+
+Found 6 errors.

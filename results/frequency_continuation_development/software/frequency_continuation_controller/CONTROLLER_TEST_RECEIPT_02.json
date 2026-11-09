@@ -1,0 +1,69 @@
+{
+  "created_utc": "2026-11-08T17:49:37.613557+00:00",
+  "result": "CONTROLLER_SOURCE_AND24_MANUFACTURED_CONTROLS_CLEAR",
+  "role": "AI standard-baseline source/manufactured engineering assistance; not student final design, research confirmation or project-study GO",
+  "source_sha256": {
+    "controller.py": "167b2db184d525cbecc2637310c78c746dfb0a908858cfe12713d2ebe4dfd907",
+    "test_controller.py": "9d8470de5b320f7f460125ef3b205728b9c68a708ecc15332fc66a4fbc45ff00",
+    "bounded_exact.py": "d5fb6326bcd252efc3a7672dba993311fb0ba724b90039e7fda317bcf8bb770c"
+  },
+  "scope_sha256": "87db6748a008551d2b59547cd532afa0d50d9139293efa3bbabcf64b8c496c8d",
+  "precontrol_freeze_sha256": "c5b9f7c40d5dc4cc87ebbf27206cf5a7dc8fafb5b7feb23a1148eb4504f0294a",
+  "old20_actual_receipt_sha256": "991bd992a52a76098c758deabab9fb163f57259b5f36fe2e920d9fbfa2d88183",
+  "bounded_engine_actual_receipt_sha256": "5091bf01c11f1b2b0651fa96487b00ac9439b3da045d1d1caaef2320ee131a54",
+  "actual_controller_controls": {
+    "launch_chunk": "c6e275",
+    "session_id": 4042,
+    "terminal_chunk": "5e6e1a",
+    "exit_code": 0,
+    "pytest_passed": 24,
+    "pytest_seconds": 11.57,
+    "command": "env PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest work/new-phase-staging/frequency_continuation_controller/test_controller.py -W error -q -s > work/new-phase-staging/frequency_continuation_controller/controller_controls_02.log 2>&1",
+    "cwd": "/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi",
+    "log_sha256": "af2546eb3bc7a7a6c2ab3d2b7bf1739cdd861bdf45f20cbe6ab0024fc9238062"
+  },
+  "actual_ruff": {
+    "tool_chunk": "bb4b17",
+    "exit_code": 0,
+    "command": "/opt/miniconda3/bin/python -m ruff check work/new-phase-staging/frequency_continuation_controller/controller.py work/new-phase-staging/frequency_continuation_controller/test_controller.py --config work/wavecert-fwi/pyproject.toml > work/new-phase-staging/frequency_continuation_controller/controller_tests_ruff_final.log 2>&1",
+    "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  },
+  "python310_syntax": {
+    "files": [
+      "controller.py",
+      "test_controller.py",
+      "bounded_exact.py"
+    ],
+    "result": "PASS"
+  },
+  "controls": [
+    "Fourfixedarm schedules/absoluteceilings/caps/colduniqueowners/freshconfigtemplates/common8objectives/one-owner-one-snapshot costs.",
+    "No freeinitialfallback afterprefix exhaustion orlateinitial checkpoint; priorstage1modelonly ifstage2 hasnoeligiblepoint.",
+    "Equalcallback/eventcounts andearlyhandoff; aggregate invocationcap independentofsampledsteps; booleans/aliasinconsistencyrejected.",
+    "Paidactualreturntail/censoring andregressingreturnstampfailclosed.",
+    "Currentauthenticreceipt/model/objective binding; failedmethodsretainlastpaidmodel butinvalid.",
+    "Invalid/unknown prep countsnull withknownpartialprefix; failedconstructor/reusedowner countersretained.",
+    "Preparationinterrupt andenginependingprefix retainedwithoutpositivecredit orcompletedreturnclaim, includingordinaryenginefinishfailure.",
+    "FourREAL tiny4x5 nativeHelmholtz/ExactMeritOracle/explicitboundedengine integrations,all8frequencies/twosources; abstractclock correctness controls only."
+  ],
+  "independent_source_review": {
+    "agent": "/root/realistic_physics_gap",
+    "controller_sha256": "167b2db184d525cbecc2637310c78c746dfb0a908858cfe12713d2ebe4dfd907",
+    "engine_sha256": "d5fb6326bcd252efc3a7672dba993311fb0ba724b90039e7fda317bcf8bb770c",
+    "result": "CLEAR",
+    "findings": "Shared pendingprefix retention covers both exception classes; unsealed/no-return/unknownscope, eligiblemodeldiagnostics and invocation/point/alias semantics correct. Existing coldowner/currentreceipt/globalclock/full8 rules sound. Read24executedcontrols without rerunning."
+  },
+  "production_source_files": 161,
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "project_arrays_loaded": false,
+  "project_optimization_or_benchmark_executed": false,
+  "real_native_PDE_scope": "Only declared tiny4x5 manufactured integration controls; no project49grid or BP/native survey run.",
+  "performance_evidence": false,
+  "all_four_scientific_goals_complete": false,
+  "open_root_owned_gates": [
+    "Separate96-run driver/protocol/source+storage-overhead review andfresh49-grid manufactured807 objective-import integration.",
+    "Exactsource/protocol/inputfreeze androotGO before any project trajectory.",
+    "Postrun terminalintegrity/independentobjectiveaudit/full96failuredenominators beforestudycredit."
+  ],
+  "history": "Original20PASSsource/logs/receipt preservedhistory/first20_controls. UnexecutedtemplateAPI draft andfirststaticparsefailure preserved; transientENOSPCsourcewrite didnotchangeproduction orlowerguards. No projectoutcomesusedtosettings/tolerance-tune."
+}

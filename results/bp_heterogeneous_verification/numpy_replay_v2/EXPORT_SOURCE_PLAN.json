@@ -1,0 +1,168 @@
+{
+  "schema_version": 2,
+  "created_utc": "2026-11-08T19:52:51.019611+00:00",
+  "role": "Prospective exact recorded INPUT-array export plan; no target solution outputs or newPDE",
+  "old_runner_sha256": "c51e570934071eade9e59989cd57daddd064252cd930e410573db0365944d9e0",
+  "old_protocol_sha256": "f0b9db69a434116f212182897f4fa34ffd714782cf0e8dd30adb0410cc139e8c",
+  "core_sha256": "b217dd6d2850f8c264f5910933cb1f4687bed8a7b3e780f7712c750d149328ce",
+  "native_complete_sha256": "ae2ca931876b6c1159af151394bfb0e9c0352ea0c384e879ac398e5bca019206",
+  "native_producer_sha256": "73b617773c76a35e847add60d4b9f2200517d49d68a0f9af63b1098bc9d0137d",
+  "original_native_protocol_sha256": "63d8338f6a023f17365b8fa0d706f9f3a04e0b1e96006381e49309c3856444f0",
+  "cases": [
+    {
+      "case": {
+        "file": "upper_left_stride2z_velocity_mps.npy",
+        "global_origin_z_x_m": [
+          2387.5,
+          12287.5
+        ],
+        "id": "upper_left",
+        "maximum_mps": 4510.0,
+        "minimum_mps": 1785.5283203125,
+        "sha256": "76c3c7db6a9546d59a79991a9a5c72b6129227ad100dac53fba61603287165e3"
+      },
+      "worker_status_sha256": "53bd1805dac4355096a45ed1382cdd2b0bcf37cbc11c5a1347376f673e8e3152",
+      "worker_complete_sha256": "53bd1805dac4355096a45ed1382cdd2b0bcf37cbc11c5a1347376f673e8e3152",
+      "probe_call_canonical_sha256": "9c82e3def9397f7adfd46ec909c3439bc4c39ea1251926fe1a4577033e19002c",
+      "probe_artifact": "probe_saved_record.npz",
+      "probe_artifact_sha256": "fe163315b10d0f5872bf9812ca33b180f2bcd95ea2a910a8e6a1cab594114319",
+      "physical_velocity_sha256": "cee36d080103a9bfb03512535b3aecce7c8c2a97dc1141de51a86a4585cbc785",
+      "actual_physical_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a",
+      "witnesses": {
+        "edge": {
+          "artifact": "edge_direction.npz",
+          "artifact_sha256": "5d87022e6e9c73e7b3bbeb0e0135ecbc970ba524174d99f5d8ff456dc1ec69bd",
+          "direction_sha256": "e49f80fa08ac937f645e37465c51102edb6ef67296f4c6a4a96be36a161533e3",
+          "norm_scale": 4.961690785865816,
+          "probe_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a"
+        },
+        "interior": {
+          "artifact": "interior_direction.npz",
+          "artifact_sha256": "05ba4393b0de8b059a8b91ea04b40dbf5d897f4db828f37e3192961c58e2ee7f",
+          "direction_sha256": "5974608be8f25d0db63342e66633f8de70392bdefc171b7a9a6ea42f7ec06b8d",
+          "norm_scale": 21.97980565267119,
+          "probe_m_sha256": "d793d3f46e72a9b613dffe04ab2b993566c2c1e27b94310d6f419e1c14eb592a"
+        }
+      }
+    },
+    {
+      "case": {
+        "file": "middle_center_stride2z_velocity_mps.npy",
+        "global_origin_z_x_m": [
+          5368.75,
+          32512.5
+        ],
+        "id": "middle_center",
+        "maximum_mps": 4790.0,
+        "minimum_mps": 3232.3330078125,
+        "sha256": "5958bba85f6091ed9ff1f59014768ea0dfb1ed2807d2bb4e74f27f254e84a24e"
+      },
+      "worker_status_sha256": "3d69d1741208bf3e6297d2d86af42040d8923b00bbd15679e484c42415e81ce4",
+      "worker_complete_sha256": "3d69d1741208bf3e6297d2d86af42040d8923b00bbd15679e484c42415e81ce4",
+      "probe_call_canonical_sha256": "f8ff20a0f524d94ddc7d78adba16a2327f308ebf51451608fe4b32fb6480324f",
+      "probe_artifact": "probe_saved_record.npz",
+      "probe_artifact_sha256": "20b786fa25ccecce5d7aeaba706c63255817463725f40e7ab7e2519d04fdd5c3",
+      "physical_velocity_sha256": "e4afe846ee52b0952205e2bb7faf7699b6a22b7614c467ed19c3e91ac73caf68",
+      "actual_physical_m_sha256": "2592d4707d4ee285df4ab6c64d66b88a2185b9d6f7d6f429a2acd135c6cf0dd3",
+      "witnesses": {
+        "edge": {
+          "artifact": "edge_direction.npz",
+          "artifact_sha256": "7b24e4dc7839b27ec7ee67d16a3f860fd3eba0542bb5af245d31b82051ddda02",
+          "direction_sha256": "7c4f1ab1ca889edbd0cd645ad07cea3f5359b346c45d3c240b47b8edb50ffb8f",
+          "norm_scale": 1.6085446980863223,
+          "probe_m_sha256": "2592d4707d4ee285df4ab6c64d66b88a2185b9d6f7d6f429a2acd135c6cf0dd3"
+        },
+        "interior": {
+          "artifact": "interior_direction.npz",
+          "artifact_sha256": "3711c677833d4d5310ff5cdb77d13c75f81f8a838c00ae6a2e7acbb865bda947",
+          "direction_sha256": "fbfe91f40afbfc4d648aae70bcec965253edd935b4ebeffe080e3bbde5beb4af",
+          "norm_scale": 8.92827539085752,
+          "probe_m_sha256": "2592d4707d4ee285df4ab6c64d66b88a2185b9d6f7d6f429a2acd135c6cf0dd3"
+        }
+      }
+    },
+    {
+      "case": {
+        "file": "lower_right_stride2z_velocity_mps.npy",
+        "global_origin_z_x_m": [
+          8356.25,
+          52737.5
+        ],
+        "id": "lower_right",
+        "maximum_mps": 4427.328125,
+        "minimum_mps": 4354.0859375,
+        "sha256": "a36597892307ebdfec4e6a80ce97e32b3524c301692a719006d394792bd2a593"
+      },
+      "worker_status_sha256": "9786a8063c0047d5abfed6498f280f4816122211aaadc80aa331bfeb86ec5dc9",
+      "worker_complete_sha256": "9786a8063c0047d5abfed6498f280f4816122211aaadc80aa331bfeb86ec5dc9",
+      "probe_call_canonical_sha256": "a617671192c8de0dc883da67f8ae6c64e2431e1f590e7fdd90af5b693fd9f911",
+      "probe_artifact": "probe_saved_record.npz",
+      "probe_artifact_sha256": "0e65302c4dc83c56142681bd49367393881664b25f18b33656371ae20d0c5a47",
+      "physical_velocity_sha256": "70d48e59ba4db0d81a811877dd6990fbef7ec5b3dbafd9780f44a219eebe306d",
+      "actual_physical_m_sha256": "650b2a87450c246df48a3454d9da7d6a83c99de0c78aec466d799f4052fda9aa",
+      "witnesses": {
+        "edge": {
+          "artifact": "edge_direction.npz",
+          "artifact_sha256": "8659bf8b2d7d278aa0eec435890dc4a3929fb868fde6ecbb1b400dcb2718fea6",
+          "direction_sha256": "edec7aa59752ebbabf307e88fafafa82d576473af982a724ee032d5daaab37bb",
+          "norm_scale": 1.265539877302784,
+          "probe_m_sha256": "650b2a87450c246df48a3454d9da7d6a83c99de0c78aec466d799f4052fda9aa"
+        },
+        "interior": {
+          "artifact": "interior_direction.npz",
+          "artifact_sha256": "9c4fceaf9687b7167c89475fdf590ff28562e80313f6d237e36358a81afc3ee2",
+          "direction_sha256": "be359f15e4c401ae47dd0ca95ebd32c61d727e5191db31af0564f7e9232b1280",
+          "norm_scale": 6.732237524093041,
+          "probe_m_sha256": "650b2a87450c246df48a3454d9da7d6a83c99de0c78aec466d799f4052fda9aa"
+        }
+      }
+    }
+  ],
+  "exported_keys": [
+    "physical_probe_velocity",
+    "direction_parameter_probe_m",
+    "interior_direction",
+    "edge_direction"
+  ],
+  "shape": [
+    192,
+    96
+  ],
+  "dtype": "<f8",
+  "source_member_allowlist": {
+    "probe_saved_record.npz": [
+      "actual_physical_velocity_kmps"
+    ],
+    "interior_direction.npz": [
+      "direction",
+      "probe_m"
+    ],
+    "edge_direction.npz": [
+      "direction",
+      "probe_m"
+    ]
+  },
+  "prohibited_numeric_members": [
+    "receiver",
+    "residual",
+    "padded_gradient",
+    "production_fold",
+    "naive_crop",
+    "source_before",
+    "source_after",
+    "u",
+    "tangent_receiver"
+  ],
+  "value_rule": "Copy exactvalues toC-contiguous arrays only; no arithmetic regeneration/renormalization/vp-roundtrip/clipping/fitting. Contextprobe_m mustmatch acrossbothwitnesses and recordedactualmSHA; vp matchesaggregate-boundmodelSHA.",
+  "phase_scope": "Native-derived canonicalnumericINPUTS may beopened beforeownsolves. NativeSOLUTIONOUTPUTarrays remainclosed untilall3ownforward+2tangents complete. OldV1 independently-regeneratedinputclaim remainshistorical, notretroactivelychanged.",
+  "criteria_unchanged": {
+    "direction_relative_L2": 1e-14,
+    "fold_relative_L2": 1e-13,
+    "gradient_relative_error": 0.001,
+    "near_zero_relative_normscale": 1e-08,
+    "source_relative_L2": 1e-14,
+    "trace_relative_L2": 1e-09
+  },
+  "PDE_export_calls": 0,
+  "implementation_replay_held_pending_review": true
+}

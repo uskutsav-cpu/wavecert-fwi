@@ -1,0 +1,121 @@
+I001 [*] Import block is un-sorted or un-formatted
+  --> numpy_bp_tangent.py:6:1
+   |
+ 4 |   Native numeric witnesses must remain unopened until all own solves complete.
+ 5 |   """
+ 6 | / from __future__ import annotations
+ 7 | |
+ 8 | | import hashlib
+ 9 | |
+10 | | import numpy as np
+   | |__________________^
+help: Organize imports
+   |
+11 |
+   -
+12 | # Literal values emitted by the pinned h=12.5m primary C, not rescaled h=10 values.
+   |
+
+B007 Loop control variable `index` not used within loop body
+   --> run_replay.py:169:9
+    |
+167 |         raise ValueError("archived padded/folded gradient consistency failed")
+168 |     derivative_records = []
+169 |     for index,label in enumerate(p["directions"]):
+    |         ^^^^^
+170 |         witness_record = status["direction_witnesses"][label]
+171 |         witness = read_npz(local_file(folder,witness_record["artifact"]),witness_record["artifact_sha256"],np)
+    |
+help: Rename unused `index` to `_index`
+
+E701 Multiple statements on one line (colon)
+   --> run_replay.py:223:45
+    |
+221 |             try:
+222 |                 path=local_file(args.inputs.resolve(),case["file"])
+223 |                 if sha(path)!=case["sha256"]:raise ValueError("raw retained BP input SHA mismatch")
+    |                                             ^
+224 |                 raw=np.load(path,allow_pickle=False)
+225 |                 if raw.shape!=(96,192) or raw.dtype!=np.float32 or not np.isfinite(raw).all() or (raw<=0).any():
+    |
+
+E701 Multiple statements on one line (colon)
+   --> run_replay.py:255:35
+    |
+253 |             raise ValueError("native study not complete or wrong source")
+254 |         expected_calls={(row["case_id"],row["call_id"]):row for row in completed["calls"]}
+255 |         if len(expected_calls)!=57:raise ValueError("native57-call denominator differs")
+    |                                   ^
+256 |         native_protocol=json.loads((base/"original_native_protocol.json").read_bytes())
+257 |         status.update(status="comparing_after_all_own_solves",native_comparison_started=True,
+    |
+
+E701 Multiple statements on one line (colon)
+   --> run_replay.py:276:43
+    |
+274 |             except Exception as exc:
+275 |                 row.update(comparison_status="failed",comparison_error=f"{type(exc).__name__}: {exc}")
+276 |                 for d in row["directions"]:d.update(status="unavailable",agreement=None)
+    |                                           ^
+277 |             finally:
+278 |                 atomic_json(output/"status.json",status)
+    |
+
+E701 Multiple statements on one line (colon)
+   --> run_replay.py:283:60
+    |
+281 |                 raise ValueError("input changed during replay")
+282 |         load_protocol(args.protocol)
+283 |         if sha(Path(__file__))!=args.expected_source_sha256:raise ValueError("runner source changed")
+    |                                                            ^
+284 |         clear=all(row.get("comparison_status")=="complete" and row["comparison"]["trace_agreement"]
+285 |                   and all(d.get("agreement") is True for d in row["directions"]) for row in status["cases"])
+    |
+
+E701 Multiple statements on one line (colon)
+   --> run_replay.py:319:47
+    |
+317 |     if sha(Path(__file__))!=args.expected_source_sha256 or sha(args.protocol)!=args.expected_protocol_sha256:
+318 |         raise ValueError("runner/protocol freeze changed")
+319 |     if not args.terminal_observation.is_file():raise ValueError("root terminal observation required")
+    |                                               ^
+320 |     return execute(args,p)
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> test_numpy_propagation.py:2:1
+  |
+1 |   """Small manufactured rolling-trajectory controls, never BP inputs."""
+2 | / import importlib.util
+3 | | from pathlib import Path
+4 | |
+5 | | import numpy as np
+  | |__________________^
+help: Organize imports
+  |
+6 |
+  -
+7 | spec = importlib.util.spec_from_file_location("_manufactured_bp_numpy_rolling", Path(__file__).with_name("numpy_bp_tangent.py"))
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> test_numpy_tangent.py:6:1
+   |
+ 4 |   recurrence. Epsilon values and tolerances are fixed before the first run.
+ 5 |   """
+ 6 | / from __future__ import annotations
+ 7 | |
+ 8 | | import numpy as np
+ 9 | | import pytest
+10 | |
+11 | | import numpy_bp_tangent as core
+   | |_______________________________^
+help: Organize imports
+   |
+12 |
+   -
+13 | EXPECTED_WEIGHTS = (5.33333333302289e-4, 8.53333333283663e-3, 3.2e-2)
+   |
+
+Found 9 errors.
+[*] 3 fixable with the `--fix` option (1 hidden fix can be enabled with the `--unsafe-fixes` option).

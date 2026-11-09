@@ -1,0 +1,96 @@
+{
+  "status": "DERIVED_ALL48_DISTINCT_COST_SUMMARY",
+  "audit_report_sha256": "c3b528d942cba432b38be6bd2f46139402b058687e9e220781e10d57a4161baa",
+  "per_method": {
+    "normalized_exact_data_only": {
+      "returns": 24,
+      "complete_return_min_seconds": 7.522220704999995,
+      "complete_return_median_seconds": 7.543140314500022,
+      "complete_return_max_seconds": 7.573382725999977,
+      "preparation_totals": {
+        "adjoint_rhs": 0,
+        "analytic_bound_evaluations": 0,
+        "cache_hits": 0,
+        "dense_inverse_rhs": 0,
+        "factorizations": 192,
+        "forward_rhs": 1152,
+        "stability_rhs": 0,
+        "svd_evaluations": 0,
+        "tangent_rhs": 0
+      },
+      "ONE_final_native_cumulative_snapshot_totals": {
+        "adjoint_rhs": 101424,
+        "analytic_bound_evaluations": 0,
+        "cache_hits": 0,
+        "dense_inverse_rhs": 0,
+        "factorizations": 17048,
+        "forward_rhs": 102288,
+        "stability_rhs": 0,
+        "svd_evaluations": 0,
+        "tangent_rhs": 0
+      },
+      "preparation_plus_native_distinct_same_unit_totals": {
+        "adjoint_rhs": 101424,
+        "analytic_bound_evaluations": 0,
+        "cache_hits": 0,
+        "dense_inverse_rhs": 0,
+        "factorizations": 17240,
+        "forward_rhs": 103440,
+        "stability_rhs": 0,
+        "svd_evaluations": 0,
+        "tangent_rhs": 0
+      },
+      "stored_postreturn_graph_totals_separate": {
+        "factorizations": 768,
+        "forward_rhs": 4608
+      }
+    },
+    "normalized_exact_fractional_update_prior": {
+      "returns": 24,
+      "complete_return_min_seconds": 7.520710139000016,
+      "complete_return_median_seconds": 7.546797123499999,
+      "complete_return_max_seconds": 7.581680227999982,
+      "preparation_totals": {
+        "adjoint_rhs": 0,
+        "analytic_bound_evaluations": 0,
+        "cache_hits": 0,
+        "dense_inverse_rhs": 0,
+        "factorizations": 192,
+        "forward_rhs": 1152,
+        "stability_rhs": 0,
+        "svd_evaluations": 0,
+        "tangent_rhs": 0
+      },
+      "ONE_final_native_cumulative_snapshot_totals": {
+        "adjoint_rhs": 101664,
+        "analytic_bound_evaluations": 0,
+        "cache_hits": 0,
+        "dense_inverse_rhs": 0,
+        "factorizations": 17064,
+        "forward_rhs": 102384,
+        "stability_rhs": 0,
+        "svd_evaluations": 0,
+        "tangent_rhs": 0
+      },
+      "preparation_plus_native_distinct_same_unit_totals": {
+        "adjoint_rhs": 101664,
+        "analytic_bound_evaluations": 0,
+        "cache_hits": 0,
+        "dense_inverse_rhs": 0,
+        "factorizations": 17256,
+        "forward_rhs": 103536,
+        "stability_rhs": 0,
+        "svd_evaluations": 0,
+        "tangent_rhs": 0
+      },
+      "stored_postreturn_graph_totals_separate": {
+        "factorizations": 768,
+        "forward_rhs": 4608
+      }
+    }
+  },
+  "scope": "Preparation and one final native cumulative snapshot are disjoint actual work with like-unit totals. Adapter/final-metric dispatch and fingerprint/arithmetic units remain separately recorded in all48CSV and must not be added as RHS. Postreturn graph evaluation and shared bootstrap are separate, not free algorithm work.",
+  "shared_producer_bootstrap_seconds": 1.2057000060000007,
+  "same_8s_allowance_not_identical_consumed_cost": true,
+  "no_speed_or_scientific_success_claim": true
+}

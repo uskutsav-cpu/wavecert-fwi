@@ -1,0 +1,37 @@
+{
+  "result": "PREEXECUTION_SOURCE_BLOCKERS_PENDING_MINIMAL_FIX",
+  "reviewer": "candidate_final_review",
+  "runner_sha256_reviewed": "3a9fdc6c46d62bb8dce92f754ee341ed3beb126b36bc091995ced039fe5163ee",
+  "raw_replayer_sha256_reviewed": "9d0705fcefae18f26bb2ac8bd59fd53ae0565163c87b7783b999d2ddb2ce8b62",
+  "protocol_sha256_reviewed": "f6f62e9a8ad59b8c52dc29b14b7d2968c684d0eb85a77ab53ce4746cf989f5d0",
+  "clear_math_and_capture": [
+    "Actual certified adapter is called once per fixed initial model. Wrapper forwards original args/kwargs unchanged, returns the same certificate object and restores the original adapter binding in finally. Source evaluate_cached_merit reads the supplied fields; adapter does not mutate captured fields after the call before copies are saved.",
+    "Independent state/adjoint route uses positive omega^2 Re(conj(lambda)*u), conjugate-transpose sparse LU adjoint and summed receiver residual injection. Six1/h^2 sources, twenty ordered receivers, four frequencies and all24 blocks match fixed source807/reference9f.",
+    "Direct array stencil uses the correct forward/adjoint imaginary-damping sign, positive Dirichlet -Laplacian and unchanged boundary diagonal. NumPy raw contractions and DD are independent of production code imports.",
+    "Literal coverage and historical1e-9 helper allowance are separately reported by runner; ordinaryFP and only-eight-new-initial-query scope are explicit, with no performance or360trajectory replay claim."
+  ],
+  "blockers": [
+    {
+      "id": "R1",
+      "issue": "Per-case except Exception is bypassed by KeyboardInterrupt/SystemExit. The outer failed status retains an attempted slot but does not persist already available per-case arrays/current receipt or mark that case interrupted, contrary to partial-data failure policy.",
+      "minimal_remedy": "Persist interrupted per-case status/partial arrays/receipt and overall failure before reraising BaseException; keep remaining cases unattempted. Preserve original source bytes."
+    },
+    {
+      "id": "R2",
+      "issue": "Raw replayer can return clear_raw_witness_replay while reconstructed false_certification is true: it checks flag equality only. It does not independently recompute historical allowance/coverage or propagate upstream verification issues into clear status.",
+      "minimal_remedy": "Reconstruct historical1e-9 allowance and coverage separately from literal coverage, verify both archived fields and require review for false certification, beyond-allowance miss or upstream issues. Keep literal misses visible as separate diagnostics; no tolerance change."
+    },
+    {
+      "id": "R3",
+      "issue": "Replayer hashes each raw array and paid frame but does not bind initial_model and production_damping to snapshot model/damping descriptors. New source/receiver ordering checks are welcome but do not replace model/operator-field binding.",
+      "minimal_remedy": "Compare initial array SHA with snapshot model_sha256/model descriptor and production damping with snapshot damping descriptor; retain exact shape/dtype checks."
+    }
+  ],
+  "activities": {
+    "source_only": true,
+    "import_parse_tests_execution": false,
+    "project_arrays_current_run_outputs_read": false,
+    "production_source_or_benchmark_mutations": false
+  },
+  "scope": "AI software review, not mathematical novelty clearance, human/student ownership, scientific result or execution authorization. Parent retains terminal/validation/GO decisions."
+}

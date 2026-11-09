@@ -1,0 +1,580 @@
+﻿2026-11-09T05:31:44.8039710Z Current runner version: '2.338.2'
+2026-11-09T05:31:44.8055487Z ##[group]Runner Image Provisioner
+2026-11-09T05:31:44.8056055Z Hosted Compute Agent
+2026-11-09T05:31:44.8056388Z Version: 20261028.624
+2026-11-09T05:31:44.8056764Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-09T05:31:44.8057213Z Build Date: 2026-10-28T21:51:42Z
+2026-11-09T05:31:44.8057594Z Worker ID: {02a886d6-295c-4769-af85-6c2f232957f0}
+2026-11-09T05:31:44.8058014Z Region: centralus
+2026-11-09T05:31:44.8058357Z Cloud: Azure
+2026-11-09T05:31:44.8058686Z ##[endgroup]
+2026-11-09T05:31:44.8059436Z ##[group]Operating System
+2026-11-09T05:31:44.8059772Z Ubuntu
+2026-11-09T05:31:44.8060110Z 26.04.1
+2026-11-09T05:31:44.8060402Z LTS
+2026-11-09T05:31:44.8060684Z ##[endgroup]
+2026-11-09T05:31:44.8061067Z ##[group]Runner Image
+2026-11-09T05:31:44.8061406Z Image: ubuntu-26.04
+2026-11-09T05:31:44.8061749Z Version: 20261101.186.1
+2026-11-09T05:31:44.8062710Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261101.186/images/ubuntu/Ubuntu2604-Readme.md
+2026-11-09T05:31:44.8063619Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261101.186
+2026-11-09T05:31:44.8064145Z ##[endgroup]
+2026-11-09T05:31:44.8064845Z ##[group]GITHUB_TOKEN Permissions
+2026-11-09T05:31:44.8066006Z Contents: read
+2026-11-09T05:31:44.8066416Z Metadata: read
+2026-11-09T05:31:44.8066732Z Packages: read
+2026-11-09T05:31:44.8067034Z ##[endgroup]
+2026-11-09T05:31:44.8068284Z Secret source: Actions
+2026-11-09T05:31:44.8068772Z Cache mode: write
+2026-11-09T05:31:44.8069272Z Prepare workflow directory
+2026-11-09T05:31:44.8263566Z Prepare all required actions
+2026-11-09T05:31:44.8298778Z Getting action download info
+2026-11-09T05:31:45.0310871Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-09T05:31:45.1041618Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-09T05:31:45.2389198Z Complete job name: test (3.11)
+2026-11-09T05:31:45.2932431Z ##[group]Run actions/checkout@v4
+2026-11-09T05:31:45.2933160Z with:
+2026-11-09T05:31:45.2933409Z   repository: uskutsav-cpu/wavecert-fwi
+2026-11-09T05:31:45.2935796Z   token: ***
+2026-11-09T05:31:45.2936130Z   ssh-strict: true
+2026-11-09T05:31:45.2936453Z   ssh-user: git
+2026-11-09T05:31:45.2936787Z   persist-credentials: true
+2026-11-09T05:31:45.2937160Z   clean: true
+2026-11-09T05:31:45.2937507Z   sparse-checkout-cone-mode: true
+2026-11-09T05:31:45.2937918Z   fetch-depth: 1
+2026-11-09T05:31:45.2938288Z   fetch-tags: false
+2026-11-09T05:31:45.2938656Z   show-progress: true
+2026-11-09T05:31:45.2939032Z   lfs: false
+2026-11-09T05:31:45.2939378Z   submodules: false
+2026-11-09T05:31:45.2939737Z   set-safe-directory: true
+2026-11-09T05:31:45.2940155Z   allow-unsafe-pr-checkout: false
+2026-11-09T05:31:45.2940836Z ##[endgroup]
+2026-11-09T05:31:45.5084290Z Syncing repository: uskutsav-cpu/wavecert-fwi
+2026-11-09T05:31:45.5085389Z ##[group]Getting Git version info
+2026-11-09T05:31:45.5085932Z Working directory is '/home/runner/work/wavecert-fwi/wavecert-fwi'
+2026-11-09T05:31:45.5086776Z [command]/usr/bin/git version
+2026-11-09T05:31:45.5105426Z git version 2.56.0
+2026-11-09T05:31:45.5116034Z ##[endgroup]
+2026-11-09T05:31:45.5124484Z Temporarily overriding HOME='/home/runner/work/_temp/0a20b6d5-b021-41e6-b40e-b6c77e6606f8' before making global git config changes
+2026-11-09T05:31:45.5125770Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-09T05:31:45.5127169Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/wavecert-fwi/wavecert-fwi
+2026-11-09T05:31:45.5179356Z Deleting the contents of '/home/runner/work/wavecert-fwi/wavecert-fwi'
+2026-11-09T05:31:45.5182361Z ##[group]Initializing the repository
+2026-11-09T05:31:45.5185369Z [command]/usr/bin/git init /home/runner/work/wavecert-fwi/wavecert-fwi
+2026-11-09T05:31:45.5373940Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-09T05:31:45.5374555Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-09T05:31:45.5375525Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-09T05:31:45.5375909Z hint: call:
+2026-11-09T05:31:45.5376121Z hint:
+2026-11-09T05:31:45.5376408Z hint: 	git config --global init.defaultBranch <name>
+2026-11-09T05:31:45.5376731Z hint:
+2026-11-09T05:31:45.5377028Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-09T05:31:45.5377506Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-09T05:31:45.5377887Z hint:
+2026-11-09T05:31:45.5378220Z hint: 	git branch -m <name>
+2026-11-09T05:31:45.5378467Z hint:
+2026-11-09T05:31:45.5378786Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-09T05:31:45.5384672Z Initialized empty Git repository in /home/runner/work/wavecert-fwi/wavecert-fwi/.git/
+2026-11-09T05:31:45.5397390Z [command]/usr/bin/git remote add origin https://github.com/uskutsav-cpu/wavecert-fwi
+2026-11-09T05:31:45.5438811Z ##[endgroup]
+2026-11-09T05:31:45.5439484Z ##[group]Disabling automatic garbage collection
+2026-11-09T05:31:45.5441245Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-09T05:31:45.5468471Z ##[endgroup]
+2026-11-09T05:31:45.5481701Z ##[group]Setting up auth
+2026-11-09T05:31:45.5482214Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T05:31:45.5513465Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T05:31:45.5858747Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T05:31:45.5885987Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T05:31:45.6084831Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T05:31:45.6108865Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T05:31:45.6362937Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-09T05:31:45.6364601Z ##[endgroup]
+2026-11-09T05:31:45.6365270Z ##[group]Fetching the repository
+2026-11-09T05:31:45.6366508Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +8cfeb78a2ebebc25f39f5e4444dd2aa93cd73f46:refs/remotes/pull/5/merge
+2026-11-09T05:31:51.0716342Z From https://github.com/uskutsav-cpu/wavecert-fwi
+2026-11-09T05:31:51.0717033Z  * [new ref]         8cfeb78a2ebebc25f39f5e4444dd2aa93cd73f46 -> pull/5/merge
+2026-11-09T05:31:51.0720260Z ##[endgroup]
+2026-11-09T05:31:51.0720718Z ##[group]Determining the checkout info
+2026-11-09T05:31:51.0722130Z ##[endgroup]
+2026-11-09T05:31:51.0731695Z [command]/usr/bin/git sparse-checkout disable
+2026-11-09T05:31:51.0770242Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-09T05:31:51.0791932Z ##[group]Checking out the ref
+2026-11-09T05:31:51.0794105Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/5/merge
+2026-11-09T05:31:51.9331385Z Note: switching to 'refs/remotes/pull/5/merge'.
+2026-11-09T05:31:51.9332406Z 
+2026-11-09T05:31:51.9332849Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-09T05:31:51.9333170Z changes and commit them, and you can discard any commits you make in this
+2026-11-09T05:31:51.9333493Z state without impacting any branches by switching back to a branch.
+2026-11-09T05:31:51.9333666Z 
+2026-11-09T05:31:51.9333800Z If you want to create a new branch to retain commits you create, you may
+2026-11-09T05:31:51.9334112Z do so (now or later) by using -c with the switch command. Example:
+2026-11-09T05:31:51.9334527Z 
+2026-11-09T05:31:51.9334615Z   git switch -c <new-branch-name>
+2026-11-09T05:31:51.9334729Z 
+2026-11-09T05:31:51.9334817Z Or undo this operation with:
+2026-11-09T05:31:51.9334916Z 
+2026-11-09T05:31:51.9334987Z   git switch -
+2026-11-09T05:31:51.9335075Z 
+2026-11-09T05:31:51.9335255Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-09T05:31:51.9335459Z 
+2026-11-09T05:31:51.9335684Z HEAD is now at 8cfeb78 Merge 83b17ef08acf63fcbc19a0c354fe82ca395c350a into 7ee700f08609e13c1224a18b75db85fac7b01e82
+2026-11-09T05:31:51.9398091Z ##[endgroup]
+2026-11-09T05:31:51.9442065Z [command]/usr/bin/git log -1 --format=%H
+2026-11-09T05:31:51.9461348Z 8cfeb78a2ebebc25f39f5e4444dd2aa93cd73f46
+2026-11-09T05:31:51.9720463Z ##[group]Run actions/setup-python@v5
+2026-11-09T05:31:51.9720791Z with:
+2026-11-09T05:31:51.9721031Z   python-version: 3.11
+2026-11-09T05:31:51.9721308Z   check-latest: false
+2026-11-09T05:31:51.9724238Z   token: ***
+2026-11-09T05:31:51.9724480Z   update-environment: true
+2026-11-09T05:31:51.9724780Z   allow-prereleases: false
+2026-11-09T05:31:51.9725043Z   freethreaded: false
+2026-11-09T05:31:51.9725282Z ##[endgroup]
+2026-11-09T05:31:52.0546132Z ##[group]Installed versions
+2026-11-09T05:31:52.0625180Z (node:2175) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-09T05:31:52.0625807Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-09T05:31:52.0634781Z Successfully set up CPython (3.11.18)
+2026-11-09T05:31:52.0635202Z ##[endgroup]
+2026-11-09T05:31:52.0806921Z ##[group]Run python -m pip install --upgrade pip
+2026-11-09T05:31:52.0807414Z [36;1mpython -m pip install --upgrade pip[0m
+2026-11-09T05:31:52.0871497Z shell: /usr/bin/bash -e {0}
+2026-11-09T05:31:52.0871704Z env:
+2026-11-09T05:31:52.0871904Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T05:31:52.0872189Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-09T05:31:52.0872633Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T05:31:52.0872870Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T05:31:52.0873104Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T05:31:52.0873337Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-09T05:31:52.0873543Z ##[endgroup]
+2026-11-09T05:31:52.8396304Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages (26.2.2)
+2026-11-09T05:31:53.0328325Z Collecting pip
+2026-11-09T05:31:53.0703263Z   Downloading pip-26.3-py3-none-any.whl.metadata (4.6 kB)
+2026-11-09T05:31:53.0821539Z Downloading pip-26.3-py3-none-any.whl (2.0 MB)
+2026-11-09T05:31:53.1297656Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 66.3 MB/s  0:00:00
+2026-11-09T05:31:53.1617611Z Installing collected packages: pip
+2026-11-09T05:31:53.1618134Z   Attempting uninstall: pip
+2026-11-09T05:31:53.1625374Z     Found existing installation: pip 26.2.2
+2026-11-09T05:31:53.2194076Z     Uninstalling pip-26.2.2:
+2026-11-09T05:31:53.2228805Z       Successfully uninstalled pip-26.2.2
+2026-11-09T05:31:53.8129849Z Successfully installed pip-26.3
+2026-11-09T05:31:53.8471538Z ##[group]Run pip install -e '.[dev]'
+2026-11-09T05:31:53.8471742Z [36;1mpip install -e '.[dev]'[0m
+2026-11-09T05:31:53.8513533Z shell: /usr/bin/bash -e {0}
+2026-11-09T05:31:53.8513683Z env:
+2026-11-09T05:31:53.8513851Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T05:31:53.8514086Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-09T05:31:53.8514318Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T05:31:53.8514530Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T05:31:53.8514738Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T05:31:53.8514945Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-09T05:31:53.8515213Z ##[endgroup]
+2026-11-09T05:31:54.0323360Z Obtaining file:///home/runner/work/wavecert-fwi/wavecert-fwi
+2026-11-09T05:31:54.0333418Z   Installing build dependencies: started
+2026-11-09T05:31:54.6950319Z   Installing build dependencies: finished with status 'done'
+2026-11-09T05:31:54.6958445Z   Checking if build backend supports build_editable: started
+2026-11-09T05:31:54.8741005Z   Checking if build backend supports build_editable: finished with status 'done'
+2026-11-09T05:31:54.8747268Z   Getting requirements to build editable: started
+2026-11-09T05:31:55.0573720Z   Getting requirements to build editable: finished with status 'done'
+2026-11-09T05:31:55.0580210Z   /tmp/pip-build-env-k8afopfx/overlay/lib/python3.11/site-packages/setuptools/config/_apply_pyprojecttoml.py:82: BuildBackendWarning: `project.license` as a TOML table is deprecated
+2026-11-09T05:31:55.0581032Z   !!
+2026-11-09T05:31:55.0581232Z   
+2026-11-09T05:31:55.0581494Z           ********************************************************************************
+2026-11-09T05:31:55.0582284Z           Please use a simple string containing a SPDX expression for `project.license`. You can also use `project.license-files`. (Both options available on setuptools>=77.0.0).
+2026-11-09T05:31:55.0583158Z   
+2026-11-09T05:31:55.0583458Z           By 2027-Feb-18, you need to update your project and remove deprecated calls
+2026-11-09T05:31:55.0583891Z           or your builds will no longer be supported.
+2026-11-09T05:31:55.0584206Z   
+2026-11-09T05:31:55.0584677Z           See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+2026-11-09T05:31:55.0585103Z           ********************************************************************************
+2026-11-09T05:31:55.0585419Z   
+2026-11-09T05:31:55.0586044Z   !!
+2026-11-09T05:31:55.0586278Z     corresp(dist, value, root_dir)
+2026-11-09T05:31:55.0586872Z   /tmp/pip-build-env-k8afopfx/overlay/lib/python3.11/site-packages/setuptools/config/_apply_pyprojecttoml.py:61: BuildBackendWarning: License classifiers are deprecated.
+2026-11-09T05:31:55.0587524Z   !!
+2026-11-09T05:31:55.0587729Z   
+2026-11-09T05:31:55.0587981Z           ********************************************************************************
+2026-11-09T05:31:55.0588448Z           Please consider removing the following classifiers in favor of a SPDX license expression:
+2026-11-09T05:31:55.0588867Z   
+2026-11-09T05:31:55.0589137Z           License :: OSI Approved :: MIT License
+2026-11-09T05:31:55.0589369Z   
+2026-11-09T05:31:55.0589775Z           See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+2026-11-09T05:31:55.0590261Z           ********************************************************************************
+2026-11-09T05:31:55.0590587Z   
+2026-11-09T05:31:55.0590762Z   !!
+2026-11-09T05:31:55.0590964Z     dist._finalize_license_expression()
+2026-11-09T05:31:55.0591577Z   /tmp/pip-build-env-k8afopfx/overlay/lib/python3.11/site-packages/setuptools/dist.py:765: BuildBackendWarning: License classifiers are deprecated.
+2026-11-09T05:31:55.0592216Z   !!
+2026-11-09T05:31:55.0592603Z   Preparing editable metadata (pyproject.toml): started
+2026-11-09T05:31:55.0592928Z   
+2026-11-09T05:31:55.0593404Z           ********************************************************************************
+2026-11-09T05:31:55.0594019Z           Please consider removing the following classifiers in favor of a SPDX license expression:
+2026-11-09T05:31:55.0594503Z   
+2026-11-09T05:31:55.0594695Z           License :: OSI Approved :: MIT License
+2026-11-09T05:31:55.0594947Z   
+2026-11-09T05:31:55.0595266Z           See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+2026-11-09T05:31:55.0595677Z           ********************************************************************************
+2026-11-09T05:31:55.0595920Z   
+2026-11-09T05:31:55.0596063Z   !!
+2026-11-09T05:31:55.0596231Z     self._finalize_license_expression()
+2026-11-09T05:31:55.1604612Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+2026-11-09T05:31:55.1607323Z   /tmp/pip-build-env-k8afopfx/overlay/lib/python3.11/site-packages/setuptools/config/_apply_pyprojecttoml.py:82: BuildBackendWarning: `project.license` as a TOML table is deprecated
+2026-11-09T05:31:55.1607722Z   !!
+2026-11-09T05:31:55.1607833Z   
+2026-11-09T05:31:55.1608103Z           ********************************************************************************
+2026-11-09T05:31:55.1608589Z           Please use a simple string containing a SPDX expression for `project.license`. You can also use `project.license-files`. (Both options available on setuptools>=77.0.0).
+2026-11-09T05:31:55.1610101Z   
+2026-11-09T05:31:55.1610345Z           By 2027-Feb-18, you need to update your project and remove deprecated calls
+2026-11-09T05:31:55.1610701Z           or your builds will no longer be supported.
+2026-11-09T05:31:55.1610932Z   
+2026-11-09T05:31:55.1611273Z           See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+2026-11-09T05:31:55.1611720Z           ********************************************************************************
+2026-11-09T05:31:55.1611976Z   
+2026-11-09T05:31:55.1612125Z   !!
+2026-11-09T05:31:55.1612312Z     corresp(dist, value, root_dir)
+2026-11-09T05:31:55.1613018Z   /tmp/pip-build-env-k8afopfx/overlay/lib/python3.11/site-packages/setuptools/config/_apply_pyprojecttoml.py:61: BuildBackendWarning: License classifiers are deprecated.
+2026-11-09T05:31:55.1613601Z   !!
+2026-11-09T05:31:55.1613755Z   
+2026-11-09T05:31:55.1613954Z           ********************************************************************************
+2026-11-09T05:31:55.1614372Z           Please consider removing the following classifiers in favor of a SPDX license expression:
+2026-11-09T05:31:55.1614744Z   
+2026-11-09T05:31:55.1614964Z           License :: OSI Approved :: MIT License
+2026-11-09T05:31:55.1615193Z   
+2026-11-09T05:31:55.1615481Z           See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+2026-11-09T05:31:55.1615757Z           ********************************************************************************
+2026-11-09T05:31:55.1615919Z   
+2026-11-09T05:31:55.1616015Z   !!
+2026-11-09T05:31:55.1616130Z     dist._finalize_license_expression()
+2026-11-09T05:31:55.1616487Z   /tmp/pip-build-env-k8afopfx/overlay/lib/python3.11/site-packages/setuptools/dist.py:765: BuildBackendWarning: License classifiers are deprecated.
+2026-11-09T05:31:55.1616811Z   !!
+2026-11-09T05:31:55.1616905Z   
+2026-11-09T05:31:55.1617031Z           ********************************************************************************
+2026-11-09T05:31:55.1617293Z           Please consider removing the following classifiers in favor of a SPDX license expression:
+2026-11-09T05:31:55.1617519Z   
+2026-11-09T05:31:55.1617635Z           License :: OSI Approved :: MIT License
+2026-11-09T05:31:55.1617798Z   
+2026-11-09T05:31:55.1618004Z           See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+2026-11-09T05:31:55.1618286Z           ********************************************************************************
+2026-11-09T05:31:55.1618449Z   
+2026-11-09T05:31:55.1618682Z   !!
+2026-11-09T05:31:55.1618794Z     self._finalize_license_expression()
+2026-11-09T05:31:55.3553009Z Collecting numpy>=1.26 (from wavecert-fwi==0.6.0)
+2026-11-09T05:31:55.4085538Z   Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+2026-11-09T05:31:55.4764138Z Collecting scipy>=1.11 (from wavecert-fwi==0.6.0)
+2026-11-09T05:31:55.4946176Z   Downloading scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+2026-11-09T05:31:55.5868934Z Collecting matplotlib>=3.8 (from wavecert-fwi==0.6.0)
+2026-11-09T05:31:55.6020908Z   Downloading matplotlib-3.11.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+2026-11-09T05:31:55.6488774Z Collecting pytest>=8 (from wavecert-fwi==0.6.0)
+2026-11-09T05:31:55.6640761Z   Downloading pytest-9.2.0-py3-none-any.whl.metadata (7.9 kB)
+2026-11-09T05:31:55.6851740Z Collecting pytest-cov>=5 (from wavecert-fwi==0.6.0)
+2026-11-09T05:31:55.7000982Z   Downloading pytest_cov-7.1.0-py3-none-any.whl.metadata (32 kB)
+2026-11-09T05:31:55.8609598Z Collecting ruff>=0.6 (from wavecert-fwi==0.6.0)
+2026-11-09T05:31:55.8763471Z   Downloading ruff-0.17.4-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (20 kB)
+2026-11-09T05:31:55.9624558Z Collecting mypy>=1.10 (from wavecert-fwi==0.6.0)
+2026-11-09T05:31:55.9776323Z   Downloading mypy-2.4.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-11-09T05:31:56.0031454Z Collecting pre-commit>=3.7 (from wavecert-fwi==0.6.0)
+2026-11-09T05:31:56.0190158Z   Downloading pre_commit-4.7.0-py2.py3-none-any.whl.metadata (1.2 kB)
+2026-11-09T05:31:56.0774016Z Collecting contourpy>=1.0.1 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T05:31:56.0931533Z   Downloading contourpy-1.3.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+2026-11-09T05:31:56.1125665Z Collecting cycler>=0.10 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T05:31:56.1275766Z   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+2026-11-09T05:31:56.2089952Z Collecting fonttools>=4.28.2 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T05:31:56.2249718Z   Downloading fonttools-4.68.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (139 kB)
+2026-11-09T05:31:56.2959496Z Collecting kiwisolver>=1.3.1 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T05:31:56.3127153Z   Downloading kiwisolver-1.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+2026-11-09T05:31:56.3287204Z Collecting packaging>=20.0 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T05:31:56.3304183Z   Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+2026-11-09T05:31:56.4403263Z Collecting pillow>=9 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T05:31:56.4556860Z   Downloading pillow-13.0.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+2026-11-09T05:31:56.4803836Z Collecting pyparsing>=3 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T05:31:56.4951646Z   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+2026-11-09T05:31:56.5154594Z Collecting python-dateutil>=2.7 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T05:31:56.5304163Z   Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+2026-11-09T05:31:56.5526087Z Collecting typing_extensions>=4.6.0 (from mypy>=1.10->wavecert-fwi==0.6.0)
+2026-11-09T05:31:56.5677430Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-11-09T05:31:56.5887978Z Collecting mypy_extensions>=1.0.0 (from mypy>=1.10->wavecert-fwi==0.6.0)
+2026-11-09T05:31:56.6037809Z   Downloading mypy_extensions-1.2.0-py3-none-any.whl.metadata (1.1 kB)
+2026-11-09T05:31:56.6232561Z Collecting pathspec>=1.0.0 (from mypy>=1.10->wavecert-fwi==0.6.0)
+2026-11-09T05:31:56.6389098Z   Downloading pathspec-1.1.1-py3-none-any.whl.metadata (14 kB)
+2026-11-09T05:31:56.7084993Z Collecting librt>=0.16.0 (from mypy>=1.10->wavecert-fwi==0.6.0)
+2026-11-09T05:31:56.7238661Z   Downloading librt-0.16.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (1.3 kB)
+2026-11-09T05:31:56.7603847Z Collecting ast-serialize<1.0.0,>=0.12.1 (from mypy>=1.10->wavecert-fwi==0.6.0)
+2026-11-09T05:31:56.7761507Z   Downloading ast_serialize-0.13.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.4 kB)
+2026-11-09T05:31:56.7967159Z Collecting cfgv>=2.0.0 (from pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T05:31:56.8115633Z   Downloading cfgv-3.5.0-py2.py3-none-any.whl.metadata (8.9 kB)
+2026-11-09T05:31:56.8392912Z Collecting identify>=1.0.0 (from pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T05:31:56.8540809Z   Downloading identify-2.6.20-py2.py3-none-any.whl.metadata (4.4 kB)
+2026-11-09T05:31:56.8924545Z Collecting nodeenv>=0.11.1 (from pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T05:31:56.9073410Z   Downloading nodeenv-1.12.0-py3-none-any.whl.metadata (49 kB)
+2026-11-09T05:31:56.9378176Z Collecting pyyaml>=5.1 (from pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T05:31:56.9528142Z   Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-11-09T05:31:56.9829512Z Collecting virtualenv>=20.10.0 (from pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T05:31:56.9983888Z   Downloading virtualenv-21.15.6-py3-none-any.whl.metadata (4.1 kB)
+2026-11-09T05:31:57.0344015Z Collecting iniconfig>=2 (from pytest>=8->wavecert-fwi==0.6.0)
+2026-11-09T05:31:57.0491719Z   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+2026-11-09T05:31:57.0697005Z Collecting pluggy<2,>=1.6 (from pytest>=8->wavecert-fwi==0.6.0)
+2026-11-09T05:31:57.0847589Z   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+2026-11-09T05:31:57.1062721Z Collecting pygments>=2.15 (from pytest>=8->wavecert-fwi==0.6.0)
+2026-11-09T05:31:57.1210014Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+2026-11-09T05:31:57.3400966Z Collecting coverage>=7.10.6 (from coverage[toml]>=7.10.6->pytest-cov>=5->wavecert-fwi==0.6.0)
+2026-11-09T05:31:57.3559339Z   Downloading coverage-7.17.2-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (8.1 kB)
+2026-11-09T05:31:57.3836625Z Collecting tzdata (from python-dateutil>=2.7->matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T05:31:57.3991243Z   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+2026-11-09T05:31:57.4202128Z Collecting distlib<1,>=0.4.3 (from virtualenv>=20.10.0->pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T05:31:57.4352767Z   Downloading distlib-0.4.4-py2.py3-none-any.whl.metadata (5.3 kB)
+2026-11-09T05:31:57.4593671Z Collecting filelock<5,>=3.24.2 (from virtualenv>=20.10.0->pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T05:31:57.4745737Z   Downloading filelock-4.2.9-py3-none-any.whl.metadata (2.3 kB)
+2026-11-09T05:31:57.5204618Z Collecting platformdirs<5,>=4.4 (from virtualenv>=20.10.0->pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T05:31:57.5359094Z   Downloading platformdirs-4.14.5-py3-none-any.whl.metadata (5.7 kB)
+2026-11-09T05:31:57.5563644Z Collecting python-discovery>=1.6.1 (from virtualenv>=20.10.0->pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T05:31:57.5712182Z   Downloading python_discovery-1.9.5-py3-none-any.whl.metadata (4.2 kB)
+2026-11-09T05:31:57.5906222Z Downloading matplotlib-3.11.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+2026-11-09T05:31:57.7417871Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 66.6 MB/s  0:00:00
+2026-11-09T05:31:57.7568747Z Downloading contourpy-1.3.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (355 kB)
+2026-11-09T05:31:57.7744021Z Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+2026-11-09T05:31:57.7919966Z Downloading fonttools-4.68.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.5 MB)
+2026-11-09T05:31:57.8533779Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 88.8 MB/s  0:00:00
+2026-11-09T05:31:57.8688817Z Downloading kiwisolver-1.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.4 MB)
+2026-11-09T05:31:57.8746323Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 257.8 MB/s  0:00:00
+2026-11-09T05:31:57.8933854Z Downloading mypy-2.4.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (15.4 MB)
+2026-11-09T05:31:58.0445902Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.4/15.4 MB 101.4 MB/s  0:00:00
+2026-11-09T05:31:58.0606951Z Downloading ast_serialize-0.13.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
+2026-11-09T05:31:58.0661068Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 247.5 MB/s  0:00:00
+2026-11-09T05:31:58.0816607Z Downloading librt-0.16.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (515 kB)
+2026-11-09T05:31:58.1005176Z Downloading mypy_extensions-1.2.0-py3-none-any.whl (5.1 kB)
+2026-11-09T05:31:58.1174740Z Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+2026-11-09T05:31:58.2521655Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 125.0 MB/s  0:00:00
+2026-11-09T05:31:58.2530056Z Using cached packaging-26.3-py3-none-any.whl (129 kB)
+2026-11-09T05:31:58.2694463Z Downloading pathspec-1.1.1-py3-none-any.whl (57 kB)
+2026-11-09T05:31:58.2864130Z Downloading pillow-13.0.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+2026-11-09T05:31:58.3412787Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 128.5 MB/s  0:00:00
+2026-11-09T05:31:58.3572832Z Downloading pre_commit-4.7.0-py2.py3-none-any.whl (226 kB)
+2026-11-09T05:31:58.3751561Z Downloading cfgv-3.5.0-py2.py3-none-any.whl (7.4 kB)
+2026-11-09T05:31:58.4023409Z Downloading identify-2.6.20-py2.py3-none-any.whl (99 kB)
+2026-11-09T05:31:58.4330465Z Downloading nodeenv-1.12.0-py3-none-any.whl (39 kB)
+2026-11-09T05:31:58.4503846Z Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+2026-11-09T05:31:58.4685661Z Downloading pytest-9.2.0-py3-none-any.whl (411 kB)
+2026-11-09T05:31:58.4858443Z Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+2026-11-09T05:31:58.5042569Z Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+2026-11-09T05:31:58.5205553Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+2026-11-09T05:31:58.5253032Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 293.7 MB/s  0:00:00
+2026-11-09T05:31:58.5402051Z Downloading pytest_cov-7.1.0-py3-none-any.whl (22 kB)
+2026-11-09T05:31:58.5574569Z Downloading coverage-7.17.2-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (262 kB)
+2026-11-09T05:31:58.5913393Z Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+2026-11-09T05:31:58.6101518Z Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+2026-11-09T05:31:58.6144816Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 168.4 MB/s  0:00:00
+2026-11-09T05:31:58.6293386Z Downloading ruff-0.17.4-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (10.6 MB)
+2026-11-09T05:31:58.7172584Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.6/10.6 MB 119.0 MB/s  0:00:00
+2026-11-09T05:31:58.7337481Z Downloading scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+2026-11-09T05:31:59.0082902Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 128.5 MB/s  0:00:00
+2026-11-09T05:31:59.0237520Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-11-09T05:31:59.0404815Z Downloading virtualenv-21.15.6-py3-none-any.whl (5.7 MB)
+2026-11-09T05:31:59.0775372Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.7/5.7 MB 151.9 MB/s  0:00:00
+2026-11-09T05:31:59.0924895Z Downloading distlib-0.4.4-py2.py3-none-any.whl (472 kB)
+2026-11-09T05:31:59.1107444Z Downloading filelock-4.2.9-py3-none-any.whl (164 kB)
+2026-11-09T05:31:59.1292783Z Downloading platformdirs-4.14.5-py3-none-any.whl (35 kB)
+2026-11-09T05:31:59.1458280Z Downloading python_discovery-1.9.5-py3-none-any.whl (44 kB)
+2026-11-09T05:31:59.1622927Z Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+2026-11-09T05:31:59.3008834Z Building wheels for collected packages: wavecert-fwi
+2026-11-09T05:31:59.3014276Z   Building editable for wavecert-fwi (pyproject.toml): started
+2026-11-09T05:31:59.4176290Z   Building editable for wavecert-fwi (pyproject.toml): finished with status 'done'
+2026-11-09T05:31:59.4179347Z   /tmp/pip-build-env-k8afopfx/overlay/lib/python3.11/site-packages/setuptools/config/_apply_pyprojecttoml.py:82: BuildBackendWarning: `project.license` as a TOML table is deprecated
+2026-11-09T05:31:59.4180026Z   !!
+2026-11-09T05:31:59.4180199Z   
+2026-11-09T05:31:59.4180437Z           ********************************************************************************
+2026-11-09T05:31:59.4181125Z           Please use a simple string containing a SPDX expression for `project.license`. You can also use `project.license-files`. (Both options available on setuptools>=77.0.0).
+2026-11-09T05:31:59.4181775Z   
+2026-11-09T05:31:59.4182042Z           By 2027-Feb-18, you need to update your project and remove deprecated calls
+2026-11-09T05:31:59.4182403Z           or your builds will no longer be supported.
+2026-11-09T05:31:59.4182790Z   
+2026-11-09T05:31:59.4183138Z           See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+2026-11-09T05:31:59.4183577Z           ********************************************************************************
+2026-11-09T05:31:59.4183831Z   
+2026-11-09T05:31:59.4183982Z   !!
+2026-11-09T05:31:59.4184153Z     corresp(dist, value, root_dir)
+2026-11-09T05:31:59.4184765Z   /tmp/pip-build-env-k8afopfx/overlay/lib/python3.11/site-packages/setuptools/config/_apply_pyprojecttoml.py:61: BuildBackendWarning: License classifiers are deprecated.
+2026-11-09T05:31:59.4185381Z   !!
+2026-11-09T05:31:59.4185540Z   
+2026-11-09T05:31:59.4185746Z           ********************************************************************************
+2026-11-09T05:31:59.4186205Z           Please consider removing the following classifiers in favor of a SPDX license expression:
+2026-11-09T05:31:59.4186577Z   
+2026-11-09T05:31:59.4186859Z           License :: OSI Approved :: MIT License
+2026-11-09T05:31:59.4187086Z   
+2026-11-09T05:31:59.4187411Z           See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+2026-11-09T05:31:59.4187843Z           ********************************************************************************
+2026-11-09T05:31:59.4188113Z   
+2026-11-09T05:31:59.4188259Z   !!
+2026-11-09T05:31:59.4188437Z     dist._finalize_license_expression()
+2026-11-09T05:31:59.4188986Z   /tmp/pip-build-env-k8afopfx/overlay/lib/python3.11/site-packages/setuptools/dist.py:765: BuildBackendWarning: License classifiers are deprecated.
+2026-11-09T05:31:59.4189522Z   !!
+2026-11-09T05:31:59.4189677Z   
+2026-11-09T05:31:59.4189880Z           ********************************************************************************
+2026-11-09T05:31:59.4190317Z           Please consider removing the following classifiers in favor of a SPDX license expression:
+2026-11-09T05:31:59.4190696Z   
+2026-11-09T05:31:59.4190892Z           License :: OSI Approved :: MIT License
+2026-11-09T05:31:59.4191134Z   
+2026-11-09T05:31:59.4191486Z           See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+2026-11-09T05:31:59.4191949Z           ********************************************************************************
+2026-11-09T05:31:59.4192216Z   
+2026-11-09T05:31:59.4192367Z   !!
+2026-11-09T05:31:59.4192704Z     self._finalize_license_expression()
+2026-11-09T05:31:59.4193414Z   Created wheel for wavecert-fwi: filename=wavecert_fwi-0.6.0-0.editable-py3-none-any.whl size=10164 sha256=d982e2594c81f31ca307a8d3f816649eabb3acc701369c1c9d135217c4d22510
+2026-11-09T05:31:59.4194355Z   Stored in directory: /tmp/pip-ephem-wheel-cache-xmlinotd/wheels/4e/e8/ae/d1ac4f405b97324fbc9155287dbd28a99c6e191436576f8ec4
+2026-11-09T05:31:59.4201400Z Successfully built wavecert-fwi
+2026-11-09T05:31:59.4764039Z Installing collected packages: distlib, tzdata, typing_extensions, ruff, pyyaml, pyparsing, pygments, pluggy, platformdirs, pillow, pathspec, packaging, numpy, nodeenv, mypy_extensions, librt, kiwisolver, iniconfig, identify, fonttools, filelock, cycler, coverage, cfgv, ast-serialize, scipy, python-discovery, python-dateutil, pytest, mypy, contourpy, virtualenv, pytest-cov, matplotlib, wavecert-fwi, pre-commit
+2026-11-09T05:32:06.3331013Z 
+2026-11-09T05:32:06.3343092Z Successfully installed ast-serialize-0.13.1 cfgv-3.5.0 contourpy-1.3.3 coverage-7.17.2 cycler-0.12.1 distlib-0.4.4 filelock-4.2.9 fonttools-4.68.0 identify-2.6.20 iniconfig-2.3.1 kiwisolver-1.5.1 librt-0.16.0 matplotlib-3.11.2 mypy-2.4.1 mypy_extensions-1.2.0 nodeenv-1.12.0 numpy-2.4.6 packaging-26.3 pathspec-1.1.1 pillow-13.0.0 platformdirs-4.14.5 pluggy-1.7.0 pre-commit-4.7.0 pygments-2.21.0 pyparsing-3.3.3 pytest-9.2.0 pytest-cov-7.1.0 python-dateutil-4.0.0 python-discovery-1.9.5 pyyaml-6.0.3 ruff-0.17.4 scipy-1.17.1 typing_extensions-4.16.0 tzdata-2026.6 virtualenv-21.15.6 wavecert-fwi-0.6.0
+2026-11-09T05:32:06.4550630Z ##[group]Run ruff check src tests scripts
+2026-11-09T05:32:06.4550870Z [36;1mruff check src tests scripts[0m
+2026-11-09T05:32:06.4592237Z shell: /usr/bin/bash -e {0}
+2026-11-09T05:32:06.4592381Z env:
+2026-11-09T05:32:06.4592660Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T05:32:06.4592898Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-09T05:32:06.4593130Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T05:32:06.4593346Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T05:32:06.4593555Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T05:32:06.4593767Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-09T05:32:06.4593947Z ##[endgroup]
+2026-11-09T05:32:06.4877317Z All checks passed!
+2026-11-09T05:32:06.4920619Z ##[group]Run pytest --cov=wavecert --cov-report=term-missing
+2026-11-09T05:32:06.4920863Z [36;1mpytest --cov=wavecert --cov-report=term-missing[0m
+2026-11-09T05:32:06.4955104Z shell: /usr/bin/bash -e {0}
+2026-11-09T05:32:06.4955240Z env:
+2026-11-09T05:32:06.4955392Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T05:32:06.4955628Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-09T05:32:06.4955853Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T05:32:06.4956058Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T05:32:06.4956262Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T05:32:06.4956468Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-09T05:32:06.4956644Z ##[endgroup]
+2026-11-09T05:32:31.2330794Z ..............................................{"all_own_solves_before_native_solution_outputs": true, "canonical_input_manifest_sha256": "2d878a87d947e8b4f1e9e69a5e487ab772e3de1156511a714a0a3b012fad3b35", "cases": [{"case_id": "upper_left", "informative_direction_relative_errors": {"edge": 1.2125890805823517e-14, "interior": 3.5324223749335565e-15}, "source_relative_L2": 1.62587949505648e-17, "trace_relative_L2": 4.409051766940796e-14}, {"case_id": "middle_center", "informative_direction_relative_errors": {"edge": 6.823473661506754e-14, "interior": 2.5854634199180642e-14}, "source_relative_L2": 1.62587949505648e-17, "trace_relative_L2": 2.8179763010522686e-14}, {"case_id": "lower_right", "informative_direction_relative_errors": {"edge": 5.740452111941409e-14, "interior": 3.0482421670577655e-14}, "source_relative_L2": 1.62587949505648e-17, "trace_relative_L2": 2.2499482562358158e-14}], "check": "bp_numpy_tangent_reproduction", "directional_tolerance": 0.001, "independent_numeric_input_generation": false, "informative_directions": 6, "installed_devito_required": false, "maximum_directional_relative_error": 6.823473661506754e-14, "maximum_trace_relative_L2": 4.409051766940796e-14, "native_derived_numeric_inputs_used": true, "native_solution_outputs_used_during_own_solves": false, "numpy": "2.4.6", "physical_acceptance": null, "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43", "python": "3.11.18", "scope": "known source-informed discrete fixture regression; no new physics, independent sites or student conclusions", "trace_tolerance": 1e-09, "traces": 3}
+2026-11-09T05:32:31.3982796Z .......................... [ 13%]
+2026-11-09T05:32:32.2258847Z ...........s............................................................ [ 26%]
+2026-11-09T05:32:38.0050817Z ............................{"check": "coordinate_offline_import_integration", "python": "3.11.18", "numpy": "2.4.6", "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43", "synthetic_shape": [24, 24], "refined_shape": [49, 49], "frequencies": 1, "sources": 1, "receivers": 2, "checks": 9, "numeric_comparisons": 6, "initial_error": {"relative_squared_slowness_L2": 6.938893903907226e-16, "relative_physical_velocity_L2": 1.9860273225978183e-16}, "final_error": {"relative_squared_slowness_L2": 0.009999999999999306, "relative_physical_velocity_L2": 0.004962809790010597}, "maximum_relative_linear_residual": 1.5550711758641287e-14, "scope": "Manufactured API regression; no project arrays, benchmark trajectories or scientific confirmation"}
+2026-11-09T05:32:38.3074456Z ...........................s..ssss.......... [ 39%]
+2026-11-09T05:32:46.8328095Z ....................................ss{"actual_observed": 108, "actual_passed": 108, "check": "frequency_continuation_archival_manufactured_reproduction", "environment": {"packages": {"numpy": "2.4.6", "pytest": "9.2.0", "scipy": "1.17.1"}, "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43", "python": "3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"}, "expected_total": 108, "production_files": 161, "production_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da", "scientific_claim": false, "scope": "archival manufactured controls only; tiny synthetic API physics, no corpus/project96run/training", "status": "pass_all108", "suites": [{"PID": 3455, "actual_exit_code": 0, "errors": 0, "expected_passed": 17, "failed": 0, "name": "bounded_engine", "observed": 17, "passed": 17, "skipped": 0, "status": "passed"}, {"PID": 3457, "actual_exit_code": 0, "errors": 0, "expected_passed": 24, "failed": 0, "name": "controller", "observed": 24, "passed": 24, "skipped": 0, "status": "passed"}, {"PID": 3459, "actual_exit_code": 0, "errors": 0, "expected_passed": 15, "failed": 0, "name": "driver", "observed": 15, "passed": 15, "skipped": 0, "status": "passed"}, {"PID": 3460, "actual_exit_code": 0, "errors": 0, "expected_passed": 15, "failed": 0, "name": "launcher", "observed": 15, "passed": 15, "skipped": 0, "status": "passed"}, {"PID": 3486, "actual_exit_code": 0, "errors": 0, "expected_passed": 37, "failed": 0, "name": "scalar_auditor_v2", "observed": 37, "passed": 37, "skipped": 0, "status": "passed"}], "workspace": "/tmp/pytest-of-runner/pytest-0/test_archived_frequency_manufa0/archival108"}
+2026-11-09T05:32:51.5315088Z ...........s............ssssssssss [ 52%]
+2026-11-09T05:32:53.7535314Z sssss.....s........s....{"all_own_traces_computed_before_targets": true, "cases": [{"agreement": true, "case_id": "small_nbl0", "exact_time_axis": true, "source_bitwise_diagnostic": false, "source_relative_L2": 1.469898057381263e-17, "trace_relative_L2": 3.2374644645246667e-15}, {"agreement": true, "case_id": "small_nbl20", "exact_time_axis": true, "source_bitwise_diagnostic": false, "source_relative_L2": 1.469898057381263e-17, "trace_relative_L2": 3.4224399127646405e-14}, {"agreement": true, "case_id": "small_nbl40", "exact_time_axis": true, "source_bitwise_diagnostic": false, "source_relative_L2": 1.469898057381263e-17, "trace_relative_L2": 2.972303882487438e-14}, {"agreement": true, "case_id": "matched_exterior_20_undamped", "exact_time_axis": true, "source_bitwise_diagnostic": false, "source_relative_L2": 1.469898057381263e-17, "trace_relative_L2": 8.709894946992662e-15}, {"agreement": true, "case_id": "matched_exterior_40_undamped", "exact_time_axis": true, "source_bitwise_diagnostic": false, "source_relative_L2": 1.469898057381263e-17, "trace_relative_L2": 5.896848603680235e-15}, {"agreement": true, "case_id": "reference_241", "exact_time_axis": true, "source_bitwise_diagnostic": false, "source_relative_L2": 1.469898057381263e-17, "trace_relative_L2": 1.5723613173652312e-14}, {"agreement": true, "case_id": "reference_321", "exact_time_axis": true, "source_bitwise_diagnostic": false, "source_relative_L2": 1.469898057381263e-17, "trace_relative_L2": 1.5665024824587113e-14}], "check": "seven_faithful_NumPy_traces", "excitation_tolerance": 1e-14, "installed_devito_required": false, "maximum_source_relative_L2": 1.469898057381263e-17, "maximum_trace_relative_L2": 3.4224399127646405e-14, "numpy": "2.4.6", "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43", "python": "3.11.18", "scope": "reference-informed independent implementation replay; no continuum, student-ownership or goal-completion claim", "trace_tolerance": 1e-09}
+2026-11-09T05:32:54.1634008Z ................................................ [ 65%]
+2026-11-09T05:32:55.2424304Z .................................................{"check": "eight_initial_raw_direction_witnesses", "python": "3.11.18", "numpy": "2.4.6", "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43", "result": "clear_raw_witness_replay", "checks": 1289, "directions": 8, "false_certifications": 0, "literal_bound_misses": 0, "cases": [{"case_index": 0, "independent_gradient_relative_error": 1.0130431392570112e-16, "approximate_gradient_relative_error": 0.0, "true_directional_derivative": -26.35505854723491, "approximate_center": -26.355058534281316, "bound": 0.0034542543287551975, "certified": true, "false_certification": false, "bound_covers_without_extra_allowance": true, "bound_covers_with_historical_helper_allowance": true}, {"case_index": 1, "independent_gradient_relative_error": 8.921894647291444e-17, "approximate_gradient_relative_error": 0.0, "true_directional_derivative": -149.0688041852611, "approximate_center": -149.06950031138948, "bound": 0.02498710518075192, "certified": true, "false_certification": false, "bound_covers_without_extra_allowance": true, "bound_covers_with_historical_helper_allowance": true}, {"case_index": 2, "independent_gradient_relative_error": 7.599170850903604e-17, "approximate_gradient_relative_error": 0.0, "true_directional_derivative": -23.196135467904366, "approximate_center": -23.19613034175022, "bound": 0.0014703325482143099, "certified": true, "false_certification": false, "bound_covers_without_extra_allowance": true, "bound_covers_with_historical_helper_allowance": true}, {"case_index": 3, "independent_gradient_relative_error": 7.44315152716693e-17, "approximate_gradient_relative_error": 0.0, "true_directional_derivative": -45.98573945091478, "approximate_center": -45.98575494827409, "bound": 0.0009343388135817514, "certified": true, "false_certification": false, "bound_covers_without_extra_allowance": true, "bound_covers_with_historical_helper_allowance": true}, {"case_index": 4, "independent_gradient_relative_error": 7.927923368369585e-17, "approximate_gradient_relative_error": 0.0, "true_directional_derivative": -100.76549784016395, "approximate_center": -100.76551114677878, "bound": 0.004008482080259255, "certified": true, "false_certification": false, "bound_covers_without_extra_allowance": true, "bound_covers_with_historical_helper_allowance": true}, {"case_index": 5, "independent_gradient_relative_error": 1.1814638006052468e-16, "approximate_gradient_relative_error": 0.0, "true_directional_derivative": -63.14229462812927, "approximate_center": -63.142580454479734, "bound": 0.06587485632817046, "certified": true, "false_certification": false, "bound_covers_without_extra_allowance": true, "bound_covers_with_historical_helper_allowance": true}, {"case_index": 6, "independent_gradient_relative_error": 7.516537525779892e-17, "approximate_gradient_relative_error": 0.0, "true_directional_derivative": -60.951517299598486, "approximate_center": -60.95162549996801, "bound": 0.0014522402746306915, "certified": true, "false_certification": false, "bound_covers_without_extra_allowance": true, "bound_covers_with_historical_helper_allowance": true}, {"case_index": 7, "independent_gradient_relative_error": 7.481209616881895e-17, "approximate_gradient_relative_error": 0.0, "true_directional_derivative": -61.71087514699512, "approximate_center": -61.71098287014516, "bound": 0.0014541723133349633, "certified": true, "false_certification": false, "bound_covers_without_extra_allowance": true, "bound_covers_with_historical_helper_allowance": true}]}
+2026-11-09T05:32:55.3346896Z ....................... [ 79%]
+2026-11-09T05:32:58.2078469Z ................s............{"JUnit": {"all_cases_passed": true, "case_records": 75, "counts": {"errors": 0, "failures": 0, "skipped": 0, "tests": 75}, "identity_sha256": "a517c2b9328c33e9a5646964ab2e6b25fb25334e62704b1d1e5e2618ef660317", "unique_cases": 75}, "XML": "/tmp/pytest-of-runner/pytest-0/test_archived_prior48_manufact0/prior48_archival75/controls.xml", "XML_sha256": "73367d7a4983cb9d0df166346d7704604b162af867204227ee33f7f375ddfa52", "actual_exit_code": 0, "check": "prior48_archival_manufactured_reproduction", "command": ["/opt/hostedtoolcache/Python/3.11.18/x64/bin/python", "-B", "-I", "-W", "error", "-m", "pytest", "-q", "-x", "-W", "error", "-p", "no:cacheprovider", "-c", "/dev/null", "--import-mode=prepend", "--noconftest", "--confcutdir", "/tmp/pytest-of-runner/pytest-0/test_archived_prior48_manufact0/prior48_archival75/bundle", "--basetemp", "/tmp/pytest-of-runner/pytest-0/test_archived_prior48_manufact0/prior48_archival75/control_tmp", "--junitxml", "/tmp/pytest-of-runner/pytest-0/test_archived_prior48_manufact0/prior48_archival75/controls.xml", "fractional_velocity_prior48_post_audit/test_scalar_audit_manufactured.py", "fractional_velocity_prior48_post_audit/test_trace_checks.py", "fractional_velocity_prior48_post_audit/test_producer_schema_interop.py"], "expected_controls": 75, "fixture_before": {"computational_bytes": 296711, "computational_files": {"fractional_velocity_prior48_driver_candidate/FROZEN48_SCHEDULE.json": "930e8ecf6bdbb78901b2330c0e1e71a470c7b914067feaf3c0ba3316442be150", "fractional_velocity_prior48_driver_candidate/bounded_exact.py": "d5fb6326bcd252efc3a7672dba993311fb0ba724b90039e7fda317bcf8bb770c", "fractional_velocity_prior48_driver_candidate/composed_exact_adapter.py": "28f8bc9e6e71fd8c28165a8eddcb56e605cd7323286578180fabdf351e75a637", "fractional_velocity_prior48_driver_candidate/fractional_velocity_prior.py": "4aa248fd3862533390ad918f4ad3f70d02fcdebcdc8d784494d375c935536163", "fractional_velocity_prior48_driver_candidate/independent_saved_models.py": "807f4f2f0e0aeea1d2f61b64ee5f64a99819c38d4f6164529e664f0a235edeae", "fractional_velocity_prior48_driver_candidate/original_prior_proposal.json": "48c26556658f5736b3191af03fa8eb858fdec162acdd35f2a9ad5d0ecfb786f5", "fractional_velocity_prior48_driver_candidate/original_protocol.json": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c", "fractional_velocity_prior48_driver_candidate/protocol.json": "92433c9d7b9d2990799f3a81707f6d04f63784a1820d3f109804a83b484ccfa6", "fractional_velocity_prior48_driver_candidate/run_prior48.py": "7c7fc525894dbd38899ad6ee46bff8a0a0d996ea2ef61d5da2e6ce8b4320d882", "fractional_velocity_prior48_post_audit/audit_retained.py": "57946398ebd6d3eaad35ea73491ee50f3bf00c64ef42d6067a1a2fd522c040a4", "fractional_velocity_prior48_post_audit/criteria.json": "b06e9618b4d980ed0aa08c05a0da136d0ba3e37ecc422be4df411a5f3b96edf6", "fractional_velocity_prior48_post_audit/export_manufactured_producer_schema.py": "2f11db3479d58446ee12f727a1fde6d42b604b36252070b73b323a306bbf3de5", "fractional_velocity_prior48_post_audit/test_producer_schema_interop.py": "a1d940998bb9f7b45ed124d2d718be966d15f46e7a14e58a974d5c42a2823335", "fractional_velocity_prior48_post_audit/test_scalar_audit_manufactured.py": "abeee39e10a00a52783ca27f0590cce629edb9f4635ada907fb7470afe61906d", "fractional_velocity_prior48_post_audit/test_trace_checks.py": "85c28477e3ac64a051c401584f86355144bace2c1310c77571d89d2b3fa385d3", "fractional_velocity_prior48_post_audit/trace_checks.py": "f2eaf67a296aa00e22e21d8ce410d72f715b317097da4f2b486fc3b2ff6235cc"}, "layout_sha256": "e5487f5b424cf5ffd57223ec8ca8db48129b8f9dc84927bd884d5f38cb86f919", "manifest_sha256": "3385d0b238586e99312226b545b817b3fae4f8ea90ca6b5129ddc401c5cb1f0b"}, "fixture_unchanged": true, "full_log": "/tmp/pytest-of-runner/pytest-0/test_archived_prior48_manufact0/prior48_archival75/controls.log", "isolated_bundle": "/tmp/pytest-of-runner/pytest-0/test_archived_prior48_manufact0/prior48_archival75/bundle", "log_sha256": "ef11b2d4a19a76305075bff182d3a202425d65af288a784614131664bc5bfa14", "native_PDE_calls": 0, "only_16_computational_files_and_2_pinned_descriptors_copied": true, "output": "/tmp/pytest-of-runner/pytest-0/test_archived_prior48_manufact0/prior48_archival75", "packages": {"numpy": "2.4.6", "pytest": "9.2.0", "scipy": "1.17.1"}, "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43", "project_arrays_decoded": 0, "python": "3.11.18", "scope": "Exact archived manufactured controls and scalar producer-schema interoperability; no project recovery, new physics or independent geology.", "sentinel": "WAVECERT_PRIOR48_ARCHIVAL75_V1", "status": "pass_all75", "timed_out": false}
+2026-11-09T05:33:03.6760653Z ...sssss....................{"check": "recovery_metric_initial_slopes", "python": "3.11.18", "numpy": "2.4.6", "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43", "result": "clear_software_diagnostic", "checks": 4483, "truth_feasible": 8, "initial_feasible": 8, "directions": {"actual_raw_proposal": {"available_directions": 8, "full_case_denominator": 8, "metrics": {"half_relative_squared_m_error": {"literal_local_opposition_cases": 3, "metric_derivative_literal_sign_counts": {"negative": 5, "positive": 3}, "metric_derivative_numerical_sign_counts": {"negative": 5, "positive": 3}, "numerically_classified_local_opposition_cases": 3}, "half_relative_squared_velocity_error": {"literal_local_opposition_cases": 5, "metric_derivative_literal_sign_counts": {"negative": 3, "positive": 5}, "metric_derivative_numerical_sign_counts": {"negative": 3, "positive": 5}, "numerically_classified_local_opposition_cases": 5}}, "unavailable_cases_retained": 0}, "exact_normalized_negative_data_gradient": {"available_directions": 8, "full_case_denominator": 8, "metrics": {"half_relative_squared_m_error": {"literal_local_opposition_cases": 3, "metric_derivative_literal_sign_counts": {"negative": 5, "positive": 3}, "metric_derivative_numerical_sign_counts": {"negative": 5, "positive": 3}, "numerically_classified_local_opposition_cases": 3}, "half_relative_squared_velocity_error": {"literal_local_opposition_cases": 5, "metric_derivative_literal_sign_counts": {"negative": 3, "positive": 5}, "metric_derivative_numerical_sign_counts": {"negative": 3, "positive": 5}, "numerically_classified_local_opposition_cases": 5}}, "unavailable_cases_retained": 0}}, "toward_truth_data_slope": {"negative": 5, "positive": 3}, "endpoint_instances": 1440, "cases": [{"case_index": 0, "toward_truth_dataDD": 8.869163244451265, "directions": {"actual_raw_proposal": {"dataDD": -26.35505854723491, "m_error_slope": 0.003174310526271428, "velocity_error_slope": 0.0013481606867589738}, "exact_normalized_negative_data_gradient": {"dataDD": -26.355058547621468, "m_error_slope": 0.003174276424304105, "velocity_error_slope": 0.0013481575877381357}}}, {"case_index": 1, "toward_truth_dataDD": 74.39907535896981, "directions": {"actual_raw_proposal": {"dataDD": -149.0688041852611, "m_error_slope": 0.005345504955525595, "velocity_error_slope": -0.0016922798751124147}, "exact_normalized_negative_data_gradient": {"dataDD": -149.06880420086458, "m_error_slope": 0.00534535605826068, "velocity_error_slope": -0.0016922779559415677}}}, {"case_index": 2, "toward_truth_dataDD": 13.82531092336782, "directions": {"actual_raw_proposal": {"dataDD": -23.196135467904366, "m_error_slope": 0.0036945101736813794, "velocity_error_slope": 0.00020128476497920206}, "exact_normalized_negative_data_gradient": {"dataDD": -23.196135468087153, "m_error_slope": 0.0036945103283161176, "velocity_error_slope": 0.000201282680639173}}}, {"case_index": 3, "toward_truth_dataDD": -6.280821906051082, "directions": {"actual_raw_proposal": {"dataDD": -45.98573945091478, "m_error_slope": -0.0006858325192146376, "velocity_error_slope": -1.8928933366218562e-05}, "exact_normalized_negative_data_gradient": {"dataDD": -45.985739452279844, "m_error_slope": -0.0006858353716428853, "velocity_error_slope": -1.8929073011058792e-05}}}, {"case_index": 4, "toward_truth_dataDD": -40.92853237343162, "directions": {"actual_raw_proposal": {"dataDD": -100.76549784016395, "m_error_slope": -0.0034767830370115486, "velocity_error_slope": -5.10034022308376e-05}, "exact_normalized_negative_data_gradient": {"dataDD": -100.76549784109027, "m_error_slope": -0.0034768232532238976, "velocity_error_slope": -5.0991436886678575e-05}}}, {"case_index": 5, "toward_truth_dataDD": -35.6150831555589, "directions": {"actual_raw_proposal": {"dataDD": -63.14229462812927, "m_error_slope": -0.00498336009631636, "velocity_error_slope": 0.0030420153337812664}, "exact_normalized_negative_data_gradient": {"dataDD": -63.142294644339856, "m_error_slope": -0.004983527739006507, "velocity_error_slope": 0.0030419821046441457}}}, {"case_index": 6, "toward_truth_dataDD": -8.5566319856103, "directions": {"actual_raw_proposal": {"dataDD": -60.951517299598486, "m_error_slope": -0.0007184803438637124, "velocity_error_slope": 0.0002550543140406411}, "exact_normalized_negative_data_gradient": {"dataDD": -60.95151730098167, "m_error_slope": -0.0007184821359600017, "velocity_error_slope": 0.0002550535095846527}}}, {"case_index": 7, "toward_truth_dataDD": -8.679105798359366, "directions": {"actual_raw_proposal": {"dataDD": -61.71087514699512, "m_error_slope": -0.0007203411718621349, "velocity_error_slope": 0.00020861575197330008}, "exact_normalized_negative_data_gradient": {"dataDD": -61.710875148511455, "m_error_slope": -0.0007203429816912941, "velocity_error_slope": 0.00020861499568812017}}}]}
+2026-11-09T05:33:03.8556520Z .{"check": "analytic_homogeneous_wave_reference", "python": "3.11.18", "numpy": "2.4.6", "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43", "status": "complete_analytical_diagnostic", "internal_numeric_gates": true, "physical_quality_pass": null, "quadrature_convergence": [{"denominator": 168.86346491309584, "gate": true, "lower_order": 128, "numerator": 2.367314247362773e-13, "upper_order": 256, "value": 1.4019102643553428e-15, "zero_denominator": false}, {"denominator": 168.8634649130957, "gate": true, "lower_order": 256, "numerator": 1.6021317170375894e-13, "upper_order": 512, "value": 9.487734471527718e-16, "zero_denominator": false}], "cases": [{"case_id": "small_nbl0", "status": "complete", "full_relative_L2": 2.4072154510015293, "early_relative_L2": 0.0003274335755548312, "sample_counts": {"early": 250, "full": 1099, "late": 849}}, {"case_id": "small_nbl20", "status": "complete", "full_relative_L2": 0.5693972854748873, "early_relative_L2": 0.0003274337399236351, "sample_counts": {"early": 250, "full": 1099, "late": 849}}, {"case_id": "small_nbl40", "status": "complete", "full_relative_L2": 0.24950424068601443, "early_relative_L2": 0.00032743374032882897, "sample_counts": {"early": 250, "full": 1099, "late": 849}}, {"case_id": "matched_exterior_20_undamped", "status": "complete", "full_relative_L2": 1.0372783411897348, "early_relative_L2": 0.00032743374036090395, "sample_counts": {"early": 250, "full": 1099, "late": 849}}, {"case_id": "matched_exterior_40_undamped", "status": "complete", "full_relative_L2": 0.6866430597700494, "early_relative_L2": 0.00032743374036090395, "sample_counts": {"early": 250, "full": 1099, "late": 849}}, {"case_id": "reference_241", "status": "complete", "full_relative_L2": 0.00030514170250237765, "early_relative_L2": 0.0003274337403563026, "sample_counts": {"early": 250, "full": 1099, "late": 849}}, {"case_id": "reference_321", "status": "complete", "full_relative_L2": 0.000305141702502378, "early_relative_L2": 0.0003274337403563026, "sample_counts": {"early": 250, "full": 1099, "late": 849}}]}
+2026-11-09T05:33:03.9245967Z .............. [ 92%]
+2026-11-09T05:33:05.7134086Z ..........................................                               [100%]
+2026-11-09T05:33:05.7134563Z ================================ tests coverage ================================
+2026-11-09T05:33:05.7134933Z _______________ coverage: platform linux, python 3.11.18-final-0 _______________
+2026-11-09T05:33:05.7135177Z 
+2026-11-09T05:33:05.7135313Z Name                                                    Stmts   Miss  Cover   Missing
+2026-11-09T05:33:05.7135673Z -------------------------------------------------------------------------------------
+2026-11-09T05:33:05.7136055Z src/wavecert/__init__.py                                    2      0   100%
+2026-11-09T05:33:05.7136415Z src/wavecert/__main__.py                                    2      2     0%   1-3
+2026-11-09T05:33:05.7136812Z src/wavecert/_version.py                                    1      0   100%
+2026-11-09T05:33:05.7137203Z src/wavecert/benchmarks/__init__.py                         5      0   100%
+2026-11-09T05:33:05.7137632Z src/wavecert/benchmarks/marmousi.py                        33     18    45%   33, 36, 41-43, 54-71
+2026-11-09T05:33:05.7138079Z src/wavecert/benchmarks/openfwi.py                         15      5    67%   20, 27-30
+2026-11-09T05:33:05.7138516Z src/wavecert/benchmarks/procedural.py                      49      1    98%   31
+2026-11-09T05:33:05.7138973Z src/wavecert/benchmarks/subsurfacegen.py                   23     15    35%   18-22, 28-33, 37-39, 43-45
+2026-11-09T05:33:05.7139414Z src/wavecert/certificates/__init__.py                       2      0   100%
+2026-11-09T05:33:05.7140024Z src/wavecert/certificates/cached_merit_certificate.py     248     26    90%   30, 56, 60, 65, 73, 80, 82, 84, 115, 117, 127, 131, 185, 190, 192-195, 262, 271, 282, 286, 291, 300, 326, 332
+2026-11-09T05:33:05.7140973Z src/wavecert/certificates/coarse_adjoint.py               227     11    95%   123, 125, 143, 154, 162, 188, 259-260, 262-263, 285
+2026-11-09T05:33:05.7141571Z src/wavecert/certificates/coarse_adjoint_batch.py         141      5    96%   33, 43, 133, 135, 164
+2026-11-09T05:33:05.7142220Z src/wavecert/certificates/deflated_direction.py           288     24    92%   37, 55, 97, 100, 109, 118, 126, 129, 131, 134, 145, 150, 275, 280, 286, 295, 326, 329, 336, 386, 392-393, 411, 474
+2026-11-09T05:33:05.7143080Z src/wavecert/certificates/directional.py                  104     14    87%   58, 114, 119, 121, 129, 136, 138, 156, 172, 181, 184, 189, 199, 231
+2026-11-09T05:33:05.7143766Z src/wavecert/cli.py                                       191     61    68%   142-144, 146-148, 150-165, 167-185, 187-190, 192-195, 197-200, 202-205, 232-236, 238-246, 248-255, 257-284, 314-343, 347
+2026-11-09T05:33:05.7144336Z src/wavecert/data/__init__.py                               2      0   100%
+2026-11-09T05:33:05.7144719Z src/wavecert/data/real_geology.py                         207    207     0%   1-413
+2026-11-09T05:33:05.7145255Z src/wavecert/data/splits.py                               159     52    67%   26, 31, 110, 113, 121, 136, 145-147, 155, 162, 197, 201-202, 209-236, 252-268
+2026-11-09T05:33:05.7145768Z src/wavecert/data/subsurfacegen_selection.py               37     37     0%   1-90
+2026-11-09T05:33:05.7146195Z src/wavecert/data/wavefields.py                            68      6    91%   26-28, 41-43
+2026-11-09T05:33:05.7146597Z src/wavecert/experiments/__init__.py                        4      0   100%
+2026-11-09T05:33:05.7147003Z src/wavecert/experiments/ablation.py                       66     54    18%   20-149
+2026-11-09T05:33:05.7147438Z src/wavecert/experiments/adaptive_study.py                113    113     0%   1-292
+2026-11-09T05:33:05.7147872Z src/wavecert/experiments/baseline_study.py                 24     24     0%   1-69
+2026-11-09T05:33:05.7148313Z src/wavecert/experiments/batched_neural_controls.py        90     90     0%   3-142
+2026-11-09T05:33:05.7148959Z src/wavecert/experiments/batched_pod_development.py       372      8    98%   64, 157-160, 204, 249, 253, 386
+2026-11-09T05:33:05.7149498Z src/wavecert/experiments/certificate_calibration.py       104     76    27%   19, 23, 58, 63, 66, 72-219
+2026-11-09T05:33:05.7149985Z src/wavecert/experiments/certificate_study.py             184    184     0%   1-364
+2026-11-09T05:33:05.7150563Z src/wavecert/experiments/coarse_adjoint_validation.py     188     99    47%   61, 68, 79, 89, 94, 96, 100, 103, 108, 115, 128, 141-143, 147-152, 157, 186-204, 213-335
+2026-11-09T05:33:05.7151176Z src/wavecert/experiments/coarse_pod_confirmation.py       244     88    64%   280-365, 374-401
+2026-11-09T05:33:05.7151706Z src/wavecert/experiments/coarse_runtime_controls.py       225     26    88%   56, 81, 127, 160-177, 188, 253, 257, 381-387
+2026-11-09T05:33:05.7152227Z src/wavecert/experiments/cost_break_even.py                56      4    93%   60, 69, 108, 120
+2026-11-09T05:33:05.7152871Z src/wavecert/experiments/derivative_training.py            42      7    83%   43, 85-87, 96-103
+2026-11-09T05:33:05.7153329Z src/wavecert/experiments/devito_study.py                   42     32    24%   28-99
+2026-11-09T05:33:05.7153761Z src/wavecert/experiments/end_to_end.py                    126    109    13%   21-30, 38-54, 77-281
+2026-11-09T05:33:05.7154265Z src/wavecert/experiments/evidence_study.py                186    151    19%   56-97, 101-106, 110-115, 129-427, 437-457
+2026-11-09T05:33:05.7154746Z src/wavecert/experiments/failure_study.py                 154    154     0%   1-266
+2026-11-09T05:33:05.7155307Z src/wavecert/experiments/gradient_confirmation.py         540    197    64%   217-221, 241, 252-379, 407, 474-485, 531-534, 613, 680-682, 782-785, 790-934
+2026-11-09T05:33:05.7156275Z src/wavecert/experiments/gradient_development.py          406    353    13%   60-71, 75, 79-81, 85-89, 93-114, 119-162, 172-173, 179-222, 236-274, 283-286, 290-291, 297-307, 311, 316-330, 334-395, 402-406, 409-412, 423-552, 556-561, 576-652
+2026-11-09T05:33:05.7157038Z src/wavecert/experiments/heuristic_baselines.py            78     78     0%   1-302
+2026-11-09T05:33:05.7157542Z src/wavecert/experiments/historical_transfer.py           362    164    55%   91-109, 139-182, 186-221, 233-252, 444-556
+2026-11-09T05:33:05.7158028Z src/wavecert/experiments/ood_study.py                     104    104     0%   1-235
+2026-11-09T05:33:05.7158651Z src/wavecert/experiments/openfwi_stress.py                298    130    56%   46, 64, 68, 72, 76, 83, 94, 111, 115, 121, 124, 127, 135, 138, 145, 150, 160, 163, 170, 172, 177, 204, 215, 228, 258, 312-315, 323-501
+2026-11-09T05:33:05.7159261Z src/wavecert/experiments/openfwi_study.py                  42     42     0%   1-91
+2026-11-09T05:33:05.7159707Z src/wavecert/experiments/pod_confirmation.py              246    102    59%   240-364, 372-397
+2026-11-09T05:33:05.7160249Z src/wavecert/experiments/pod_development.py               200    153    24%   25-37, 53-91, 103, 108, 112, 117, 124, 138-139, 144-207, 215-288
+2026-11-09T05:33:05.7160776Z src/wavecert/experiments/production_study.py               55     55     0%   1-160
+2026-11-09T05:33:05.7161208Z src/wavecert/experiments/real_geology_training.py         179    179     0%   1-351
+2026-11-09T05:33:05.7161657Z src/wavecert/experiments/real_wavecert.py                 141     97    31%   63, 77-125, 167-350
+2026-11-09T05:33:05.7162143Z src/wavecert/experiments/receiver_controls.py              98      8    92%   39, 42, 50, 92, 129, 144, 151, 179
+2026-11-09T05:33:05.7162771Z src/wavecert/experiments/residual_coded_controls.py        95      8    92%   34, 37, 43, 112, 120, 125, 143, 155
+2026-11-09T05:33:05.7163226Z src/wavecert/experiments/runner.py                         81     70    14%   17-165
+2026-11-09T05:33:05.7163626Z src/wavecert/experiments/synthetic.py                      34      0   100%
+2026-11-09T05:33:05.7164021Z src/wavecert/experiments/train_fno.py                     171    171     0%   1-294
+2026-11-09T05:33:05.7164510Z src/wavecert/metrics.py                                    11      0   100%
+2026-11-09T05:33:05.7164876Z src/wavecert/optimization/__init__.py                       2      0   100%
+2026-11-09T05:33:05.7165390Z src/wavecert/optimization/fwi.py                          324     21    94%   57-59, 143-147, 158, 196, 198, 200, 286, 357, 365, 369, 371, 374, 384, 387, 492, 509, 569, 573
+2026-11-09T05:33:05.7166097Z src/wavecert/optimization/paid_descent.py                 350     27    92%   79, 96, 100, 106, 119, 126, 130, 142, 147, 166, 203, 206, 214, 222, 255-256, 295, 347-349, 387, 410, 416, 444, 458, 483-484
+2026-11-09T05:33:05.7166678Z src/wavecert/physics/__init__.py                            4      0   100%
+2026-11-09T05:33:05.7167097Z src/wavecert/physics/certified_stability.py                66      5    92%   37, 87, 98, 100, 102
+2026-11-09T05:33:05.7167544Z src/wavecert/physics/coarse_batch.py                       91      1    99%   35
+2026-11-09T05:33:05.7168114Z src/wavecert/physics/coarse_dst_reference.py              445     24    95%   41, 50, 156, 161, 163, 171, 212, 254, 288, 311, 320, 322-323, 376, 424, 439, 452, 477, 522, 529, 575, 581-582, 587
+2026-11-09T05:33:05.7168826Z src/wavecert/physics/coarse_stability.py                  372     23    94%   70, 72, 75, 78, 175, 194, 206, 222, 246, 254, 258, 262-263, 338, 368, 397, 399, 402, 404, 411, 434, 475, 498
+2026-11-09T05:33:05.7169531Z src/wavecert/physics/devito_backend.py                    191    140    27%   19, 63-122, 127, 130-138, 141-142, 145-172, 175-177, 188-204, 209-214, 226-264, 279, 281, 283, 285, 290
+2026-11-09T05:33:05.7170165Z src/wavecert/physics/exact_merit.py                       401     17    96%   80-84, 92, 106, 114, 282, 289, 364, 370-372, 380, 416, 431, 578
+2026-11-09T05:33:05.7170724Z src/wavecert/physics/helmholtz.py                         231     16    93%   117, 142, 144, 184, 193, 210, 342, 365, 437, 439, 441-443, 451, 463, 481
+2026-11-09T05:33:05.7171335Z src/wavecert/physics/independent_verification.py           36      4    89%   26, 73-75
+2026-11-09T05:33:05.7171762Z src/wavecert/physics/production.py                         14      4    71%   16-19
+2026-11-09T05:33:05.7172172Z src/wavecert/physics/receiver_oracle.py                   111      3    97%   49, 108, 175
+2026-11-09T05:33:05.7172701Z src/wavecert/physics/residual_coded.py                    115      3    97%   32, 57, 122
+2026-11-09T05:33:05.7173108Z src/wavecert/physics/verification.py                       76      1    99%   126
+2026-11-09T05:33:05.7173484Z src/wavecert/provenance.py                                 45      0   100%
+2026-11-09T05:33:05.7173849Z src/wavecert/repair/__init__.py                             3      0   100%
+2026-11-09T05:33:05.7174267Z src/wavecert/repair/adaptive.py                           197     12    94%   38, 41-44, 117, 123, 189, 192, 261, 398, 464
+2026-11-09T05:33:05.7174697Z src/wavecert/repair/policies.py                            33      2    94%   42, 52
+2026-11-09T05:33:05.7175072Z src/wavecert/statistics/__init__.py                         4      0   100%
+2026-11-09T05:33:05.7175448Z src/wavecert/statistics/audit.py                           67     67     0%   3-139
+2026-11-09T05:33:05.7175856Z src/wavecert/statistics/conformal.py                       34      5    85%   45, 47, 63, 65, 68
+2026-11-09T05:33:05.7176282Z src/wavecert/statistics/finite_population.py               20      1    95%   28
+2026-11-09T05:33:05.7176707Z src/wavecert/statistics/inference.py                       42      5    88%   11, 26, 61, 63, 65
+2026-11-09T05:33:05.7177120Z src/wavecert/statistics/pathwise.py                        62      2    97%   47, 112
+2026-11-09T05:33:05.7177514Z src/wavecert/statistics/tolerance.py                       57      0   100%
+2026-11-09T05:33:05.7177887Z src/wavecert/surrogates/__init__.py                         4      0   100%
+2026-11-09T05:33:05.7178243Z src/wavecert/surrogates/base.py                             5      0   100%
+2026-11-09T05:33:05.7178826Z src/wavecert/surrogates/fno.py                            225    178    21%   14-15, 46, 60-144, 157-162, 165-176, 179-182, 185-189, 205-210, 213-219, 222-228, 231, 237-248, 262-264, 274-290, 319-370, 381-386, 390
+2026-11-09T05:33:05.7179517Z src/wavecert/surrogates/low_fidelity.py                    41      0   100%
+2026-11-09T05:33:05.7180017Z src/wavecert/surrogates/pod.py                            213     21    90%   41, 43, 49, 51, 62, 101, 104-105, 108-110, 129, 174, 179-180, 191, 195, 224, 243, 254, 272
+2026-11-09T05:33:05.7180531Z src/wavecert/surrogates/pod_batch.py                      125      5    96%   60, 71, 76, 105, 109
+2026-11-09T05:33:05.7180944Z src/wavecert/surrogates/torch_adapter.py                   41     41     0%   1-65
+2026-11-09T05:33:05.7181323Z -------------------------------------------------------------------------------------
+2026-11-09T05:33:05.7181643Z TOTAL                                                   11212   4242    62%
+2026-11-09T05:33:05.7617628Z 514 passed, 34 skipped in 57.42s
+2026-11-09T05:33:05.8888588Z Post job cleanup.
+2026-11-09T05:33:05.9624985Z (node:5458) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-09T05:33:05.9625372Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-09T05:33:05.9762639Z Post job cleanup.
+2026-11-09T05:33:06.0312011Z [command]/usr/bin/git version
+2026-11-09T05:33:06.0344021Z git version 2.56.0
+2026-11-09T05:33:06.0368057Z Temporarily overriding HOME='/home/runner/work/_temp/f5dcaf65-de13-4746-b76a-e5c17343ca16' before making global git config changes
+2026-11-09T05:33:06.0368765Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-09T05:33:06.0369979Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/wavecert-fwi/wavecert-fwi
+2026-11-09T05:33:06.0399848Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T05:33:06.0426534Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T05:33:06.0698570Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T05:33:06.0721932Z http.https://github.com/.extraheader
+2026-11-09T05:33:06.0730302Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-09T05:33:06.0764676Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T05:33:06.1035217Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T05:33:06.1068112Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T05:33:06.1417625Z Cleaning up orphan processes
+2026-11-09T05:33:06.1694511Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

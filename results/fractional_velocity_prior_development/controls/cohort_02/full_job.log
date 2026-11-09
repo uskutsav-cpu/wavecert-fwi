@@ -1,0 +1,615 @@
+﻿2026-11-09T02:07:09.3690997Z Current runner version: '2.338.2'
+2026-11-09T02:07:09.3711964Z ##[group]Runner Image Provisioner
+2026-11-09T02:07:09.3712791Z Hosted Compute Agent
+2026-11-09T02:07:09.3713288Z Version: 20261028.624
+2026-11-09T02:07:09.3713845Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-09T02:07:09.3714524Z Build Date: 2026-10-28T21:51:42Z
+2026-11-09T02:07:09.3715111Z Worker ID: {2ec89552-3ce6-4f47-85e4-16161918dd70}
+2026-11-09T02:07:09.3715792Z Region: westus3
+2026-11-09T02:07:09.3716280Z Cloud: Azure
+2026-11-09T02:07:09.3716783Z ##[endgroup]
+2026-11-09T02:07:09.3718447Z ##[group]Operating System
+2026-11-09T02:07:09.3718991Z Ubuntu
+2026-11-09T02:07:09.3719492Z 26.04.1
+2026-11-09T02:07:09.3719946Z LTS
+2026-11-09T02:07:09.3720426Z ##[endgroup]
+2026-11-09T02:07:09.3720942Z ##[group]Runner Image
+2026-11-09T02:07:09.3721452Z Image: ubuntu-26.04
+2026-11-09T02:07:09.3722000Z Version: 20261101.186.1
+2026-11-09T02:07:09.3723068Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261101.186/images/ubuntu/Ubuntu2604-Readme.md
+2026-11-09T02:07:09.3724371Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261101.186
+2026-11-09T02:07:09.3725183Z ##[endgroup]
+2026-11-09T02:07:09.3726215Z ##[group]GITHUB_TOKEN Permissions
+2026-11-09T02:07:09.3728045Z Actions: read
+2026-11-09T02:07:09.3728620Z Contents: read
+2026-11-09T02:07:09.3729114Z Metadata: read
+2026-11-09T02:07:09.3729590Z ##[endgroup]
+2026-11-09T02:07:09.3731352Z Secret source: Actions
+2026-11-09T02:07:09.3732204Z Cache mode: write
+2026-11-09T02:07:09.3732818Z Prepare workflow directory
+2026-11-09T02:07:09.7727212Z Prepare all required actions
+2026-11-09T02:07:09.7766327Z Getting action download info
+2026-11-09T02:07:10.0589314Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-09T02:07:10.1978825Z Download action repository 'actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-09T02:07:10.4796841Z Download action repository 'actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9' (SHA:cf430e030ddbb5b0abf93d22962f4752f3646cd9)
+2026-11-09T02:07:10.8252223Z Complete job name: registered-development
+2026-11-09T02:07:10.9222601Z ##[group]Run set -euo pipefail
+2026-11-09T02:07:10.9223616Z [36;1mset -euo pipefail[0m
+2026-11-09T02:07:10.9224541Z [36;1mmkdir -p prior48_artifacts/upload[0m
+2026-11-09T02:07:10.9227930Z [36;1mpython -c 'import json,os; from pathlib import Path; Path("prior48_artifacts/upload/bootstrap.json").write_text(json.dumps({k:os.environ.get(k) for k in ("GITHUB_SHA","GITHUB_RUN_ID","GITHUB_RUN_ATTEMPT","GITHUB_REF","GITHUB_REPOSITORY","RUNNER_OS")},indent=2)+"\n")'[0m
+2026-11-09T02:07:10.9280446Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-09T02:07:10.9281765Z env:
+2026-11-09T02:07:10.9282470Z   OMP_NUM_THREADS: 1
+2026-11-09T02:07:10.9283257Z   MKL_NUM_THREADS: 1
+2026-11-09T02:07:10.9284037Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T02:07:10.9284900Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T02:07:10.9285740Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T02:07:10.9286557Z   PYTHONHASHSEED: 0
+2026-11-09T02:07:10.9287354Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T02:07:10.9288442Z   PYTHONUNBUFFERED: 1
+2026-11-09T02:07:10.9289286Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-09T02:07:10.9290198Z   MPLBACKEND: Agg
+2026-11-09T02:07:10.9290936Z ##[endgroup]
+2026-11-09T02:07:11.0874126Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-11-09T02:07:11.0875390Z with:
+2026-11-09T02:07:11.0876148Z   ref: 9778fd3e998c8eb7dde8915789f5ea612ab71422
+2026-11-09T02:07:11.0877178Z   path: experiment
+2026-11-09T02:07:11.0878041Z   fetch-depth: 2
+2026-11-09T02:07:11.0878801Z   persist-credentials: false
+2026-11-09T02:07:11.0879695Z   repository: uskutsav-cpu/wavecert-fwi
+2026-11-09T02:07:11.0887484Z   token: ***
+2026-11-09T02:07:11.0888282Z   ssh-strict: true
+2026-11-09T02:07:11.0889012Z   ssh-user: git
+2026-11-09T02:07:11.0889718Z   clean: true
+2026-11-09T02:07:11.0890754Z   sparse-checkout-cone-mode: true
+2026-11-09T02:07:11.0891669Z   fetch-tags: false
+2026-11-09T02:07:11.0892423Z   show-progress: true
+2026-11-09T02:07:11.0893174Z   lfs: false
+2026-11-09T02:07:11.0893866Z   submodules: false
+2026-11-09T02:07:11.0894725Z   set-safe-directory: true
+2026-11-09T02:07:11.0895576Z   allow-unsafe-pr-checkout: false
+2026-11-09T02:07:11.0896457Z env:
+2026-11-09T02:07:11.0897164Z   OMP_NUM_THREADS: 1
+2026-11-09T02:07:11.0898007Z   MKL_NUM_THREADS: 1
+2026-11-09T02:07:11.0898777Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T02:07:11.0899592Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T02:07:11.0900413Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T02:07:11.0901207Z   PYTHONHASHSEED: 0
+2026-11-09T02:07:11.0901984Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T02:07:11.0902838Z   PYTHONUNBUFFERED: 1
+2026-11-09T02:07:11.0903643Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-09T02:07:11.0904539Z   MPLBACKEND: Agg
+2026-11-09T02:07:11.0905260Z ##[endgroup]
+2026-11-09T02:07:11.3119819Z Syncing repository: uskutsav-cpu/wavecert-fwi
+2026-11-09T02:07:11.3123019Z ##[group]Getting Git version info
+2026-11-09T02:07:11.3124712Z Working directory is '/home/runner/work/wavecert-fwi/wavecert-fwi/experiment'
+2026-11-09T02:07:11.3127163Z [command]/usr/bin/git version
+2026-11-09T02:07:11.3135756Z git version 2.56.0
+2026-11-09T02:07:11.3159131Z ##[endgroup]
+2026-11-09T02:07:11.3178943Z Temporarily overriding HOME='/home/runner/work/_temp/bd7bd387-e65b-4150-9d11-6b14b1c904e1' before making global git config changes
+2026-11-09T02:07:11.3181916Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-09T02:07:11.3184468Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/wavecert-fwi/wavecert-fwi/experiment
+2026-11-09T02:07:11.3223953Z ##[group]Initializing the repository
+2026-11-09T02:07:11.3228428Z [command]/usr/bin/git init /home/runner/work/wavecert-fwi/wavecert-fwi/experiment
+2026-11-09T02:07:11.3307528Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-09T02:07:11.3310599Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-09T02:07:11.3313127Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-09T02:07:11.3315131Z hint: call:
+2026-11-09T02:07:11.3316392Z hint:
+2026-11-09T02:07:11.3318121Z hint: 	git config --global init.defaultBranch <name>
+2026-11-09T02:07:11.3320169Z hint:
+2026-11-09T02:07:11.3321698Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-09T02:07:11.3323920Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-09T02:07:11.3325765Z hint:
+2026-11-09T02:07:11.3326944Z hint: 	git branch -m <name>
+2026-11-09T02:07:11.3328637Z hint:
+2026-11-09T02:07:11.3330258Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-09T02:07:11.3332908Z Initialized empty Git repository in /home/runner/work/wavecert-fwi/wavecert-fwi/experiment/.git/
+2026-11-09T02:07:11.3337492Z [command]/usr/bin/git remote add origin https://github.com/uskutsav-cpu/wavecert-fwi
+2026-11-09T02:07:11.3377162Z ##[endgroup]
+2026-11-09T02:07:11.3379281Z ##[group]Disabling automatic garbage collection
+2026-11-09T02:07:11.3381040Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-09T02:07:11.3416919Z ##[endgroup]
+2026-11-09T02:07:11.3418913Z ##[group]Setting up auth
+2026-11-09T02:07:11.3422126Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T02:07:11.3458026Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T02:07:11.3870051Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T02:07:11.3905990Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T02:07:11.4152581Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T02:07:11.4187511Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T02:07:11.4438539Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-09T02:07:11.4479791Z ##[endgroup]
+2026-11-09T02:07:11.4481859Z ##[group]Fetching the repository
+2026-11-09T02:07:11.4489873Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=2 origin 9778fd3e998c8eb7dde8915789f5ea612ab71422
+2026-11-09T02:07:16.1965274Z From https://github.com/uskutsav-cpu/wavecert-fwi
+2026-11-09T02:07:16.1967036Z  * branch            9778fd3e998c8eb7dde8915789f5ea612ab71422 -> FETCH_HEAD
+2026-11-09T02:07:16.1969901Z ##[endgroup]
+2026-11-09T02:07:16.1970636Z ##[group]Determining the checkout info
+2026-11-09T02:07:16.1971683Z ##[endgroup]
+2026-11-09T02:07:16.1978292Z [command]/usr/bin/git sparse-checkout disable
+2026-11-09T02:07:16.2025421Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-09T02:07:16.2055934Z ##[group]Checking out the ref
+2026-11-09T02:07:16.2059782Z [command]/usr/bin/git checkout --progress --force 9778fd3e998c8eb7dde8915789f5ea612ab71422
+2026-11-09T02:07:17.1797908Z Note: switching to '9778fd3e998c8eb7dde8915789f5ea612ab71422'.
+2026-11-09T02:07:17.1798481Z 
+2026-11-09T02:07:17.1798825Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-09T02:07:17.1799520Z changes and commit them, and you can discard any commits you make in this
+2026-11-09T02:07:17.1800202Z state without impacting any branches by switching back to a branch.
+2026-11-09T02:07:17.1800613Z 
+2026-11-09T02:07:17.1800931Z If you want to create a new branch to retain commits you create, you may
+2026-11-09T02:07:17.1801564Z do so (now or later) by using -c with the switch command. Example:
+2026-11-09T02:07:17.1801974Z 
+2026-11-09T02:07:17.1802162Z   git switch -c <new-branch-name>
+2026-11-09T02:07:17.1802425Z 
+2026-11-09T02:07:17.1802600Z Or undo this operation with:
+2026-11-09T02:07:17.1802876Z 
+2026-11-09T02:07:17.1803024Z   git switch -
+2026-11-09T02:07:17.1803265Z 
+2026-11-09T02:07:17.1803638Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-09T02:07:17.1804092Z 
+2026-11-09T02:07:17.1804400Z HEAD is now at 9778fd3 Create the missing parent for isolated research controls
+2026-11-09T02:07:17.1838714Z ##[endgroup]
+2026-11-09T02:07:17.1880780Z [command]/usr/bin/git log -1 --format=%H
+2026-11-09T02:07:17.1904386Z 9778fd3e998c8eb7dde8915789f5ea612ab71422
+2026-11-09T02:07:17.1914527Z ##[group]Removing auth
+2026-11-09T02:07:17.1918564Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T02:07:17.1943520Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T02:07:17.2192186Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T02:07:17.2212946Z http.https://github.com/.extraheader
+2026-11-09T02:07:17.2219597Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-09T02:07:17.2248389Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T02:07:17.2485603Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T02:07:17.2515978Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T02:07:17.2755145Z ##[endgroup]
+2026-11-09T02:07:17.4351291Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+2026-11-09T02:07:17.4351605Z with:
+2026-11-09T02:07:17.4351816Z   ref: 1983664d5e033dab1b131b80d9aaf2358fc6c5de
+2026-11-09T02:07:17.4352052Z   path: baseline
+2026-11-09T02:07:17.4352224Z   fetch-depth: 1
+2026-11-09T02:07:17.4352406Z   persist-credentials: false
+2026-11-09T02:07:17.4352621Z   repository: uskutsav-cpu/wavecert-fwi
+2026-11-09T02:07:17.4354664Z   token: ***
+2026-11-09T02:07:17.4354860Z   ssh-strict: true
+2026-11-09T02:07:17.4355042Z   ssh-user: git
+2026-11-09T02:07:17.4355212Z   clean: true
+2026-11-09T02:07:17.4355398Z   sparse-checkout-cone-mode: true
+2026-11-09T02:07:17.4355621Z   fetch-tags: false
+2026-11-09T02:07:17.4355807Z   show-progress: true
+2026-11-09T02:07:17.4355986Z   lfs: false
+2026-11-09T02:07:17.4356147Z   submodules: false
+2026-11-09T02:07:17.4356329Z   set-safe-directory: true
+2026-11-09T02:07:17.4356538Z   allow-unsafe-pr-checkout: false
+2026-11-09T02:07:17.4356759Z env:
+2026-11-09T02:07:17.4356993Z   OMP_NUM_THREADS: 1
+2026-11-09T02:07:17.4357179Z   MKL_NUM_THREADS: 1
+2026-11-09T02:07:17.4357359Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T02:07:17.4357664Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T02:07:17.4357865Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T02:07:17.4358055Z   PYTHONHASHSEED: 0
+2026-11-09T02:07:17.4358241Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T02:07:17.4358448Z   PYTHONUNBUFFERED: 1
+2026-11-09T02:07:17.4358661Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-09T02:07:17.4358888Z   MPLBACKEND: Agg
+2026-11-09T02:07:17.4359068Z ##[endgroup]
+2026-11-09T02:07:17.5032238Z Syncing repository: uskutsav-cpu/wavecert-fwi
+2026-11-09T02:07:17.5035715Z ##[group]Getting Git version info
+2026-11-09T02:07:17.5036559Z Working directory is '/home/runner/work/wavecert-fwi/wavecert-fwi/baseline'
+2026-11-09T02:07:17.5068892Z [command]/usr/bin/git version
+2026-11-09T02:07:17.5109142Z git version 2.56.0
+2026-11-09T02:07:17.5126643Z ##[endgroup]
+2026-11-09T02:07:17.5139446Z Temporarily overriding HOME='/home/runner/work/_temp/8ad81fa2-6763-4dcb-a686-9d7f8ecd1d5c' before making global git config changes
+2026-11-09T02:07:17.5140197Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-09T02:07:17.5145051Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/wavecert-fwi/wavecert-fwi/baseline
+2026-11-09T02:07:17.5178095Z ##[group]Initializing the repository
+2026-11-09T02:07:17.5182246Z [command]/usr/bin/git init /home/runner/work/wavecert-fwi/wavecert-fwi/baseline
+2026-11-09T02:07:17.5236470Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-09T02:07:17.5248524Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-09T02:07:17.5249318Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-09T02:07:17.5250161Z hint: call:
+2026-11-09T02:07:17.5250755Z hint:
+2026-11-09T02:07:17.5251263Z hint: 	git config --global init.defaultBranch <name>
+2026-11-09T02:07:17.5251844Z hint:
+2026-11-09T02:07:17.5252369Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-09T02:07:17.5253143Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-09T02:07:17.5253774Z hint:
+2026-11-09T02:07:17.5254170Z hint: 	git branch -m <name>
+2026-11-09T02:07:17.5254603Z hint:
+2026-11-09T02:07:17.5255150Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-09T02:07:17.5256140Z Initialized empty Git repository in /home/runner/work/wavecert-fwi/wavecert-fwi/baseline/.git/
+2026-11-09T02:07:17.5258241Z [command]/usr/bin/git remote add origin https://github.com/uskutsav-cpu/wavecert-fwi
+2026-11-09T02:07:17.5288022Z ##[endgroup]
+2026-11-09T02:07:17.5288509Z ##[group]Disabling automatic garbage collection
+2026-11-09T02:07:17.5292190Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-09T02:07:17.5324717Z ##[endgroup]
+2026-11-09T02:07:17.5325270Z ##[group]Setting up auth
+2026-11-09T02:07:17.5331776Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T02:07:17.5363460Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T02:07:17.5626587Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T02:07:17.5668827Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T02:07:17.5932768Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T02:07:17.5964416Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T02:07:17.6207324Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-09T02:07:17.6245757Z ##[endgroup]
+2026-11-09T02:07:17.6253215Z ##[group]Fetching the repository
+2026-11-09T02:07:17.6253863Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin 1983664d5e033dab1b131b80d9aaf2358fc6c5de
+2026-11-09T02:07:22.5139249Z From https://github.com/uskutsav-cpu/wavecert-fwi
+2026-11-09T02:07:22.5139920Z  * branch            1983664d5e033dab1b131b80d9aaf2358fc6c5de -> FETCH_HEAD
+2026-11-09T02:07:22.5143656Z ##[endgroup]
+2026-11-09T02:07:22.5144138Z ##[group]Determining the checkout info
+2026-11-09T02:07:22.5146115Z ##[endgroup]
+2026-11-09T02:07:22.5152451Z [command]/usr/bin/git sparse-checkout disable
+2026-11-09T02:07:22.5191786Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-09T02:07:22.5220090Z ##[group]Checking out the ref
+2026-11-09T02:07:22.5223474Z [command]/usr/bin/git checkout --progress --force 1983664d5e033dab1b131b80d9aaf2358fc6c5de
+2026-11-09T02:07:23.4937872Z Note: switching to '1983664d5e033dab1b131b80d9aaf2358fc6c5de'.
+2026-11-09T02:07:23.4938258Z 
+2026-11-09T02:07:23.4938499Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-09T02:07:23.4938956Z changes and commit them, and you can discard any commits you make in this
+2026-11-09T02:07:23.4939329Z state without impacting any branches by switching back to a branch.
+2026-11-09T02:07:23.4939541Z 
+2026-11-09T02:07:23.4939699Z If you want to create a new branch to retain commits you create, you may
+2026-11-09T02:07:23.4940046Z do so (now or later) by using -c with the switch command. Example:
+2026-11-09T02:07:23.4940245Z 
+2026-11-09T02:07:23.4940337Z   git switch -c <new-branch-name>
+2026-11-09T02:07:23.4940480Z 
+2026-11-09T02:07:23.4940567Z Or undo this operation with:
+2026-11-09T02:07:23.4940702Z 
+2026-11-09T02:07:23.4940782Z   git switch -
+2026-11-09T02:07:23.4940883Z 
+2026-11-09T02:07:23.4941086Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-09T02:07:23.4941329Z 
+2026-11-09T02:07:23.4941518Z HEAD is now at 1983664 Publish verified CI outcomes and sharpen contribution boundary
+2026-11-09T02:07:23.4996406Z ##[endgroup]
+2026-11-09T02:07:23.5034669Z [command]/usr/bin/git log -1 --format=%H
+2026-11-09T02:07:23.5057909Z 1983664d5e033dab1b131b80d9aaf2358fc6c5de
+2026-11-09T02:07:23.5065875Z ##[group]Removing auth
+2026-11-09T02:07:23.5069274Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T02:07:23.5096091Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T02:07:23.5369333Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T02:07:23.5390471Z http.https://github.com/.extraheader
+2026-11-09T02:07:23.5397283Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-09T02:07:23.5425786Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T02:07:23.5663710Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T02:07:23.5691077Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T02:07:23.5930436Z ##[endgroup]
+2026-11-09T02:07:23.6244201Z ##[group]Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+2026-11-09T02:07:23.6244521Z with:
+2026-11-09T02:07:23.6244703Z   python-version: 3.11.18
+2026-11-09T02:07:23.6244904Z   architecture: x64
+2026-11-09T02:07:23.6245082Z   check-latest: false
+2026-11-09T02:07:23.6246915Z   token: ***
+2026-11-09T02:07:23.6247097Z   update-environment: true
+2026-11-09T02:07:23.6247309Z   allow-prereleases: false
+2026-11-09T02:07:23.6247513Z   freethreaded: false
+2026-11-09T02:07:23.6247832Z env:
+2026-11-09T02:07:23.6247995Z   OMP_NUM_THREADS: 1
+2026-11-09T02:07:23.6248178Z   MKL_NUM_THREADS: 1
+2026-11-09T02:07:23.6248353Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T02:07:23.6248550Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T02:07:23.6248750Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T02:07:23.6248943Z   PYTHONHASHSEED: 0
+2026-11-09T02:07:23.6249139Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T02:07:23.6249349Z   PYTHONUNBUFFERED: 1
+2026-11-09T02:07:23.6249547Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-09T02:07:23.6249812Z   MPLBACKEND: Agg
+2026-11-09T02:07:23.6249998Z ##[endgroup]
+2026-11-09T02:07:24.0427819Z ##[group]Installed versions
+2026-11-09T02:07:24.0781649Z (node:2488) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-09T02:07:24.0782518Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-09T02:07:24.0783059Z Successfully set up CPython (3.11.18)
+2026-11-09T02:07:24.0784046Z ##[endgroup]
+2026-11-09T02:07:24.1009452Z ##[group]Run set -euo pipefail
+2026-11-09T02:07:24.1009835Z [36;1mset -euo pipefail[0m
+2026-11-09T02:07:24.1010596Z [36;1mpython -m pip install --disable-pip-version-check -e './baseline[dev,data]' 'numpy==2.4.6' 'scipy==1.17.1' 2>&1 | tee prior48_artifacts/upload/dependency_install.log[0m
+2026-11-09T02:07:24.1073943Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-09T02:07:24.1074254Z env:
+2026-11-09T02:07:24.1074445Z   OMP_NUM_THREADS: 1
+2026-11-09T02:07:24.1074634Z   MKL_NUM_THREADS: 1
+2026-11-09T02:07:24.1074823Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T02:07:24.1075020Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T02:07:24.1075213Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T02:07:24.1075401Z   PYTHONHASHSEED: 0
+2026-11-09T02:07:24.1075589Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T02:07:24.1075801Z   PYTHONUNBUFFERED: 1
+2026-11-09T02:07:24.1076002Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-09T02:07:24.1076221Z   MPLBACKEND: Agg
+2026-11-09T02:07:24.1076542Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T02:07:24.1076918Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-09T02:07:24.1077271Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T02:07:24.1077766Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T02:07:24.1078086Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T02:07:24.1078384Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-09T02:07:24.1078661Z ##[endgroup]
+2026-11-09T02:07:25.1143209Z Obtaining file:///home/runner/work/wavecert-fwi/wavecert-fwi/baseline
+2026-11-09T02:07:25.1157261Z   Installing build dependencies: started
+2026-11-09T02:07:25.8231197Z   Installing build dependencies: finished with status 'done'
+2026-11-09T02:07:25.8237885Z   Checking if build backend supports build_editable: started
+2026-11-09T02:07:26.0556448Z   Checking if build backend supports build_editable: finished with status 'done'
+2026-11-09T02:07:26.0562238Z   Getting requirements to build editable: started
+2026-11-09T02:07:26.4293334Z   Getting requirements to build editable: finished with status 'done'
+2026-11-09T02:07:26.4301459Z   Preparing editable metadata (pyproject.toml): started
+2026-11-09T02:07:26.8088996Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+2026-11-09T02:07:27.0170711Z Collecting numpy==2.4.6
+2026-11-09T02:07:27.0399099Z   Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+2026-11-09T02:07:27.1434076Z Collecting scipy==1.17.1
+2026-11-09T02:07:27.1473905Z   Downloading scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+2026-11-09T02:07:27.2586642Z Collecting matplotlib>=3.8 (from wavecert-fwi==0.6.0)
+2026-11-09T02:07:27.2625963Z   Downloading matplotlib-3.11.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+2026-11-09T02:07:27.3009991Z Collecting pytest>=8 (from wavecert-fwi==0.6.0)
+2026-11-09T02:07:27.3051299Z   Downloading pytest-9.2.0-py3-none-any.whl.metadata (7.9 kB)
+2026-11-09T02:07:27.3243306Z Collecting pytest-cov>=5 (from wavecert-fwi==0.6.0)
+2026-11-09T02:07:27.3278455Z   Downloading pytest_cov-7.1.0-py3-none-any.whl.metadata (32 kB)
+2026-11-09T02:07:27.5674160Z Collecting ruff>=0.6 (from wavecert-fwi==0.6.0)
+2026-11-09T02:07:27.5713624Z   Downloading ruff-0.17.4-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (20 kB)
+2026-11-09T02:07:27.6698759Z Collecting mypy>=1.10 (from wavecert-fwi==0.6.0)
+2026-11-09T02:07:27.6737116Z   Downloading mypy-2.4.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-11-09T02:07:27.6990557Z Collecting pre-commit>=3.7 (from wavecert-fwi==0.6.0)
+2026-11-09T02:07:27.7026106Z   Downloading pre_commit-4.7.0-py2.py3-none-any.whl.metadata (1.2 kB)
+2026-11-09T02:07:27.7378042Z Collecting h5py>=3.10 (from wavecert-fwi==0.6.0)
+2026-11-09T02:07:27.7415296Z   Downloading h5py-3.16.0-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+2026-11-09T02:07:27.8249492Z Collecting pandas>=2.2 (from wavecert-fwi==0.6.0)
+2026-11-09T02:07:27.8287071Z   Downloading pandas-3.1.1-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (16 kB)
+2026-11-09T02:07:27.8948624Z Collecting pyarrow>=15 (from wavecert-fwi==0.6.0)
+2026-11-09T02:07:27.8988749Z   Downloading pyarrow-26.0.1-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+2026-11-09T02:07:27.9498639Z Collecting contourpy>=1.0.1 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T02:07:27.9535100Z   Downloading contourpy-1.3.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+2026-11-09T02:07:27.9697860Z Collecting cycler>=0.10 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T02:07:27.9732682Z   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+2026-11-09T02:07:28.0981857Z Collecting fonttools>=4.28.2 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T02:07:28.1022185Z   Downloading fonttools-4.68.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (139 kB)
+2026-11-09T02:07:28.1683246Z Collecting kiwisolver>=1.3.1 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T02:07:28.1736283Z   Downloading kiwisolver-1.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+2026-11-09T02:07:28.1828717Z Collecting packaging>=20.0 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T02:07:28.1839997Z   Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+2026-11-09T02:07:28.3211139Z Collecting pillow>=9 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T02:07:28.3248643Z   Downloading pillow-13.0.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+2026-11-09T02:07:28.3497034Z Collecting pyparsing>=3 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T02:07:28.3534309Z   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+2026-11-09T02:07:28.3716551Z Collecting python-dateutil>=2.7 (from matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T02:07:28.3751145Z   Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+2026-11-09T02:07:28.3974108Z Collecting typing_extensions>=4.6.0 (from mypy>=1.10->wavecert-fwi==0.6.0)
+2026-11-09T02:07:28.4009733Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-11-09T02:07:28.4883605Z Collecting mypy_extensions>=1.0.0 (from mypy>=1.10->wavecert-fwi==0.6.0)
+2026-11-09T02:07:28.4918511Z   Downloading mypy_extensions-1.2.0-py3-none-any.whl.metadata (1.1 kB)
+2026-11-09T02:07:28.5090431Z Collecting pathspec>=1.0.0 (from mypy>=1.10->wavecert-fwi==0.6.0)
+2026-11-09T02:07:28.5125431Z   Downloading pathspec-1.1.1-py3-none-any.whl.metadata (14 kB)
+2026-11-09T02:07:28.6376388Z Collecting librt>=0.16.0 (from mypy>=1.10->wavecert-fwi==0.6.0)
+2026-11-09T02:07:28.6413661Z   Downloading librt-0.16.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (1.3 kB)
+2026-11-09T02:07:28.6874450Z Collecting ast-serialize<1.0.0,>=0.12.1 (from mypy>=1.10->wavecert-fwi==0.6.0)
+2026-11-09T02:07:28.6912361Z   Downloading ast_serialize-0.13.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.4 kB)
+2026-11-09T02:07:28.7116863Z Collecting cfgv>=2.0.0 (from pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T02:07:28.7148458Z   Downloading cfgv-3.5.0-py2.py3-none-any.whl.metadata (8.9 kB)
+2026-11-09T02:07:28.7464396Z Collecting identify>=1.0.0 (from pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T02:07:28.7501682Z   Downloading identify-2.6.20-py2.py3-none-any.whl.metadata (4.4 kB)
+2026-11-09T02:07:28.7853111Z Collecting nodeenv>=0.11.1 (from pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T02:07:28.7886930Z   Downloading nodeenv-1.12.0-py3-none-any.whl.metadata (49 kB)
+2026-11-09T02:07:28.8268668Z Collecting pyyaml>=5.1 (from pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T02:07:28.8308530Z   Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-11-09T02:07:28.8690803Z Collecting virtualenv>=20.10.0 (from pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T02:07:28.8728784Z   Downloading virtualenv-21.15.6-py3-none-any.whl.metadata (4.1 kB)
+2026-11-09T02:07:28.8908932Z Collecting iniconfig>=2 (from pytest>=8->wavecert-fwi==0.6.0)
+2026-11-09T02:07:28.8944411Z   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+2026-11-09T02:07:28.9117685Z Collecting pluggy<2,>=1.6 (from pytest>=8->wavecert-fwi==0.6.0)
+2026-11-09T02:07:28.9153017Z   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+2026-11-09T02:07:28.9350664Z Collecting pygments>=2.15 (from pytest>=8->wavecert-fwi==0.6.0)
+2026-11-09T02:07:28.9386305Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+2026-11-09T02:07:29.2662634Z Collecting coverage>=7.10.6 (from coverage[toml]>=7.10.6->pytest-cov>=5->wavecert-fwi==0.6.0)
+2026-11-09T02:07:29.2699692Z   Downloading coverage-7.17.2-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (8.1 kB)
+2026-11-09T02:07:29.3216444Z Collecting tzdata (from python-dateutil>=2.7->matplotlib>=3.8->wavecert-fwi==0.6.0)
+2026-11-09T02:07:29.3250734Z   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+2026-11-09T02:07:29.3422730Z Collecting distlib<1,>=0.4.3 (from virtualenv>=20.10.0->pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T02:07:29.3462061Z   Downloading distlib-0.4.4-py2.py3-none-any.whl.metadata (5.3 kB)
+2026-11-09T02:07:29.4236947Z Collecting filelock<5,>=3.24.2 (from virtualenv>=20.10.0->pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T02:07:29.4274435Z   Downloading filelock-4.2.9-py3-none-any.whl.metadata (2.3 kB)
+2026-11-09T02:07:29.4486939Z Collecting platformdirs<5,>=4.4 (from virtualenv>=20.10.0->pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T02:07:29.4521471Z   Downloading platformdirs-4.14.5-py3-none-any.whl.metadata (5.7 kB)
+2026-11-09T02:07:29.4694974Z Collecting python-discovery>=1.6.1 (from virtualenv>=20.10.0->pre-commit>=3.7->wavecert-fwi==0.6.0)
+2026-11-09T02:07:29.4727224Z   Downloading python_discovery-1.9.5-py3-none-any.whl.metadata (4.2 kB)
+2026-11-09T02:07:29.5506008Z Downloading numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.9 MB)
+2026-11-09T02:07:29.6795086Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.9/16.9 MB 131.6 MB/s  0:00:00
+2026-11-09T02:07:29.6832811Z Downloading scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+2026-11-09T02:07:29.9456181Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 134.9 MB/s  0:00:00
+2026-11-09T02:07:29.9509655Z Downloading h5py-3.16.0-cp311-cp311-manylinux_2_28_x86_64.whl (5.0 MB)
+2026-11-09T02:07:29.9997408Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.0/5.0 MB 101.8 MB/s  0:00:00
+2026-11-09T02:07:30.0038146Z Downloading matplotlib-3.11.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+2026-11-09T02:07:30.0815779Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 129.9 MB/s  0:00:00
+2026-11-09T02:07:30.0850521Z Downloading contourpy-1.3.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (355 kB)
+2026-11-09T02:07:30.0914654Z Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+2026-11-09T02:07:30.0961788Z Downloading fonttools-4.68.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.5 MB)
+2026-11-09T02:07:30.1677489Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 74.9 MB/s  0:00:00
+2026-11-09T02:07:30.1714524Z Downloading kiwisolver-1.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.4 MB)
+2026-11-09T02:07:30.1987469Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 46.5 MB/s  0:00:00
+2026-11-09T02:07:30.2030565Z Downloading mypy-2.4.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (15.4 MB)
+2026-11-09T02:07:30.3257475Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.4/15.4 MB 125.8 MB/s  0:00:00
+2026-11-09T02:07:30.3299349Z Downloading ast_serialize-0.13.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
+2026-11-09T02:07:30.3654671Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 31.4 MB/s  0:00:00
+2026-11-09T02:07:30.3690363Z Downloading librt-0.16.0-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (515 kB)
+2026-11-09T02:07:30.3761073Z Downloading mypy_extensions-1.2.0-py3-none-any.whl (5.1 kB)
+2026-11-09T02:07:30.3785780Z Using cached packaging-26.3-py3-none-any.whl (129 kB)
+2026-11-09T02:07:30.3821034Z Downloading pandas-3.1.1-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.4 MB)
+2026-11-09T02:07:30.5231435Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.4/12.4 MB 87.0 MB/s  0:00:00
+2026-11-09T02:07:30.5265865Z Downloading pathspec-1.1.1-py3-none-any.whl (57 kB)
+2026-11-09T02:07:30.5315466Z Downloading pillow-13.0.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+2026-11-09T02:07:30.6183654Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 80.9 MB/s  0:00:00
+2026-11-09T02:07:30.6221075Z Downloading pre_commit-4.7.0-py2.py3-none-any.whl (226 kB)
+2026-11-09T02:07:30.7003083Z Downloading cfgv-3.5.0-py2.py3-none-any.whl (7.4 kB)
+2026-11-09T02:07:30.7052170Z Downloading identify-2.6.20-py2.py3-none-any.whl (99 kB)
+2026-11-09T02:07:30.7104354Z Downloading nodeenv-1.12.0-py3-none-any.whl (39 kB)
+2026-11-09T02:07:30.7156767Z Downloading pyarrow-26.0.1-cp311-cp311-manylinux_2_28_x86_64.whl (55.0 MB)
+2026-11-09T02:07:31.2709048Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.0/55.0 MB 99.5 MB/s  0:00:00
+2026-11-09T02:07:31.2745719Z Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+2026-11-09T02:07:31.2795405Z Downloading pytest-9.2.0-py3-none-any.whl (411 kB)
+2026-11-09T02:07:31.2853629Z Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+2026-11-09T02:07:31.2899170Z Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+2026-11-09T02:07:31.2948923Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+2026-11-09T02:07:31.3048555Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 117.9 MB/s  0:00:00
+2026-11-09T02:07:31.3081905Z Downloading pytest_cov-7.1.0-py3-none-any.whl (22 kB)
+2026-11-09T02:07:31.3130269Z Downloading coverage-7.17.2-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (262 kB)
+2026-11-09T02:07:31.3192134Z Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+2026-11-09T02:07:31.3242670Z Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+2026-11-09T02:07:31.3314978Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 95.5 MB/s  0:00:00
+2026-11-09T02:07:31.3349608Z Downloading ruff-0.17.4-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (10.6 MB)
+2026-11-09T02:07:31.4128284Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.6/10.6 MB 135.7 MB/s  0:00:00
+2026-11-09T02:07:31.4162824Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-11-09T02:07:31.4213082Z Downloading virtualenv-21.15.6-py3-none-any.whl (5.7 MB)
+2026-11-09T02:07:31.4817232Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.7/5.7 MB 92.5 MB/s  0:00:00
+2026-11-09T02:07:31.4853284Z Downloading distlib-0.4.4-py2.py3-none-any.whl (472 kB)
+2026-11-09T02:07:31.4918702Z Downloading filelock-4.2.9-py3-none-any.whl (164 kB)
+2026-11-09T02:07:31.4973128Z Downloading platformdirs-4.14.5-py3-none-any.whl (35 kB)
+2026-11-09T02:07:31.5021882Z Downloading python_discovery-1.9.5-py3-none-any.whl (44 kB)
+2026-11-09T02:07:31.5072064Z Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+2026-11-09T02:07:31.7348469Z Building wheels for collected packages: wavecert-fwi
+2026-11-09T02:07:31.7354506Z   Building editable for wavecert-fwi (pyproject.toml): started
+2026-11-09T02:07:32.1177148Z   Building editable for wavecert-fwi (pyproject.toml): finished with status 'done'
+2026-11-09T02:07:32.1181217Z   Created wheel for wavecert-fwi: filename=wavecert_fwi-0.6.0-0.editable-py3-none-any.whl size=9849 sha256=3e7592953c415c3d60cc6821013709d724ff18790c1463dd88e4c66b62397a77
+2026-11-09T02:07:32.1182618Z   Stored in directory: /tmp/pip-ephem-wheel-cache-cut2suel/wheels/33/99/1e/bd477f6b2107348a65c5026b5063ccef807089b7eaab4c3a2e
+2026-11-09T02:07:32.1199258Z Successfully built wavecert-fwi
+2026-11-09T02:07:32.2151833Z Installing collected packages: distlib, tzdata, typing_extensions, ruff, pyyaml, pyparsing, pygments, pyarrow, pluggy, platformdirs, pillow, pathspec, packaging, numpy, nodeenv, mypy_extensions, librt, kiwisolver, iniconfig, identify, fonttools, filelock, cycler, coverage, cfgv, ast-serialize, scipy, python-discovery, python-dateutil, pytest, mypy, h5py, contourpy, virtualenv, pytest-cov, pandas, matplotlib, wavecert-fwi, pre-commit
+2026-11-09T02:07:47.9489337Z 
+2026-11-09T02:07:47.9506646Z Successfully installed ast-serialize-0.13.1 cfgv-3.5.0 contourpy-1.3.3 coverage-7.17.2 cycler-0.12.1 distlib-0.4.4 filelock-4.2.9 fonttools-4.68.0 h5py-3.16.0 identify-2.6.20 iniconfig-2.3.1 kiwisolver-1.5.1 librt-0.16.0 matplotlib-3.11.2 mypy-2.4.1 mypy_extensions-1.2.0 nodeenv-1.12.0 numpy-2.4.6 packaging-26.3 pandas-3.1.1 pathspec-1.1.1 pillow-13.0.0 platformdirs-4.14.5 pluggy-1.7.0 pre-commit-4.7.0 pyarrow-26.0.1 pygments-2.21.0 pyparsing-3.3.3 pytest-9.2.0 pytest-cov-7.1.0 python-dateutil-4.0.0 python-discovery-1.9.5 pyyaml-6.0.3 ruff-0.17.4 scipy-1.17.1 typing_extensions-4.16.0 tzdata-2026.6 virtualenv-21.15.6 wavecert-fwi-0.6.0
+2026-11-09T02:07:48.2939217Z ##[group]Run set -euo pipefail
+2026-11-09T02:07:48.2939610Z [36;1mset -euo pipefail[0m
+2026-11-09T02:07:48.2940395Z [36;1mpython -B -I experiment/research/prior48/test_orchestrator_gates.py --receipt "$GITHUB_WORKSPACE/prior48_artifacts/upload/orchestrator_gate_controls.json" 2>&1 | tee prior48_artifacts/upload/orchestrator_gate_controls.log[0m
+2026-11-09T02:07:48.2984958Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-09T02:07:48.2985235Z env:
+2026-11-09T02:07:48.2985406Z   OMP_NUM_THREADS: 1
+2026-11-09T02:07:48.2985595Z   MKL_NUM_THREADS: 1
+2026-11-09T02:07:48.2985789Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T02:07:48.2985988Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T02:07:48.2986188Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T02:07:48.2986404Z   PYTHONHASHSEED: 0
+2026-11-09T02:07:48.2986594Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T02:07:48.2986803Z   PYTHONUNBUFFERED: 1
+2026-11-09T02:07:48.2987000Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-09T02:07:48.2987261Z   MPLBACKEND: Agg
+2026-11-09T02:07:48.2987503Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T02:07:48.2987944Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-09T02:07:48.2988287Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T02:07:48.2988590Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T02:07:48.2988891Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T02:07:48.2989201Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-09T02:07:48.2989473Z ##[endgroup]
+2026-11-09T02:07:48.5037485Z test_GO_fields_and_exact_bytes_required (__main__.GateControls.test_GO_fields_and_exact_bytes_required) ... ok
+2026-11-09T02:07:48.5165845Z test_JUnit_counts_skips_and_duplicate_identities_rejected (__main__.GateControls.test_JUnit_counts_skips_and_duplicate_identities_rejected) ... ok
+2026-11-09T02:07:48.5178545Z test_activation_can_change_registration_only (__main__.GateControls.test_activation_can_change_registration_only) ... ok
+2026-11-09T02:07:48.5179443Z test_authorization_is_strict_boolean (__main__.GateControls.test_authorization_is_strict_boolean) ... ok
+2026-11-09T02:07:48.5180288Z test_control_environment_contains_no_child_tokens (__main__.GateControls.test_control_environment_contains_no_child_tokens) ... ok
+2026-11-09T02:07:48.5186473Z test_control_upload_excludes_temporary_arrays_and_study (__main__.GateControls.test_control_upload_excludes_temporary_arrays_and_study) ... ok
+2026-11-09T02:07:48.6023710Z test_default_CLI_cannot_launch (__main__.GateControls.test_default_CLI_cannot_launch) ... ok
+2026-11-09T02:07:48.6027203Z test_failed_or_unrelated_GitHub_run_does_not_authorize (__main__.GateControls.test_failed_or_unrelated_GitHub_run_does_not_authorize) ... ok
+2026-11-09T02:07:48.6028745Z test_false_registration_cannot_carry_GO (__main__.GateControls.test_false_registration_cannot_carry_GO) ... ok
+2026-11-09T02:07:48.6029945Z test_false_registration_is_controls_only (__main__.GateControls.test_false_registration_is_controls_only) ... ok
+2026-11-09T02:07:48.6031872Z test_fixed_runtime_production_and_counts_cannot_change (__main__.GateControls.test_fixed_runtime_production_and_counts_cannot_change) ... ok
+2026-11-09T02:07:48.6032896Z test_fork_control_run_is_rejected (__main__.GateControls.test_fork_control_run_is_rejected) ... ok
+2026-11-09T02:07:48.6033862Z test_four_frozen_fresh_control_groups_are_exact (__main__.GateControls.test_four_frozen_fresh_control_groups_are_exact) ... ok
+2026-11-09T02:07:48.6035627Z test_host_event_branch_attempt_public_force_guards (__main__.GateControls.test_host_event_branch_attempt_public_force_guards) ... ok
+2026-11-09T02:07:48.6041457Z test_interrupted_dispatch_handoff_recovers_only_recorded_owned_PID (__main__.GateControls.test_interrupted_dispatch_handoff_recovers_only_recorded_owned_PID) ... ok
+2026-11-09T02:07:48.6105028Z test_mutation_during_copy_has_actual_target_hash_and_incomplete_inventory (__main__.GateControls.test_mutation_during_copy_has_actual_target_hash_and_incomplete_inventory) ... ok
+2026-11-09T02:07:48.6105971Z test_only_fully_bound_manufactured_activation_admits_study (__main__.GateControls.test_only_fully_bound_manufactured_activation_admits_study) ... ok
+2026-11-09T02:07:48.6106909Z test_parent_must_be_exact_single_bundle_commit (__main__.GateControls.test_parent_must_be_exact_single_bundle_commit) ... ok
+2026-11-09T02:07:48.6108770Z test_parent_registration_must_be_same_control_bundle (__main__.GateControls.test_parent_registration_must_be_same_control_bundle) ... ok
+2026-11-09T02:07:48.6110666Z test_prior_run_binding_is_exact (__main__.GateControls.test_prior_run_binding_is_exact) ... ok
+2026-11-09T02:07:48.6143472Z test_registered_bundle_hash_and_file_tamper_rejected (__main__.GateControls.test_registered_bundle_hash_and_file_tamper_rejected) ... ok
+2026-11-09T02:07:48.6152573Z test_upload_budget_violation_has_explicit_omission_inventory (__main__.GateControls.test_upload_budget_violation_has_explicit_omission_inventory) ... ok
+2026-11-09T02:07:48.6153314Z 
+2026-11-09T02:07:48.6153526Z ----------------------------------------------------------------------
+2026-11-09T02:07:48.6153979Z Ran 22 tests in 0.112s
+2026-11-09T02:07:48.6154163Z 
+2026-11-09T02:07:48.6154258Z OK
+2026-11-09T02:07:48.6157234Z {"status": "MANUFACTURED_METADATA_GATE_CONTROLS_PASS", "tests": 22, "failures": 0, "errors": 0, "source_sha256": "e26317990d26413a1c00627cc691eea172b6108b02ef1e1e6f729bf541fb6391", "orchestrator_sha256": "65e99bd7b862f8e572527744cb9f77af49867557ad50e4ea53c2c32d4c9eae71", "actual_study_launches": 0, "project_arrays_decoded": 0, "PDE_calls": 0, "network_requests": 0}
+2026-11-09T02:07:48.6594105Z ##[group]Run set -euo pipefail
+2026-11-09T02:07:48.6594619Z [36;1mset -euo pipefail[0m
+2026-11-09T02:07:48.6595365Z [36;1mpython -B -I experiment/research/prior48/orchestrate.py --run --experiment "$GITHUB_WORKSPACE/experiment" --baseline "$GITHUB_WORKSPACE/baseline" --artifacts "$GITHUB_WORKSPACE/prior48_artifacts"[0m
+2026-11-09T02:07:48.6640628Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-11-09T02:07:48.6641116Z env:
+2026-11-09T02:07:48.6641398Z   OMP_NUM_THREADS: 1
+2026-11-09T02:07:48.6641682Z   MKL_NUM_THREADS: 1
+2026-11-09T02:07:48.6642060Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T02:07:48.6642349Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T02:07:48.6642664Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T02:07:48.6642962Z   PYTHONHASHSEED: 0
+2026-11-09T02:07:48.6643245Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T02:07:48.6643580Z   PYTHONUNBUFFERED: 1
+2026-11-09T02:07:48.6643897Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-09T02:07:48.6644186Z   MPLBACKEND: Agg
+2026-11-09T02:07:48.6644677Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T02:07:48.6645103Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-09T02:07:48.6645618Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T02:07:48.6646055Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T02:07:48.6646478Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T02:07:48.6646874Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-09T02:07:48.6649637Z   GITHUB_TOKEN: ***
+2026-11-09T02:07:48.6650026Z ##[endgroup]
+2026-11-09T02:07:48.7688409Z {"phase": "manufactured_controls", "group": "prior", "expected_tests": 39}
+2026-11-09T02:07:49.1431244Z {"phase": "manufactured_controls", "group": "adapter", "expected_tests": 21}
+2026-11-09T02:07:49.9419106Z {"phase": "manufactured_controls", "group": "driver", "expected_tests": 30}
+2026-11-09T02:07:50.7749630Z {"phase": "manufactured_controls", "group": "launcher", "expected_tests": 50}
+2026-11-09T02:07:55.6374919Z ##[group]Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+2026-11-09T02:07:55.6375433Z with:
+2026-11-09T02:07:55.6375626Z   name: prior48-42549126689-attempt-1
+2026-11-09T02:07:55.6375855Z   path: prior48_artifacts/upload/
+2026-11-09T02:07:55.6376071Z   retention-days: 7
+2026-11-09T02:07:55.6376262Z   overwrite: false
+2026-11-09T02:07:55.6376447Z   if-no-files-found: warn
+2026-11-09T02:07:55.6376650Z   include-hidden-files: false
+2026-11-09T02:07:55.6376858Z   compression-level: 6
+2026-11-09T02:07:55.6377045Z   archive: true
+2026-11-09T02:07:55.6377217Z env:
+2026-11-09T02:07:55.6377380Z   OMP_NUM_THREADS: 1
+2026-11-09T02:07:55.6377761Z   MKL_NUM_THREADS: 1
+2026-11-09T02:07:55.6377941Z   OPENBLAS_NUM_THREADS: 1
+2026-11-09T02:07:55.6378134Z   VECLIB_MAXIMUM_THREADS: 1
+2026-11-09T02:07:55.6378334Z   NUMEXPR_NUM_THREADS: 1
+2026-11-09T02:07:55.6378534Z   PYTHONHASHSEED: 0
+2026-11-09T02:07:55.6378719Z   PYTHONDONTWRITEBYTECODE: 1
+2026-11-09T02:07:55.6378962Z   PYTHONUNBUFFERED: 1
+2026-11-09T02:07:55.6379171Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-09T02:07:55.6379397Z   MPLBACKEND: Agg
+2026-11-09T02:07:55.6379621Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T02:07:55.6379965Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib/pkgconfig
+2026-11-09T02:07:55.6380306Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T02:07:55.6380613Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T02:07:55.6380914Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.18/x64
+2026-11-09T02:07:55.6381216Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.18/x64/lib
+2026-11-09T02:07:55.6381478Z ##[endgroup]
+2026-11-09T02:07:55.7658303Z With the provided path, there will be 22 files uploaded
+2026-11-09T02:07:55.7661358Z Artifact name is valid!
+2026-11-09T02:07:55.7661814Z Root directory input is valid!
+2026-11-09T02:07:56.1184069Z Uploading artifact: prior48-42549126689-attempt-1.zip
+2026-11-09T02:07:56.1213385Z Beginning upload of artifact content to blob storage
+2026-11-09T02:07:56.4375163Z Uploaded bytes 25414
+2026-11-09T02:07:56.4988132Z Finished uploading artifact content to blob storage!
+2026-11-09T02:07:56.4988865Z SHA256 digest of uploaded artifact is 73b8a0e0b7632ebe43721155d37e4b56ed2a603de742c79f2e08caed93121ba2
+2026-11-09T02:07:56.4989429Z Finalizing artifact upload
+2026-11-09T02:07:57.0629707Z Artifact prior48-42549126689-attempt-1 successfully finalized. Artifact ID 13644896478
+2026-11-09T02:07:57.0630386Z Artifact prior48-42549126689-attempt-1 has been successfully uploaded! Final size is 25414 bytes. Artifact ID is 13644896478
+2026-11-09T02:07:57.0633150Z Artifact download URL: https://github.com/uskutsav-cpu/wavecert-fwi/actions/runs/42549126689/artifacts/13644896478
+2026-11-09T02:07:57.0936890Z Post job cleanup.
+2026-11-09T02:07:57.1926858Z (node:2662) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-09T02:07:57.1927444Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-09T02:07:57.2345727Z Post job cleanup.
+2026-11-09T02:07:57.3093211Z [command]/usr/bin/git version
+2026-11-09T02:07:57.3131707Z git version 2.56.0
+2026-11-09T02:07:57.3168591Z Temporarily overriding HOME='/home/runner/work/_temp/71e86b1b-9fb5-47a9-9903-934d07f6b63f' before making global git config changes
+2026-11-09T02:07:57.3169830Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-09T02:07:57.3170868Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/wavecert-fwi/wavecert-fwi/baseline
+2026-11-09T02:07:57.3204221Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T02:07:57.3246657Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T02:07:57.3522876Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T02:07:57.3568952Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T02:07:57.3860906Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T02:07:57.3891896Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T02:07:57.4528255Z Post job cleanup.
+2026-11-09T02:07:57.5232082Z [command]/usr/bin/git version
+2026-11-09T02:07:57.5288930Z git version 2.56.0
+2026-11-09T02:07:57.5313710Z Temporarily overriding HOME='/home/runner/work/_temp/beb36ef4-f9df-4294-855e-0cc94800b101' before making global git config changes
+2026-11-09T02:07:57.5314875Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-09T02:07:57.5319148Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/wavecert-fwi/wavecert-fwi/experiment
+2026-11-09T02:07:57.5366384Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-09T02:07:57.5416290Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-09T02:07:57.5722139Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-09T02:07:57.5765973Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-09T02:07:57.6125799Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-09T02:07:57.6149364Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-09T02:07:57.6530227Z Cleaning up orphan processes
+2026-11-09T02:07:57.6850853Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

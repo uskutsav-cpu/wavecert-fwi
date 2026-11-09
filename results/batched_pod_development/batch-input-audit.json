@@ -1,0 +1,32 @@
+{
+  "status": "inputs verified; no evaluation/timing performed",
+  "protocol_sha256": "a53600eff96f128193f813c077da29235d185fca473a24e060ca8fe75334ad1f",
+  "source_sha256": "b403390e70e83b086c509fe3f43289008af689b6e28b5016a54d585bb985edec",
+  "verified_file_sha256": {
+    "fixture": "be429def325b741d415546167b8e13b5d52a3304d79f36efd3945a58363177db",
+    "fixture_provenance": "c0f32413bee5db2aa67e128d81f3a6523a87bd398dc68aa35b4fa0485212a941",
+    "basis": "f2ae08cbcb251802ba7be92d69e87c28f425c5b1dfeede02fd94d6720c484447",
+    "pod_input_provenance": "8e835f911df2525fd159ffceaa8213fd4bf647fc2c71a920af9baa95086a23ad",
+    "pod_summary": "872d7f557f4d1a2c18401ce86278132f24e8bfe37bef2536e872922f648603c6",
+    "pod_source": "b613dc2e62ba24f65a9c7587d40c3d1af4f7fc0d2e5fcab8daee649908bcd5ca"
+  },
+  "unchanged_production_sources": {
+    "src/wavecert/surrogates/pod.py": "b613dc2e62ba24f65a9c7587d40c3d1af4f7fc0d2e5fcab8daee649908bcd5ca",
+    "src/wavecert/physics/coarse_stability.py": "53e6ab1754966f63b97c62da6c3996b7babbd59648808df6f9412295e46c658a",
+    "src/wavecert/certificates/coarse_adjoint.py": "3d4f2d89c37116312f4f80c967ff4bd20d4be474efe60fe65461d758880ee565",
+    "src/wavecert/physics/helmholtz.py": "caf51b58da24ed6d3633bda4eaaab804714f5c7932d9d5f343644763bc158131",
+    "src/wavecert/physics/residual_coded.py": "5606d1cdcf30937df9a82e2819992105826bef04e60b28f9989137a076ceb70b"
+  },
+  "verified_execution_modules": {
+    "src/wavecert/experiments/batched_pod_development.py": "7f62947ed6e111384d5e16bc0727a6bb34dd9ebd8c490caadb13b3bc4ce9ce0a",
+    "src/wavecert/experiments/coarse_runtime_controls.py": "f26ea16014e7924aca622e098e03805d9a3c5b228c0697e994435985ea453448",
+    "src/wavecert/experiments/coarse_adjoint_validation.py": "d5efcd5c77069047d0cc7d73fdc6d56a32ebb62bc13e92e22a777e50468125f6",
+    "src/wavecert/surrogates/pod_batch.py": "c45b15f557e414bb62f53ee18a49d18526a158410e5b39bc324c6ac19623a923",
+    "src/wavecert/physics/coarse_batch.py": "6adf41b5b836a1331661a598c4e9b6e5e24ebd35ec659b7d86db95134e22a7be",
+    "src/wavecert/certificates/coarse_adjoint_batch.py": "786e5d48653b13e6e8d73ba38e9dab8c2860ffd0e943b81e58a39d66f389dce8"
+  },
+  "n_validation_slices": 8,
+  "n_validation_parents": 4,
+  "calibration_or_test_arrays_loaded": false,
+  "external_test_arrays_loaded": false
+}

@@ -1,0 +1,67 @@
+{
+  "status": "SOURCE_ROUTE_MANUFACTURED_PROCESS_CONTROLS_PASS_NATIVE_UNEXECUTED",
+  "orchestrator_sha256": "3f5ca85195a08cc08ceb55dd0f75b00655a11de819fe8039bd0616c2fff414b1",
+  "control_source_sha256": "47e3cf3566ba1946cf5e5276baf284ede2a5afcd4465ca12d684ef60b0e2a649",
+  "route_manifest_sha256": "c42d300d5fd23c48ff4572abc814e4556d7a1c7ca742c2bc766065f5469fc85b",
+  "registration_sha256": "21252f089df99aee33fa7fb5a5f77ec97d56cdd328c098d4f77632b715fb6c0f",
+  "registration_false_root_go_null": true,
+  "scope_sha256": "450704fda3a5f915432444d3b85b5d626c5ae91b7373d44e365fc669c45807fc",
+  "workflow_sha256": {
+    ".github/workflows/ci.yml": "3d4487b872330d5906b52abaf848c80c7c9ebb56a5417578fa1ab11dd3e6f96b",
+    ".github/workflows/cached-j-native.yml": "92387dddc314df98e4e6103942ff424691e3941a5a8ac95b1a4bf403b522326c"
+  },
+  "actual_final_stdlib_controls": {
+    "tests": 14,
+    "errors": 0,
+    "failures": 0,
+    "skips": 0,
+    "exit_code": 0,
+    "session": 83402,
+    "terminal_chunk": "44666f",
+    "seconds": 0.413,
+    "log": "route_controls_attempt_04.log",
+    "log_sha256": "d17e732f09de8b7cfab8c6655644848e4f8e6489346b45fe4b8ebe0e63c4b1f5",
+    "source_prehashed_before_execution": "history_attempt_04/SOURCE_IDENTITIES.json",
+    "scope": "manufactured event/GO/count XML inputs and actual tiny stdlib dummyPIDs/waits/signals/timeouts, including realparent signal beforePopen callerassignment and repeatedsignals duringactualreap; no numerical/native call or remotejob"
+  },
+  "static_checks": {
+    "ruff": "actualPASS adfb7b, maintainedcontroller/tests --no-cache",
+    "python310grammar": "actualPASS after signalfix, maintainedcontroller/tests"
+  },
+  "earlier_controls": {
+    "attempt01": "10passed rawlog retained; source reconstructedpre-delta and not independentlyprehashed, as historyNOTE says",
+    "attempt02": "12passed actual239009, exact pre-execution source/history retained",
+    "no_failed_process_controls": true,
+    "attempt03": "12passed actual6eae86/7001+d1, fully preserved before reviewer signalfinding; its passing controls did not cover identified race."
+  },
+  "production_read_only_verification": {
+    "actual_head": "2918a47c68ac8bee3d33e532c21a96d335d1718a",
+    "worktree_clean": true,
+    "all161source_hashes_match": true,
+    "source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da"
+  },
+  "reviewed_runtime_manifest": {
+    "FROZEN_PRODUCTION_SOURCE.json": "e7ba5deef7a651f42d02b9f8e0bcbee9624291b8217ab378bdde7586c57cd4de",
+    "cached_jacobian.py": "f613370617d7e0bd7815cf441dd8ba5f41816ad4791275e86f33de228657c79b",
+    "protocol.json": "3b608f942f3d08f40705e8203375fc7e24763592bd27d7cc70bac12b351391e6",
+    "public_map_builder.py": "622a624f54b17d9d882da9d88af547c516b26ee42c87d80ec68d5fe99a687ec1",
+    "test_lifecycle.py": "2526a76b539af952a9a9707f6723493ad571723012ed48c8e3738b8432a80414",
+    "test_manufactured.py": "c7d7d9d9e152b4b0c037b5cd2efc411356d2c1206b5ce3824ed8a351acda3104",
+    "verify_native_fields.py": "c660a025badbebd5e9d9a4d6ddbfc684c95193c6111f2de349f25112976d1d6b"
+  },
+  "local_test_runtime": {
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O"
+  },
+  "no_current_native_authorization": true,
+  "remote_controls58_unexecuted": true,
+  "scientific_goals_complete": false,
+  "signal_review_correction": {
+    "original_reviewed_source_sha256": "7001b7089f64782ad4f273fcf671a68790a1cb13460446b7487827dca7253f90",
+    "preserved_original_receipt_sha256": "ea965af374ab8f7a03fde5d49fc6ac3b2f9d75a8977da2f99c0699531cd84f9b",
+    "preservation_manifest_sha256": "17d954b3c58ba34a8012f0eb1e470bad3fc946f791ad7c8b09f649513deeae2b",
+    "unresolved_before_fix": "signal handoff/cleanup race discovered by independent review, not actualnative execution",
+    "current_source_requires_independent_delta_review": true,
+    "no_native_result_or_GO": true
+  }
+}

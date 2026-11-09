@@ -1,0 +1,97 @@
+{
+  "created_utc": "2026-11-08T18:39:03.771620+00:00",
+  "role": "Independent AI source/cohort-provenance review plus owner-executed tiny dummy launcher controls",
+  "result": "SOURCE_AND_LAUNCHER_CONTROLS_CLEAR_PENDING_ROOT_ACTIVATION_RESOURCE_FREEZE_GO",
+  "source_sha256": {
+    "launch_cohort.py": "c85b88216a8a1d8ea1f62e07e0e18195d94a93112614712404011603898d9882",
+    "test_launcher.py": "506829eb96efeb380bf0e6bfaf9dd5a8ab9608bd547ce3187406ea9d0dd5d0da",
+    "SCOPE.md": "d343fc0fde1b3a0b475528d04353797f9a376e66cfe419f3f42b142df7213adc"
+  },
+  "validation_artifacts_sha256": {
+    "COMMANDS_03.json": "86bbd4535c86e282fc047f34a20864c9c89eb38f9f778951d739e6714d4c245b",
+    "puretests_03.log": "95c9c7e7fff115802b5e7b63be9af12fe61fb012c9d93b74df0b39e2a6bc6340",
+    "ruff_03.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "default_03.log": "9327fc8822bc4e7c516e58d54cabdfe022429bd911d035d2f9f346d0bdc20a22",
+    "grammar_03.log": "27775ab48e232a5197f217fd1452fbb35f1c81ab935a449b16800b092c2cef0c"
+  },
+  "actual_final_controls": {
+    "session": 63031,
+    "initial_chunk": "a938aa",
+    "terminal_chunk": "a44989",
+    "exit_code": 0,
+    "dummy_tests_passed": 15,
+    "pytest_seconds": 2.13,
+    "warnings_as_errors": true,
+    "Ruff": "PASS repo config",
+    "default_CLI": "PASS metadata_only_no_launch",
+    "Python310_AST": "PASS"
+  },
+  "earlier_attempts": {
+    "first10": {
+      "session": 61772,
+      "terminal": "eb4ced",
+      "passed": 10,
+      "seconds": 1.85,
+      "ruff_exit": 1,
+      "finding": "Two import-order issues only; source/log/receipt retained history/first_controls"
+    },
+    "pre_isolation15": {
+      "session": 35210,
+      "terminal": "67f80e",
+      "passed": 15,
+      "seconds": 2.16,
+      "history": "history/pre_isolation_flags"
+    }
+  },
+  "independent_source_reviewer": "/root/realistic_physics_gap/measurement_scope_review; final exact-source CLEAR; source-only no test execution by reviewer",
+  "cohort_protocol_review": {
+    "reviewed_held_protocol_sha256": "19dd1cc34ddaaed53b0de0506859da47277abe206224fdb7ef93f4d17e0708ff",
+    "exact_predecessor_protocol_sha256": "b9cdda13199b4ef082ecd10f50a8b84f4c02d0f8be7a97542e88c9d5a3e5071b",
+    "changed_fields_only": [
+      "created_utc",
+      "controller_dependencies_pending_review",
+      "cohort_context",
+      "failure_policy",
+      "execution_gate"
+    ],
+    "numerical_semantics_changed": false,
+    "runtime_sources_sha256": {
+      "run_study.py": "a5f4a7bd38350ea1958160d0a5d24fb29b03e986b2601117c1bc7fd399394558",
+      "controller.py": "167b2db184d525cbecc2637310c78c746dfb0a908858cfe12713d2ebe4dfd907",
+      "bounded_exact.py": "d5fb6326bcd252efc3a7672dba993311fb0ba724b90039e7fda317bcf8bb770c",
+      "independent_saved_models.py": "807f4f2f0e0aeea1d2f61b64ee5f64a99819c38d4f6164529e664f0a235edeae"
+    },
+    "allowed_activation_changes_only": [
+      "controller_dependencies_pending_review true to false",
+      "descriptive execution_gate readiness text; record old/new SHA"
+    ]
+  },
+  "predecessor": {
+    "external_observation_sha256": "0642ddb0b58635fe652a1cc565d2f9ffacc0cb5da864040b640439a0602e1c81",
+    "planned": 96,
+    "complete": 85,
+    "attempted_inflight": 1,
+    "unattempted": 10,
+    "actual_exit_code": null,
+    "complete_receipt_exists": false,
+    "raw_status_must_remain_unchanged": true,
+    "scope": "External observation inspected/pinned;349raw files not independently rehashed/decoded in this source review"
+  },
+  "contracts": [
+    "Fresh full96 separately registered; no resume11, pooling, substitution or favorable-repetition selection; both cohorts reported regardless of results.",
+    "Registration binds cohort/predecessor to frozen protocol and validates source/protocol/receipt hashes; output and supervision paths protect immutable predecessor/repository/bundle.",
+    "Detached supervisor and producer use -B -I -u, own sessions, DEVNULL stdin and direct file logs; immutable request/PID/start/observedexit records.",
+    "Actual wait returncode only; observed negative signal distinguished; process exit does not establish study integrity/completion.",
+    "Post-spawn dispatcher persistence failure stops/reaps known supervisor best-effort with PID/actualchildreturn or explicitunknown; tested with real live dummy child.",
+    "No timeout/retry/resume for producer; external forced kill can still leave exit unknown."
+  ],
+  "interpretation": "Shared-machine timing repetitions on reused development geology; no isolated-hardware, independent-geology, causal-method, novelty, competition score or completed scientific-goal claim.",
+  "activity": {
+    "project_array_reads": 0,
+    "project_PDE_or_optimization": 0,
+    "scientific_numeric_outcome_reads": 0,
+    "producer_protocol_mutations": 0,
+    "tiny_dummy_subprocess_controls_only": true
+  },
+  "root_project_GO": false
+}

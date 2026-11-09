@@ -1,0 +1,42 @@
+{
+  "role": "AI source/control staging receipt; no actual BP propagation or native input export authorized by this receipt",
+  "status": "27 manufactured controls pass; awaiting independent source review and root GO",
+  "source_sha256": {
+    "canonical_inputs.py": "2a2e430a616d70a421b69fb5a76723844f10231b2ac5490852963917a51ea768",
+    "run_replay.py": "5c7f59a667a3cf8cdce56d65d8055792a3311c8ea20cab1f1470ddba12bb46e0",
+    "protocol.json": "173873ed81968927c6a43edc3f37bdd7986aaa457582225e5df35d70948a938c",
+    "EXPORT_SOURCE_PLAN.json": "bca57fc2fd89585b4b10176361f5ad9a0bd376bcb8d05c79b16937868eb39d48",
+    "numpy_bp_tangent.py": "b217dd6d2850f8c264f5910933cb1f4687bed8a7b3e780f7712c750d149328ce",
+    "test_canonical_inputs_manufactured.py": "5ae6ec351e4c20940d4a1564601baf39d539049f29686af117cf6e141d99820e"
+  },
+  "actual_execution": {
+    "tool_chunk": "3492b6",
+    "exit_code": 0,
+    "controls_passed": 27,
+    "warnings": 1,
+    "warning_scope": "Intentional duplicate NPZ ZIP entry corruption control",
+    "JUnit": "manufactured_controls_05.xml",
+    "ruff": "PASS with repository pyproject.toml configuration",
+    "python310_grammar": "all four staged Python sources parse"
+  },
+  "kernel_byte_identical_to_v1": true,
+  "all_numeric_criteria_equal_v1": true,
+  "canonical_input_use": "Exact native-derived input velocity/context mass/two directions; no direction or context arithmetic regeneration",
+  "native_solution_output_dataflow": "No receiver/residual/gradient target arrays until all3 own solves complete; any failed own solve blocks all comparison opens",
+  "post_export_native_pins": "Runtime checks exact worker status/complete, six witnesses and three probe containers against source plan after solves and before comparisons",
+  "native_BP_export_executed": false,
+  "project_PDE_calls": 0,
+  "old_fixture_edited": false,
+  "production_core_edited": false,
+  "projected_disk_envelope_bytes": 16777216,
+  "disk_scope": "Only three four-array canonical input containers, three own rolling outputs, small receipts/logs; do not copy native run",
+  "current_free_bytes": 323358720,
+  "earlier_attempts_preserved": [
+    "manufactured_controls_01.xml",
+    "manufactured_controls_02.xml",
+    "MANUFACTURED_ATTEMPTS_01_02.json",
+    "ENOSPC_ATTEMPT_03_AND_SCOPED_CLEANUP.json",
+    "manufactured_controls_04.xml"
+  ],
+  "physical_acceptance": null
+}

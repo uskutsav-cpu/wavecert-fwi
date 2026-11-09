@@ -1,0 +1,22 @@
+{
+  "created_utc": "2026-11-08T19:46:16.570836+00:00",
+  "role": "Offline native-HDF5 metadata parser cross-check on cached header/index bytes only",
+  "network_requests": 0,
+  "model_values_available": false,
+  "forbidden_model_storage_interval": [
+    2192,
+    531247819
+  ],
+  "maximum_read_bytes": 65536,
+  "allowed_operations": [
+    "open read-only virtual metadata file",
+    "lookup m dataset metadata",
+    "shape,dtype,chunks,compression,layout storage offset/size"
+  ],
+  "forbidden": [
+    "dataset indexing",
+    "dataset read_direct",
+    "model interval read",
+    "attribute/dataset payload reads"
+  ]
+}

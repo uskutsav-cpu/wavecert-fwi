@@ -1,0 +1,79 @@
+{
+  "status": "passed_14_pure_mock_regressions_after_root_terminal_confirmation_no_project_witness_execution",
+  "root_terminal_confirmation": "Root message: PID16839/16841/16842 absent, all360 complete; terminal observation retained outer work/paid_merit_engineering_terminal_observation.json. This child did not rerun807 or inspect project outcomes.",
+  "scope": "Synthetic/mock vectors and mocked stencil only; source/config bytes read, no project arrays, production wavecert imports or PDE solves",
+  "files": {
+    "run_initial_direction_verification.py": {
+      "bytes": 24939,
+      "sha256": "52cdbb46e8337b955cbdec13a0b1ed96637c8c34da337e1f3269ad423ffe38f9"
+    },
+    "replay_raw_witnesses.py": {
+      "bytes": 20036,
+      "sha256": "1e9af84e461861c98dfc69f34d85d88c539b40f6658d3f1924cd32cb10729ccc"
+    },
+    "protocol.json": {
+      "bytes": 6497,
+      "sha256": "e53db61db1a6c3d83a5fdf3cba195c357f37f54e125e793980a76e33d5923e46"
+    },
+    "test_verification_guards.py": {
+      "bytes": 16699,
+      "sha256": "9c75fac86eb9d48dbba57f7ae1dd0d78a189f5154f5a7c8abdd5dfacb9d5fc9a"
+    },
+    "README.md": {
+      "bytes": 4407,
+      "sha256": "22862d8b37d1c8a7140d5191b3e40e92242e474ae5bdd06c0f7dcd86207baf10"
+    }
+  },
+  "runtime": {
+    "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:14:06) [Clang 20.1.8 ]",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "numpy": "2.4.3",
+    "scipy": "1.18.1",
+    "pytest": "9.1.1"
+  },
+  "source807_sha256": "807f4f2f0e0aeea1d2f61b64ee5f64a99819c38d4f6164529e664f0a235edeae",
+  "tests": {
+    "first_version_passed_then_lint_corrected": "validation_attempt_01.json; preserved pre-lint source under history/pre_lint_fix",
+    "current_command": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest -q -W error -p no:cacheprovider --basetemp OUTER/work/initial_direction_pure_test_tmp_v2 test_verification_guards.py",
+    "initial_yield": {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "48b089",
+        "wall_time_seconds": 1.003748459,
+        "session_id": 14923,
+        "original_token_count": 2,
+        "output": "......."
+      }
+    },
+    "terminal": {
+      "chunk_id": "0a3bf1",
+      "wall_time_seconds": 1.370908583,
+      "exit_code": 0,
+      "original_token_count": 23,
+      "output": ".......                                                           [100%]\n14 passed in 6.61s\n"
+    },
+    "cases": 14,
+    "regressions": [
+      "default no-project-read/no-numeric-import command",
+      "capture exact argument identity and return object, binding restored on success/error",
+      "KeyboardInterrupt/SystemExit in independent-gradient or production-proposal stages preserves partial raw bytes/current interrupted receipt and other7unattempted slots",
+      "self-consistent false-certification and historical-allowance misses rejected",
+      "upstream issues block clear",
+      "literal-only miss separately visible within unchanged historical allowance",
+      "raw model and damping snapshot tampering rejected"
+    ]
+  },
+  "ruff_and_python310_grammar": {
+    "status": "fulfilled",
+    "value": {
+      "chunk_id": "7f2806",
+      "wall_time_seconds": 0.000008042,
+      "exit_code": 0,
+      "original_token_count": 47,
+      "output": "All checks passed!\nrun_initial_direction_verification.py: Python3.10 grammar clear\nreplay_raw_witnesses.py: Python3.10 grammar clear\ntest_verification_guards.py: Python3.10 grammar clear\n"
+    }
+  },
+  "witness_case_queries_executed": 0,
+  "project_software_source_modified": false,
+  "student_final_design_authored": false
+}

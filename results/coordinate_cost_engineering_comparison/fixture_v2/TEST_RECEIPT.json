@@ -1,0 +1,27 @@
+{
+  "status": "V2_IMPORT_INTEGRATION_TESTED_PENDING_INDEPENDENT_REVIEW_AND_ROOT_GO",
+  "role": "AI minimal software integration correction; no project comparison or scientific outcome claim",
+  "driver_sha256": "351b527170751d958939dfbc1f17b091770696ba043cf522be0db5f238e19c63",
+  "protocol_sha256_unchanged": "f0306803ed34c03318e9a64d2848a8ce57900a6b4e5998c05d88d2bcbfa523f4",
+  "test_source_sha256": "78fccdfaa378709f6cd02e99379d254d9e464ce30897f1c1797cb89b87af1632",
+  "scope_sha256": "22625a94d1403f9603d1d55299249016bb5dc50e2059497d7fadb5d33c28d8fd",
+  "wrapper_sha256_unchanged": "61dc9b2c80f7adba64154a92e4e63d716c127b81cdfb161c8267e43a08734d5c",
+  "auditor_sha256_unchanged": "807f4f2f0e0aeea1d2f61b64ee5f64a99819c38d4f6164529e664f0a235edeae",
+  "pytest": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/src OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 OMP_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest -q -W error -p no:cacheprovider --basetemp /tmp/wavecert-coordinate-cost-v2-tests-01 test_coordinate_comparison.py",
+    "exit_code": 0,
+    "tool_output_chunk_id": "2fc464",
+    "passed": 11,
+    "log": "tests_01.log",
+    "log_sha256": "d961e7f6b6dd24fa6b039248ba68eed4f270639c065c53eff985693f09cbfab4",
+    "new_control": "Import actual pinned807 with initially absent globals, initialize all5aliases through new driver helper, construct its fixed49x49 IndependentCase using synthetic constant24x24 raw model/onefrequency/onesource/tworeceivers, evaluate a second model, then invoke actual driver.offline_audit with fresh IndependentCase and complete synthetic context. All6 scalar comparisons pass; fields/residual/objective/error outputs finite. No project arrays or benchmark trajectories.",
+    "retained_controls": "Original10 abstract-clock, common-state, output-tail, late/unpaid/failure, current-counter, full48prefix and metadata-only tests pass unchanged."
+  },
+  "ruff": {"command":"PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -m ruff check --no-cache --config ../../wavecert-fwi/pyproject.toml run_coordinate_comparison.py test_coordinate_comparison.py","exit_code":0,"tool_output_chunk_id":"5b5800","log":"ruff_01.log","log_sha256":"82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"},
+  "default_cli": {"command":"PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python run_coordinate_comparison.py","exit_code":0,"status":"metadata_only_no_project_arrays","planned_runs":48,"tool_output_chunk_id":"09aa18","log":"default_cli_01.log","log_sha256":"70bea66c4bec295a060d4e56802f5904f88345bf83ed896984b523f8e48ff56f"},
+  "grammar_and_source": {"command":"Python stdin ast.parse(final driver/test,feature_version=(3,10)); source_digest/source_file_manifest on frozen repository","exit_code":0,"tool_output_chunk_id":"fa78b3","log":"grammar_source_01.log","log_sha256":"deea227d32f932fa7b5dabc52670fbc33656dfb0026e1f941b3b8da5c42966df","production_source_sha256":"9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da","files":161},
+  "history": "V2_CHANGE_AND_FIRST_FAILURE_RECEIPT.json records exact v1 named bundle/review history, immutable failed48run/status linkage and a byte-exact first failure copy; pycache omitted. V1 primary credit is zero:14failed+1interrupted+33unattempted.",
+  "change_scope": "Driver only initializes np/scipy/sp/spla/ndi for the imported807 API, matching that module's CLI imports. All numerical protocol bytes, physics/data/settings/budgets/seed/reserve,807/61dc and source9f unchanged. No v1 files overwritten and no automatic rerun.",
+  "not_performed": "No project inputs/trajectories/48run, setting/model/parameter selection or scientific comparison. Only manufactured reference solves in the explicit integration test.",
+  "remaining_gate": "Independent source review, new root freeze and separately registered48run GO."
+}

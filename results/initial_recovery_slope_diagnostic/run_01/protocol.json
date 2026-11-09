@@ -1,0 +1,83 @@
+{
+  "FD_derivative_scale_allowance": 2e-07,
+  "FD_roundoff_allowance_multiplier": 8,
+  "FD_roundoff_proxy_multiplier": 64,
+  "FD_truncation_reporting": "Retain eachFD/analyticdiscrepancy, cancellationproxy and abs(FD_halfh-FD_h)/3. Forquadraticmmetric real-arithmeticcentraltruncation iszero; vmetric latteris onlyO(h^2) finertruncationestimateifasymptotic. No derivative-bound proof or sign enclosure.",
+  "FD_validation_rule": "Perh compare analytic to centeredFD using2e-7*uncancelledderivativescale +8*(64*machineepsilon*metric_evaluation_scale/h). Scales exclude cancellation: mscale=sum((abs(m)+abs(mtruth))*abs(d))/D_m; vscale=sum((abs(v)+abs(vtruth))*.5*(v/m)*abs(d))/D_v. Evaluation scale .5*(sum(current^2)+sum(target^2))/sum(target^2). Fixed ordinaryFP consistency tolerance, not an enclosure.",
+  "ancestry": "All8 reused development slices; nominal SEAM IDs share an original ancestor. Repetitions, modes, budgets and cached states are correlated instances, not independent geological/site samples.",
+  "bound_FP_band_multiplier": 64,
+  "box_feasibility_scope": "Literal x<lower/x>upper and exactactivebound counts reported separately from64machineepsilon*max(abs(x),abs(bound)) near-bound flags. No tolerance forgiveness or clipping; bounds/truth feasibility must be assessed before causal interpretations.",
+  "case_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "competition_evidence": false,
+  "directions": [
+    "actual raw stored p",
+    "exact normalized negative independent true data gradient -gtrue/||gtrue||2 when nonzero"
+  ],
+  "endpoint_comparison_scope": "Compare each original saved internal1/2/4/8state only to its own initial using same rawwitness truth; preserve all8cases,5arms,3repetitions,3measurementmodes and fallback/ineligible states. Retain originalcreditedrelativeL2 metadata and compare to recomputedrelativeL2 with old807 tolerance. Internalstate is not returnedAPI evidence. Modegroups remain separate; no between-methodranking or winner.",
+  "execution_gate": "Default CLI only hashes staged source/protocol. Actual array/results computation requires reviewed source+protocol hashes, explicitexecute flag and rootGO. Verify both pinnedcomplete receipts and every registeredinputartifact, source9f before/after and original3rawinputfileSHAs; no productionmodule import.",
+  "failure_retention": "Newouteroutput only. All8case slots recorded before metric computations; percase report persisted, fatal failures/interruption status retained. All1440endpointinstances are fixed before results and no incomplete prefix is promoted as a completed table. Existing immutable outcomes remain untouched.",
+  "finite_difference_dimensionless_epsilons": [
+    0.0001,
+    5e-05
+  ],
+  "finite_difference_step_rule": "For each nonzero direction, commonbase=min over nonzero d_i of(m_i/abs(d_i)); actual centered h_j=epsilon_j*commonbase. Hence maxrelativecoordinateperturbation<=1e-4, both m+hd/m-hd positive. No clipping, projection, stepadaptation or epsilon selection. Actualsteps/coordinatechanges/boxviolationcounts retained.",
+  "internal_budgets_seconds": [
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "internal_endpoint_instances": 1440,
+  "interpretation_scope": "A positive half-relative-squared recovery-error slope alongside negative dataDD is local numerical opposition for that raw direction at that initialmodel. Positive gtrue dot(mtruth-m) is local numerical evidence only. Check truth/bounds feasibility; do not infer universalcause, illposedness, nonconvexity, cycle-skipping, finiteboxedstep behavior, an algorithmic remedy, improvedrank or student conclusions.",
+  "metric_definitions": {
+    "half_relative_squared_m_error": ".5*||m-mtruth||2^2/||mtruth||2^2",
+    "half_relative_squared_velocity_error": ".5*||v-vtruth||2^2/||vtruth||2^2, v=m^(-1/2)"
+  },
+  "metric_derivatives": {
+    "m": "(m-mtruth) dot d / ||mtruth||2^2",
+    "velocity": "(v-vtruth) dot [-.5*(v/m)*d] / ||vtruth||2^2"
+  },
+  "near_zero_classification_rule": "Literal signs use recordedfloat >0/<0/=0. Separate nearzero if abs(value)<=1e-10*scale: dataDD norm(g)*norm(d); truthDD norm(g)*norm(mtruth-m); metricderivative uncancelledscale; cosinescale1. Numerical reporting convention, not confidence interval or formalFPsignproof.",
+  "no_new_PDE_solves": true,
+  "no_new_optimizer_trajectories": true,
+  "numerical_near_zero_relative_threshold": 1e-10,
+  "original360_complete_receipt_sha256": "e4939a3dfeda9315273e7f8918c8d2654ef177636d47cfee2862aa351586779a",
+  "original360_published_relative_path": "results/paid_merit_engineering_benchmark/run_01",
+  "original_protocol_sha256": "fb6b304fd719441be8cd6eb8d101ca864d0856254f40618583d8d986fd1c945c",
+  "original_quality_atol": 2e-13,
+  "original_quality_rtol": 5e-11,
+  "original_runs": 360,
+  "original_squared_slowness_box": [
+    0.027777777777777776,
+    1.0
+  ],
+  "other_fixed_diagnostics": [
+    "gtrue dot each direction",
+    "gapprox dot actual raw p when available",
+    "cosine each direction to mtruth-m in native-m Euclidean coordinates",
+    "gtrue dot unnormalized(mtruth-m)",
+    "finitepositive/minmax/literalboxfeasibility for all8truth and initialmodels",
+    "activeexactbound/nearFPband/literalviolation counts for every alreadyloaded original internalendpoint"
+  ],
+  "post_outcome_diagnostic": true,
+  "production_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da",
+  "raw_initial_complete_receipt_sha256": "71b9de071e4d04557784805bf9bfc4ea55171c8b07e9c9625c866d8ab68aaba2",
+  "raw_initial_published_relative_path": "results/paid_merit_initial_direction_verification/run_01",
+  "registered_utc": "2026-11-08T06:03:33.759600+00:00",
+  "scalar_identity_rtol": 2e-12,
+  "schema_version": 1,
+  "scope": "NEW POST-OUTCOME AI-authored SOFTWARE diagnostic on exactly all8 original initial raw witnesses plus all360x4 original internal endpoint instances; no newPDE, optimizer trajectories, tuning, case selection, production modifications or student final design.",
+  "student_final_research_design": false,
+  "student_preregistration": false,
+  "truth_used_for_policy": false,
+  "zero_direction_rule": "Rawzero direction has trivial derivative0 and is explicitlynot an empirical FD test; zero gtrue has no normalized exact direction. Cosine undefined for zero direction or zero truthcorrection; unavailable staysNone/unknown. Unrepresentableperturbations are failures/unknown, neverzero."
+}

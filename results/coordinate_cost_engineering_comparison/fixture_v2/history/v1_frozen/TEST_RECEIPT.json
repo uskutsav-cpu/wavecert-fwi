@@ -1,0 +1,38 @@
+{
+  "status": "PURE_SOFTWARE_CHECKS_PASS_PENDING_INDEPENDENT_REVIEW_FREEZE_AND_ROOT_GO",
+  "role": "AI provisional engineering harness; no student final scientific design or project outcome",
+  "driver_sha256": "fb146673f57f98095ab0239fdc543da9f3b2276362175277617a5b21356c06c8",
+  "protocol_sha256": "f0306803ed34c03318e9a64d2848a8ce57900a6b4e5998c05d88d2bcbfa523f4",
+  "test_source_sha256": "05121dca5ee7cf1b4c694d40a70c2e7311d958385c423402653aad29478bb725",
+  "scope_sha256": "0f4c05233e6c0c3fc35dd61dacb11b61ea8026a27714765a9fd9db9f18d48c27",
+  "frozen_velocity_wrapper_sha256": "61dc9b2c80f7adba64154a92e4e63d716c127b81cdfb161c8267e43a08734d5c",
+  "frozen_independent_auditor_sha256": "807f4f2f0e0aeea1d2f61b64ee5f64a99819c38d4f6164529e664f0a235edeae",
+  "prospective_schedule_sha256": "3680d21f7aae1cc7ac7a158a87de23e49a33e9e1a79280fe6c3839913b4e4f77",
+  "pytest": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/wavecert-fwi/src OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 OMP_NUM_THREADS=1 /opt/miniconda3/bin/python -m pytest -q -W error -p no:cacheprovider --basetemp /tmp/wavecert-coordinate-cost-puretests-01 test_coordinate_comparison.py",
+    "tool_output_chunk_id": "ee9264",
+    "exit_code": 0,
+    "passed": 10,
+    "log": "puretests_01.log",
+    "log_sha256": "505b048eca0d279784a20a5e90abdc0747042c3bbb94819870216bec62b927e6",
+    "scope": "Abstract clocks, synthetic coordinate arrays and mocked policies/IO only; no project arrays, optimizer trajectory or PDE."
+  },
+  "controls": [
+    "All48 unique seeded case/method/repetition rows exist before inputs; two adjacent methods per pair.",
+    "True global prefix anchor, fixed7.5second budget and full output-conversion/cost-snapshot tail are measured once without double-addition.",
+    "Both arms start bitwise common actual native m; v/m output tags differ and original/requested FP roundtrip differences remain exposed.",
+    "Actual first paid checkpoint/native binding rejects changed/clipped initial states.",
+    "Prefix exceeding budget gets no unpaid initial/final quality credit; late return and failed engine get no event credit.",
+    "Post-engine failed conversion retains the returned parameter, earlier engine costs and fresh current observed policy counters; unknown/incomplete flags remain explicit.",
+    "Bounded timed progress excludes growing history; interruption retains all48 rows, attempted phase and47unattempted entries without completion receipt.",
+    "Default CLI never imports execution runtime or reads project arrays."
+  ],
+  "ruff": {"command":"PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python -m ruff check --no-cache --config ../../wavecert-fwi/pyproject.toml run_coordinate_comparison.py test_coordinate_comparison.py","exit_code":0,"result":"All checks passed!","tool_output_chunk_id":"e96b53","log":"ruff_final.log","log_sha256":"82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"},
+  "grammar": {"command":"python stdin: ast.parse each final driver/test source with feature_version=(3,10)","exit_code":0,"tool_output_chunk_id":"539a15","result":"Both sources Python3.10 grammar PASS","log":"grammar_final.log","log_sha256":"75110ab44c1019aad2293120b00b918239c1cf0365d3ee2f50d52045db62e4f0"},
+  "default_cli": {"command":"PYTHONDONTWRITEBYTECODE=1 /opt/miniconda3/bin/python run_coordinate_comparison.py","exit_code":0,"status":"metadata_only_no_project_arrays","planned_runs":48,"tool_output_chunk_id":"c64877","log":"default_cli_01.log","log_sha256":"a7dacebdde99b20cc812ea354f97a986481416f5bd25590a7e386bfa610c9103"},
+  "sessions": "All checks completed synchronously; no ongoing exec session IDs returned.",
+  "source_integrity": {"current_full_manifest":"PRODUCTION_SOURCE_CHECK.json","files":161,"sha256":"9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da","scope":"Current source-only check. The actual harness additionally verifies its source/input freezes before/after runs; no claim of executed project checks is made here."},
+  "input_status": "All3 project input SHA values are pinned from the immutable old protocol; project payloads were not read/decoded during staging/tests/default CLI.",
+  "not_performed": ["No48-run execution, project data load, project trajectory, benchmark timing, PDE solve or scientific outcome analysis.","No native source9f, historical protocol, wrapper61dc, auditor807, archived outcome or workflow edits.","No extra control, target stopping, prior, parameter tuning, positive reconstruction/novelty/confirmation claim or student final design."],
+  "remaining_gate": "Independent source review and root freeze/GO with isolated timing CPU. Same256MiB initial/64MiB per-run reserve; no budget or reserve tuning."
+}

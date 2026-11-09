@@ -1,0 +1,35 @@
+{
+  "created_utc": "2026-11-08T09:14:08.599924+00:00",
+  "role": "AI independent post-terminal source/hash/stored-arithmetic review; no propagation or production imports",
+  "result": "CLEAR",
+  "checks": 132,
+  "issues": 0,
+  "source_sha256": "a01bf99296167603ed411b7015366a5b7e1829613fb52706922d19a120a55180",
+  "preexecution_freeze_sha256": "d30c982d872e2d26e0f362026424c2cb6a3f5e31ba15be367e73c23676a5e85c",
+  "report_sha256": "c1e2b96d64ffb3c4c29e1e851d4c53988c6df35c35de7b0ad40225f665c881ae",
+  "log_sha256": "8ed6b2c7b1444cf945c929777684c0df8472cf93e1655b0ff300bfc544a8a5ae",
+  "actual_reviewer_execution": {
+    "tool_chunk": "4367f4",
+    "exit_code": 0,
+    "wall_seconds": 0.185941,
+    "command": "env PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 /opt/miniconda3/bin/python -I work/new-phase-staging/numpy_bp_tangent_stored_review_01/review_saved_results.py --outer /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi --output /Users/swethasunilkumar/Documents/Codex/2026-11-07/wavecert-fwi/work/new-phase-staging/numpy_bp_tangent_stored_review_01/stored_review_report_01.json --expected-source-sha256 a01bf99296167603ed411b7015366a5b7e1829613fb52706922d19a120a55180 > work/new-phase-staging/numpy_bp_tangent_stored_review_01/execution_01.log 2>&1"
+  },
+  "producer_execution_evidence": "Native terminal88942 exit0 and NumPy replay terminal28294 exit0 are root-observed tool evidence, corroborated here by pinned terminal receipts, final completion hashes and CLI log. Reviewer did not rerun either producer.",
+  "denominators": {
+    "own_forward_traces": 3,
+    "fixed_physical_m_directions": 6,
+    "informative_directions": 6,
+    "native_calls_retained": 57,
+    "source_files_unchanged": 161,
+    "synthetic_ancestors": 1
+  },
+  "max_trace_relative_L2": 4.871289597762567e-14,
+  "max_DD_relative_error": 6.475897255156544e-14,
+  "physical_acceptance": null,
+  "limits": [
+    "All-own-before-native-decode follows the frozen reviewed source path and stored phase flags, not independent syscall tracing. Final rolling states/full histories are only hashed or unsaved, so this postcheck does not recreate trajectories.",
+    "Source-informed ordinary-FP numerical implementation and derivative verification, all3 correlated crops of one BP ancestor. No continuum/field accuracy, original acquisition, inverse recovery, certificate transfer, student final design, human/blind independence or full-goal completion. Native physical differences/failures remain separate; physical acceptance null."
+  ],
+  "no_criterion_relaxation_or_retry": true,
+  "native_source_sha256": "9f30afa905cac4e2b3605e98ea85274968ce9797652ede55eab9b0b79811b9da"
+}

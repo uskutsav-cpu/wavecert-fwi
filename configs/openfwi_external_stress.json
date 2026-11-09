@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "protocol_created_utc": "2026-11-07T19:57:38.045434+00:00",
+  "status": "assistant-development engineering protocol with scientific choices frozen before velocity payload inspection and a subsequent NPY-layout-only correction; not student preregistration",
+  "layout_amendment": {
+    "recorded_utc": "2026-11-07T20:05:37.325326+00:00",
+    "original_protocol_sha256": "609c6a5d3cedbdf65d1dc3c66a0af824bd040d803b8feb9cce9986a6b95af252",
+    "original_attempt_directory": "data/external/openfwi_stress_layout_attempt",
+    "reason": "Both author-archive NPY headers omit the official format's size-one channel axis: (500,70,70) float32 C-order rather than (500,1,70,70). Header inspection followed the strict preparation failure; no model outcomes or velocity statistics were evaluated.",
+    "unchanged": "Same two source members, all 500 original models per family, selected indices/seeds, checkpoints, calibration bytes, geometry, physics, preprocessing, analysis and reporting choices",
+    "verified_raw_sha256": {
+      "FlatVel_A": "d2c6a282063422e20d4af71d05ce7347e8a26c8207ca9e9535544614ea0af03f",
+      "CurveFault_A": "2cc0c892283889569938d351565ed1d541f208eaac1bda13d13b263e3029b042"
+    }
+  },
+  "purpose": "External generated-geology stress evaluation of two unchanged SubsurfaceGen-trained checkpoints and their existing calibration scales; report both checkpoints and all selected models without tuning or recalibration",
+  "archive": {
+    "record_id": 7272136,
+    "doi": "10.5281/zenodo.7272136",
+    "record_url": "https://zenodo.org/records/7272136",
+    "metadata_url": "https://zenodo.org/api/records/7272136",
+    "file_name": "WAVE_FNO.zip",
+    "content_url": "https://zenodo.org/api/records/7272136/files/WAVE_FNO.zip/content",
+    "expected_bytes": 681048652,
+    "advertised_md5": "aba70203ac762eaddb607246483d5f5a",
+    "identity_scope": "Version-specific author-provided archive; partial-member extraction cannot verify the full archive MD5"
+  },
+  "selection": {
+    "seed": 2026110711,
+    "algorithm": "numpy.random.default_rng(numpy.random.SeedSequence([seed, family_code])).choice(500, size=100, replace=False), sorted ascending",
+    "duplicate_handling": "Do not resample or discard selected duplicate models after inspection; record exact-hash groups and treat identical selected raw model hashes as one uncertainty unit",
+    "observation_unit": "one original generated velocity model; all derived source/frequency blocks share its model ID",
+    "independence_scope": "conditional generated-model stress units; no verified IID, independent real-site, or official benchmark split claim"
+  },
+  "families": [
+    {
+      "name": "FlatVel_A",
+      "family_code": 0,
+      "member": "WAVE_FNO/DATA/FlatVel_A/vel_1.npy",
+      "expected_n_models": 500,
+      "selected_n_models": 100,
+      "expected_shape": [500, 70, 70],
+      "expected_dtype": "float32",
+      "expected_uncompressed_bytes": 9800128,
+      "expected_compressed_bytes": 19207,
+      "expected_local_header_offset": 74948276,
+      "expected_crc32": "0e3f13e6"
+    },
+    {
+      "name": "CurveFault_A",
+      "family_code": 1,
+      "member": "WAVE_FNO/DATA/CurveFault_A/vel_0.npy",
+      "expected_n_models": 500,
+      "selected_n_models": 100,
+      "expected_shape": [500, 70, 70],
+      "expected_dtype": "float32",
+      "expected_uncompressed_bytes": 9800128,
+      "expected_compressed_bytes": 1678776,
+      "expected_local_header_offset": 224,
+      "expected_crc32": "f7dc3649"
+    }
+  ],
+  "checkpoints": [
+    {
+      "label": "forward_only",
+      "path": "checkpoints/fno_parent_grouped.pt",
+      "sha256": "0d75cb6b1c821c91cb422cffaa4ef2cdcfd98631de0b5fd3935fa894b10bdf2b",
+      "calibration_summary_path": "results/grouped_wavecert/summary.json",
+      "calibration_summary_sha256": "c3c3d425a2e0cdb75ecb9021e13e77f9afbfff5df21ea9b42e87891702e8081d"
+    },
+    {
+      "label": "derivative_informed",
+      "path": "checkpoints/fno_parent_grouped_jvp.pt",
+      "sha256": "300b75c7feefb9689e172adb10967326a646b89c274e35c388cf8cc3447e4611",
+      "calibration_summary_path": "results/grouped_wavecert_jvp/summary.json",
+      "calibration_summary_sha256": "8116e3756ff57d133a0bfec1a607cde6a66918d557c2ba85cd4869ab8abac10a"
+    }
+  ],
+  "geometry": {
+    "shape": [24, 24],
+    "spacing": 0.05,
+    "n_source_positions": 6,
+    "n_receivers": 20,
+    "source_position_indices": [1, -2],
+    "source_depth": 2,
+    "receiver_depth": 2,
+    "margin": 2,
+    "frequencies_hz": [3.0, 4.0]
+  },
+  "preprocessing": {
+    "velocity_input_units": "m/s",
+    "velocity_output_units": "km/s",
+    "velocity_scale": 0.001,
+    "clip_velocity": false,
+    "resize": {"method": "scipy.ndimage.zoom", "order": 1},
+    "smoothing": {"variable": "velocity", "sigma_grid_cells": 1.6, "mode": "reflect"}
+  },
+  "evaluation_scope": {
+    "training": false,
+    "recalibration": false,
+    "wavefields": "Regenerate synthetic reference Helmholtz fields; no original OpenFWI seismic records are used",
+    "calibrated_gate": "Existing source-domain scales are frozen; all external/OOD conformal outcomes are descriptive with no exchangeability or coverage guarantee",
+    "required_reporting": "Both checkpoints, both families, all selected original models and all four source/frequency blocks per model; preserve false acceptances and failed cases"
+  },
+  "analysis": {
+    "direction": "per-block negative neural gradient normalized by L2; zero direction if norm <= 1e-14",
+    "coverage_absolute_tolerance": 1e-12,
+    "true_descent": "exact directional derivative < 0",
+    "acceptance": "surrogate directional derivative + bound < 0",
+    "model_aggregation": "all four source/frequency blocks per original generated model; families and checkpoints reported separately",
+    "confidence": 0.95,
+    "bootstrap_resamples": 2000,
+    "bootstrap_seed": 2026110712,
+    "uncertainty_scope": "Model-level binomial/bootstrap intervals are conditional on an independent-generated-draw assumption; not independent real-site inference"
+  },
+  "attribution": {
+    "archive": "Li, B.; Wang, H.; Yang, X.; Lin, Y. (2022), Dataset - Solving Seismic Wave Equation on Variable Velocity Models with Fourier Neural Operator, DOI 10.5281/zenodo.7272136",
+    "upstream": "Deng et al., OpenFWI: Large-Scale Multi-Structural Benchmark Datasets for Seismic Full Waveform Inversion, NeurIPS 2022, arXiv:2111.02926",
+    "upstream_url": "https://openfwi-lanl.github.io/docs/data.html",
+    "upstream_license": "CC-BY-NC-SA-4.0",
+    "archive_metadata_license": "CC-BY-4.0",
+    "license_handling": "Retain upstream noncommercial/sharealike restrictions and attribution for these source/derived data; separate from repository MIT code license. Archive metadata is not treated as overriding upstream terms."
+  }
+}
