@@ -1,0 +1,130 @@
+{
+  "created_utc": "2026-11-08T19:49:47.348992+00:00",
+  "reviewer": "/root/overthrust_source_preflight",
+  "status": "BOUNDED_METADATA_VERIFIED_SELECTED_PLANE_TRANSPORT_FEASIBLE_GEOMETRY_UNRESOLVED",
+  "source_identity": {
+    "record_id": 4252588,
+    "version_DOI": "10.5281/zenodo.4252588",
+    "concept_record": "4252587",
+    "file_id": "436595b8-ed4b-4e1d-8991-e63608dcc169",
+    "file_name": "overthrust_3D_true_model.h5",
+    "file_bytes": 531253092,
+    "content_url": "https://zenodo.org/api/records/4252588/files/overthrust_3D_true_model.h5/content",
+    "publisher_MD5_claim": "md5:ae4082cdcebbc7714eedd382d7925804",
+    "full_file_checksum_actually_verified": false,
+    "upstream_SWEEP_H5_SHA256_claim": "8957d1d012ea01a8c4fd72db23ea6cc6c72eeda383621d598f8d43a8225292b3",
+    "upstream_SHA256_claim_actually_verified": false
+  },
+  "license": {
+    "primary_record_access": "open",
+    "primary_record_license": "cc-by-4.0",
+    "original_attribution": "Aminzadeh, Brac, Kunz (1997), SEG/EAGE 3-D Modeling Series No.1; copyright1997SEG",
+    "exact_statement_retained_in_primary_JSON_and_README": true
+  },
+  "related_CD1_record": {
+    "id": 23469292,
+    "variant_link_to_4252588_observed": true,
+    "archive_bytes": 174960038,
+    "archive_SHA256_publisher_claim": "7c10f9aa29beab25a40fc0cccede6631284bc2fa7e45a3511dbdceba8f5cf246",
+    "archive_downloaded": false,
+    "README_bytes": 2094,
+    "README_published_MD5_actually_matched": true,
+    "README_SHA256": "690fe3549e26ded7e16c236d603bb8bf0e07ea2a32329ca84028141c18d38b8b"
+  },
+  "metadata_budget": {
+    "cap_bytes": 262144,
+    "total_body_bytes": 15504,
+    "HDF5_header_index_body_bytes": 712,
+    "HDF5_exact206_ranges": 13,
+    "large_file_HTTP200_bodies_read": 0,
+    "HEAD_body_bytes": 0
+  },
+  "verified_layout": {
+    "dataset": "m",
+    "shape": [
+      207,
+      801,
+      801
+    ],
+    "type": "little-endian IEEEfloat32",
+    "layout": "contiguous",
+    "chunks": null,
+    "compression": null,
+    "storage_offset": 2192,
+    "storage_bytes": 531245628,
+    "model_storage_halfopen": [
+      2192,
+      531247820
+    ],
+    "all_requested_metadata_ranges_disjoint_from_model_storage": true,
+    "native_parser_crosscheck": "h5py3.16.0/HDF5 2.0.0 from cachedmetadata only; no modelinterval available; unrequested nonmodel bytes zero-filled"
+  },
+  "future_acquisition_feasibility": {
+    "future_model_GO": false,
+    "full_HDF5_anonymous_plane_bytes": 663228,
+    "full_plane_requests": 207,
+    "source_claim_drop20_plane_bytes": 599148,
+    "drop20_plane_requests": 187,
+    "separate_registration_cap_bytes": 8388608,
+    "transport_layout_feasible": true,
+    "physical_geometry_or_original_velocity_identity_proved": false
+  },
+  "unresolved": [
+    "HDF5 unit/axis labels,25m spacing and20waterrows are source/README declarations, not read from geometry datasets here.",
+    "No m model values or n/d/o/copyright dataset values read; no conversion performed.",
+    "CD1 identity and fullHDF5 checksum remain publisher/upstream claims, not independently whole-file verified.",
+    "Little-endian float32 m is not automatically unchanged original velocity; squaredslowness/unit/axis/drop20 transforms require explicit validated roles.",
+    "No ETag supplied; futurepartialacquisition should bind immutableversion/fileID/stablepublishedchecksums,size,andallrangeContent-Ranges and preservepiece/sliceSHA256.",
+    "Hypothetical centerplane is engineering feasibility only, not a student final design or confirmation."
+  ],
+  "activity": {
+    "full_archives_downloaded": 0,
+    "full_HDF5_downloaded": 0,
+    "model_field_ranges_read": 0,
+    "model_arrays_decoded": 0,
+    "selected_planes_acquired": 0,
+    "PDE_or_optimizer_calls": 0,
+    "package_installs": 0,
+    "human_contact": 0,
+    "production_or_published_archive_edits": 0,
+    "installed_h5py_metadata_only_crosscheck": true
+  },
+  "physical_acceptance": null,
+  "independent_site_claim": false,
+  "scientific_goal_complete": false,
+  "artifact_sha256": {
+    "FEASIBILITY_ADVISORY.md": "a6421f3a5d21e84eeafd2c1604ad58d73bbbfe56b8448be2b089a83d70b7b8e5",
+    "OFFLINE_METADATA_VALIDATION_SCOPE.json": "a173880ea1b1a983a9d0ca53b831cbc6ced7445e712fd2ef8163bce980b8eff8",
+    "OFFLINE_NATIVE_METADATA_VALIDATION.json": "d28ce300c243f1d5223a10568b33d5b9e8df67d6c3996bea39be1236d9e30bd1",
+    "OPERATION_HISTORY.json": "ab8de704bcecb231dd6516229ab3feca2cc9afc75cac09071bde1ce0e471d3b4",
+    "PARSED_MODEL_M_MESSAGES.json": "b901ec5b77df7beb7c63457a715a828cb65379dde2f6d01059c31b60f38157c2",
+    "PARSED_MODEL_M_OBJECT_PREFIX.json": "5c7934a18217a36ecd2c1e5825c3f7f9a6ef96d03738fdd143aa36e264c19770",
+    "PARSED_ROOT_CONTINUATION_MESSAGES_01.json": "e43a3eb066aec004de71f83571f5a3a6b43aa01adbc4f6cf6b8df587e8b2aeb4",
+    "PARSED_ROOT_CONTINUATION_MESSAGES_02.json": "4f86fcc883b5cad4b2fb1d5f3831eb47ece06ff9424f6bc80c15eccf6db58bd8",
+    "PARSED_ROOT_CONTINUATION_MESSAGES_TAIL.json": "9157cd252c7343157bc5f51e0610066c6a4dc966a07e0efbd86daa4b19995353",
+    "PARSED_ROOT_CONTINUATION_POINTER.json": "e95289a35e4539817ca70018cba5d8fb5f521a6d132133ad7bbaf94cb2694bd4",
+    "PARSED_ROOT_INDEX_HEADERS.json": "195e59f5206c4dd1e81b573f365da881c1776003dc367d7926653d7f2dcbdc88",
+    "PARSED_ROOT_OBJECT_PREFIX.json": "a3e335f0a983ca24985c70554a229f380f1eaf950c3fc4bbbee8e423f1ee9e73",
+    "PARSED_SUPERBLOCK.json": "76d05f32bfb40fb77d5c48153cc02bbfa7945f9fa4363e478858dd6df8faceab",
+    "PRE_METADATA_FREEZE.json": "abffc0abeab0613eec3fb61c37884475eb1583d3cf1e1506c91fa6de41eeb437",
+    "REQUEST_LEDGER.json": "e382630db0dcc3446acf604259e5474b42eb21ba916a6ac73d7e4b7aaf147d92",
+    "UNEXECUTED_SELECTED_PLANE_RANGE_PLANS.json": "8a9a429407c776b4fc7914f3ce4d8b68f12053774cfbda994ad7ab5c27229643",
+    "bounded_metadata.py": "d2a9ade22d6d785c33e660fb3df0120d73b4b3d53604fa6995bba7a0c2834c89",
+    "hdf5_signature_0_7.bin": "4ca2915fde0a9d1d5dd59e6f6e535c04337c9b4f05dbb4b38af0a5db3c50f933",
+    "hdf5_superblock_16_95.bin": "c2b6ad7dd3b52aab2cedd1b1829b900f77be5f287e707240374cd8349ad1d316",
+    "hdf5_superblock_prefix_8_15.bin": "6106f209bccdeaa1f885931946012d1b9aa59002c4ac3efde5a5dbdf4f245cfd",
+    "model_m_object_header_messages_1480_1735.bin": "776c398957653215e2c8d5e28de903e2009ed347e40e3f468f429df27ea89a7c",
+    "model_m_object_header_prefix_1464_1479.bin": "8fb19835054320f1be5e8f8f2f909383ca396f69b759d096b419d7abca475acc",
+    "root_group_btree_header_136_159.bin": "063661dad14462ff789956d4594ce16cb036bd3ca3cbb625aa795e6b1a8a37eb",
+    "root_group_heap_header_680_711.bin": "36a43a96de4743cad0079c96016cc996be27f69606633a020aeada410692d251",
+    "root_object_continuation_1072_1143.bin": "367180aef91cb84b163ed1f1d7fe78ae705837c5fea588f9815205418771f52d",
+    "root_object_continuation_1416_1463.bin": "66da347f2654fcdd0793e51ef9f10c3bad5651fdf247bcf98d69a479f2561c91",
+    "root_object_continuation_1736_1783.bin": "49b3182e9c3c918813b78f2dd81ea34e3884548b1783b7437c268281b7653e6a",
+    "root_object_continuation_2056_2135.bin": "6bd908a9b1b46e325bbb81a3afb18b0b1d42ab0503959dc284ed9185c0674e98",
+    "root_object_header_payload_112_135.bin": "08f233e6567c4e690569634e60214f7e19f7a3c366cfaf8fd49ae19faa246630",
+    "root_object_header_prefix_96_111.bin": "9e667736cc01a852d661b452f67a74fc67632aa6905795872e5b9173ff57a11b",
+    "zenodo_23469292_README.md": "690fe3549e26ded7e16c236d603bb8bf0e07ea2a32329ca84028141c18d38b8b",
+    "zenodo_23469292_record.json": "172e1fc6605b67491e2693f3d8eb09b033d1eb4a309d3d98d6f1323725e1f775",
+    "zenodo_4252588_record.json": "8101836c50be834960112fb74d2e45ab92e7af74517b6a44bc9ab4eb3f3aff62"
+  }
+}

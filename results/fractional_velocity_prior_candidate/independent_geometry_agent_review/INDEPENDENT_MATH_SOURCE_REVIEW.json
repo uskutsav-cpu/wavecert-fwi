@@ -1,0 +1,50 @@
+{
+  "status": "CLEAR_FOR_FUTURE_DRIVER_STAGING_ONLY_NOT_PROJECT_EXECUTION",
+  "reviewer": "Independent geometry_acquisition_review agent",
+  "reviewed_component_sha256": "4aa248fd3862533390ad918f4ad3f70d02fcdebcdc8d784494d375c935536163",
+  "reviewed_author_tests_sha256": "83060f28fe274f98c3b7486bc6b5c529ce640ca1cf94154742e55eb41c7a24db",
+  "reviewed_proposal_sha256": "48c26556658f5736b3191af03fa8eb858fdec162acdd35f2a9ad5d0ecfb786f5",
+  "independent_controls_source_sha256": "a6a10bc5925e09ad36f439c084fb6d3126f2754ce6af0034f967dfec0e069505",
+  "independent_controls_receipt_sha256": "8233427aad16c78b8cfee7291238eac3bc26816edfbc556d8b9c897c504aee6c",
+  "actual_independent_control_execution": {
+    "exit_code": 0,
+    "tool_chunk": "c942bd",
+    "checks_passed": 39,
+    "Ruff_exit_code": 0,
+    "Ruff_chunk": "597bdf",
+    "largest_manufactured_array_entries": 12,
+    "project_arrays_decoded": 0,
+    "project_PDE_calls": 0
+  },
+  "math": {
+    "fractional_update": "q_i=sqrt(m0_i/m_i)-1=v_i/v0_i-1, for positive finite model m and supplied initial m0.",
+    "energy": "R=[q^T q+w q^T L_graph q]/(2N), w=(ell/h)^2. L_graph=B^T B for the nonperiodic nearest-neighbor graph.",
+    "chain_rule": "dR/dm=diag[-0.5 sqrt(m0_i)*m_i^(-3/2)]*(I+w L_graph)*q/N.",
+    "implementation": "Source constructs each vertical/horizontal edge once; adjacent endpoint accumulation implements L_graph q with actual degrees, including corner, one-row, one-column and singleton boundaries. No wrap, ghost values, double-counting or edge-count division.",
+    "normalization": "Phi0 is a positive finite scalar shared by both proposed arms. F=Phi/Phi0+lambda R and gradient g/Phi0+lambda dR/dm. Lambda 0 still validates inputs but does not call prior.evaluate; independent throwing-stub control confirms this.",
+    "initial_point": "R(m0)=0 and dR/dm(m0)=0 exactly in tested float64 evaluations. Both arms therefore retain the same normalized initial data gradient; the component does not remedy an adverse initial data-gradient direction.",
+    "convexity_limit": "The quadratic is nonnegative and strictly convex as a function of q. No convexity, unique reconstruction, convergence or recovery guarantee in native m is established.",
+    "scale_interpretation": "A constant 10% fractional velocity update gives R=.005 independent of grid size and zero roughness; lambda 100 charges 0.5 in the normalized objective. This is an engineering scale, not noise calibration or optimality."
+  },
+  "source_and_domain": {
+    "truth_blind_component_API": "Only supplied initial model, model, spacing/length, supplied data objective/gradient/Phi0 and fixed nonnegative weight enter. No file, truth metric, solver, optimization, tuning, training or stop-policy access is present.",
+    "initialization_assumption": "A truth-derived synthetic smoothing initializer remains a supplied-prior assumption and must be disclosed; a component with no truth argument does not make its upstream initializer truth-independent.",
+    "domain_rejection": "Component rejects non-real/bool, empty or incorrectly shaped model arrays, nonpositive model entries, nonfinite values, nonpositive normalization and invalid weights/lengths. Unrepresentable computed penalties/gradients/normalizations fail through ValueError, FloatingPointError or OverflowError; callers must preserve failed slots rather than silently floor/retry.",
+    "floating_point_limit": "Ordinary float64 only; finite-value checking is not a rigorous rounding enclosure and does not promise relative accuracy for extreme dynamic ranges or subnormal underflow."
+  },
+  "author_control_history": "Read-only diff verifies attempt 02 changes to numerical control step sizes only (2e-5,1e-5)->(1e-5,5e-6); tolerances and second-order rule unchanged. Penalty/gradient formulas unchanged. Other source edits are import order and wrong-prior TypeError. First 39-test JUnit contains 1 failure, 0 errors, 0 skips; second 39 contains 0 failures/errors/skips. All 10 author receipt file hashes/sizes match.",
+  "future_driver_review_requirements": [
+    "Bind exact development inputs, observation and initialization source hashes and the full shuffled 48-slot schedule before project array access.",
+    "Run all preparation, fresh observations, cold owners, both constructor/validation paths, positive Phi0, each regularizer/data evaluation, final common objective and return costs inside the same caller clock; record actual consumed times/work and preserve late/failed returns.",
+    "Keep truth metrics after return and disconnected from policy, lambda/ell selection and checkpoint choice; supply only fixed prior inputs to the component.",
+    "Keep the fixed continuation gates and all planned slots. Near-initialization stasis alone fails the proposed 10% recovery and data-fit criteria.",
+    "No study execution until separate driver/source/dataflow review and root execution freeze. This review does not authorize PDEs or implement the 48-run driver."
+  ],
+  "scientific_claim_limits": [
+    "Classical regularization baseline improvement, if observed, would not establish a distinct certification contribution.",
+    "No project recovery benefit, matched-cost advantage, independent geological generalization, accepted realistic physics, formal floating-point certificate, student ownership or competition readiness is shown by these controls.",
+    "The study proposal is development on reused slices; repetitions do not create independent geology."
+  ],
+  "author_sources_modified": false,
+  "note": "All independent work is confined to this review subdirectory; no production files, author source or author test files were edited."
+}

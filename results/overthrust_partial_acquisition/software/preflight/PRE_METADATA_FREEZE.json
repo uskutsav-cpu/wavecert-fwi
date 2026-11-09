@@ -1,0 +1,40 @@
+{
+  "created_utc": "2026-11-08T19:38:15.475615+00:00",
+  "role": "Metadata-only feasibility study for a future bounded authentic Overthrust slice route; no scientific design or model acquisition",
+  "aggregate_metadata_body_cap_bytes": 262144,
+  "allowed": [
+    "Primary record/file JSON metadata",
+    "HEAD with no response body read",
+    "Strict HTTP206 HDF5 header/index metadata ranges only"
+  ],
+  "forbidden": [
+    "HTTP200 body for requested large-file ranges",
+    "Full archive/HDF5 download",
+    "Model-field or chunk payload reads/decoding",
+    "PDE/optimizer",
+    "Package installs",
+    "Human contact",
+    "Production or published-archive mutation"
+  ],
+  "primary_record": "https://zenodo.org/api/records/4252588",
+  "related_record": "https://zenodo.org/records/23469292",
+  "known_H5_name": "overthrust_3D_true_model.h5",
+  "prior_source_comment_claims": {
+    "shape": [
+      207,
+      801,
+      801
+    ],
+    "axes": [
+      "z",
+      "x",
+      "y"
+    ],
+    "parameter": "squared slowness in s^2/km^2",
+    "added_water_rows": 20,
+    "conversion": "1000/sqrt(m[20:]) float64, transpose x/y, roundfloat32",
+    "claim_verification_by_this_task": false
+  },
+  "candidate_future_slice_acquisition_cap_bytes": 8388608,
+  "no_automatic_model_GO": true
+}

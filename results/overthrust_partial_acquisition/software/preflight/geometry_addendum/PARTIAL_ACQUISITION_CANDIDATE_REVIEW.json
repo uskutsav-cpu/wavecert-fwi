@@ -1,0 +1,43 @@
+{
+  "status": "STAGED_CANDIDATE_LOCAL_CONTROLS_PASS_NO_MODEL_HTTP_EXECUTION",
+  "candidate_assets_sha256": {
+    "acquire_partial_plane.py": "e78c3f185d912c39d223c9414093a2f1831b3a30a09331571b6f7ac9c81c8e9f",
+    "test_partial_acquisition_manufactured.py": "1b9aabdf1b575391176c267838d1f3742cd287ef902c0e5f9b918ee67258a946",
+    "MANUFACTURED_TRANSPORT_CONTROLS.json": "a5668f3db8698b39c5fea717d9519e5b2ab9fd85cb33daecb0d029ed791f5479",
+    "INDEPENDENT_GEOMETRY_REVIEW.json": "d0499c4b387ec8955e3aecb910840eac6b9c81ff33e2775b45c5ef7949fb2ad2",
+    "FULL207_MIDDLE400_PARTIAL_ACQUISITION_PROPOSAL.json": "f2cea059ad3c116ad08131d7b874eab193f30929297f3068544bbd5fa64a64e6"
+  },
+  "actual_metadata_default_exit": 0,
+  "actual_metadata_default_tool_chunk": "5f7768",
+  "actual_final_controls_exit": 0,
+  "actual_final_controls_tool_chunk": "b683f8",
+  "final_controls": 29,
+  "Ruff_candidate_source_and_controls": "PASS",
+  "Python_3_10_grammar": "PASS",
+  "root_review_and_execution_freeze": "PENDING",
+  "actual_model_HTTP_requests": 0,
+  "actual_project_PDE_calls": 0,
+  "storage_scope": "Pre-existing source/data/receipts preserved. Only phase-owned synthetic TemporaryDirectory fixtures were automatically removed after tests; source/receipt history before lint is retained.",
+  "observed_current_free_bytes": 969576448,
+  "future_command": "/opt/miniconda3/bin/python -B acquire_partial_plane.py --execute --root-freeze ROOT_SOURCE_FREEZE.json --output FRESH_OUTPUT_PATH",
+  "required_root_freeze_fields": {
+    "authorization": "GO_BOUNDED_PARTIAL_ACQUISITION",
+    "driver_sha256": "e78c3f185d912c39d223c9414093a2f1831b3a30a09331571b6f7ac9c81c8e9f",
+    "proposal_sha256": "f2cea059ad3c116ad08131d7b874eab193f30929297f3068544bbd5fa64a64e6",
+    "review_sha256": "d0499c4b387ec8955e3aecb910840eac6b9c81ff33e2775b45c5ef7949fb2ad2"
+  },
+  "expected_requests": 259,
+  "expected_model_rows": 207,
+  "expected_model_response_body_bytes": 663228,
+  "expected_total_body_bytes_if_record_sizes_unchanged": 686662,
+  "hard_aggregate_body_cap_bytes": 8388608,
+  "output_scope": "Exact raw rows and anonymous207x801 stored <f4 plane only. No conversion, transpose, row removal, numeric interpretation, wave propagation or performance claim.",
+  "known_limits": [
+    "No ETag was supplied by reviewed endpoints. Versioned record UUID/name/size/checksum-claim and exact repeated metadata checks do not prove entire file unchanged.",
+    "Published whole-file MD5 is a publisher claim; selected ranges cannot independently verify it.",
+    "Stored n/d/o values are independently decoded, but physical units and named axes were not explicit in acquired HDF5 metadata. Root has separately acquired pinned primary JUDI software-use context; the acquisition retains anonymous indices and makes no conversion.",
+    "Successful function receipt has actual_terminal_exit null because the child cannot witness its own subsequent process exit; root must capture actual terminal exit externally.",
+    "This candidate and synthetic controls establish transport behavior only, not actual dataset acquisition, scientific validity, independent sites, realistic physics acceptance, confirmation or student ownership."
+  ],
+  "frozen_metadata_review_lint_note": "The historical independent_geometry_review.py is byte-preserved because its hash is bound by the metadata receipt. A broad Ruff check reports two PLR0133 constant-chain style warnings there; these do not affect executed checks. The new driver and final controls pass Ruff."
+}

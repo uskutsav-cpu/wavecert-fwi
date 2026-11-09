@@ -294,3 +294,5 @@ and disclose assistance. No mentor approval or JSHS outcome is claimed.
 
 Code: MIT. Bundled SubsurfaceGen-derived data: CC BY 4.0, with separate attribution
 in the fixture README.
+
+The [Overthrust partial-acquisition record](docs/overthrust_partial_acquisition.md) adds a fixed raw model cross-section for future physics checks. No wave/inversion validation has been run on it. A classical prior component is staged with manufactured checks; its proposed recovery study remains unexecuted.

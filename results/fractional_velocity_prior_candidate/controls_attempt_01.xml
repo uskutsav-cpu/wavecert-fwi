@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="39" time="0.106" timestamp="2026-11-08T18:06:35.234951-06:00" hostname="Swethas-MacBook-Pro-2.local"><testcase classname="test_fractional_velocity_prior" name="test_scalar_reference_and_float64" time="0.001" /><testcase classname="test_fractional_velocity_prior" name="test_exact_initial_zero_and_input_copy" time="0.001" /><testcase classname="test_fractional_velocity_prior" name="test_constant_fractional_update_interpretation" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_actual_graph_boundary_degrees[location0-2]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_actual_graph_boundary_degrees[location1-3]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_actual_graph_boundary_degrees[location2-4]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_directional_derivative_against_scalar_reference[corner]" time="0.001" /><testcase classname="test_fractional_velocity_prior" name="test_directional_derivative_against_scalar_reference[edge]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_directional_derivative_against_scalar_reference[interior]" time="0.000"><failure message="assert -0.003653709114339459 == -0.0036536788...7255 ± 2.0e-08&#10;  &#10;  comparison failed&#10;  Obtained: -0.003653709114339459&#10;  Expected: -0.0036536788992307255 ± 2.0e-08">manufactured = (array([[0.25      , 0.2402922 , 0.23113905, 0.22249911, 0.21433471,
+        0.20661157, 0.19929847],
+       [0.226757...75, 0.12903617],
+       [0.13840171, 0.13200858, 0.12599113, 0.12032251, 0.1149781 ,
+        0.10993534, 0.10517353]]))
+mode = 'interior'
+
+    @pytest.mark.parametrize("mode", ["corner", "edge", "interior", "mixed"])
+    def test_directional_derivative_against_scalar_reference(manufactured, mode):
+        initial, model = manufactured
+        direction = np.zeros_like(model)
+        if mode == "mixed":
+            for row in range(model.shape[0]):
+                for col in range(model.shape[1]):
+                    direction[row, col] = math.sin(2.3 * row + 0.7 * col + 0.4)
+        else:
+            direction[{"corner": (0, 0), "edge": (0, 3), "interior": (2, 3)}[mode]] = 1
+        direction /= math.sqrt(math.fsum(float(x * x) for x in direction.flat))
+        prior = FractionalVelocityPrior(initial, 0.025)
+        analytic = math.fsum(
+            float(a * b) for a, b in zip(prior.evaluate(model).gradient.flat, direction.flat)
+        )
+        errors = []
+        for step in (2e-5, 1e-5):
+            plus = scalar_reference(model + step * direction, initial, 0.025, 0.1)
+            minus = scalar_reference(model - step * direction, initial, 0.025, 0.1)
+            centered = (plus - minus) / (2 * step)
+&gt;           assert centered == pytest.approx(analytic, rel=2e-6, abs=2e-8)
+E           assert -0.003653709114339459 == -0.0036536788...7255 ± 2.0e-08
+E             
+E             comparison failed
+E             Obtained: -0.003653709114339459
+E             Expected: -0.0036536788992307255 ± 2.0e-08
+
+test_fractional_velocity_prior.py:98: AssertionError</failure></testcase><testcase classname="test_fractional_velocity_prior" name="test_directional_derivative_against_scalar_reference[mixed]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_zero_smoothing_and_single_row_graph" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_lambda_zero_has_same_explicit_normalization" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_composed_objective_directional_derivative" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_initial_models[bad0]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_initial_models[bad1]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_initial_models[bad2]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_initial_models[bad3]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_initial_models[bad4]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_initial_models[bad5]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_initial_models[bad6]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_initial_models[bad7]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_initial_models[bad8]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_geometry[grid_spacing-0]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_geometry[grid_spacing--1]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_geometry[grid_spacing-inf]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_geometry[grid_spacing-True]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_geometry[smoothing_length--1]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_geometry[smoothing_length-nan]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_evaluation_model[bad0]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_evaluation_model[bad1]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_evaluation_model[bad2]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_composed_inputs[data_value--1]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_composed_inputs[data_value-nan]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_composed_inputs[initial_data_value-0]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_composed_inputs[initial_data_value-inf]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_composed_inputs[weight--1]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_composed_inputs[weight-nan]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_composed_inputs[data_gradient-bad6]" time="0.000" /><testcase classname="test_fractional_velocity_prior" name="test_invalid_composed_inputs[data_gradient-bad7]" time="0.000" /></testsuite></testsuites>

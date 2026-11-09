@@ -275,3 +275,15 @@ The interrupted predecessor remains 85 complete, one in flight and ten unattempt
 Independent source/mathematics review establishes a conditional reciprocity ceiling: real Jacobian rank at most 1,680 over 2,401 unrestricted squared-slowness variables, hence an ambient linear kernel of dimension at least 721. This neither measures actual rank/conditioning nor proves a cause, nonlinear uniqueness failure at every model, or a remedy. Active bounds and priors can restrict feasible directions; an invertible coordinate change preserves rank. All original residual terms remain. A bounded Overthrust source quarantine contains a lossy float16 demo with unresolved extraction/smoothing history; no model-array decoding or physical validation occurred.
 
 All four scientific objectives remain open. Software/source/audit controls cannot substitute for practical recovery, accepted physics across independent geology, a specific useful contribution, or the student's own interpretation and defense. The [frequency-continuation report](frequency_continuation_development.md) retains all eight cases, 96 rows, raw sources, failed attempts and figures. The new local portable test reruns all 108 manufactured controls in an isolated checkout; cross-platform CI remains a separate observed check.
+
+
+### Exact-input BP replay portability repair
+
+The 97f8905 CI run fails the old BP input-direction guard before the new108-control test is reached; all four logs remain preserved. A separately versioned replay shares exact recorded numerical inputs, keeps the independent propagation kernel and all thresholds unchanged, and opens native solution outputs only after all three own solves finish. Its27 manufactured controls, actual local3-trace/6-derivative replay and revised parent regression pass. Linux V2 verification remains pending. See the [BP report](bp_heterogeneous_verification.md#v2-exact-shared-numerical-inputs). This repairs the software reproduction contract; it adds no geological ancestor or recovery/physics/novelty/student-ownership claim.
+
+
+### Independent-model input acquisition and classical recovery candidate
+
+A fixed Overthrust stored-data cross-section is acquired:207 rows,663,228 model bytes, no conversion/row removal/PDE. An independent saved-byte audit passes3,186 integrity checks, with a precise record-ETag/file-ETag disclosure correction. The qualified JUDI/HDF5.jl interpretation and unresolved file-identity/water-provenance limits are explicit in the [acquisition report](overthrust_partial_acquisition.md). It is a candidate different synthetic ancestor, not accepted physics or an independent field site.
+
+The [classical fractional-velocity prior candidate](../results/fractional_velocity_prior_candidate/README.md) has39 author controls and39 independent scalar/math checks. Its48-run development comparison is still unimplemented/unexecuted, with fixed gates requiring useful recovery beyond both initialization and a paired exact baseline. The prior is zero-gradient at initialization and is not a new regularization method. All four scientific objectives remain open.

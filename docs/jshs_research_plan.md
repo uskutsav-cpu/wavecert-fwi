@@ -206,3 +206,15 @@ more features, or a higher self-assigned score cannot substitute for those resul
 Frequency continuation is not promoted as the recovery remedy: it worsens the initial velocity model in 7/8 case medians, despite substantial common-eight data-fit reduction. The next work must establish a recovery-oriented assumption or acquisition with physically justified information content, compare strong classical controls at fully paid cost, and retain initialization and every adverse case. The conditional reciprocity/dimension ceiling is a source/math diagnostic, not a new method or proof of the observed cause.
 
 Physical acceptance remains open after substantial BP padding sensitivity; additional ancestors require verified source, geometry and transformation provenance. The newly quarantined Overthrust demo is lossy and has not been decoded or validated. A distinct useful contribution beyond prior certification and the student's own question, interpretation, defense and writing are still required. The historical 7.5 assessment is not an updated national-readiness score; no 10/10 or winning rank is established.
+
+
+### Exact-input BP replay portability repair
+
+The 97f8905 CI run fails the old BP input-direction guard before the new108-control test is reached; all four logs remain preserved. A separately versioned replay shares exact recorded numerical inputs, keeps the independent propagation kernel and all thresholds unchanged, and opens native solution outputs only after all three own solves finish. Its27 manufactured controls, actual local3-trace/6-derivative replay and revised parent regression pass. Linux V2 verification remains pending. See the [BP report](bp_heterogeneous_verification.md#v2-exact-shared-numerical-inputs). This repairs the software reproduction contract; it adds no geological ancestor or recovery/physics/novelty/student-ownership claim.
+
+
+### Independent-model input acquisition and classical recovery candidate
+
+A fixed Overthrust stored-data cross-section is acquired:207 rows,663,228 model bytes, no conversion/row removal/PDE. An independent saved-byte audit passes3,186 integrity checks, with a precise record-ETag/file-ETag disclosure correction. The qualified JUDI/HDF5.jl interpretation and unresolved file-identity/water-provenance limits are explicit in the [acquisition report](overthrust_partial_acquisition.md). It is a candidate different synthetic ancestor, not accepted physics or an independent field site.
+
+The [classical fractional-velocity prior candidate](../results/fractional_velocity_prior_candidate/README.md) has39 author controls and39 independent scalar/math checks. Its48-run development comparison is still unimplemented/unexecuted, with fixed gates requiring useful recovery beyond both initialization and a paired exact baseline. The prior is zero-gradient at initialization and is not a new regularization method. All four scientific objectives remain open.
