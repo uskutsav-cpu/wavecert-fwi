@@ -213,6 +213,7 @@ def run_controls(bundle, live):
     rows = []
     controls = live / "controls"
     controls.mkdir()
+    (live / "control_tmp").mkdir()
     for name, relative, expected in CONTROL_GROUPS:
         log, xml = controls / f"{name}.log", controls / f"{name}.xml"
         command = [sys.executable, "-B", "-I", "-m", "pytest", "-q", "-W", "error", "-p", "no:cacheprovider",
